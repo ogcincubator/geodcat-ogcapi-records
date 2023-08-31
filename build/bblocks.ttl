@@ -1,0 +1,49 @@
+@prefix bblocks: <https://www.opengis.net/def/bblocks/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bblocks:ogc.bbr.template.my-building-block a skos:Concept,
+        bblocks:Schema ;
+    rdfs:label "My Building Block" ;
+    dct:abstract "This Building Block serves as a template to create new ones" ;
+    dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/slate-build/bbr/template/my-building-block/" ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/markdown/bbr/template/my-building-block/index.md" ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/json-full/bbr/template/my-building-block/index.json" ] ;
+    dct:hasVersion "0.1" ;
+    dct:modified "2023-04-05"^^xsd:date ;
+    dct:source <https://example.com/sources/1> ;
+    skos:inScheme <https://www.opengis.net/def/bblocks> ;
+    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/context.jsonld> ;
+    bblocks:hasSchema <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.json>,
+        <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.yaml> ;
+    bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
+    bblocks:status <http://www.opengis.net/def/status/under-development> .
+
+<https://example.com/sources/1> rdfs:label "Sample source document" .
+
+<https://www.opengis.net/def/bblocks> a skos:ConceptScheme ;
+    skos:prefLabel "OGC Building Blocks Register" .
+
+[] a prov:Activity ;
+    prov:endedAtTime "2023-08-31T07:28:03.698866"^^xsd:dateTime ;
+    prov:startedAtTime "2023-08-31T07:28:03.462680"^^xsd:dateTime ;
+    prov:used [ a prov:Entity ;
+            dct:format "application/yaml" ;
+            rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+        [ a prov:Entity ;
+            dct:format "application/json" ;
+            rdfs:seeAlso <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/register.json> ] ;
+    prov:wasAssociatedWith [ a prov:Agent,
+                schema:SoftwareApplication ;
+            rdfs:label "OGC-NA tools" ;
+            dct:hasVersion "0.3.9" ;
+            rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> ] .
+

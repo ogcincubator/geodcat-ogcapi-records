@@ -1,0 +1,16 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema for my building block
+'@modelReference': context.jsonld
+type: object
+properties:
+  a:
+    type: string
+    format: uri
+    x-jsonld-id: https://example.org/my-bb-model/a
+    x-jsonld-type: '@id'
+  b:
+    type: number
+    x-jsonld-id: https://example.org/my-bb-model/b
+required:
+- a
+- b

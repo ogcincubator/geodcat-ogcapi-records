@@ -1,0 +1,464 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="My Building Block (Schema)"
+        >
+    <title>My Building Block (Schema)</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../../../stylesheets/screen-89c74da2.css" rel="stylesheet" media="screen" />
+    <link href="../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="../../../javascripts/all-0c8314cb.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="bbr bbr_template bbr_template_my-building-block bbr_template_my-building-block_index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="javascript">Javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#my-building-block-ogc-bbr-template-my-building-block" class="toc-h1 toc-link" data-title="My Building Block ogc.bbr.template.my-building-block">My Building Block <code>ogc.bbr.template.my-building-block</code></a>
+          </li>
+          <li>
+            <a href="#description" class="toc-h1 toc-link" data-title="Description">Description</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#qui-hastarum-tectus-cithaeron-iuvabat" class="toc-h2 toc-link" data-title="Qui hastarum tectus Cithaeron iuvabat">Qui hastarum tectus Cithaeron iuvabat</a>
+                  </li>
+                  <li>
+                    <a href="#iam-vota-cui-dilataque-peterem" class="toc-h2 toc-link" data-title="Iam vota cui dilataque peterem">Iam vota cui dilataque peterem</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#this-is-an-example-with-just-a-description-and-no-code-snippets" class="toc-h2 toc-link" data-title="This is an example with just a description and no code snippets.">This is an example with just a description and no code snippets.</a>
+                  </li>
+                  <li>
+                    <a href="#examples-can-have-content-and-or-code-snippets" class="toc-h2 toc-link" data-title="Examples can have content and/or code snippets.">Examples can have content and/or code snippets.</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#json-schema" class="toc-h1 toc-link" data-title="JSON Schema">JSON Schema</a>
+          </li>
+          <li>
+            <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
+          </li>
+          <li>
+            <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
+          </li>
+          <li>
+            <a href="#for-developers" class="toc-h1 toc-link" data-title="For developers">For developers</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li>Version 0.1</li>
+            <li><a href='#'>My Building Block</a></li>
+            <li><a href='https://blocks.ogc.org/register.html'>Building Blocks register</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='my-building-block-ogc-bbr-template-my-building-block'>My Building Block <code>ogc.bbr.template.my-building-block</code></h1>
+<p>This Building Block serves as a template to create new ones</p>
+
+<p class="status">
+    <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
+    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+</p>
+
+<aside class="success">
+This building block is <strong>valid</strong>
+</aside>
+<h1 id='description'>Description</h1><h2 id='qui-hastarum-tectus-cithaeron-iuvabat'>Qui hastarum tectus Cithaeron iuvabat</h2>
+<p>Lorem markdownum vestigia sanguine rursus undis, suspenderat meo mox conlegerat
+temperat sucos. Est graves dant sentire sanguinis flores respondent testari.</p>
+
+<blockquote>
+<p>Videri vias quid Ausoniae sua flores ante, reminiscitur fuit est. Semel
+<a href="http://silvaque.org/">hectora</a> peregrinaeque rudem exercent in, Troiana si
+Asida instabilesque somno sed.</p>
+</blockquote>
+<h2 id='iam-vota-cui-dilataque-peterem'>Iam vota cui dilataque peterem</h2>
+<p>Tinxit lumina lacer liquidarum Aiax si mergitur sed fueris capitisque <strong>et
+cadit</strong> contigerant rectum <a href="http://prosternit.com/quoque.html">ferar</a> temperat.
+Monet caput adsensere Ityn furentibus gelidos.</p>
+<h1 id='examples'>Examples</h1><h2 id='this-is-an-example-with-just-a-description-and-no-code-snippets'>This is an example with just a description and no code snippets.</h2>
+<p>This is the content of the example.</p>
+
+<p>In <strong>Markdown</strong> format.</p>
+<h2 id='examples-can-have-content-and-or-code-snippets'>Examples can have content and/or code snippets.</h2>
+<p>The content of this example. </p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nb">echo</span> <span class="s1">'Hello, world!'</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">print</span><span class="p">(</span><span class="s">'Hello, world!'</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, world!</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div><h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Schema for my building block</span>
+<span class="s1">'</span><span class="s">@modelReference'</span><span class="err">:</span> <span class="s">context.jsonld</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
+<span class="na">properties</span><span class="pi">:</span>
+  <span class="na">a</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
+    <span class="na">format</span><span class="pi">:</span> <span class="s">uri</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">https://example.org/my-bb-model/a</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">b</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">number</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">https://example.org/my-bb-model/b</span>
+<span class="na">required</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">a</span>
+<span class="pi">-</span> <span class="s">b</span>
+
+</code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=yaml&amp;dataUrl=https%3A%2F%2Fraw.githubusercontent.com%2Fogcincubator%2Fgeodcat-ogcapi-records%2Fmaster%2Fbuild%2Fannotated%2Fbbr%2Ftemplate%2Fmy-building-block%2Fschema.yaml&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on YAML Viewer</a></p>
+</blockquote>
+
+<p>Links to the schema:</p>
+
+<ul>
+<li>YAML version: <a href="https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.yaml" target="_blank">https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.yaml</a></li>
+<li>JSON version: <a href="https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.json" target="_blank">https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/schema.json</a></li>
+</ul>
+<h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"a"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/my-bb-model/a"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"b"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.org/my-bb-model/b"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p><a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fraw.githubusercontent.com%2Fogcincubator%2Fgeodcat-ogcapi-records%2Fmaster%2Fbuild%2Fannotated%2Fbbr%2Ftemplate%2Fmy-building-block%2Fcontext.jsonld">View on JSON-LD Playground</a></p>
+</blockquote>
+
+<p>You can find the full JSON-LD context here:
+<a href="https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/context.jsonld" target="_blank">https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/bbr/template/my-building-block/context.jsonld</a></p>
+<h1 id='references'>References</h1>
+<ul>
+<li><a href="https://example.com/sources/1">Sample source document</a></li>
+</ul>
+<h1 id='for-developers'>For developers</h1>
+<p>The source code for this Building Block can be found in the following repository:</p>
+
+<ul>
+<li>URL: <a href="https://github.com/ogcincubator/geodcat-ogcapi-records" target="_blank">https://github.com/ogcincubator/geodcat-ogcapi-records</a></li>
+<li>Path:
+<code><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/HEAD/_sources/my-building-block" target="_blank">_sources/my-building-block</a></code></li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="javascript">Javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
