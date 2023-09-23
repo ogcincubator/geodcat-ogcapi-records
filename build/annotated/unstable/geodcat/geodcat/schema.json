@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for my building block",
+  "@modelReference": "context.jsonld",
+  "type": "object",
+  "properties": {
+    "a": {
+      "type": "string",
+      "format": "uri"
+    },
+    "b": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "a",
+    "b"
+  ],
+  "x-jsonld-extra-terms": {
+    "domain": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#domain",
+      "x-jsonld-type": "@id"
+    },
+    "scopeNote": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#scopeNote",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "label": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "isDefinedBy": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+      "x-jsonld-type": "@id"
+    },
+    "comment": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#comment",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "changeNote": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#changeNote",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "definition": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#definition",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "subPropertyOf": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+      "x-jsonld-type": "@id"
+    },
+    "range": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#range",
+      "x-jsonld-type": "@id"
+    },
+    "name": {
+      "x-jsonld-id": "http://xmlns.com/foaf/0.1/name",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "homepage": {
+      "x-jsonld-id": "http://xmlns.com/foaf/0.1/homepage",
+      "x-jsonld-type": "@id"
+    },
+    "rest": {
+      "x-jsonld-id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "x-jsonld-type": "@id"
+    },
+    "first": {
+      "x-jsonld-id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+      "x-jsonld-type": "@id"
+    },
+    "seeAlso": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "x-jsonld-type": "@id"
+    },
+    "editorialNote": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#editorialNote",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "altLabel": {
+      "x-jsonld-id": "http://www.w3.org/2004/02/skos/core#altLabel",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "workInfoHomepage": {
+      "x-jsonld-id": "http://xmlns.com/foaf/0.1/workInfoHomepage",
+      "x-jsonld-type": "@id"
+    },
+    "affiliation": {
+      "x-jsonld-id": "http://schema.org/affiliation",
+      "x-jsonld-type": "@id"
+    },
+    "rangeIncludes": {
+      "x-jsonld-id": "http://schema.org/rangeIncludes",
+      "x-jsonld-type": "@id"
+    },
+    "unionOf": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#unionOf",
+      "x-jsonld-type": "@id"
+    },
+    "creator": {
+      "x-jsonld-id": "http://purl.org/dc/terms/creator",
+      "x-jsonld-type": "@id"
+    },
+    "versionInfo": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#versionInfo",
+      "x-jsonld-type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "contributor": {
+      "x-jsonld-id": "http://purl.org/dc/terms/contributor",
+      "x-jsonld-type": "@id"
+    },
+    "modified": {
+      "x-jsonld-id": "http://purl.org/dc/terms/modified",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "imports": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#imports",
+      "x-jsonld-type": "@id"
+    },
+    "license": {
+      "x-jsonld-id": "http://purl.org/dc/terms/license",
+      "x-jsonld-type": "@id"
+    },
+    "maker": {
+      "x-jsonld-id": "http://xmlns.com/foaf/0.1/maker",
+      "x-jsonld-type": "@id"
+    },
+    "subClassOf": {
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "x-jsonld-type": "@id"
+    },
+    "propertyChainAxiom": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#propertyChainAxiom",
+      "x-jsonld-type": "@id"
+    },
+    "onProperty": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#onProperty",
+      "x-jsonld-type": "@id"
+    },
+    "cardinality": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#cardinality",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "allValuesFrom": {
+      "x-jsonld-id": "http://www.w3.org/2002/07/owl#allValuesFrom",
+      "x-jsonld-type": "@id"
+    }
+  },
+  "x-jsonld-prefixes": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dctype": "http://purl.org/dc/dcmitype/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "sdo": "http://schema.org/"
+  }
+}
