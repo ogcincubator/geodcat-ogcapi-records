@@ -6,7 +6,7 @@ Building Blocks support validation of examples against both the JSON schema and 
 
 Transformations to related models can be supported in the automation pipeline.
 
-Plan is to map to:
+Plan is to map to other metadata representations to support validation of a common content profile against multiple encodings.:
  * STAC
  * ISO 19115
    
