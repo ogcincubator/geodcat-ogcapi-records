@@ -27,18 +27,12 @@ This example is a GEODCAT-AP example to test backwards compatibility with SHACL 
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Schema for my building block
-'@modelReference': context.jsonld
-type: object
-properties:
-  a:
-    type: string
-    format: uri
-  b:
-    type: number
-required:
-- a
-- b
+description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
+allOf:
+- $ref: https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml
+- description: Other elements needed to define common approaches for GeoDCAT - profiles
+    can make specific ones mandatory as required
 x-jsonld-extra-terms:
   domain:
     x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#domain

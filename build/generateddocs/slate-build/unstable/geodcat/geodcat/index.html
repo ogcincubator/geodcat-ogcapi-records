@@ -374,18 +374,12 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 ref: tests/geodcat-ap-regression.ttl</li>
 </ul>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
-<span class="na">description</span><span class="pi">:</span> <span class="s">Schema for my building block</span>
-<span class="s1">'</span><span class="s">@modelReference'</span><span class="err">:</span> <span class="s">context.jsonld</span>
-<span class="na">type</span><span class="pi">:</span> <span class="s">object</span>
-<span class="na">properties</span><span class="pi">:</span>
-  <span class="na">a</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">string</span>
-    <span class="na">format</span><span class="pi">:</span> <span class="s">uri</span>
-  <span class="na">b</span><span class="pi">:</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">number</span>
-<span class="na">required</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="s">a</span>
-<span class="pi">-</span> <span class="s">b</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Schema for OGCAPI records profile for GeoDCAT - defines all extra elements</span>
+  <span class="s">defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF</span>
+<span class="na">allOf</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">$ref</span><span class="pi">:</span> <span class="s">https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml</span>
+<span class="pi">-</span> <span class="na">description</span><span class="pi">:</span> <span class="s">Other elements needed to define common approaches for GeoDCAT - profiles</span>
+    <span class="s">can make specific ones mandatory as required</span>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
   <span class="na">domain</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#domain</span>
