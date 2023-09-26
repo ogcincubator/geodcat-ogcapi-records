@@ -11,20 +11,20 @@ bblocks:ogc.unstable.geodcat.geodcat a skos:Concept,
     rdfs:label "GeoDCAT profile of OGC API Records" ;
     dct:abstract "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile" ;
     dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/slate-build/unstable/geodcat/geodcat/" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/json-full/unstable/geodcat/geodcat/index.json" ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/unstable/geodcat/geodcat/index.json" ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/generateddocs/markdown/unstable/geodcat/geodcat/index.md" ] ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/unstable/geodcat/geodcat/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/unstable/geodcat/geodcat/" ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2023-09-18"^^xsd:date ;
     dct:source <http://www.opengis.net/def/metamodel/profiles/geodcat>,
         <https://github.com/opengeospatial/GeoDCAT-SWG> ;
     skos:inScheme <https://www.opengis.net/def/bblocks> ;
-    bblocks:hasJsonLdContext <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/context.jsonld> ;
-    bblocks:hasSchema <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/schema.json>,
-        <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/schema.yaml> ;
+    bblocks:hasJsonLdContext <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/context.jsonld> ;
+    bblocks:hasSchema <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/schema.json>,
+        <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/schema.yaml> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
@@ -37,11 +37,11 @@ bblocks:ogc.unstable.geodcat.geodcat a skos:Concept,
     skos:prefLabel "OGC Building Blocks Register" .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2023-09-25T08:18:58.130706"^^xsd:dateTime ;
-    prov:startedAtTime "2023-09-25T08:18:58.067476"^^xsd:dateTime ;
+    prov:endedAtTime "2023-09-26T13:52:13.728694"^^xsd:dateTime ;
+    prov:startedAtTime "2023-09-26T13:52:13.662475"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/json" ;
-            rdfs:seeAlso <https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/register.json> ],
+            rdfs:seeAlso <https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json> ],
         [ a prov:Entity ;
             dct:format "application/yaml" ;
             rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;

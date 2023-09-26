@@ -148,8 +148,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/schema.yaml)
 
 
 # JSON-LD Context
@@ -303,7 +303,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/ogcincubator/geodcat-ogcapi-records/master/build/annotated/unstable/geodcat/geodcat/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/unstable/geodcat/geodcat/context.jsonld)
 
 ## Sources
 
