@@ -10,7 +10,17 @@ Plan is to map to other metadata representations to support validation of a comm
  * STAC
  * ISO 19115
    
+## Components
 
+This repository defines a set of building block components that can be combined to **test** interoperability requirements.
+
+These are:
+
+- **geodcat** - the core specification as an _extensible_ profile of DCAT ontology
+- **geodcat-records** - a reference implementation bound to the OGC-API Records schema
+- **dcat
+
+![](https://lucid.app/publicSegments/view/2eb2f531-df8c-46d6-a441-d96bef505c3d/image.png)
 
 # How to use this template
 
