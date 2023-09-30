@@ -4,6 +4,8 @@ This will define a JSON schema linked to GeoDCAT using JSON-LD contexts.  The sc
 
 The generated documentation of each Building Block can be accessed [here](https://ogcincubator.github.io/geodcat-ogcapi-records/).
 
+The GeoDCAT specification itself is defined in the main [GeoDCAT SWG Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
+
 Building Blocks support validation of examples against both the JSON schema and the RDF (JSON-LD) and can be used to develop and test examples of target ontologies.
 
 Transformations to related models can be supported in the automation pipeline.
