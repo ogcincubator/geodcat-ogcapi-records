@@ -28,6 +28,6 @@ These are:
 
 ![](https://lucid.app/publicSegments/view/2eb2f531-df8c-46d6-a441-d96bef505c3d/image.png)
 
-# How to use this template
+# Building Block development
 
-You can find information on using this template an defining Building Blocks in [USAGE.md](USAGE.md).
+You can find information how Building Blocks are constructed in [USAGE.md](USAGE.md).
