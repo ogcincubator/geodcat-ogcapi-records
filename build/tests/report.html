@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Building Blocks validation report</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            .entry-message {
+                white-space: pre-wrap;
+                font-size: 90%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Building blocks validation report</h1>
+            <small class="datetime">Generated at 2023-10-26T09:22:34.568003+00:00</small>
+                <p class="summary fw-semibold text-success">
+                    Number of passing building blocks: 3 / 3 (100%)
+                </p>
+            <div class="text-end small" id="expand-collapse">
+                <a href="#" class="expand-all">Expand all</a>
+                <a href="#" class="collapse-all">Collapse all</a>
+            </div>
+                <div class="accordion mt-2" id="bblock-reports">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat-records" id="bblock-0">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
+                                    <div class="flex-fill">
+                                        GeoDCAT profile of OGC API Records
+                                        <small class="ms-2 bblock-id">ogc.geo.geodcat.dcat-records</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100%)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-0">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item ">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-records/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text">
+                                                            <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
+                                                            <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                            <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
+                                                            <div class="font-monospace entry-message section-files ">**Empty** output Turtle example_1_1.ttl created</div>
+                                                            <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat" id="bblock-1">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-1">
+                                    <div class="flex-fill">
+                                        Generic DCAT profile
+                                        <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100%)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-1">
+                                <div class="accordion-body">
+                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records" id="bblock-2">
+                            <h2 class="accordion-header bblock-title">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
+                                    <div class="flex-fill">
+                                        GeoDCAT profile of OGC API Records
+                                        <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records</small>
+                                    </div>
+
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100%)
+                                    </span>
+                                </button>
+                            </h2>
+                            <div class="accordion-collapse collapse " id="bblock-collapse-2">
+                                <div class="accordion-body">
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item ">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/tests/geodcat-ap-regression.ttl" target="_blank">geodcat-ap-regression.ttl</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text">
+                                                            <div class="font-monospace entry-message section-files ">Using geodcat-ap-regression.ttl from test resources</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+                const accordionEntries = [...document.querySelectorAll('#bblock-reports .accordion-collapse')];
+                console.log(accordionEntries);
+                document.querySelector('#expand-collapse').addEventListener('click', ev => {
+                    ev.preventDefault();
+                    if (ev.target.matches('.expand-all')) {
+                        accordionEntries.forEach(e => e.classList.add('show'));
+                    } else if (ev.target.matches('.collapse-all')) {
+                        accordionEntries.forEach(e => e.classList.remove('show'));
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
