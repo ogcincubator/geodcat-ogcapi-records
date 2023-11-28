@@ -1,2 +1,56 @@
 
-{"itemIdentifier": "ogc.geo.geodcat.geodcat-records", "name": "GeoDCAT profile of OGC API Records", "abstract": "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile", "status": "under-development", "dateTimeAddition": "2023-09-18T00:00:00Z", "itemClass": "schema", "register": "ogc-incubator", "version": "0.1", "dateOfLastChange": "2023-09-18", "link": "https://github.com/opengeospatial/bblock-template", "sources": [{"title": "GeoDCAT Specification", "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"}, {"title": "GeoDCAT Resources", "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"}, {"title": "GeoDCAT Specification Repository", "link": "https://github.com/opengeospatial/GeoDCAT-SWG"}], "scope": "dev", "tags": ["DCAT", "profile", "Records"], "shaclRules": [], "dependsOn": ["ogc.geo.geodcat.dcat-records"], "schema": {"application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml", "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.json"}, "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld", "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/", "validationPassed": true, "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records/", "description": "## GeoDCAT implementation using OGC API records JSON schema\n\nThis building block defines a binding from OGC API Records schema to the GeoDCAT profile of DCAT.\n\nThis profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.\n\nThat building block is expected to be stable, whilst the GeoDCAT profile is under development.", "examples": [{"title": "GeoDCAT-AP backwards compatibility example.", "content": "This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints\n\n- language: ttl\n  ref: tests/geodcat-ap-regression.ttl"}], "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements\n  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF\nallOf:\n- $ref: ../dcat-records/schema.json\n- description: Other elements required for DCAT\n", "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records", "gitPath": "_sources/geodcat-records"}
+
+{
+  "itemIdentifier": "ogc.geo.geodcat.geodcat-records",
+  "name": "GeoDCAT profile of OGC API Records",
+  "abstract": "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+  "status": "under-development",
+  "dateTimeAddition": "2023-09-18T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-incubator",
+  "version": "0.1",
+  "dateOfLastChange": "2023-09-18",
+  "link": "https://github.com/opengeospatial/bblock-template",
+  "sources": [
+    {
+      "title": "GeoDCAT Specification",
+      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+    },
+    {
+      "title": "GeoDCAT Resources",
+      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+    },
+    {
+      "title": "GeoDCAT Specification Repository",
+      "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "DCAT",
+    "profile",
+    "Records"
+  ],
+  "shaclRules": {},
+  "dependsOn": [
+    "ogc.geo.geodcat.dcat-records"
+  ],
+  "schema": {
+    "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.json"
+  },
+  "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
+  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records/",
+  "description": "## GeoDCAT implementation using OGC API records JSON schema\n\nThis building block defines a binding from OGC API Records schema to the GeoDCAT profile of DCAT.\n\nThis profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.\n\nThat building block is expected to be stable, whilst the GeoDCAT profile is under development.",
+  "examples": [
+    {
+      "title": "GeoDCAT-AP backwards compatibility example.",
+      "content": "This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints\n\n- language: ttl\n  ref: tests/geodcat-ap-regression.ttl"
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements\n  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF\nallOf:\n- $ref: ../dcat-records/schema.json\n- description: Other elements required for DCAT\n",
+  "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
+  "gitPath": "_sources/geodcat-records"
+}

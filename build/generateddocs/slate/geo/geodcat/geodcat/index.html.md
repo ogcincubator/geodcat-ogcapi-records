@@ -1,10 +1,10 @@
 ---
-title: Generic DCAT profile (Schema)
+title: GeoDCAT profile (Schema)
 
 
 toc_footers:
   - Version 0.1
-  - <a href='#'>Generic DCAT profile</a>
+  - <a href='#'>GeoDCAT profile</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -12,11 +12,11 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: Generic DCAT profile (Schema)
+  - name: GeoDCAT profile (Schema)
 ---
 
 
-# Generic DCAT profile `ogc.geo.geodcat.geodcat`
+# GeoDCAT profile `ogc.geo.geodcat.geodcat`
 
 Provides a CI/CT/CD environment for the GeoDCAT definition.
 
@@ -51,6 +51,7 @@ This example is a GEODCAT example showing only defined elements
 
 * [GeoDCAT Specification](http://www.opengis.net/def/metamodel/profiles/geodcat)
 * [GeoDCAT Specification Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
+* [DCAT-AP JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
 
 # For developers
 

@@ -1,5 +1,5 @@
 
-# Generic DCAT profile (Schema)
+# GeoDCAT profile (Schema)
 
 `ogc.geo.geodcat.geodcat` *v0.1*
 
@@ -31,6 +31,7 @@ This example is a GEODCAT example showing only defined elements
 
 * [GeoDCAT Specification](http://www.opengis.net/def/metamodel/profiles/geodcat)
 * [GeoDCAT Specification Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
+* [DCAT-AP JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
 
 # For developers
 

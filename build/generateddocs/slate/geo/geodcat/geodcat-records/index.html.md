@@ -73,146 +73,179 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
-    "domain": {
-      "@id": "rdfs:domain",
+    "accessRights": {
+      "@id": "dct:accessRights",
       "@type": "@id"
     },
-    "scopeNote": {
-      "@id": "skos:scopeNote",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "label": {
-      "@id": "rdfs:label",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "isDefinedBy": {
-      "@id": "rdfs:isDefinedBy",
+    "conformsTo": {
+      "@container": "@set",
+      "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "comment": {
-      "@id": "rdfs:comment",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "changeNote": {
-      "@id": "skos:changeNote",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "definition": {
-      "@id": "skos:definition",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "subPropertyOf": {
-      "@id": "rdfs:subPropertyOf",
-      "@type": "@id"
-    },
-    "range": {
-      "@id": "rdfs:range",
-      "@type": "@id"
-    },
-    "name": {
-      "@id": "foaf:name",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "homepage": {
-      "@id": "foaf:homepage",
-      "@type": "@id"
-    },
-    "rest": {
-      "@id": "rdf:rest",
-      "@type": "@id"
-    },
-    "first": {
-      "@id": "rdf:first",
-      "@type": "@id"
-    },
-    "seeAlso": {
-      "@id": "rdfs:seeAlso",
-      "@type": "@id"
-    },
-    "editorialNote": {
-      "@id": "skos:editorialNote",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "altLabel": {
-      "@id": "skos:altLabel",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "workInfoHomepage": {
-      "@id": "foaf:workInfoHomepage",
-      "@type": "@id"
-    },
-    "affiliation": {
-      "@id": "sdo:affiliation",
-      "@type": "@id"
-    },
-    "rangeIncludes": {
-      "@id": "sdo:rangeIncludes",
-      "@type": "@id"
-    },
-    "unionOf": {
-      "@id": "owl:unionOf",
+    "contactPoint": {
+      "@container": "@set",
+      "@id": "dcat:contactPoint",
       "@type": "@id"
     },
     "creator": {
       "@id": "dct:creator",
       "@type": "@id"
     },
-    "versionInfo": {
-      "@id": "owl:versionInfo",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "contributor": {
-      "@id": "dct:contributor",
+    "datasetDistribution": {
+      "@container": "@set",
+      "@id": "dcat:distribution",
       "@type": "@id"
     },
-    "modified": {
-      "@id": "dct:modified",
-      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    "description": {
+      "@container": "@set",
+      "@id": "dct:description"
     },
-    "imports": {
-      "@id": "owl:imports",
+    "documentation": {
+      "@container": "@set",
+      "@id": "foaf:page",
       "@type": "@id"
     },
-    "license": {
-      "@id": "dct:license",
+    "frequency": {
+      "@id": "dct:accrualPeriodicity",
       "@type": "@id"
     },
-    "maker": {
-      "@id": "foaf:maker",
+    "geographicalCoverage": {
+      "@container": "@set",
+      "@id": "dct:spatial",
       "@type": "@id"
     },
-    "subClassOf": {
-      "@id": "rdfs:subClassOf",
+    "hasVersion": {
+      "@container": "@set",
+      "@id": "dcat:hasVersion",
       "@type": "@id"
     },
-    "propertyChainAxiom": {
-      "@id": "owl:propertyChainAxiom",
+    "identifier": {
+      "@container": "@set",
+      "@id": "dct:identifier"
+    },
+    "isReferencedBy": {
+      "@container": "@set",
+      "@id": "dct:isReferencedBy",
       "@type": "@id"
     },
-    "onProperty": {
-      "@id": "owl:onProperty",
+    "isVersionOf": {
+      "@container": "@set",
+      "@id": "dcat:isVersionOf",
       "@type": "@id"
     },
-    "cardinality": {
-      "@id": "owl:cardinality",
-      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    "keyword": {
+      "@container": "@set",
+      "@id": "dcat:keyword"
     },
-    "allValuesFrom": {
-      "@id": "owl:allValuesFrom",
+    "keywords": {
+      "@container": "@set",
+      "@id": "dcat:keyword"
+    },
+    "landingPage": {
+      "@container": "@set",
+      "@id": "dcat:landingPage",
+      "@type": "@id"
+    },
+    "language": {
+      "@container": "@set",
+      "@id": "dct:language",
+      "@type": "@id"
+    },
+    "modificationDate": "dct:modified",
+    "updated": "dct:modified",
+    "created": "dct:created",
+    "otherIdentifier": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "@id"
+    },
+    "provenance": {
+      "@container": "@set",
+      "@id": "dct:provenance",
+      "@type": "@id"
+    },
+    "publisher": {
+      "@id": "dct:publisher",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@container": "@set",
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "qualifiedRelation": {
+      "@container": "@set",
+      "@id": "dcat:qualifiedRelation",
+      "@type": "@id"
+    },
+    "relatedResource": {
+      "@container": "@set",
+      "@id": "dct:relation",
+      "@type": "@id"
+    },
+    "releaseDate": "dct:issued",
+    "sample": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#sample",
+      "@type": "@id"
+    },
+    "source": {
+      "@container": "@set",
+      "@id": "dct:source",
+      "@type": "@id"
+    },
+    "spatialResolution": {
+      "@container": "@set",
+      "@id": "dcat:spatialResolutionInMeters",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "temporalCoverage": {
+      "@container": "@set",
+      "@id": "dct:temporal",
+      "@type": "@id"
+    },
+    "temporalResolution": {
+      "@container": "@set",
+      "@id": "dcat:temporalResolution",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "theme": {
+      "@container": "@set",
+      "@id": "dcat:theme",
+      "@type": "@id"
+    },
+    "title": {
+      "@container": "@set",
+      "@id": "dct:title"
+    },
+    "type": {
+      "@id": "dct:type",
+      "@type": "@id"
+    },
+    "version": {
+      "@container": "@set",
+      "@id": "dcat:version"
+    },
+    "versionNotes": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/adms#versionNotes"
+    },
+    "wasGeneratedBy": {
+      "@container": "@set",
+      "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
     "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "dcat": "http://www.w3.org/ns/dcat#",
-    "prov": "http://www.w3.org/ns/prov#",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "sdo": "http://schema.org/",
     "@version": 1.1
   }
 }

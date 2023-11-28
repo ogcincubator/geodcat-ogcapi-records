@@ -1,1 +1,24 @@
-# Empty Turtle file
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> rdfs:label "Total Ozone - daily observations" ;
+    dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
+    dcterms:created "2021-02-08T00:00:00Z" ;
+    dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
+    dcterms:language [ ] ;
+    dcterms:modified "2021-02-08T00:00:00Z" ;
+    dcterms:type "Feature",
+        "dataset" ;
+    dcat:keyword "brewer",
+        "column",
+        "dobson",
+        "level 1.0",
+        "ozone",
+        "saoz",
+        "total" ;
+    geojson:geometry [ dcterms:type "Polygon" ;
+            geojson:coordinates ( "[[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]" ) ] .
+

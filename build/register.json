@@ -6,8 +6,8 @@
   "bblocks": [
     {
       "itemIdentifier": "ogc.geo.geodcat.dcat-records",
-      "name": "GeoDCAT profile of OGC API Records",
-      "abstract": "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+      "name": "Generic DCAT profile of OGC API Records",
+      "abstract": "DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT vocabulary. This is the baseline for semantic equivalence of OGC API records and the DCAT model. GeoDCAT and other profiles reuse this to distinguish between extensions and existing properties.",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
       "itemClass": "schema",
@@ -15,18 +15,18 @@
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
+      "swg": {
+        "title": "GeoDCAT Specification Working Group",
+        "link": "http://www.opengis.net/def/entities/bodies/713"
+      },
       "sources": [
         {
-          "title": "GeoDCAT Specification",
-          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+          "title": "DCAT v3 Specification",
+          "link": "https://www.w3.org/TR/vocab-dcat-3/"
         },
         {
-          "title": "GeoDCAT Resources",
-          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
-        },
-        {
-          "title": "GeoDCAT Specification Repository",
-          "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+          "title": "API Records Specification Repository",
+          "link": "https://github.com/opengeospatial/ogcapi-records"
         }
       ],
       "scope": "dev",
@@ -35,7 +35,7 @@
         "profile",
         "Records"
       ],
-      "shaclRules": [],
+      "shaclRules": {},
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml",
         "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.json"
@@ -61,7 +61,7 @@
     },
     {
       "itemIdentifier": "ogc.geo.geodcat.geodcat",
-      "name": "Generic DCAT profile",
+      "name": "GeoDCAT profile",
       "abstract": "Provides a CI/CT/CD environment for the GeoDCAT definition.",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
@@ -78,15 +78,18 @@
         {
           "title": "GeoDCAT Specification Repository",
           "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+        },
+        {
+          "title": "DCAT-AP JSON-LD context",
+          "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
         }
       ],
       "scope": "dev",
       "tags": [
         "DCAT",
-        "profile",
-        "Records"
+        "profile"
       ],
-      "shaclRules": [],
+      "shaclRules": {},
       "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat/",
       "validationPassed": true,
       "documentation": {
@@ -135,7 +138,7 @@
         "profile",
         "Records"
       ],
-      "shaclRules": [],
+      "shaclRules": {},
       "dependsOn": [
         "ogc.geo.geodcat.dcat-records"
       ],

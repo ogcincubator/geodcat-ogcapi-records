@@ -1,0 +1,932 @@
+{
+  "x-defs": {
+    "ogc.geo.geodcat.geodcat-records": {
+      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.dcat-records"
+        },
+        {
+          "description": "Other elements required for DCAT"
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json"
+    },
+    "ogc.geo.geodcat.dcat-records": {
+      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml"
+        },
+        {
+          "description": "Other elements needed to define common approaches for GeoDCAT - profiles can make specific ones mandatory as required"
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "accessRights": {
+          "x-jsonld-id": "http://purl.org/dc/terms/accessRights",
+          "x-jsonld-type": "@id"
+        },
+        "conformsTo": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/conformsTo",
+          "x-jsonld-type": "@id"
+        },
+        "contactPoint": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#contactPoint",
+          "x-jsonld-type": "@id"
+        },
+        "creator": {
+          "x-jsonld-id": "http://purl.org/dc/terms/creator",
+          "x-jsonld-type": "@id"
+        },
+        "datasetDistribution": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#distribution",
+          "x-jsonld-type": "@id"
+        },
+        "description": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/description"
+        },
+        "documentation": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://xmlns.com/foaf/0.1/page",
+          "x-jsonld-type": "@id"
+        },
+        "frequency": {
+          "x-jsonld-id": "http://purl.org/dc/terms/accrualPeriodicity",
+          "x-jsonld-type": "@id"
+        },
+        "geographicalCoverage": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/spatial",
+          "x-jsonld-type": "@id"
+        },
+        "hasVersion": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#hasVersion",
+          "x-jsonld-type": "@id"
+        },
+        "identifier": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+        },
+        "isReferencedBy": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/isReferencedBy",
+          "x-jsonld-type": "@id"
+        },
+        "isVersionOf": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#isVersionOf",
+          "x-jsonld-type": "@id"
+        },
+        "keyword": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
+        },
+        "keywords": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
+        },
+        "landingPage": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#landingPage",
+          "x-jsonld-type": "@id"
+        },
+        "language": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/language",
+          "x-jsonld-type": "@id"
+        },
+        "modificationDate": "http://purl.org/dc/terms/modified",
+        "updated": "http://purl.org/dc/terms/modified",
+        "created": "http://purl.org/dc/terms/created",
+        "otherIdentifier": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/adms#identifier",
+          "x-jsonld-type": "@id"
+        },
+        "provenance": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/provenance",
+          "x-jsonld-type": "@id"
+        },
+        "publisher": {
+          "x-jsonld-id": "http://purl.org/dc/terms/publisher",
+          "x-jsonld-type": "@id"
+        },
+        "qualifiedAttribution": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+          "x-jsonld-type": "@id"
+        },
+        "qualifiedRelation": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#qualifiedRelation",
+          "x-jsonld-type": "@id"
+        },
+        "relatedResource": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/relation",
+          "x-jsonld-type": "@id"
+        },
+        "releaseDate": "http://purl.org/dc/terms/issued",
+        "sample": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/adms#sample",
+          "x-jsonld-type": "@id"
+        },
+        "source": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/source",
+          "x-jsonld-type": "@id"
+        },
+        "spatialResolution": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#decimal"
+        },
+        "temporalCoverage": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/temporal",
+          "x-jsonld-type": "@id"
+        },
+        "temporalResolution": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#temporalResolution",
+          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#duration"
+        },
+        "theme": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#theme",
+          "x-jsonld-type": "@id"
+        },
+        "title": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://purl.org/dc/terms/title"
+        },
+        "type": {
+          "x-jsonld-id": "http://purl.org/dc/terms/type",
+          "x-jsonld-type": "@id"
+        },
+        "version": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/dcat#version"
+        },
+        "versionNotes": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/adms#versionNotes"
+        },
+        "wasGeneratedBy": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+          "x-jsonld-type": "@id"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "dct": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "dctype": "http://purl.org/dc/dcmitype/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "vcard": "http://www.w3.org/2006/vcard/ns#"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/dcat-records/schema.json"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "time",
+        "geometry",
+        "properties",
+        "links"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A unique identifier of the catalogue record.",
+          "format": "uri"
+        },
+        "conformsTo": {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_common_confClasses.yaml/properties/conformsTo"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Feature"
+          ]
+        },
+        "time": {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml"
+        },
+        "geometry": {
+          "oneOf": [
+            {
+              "enum": [
+                null
+              ]
+            },
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_geometryGeoJSON.yaml"
+            }
+          ]
+        },
+        "properties": {
+          "type": "object",
+          "required": [
+            "type",
+            "title"
+          ],
+          "properties": {
+            "created": {
+              "type": "string",
+              "description": "Date of creation of this record.",
+              "format": "date-time"
+            },
+            "updated": {
+              "type": "string",
+              "description": "The most recent date on which the record was changed.",
+              "format": "date-time"
+            },
+            "type": {
+              "type": "string",
+              "description": "The nature or genre of the resource. The value should be a code, convenient for filtering records. Where available, a link to the canonical URI of the record type resource will be added to the 'links' property.",
+              "maxLength": 64
+            },
+            "title": {
+              "type": "string",
+              "description": "A human-readable name given to the resource."
+            },
+            "description": {
+              "type": "string",
+              "description": "A free-text account of the resource."
+            },
+            "keywords": {
+              "type": "array",
+              "description": "The topic or topics of the resource. Typically represented using free-form keywords, tags, key phrases, or classification codes.",
+              "items": {
+                "type": "string"
+              }
+            },
+            "language": {},
+            "languages": {
+              "type": "array",
+              "description": "This list of languages in which this record is available.",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml"
+              }
+            },
+            "resourceLanguages": {
+              "type": "array",
+              "description": "The list of languages in which the resource described by this record is available.",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml"
+              }
+            },
+            "externalIds": {
+              "type": "array",
+              "description": "An identifier for the resource assigned by an external (to the catalogue) entity.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "scheme": {
+                    "type": "string",
+                    "description": "A reference to an authority or identifier for a knowledge organization system from which the external identifier was obtained.  It is recommended that the identifier be a resolvable URI."
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "The value of the identifier."
+                  }
+                },
+                "required": [
+                  "value"
+                ]
+              }
+            },
+            "themes": {
+              "type": "array",
+              "description": "A knowledge organization system used to classify the resource.",
+              "minItems": 1,
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_theme.yaml"
+              }
+            },
+            "formats": {
+              "type": "array",
+              "description": "A list of available distributions of the resource.",
+              "items": {
+                "type": "string"
+              }
+            },
+            "contacts": {
+              "type": "array",
+              "description": "A list of contacts qualified by their role(s) in association to the record or the resource described by the record.",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_contact.yaml"
+              }
+            },
+            "license": {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_license.yaml"
+            },
+            "rights": {
+              "type": "string",
+              "description": "A statement that concerns all rights not addressed by the license such as a copyright statement."
+            }
+          }
+        },
+        "links": {
+          "type": "array",
+          "description": "A list of links for accessing the resource (e.g. download link, access link) in one of the supported distribution formats and/or links to other resources associated with this resource. Also, a list of links for navigating the API (e.g. prev, next, etc.).  Since the specification requires that at least the self link be present then the min items for this list should be one.",
+          "items": {}
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_common_confClasses.yaml": {
+      "type": "object",
+      "description": "A list of identifiers indicating that the record conforms to one or more extensions.  Ideally, the requirements of each listed extension is formally published.",
+      "required": [
+        "conformsTo"
+      ],
+      "properties": {
+        "conformsTo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/common/confClasses.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "date": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+        },
+        "interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  ".."
+                ]
+              }
+            ]
+          }
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Minimum time period resolvable in the dataset, as an ISO 8601 duration",
+          "example": [
+            "P1D"
+          ]
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/time.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_geometryGeoJSON.yaml": {
+      "oneOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_pointGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multipointGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linestringGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multilinestringGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_polygonGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multipolygonGeoJSON.yaml"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_geometrycollectionGeoJSON.yaml"
+        }
+      ],
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/geometryGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml": {
+      "type": "object",
+      "description": "The language used for textual values in this record.",
+      "required": [
+        "code"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "The language tag as per RFC-5646.",
+          "example": "el",
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The untranslated name of of the language.",
+            "example": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac"
+          },
+          "alternate": {
+            "type": "string",
+            "description": "The name of the language in another well-understood language, usually English.",
+            "example": "Greek"
+          },
+          "dir": {
+            "type": "string",
+            "description": "The direction for text in this language. The default, `ltr` (left-to-right), represents the most common situation. However, care should be taken to set the value of `dir` appropriately if the language direction is not `ltr`. Other values supported are `rtl` (right-to-left), `ttb` (top-to-bottom), and `btt` (bottom-to-top).",
+            "enum": [
+              "ltr",
+              "rtl",
+              "ttb",
+              "btt"
+            ],
+            "default": "ltr"
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/language.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_theme.yaml": {
+      "type": "object",
+      "required": [
+        "concepts",
+        "scheme"
+      ],
+      "properties": {
+        "concepts": {
+          "type": "array",
+          "description": "One or more entity/concept identifiers from this knowledge system. it is recommended that a resolvable URI be used for each entity/concept identifier.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "An identifier for the concept."
+              },
+              "title": {
+                "type": "string",
+                "description": "A human readable title for the concept."
+              },
+              "description": {
+                "type": "string",
+                "description": "A human readable description for the concept."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "A URI providing further description of the concept."
+              }
+            }
+          }
+        },
+        "scheme": {
+          "type": "string",
+          "description": "An identifier for the knowledge organization system used to classify the resource.  It is recommended that the identifier be a resolvable URI.  The list of schemes used in a searchable catalogue can be determined by inspecting the server's OpenAPI document or, if the server implements CQL2, by exposing a queryable (e.g. named `scheme`) and enumerating the list of schemes in the queryable's schema definition."
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/theme.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_contact.yaml": {
+      "type": "object",
+      "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "organization"
+          ]
+        }
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A value uniquely identifying a contact."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the responsible person."
+        },
+        "position": {
+          "type": "string",
+          "description": "The name of the role or position of the responsible person taken from the organization's formal organizational hierarchy or chart."
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization/affiliation of the contact."
+        },
+        "logo": {
+          "description": "Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type.",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_common_link.yaml"
+            },
+            {
+              "type": "object",
+              "required": [
+                "rel",
+                "type"
+              ],
+              "properties": {
+                "rel": {
+                  "enum": [
+                    "icon"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "phones": {
+          "type": "array",
+          "description": "Telephone numbers at which contact can be made.",
+          "items": {
+            "type": "object",
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "The value is the phone number itself.",
+                "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
+                "example": "+14165550142"
+              },
+              "roles": {}
+            }
+          }
+        },
+        "emails": {
+          "type": "array",
+          "description": "Email addresses at which contact can be made.",
+          "items": {
+            "type": "object",
+            "required": [
+              "value"
+            ],
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "The value is the email number itself.",
+                "format": "email"
+              },
+              "roles": {}
+            }
+          }
+        },
+        "addresses": {
+          "type": "array",
+          "description": "Physical location at which contact can be made.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "deliveryPoint": {
+                "type": "array",
+                "description": "Address lines for the location.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "city": {
+                "type": "string",
+                "description": "City for the location."
+              },
+              "administrativeArea": {
+                "type": "string",
+                "description": "State or province of the location."
+              },
+              "postalCode": {
+                "type": "string",
+                "description": "ZIP or other postal code."
+              },
+              "country": {
+                "type": "string",
+                "description": "Country of the physical address.  ISO 3166-1 is recommended."
+              },
+              "roles": {}
+            }
+          }
+        },
+        "links": {
+          "type": "array",
+          "description": "On-line information about the contact.",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_common_link.yaml"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "type"
+                ]
+              }
+            ]
+          }
+        },
+        "hoursOfService": {
+          "type": "string",
+          "description": "Time period when the contact can be contacted.",
+          "example": "Hours: Mo-Fr 10am-7pm Sa 10am-22pm Su 10am-21pm"
+        },
+        "contactInstructions": {
+          "type": "string",
+          "description": "Supplemental instructions on how or when to contact the\nresponsible party."
+        },
+        "roles": {}
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_license.yaml": {
+      "type": "string",
+      "description": "A legal document under which the resource is made available. If the resource is being made available under a common license then use an SPDX license id (https://spdx.org/licenses/). If the resource is being made available under multiple common licenses then use an SPDX license expression v2.3 string (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/) If the resource is being made available under one or more licenses that haven't been assigned an SPDX identifier or one or more custom licenses then use a string value of 'other' and include one or more links (rel=\"license\") in the `link` section of the record to the file(s) that contains the text of the license(s). There is also the case of a resource that is private or unpublished and is thus unlicensed; in this case do not register such a resource in the catalogue in the first place since there is no point in making such a resource discoverable.",
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/license.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_common_link.yaml": {
+      "type": "object",
+      "required": [
+        "href"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "url"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "hreflang": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "templated": {
+          "type": "boolean"
+        },
+        "variables": {
+          "description": "This object contains one key per substitution variable in a templated\nhref.  Each key defines the schema of one substitution variable using\na JSON Schema fragment and can thus include things like the data type\nof the variable, enumerations, minimum values, maximum values, etc.\nIn combination with a templated href, the variables section should\nprovide enough information to bind to the target resource (e.g. a WMS).",
+          "type": "object"
+        },
+        "created": {
+          "type": "string",
+          "description": "Date of creation of the resource pointed to by the link.",
+          "format": "date-time"
+        },
+        "updated": {
+          "type": "string",
+          "description": "Most recent date on which the resource pointed to by the link was changed.",
+          "format": "date-time"
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/common/link.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_pointGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Point"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "number"
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/pointGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multipointGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MultiPoint"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/multipointGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linestringGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "LineString"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linestringGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multilinestringGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MultiLineString"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/multilinestringGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_polygonGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Polygon"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 4,
+            "items": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/polygonGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_multipolygonGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "MultiPolygon"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "minItems": 4,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/multipolygonGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_geometrycollectionGeoJSON.yaml": {
+      "type": "object",
+      "required": [
+        "type",
+        "geometries"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "GeometryCollection"
+          ]
+        },
+        "geometries": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_geometryGeoJSON.yaml"
+          }
+        }
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/geometrycollectionGeoJSON.yaml"
+    },
+    "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_roles.yaml": {
+      "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/roles.yaml"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.geodcat-records"
+    }
+  ]
+}

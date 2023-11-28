@@ -6,9 +6,9 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
-            name="GeoDCAT profile of OGC API Records (Schema)"
+            name="Generic DCAT profile of OGC API Records (Schema)"
         >
-    <title>GeoDCAT profile of OGC API Records (Schema)</title>
+    <title>Generic DCAT profile of OGC API Records (Schema)</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -285,7 +285,7 @@
   color: #859900;
 }
     </style>
-    <link href="../../../stylesheets/screen-fe6ad1f7.css" rel="stylesheet" media="screen" />
+    <link href="../../../stylesheets/screen-39090b13.css" rel="stylesheet" media="screen" />
     <link href="../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
       <script src="../../../javascripts/all-84f5a356.js"></script>
 
@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="geo geo_geodcat geo_geodcat_dcat-records geo_geodcat_dcat-records_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;]">
+  <body class="geo geo_geodcat geo_geodcat_dcat-records geo_geodcat_dcat-records_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;,&quot;turtle&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,7 @@
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="jsonld">JSON-LD</a>
+              <a href="#" data-language-name="turtle">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -313,13 +314,13 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#geodcat-profile-of-ogc-api-records-ogc-geo-geodcat-dcat-records" class="toc-h1 toc-link" data-title="GeoDCAT profile of OGC API Records ogc.geo.geodcat.dcat-records">GeoDCAT profile of OGC API Records <code>ogc.geo.geodcat.dcat-records</code></a>
+            <a href="#generic-dcat-profile-of-ogc-api-records-ogc-geo-geodcat-dcat-records" class="toc-h1 toc-link" data-title="Generic DCAT profile of OGC API Records ogc.geo.geodcat.dcat-records">Generic DCAT profile of OGC API Records <code>ogc.geo.geodcat.dcat-records</code></a>
           </li>
           <li>
             <a href="#description" class="toc-h1 toc-link" data-title="Description">Description</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#geodcat-implementation-using-ogc-api-records-json-schema" class="toc-h2 toc-link" data-title="GeoDCAT implementation using OGC API records JSON schema">GeoDCAT implementation using OGC API records JSON schema</a>
+                    <a href="#dcat-baseline-bound-to-ogc-api-records-schema" class="toc-h2 toc-link" data-title="DCAT baseline bound to OGC API records schema">DCAT baseline bound to OGC API records schema</a>
                   </li>
               </ul>
           </li>
@@ -346,15 +347,15 @@
       </ul>
         <ul class="toc-footer">
             <li>Version 0.1</li>
-            <li><a href='#'>GeoDCAT profile of OGC API Records</a></li>
+            <li><a href='#'>Generic DCAT profile of OGC API Records</a></li>
             <li><a href='https://blocks.ogc.org/register.html'>Building Blocks register</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='geodcat-profile-of-ogc-api-records-ogc-geo-geodcat-dcat-records'>GeoDCAT profile of OGC API Records <code>ogc.geo.geodcat.dcat-records</code></h1>
-<p>GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile</p>
+        <h1 id='generic-dcat-profile-of-ogc-api-records-ogc-geo-geodcat-dcat-records'>Generic DCAT profile of OGC API Records <code>ogc.geo.geodcat.dcat-records</code></h1>
+<p>DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT vocabulary. This is the baseline for semantic equivalence of OGC API records and the DCAT model. GeoDCAT and other profiles reuse this to distinguish between extensions and existing properties.</p>
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -364,233 +365,19 @@
 <aside class="success">
 This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">valid</a></strong>
 </aside>
-<h1 id='description'>Description</h1><h2 id='geodcat-implementation-using-ogc-api-records-json-schema'>GeoDCAT implementation using OGC API records JSON schema</h2>
-<p>This building block defines a binding from OGC API Records schema to the GeoDCAT profile of DCAT.</p>
+<h1 id='description'>Description</h1><h2 id='dcat-baseline-bound-to-ogc-api-records-schema'>DCAT baseline bound to OGC API records schema</h2>
+<p>This building block defines a binding from OGC API Records schema to the DCAT Vocabulary.</p>
 
-<p>The JSON-LD context is derived from the published JSON-LD context constained within the JSON-LD expression of the DCAT vocabulary.</p>
+<p>The JSON-LD context is derived from the <a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld">JSON-LD context for DCAT-AP</a>.</p>
 
-<p>(Note that such a context should be provided as a reusable resource - if no changes are deemed necessary to implement an OGC API records schema then a <em>proxy</em> building block for DCAT will be created to support re-use of this context.)</p>
+<p>It uses the context for a dcat:Dataset as the basis for a Record.</p>
 <h1 id='examples'>Examples</h1><h2 id='generic-dcat-example-showing-binding-to-ogc-api-record-schema'>Generic DCAT example showing binding to OGC API record schema.</h2>
 <p>This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints</p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"1924-08-17T00:00:00Z"</span><span class="p">,</span><span class="w"> </span><span class="s2">".."</span><span class="p">],</span><span class="w">
-    </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1D"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
-          </span><span class="mi">-90</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
-          </span><span class="mi">90</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mi">180</span><span class="p">,</span><span class="w">
-          </span><span class="mi">90</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mi">180</span><span class="p">,</span><span class="w">
-          </span><span class="mi">-90</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
-          </span><span class="mi">-90</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dataset"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Ozone - daily observations"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"total"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"ozone"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"level 1.0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"column"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"dobson"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"brewer"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"saoz"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">}</span><span class="w"> </span><span class="p">,</span><span class="w">
-    </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WMO:WIS"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World Ozone and Ultraviolet Radiation Data Centre"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-             </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org"</span><span class="p">,</span><span class="w">
-             </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about"</span><span class="p">,</span><span class="w">
-             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="w">
-           </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"contactInstructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEE PAGE: https://woudc.org/contact.php"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"publisher"</span><span class="w"> </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"themes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"concepts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dobson"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brewer"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vassey"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pion"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"microtops"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spectral"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoelper"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saoz"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filter"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"concepts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atmosphericComposition"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pollution"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"observationPlatform"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rocketSounding"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"formats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"CSV"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"GeoJSON"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alternate"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This document as HTML"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/data/dataset_info.php?id=totalozone"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC Web Map Service (WMS)"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"templated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"variables"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"crs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"EPSG:4326"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"EPSG:3857"</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"maxItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enclosure"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web Accessible Folder (WAF)"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Search / Download User Interface"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/data/explore.php?dataset=totalozone"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enclosure"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Static dataset archive file"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/xml"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC Web Feature Service (WFS)"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/ows"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"license"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/about/data-policy.php"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<blockquote class="lang-specific json">
-  <p class="example-links">
-    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.json">Open in new window</a>
-    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fdcat-records%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
@@ -807,14 +594,273 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"license"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/about/data-policy.php"</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific json">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fdcat-records%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld"</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1924-08-17T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">".."</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"resolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1D"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dataset"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Ozone - daily observations"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ozone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"level 1.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"column"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dobson"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"brewer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"saoz"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WMO:WIS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World Ozone and Ultraviolet Radiation Data Centre"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"contactInstructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEE PAGE: https://woudc.org/contact.php"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"publisher"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"themes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"concepts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dobson"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brewer"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vassey"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pion"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"microtops"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spectral"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hoelper"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saoz"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filter"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"concepts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atmosphericComposition"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pollution"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"observationPlatform"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rocketSounding"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"formats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"CSV"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"GeoJSON"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"other"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alternate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This document as HTML"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/data/dataset_info.php?id=totalozone"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC Web Map Service (WMS)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"templated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"variables"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"crs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"EPSG:4326"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"EPSG:3857"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"double"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"minItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maxItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"integer"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enclosure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Web Accessible Folder (WAF)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Search / Download User Interface"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/data/explore.php?dataset=totalozone"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enclosure"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Static dataset archive file"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-01-23T00:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/xml"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC Web Feature Service (WFS)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://geo.woudc.org/ows"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"license"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/about/data-policy.php"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote class="lang-specific jsonld">
   <p class="example-links">
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.jsonld">Open in new window</a>
     <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fdcat-records%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Total Ozone - daily observations"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"Feature"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"dataset"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcat:</span><span class="n">keyword</span><span class="w"> </span><span class="s">"brewer"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"column"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"dobson"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"level 1.0"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"ozone"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"saoz"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"total"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"Polygon"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">"[[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]"</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+
+</span></code></pre></div>
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
 </blockquote>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Schema for OGCAPI records profile for GeoDCAT - defines all extra elements</span>
@@ -824,115 +870,146 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 <span class="pi">-</span> <span class="na">description</span><span class="pi">:</span> <span class="s">Other elements needed to define common approaches for GeoDCAT - profiles</span>
     <span class="s">can make specific ones mandatory as required</span>
 <span class="na">x-jsonld-extra-terms</span><span class="pi">:</span>
-  <span class="na">domain</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#domain</span>
+  <span class="na">accessRights</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/accessRights</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">scopeNote</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#scopeNote</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">label</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#label</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">isDefinedBy</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#isDefinedBy</span>
+  <span class="na">conformsTo</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/conformsTo</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">comment</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#comment</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">changeNote</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#changeNote</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">definition</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#definition</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">subPropertyOf</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#subPropertyOf</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">range</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#range</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">name</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/name</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#string</span>
-  <span class="na">homepage</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/homepage</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">rest</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#rest</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">first</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#first</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">seeAlso</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#seeAlso</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">editorialNote</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#editorialNote</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">altLabel</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#altLabel</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">workInfoHomepage</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/workInfoHomepage</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">affiliation</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://schema.org/affiliation</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">rangeIncludes</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://schema.org/rangeIncludes</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">unionOf</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#unionOf</span>
+  <span class="na">contactPoint</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#contactPoint</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
   <span class="na">creator</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/creator</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">versionInfo</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#versionInfo</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</span>
-  <span class="na">contributor</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/contributor</span>
+  <span class="na">datasetDistribution</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#distribution</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">modified</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/modified</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#date</span>
-  <span class="na">imports</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#imports</span>
+  <span class="na">description</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/description</span>
+  <span class="na">documentation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/page</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">license</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/license</span>
+  <span class="na">frequency</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/accrualPeriodicity</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">maker</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/maker</span>
+  <span class="na">geographicalCoverage</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/spatial</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">subClassOf</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#subClassOf</span>
+  <span class="na">hasVersion</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#hasVersion</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">propertyChainAxiom</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#propertyChainAxiom</span>
+  <span class="na">identifier</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/identifier</span>
+  <span class="na">isReferencedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/isReferencedBy</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">onProperty</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#onProperty</span>
+  <span class="na">isVersionOf</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#isVersionOf</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">cardinality</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#cardinality</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#nonNegativeInteger</span>
-  <span class="na">allValuesFrom</span><span class="pi">:</span>
-    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#allValuesFrom</span>
+  <span class="na">keyword</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#keyword</span>
+  <span class="na">keywords</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#keyword</span>
+  <span class="na">landingPage</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#landingPage</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">language</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/language</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">modificationDate</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/modified</span>
+  <span class="na">updated</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/modified</span>
+  <span class="na">created</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/created</span>
+  <span class="na">otherIdentifier</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/adms#identifier</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">provenance</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/provenance</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">publisher</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/publisher</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">qualifiedAttribution</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/prov#qualifiedAttribution</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">qualifiedRelation</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#qualifiedRelation</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">relatedResource</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/relation</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">releaseDate</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/issued</span>
+  <span class="na">sample</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/adms#sample</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">source</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/source</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">spatialResolution</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#spatialResolutionInMeters</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#decimal</span>
+  <span class="na">temporalCoverage</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/temporal</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">temporalResolution</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#temporalResolution</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#duration</span>
+  <span class="na">theme</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#theme</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">title</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/title</span>
+  <span class="na">type</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/type</span>
+    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">version</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#version</span>
+  <span class="na">versionNotes</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/adms#versionNotes</span>
+  <span class="na">wasGeneratedBy</span><span class="pi">:</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/prov#wasGeneratedBy</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
 <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
   <span class="na">dct</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/</span>
+  <span class="na">dcat</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#</span>
+  <span class="na">foaf</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/</span>
+  <span class="na">prov</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/prov#</span>
+  <span class="na">xsd</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#</span>
   <span class="na">owl</span><span class="pi">:</span> <span class="s">http://www.w3.org/2002/07/owl#</span>
   <span class="na">rdf</span><span class="pi">:</span> <span class="s">http://www.w3.org/1999/02/22-rdf-syntax-ns#</span>
   <span class="na">dctype</span><span class="pi">:</span> <span class="s">http://purl.org/dc/dcmitype/</span>
-  <span class="na">xsd</span><span class="pi">:</span> <span class="s">http://www.w3.org/2001/XMLSchema#</span>
   <span class="na">skos</span><span class="pi">:</span> <span class="s">http://www.w3.org/2004/02/skos/core#</span>
   <span class="na">rdfs</span><span class="pi">:</span> <span class="s">http://www.w3.org/2000/01/rdf-schema#</span>
   <span class="na">vcard</span><span class="pi">:</span> <span class="s">http://www.w3.org/2006/vcard/ns#</span>
-  <span class="na">dcat</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#</span>
-  <span class="na">prov</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/prov#</span>
-  <span class="na">foaf</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/</span>
-  <span class="na">sdo</span><span class="pi">:</span> <span class="s">http://schema.org/</span>
 
 </code></pre></div>
 <blockquote>
@@ -947,146 +1024,179 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 </ul>
 <h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:domain"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accessRights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:accessRights"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"scopeNote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skos:scopeNote"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"isDefinedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:isDefinedBy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:conformsTo"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:comment"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"changeNote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skos:changeNote"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"definition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skos:definition"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"subPropertyOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:subPropertyOf"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:range"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foaf:name"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#string"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foaf:homepage"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"rest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdf:rest"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdf:first"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"seeAlso"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"editorialNote"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skos:editorialNote"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"altLabel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"skos:altLabel"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"workInfoHomepage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foaf:workInfoHomepage"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"affiliation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdo:affiliation"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"rangeIncludes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sdo:rangeIncludes"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"unionOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:unionOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contactPoint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:contactPoint"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:creator"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"versionInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:versionInfo"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"contributor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:contributor"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"datasetDistribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:distribution"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"modified"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:modified"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#date"</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:description"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:imports"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"documentation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foaf:page"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:license"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:accrualPeriodicity"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foaf:maker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"geographicalCoverage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:spatial"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"subClassOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:subClassOf"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hasVersion"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:hasVersion"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"propertyChainAxiom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:propertyChainAxiom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:identifier"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"isReferencedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:isReferencedBy"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"onProperty"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:onProperty"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isVersionOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:isVersionOf"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"cardinality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:cardinality"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"</span><span class="w">
+    </span><span class="nl">"keyword"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:keyword"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"allValuesFrom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owl:allValuesFrom"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:keyword"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"landingPage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:landingPage"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"modificationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:modified"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:modified"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:created"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"otherIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/adms#identifier"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"provenance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:provenance"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"publisher"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:publisher"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"qualifiedAttribution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAttribution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"qualifiedRelation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:qualifiedRelation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"relatedResource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:relation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"releaseDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:issued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sample"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/adms#sample"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:source"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"spatialResolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:spatialResolutionInMeters"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#decimal"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"temporalCoverage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:temporal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"temporalResolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:temporalResolution"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#duration"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"theme"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:theme"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:title"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:version"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"versionNotes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/adms#versionNotes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"wasGeneratedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasGeneratedBy"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"foaf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/prov#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"xsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"owl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2002/07/owl#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/dcmitype/"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"xsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"skos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2004/02/skos/core#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"vcard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2006/vcard/ns#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"prov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/prov#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"foaf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sdo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://schema.org/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1099,9 +1209,8 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld" target="_blank">https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld</a></p>
 <h1 id='references'>References</h1>
 <ul>
-<li><a href="http://www.opengis.net/def/metamodel/profiles/geodcat">GeoDCAT Specification</a></li>
-<li><a href="http://www.opengis.net/def/metamodel/profiles/geodcat">GeoDCAT Resources</a></li>
-<li><a href="https://github.com/opengeospatial/GeoDCAT-SWG">GeoDCAT Specification Repository</a></li>
+<li><a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT v3 Specification</a></li>
+<li><a href="https://github.com/opengeospatial/ogcapi-records">API Records Specification Repository</a></li>
 </ul>
 <h1 id='for-developers'>For developers</h1>
 <p>The source code for this Building Block can be found in the following repository:</p>
@@ -1117,6 +1226,7 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="jsonld">JSON-LD</a>
+                <a href="#" data-language-name="turtle">RDF/Turtle</a>
           </div>
       </div>
     </div>
