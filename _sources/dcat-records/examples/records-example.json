@@ -1,11 +1,18 @@
 {
+  "@context": [
+    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld",
+    "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
+  ],
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
   ],
   "type": "Feature",
   "time": {
-    "interval": [ "1924-08-17T00:00:00Z", ".."],
+    "interval": [
+      "1924-08-17T00:00:00Z",
+      ".."
+    ],
     "resolution": "P1D"
   },
   "geometry": {
@@ -50,7 +57,9 @@
       "brewer",
       "saoz"
     ],
-    "language": { "code": "en"} ,
+    "language": {
+      "code": "en"
+    },
     "externalId": [
       {
         "scheme": "WMO:WIS",
@@ -61,14 +70,16 @@
       {
         "name": "World Ozone and Ultraviolet Radiation Data Centre",
         "links": [
-           {
-             "href": "https://woudc.org",
-             "rel": "about",
-             "type": "text/html"
-           }
+          {
+            "href": "https://woudc.org",
+            "rel": "about",
+            "type": "text/html"
+          }
         ],
         "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
-        "roles": [ "publisher" ]
+        "roles": [
+          "publisher"
+        ]
       }
     ],
     "themes": [

@@ -1,7 +1,7 @@
-## GeoDCAT implementation using OGC API records JSON schema
+## DCAT baseline bound to OGC API records schema
 
-This building block defines a binding from OGC API Records schema to the GeoDCAT profile of DCAT.
+This building block defines a binding from OGC API Records schema to the DCAT Vocabulary.
 
-The JSON-LD context is derived from the published JSON-LD context constained within the JSON-LD expression of the DCAT vocabulary.
+The JSON-LD context is derived from the [JSON-LD context for DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld).
 
-(Note that such a context should be provided as a reusable resource - if no changes are deemed necessary to implement an OGC API records schema then a _proxy_ building block for DCAT will be created to support re-use of this context.)
+It uses the context for a dcat:Dataset as the basis for a Record.
