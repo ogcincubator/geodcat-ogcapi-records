@@ -513,6 +513,7 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml
+- $ref: ../records/schema.json
 - description: Other elements needed to define common approaches for GeoDCAT - profiles
     can make specific ones mandatory as required
 x-jsonld-extra-terms:

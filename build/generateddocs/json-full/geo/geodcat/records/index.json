@@ -1,0 +1,41 @@
+
+
+{
+  "itemIdentifier": "ogc.geo.geodcat.records",
+  "name": "Proxy placeholder for OGC API Records",
+  "abstract": "To be replaced by a OGC API records schema Building Block when available",
+  "status": "under-development",
+  "dateTimeAddition": "2023-09-18T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-incubator",
+  "version": "0.1",
+  "dateOfLastChange": "2023-09-18",
+  "link": "https://github.com/opengeospatial/bblock-template",
+  "swg": {
+    "title": "OGC API - Records SWG",
+    "link": "http://www.opengis.net/def/entities/bodies/579"
+  },
+  "sources": [
+    {
+      "title": "API Records Specification Repository",
+      "link": "https://github.com/opengeospatial/ogcapi-records"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "OGC API",
+    "Metadata",
+    "Records"
+  ],
+  "shaclRules": {},
+  "schema": {
+    "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.json"
+  },
+  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records/",
+  "validationPassed": true,
+  "description": "## OGC API records schema\n\nProxy for testing examples and illustrating dependencies for OGC API Records Record object",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Normative records schema\nallOf:\n- $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml\n",
+  "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
+  "gitPath": "_sources/records"
+}

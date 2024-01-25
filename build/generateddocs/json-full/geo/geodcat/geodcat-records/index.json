@@ -8,6 +8,10 @@
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-incubator",
+  "dependsOn": [
+    "ogc.geo.json-fg.feature-lenient",
+    "ogc.geo.geodcat.dcat-records"
+  ],
   "version": "0.1",
   "dateOfLastChange": "2023-09-18",
   "link": "https://github.com/opengeospatial/bblock-template",
@@ -32,9 +36,6 @@
     "Records"
   ],
   "shaclRules": {},
-  "dependsOn": [
-    "ogc.geo.geodcat.dcat-records"
-  ],
   "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
   "schema": {
     "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml",
