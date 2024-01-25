@@ -53,6 +53,9 @@
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
+      "dependsOn": [
+        "ogc.geo.geodcat.dcat"
+      ],
       "sources": [
         {
           "title": "GeoDCAT Specification",
@@ -161,10 +164,10 @@
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
-      "swg": {
-        "title": "GeoDCAT Specification Working Group",
-        "link": "http://www.opengis.net/def/entities/bodies/713"
-      },
+      "dependsOn": [
+        "ogc.geo.geodcat.dcat",
+        "ogc.geo.geodcat.records"
+      ],
       "sources": [
         {
           "title": "DCAT v3 Specification",
@@ -182,9 +185,6 @@
         "Records"
       ],
       "shaclRules": {},
-      "dependsOn": [
-        "ogc.geo.geodcat.records"
-      ],
       "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml",
@@ -223,8 +223,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-records"
+        "ogc.geo.geodcat.dcat-records",
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
