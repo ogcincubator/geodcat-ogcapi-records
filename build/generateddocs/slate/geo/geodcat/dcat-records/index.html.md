@@ -47,8 +47,6 @@ It uses the context for a dcat:Dataset as the basis for a Record.
 
 ## Generic DCAT example showing binding to OGC API record schema.
 
-This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints
-
 
 
 ```json
@@ -555,6 +553,8 @@ This example is a GEODCAT-AP example to test backwards compatibility with SHACL 
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
 </blockquote>
 
+
+This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints
 
 
 # JSON Schema

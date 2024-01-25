@@ -44,8 +44,8 @@ Mainly this will be used to test examples against the GeoDCAT spec and any trans
 
 ## GeoDCAT minimal example
 
-This example is a GEODCAT example showing only defined elements
 
+This example is a GEODCAT example showing only defined elements
 
 # References
 

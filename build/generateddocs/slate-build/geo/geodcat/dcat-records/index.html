@@ -287,7 +287,7 @@
     </style>
     <link href="../../../stylesheets/screen-39090b13.css" rel="stylesheet" media="screen" />
     <link href="../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
-      <script src="../../../javascripts/all-84f5a356.js"></script>
+      <script src="../../../javascripts/all-a25e0d73.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -371,9 +371,7 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 <p>The JSON-LD context is derived from the <a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld">JSON-LD context for DCAT-AP</a>.</p>
 
 <p>It uses the context for a dcat:Dataset as the basis for a Record.</p>
-<h1 id='examples'>Examples</h1><h2 id='generic-dcat-example-showing-binding-to-ogc-api-record-schema'>Generic DCAT example showing binding to OGC API record schema.</h2>
-<p>This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints</p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h1 id='examples'>Examples</h1><h2 id='generic-dcat-example-showing-binding-to-ogc-api-record-schema'>Generic DCAT example showing binding to OGC API record schema.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
@@ -862,6 +860,8 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
   <p class="example-links">
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
 </blockquote>
+
+<p>This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints</p>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Schema for OGCAPI records profile for GeoDCAT - defines all extra elements</span>
   <span class="s">defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF</span>
