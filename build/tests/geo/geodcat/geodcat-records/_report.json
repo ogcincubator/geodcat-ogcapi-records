@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT profile of OGC API Records",
   "bblockName": "GeoDCAT profile of OGC API Records",
   "bblockId": "ogc.geo.geodcat.geodcat-records",
-  "generated": "2024-02-06T04:51:46.791804+00:00",
+  "generated": "2024-02-08T07:24:28.115538+00:00",
   "result": true,
   "items": [
     {
@@ -55,12 +55,73 @@
           "entries": []
         }
       ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-records/example_1_1.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": []
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 73,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": []
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": []
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
     }
   ],
   "globalErrors": {},
   "counts": {
-    "total": 1,
-    "passed": 1,
+    "total": 2,
+    "passed": 2,
     "failed": 0
   }
 }
