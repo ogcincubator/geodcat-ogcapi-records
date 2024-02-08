@@ -2,60 +2,9 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT profile of OGC API Records",
   "bblockName": "GeoDCAT profile of OGC API Records",
   "bblockId": "ogc.geo.geodcat.geodcat-records",
-  "generated": "2024-02-08T07:24:28.115538+00:00",
+  "generated": "2024-02-08T07:34:55.992402+00:00",
   "result": true,
   "items": [
-    {
-      "source": {
-        "type": "TEST_RESOURCE",
-        "requireFail": false,
-        "filename": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/tests/geodcat-ap-regression.ttl",
-        "language": "ttl"
-      },
-      "result": true,
-      "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
-        {
-          "name": "FILES",
-          "title": "Files",
-          "entries": [
-            {
-              "isError": false,
-              "message": "Using geodcat-ap-regression.ttl from test resources"
-            }
-          ]
-        },
-        {
-          "name": "JSON_SCHEMA",
-          "title": "JSON Schema",
-          "entries": []
-        },
-        {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
-          "name": "SHACL",
-          "title": "SHACL",
-          "entries": []
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
-        }
-      ]
-    },
     {
       "source": {
         "type": "EXAMPLE",
@@ -79,14 +28,6 @@
             {
               "isError": false,
               "message": "Using example_1_1.ttl from examples"
-            },
-            {
-              "op": "ttl-create",
-              "empty": false,
-              "filename": "example_1_1.ttl",
-              "size": 73,
-              "isError": false,
-              "message": "Output Turtle example_1_1.ttl created"
             }
           ]
         },
@@ -103,7 +44,13 @@
         {
           "name": "TURTLE",
           "title": "Turtle",
-          "entries": []
+          "entries": [
+            {
+              "exception": "BadSyntax",
+              "isError": false,
+              "message": "at line 1 of <>:\nBad syntax (expected directive or statement) at ^ in:\n\"b''^b'{\\n  \"@context\": [\\n    \"https://opengeospatial.github.io/bblo'...\""
+            }
+          ]
         },
         {
           "name": "SHACL",
@@ -120,8 +67,8 @@
   ],
   "globalErrors": {},
   "counts": {
-    "total": 2,
-    "passed": 2,
+    "total": 1,
+    "passed": 1,
     "failed": 0
   }
 }

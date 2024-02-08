@@ -366,98 +366,236 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 <p>This profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.</p>
 
 <p>That building block is expected to be stable, whilst the GeoDCAT profile is under development.</p>
-<h1 id='examples'>Examples</h1><h2 id='geodcat-ap-backwards-compatibility-example'>GeoDCAT-AP backwards compatibility example.</h2><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">adms:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/adms#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dct:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nl">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geodcat:</span><span class="w"> </span><span class="nl">&lt;http://data.europa.eu/930/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">gsp:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">locn:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/locn#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">prov:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/prov#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">record:</span><span class="w"> </span><span class="nl">&lt;https://some.catalogue/record/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">resource:</span><span class="w"> </span><span class="nl">&lt;https://some.catalogue/resource/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">vcard:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-</span><span class="nn">resource:</span><span class="n">eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">geodcat:</span><span class="n">custodian</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/corporate-body/EEA&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">accrualPeriodicity</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/frequency/IRREG&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/def/crs/EPSG/0/3035&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">created</span><span class="w"> </span><span class="s">"2019-10-31"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"""
-    The data set includes the rasterized noise contours which have been
-    reported by countries under the terms of the Environmental Noise
-    Directive (END) by the 33 EEA member countries (EEA-33) excluding
-    Turkey for the third round of noise mapping in 2017. The data set
-    includes submissions from the countries until 01/01/2019.
-    ...
-  """</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00"</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">language</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/language/ENG&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">provenance</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">ProvenanceStatement</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"The raster data sets have been created out of the Noise Spatial Database, which in turn contains all versions delivered by the relevant countries (EU and EFTA) to Reportnet (CDR). The data from Reportnet is automatically incorporated into the database, with the exception of those data sets which require a manual review (due to problems with naming conventions or Coordinate Reference System). The data set covers any submission by the countries until 01/01/2019."</span><span class="na">@en</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">Location</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dcat:</span><span class="n">bbox</span><span class="w"> </span><span class="s">"&lt;gml:Envelope srsName=\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\"&gt;&lt;gml:lowerCorner&gt;-31.285 27.642&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;34.099 70.075&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;"</span><span class="p">^^</span><span class="nn">gsp:</span><span class="n">gmlLiteral,
-</span><span class="w">        </span><span class="s">"POLYGON((-31.285 70.075,34.099 70.075,34.099 27.642,-31.285 27.642,-31.285 70.075))"</span><span class="p">^^</span><span class="nn">gsp:</span><span class="n">wktLiteral</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">subject</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment&gt;</span><span class="p">,</span><span class="w">
-    </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health&gt;</span><span class="p">,</span><span class="w">
-    </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">PeriodOfTime</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dcat:</span><span class="n">endDate</span><span class="w"> </span><span class="s">"2016-12-31"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dcat:</span><span class="n">startDate</span><span class="w"> </span><span class="s">"2016-01-01"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">title</span><span class="w"> </span><span class="s">"Noise contours data reported under Environmental Noise Directive (END) 2017 (raster 10m) - version 2019, Oct. 2019"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dct:</span><span class="n">type</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dcat:</span><span class="n">contactPoint</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">vcard:</span><span class="n">Organization</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">vcard:</span><span class="n">fn</span><span class="w"> </span><span class="s">"European Environment Agency"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">vcard:</span><span class="n">hasAddress</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">vcard:</span><span class="n">Address</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">vcard:</span><span class="n">country-name</span><span class="w"> </span><span class="s">"Denmark"</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">vcard:</span><span class="n">locality</span><span class="w"> </span><span class="s">"Copenhagen"</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">vcard:</span><span class="n">postal-code</span><span class="w"> </span><span class="s">"1050"</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">vcard:</span><span class="n">region</span><span class="w"> </span><span class="s">"K"</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">vcard:</span><span class="n">street-address</span><span class="w"> </span><span class="s">"Kongens Nytorv 6"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">vcard:</span><span class="n">hasEmail</span><span class="w"> </span><span class="nl">&lt;mailto:info@eea.europa.eu&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">vcard:</span><span class="n">hasURL</span><span class="w"> </span><span class="nl">&lt;http://www.eea.europa.eu&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dcat:</span><span class="n">distribution</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">Distribution</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dct:</span><span class="n">accessRights</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"NoiseContours_air_lnight"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dct:</span><span class="n">format</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/file-type/TIFF&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dct:</span><span class="n">license</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">LicenseDocument</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"The full noise contour maps data set is in principle only available for EEA internal use. A public version of the data set may in the future be available, excluding those data sets for which there is any limitation or restriction in their use (beyond acknowledgement)."</span><span class="na">@en</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">adms:</span><span class="n">representationTechnique</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dcat:</span><span class="n">accessService</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">DataService</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">dct:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengeospatial.org/standards/wms&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">dcat:</span><span class="n">endpointDescription</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">dcat:</span><span class="n">endpointURL</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">dcat:</span><span class="n">accessURL</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dcat:</span><span class="n">keyword</span><span class="w"> </span><span class="s">"Environmental Noise Directive"</span><span class="na">@en</span><span class="p">,</span><span class="w">
-    </span><span class="s">"Noise map"</span><span class="na">@en</span><span class="p">,</span><span class="w">
-    </span><span class="s">"agglomerations"</span><span class="na">@en</span><span class="p">,</span><span class="w">
-    </span><span class="s">"noise contour"</span><span class="na">@en</span><span class="p">,</span><span class="w">
-    </span><span class="s">"noise source"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dcat:</span><span class="n">spatialResolutionInMeters</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">dcat:</span><span class="n">theme</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/theme/hh&gt;</span><span class="p">,</span><span class="w">
-    </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/data-theme/HEAL&gt;</span><span class="p">,</span><span class="w">
-    </span><span class="nl">&lt;http://www.eionet.europa.eu/gemet/concept/2884&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">prov:</span><span class="n">wasUsedBy</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Activity</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">prov:</span><span class="n">generated</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Entity</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"See the referenced specification"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">dct:</span><span class="n">type</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-      </span><span class="nn">prov:</span><span class="n">qualifiedAssociation</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Association</span><span class="w"> </span><span class="p">;</span><span class="w">
-          </span><span class="nn">prov:</span><span class="n">hadPlan</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Plan</span><span class="w"> </span><span class="p">;</span><span class="w">
-              </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nl">&lt;http://data.europa.eu/eli/reg/2010/1089&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">foaf:</span><span class="n">isPrimaryTopicOf</span><span class="w"> </span><span class="nn">record:</span><span class="n">e7807ecb-a8e6-4a33-baa2-d119eec9ce24</span><span class="w"> </span><span class="p">;</span><span class="w">
-  </span><span class="nn">foaf:</span><span class="n">page</span><span class="w"> </span><span class="nl">&lt;https://noise.eea.europa.eu/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-
+<h1 id='examples'>Examples</h1><h2 id='geodcat-ap-backwards-compatibility-example'>GeoDCAT-AP backwards compatibility example.</h2><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="p">{</span><span class="w">
+  </span><span class="s">"@context"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
+  </span><span class="s">"conformsTo"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="s">"time"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s">"interval"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s">"1924-08-17T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s">".."</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"resolution"</span><span class="nn">:</span><span class="w"> </span><span class="s">"P1D"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s">"geometry"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"coordinates"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mi">-180</span><span class="p">,</span><span class="w">
+          </span><span class="mi">-90</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s">"properties"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s">"created"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"updated"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"dataset"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Total Ozone - daily observations"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"description"</span><span class="nn">:</span><span class="w"> </span><span class="s">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="p">,</span><span class="w">
+    </span><span class="s">"keywords"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s">"total"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"ozone"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"level 1.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"column"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"dobson"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"brewer"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"saoz"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"language"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s">"code"</span><span class="nn">:</span><span class="w"> </span><span class="s">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s">"externalId"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s">"scheme"</span><span class="nn">:</span><span class="w"> </span><span class="s">"WMO:WIS"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"value"</span><span class="nn">:</span><span class="w"> </span><span class="s">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"contacts"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s">"name"</span><span class="nn">:</span><span class="w"> </span><span class="s">"World Ozone and Ultraviolet Radiation Data Centre"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"links"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org"</span><span class="p">,</span><span class="w">
+            </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"about"</span><span class="p">,</span><span class="w">
+            </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"text/html"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s">"contactInstructions"</span><span class="nn">:</span><span class="w"> </span><span class="s">"SEE PAGE: https://woudc.org/contact.php"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"roles"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s">"publisher"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"themes"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s">"concepts"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"dobson"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"brewer"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"vassey"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"pion"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"microtops"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"spectral"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"hoelper"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"saoz"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"filter"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s">"scheme"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s">"concepts"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"atmosphericComposition"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"pollution"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"observationPlatform"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s">"id"</span><span class="nn">:</span><span class="w"> </span><span class="s">"rocketSounding"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s">"scheme"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"formats"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s">"CSV"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"GeoJSON"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s">"license"</span><span class="nn">:</span><span class="w"> </span><span class="s">"other"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s">"links"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"alternate"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"This document as HTML"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org/data/dataset_info.php?id=totalozone"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"item"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"OGC Web Map Service (WMS)"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"templated"</span><span class="nn">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s">"variables"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s">"crs"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s">"description"</span><span class="nn">:</span><span class="w"> </span><span class="s">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"enum"</span><span class="nn">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s">"EPSG:4326"</span><span class="p">,</span><span class="w">
+            </span><span class="s">"EPSG:3857"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s">"bbox"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s">"description"</span><span class="nn">:</span><span class="w"> </span><span class="s">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"array"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"items"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"number"</span><span class="p">,</span><span class="w">
+            </span><span class="s">"format"</span><span class="nn">:</span><span class="w"> </span><span class="s">"double"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s">"minItems"</span><span class="nn">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s">"maxItems"</span><span class="nn">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s">"width"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s">"description"</span><span class="nn">:</span><span class="w"> </span><span class="s">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"format"</span><span class="nn">:</span><span class="w"> </span><span class="s">"integer"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"minimum"</span><span class="nn">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+          </span><span class="s">"maximum"</span><span class="nn">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s">"height"</span><span class="nn">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s">"description"</span><span class="nn">:</span><span class="w"> </span><span class="s">"..."</span><span class="p">,</span><span class="w">
+          </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"number"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"format"</span><span class="nn">:</span><span class="w"> </span><span class="s">"integer"</span><span class="p">,</span><span class="w">
+          </span><span class="s">"minimum"</span><span class="nn">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+          </span><span class="s">"maximum"</span><span class="nn">:</span><span class="w"> </span><span class="mi">5000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"enclosure"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Web Accessible Folder (WAF)"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"created"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"updated"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"search"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"text/html"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Data Search / Download User Interface"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org/data/explore.php?dataset=totalozone"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"enclosure"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"application/zip"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"Static dataset archive file"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"created"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"updated"</span><span class="nn">:</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"service"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"type"</span><span class="nn">:</span><span class="w"> </span><span class="s">"application/xml"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"title"</span><span class="nn">:</span><span class="w"> </span><span class="s">"OGC Web Feature Service (WFS)"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://geo.woudc.org/ows"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s">"rel"</span><span class="nn">:</span><span class="w"> </span><span class="s">"license"</span><span class="p">,</span><span class="w">
+      </span><span class="s">"href"</span><span class="nn">:</span><span class="w"> </span><span class="s">"https://woudc.org/about/data-policy.php"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote class="lang-specific turtle">
   <p class="example-links">
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-records/example_1_1.ttl">Open in new window</a>
 </blockquote>
 
-<p>This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints</p>
+<p>Examples of OGC API Records mapped to GeoDCAT </p>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Schema for OGCAPI records profile for GeoDCAT - defines all extra elements</span>
   <span class="s">defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF</span>

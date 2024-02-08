@@ -26,7 +26,7 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-02-08T07:24:28.128474+00:00</small>
+            <small class="datetime">Generated at 2024-02-08T07:34:56.008274+00:00</small>
                 <p class="summary fw-semibold text-success">
                     Number of passing building blocks: 5 / 5 (100%)
                 </p>
@@ -65,13 +65,39 @@
 
                                     <span class="badge text-bg-success me-2">
                                             Passed
-                                            (100%)
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
                             <div class="accordion-collapse collapse " id="bblock-collapse-1">
                                 <div class="accordion-body">
-                                        <div class="alert alert-info mb-0">No tests were found for this building block.</div>
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
+                                        </p>
+                                        <div class="card mb-2 validation-item ">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
+                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat/tests/geodcat-ap-regression.ttl" target="_blank">geodcat-ap-regression.ttl</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using geodcat-ap-regression.ttl from test resources</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +144,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-1"
-                                                            aria-expanded="false" aria-controls="uid-1"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-2"
+                                                            aria-expanded="false" aria-controls="uid-2"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -130,7 +156,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-1">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-2">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
@@ -163,32 +189,8 @@
                             <div class="accordion-collapse collapse " id="bblock-collapse-4">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                            Test passed: 1 / 1
                                         </p>
-                                        <div class="card mb-2 validation-item ">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-2"
-                                                            aria-expanded="false" aria-controls="uid-2"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/tests/geodcat-ap-regression.ttl" target="_blank">geodcat-ap-regression.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-2">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                    <div class="font-monospace entry-message section-files ">Using geodcat-ap-regression.ttl from test resources</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
@@ -209,7 +211,10 @@
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.ttl from examples</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Turtle</div>
+                                                                    <div class="font-monospace entry-message section-turtle ">at line 1 of &lt;&gt;:
+Bad syntax (expected directive or statement) at ^ in:
+&quot;b&#x27;&#x27;^b&#x27;{\n  &quot;@context&quot;: [\n    &quot;https://opengeospatial.github.io/bblo&#x27;...&quot;</div>
                                                     </div>
                                                 </div>
                                             </div>

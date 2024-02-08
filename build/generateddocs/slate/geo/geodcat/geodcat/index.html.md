@@ -26,7 +26,7 @@ Provides a CI/CT/CD environment for the GeoDCAT definition.
 </p>
 
 <aside class="success">
-This building block is <strong>valid</strong>
+This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
