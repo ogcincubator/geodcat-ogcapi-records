@@ -15,14 +15,14 @@
     dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/geodcat-records/index.md" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/geodcat-records/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-records" ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/geodcat-records/" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-records" ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/geodcat-records/index.json" ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2024-02-08"^^xsd:date ;
+    dct:modified "2024-02-14"^^xsd:date ;
     dct:source <http://www.opengis.net/def/metamodel/profiles/geodcat>,
         <https://github.com/opengeospatial/GeoDCAT-SWG> ;
     skos:inScheme <https://ogcincubator.github.io/geodcat-ogcapi-records/> ;
@@ -38,30 +38,32 @@
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
+<https://github.com/opengeospatial/ogcapi-records> rdfs:label "API Records Specification Repository" .
+
 <https://ogcincubator.github.io/ogc.geo.geodcat.dcat-records> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "Generic DCAT profile of OGC API Records" ;
     dct:abstract "DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT vocabulary. This is the baseline for semantic equivalence of OGC API records and the DCAT model. GeoDCAT and other profiles reuse this to distinguish between extensions and existing properties." ;
     dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/dcat-records/index.json" ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.dcat-records" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/dcat-records/" ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/dcat-records/index.json" ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/dcat-records/index.md" ] ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/dcat-records/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/dcat-records/" ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2024-02-08"^^xsd:date ;
+    dct:modified "2024-02-14"^^xsd:date ;
     dct:source <https://github.com/opengeospatial/ogcapi-records>,
         <https://www.w3.org/TR/vocab-dcat-3/> ;
     skos:inScheme <https://ogcincubator.github.io/geodcat-ogcapi-records/> ;
     dcat:keyword "DCAT",
         "Records",
         "profile" ;
-    bblocks:dependsOn <https://ogcincubator.github.io/ogc.geo.geodcat.dcat>,
-        <https://ogcincubator.github.io/ogc.geo.geodcat.records> ;
+    bblocks:dependsOn <https://ogcincubator.github.io/ogc.api.records.core>,
+        <https://ogcincubator.github.io/ogc.geo.geodcat.dcat> ;
     bblocks:hasJsonLdContext <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld> ;
     bblocks:hasSchema <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.json>,
         <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml> ;
@@ -75,16 +77,16 @@
     rdfs:label "GeoDCAT profile" ;
     dct:abstract "Provides a CI/CT/CD environment for the GeoDCAT definition." ;
     dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/geodcat/" ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/geodcat/index.md" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/geodcat/" ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat" ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/geodcat/index.json" ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2024-02-08"^^xsd:date ;
+    dct:modified "2024-02-14"^^xsd:date ;
     dct:source <http://www.opengis.net/def/metamodel/profiles/geodcat>,
         <https://github.com/opengeospatial/GeoDCAT-SWG>,
         <https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld> ;
@@ -92,33 +94,6 @@
     dcat:keyword "DCAT",
         "profile" ;
     bblocks:dependsOn <https://ogcincubator.github.io/ogc.geo.geodcat.dcat> ;
-    bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
-    bblocks:status <http://www.opengis.net/def/status/under-development> .
-
-<https://ogcincubator.github.io/ogc.geo.geodcat.records> a skos:Concept,
-        dcat:Dataset,
-        bblocks:Schema ;
-    rdfs:label "Proxy placeholder for OGC API Records" ;
-    dct:abstract "To be replaced by a OGC API records schema Building Block when available" ;
-    dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/records/index.json" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/records/" ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.records" ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/records/index.md" ] ;
-    dct:hasVersion "0.1" ;
-    dct:modified "2024-02-08"^^xsd:date ;
-    dct:source <https://github.com/opengeospatial/ogcapi-records> ;
-    skos:inScheme <https://ogcincubator.github.io/geodcat-ogcapi-records/> ;
-    dcat:keyword "Metadata",
-        "OGC API",
-        "Records" ;
-    bblocks:dependsOn <https://ogcincubator.github.io/ogc.geo.json-fg.feature-lenient> ;
-    bblocks:hasSchema <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.json>,
-        <https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.yaml> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> .
 
@@ -131,24 +106,22 @@
 
 <https://github.com/opengeospatial/GeoDCAT-SWG> rdfs:label "GeoDCAT Specification Repository" .
 
-<https://github.com/opengeospatial/ogcapi-records> rdfs:label "API Records Specification Repository" .
-
 <https://ogcincubator.github.io/ogc.geo.geodcat.dcat> a skos:Concept,
         dcat:Dataset,
         bblocks:Schema ;
     rdfs:label "Proxy placeholder for DCAT" ;
     dct:abstract "For completeness, allows machine readable validations to be scoped to DCAT itself." ;
     dct:created "2023-09-18T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.dcat" ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/dcat/index.json" ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/dcat/index.md" ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/dcat/index.json" ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.dcat" ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/dcat/" ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2024-02-08"^^xsd:date ;
+    dct:modified "2024-02-14"^^xsd:date ;
     skos:inScheme <https://ogcincubator.github.io/geodcat-ogcapi-records/> ;
     dcat:keyword "DCAT",
         "Proxy" ;
@@ -164,14 +137,15 @@
 """ ;
     skos:prefLabel "GeoDCAT implementation using OGC API Records" ;
     bblocks:hasValidationReport <https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/report.html> ;
-    bblocks:imports <https://opengeospatial.github.io/bblocks/register.json> .
+    bblocks:imports <https://ogcincubator.github.io/bblocks-ogcapi-records/build/register.json>,
+        <https://opengeospatial.github.io/bblocks/register.json> .
 
 [] a prov:Activity ;
-    prov:endedAtTime "2024-02-08T07:38:03.980484"^^xsd:dateTime ;
-    prov:startedAtTime "2024-02-08T07:38:03.914446"^^xsd:dateTime ;
+    prov:endedAtTime "2024-02-14T09:25:13.502337"^^xsd:dateTime ;
+    prov:startedAtTime "2024-02-14T09:25:13.438681"^^xsd:dateTime ;
     prov:used [ a prov:Entity ;
             dct:format "application/json" ;
-            dct:hasVersion "git:39f0eebe547380a40e79c738ec4696b2a23cb5c6" ;
+            dct:hasVersion "git:0e66ea9830ad87d1f401f7ac08ffda233734f380" ;
             rdfs:seeAlso <https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json> ],
         [ a prov:Entity ;
             dct:format "application/yaml" ;

@@ -4,13 +4,7 @@
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.records"
-        },
-        {
-          "description": "Other elements needed to define common approaches for GeoDCAT - profiles can make specific ones mandatory as required"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.core"
         }
       ],
       "x-jsonld-extra-terms": {
@@ -193,6 +187,16 @@
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json"
     },
+    "ogc.api.records.core": {
+      "description": "Normative records schema",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml"
+        }
+      ],
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/core/schema.json"
+    },
     "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml": {
       "type": "object",
       "required": [
@@ -353,16 +357,6 @@
         }
       },
       "x-schema-source": "https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml"
-    },
-    "ogc.geo.geodcat.records": {
-      "description": "Normative records schema",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml"
-        }
-      ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/records/schema.json"
     },
     "raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml": {
       "type": "object",

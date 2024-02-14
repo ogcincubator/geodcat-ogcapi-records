@@ -101,12 +101,12 @@
   "name": "GeoDCAT implementation using OGC API Records",
   "abstract": "Defines Building Blocks to test GeoDCAT examples and to separate and re-use generic DCAT bindings from GeoDCAT specific bindings for various data schemas that can inform GeoDCAT requirements.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions) can be mapped to either DCAT or added to GeoDCAT as required.\n",
-  "modified": "2024-02-08T07:37:54.791552",
+  "modified": "2024-02-14T09:25:01.744350",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"d3ca95c6a06a13ca49593aac13774e5db6835687",
-      "shortCommitId": "\"d3ca95",
-      "date": "2024-02-02T10:25:57+00:00\""
+      "commitId": "\"14ee607a3043861f45036785e2601c2f26d55790",
+      "shortCommitId": "\"14ee60",
+      "date": "2024-02-08T21:40:56+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -115,7 +115,8 @@
   "viewerURL": "https://ogcincubator.github.io/geodcat-ogcapi-records/",
   "validationReport": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/report.html",
   "imports": [
-    "https://opengeospatial.github.io/bblocks/register.json"
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://ogcincubator.github.io/bblocks-ogcapi-records/build/register.json"
   ],
   "@type": [
     "skos:ConceptScheme",
@@ -132,7 +133,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-02-08",
+      "dateOfLastChange": "2024-02-14",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [],
       "scope": "dev",
@@ -168,129 +169,6 @@
       ]
     },
     {
-      "itemIdentifier": "ogc.geo.geodcat.geodcat",
-      "name": "GeoDCAT profile",
-      "abstract": "Provides a CI/CT/CD environment for the GeoDCAT definition.",
-      "status": "under-development",
-      "dateTimeAddition": "2023-09-18T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-incubator",
-      "version": "0.1",
-      "dateOfLastChange": "2024-02-08",
-      "link": "https://github.com/opengeospatial/bblock-template",
-      "dependsOn": [
-        "ogc.geo.geodcat.dcat"
-      ],
-      "sources": [
-        {
-          "title": "GeoDCAT Specification",
-          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
-        },
-        {
-          "title": "GeoDCAT Specification Repository",
-          "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
-        },
-        {
-          "title": "DCAT-AP JSON-LD context",
-          "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
-        }
-      ],
-      "scope": "dev",
-      "tags": [
-        "DCAT",
-        "profile"
-      ],
-      "shaclRules": {},
-      "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/geodcat/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/geodcat/index.json"
-        },
-        "slate": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/geodcat/"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat"
-        }
-      },
-      "@type": [
-        "bblocks:Schema",
-        "skos:Concept",
-        "dcat:Dataset"
-      ]
-    },
-    {
-      "itemIdentifier": "ogc.geo.geodcat.records",
-      "name": "Proxy placeholder for OGC API Records",
-      "abstract": "To be replaced by a OGC API records schema Building Block when available",
-      "status": "under-development",
-      "dateTimeAddition": "2023-09-18T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-incubator",
-      "version": "0.1",
-      "dateOfLastChange": "2024-02-08",
-      "link": "https://github.com/opengeospatial/bblock-template",
-      "dependsOn": [
-        "ogc.geo.json-fg.feature-lenient"
-      ],
-      "swg": {
-        "title": "OGC API - Records SWG",
-        "link": "http://www.opengis.net/def/entities/bodies/579"
-      },
-      "sources": [
-        {
-          "title": "API Records Specification Repository",
-          "link": "https://github.com/opengeospatial/ogcapi-records"
-        }
-      ],
-      "scope": "dev",
-      "tags": [
-        "OGC API",
-        "Metadata",
-        "Records"
-      ],
-      "shaclRules": {},
-      "schema": {
-        "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.yaml",
-        "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/records/schema.json"
-      },
-      "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records/schema.yaml",
-      "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records/",
-      "validationPassed": true,
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/records/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/records/index.json"
-        },
-        "slate": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/records/"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.records"
-        }
-      },
-      "@type": [
-        "bblocks:Schema",
-        "skos:Concept",
-        "dcat:Dataset"
-      ]
-    },
-    {
       "itemIdentifier": "ogc.geo.geodcat.dcat-records",
       "name": "Generic DCAT profile of OGC API Records",
       "abstract": "DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT vocabulary. This is the baseline for semantic equivalence of OGC API records and the DCAT model. GeoDCAT and other profiles reuse this to distinguish between extensions and existing properties.",
@@ -299,11 +177,11 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-02-08",
+      "dateOfLastChange": "2024-02-14",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "ogc.geo.geodcat.records",
-        "ogc.geo.geodcat.dcat"
+        "ogc.geo.geodcat.dcat",
+        "ogc.api.records.core"
       ],
       "sources": [
         {
@@ -357,6 +235,67 @@
       ]
     },
     {
+      "itemIdentifier": "ogc.geo.geodcat.geodcat",
+      "name": "GeoDCAT profile",
+      "abstract": "Provides a CI/CT/CD environment for the GeoDCAT definition.",
+      "status": "under-development",
+      "dateTimeAddition": "2023-09-18T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-incubator",
+      "version": "0.1",
+      "dateOfLastChange": "2024-02-14",
+      "link": "https://github.com/opengeospatial/bblock-template",
+      "dependsOn": [
+        "ogc.geo.geodcat.dcat"
+      ],
+      "sources": [
+        {
+          "title": "GeoDCAT Specification",
+          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+        },
+        {
+          "title": "GeoDCAT Specification Repository",
+          "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+        },
+        {
+          "title": "DCAT-AP JSON-LD context",
+          "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
+        }
+      ],
+      "scope": "dev",
+      "tags": [
+        "DCAT",
+        "profile"
+      ],
+      "shaclRules": {},
+      "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat/",
+      "validationPassed": true,
+      "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat/",
+      "documentation": {
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/geodcat/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/geodcat/index.json"
+        },
+        "slate": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/geodcat/"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat"
+        }
+      },
+      "@type": [
+        "bblocks:Schema",
+        "skos:Concept",
+        "dcat:Dataset"
+      ]
+    },
+    {
       "itemIdentifier": "ogc.geo.geodcat.geodcat-records",
       "name": "GeoDCAT profile of OGC API Records",
       "highlighted": true,
@@ -366,11 +305,11 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-records"
+        "ogc.geo.geodcat.dcat-records",
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-02-08",
+      "dateOfLastChange": "2024-02-14",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [
         {
