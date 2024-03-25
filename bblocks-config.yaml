@@ -2,13 +2,14 @@ identifier-prefix: ogc.geo.geodcat.
 
 name: GeoDCAT implementation using OGC API Records
 abstract: | 
-  Defines Building Blocks to test GeoDCAT examples and to separate and re-use generic DCAT bindings from GeoDCAT specific bindings for various data schemas that can inform GeoDCAT requirements.
+  Building Blocks linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.
 description: |
-  This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions) can be mapped to either DCAT or added to GeoDCAT as required.
+  This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.
 
 imports:
   - default
   - https://ogcincubator.github.io/bblocks-ogcapi-records/build/register.json
+  - https://ogcincubator.github.io/bblocks-stac/build/register.json
   # note that a PROV profile is intended as a key example of extending GeoDCAT
   # - https://ogcincubator.github.io/bblock-prov-schema/build/register.json
 
