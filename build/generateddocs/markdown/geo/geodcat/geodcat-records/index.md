@@ -482,6 +482,7 @@ Examples of OGC API Records mapped to GeoDCAT
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> rdfs:label "Total Ozone - daily observations" ;
     dct:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
@@ -499,7 +500,7 @@ Examples of OGC API Records mapped to GeoDCAT
         "saoz",
         "total" ;
     geojson:geometry [ dct:type "Polygon" ;
-            geojson:coordinates ( "[[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]" ) ] .
+            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] .
 
 
 ```
@@ -511,7 +512,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: ../dcat-records/schema.json
+- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml
 - description: Other elements required for DCAT
 
 ```

@@ -1,0 +1,442 @@
+Validation report for ogc.geo.geodcat.geodcat-stac-eo - GeoDCAT profile of STAC Electro-Optical extension
+Generated 2024-03-25T09:11:42.776122+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'time' is a required property
+
+Failed validating 'required' in schema['allOf'][1]['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][0]:
+    {'properties': {'conformsTo': {'items': {'type': 'string'},
+                                   'type': 'array'},
+                    'geometry': {'oneOf': [{'enum': [None]},
+                                           {'$ref': 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'}]},
+                    'id': {'description': 'A unique identifier of the '
+                                          'catalog record.',
+                           'format': 'uri',
+                           'type': 'string'},
+                    'linkTemplates': {'items': {'$ref': 'linkTemplate.yaml'},
+                                      'type': 'array'},
+                    'links': {'items': {'$ref': 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'},
+                              'type': 'array'},
+                    'properties': {'properties': {'contacts': {'description': 'A '
+                                                                              'list '
+                                                                              'of '
+                                                                              'contacts '
+                                                                              'qualified '
+                                                                              'by '
+                                                                              'their '
+                                                                              'role(s) '
+                                                                              'in '
+                                                                              'association '
+                                                                              'to '
+                                                                              'the '
+                                                                              'record '
+                                                                              'or '
+                                                                              'the '
+                                                                              'resource '
+                                                                              'described '
+                                                                              'by '
+                                                                              'the '
+                                                                              'record.',
+                                                               'items': {'$ref': 'contact.yaml'},
+                                                               'type': 'array'},
+                                                  'created': {'description': 'Date '
+                                                                             'of '
+                                                                             'creation '
+                                                                             'of '
+                                                                             'this '
+                                                                             'record.',
+                                                              'format': 'date-time',
+                                                              'type': 'string'},
+                                                  'description': {'description': 'A '
+                                                                                 'free-text '
+                                                                                 'account '
+                                                                                 'of '
+                                                                                 'the '
+                                                                                 'resource.',
+                                                                  'type': 'string'},
+                                                  'externalIds': {'description': 'An '
+                                                                                 'identifier '
+                                                                                 'for '
+                                                                                 'the '
+                                                                                 'resource '
+                                                                                 'assigned '
+                                                                                 'by '
+                                                                                 'an '
+                                                                                 'external '
+                                                                                 '(to '
+                                                                                 'the '
+                                                                                 'catalog) '
+                                                                                 'entity.',
+                                                                  'items': {'properties': {'scheme': {'description': 'A '
+                                                                                                                     'reference '
+                                                                                                                     'to '
+                                                                                                                     'an '
+                                                                                                                     'authority '
+                                                                                                                     'or '
+                                                                                                                     'identifier '
+                                                                                                                     'for '
+                                                                                                                     'a '
+                                                                                                                     'knowledge '
+                                                                                                                     'organization '
+                                                                                                                     'system '
+                                                                                                                     'from '
+                                                                                                                     'which '
+                                                                                                                     'the '
+                                                                                                                     'external '
+                                                                                                                     'identifier '
+                                                                                                                     'was '
+                                                                                                                     'obtained.  '
+                                                                                                                     'It '
+                                                                                                                     'is '
+                                                                                                                     'recommended '
+                                                                                                                     'that '
+                                                                                                                     'the '
+                                                                                                                     'identifier '
+                                                                                                                     'be '
+                                                                                                                     'a '
+                                                                                                                     'resolvable '
+                                                                                                                     'URI.',
+                                                                                                      'type': 'string'},
+                                                                                           'value': {'description': 'The '
+                                                                                                                    'value '
+                                                                                                                    'of '
+                                                                                                                    'the '
+                                                                                                                    'identifier.',
+                                                                                                     'type': 'string'}},
+                                                                            'required': ['value'],
+                                                                            'type': 'object'},
+                                                                  'type': 'array'},
+                                                  'formats': {'description': 'A '
+                                                                             'list '
+                                                                             'of '
+                                                                             'available '
+                                                                             'distributions '
+                                                                             'of '
+                                                                             'the '
+                                                                             'resource.',
+                                                              'items': {'type': 'string'},
+                                                              'type': 'array'},
+                                                  'keywords': {'description': 'The '
+                                                                              'topic '
+                                                                              'or '
+                                                                              'topics '
+                                                                              'of '
+                                                                              'the '
+                                                                              'resource. '
+                                                                              'Typically '
+                                                                              'represented '
+                                                                              'using '
+                                                                              'free-form '
+                                                                              'keywords, '
+                                                                              'tags, '
+                                                                              'key '
+                                                                              'phrases, '
+                                                                              'or '
+                                                                              'classification '
+                                                                              'codes.',
+                                                               'items': {'type': 'string'},
+                                                               'type': 'array'},
+                                                  'language': {'$ref': 'language.yaml',
+                                                               'description': 'The '
+                                                                              'language '
+                                                                              'used '
+                                                                              'for '
+                                                                              'textual '
+                                                                              'values '
+                                                                              'in '
+                                                                              'this '
+                                                                              'record '
+                                                                              'representation.'},
+                                                  'languages': {'description': 'This '
+                                                                               'list '
+                                                                               'of '
+                                                                               'languages '
+                                                                               'in '
+                                                                               'which '
+                                                                               'this '
+                                                                               'record '
+                                                                               'is '
+                                                                               'available.',
+                                                                'items': {'$ref': 'language.yaml'},
+                                                                'type': 'array'},
+                                                  'license': {'$ref': 'license.yaml'},
+                                                  'resourceLanguages': {'description': 'The '
+                                                                                       'list '
+                                                                                       'of '
+                                                                                       'languages '
+                                                                                       'in '
+                                                                                       'which '
+                                                                                       'the '
+                                                                                       'resource '
+                                                                                       'described '
+                                                                                       'by '
+                                                                                       'this '
+                                                                                       'record '
+                                                                                       'is '
+                                                                                       'available.',
+                                                                        'items': {'$ref': 'language.yaml'},
+                                                                        'type': 'array'},
+                                                  'rights': {'description': 'A '
+                                                                            'statement '
+                                                                            'that '
+                                                                            'concerns '
+                                                                            'all '
+                                                                            'rights '
+                                                                            'not '
+                                                                            'addressed '
+                                                                            'by '
+                                                                            'the '
+                                                                            'license '
+                                                                            'such '
+                                                                            'as '
+                                                                            'a '
+                                                                            'copyright '
+                                                                            'statement.',
+                                                             'type': 'string'},
+                                                  'themes': {'description': 'A '
+                                                                            'knowledge '
+                                                                            'organization '
+                                                                            'system '
+                                                                            'used '
+                                                                            'to '
+                                                                            'classify '
+                                                                            'the '
+                                                                            'resource.',
+                                                             'items': {'$ref': 'theme.yaml'},
+                                                             'minItems': 1,
+                                                             'type': 'array'},
+                                                  'title': {'description': 'A '
+                                                                           'human-readable '
+                                                                           'name '
+                                                                           'given '
+                                                                           'to '
+                                                                           'the '
+                                                                           'resource.',
+                                                            'type': 'string'},
+                                                  'type': {'description': 'The '
+                                                                          'nature '
+                                                                          'or '
+                                                                          'genre '
+                                                                          'of '
+                                                                          'the '
+                                                                          'resource. '
+                                                                          'The '
+                                                                          'value '
+                                                                          'should '
+                                                                          'be '
+                                                                          'a '
+                                                                          'code, '
+                                                                          'convenient '
+                                                                          'for '
+                                                                          'filtering '
+                                                                          'records. '
+                                                                          'Where '
+                                                                          'available, '
+                                                                          'a '
+                                                                          'link '
+                                                                          'to '
+                                                                          'the '
+                                                                          'canonical '
+                                                                          'URI '
+                                                                          'of '
+                                                                          'the '
+                                                                          'record '
+                                                                          'type '
+                                                                          'resource '
+                                                                          'will '
+                                                                          'be '
+                                                                          'added '
+                                                                          'to '
+                                                                          'the '
+                                                                          "'links' "
+                                                                          'property.',
+                                                           'maxLength': 64,
+                                                           'type': 'string'},
+                                                  'updated': {'description': 'The '
+                                                                             'most '
+                                                                             'recent '
+                                                                             'date '
+                                                                             'on '
+                                                                             'which '
+                                                                             'the '
+                                                                             'record '
+                                                                             'was '
+                                                                             'changed.',
+                                                              'format': 'date-time',
+                                                              'type': 'string'}},
+                                   'required': ['type', 'title'],
+                                   'type': 'object'},
+                    'time': {'$ref': 'time.yaml'},
+                    'type': {'enum': ['Feature'], 'type': 'string'}},
+     'required': ['id', 'type', 'time', 'geometry', 'properties', 'links'],
+     'type': 'object'}
+
+On instance:
+    {'assets': {'B1': {'eo:bands': [{'center_wavelength': 0.44,
+                                     'common_name': 'coastal',
+                                     'full_width_half_max': 0.02,
+                                     'name': 'B1'}],
+                       'href': 'https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF',
+                       'title': 'Band 1 (coastal)',
+                       'type': 'image/tiff; application=geotiff'},
+                'B8': {'eo:bands': [{'center_wavelength': 0.59,
+                                     'full_width_half_max': 0.18,
+                                     'name': 'B8'}],
+                       'href': 'https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF',
+                       'proj:shape': [16781, 16621],
+                       'proj:transform': [15,
+                                          0,
+                                          224992.5,
+                                          0,
+                                          -15,
+                                          6790207.5,
+                                          0,
+                                          0,
+                                          1],
+                       'title': 'Band 8 (panchromatic)',
+                       'type': 'image/tiff; application=geotiff'}},
+     'bbox': [148.13933, 59.51584, 152.52758, 60.63437],
+     'collection': 'landsat-8-l1',
+     'geometry': {'coordinates': [[[152.52758, 60.63437],
+                                   [149.1755, 61.19016],
+                                   [148.13933, 59.51584],
+                                   [151.33786, 58.97792],
+                                   [152.52758, 60.63437]]],
+                  'type': 'Polygon'},
+     'id': 'proj-example',
+     'links': [{'href': '../../catalog.json',
+                'rel': 'root',
+                'title': 'Example Catalog',
+                'type': 'application/json'},
+               {'href': '../collection.json',
+                'rel': 'parent',
+                'title': 'Collection of Extension Items',
+                'type': 'application/json'},
+               {'href': '../collection.json',
+                'rel': 'collection',
+                'title': 'Collection of Extension Items',
+                'type': 'application/json'}],
+     'properties': {'datetime': '2018-10-01T01:08:32.033000Z',
+                    'proj:bbox': [169200, 3712800, 403200, 3951000],
+                    'proj:centroid': {'lat': 34.595302781575604,
+                                      'lon': -101.34448382627504},
+                    'proj:epsg': 32614,
+                    'proj:geometry': {'coordinates': [[[169200, 3712800],
+                                                       [403200, 3712800],
+                                                       [403200, 3951000],
+                                                       [169200, 3951000],
+                                                       [169200, 3712800]]],
+                                      'type': 'Polygon'},
+                    'proj:projjson': {'$schema': 'https://proj.org/schemas/v0.2/projjson.schema.json',
+                                      'area': 'World - N hemisphere - '
+                                              '102°W to 96°W - by country',
+                                      'base_crs': {'coordinate_system': {'axis': [{'abbreviation': 'Lat',
+                                                                                   'direction': 'north',
+                                                                                   'name': 'Geodetic '
+                                                                                           'latitude',
+                                                                                   'unit': 'degree'},
+                                                                                  {'abbreviation': 'Lon',
+                                                                                   'direction': 'east',
+                                                                                   'name': 'Geodetic '
+                                                                                           'longitude',
+                                                                                   'unit': 'degree'}],
+                                                                         'subtype': 'ellipsoidal'},
+                                                   'datum': {'ellipsoid': {'inverse_flattening': 298.257223563,
+                                                                           'name': 'WGS '
+                                                                                   '84',
+                                                                           'semi_major_axis': 6378137},
+                                                             'name': 'World '
+                                                                     'Geodetic '
+                                                                     'System '
+                                                                     '1984',
+                                                             'type': 'GeodeticReferenceFrame'},
+                                                   'id': {'authority': 'EPSG',
+                                                          'code': 4326},
+                                                   'name': 'WGS 84'},
+                                      'bbox': {'east_longitude': -96,
+                                               'north_latitude': 84,
+                                               'south_latitude': 0,
+                                               'west_longitude': -102},
+                                      'conversion': {'method': {'id': {'authority': 'EPSG',
+                                                                       'code': 9807},
+                                                                'name': 'Transverse '
+                                                                        'Mercator'},
+                                                     'name': 'UTM zone 14N',
+                                                     'parameters': [{'id': {'authority': 'EPSG',
+                                                                            'code': 8801},
+                                                                     'name': 'Latitude '
+                                                                             'of '
+                                                                             'natural '
+                                                                             'origin',
+                                                                     'unit': 'degree',
+                                                                     'value': 0},
+                                                                    {'id': {'authority': 'EPSG',
+                                                                            'code': 8802},
+                                                                     'name': 'Longitude '
+                                                                             'of '
+                                                                             'natural '
+                                                                             'origin',
+                                                                     'unit': 'degree',
+                                                                     'value': -99},
+                                                                    {'id': {'authority': 'EPSG',
+                                                                            'code': 8805},
+                                                                     'name': 'Scale '
+                                                                             'factor '
+                                                                             'at '
+                                                                             'natural '
+                                                                             'origin',
+                                                                     'unit': 'unity',
+                                                                     'value': 0.9996},
+                                                                    {'id': {'authority': 'EPSG',
+                                                                            'code': 8806},
+                                                                     'name': 'False '
+                                                                             'easting',
+                                                                     'unit': 'metre',
+                                                                     'value': 500000},
+                                                                    {'id': {'authority': 'EPSG',
+                                                                            'code': 8807},
+                                                                     'name': 'False '
+                                                                             'northing',
+                                                                     'unit': 'metre',
+                                                                     'value': 0}]},
+                                      'coordinate_system': {'axis': [{'abbreviation': 'E',
+                                                                      'direction': 'east',
+                                                                      'name': 'Easting',
+                                                                      'unit': 'metre'},
+                                                                     {'abbreviation': 'N',
+                                                                      'direction': 'north',
+                                                                      'name': 'Northing',
+                                                                      'unit': 'metre'}],
+                                                            'subtype': 'Cartesian'},
+                                      'id': {'authority': 'EPSG',
+                                             'code': 32614},
+                                      'name': 'WGS 84 / UTM zone 14N',
+                                      'type': 'ProjectedCRS'},
+                    'proj:shape': [8391, 8311],
+                    'proj:transform': [30,
+                                       0,
+                                       224985,
+                                       0,
+                                       -30,
+                                       6790215,
+                                       0,
+                                       0,
+                                       1],
+                    'proj:wkt2': 'PROJCS["WGS 84 / UTM zone '
+                                 '14N",GEOGCS["WGS '
+                                 '84",DATUM["WGS_1984",SPHEROID["WGS '
+                                 '84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],UNIT["metre",1,AUTHORITY["EPSG","9001"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-99],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],AUTHORITY["EPSG","32614"],AXIS["Easting",EAST],AXIS["Northing",NORTH]]'},
+     'stac_extensions': ['https://stac-extensions.github.io/eo/v1.0.0/schema.json',
+                         'https://stac-extensions.github.io/projection/v1.0.0/schema.json'],
+     'stac_version': '1.0.0',
+     'type': 'Feature'}
+=== End JSON Schema ===
+

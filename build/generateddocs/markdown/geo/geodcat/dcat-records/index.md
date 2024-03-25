@@ -483,6 +483,7 @@ This example is a GEODCAT-AP example to test backwards compatibility with SHACL 
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> rdfs:label "Total Ozone - daily observations" ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
@@ -500,7 +501,7 @@ This example is a GEODCAT-AP example to test backwards compatibility with SHACL 
         "saoz",
         "total" ;
     geojson:geometry [ dcterms:type "Polygon" ;
-            geojson:coordinates ( "[[-180, -90], [-180, 90], [180, 90], [180, -90], [-180, -90]]" ) ] .
+            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] .
 
 
 ```

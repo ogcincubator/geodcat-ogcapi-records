@@ -1,0 +1,30 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <urn:stac:vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
+    rdfs:seeAlso [ a <https://example.com/stac/example1/application/json> ;
+            dcterms:title "Simple Example Collection" ],
+        [ a <https://example.com/stac/example1/application/json> ;
+            dcterms:title "Simple Example Collection" ],
+        [ a <https://example.com/stac/example1/application/json> ;
+            dcterms:title "Simple Example Collection" ] ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
+    stac:hasAsset <https://example.com/stac/example1/thumbnail>,
+        <https://example.com/stac/example1/visual> ;
+    stac:version "1.0.0" .
+
+<https://example.com/stac/example1/thumbnail> dcterms:format "image/jpeg" ;
+    dcterms:title "Thumbnail" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
+
+<https://example.com/stac/example1/visual> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "3-Band Visual" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
+
