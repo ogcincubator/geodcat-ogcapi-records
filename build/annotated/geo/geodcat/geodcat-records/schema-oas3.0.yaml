@@ -166,7 +166,6 @@ x-defs:
     required:
     - id
     - type
-    - time
     - geometry
     - properties
     - links
@@ -184,7 +183,10 @@ x-defs:
         enum:
         - Feature
       time:
-        $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml
+        oneOf:
+        - enum:
+          - null
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml
       geometry:
         oneOf:
         - enum:
@@ -245,8 +247,8 @@ x-defs:
                 scheme:
                   type: string
                   description: A reference to an authority or identifier for a knowledge
-                    organization system from which the external identifier was obtained.  It
-                    is recommended that the identifier be a resolvable URI.
+                    organization system from which the external identifier was obtained.
+                    It is recommended that the identifier be a resolvable URI.
                 value:
                   type: string
                   description: The value of the identifier.

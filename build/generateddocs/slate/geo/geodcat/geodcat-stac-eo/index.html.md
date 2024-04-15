@@ -661,13 +661,13 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/collection.json> ],
         [ a <https://example.com/stac/raster/example-1/application/json> ;
-            rdfs:label "Collection of Extension Items" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/json> ;
             rdfs:label "Example Catalog" ;
             ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/catalog.json> ] ;
+            oa:hasTarget <https://example.com/stac/catalog.json> ],
+        [ a <https://example.com/stac/raster/example-1/application/json> ;
+            rdfs:label "Collection of Extension Items" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/collection.json> ] ;
     geojson:bbox ( 1.481393e+02 5.951584e+01 1.525276e+02 6.063437e+01 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.525276e+02 6.063437e+01 ) ( 1.491755e+02 6.119016e+01 ) ( 1.481393e+02 5.951584e+01 ) ( 1.513379e+02 5.897792e+01 ) ( 1.525276e+02 6.063437e+01 ) ) ) ] ;

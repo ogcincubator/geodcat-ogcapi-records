@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.geodcat-stac-item - GeoDCAT profile of STAC item
-Generated 2024-03-25T09:11:39.718393+00:00
+Generated 2024-04-15T22:28:45.225762+00:00
 === Files ===
 Using example_2_1.json from examples
 JSON-LD context is present - uplifting
@@ -10,343 +10,144 @@ Output Turtle example_2_1.ttl created
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: 'time' is a required property
+ValidationError: 'type' is a required property
 
-Failed validating 'required' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][0]:
-    {'properties': {'conformsTo': {'items': {'type': 'string'},
-                                   'type': 'array'},
-                    'geometry': {'oneOf': [{'enum': [None]},
-                                           {'$ref': 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml'}]},
-                    'id': {'description': 'A unique identifier of the '
-                                          'catalog record.',
-                           'format': 'uri',
-                           'type': 'string'},
-                    'linkTemplates': {'items': {'$ref': 'linkTemplate.yaml'},
-                                      'type': 'array'},
-                    'links': {'items': {'$ref': 'https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml'},
-                              'type': 'array'},
-                    'properties': {'properties': {'contacts': {'description': 'A '
-                                                                              'list '
-                                                                              'of '
-                                                                              'contacts '
-                                                                              'qualified '
-                                                                              'by '
-                                                                              'their '
-                                                                              'role(s) '
-                                                                              'in '
-                                                                              'association '
-                                                                              'to '
-                                                                              'the '
-                                                                              'record '
-                                                                              'or '
-                                                                              'the '
-                                                                              'resource '
-                                                                              'described '
-                                                                              'by '
-                                                                              'the '
-                                                                              'record.',
-                                                               'items': {'$ref': 'contact.yaml'},
-                                                               'type': 'array'},
-                                                  'created': {'description': 'Date '
-                                                                             'of '
-                                                                             'creation '
-                                                                             'of '
-                                                                             'this '
-                                                                             'record.',
-                                                              'format': 'date-time',
-                                                              'type': 'string'},
-                                                  'description': {'description': 'A '
-                                                                                 'free-text '
-                                                                                 'account '
-                                                                                 'of '
-                                                                                 'the '
-                                                                                 'resource.',
-                                                                  'type': 'string'},
-                                                  'externalIds': {'description': 'An '
-                                                                                 'identifier '
-                                                                                 'for '
-                                                                                 'the '
-                                                                                 'resource '
-                                                                                 'assigned '
-                                                                                 'by '
-                                                                                 'an '
-                                                                                 'external '
-                                                                                 '(to '
-                                                                                 'the '
-                                                                                 'catalog) '
-                                                                                 'entity.',
-                                                                  'items': {'properties': {'scheme': {'description': 'A '
-                                                                                                                     'reference '
-                                                                                                                     'to '
-                                                                                                                     'an '
-                                                                                                                     'authority '
-                                                                                                                     'or '
-                                                                                                                     'identifier '
-                                                                                                                     'for '
-                                                                                                                     'a '
-                                                                                                                     'knowledge '
-                                                                                                                     'organization '
-                                                                                                                     'system '
-                                                                                                                     'from '
-                                                                                                                     'which '
-                                                                                                                     'the '
-                                                                                                                     'external '
-                                                                                                                     'identifier '
-                                                                                                                     'was '
-                                                                                                                     'obtained.  '
-                                                                                                                     'It '
-                                                                                                                     'is '
-                                                                                                                     'recommended '
-                                                                                                                     'that '
-                                                                                                                     'the '
-                                                                                                                     'identifier '
-                                                                                                                     'be '
-                                                                                                                     'a '
-                                                                                                                     'resolvable '
-                                                                                                                     'URI.',
-                                                                                                      'type': 'string'},
-                                                                                           'value': {'description': 'The '
-                                                                                                                    'value '
-                                                                                                                    'of '
-                                                                                                                    'the '
-                                                                                                                    'identifier.',
-                                                                                                     'type': 'string'}},
-                                                                            'required': ['value'],
-                                                                            'type': 'object'},
-                                                                  'type': 'array'},
-                                                  'formats': {'description': 'A '
-                                                                             'list '
-                                                                             'of '
-                                                                             'available '
-                                                                             'distributions '
-                                                                             'of '
-                                                                             'the '
-                                                                             'resource.',
-                                                              'items': {'type': 'string'},
-                                                              'type': 'array'},
-                                                  'keywords': {'description': 'The '
-                                                                              'topic '
-                                                                              'or '
-                                                                              'topics '
-                                                                              'of '
-                                                                              'the '
-                                                                              'resource. '
-                                                                              'Typically '
-                                                                              'represented '
-                                                                              'using '
-                                                                              'free-form '
-                                                                              'keywords, '
-                                                                              'tags, '
-                                                                              'key '
-                                                                              'phrases, '
-                                                                              'or '
-                                                                              'classification '
-                                                                              'codes.',
-                                                               'items': {'type': 'string'},
-                                                               'type': 'array'},
-                                                  'language': {'$ref': 'language.yaml',
-                                                               'description': 'The '
-                                                                              'language '
-                                                                              'used '
-                                                                              'for '
-                                                                              'textual '
-                                                                              'values '
-                                                                              'in '
-                                                                              'this '
-                                                                              'record '
-                                                                              'representation.'},
-                                                  'languages': {'description': 'This '
-                                                                               'list '
-                                                                               'of '
-                                                                               'languages '
-                                                                               'in '
-                                                                               'which '
-                                                                               'this '
-                                                                               'record '
-                                                                               'is '
-                                                                               'available.',
-                                                                'items': {'$ref': 'language.yaml'},
-                                                                'type': 'array'},
-                                                  'license': {'$ref': 'license.yaml'},
-                                                  'resourceLanguages': {'description': 'The '
-                                                                                       'list '
-                                                                                       'of '
-                                                                                       'languages '
-                                                                                       'in '
+Failed validating 'required' in schema['allOf'][0]['allOf'][0]['allOf'][0]['allOf'][0]['properties']['properties']:
+    {'properties': {'contacts': {'description': 'A list of contacts '
+                                                'qualified by their '
+                                                'role(s) in association to '
+                                                'the record or the '
+                                                'resource described by the '
+                                                'record.',
+                                 'items': {'$ref': 'contact.yaml'},
+                                 'type': 'array'},
+                    'created': {'description': 'Date of creation of this '
+                                               'record.',
+                                'format': 'date-time',
+                                'type': 'string'},
+                    'description': {'description': 'A free-text account of '
+                                                   'the resource.',
+                                    'type': 'string'},
+                    'externalIds': {'description': 'An identifier for the '
+                                                   'resource assigned by '
+                                                   'an external (to the '
+                                                   'catalog) entity.',
+                                    'items': {'properties': {'scheme': {'description': 'A '
+                                                                                       'reference '
+                                                                                       'to '
+                                                                                       'an '
+                                                                                       'authority '
+                                                                                       'or '
+                                                                                       'identifier '
+                                                                                       'for '
+                                                                                       'a '
+                                                                                       'knowledge '
+                                                                                       'organization '
+                                                                                       'system '
+                                                                                       'from '
                                                                                        'which '
                                                                                        'the '
-                                                                                       'resource '
-                                                                                       'described '
-                                                                                       'by '
-                                                                                       'this '
-                                                                                       'record '
+                                                                                       'external '
+                                                                                       'identifier '
+                                                                                       'was '
+                                                                                       'obtained. '
+                                                                                       'It '
                                                                                        'is '
-                                                                                       'available.',
-                                                                        'items': {'$ref': 'language.yaml'},
-                                                                        'type': 'array'},
-                                                  'rights': {'description': 'A '
-                                                                            'statement '
-                                                                            'that '
-                                                                            'concerns '
-                                                                            'all '
-                                                                            'rights '
-                                                                            'not '
-                                                                            'addressed '
-                                                                            'by '
-                                                                            'the '
-                                                                            'license '
-                                                                            'such '
-                                                                            'as '
-                                                                            'a '
-                                                                            'copyright '
-                                                                            'statement.',
-                                                             'type': 'string'},
-                                                  'themes': {'description': 'A '
-                                                                            'knowledge '
-                                                                            'organization '
-                                                                            'system '
-                                                                            'used '
-                                                                            'to '
-                                                                            'classify '
-                                                                            'the '
-                                                                            'resource.',
-                                                             'items': {'$ref': 'theme.yaml'},
-                                                             'minItems': 1,
-                                                             'type': 'array'},
-                                                  'title': {'description': 'A '
-                                                                           'human-readable '
-                                                                           'name '
-                                                                           'given '
-                                                                           'to '
-                                                                           'the '
-                                                                           'resource.',
-                                                            'type': 'string'},
-                                                  'type': {'description': 'The '
-                                                                          'nature '
-                                                                          'or '
-                                                                          'genre '
-                                                                          'of '
-                                                                          'the '
-                                                                          'resource. '
-                                                                          'The '
-                                                                          'value '
-                                                                          'should '
-                                                                          'be '
-                                                                          'a '
-                                                                          'code, '
-                                                                          'convenient '
-                                                                          'for '
-                                                                          'filtering '
-                                                                          'records. '
-                                                                          'Where '
-                                                                          'available, '
-                                                                          'a '
-                                                                          'link '
-                                                                          'to '
-                                                                          'the '
-                                                                          'canonical '
-                                                                          'URI '
-                                                                          'of '
-                                                                          'the '
-                                                                          'record '
-                                                                          'type '
-                                                                          'resource '
-                                                                          'will '
-                                                                          'be '
-                                                                          'added '
-                                                                          'to '
-                                                                          'the '
-                                                                          "'links' "
-                                                                          'property.',
-                                                           'maxLength': 64,
-                                                           'type': 'string'},
-                                                  'updated': {'description': 'The '
-                                                                             'most '
-                                                                             'recent '
-                                                                             'date '
-                                                                             'on '
-                                                                             'which '
-                                                                             'the '
-                                                                             'record '
-                                                                             'was '
-                                                                             'changed.',
-                                                              'format': 'date-time',
-                                                              'type': 'string'}},
-                                   'required': ['type', 'title'],
-                                   'type': 'object'},
-                    'time': {'$ref': 'time.yaml'},
-                    'type': {'enum': ['Feature'], 'type': 'string'}},
-     'required': ['id', 'type', 'time', 'geometry', 'properties', 'links'],
+                                                                                       'recommended '
+                                                                                       'that '
+                                                                                       'the '
+                                                                                       'identifier '
+                                                                                       'be '
+                                                                                       'a '
+                                                                                       'resolvable '
+                                                                                       'URI.',
+                                                                        'type': 'string'},
+                                                             'value': {'description': 'The '
+                                                                                      'value '
+                                                                                      'of '
+                                                                                      'the '
+                                                                                      'identifier.',
+                                                                       'type': 'string'}},
+                                              'required': ['value'],
+                                              'type': 'object'},
+                                    'type': 'array'},
+                    'formats': {'description': 'A list of available '
+                                               'distributions of the '
+                                               'resource.',
+                                'items': {'type': 'string'},
+                                'type': 'array'},
+                    'keywords': {'description': 'The topic or topics of '
+                                                'the resource. Typically '
+                                                'represented using '
+                                                'free-form keywords, tags, '
+                                                'key phrases, or '
+                                                'classification codes.',
+                                 'items': {'type': 'string'},
+                                 'type': 'array'},
+                    'language': {'$ref': 'language.yaml',
+                                 'description': 'The language used for '
+                                                'textual values in this '
+                                                'record representation.'},
+                    'languages': {'description': 'This list of languages '
+                                                 'in which this record is '
+                                                 'available.',
+                                  'items': {'$ref': 'language.yaml'},
+                                  'type': 'array'},
+                    'license': {'$ref': 'license.yaml'},
+                    'resourceLanguages': {'description': 'The list of '
+                                                         'languages in '
+                                                         'which the '
+                                                         'resource '
+                                                         'described by '
+                                                         'this record is '
+                                                         'available.',
+                                          'items': {'$ref': 'language.yaml'},
+                                          'type': 'array'},
+                    'rights': {'description': 'A statement that concerns '
+                                              'all rights not addressed by '
+                                              'the license such as a '
+                                              'copyright statement.',
+                               'type': 'string'},
+                    'themes': {'description': 'A knowledge organization '
+                                              'system used to classify the '
+                                              'resource.',
+                               'items': {'$ref': 'theme.yaml'},
+                               'minItems': 1,
+                               'type': 'array'},
+                    'title': {'description': 'A human-readable name given '
+                                             'to the resource.',
+                              'type': 'string'},
+                    'type': {'description': 'The nature or genre of the '
+                                            'resource. The value should be '
+                                            'a code, convenient for '
+                                            'filtering records. Where '
+                                            'available, a link to the '
+                                            'canonical URI of the record '
+                                            'type resource will be added '
+                                            "to the 'links' property.",
+                             'maxLength': 64,
+                             'type': 'string'},
+                    'updated': {'description': 'The most recent date on '
+                                               'which the record was '
+                                               'changed.',
+                                'format': 'date-time',
+                                'type': 'string'}},
+     'required': ['type', 'title'],
      'type': 'object'}
 
-On instance:
-    {'assets': {'analytic': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif',
-                             'roles': ['data'],
-                             'title': '4-Band Analytic',
-                             'type': 'image/tiff; application=geotiff; '
-                                     'profile=cloud-optimized'},
-                'ephemeris': {'href': 'http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH',
-                              'title': 'Satellite Ephemeris Metadata'},
-                'json-metadata': {'href': 'http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json',
-                                  'roles': ['metadata'],
-                                  'title': 'Extended Metadata',
-                                  'type': 'application/json'},
-                'thumbnail': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg',
-                              'roles': ['thumbnail'],
-                              'title': 'Thumbnail',
-                              'type': 'image/png'},
-                'udm': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif',
-                        'title': 'Unusable Data Mask',
-                        'type': 'image/tiff; application=geotiff;'},
-                'visual': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif',
-                           'roles': ['visual'],
-                           'title': '3-Band Visual',
-                           'type': 'image/tiff; application=geotiff; '
-                                   'profile=cloud-optimized'}},
-     'bbox': [172.91173669923782,
-              1.3438851951615003,
-              172.95469614953714,
-              1.3690476620161975],
-     'collection': 'simple-collection',
-     'geometry': {'coordinates': [[[172.91173669923782, 1.3438851951615003],
-                                   [172.95469614953714, 1.3438851951615003],
-                                   [172.95469614953714, 1.3690476620161975],
-                                   [172.91173669923782, 1.3690476620161975],
-                                   [172.91173669923782,
-                                    1.3438851951615003]]],
-                  'type': 'Polygon'},
-     'id': '20201211_223832_CS2',
-     'links': [{'href': './collection.json',
-                'rel': 'collection',
-                'title': 'Simple Example Collection',
-                'type': 'application/json'},
-               {'href': './collection.json',
-                'rel': 'root',
-                'title': 'Simple Example Collection',
-                'type': 'application/json'},
-               {'href': './collection.json',
-                'rel': 'parent',
-                'title': 'Simple Example Collection',
-                'type': 'application/json'},
-               {'href': 'http://remotedata.io/catalog/20201211_223832_CS2/index.html',
-                'rel': 'alternate',
-                'title': 'HTML version of this STAC Item',
-                'type': 'text/html'}],
-     'properties': {'constellation': 'ion',
-                    'created': '2020-12-12T01:48:13.725Z',
-                    'datetime': None,
-                    'description': 'A sample STAC Item that includes '
-                                   'examples of all common metadata',
-                    'end_datetime': '2020-12-11T22:38:32.327Z',
-                    'gsd': 0.512,
-                    'instruments': ['cool_sensor_v1'],
-                    'mission': 'collection 5624',
-                    'platform': 'cool_sat1',
-                    'start_datetime': '2020-12-11T22:38:32.125Z',
-                    'title': 'Core Item',
-                    'updated': '2020-12-12T01:48:13.725Z'},
-     'stac_extensions': [],
-     'stac_version': '1.0.0',
-     'type': 'Feature'}
+On instance['properties']:
+    {'constellation': 'ion',
+     'created': '2020-12-12T01:48:13.725Z',
+     'datetime': None,
+     'description': 'A sample STAC Item that includes examples of all '
+                    'common metadata',
+     'end_datetime': '2020-12-11T22:38:32.327Z',
+     'gsd': 0.512,
+     'instruments': ['cool_sensor_v1'],
+     'mission': 'collection 5624',
+     'platform': 'cool_sat1',
+     'start_datetime': '2020-12-11T22:38:32.125Z',
+     'title': 'Core Item',
+     'updated': '2020-12-12T01:48:13.725Z'}
 === End JSON Schema ===
 
