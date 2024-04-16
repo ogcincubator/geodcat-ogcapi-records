@@ -603,8 +603,8 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <proj:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <eo:> .
+@prefix ns2: <eo:> .
+@prefix ns3: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -614,15 +614,15 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 <https://example.com/stac/raster/example-1/proj-example> a geojson:Feature ;
     rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/json> ;
             rdfs:label "Collection of Extension Items" ;
-            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/collection.json> ],
         [ a <https://example.com/stac/raster/example-1/application/json> ;
             rdfs:label "Example Catalog" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/catalog.json> ],
         [ a <https://example.com/stac/raster/example-1/application/json> ;
             rdfs:label "Collection of Extension Items" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/collection.json> ] ;
     geojson:bbox ( 1.481393e+02 5.951584e+01 1.525276e+02 6.063437e+01 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -652,12 +652,12 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     stac:version "1.0.0" .
 
 <https://example.com/stac/raster/example-1/B1> rdfs:label "Band 1 (coastal)" ;
-    ns3:bands [ ] ;
+    ns2:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF> .
 
 <https://example.com/stac/raster/example-1/B8> rdfs:label "Band 8 (panchromatic)" ;
-    ns3:bands [ ] ;
+    ns2:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF> ;
     ns1:shape 16621,
