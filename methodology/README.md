@@ -2,7 +2,7 @@
 
 See [the GeoDCAT ontology development methodology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)
 
-ThisBuilding Block implementation is used for testing implementation compatibility with OGC PAI records and transformations between related metadata schemas.
+This [OGC Building Block](https://ogcincubator.github.io/bblocks-docs/) implementation of GeoDCAT is used for testing implementation compatibility with OGC PAI records and transformations between related metadata schemas.
 
 
 1. define examples of JSON (or other schemas)
