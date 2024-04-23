@@ -11,7 +11,7 @@ x-defs:
     description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
       elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
     allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.core
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON
     x-jsonld-extra-terms:
       accessRights:
         x-jsonld-id: http://purl.org/dc/terms/accessRights
@@ -155,13 +155,7 @@ x-defs:
       vcard: http://www.w3.org/2006/vcard/ns#
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml
-  ogc.api.records.core:
-    description: Normative records schema
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/core/schema.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_recordGeoJSON.yaml:
+  ogc.api.records.v1.schemas.recordGeoJSON:
     type: object
     required:
     - id
@@ -186,7 +180,7 @@ x-defs:
         oneOf:
         - enum:
           - null
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.time
       geometry:
         oneOf:
         - enum:
@@ -230,13 +224,13 @@ x-defs:
             type: array
             description: This list of languages in which this record is available.
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
           resourceLanguages:
             type: array
             description: The list of languages in which the resource described by
               this record is available.
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
           externalIds:
             type: array
             description: An identifier for the resource assigned by an external (to
@@ -259,7 +253,7 @@ x-defs:
             description: A knowledge organization system used to classify the resource.
             minItems: 1
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_theme.yaml
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.theme
           formats:
             type: array
             description: A list of available distributions of the resource.
@@ -270,9 +264,9 @@ x-defs:
             description: A list of contacts qualified by their role(s) in association
               to the record or the resource described by the record.
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_contact.yaml
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.contact
           license:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_license.yaml
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.license
           rights:
             type: string
             description: A statement that concerns all rights not addressed by the
@@ -284,9 +278,9 @@ x-defs:
       linkTemplates:
         type: array
         items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linkTemplate.yaml
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_time.yaml:
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkTemplate
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
+  ogc.api.records.v1.schemas.time:
     type: object
     nullable: true
     properties:
@@ -315,7 +309,7 @@ x-defs:
           duration
         example:
         - P1D
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/time.yaml
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/time/schema.yaml
   schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometryGeoJSON.yaml:
     oneOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_pointGeoJSON.yaml
@@ -326,7 +320,7 @@ x-defs:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multipolygonGeoJSON.yaml
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometrycollectionGeoJSON.yaml
     x-schema-source: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_language.yaml:
+  ogc.api.records.v1.schemas.language:
     type: object
     description: The language used for textual values in this record.
     required:
@@ -360,8 +354,8 @@ x-defs:
         - btt
         default:
         - ltr
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/language.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_theme.yaml:
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml
+  ogc.api.records.v1.schemas.theme:
     type: object
     required:
     - concepts
@@ -399,8 +393,8 @@ x-defs:
           the server's OpenAPI document or, if the server implements CQL2, by exposing
           a queryable (e.g. named `scheme`) and enumerating the list of schemes in
           the queryable's schema definition.
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/theme.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_contact.yaml:
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml
+  ogc.api.records.v1.schemas.contact:
     type: object
     description: 'Identification of, and means of communication with, person responsible
 
@@ -507,8 +501,8 @@ x-defs:
 
           responsible party.'
       roles: {}
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_license.yaml:
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml
+  ogc.api.records.v1.schemas.license:
     type: string
     description: A legal document under which the resource is made available. If the
       resource is being made available under a common license then use an SPDX license
@@ -521,7 +515,7 @@ x-defs:
       There is also the case of a resource that is private or unpublished and is thus
       unlicensed; in this case do not register such a resource in the catalog in the
       first place since there is no point in making such a resource discoverable.
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/license.yaml
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
   schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml:
     type: object
     required:
@@ -546,9 +540,9 @@ x-defs:
       length:
         type: integer
     x-schema-source: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linkTemplate.yaml:
+  ogc.api.records.v1.schemas.linkTemplate:
     allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linkBase.yaml
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
     - type: object
       required:
       - uriTemplate
@@ -569,7 +563,7 @@ x-defs:
             templated URL.  Each key defines the schema of one substitution variable
             using a JSON Schema fragment and can thus include things like the data
             type of the variable, enumerations, minimum values, maximum values, etc.
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
   schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_pointGeoJSON.yaml:
     type: object
     required:
@@ -703,15 +697,15 @@ x-defs:
         items:
           $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometryGeoJSON.yaml
     x-schema-source: https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometrycollectionGeoJSON.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_roles.yaml:
+  ogc.api.records.v1.schemas.roles:
     description: The list of duties, job functions or permissions assigned by the
       system and associated with the context of this member.
     type: array
     minItems: 1
     items:
       type: string
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/roles.yaml
-  raw.githubusercontent.com_opengeospatial_ogcapi-records_master_core_openapi_schemas_linkBase.yaml:
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml
+  ogc.api.records.v1.schemas.linkBase:
     type: object
     properties:
       rel:
@@ -744,6 +738,6 @@ x-defs:
         description: Most recent date on which the resource pointed to by the link
           was changed.
         format: date-time
-    x-schema-source: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkBase.yaml
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
 allOf:
 - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.geo.geodcat.geodcat-records

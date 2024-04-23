@@ -565,7 +565,7 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/core/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
 x-jsonld-extra-terms:
   accessRights:
     x-jsonld-id: http://purl.org/dc/terms/accessRights
