@@ -511,10 +511,10 @@ This is the complete "core" item example from the STAC specification.
             dcterms:title "Simple Example Collection" ],
         [ a <https://example.com/stac/example1/application/json> ;
             dcterms:title "Simple Example Collection" ],
-        [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ],
         [ a <https://example.com/stac/example1/text/html> ;
-            dcterms:title "HTML version of this STAC Item" ] ;
+            dcterms:title "HTML version of this STAC Item" ],
+        [ a <https://example.com/stac/example1/application/json> ;
+            dcterms:title "Simple Example Collection" ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;

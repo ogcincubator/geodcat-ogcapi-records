@@ -106,7 +106,7 @@
   "name": "Building Blocks - GeoDCAT implementation using OGC API Records",
   "abstract": "Building Blocks linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n",
-  "modified": "2024-04-24T05:59:47.397252",
+  "modified": "2024-04-24T08:13:48.650788",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"382fe543d92a8d0c4aa757133587e10398cbb48c",
@@ -311,8 +311,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-records"
+        "ogc.geo.geodcat.dcat-records",
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2024-04-24",
@@ -382,9 +382,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
+        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item",
-        "ogc.geo.geodcat.geodcat-records"
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2024-04-24",
