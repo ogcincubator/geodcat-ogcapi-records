@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT profile of OGC API Records
-Generated 2024-04-26T04:11:37.662683+00:00
+Generated 2024-04-26T06:59:00.608947+00:00
 === Files ===
 Using example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -31,8 +31,8 @@ Traceback (most recent call last):
     self.predicateList(subject)
 ,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 426, in predicateList
     self.objectList(properties[predicate])
-,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 440, in objectList
-    self.path(obj, OBJECT, newline=True)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 437, in objectList
+    self.path(objects[0], OBJECT)
 ,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 334, in path
     self.p_squared(node, position, newline)
 ,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 386, in p_squared

@@ -3050,6 +3050,7 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.json"
     },
     "ogc.api.records.v1.schemas.contact": {
+      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml",
       "type": "object",
       "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
       "anyOf": [
@@ -3085,7 +3086,7 @@
           "description": "Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type.",
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link"
             },
             {
               "type": "object",
@@ -3179,7 +3180,7 @@
           "items": {
             "allOf": [
               {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link"
               },
               {
                 "type": "object",
@@ -4874,6 +4875,7 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml"
     },
     "ogc.api.records.v1.schemas.contact_": {
+      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml",
       "type": "object",
       "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
       "anyOf": [
@@ -4909,7 +4911,7 @@
           "description": "Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type.",
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
             },
             {
               "type": "object",
@@ -5003,7 +5005,7 @@
           "items": {
             "allOf": [
               {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
               },
               {
                 "type": "object",
@@ -5126,39 +5128,6 @@
         "type": "number"
       },
       "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.json"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml": {
-      "type": "object",
-      "required": [
-        "href",
-        "rel"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "example": "http://data.example.com/buildings/123"
-        },
-        "rel": {
-          "type": "string",
-          "example": "alternate"
-        },
-        "type": {
-          "type": "string",
-          "example": "application/geo+json"
-        },
-        "hreflang": {
-          "type": "string",
-          "example": "en"
-        },
-        "title": {
-          "type": "string",
-          "example": "Trierer Strasse 70, 53115 Bonn"
-        },
-        "length": {
-          "type": "integer"
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml"
     },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
