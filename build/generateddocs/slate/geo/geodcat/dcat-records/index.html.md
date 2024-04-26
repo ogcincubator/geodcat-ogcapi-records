@@ -4,7 +4,6 @@ title: Generic DCAT profile of OGC API Records (Schema)
 language_tabs:
   - json: JSON
   - jsonld: JSON-LD
-  - turtle: RDF/Turtle
 
 toc_footers:
   - Version 0.1
@@ -29,8 +28,8 @@ DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT voc
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">failed</a></strong>
 </aside>
 
 # Description
@@ -518,43 +517,6 @@ It uses the context for a dcat:Dataset as the basis for a Record.
 </blockquote>
 
 
-
-
-```turtle
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> rdfs:label "Total Ozone - daily observations" ;
-    dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    dcterms:created "2021-02-08T00:00:00Z" ;
-    dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ ] ;
-    dcterms:modified "2021-02-08T00:00:00Z" ;
-    dcterms:type "Feature",
-        "dataset" ;
-    dcat:keyword "brewer",
-        "column",
-        "dobson",
-        "level 1.0",
-        "ozone",
-        "saoz",
-        "total" ;
-    geojson:geometry [ dcterms:type "Polygon" ;
-            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] .
-
-
-```
-
-<blockquote class="lang-specific turtle">
-  <p class="example-links">
-    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
-</blockquote>
-
-
 This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints
 
 
@@ -723,6 +685,54 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "type": "@type",
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "href": {
+      "@type": "@id",
+      "@id": "oa:hasTarget"
+    },
+    "rel": {
+      "@context": {
+        "@base": "http://www.iana.org/assignments/relation/"
+      },
+      "@id": "http://www.iana.org/assignments/relation",
+      "@type": "@id"
+    },
+    "hreflang": "dct:language",
+    "title": "rdfs:label",
+    "length": "dct:extent",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": {
+      "@context": {},
+      "@id": "geojson:geometry"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "geojson:features"
+    },
+    "links": {
+      "@context": {
+        "type": "dct:type"
+      },
+      "@id": "rdfs:seeAlso"
+    },
     "accessRights": {
       "@id": "dct:accessRights",
       "@type": "@id"
@@ -864,14 +874,6 @@ Links to the schema:
       "@id": "dcat:theme",
       "@type": "@id"
     },
-    "title": {
-      "@container": "@set",
-      "@id": "dct:title"
-    },
-    "type": {
-      "@id": "dct:type",
-      "@type": "@id"
-    },
     "version": {
       "@container": "@set",
       "@id": "dcat:version"
@@ -885,6 +887,9 @@ Links to the schema:
       "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
+    "geojson": "https://purl.org/geojson/vocab#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -894,7 +899,6 @@ Links to the schema:
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "@version": 1.1
   }

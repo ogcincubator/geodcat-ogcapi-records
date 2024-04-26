@@ -198,18 +198,26 @@ This is the simple item example from the STAC specification.
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
-    rdfs:seeAlso [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ],
-        [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ],
-        [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ] ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
@@ -497,24 +505,34 @@ This is the complete "core" item example from the STAC specification.
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
+    rdfs:label "Core Item" ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:description "A sample STAC Item that includes examples of all common metadata" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    dcterms:title "Core Item" ;
-    rdfs:seeAlso [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ],
-        [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ],
-        [ a <https://example.com/stac/example1/text/html> ;
-            dcterms:title "HTML version of this STAC Item" ],
-        [ a <https://example.com/stac/example1/application/json> ;
-            dcterms:title "Simple Example Collection" ] ;
+    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
@@ -597,6 +615,54 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "type": "@type",
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "href": {
+      "@type": "@id",
+      "@id": "oa:hasTarget"
+    },
+    "rel": {
+      "@context": {
+        "@base": "http://www.iana.org/assignments/relation/"
+      },
+      "@id": "http://www.iana.org/assignments/relation",
+      "@type": "@id"
+    },
+    "hreflang": "dct:language",
+    "title": "rdfs:label",
+    "length": "dct:extent",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": {
+      "@context": {},
+      "@id": "geojson:geometry"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "geojson:features"
+    },
+    "links": {
+      "@context": {
+        "type": "dct:type"
+      },
+      "@id": "rdfs:seeAlso"
+    },
     "accessRights": {
       "@id": "dct:accessRights",
       "@type": "@id"
@@ -738,14 +804,6 @@ Links to the schema:
       "@id": "dcat:theme",
       "@type": "@id"
     },
-    "title": {
-      "@container": "@set",
-      "@id": "dct:title"
-    },
-    "type": {
-      "@id": "@type",
-      "@type": "@id"
-    },
     "version": {
       "@container": "@set",
       "@id": "dcat:version"
@@ -759,39 +817,10 @@ Links to the schema:
       "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
-    "id": "@id",
-    "properties": "@nest",
-    "geometry": {
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      },
-      "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "features": {
-      "@container": "@set",
-      "@id": "geojson:features"
-    },
     "stac_version": "stac:version",
     "stac_extensions": "stac:extensions",
     "license": "dct:license",
     "extent": "dct:extent",
-    "links": "rdfs:seeAlso",
     "assets": {
       "@id": "stac:hasAsset",
       "@container": "@id",
@@ -800,9 +829,13 @@ Links to the schema:
           "@id": "dcat:downloadURL",
           "@type": "@id"
         },
+        "title": "dct:title",
         "type": "dct:format"
       }
     },
+    "geojson": "https://purl.org/geojson/vocab#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
@@ -812,10 +845,8 @@ Links to the schema:
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "stac": "urn:stac:vocab#",
-    "geojson": "https://purl.org/geojson/vocab#",
     "@version": 1.1
   }
 }

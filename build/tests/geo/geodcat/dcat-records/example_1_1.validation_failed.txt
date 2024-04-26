@@ -1,0 +1,55 @@
+Validation report for ogc.geo.geodcat.dcat-records - Generic DCAT profile of OGC API Records
+Generated 2024-04-26T04:11:37.480955+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+=== End Files ===
+
+=== JSON-LD ===
+
+** Validation error **
+Error found when uplifting JSON-LD: https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=totalozone&width={width}&height={height}&format=image/png does not look like a valid URI, trying to serialize this will break.
+
+=== End JSON-LD ===
+
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 645, in _validate_resource
+    validate_inner()
+,  File "/src/ogc/bblocks/validate.py", line 485, in validate_inner
+    graph.serialize(ttl_fn, format='ttl')
+,  File "/venv/lib/python3.10/site-packages/rdflib/graph.py", line 1360, in serialize
+    serializer.serialize(stream, encoding=encoding, **args)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 245, in serialize
+    if self.statement(subject) and not firstTime:
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 315, in statement
+    return self.s_squared(subject) or self.s_default(subject)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 320, in s_default
+    self.predicateList(subject)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 440, in objectList
+    self.path(obj, OBJECT, newline=True)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 334, in path
+    self.p_squared(node, position, newline)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 386, in p_squared
+    self.predicateList(node, newline=False)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 437, in objectList
+    self.path(objects[0], OBJECT)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 335, in path
+    or self.p_default(node, position, newline)
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 342, in p_default
+    self.write(self.label(node, position))
+,  File "/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py", line 358, in label
+    return self.getQName(node, position == VERB) or node.n3()
+,  File "/venv/lib/python3.10/site-packages/rdflib/term.py", line 301, in n3
+    raise Exception(
+,Exception: "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=totalozone&width={width}&height={height}&format=image/png" does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?
+
+=== End Unknown errors ===
+

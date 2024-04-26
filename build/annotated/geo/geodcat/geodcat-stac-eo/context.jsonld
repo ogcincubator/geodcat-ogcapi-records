@@ -1,5 +1,14 @@
 {
   "@context": {
+    "type": "@type",
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"
@@ -11,24 +20,14 @@
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
-    "type": "@type",
     "hreflang": "dct:language",
     "title": "rdfs:label",
     "length": "dct:extent",
     "id": "@id",
     "properties": "@nest",
     "geometry": {
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      },
+      "@context": {},
       "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
     },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -42,6 +41,12 @@
     "features": {
       "@container": "@set",
       "@id": "geojson:features"
+    },
+    "links": {
+      "@context": {
+        "type": "dct:type"
+      },
+      "@id": "rdfs:seeAlso"
     },
     "accessRights": {
       "@id": "dct:accessRights",
@@ -201,7 +206,6 @@
     "stac_extensions": "stac:extensions",
     "license": "dct:license",
     "extent": "dct:extent",
-    "links": "rdfs:seeAlso",
     "assets": {
       "@id": "stac:hasAsset",
       "@container": "@id",
@@ -210,13 +214,14 @@
           "@id": "dcat:downloadURL",
           "@type": "@id"
         },
+        "title": "dct:title",
         "type": "dct:format"
       }
     },
+    "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
-    "geojson": "https://purl.org/geojson/vocab#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",

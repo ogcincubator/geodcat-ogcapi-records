@@ -27,9 +27,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-04-24T08:14:02.001636+00:00</small>
+            <small class="datetime">Generated at 2024-04-26T04:11:41.326713+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 4 / 6 (66.67%)
+                    Number of passing building blocks: 2 / 6 (33.33%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -104,23 +104,70 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat-records" id="bblock-2">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
                                     <div class="flex-fill">
                                         Generic DCAT profile of OGC API Records
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.dcat-records</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-2">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-2">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 1 / 1
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
                                         </p>
+                                        <div class="card mb-2 global-validation-item validation-item">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    Building block global validation errors
+                                                    <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text text-danger">
+                                                        <div class="font-monospace entry-message section-unknown">Traceback (most recent call last):
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 645, in _validate_resource
+    validate_inner()
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 485, in validate_inner
+    graph.serialize(ttl_fn, format=&#x27;ttl&#x27;)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/graph.py&quot;, line 1360, in serialize
+    serializer.serialize(stream, encoding=encoding, **args)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 245, in serialize
+    if self.statement(subject) and not firstTime:
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 315, in statement
+    return self.s_squared(subject) or self.s_default(subject)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 320, in s_default
+    self.predicateList(subject)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 440, in objectList
+    self.path(obj, OBJECT, newline=True)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 334, in path
+    self.p_squared(node, position, newline)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 386, in p_squared
+    self.predicateList(node, newline=False)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 437, in objectList
+    self.path(objects[0], OBJECT)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 335, in path
+    or self.p_default(node, position, newline)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 342, in p_default
+    self.write(self.label(node, position))
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 358, in label
+    return self.getQName(node, position == VERB) or node.n3()
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/term.py&quot;, line 301, in n3
+    raise Exception(
+,Exception: &quot;https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png&quot; does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
@@ -134,18 +181,19 @@
                                                     <a href="geo/geodcat/dcat-records/example_1_1.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-2">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON-LD</div>
+                                                                    <div class="font-monospace entry-message section-json_ld text-danger">Error found when uplifting JSON-LD: https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png does not look like a valid URI, trying to serialize this will break.
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,23 +203,70 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records" id="bblock-3">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-3">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-3">
                                     <div class="flex-fill">
                                         GeoDCAT profile of OGC API Records
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-3">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-3">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 1 / 1
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 1
                                         </p>
+                                        <div class="card mb-2 global-validation-item validation-item">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    Building block global validation errors
+                                                    <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text text-danger">
+                                                        <div class="font-monospace entry-message section-unknown">Traceback (most recent call last):
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 645, in _validate_resource
+    validate_inner()
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 485, in validate_inner
+    graph.serialize(ttl_fn, format=&#x27;ttl&#x27;)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/graph.py&quot;, line 1360, in serialize
+    serializer.serialize(stream, encoding=encoding, **args)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 245, in serialize
+    if self.statement(subject) and not firstTime:
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 315, in statement
+    return self.s_squared(subject) or self.s_default(subject)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 320, in s_default
+    self.predicateList(subject)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 440, in objectList
+    self.path(obj, OBJECT, newline=True)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 334, in path
+    self.p_squared(node, position, newline)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 386, in p_squared
+    self.predicateList(node, newline=False)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 426, in predicateList
+    self.objectList(properties[predicate])
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 437, in objectList
+    self.path(objects[0], OBJECT)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 335, in path
+    or self.p_default(node, position, newline)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 342, in p_default
+    self.write(self.label(node, position))
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 358, in label
+    return self.getQName(node, position == VERB) or node.n3()
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/term.py&quot;, line 301, in n3
+    raise Exception(
+,Exception: &quot;https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png&quot; does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
@@ -185,18 +280,19 @@
                                                     <a href="geo/geodcat/geodcat-records/example_1_1.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-3">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON-LD</div>
+                                                                    <div class="font-monospace entry-message section-json_ld text-danger">Error found when uplifting JSON-LD: https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png does not look like a valid URI, trying to serialize this will break.
+</div>
                                                     </div>
                                                 </div>
                                             </div>

@@ -294,7 +294,7 @@
     </script>
   </head>
 
-  <body class="geo geo_geodcat geo_geodcat_dcat-records geo_geodcat_dcat-records_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;,&quot;turtle&quot;]">
+  <body class="geo geo_geodcat geo_geodcat_dcat-records geo_geodcat_dcat-records_index" data-languages="[&quot;json&quot;,&quot;jsonld&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,7 +306,6 @@
         <div class="lang-selector">
               <a href="#" data-language-name="json">JSON</a>
               <a href="#" data-language-name="jsonld">JSON-LD</a>
-              <a href="#" data-language-name="turtle">RDF/Turtle</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -362,8 +361,8 @@
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">failed</a></strong>
 </aside>
 <h1 id='description'>Description</h1><h2 id='dcat-baseline-bound-to-ogc-api-records-schema'>DCAT baseline bound to OGC API records schema</h2>
 <p>This building block defines a binding from OGC API Records schema to the DCAT Vocabulary.</p>
@@ -830,37 +829,6 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.jsonld">Open in new window</a>
     <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fdcat-records%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
-<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-</span><span class="nl">&lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Total Ozone - daily observations"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"Feature"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"dataset"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcat:</span><span class="n">keyword</span><span class="w"> </span><span class="s">"brewer"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"column"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"dobson"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"level 1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"ozone"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"saoz"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"total"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"Polygon"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">-180</span><span class="w"> </span><span class="mi">-90</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">-180</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="mi">90</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="mi">-90</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">-180</span><span class="w"> </span><span class="mi">-90</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-
-</span></code></pre></div>
-<blockquote class="lang-specific turtle">
-  <p class="example-links">
-    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
-</blockquote>
 
 <p>This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints</p>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
@@ -1023,6 +991,54 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 </ul>
 <h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:coordinates"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:bbox"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa:hasTarget"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation/"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hreflang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:extent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Feature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Feature"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FeatureCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:FeatureCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"GeometryCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:GeometryCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"LineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:LineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiLineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiLineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPolygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPolygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Point"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Polygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"accessRights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:accessRights"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -1164,14 +1180,6 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:theme"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:title"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:version"</span><span class="w">
@@ -1185,6 +1193,9 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasGeneratedBy"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"foaf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
@@ -1194,7 +1205,6 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     </span><span class="nl">"rdf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/dcmitype/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"skos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2004/02/skos/core#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"vcard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2006/vcard/ns#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1225,7 +1235,6 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
           <div class="lang-selector">
                 <a href="#" data-language-name="json">JSON</a>
                 <a href="#" data-language-name="jsonld">JSON-LD</a>
-                <a href="#" data-language-name="turtle">RDF/Turtle</a>
           </div>
       </div>
     </div>

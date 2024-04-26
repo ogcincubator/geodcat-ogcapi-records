@@ -551,18 +551,26 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
 <div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">oa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/oa#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">stac:</span><span class="w"> </span><span class="nl">&lt;urn:stac:vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="nl">&lt;https://example.com/stac/example1/20201211_223832_CS2&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/collection&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/root&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/parent&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">bbox</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Polygon</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -853,24 +861,34 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
 <div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">oa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/oa#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">stac:</span><span class="w"> </span><span class="nl">&lt;urn:stac:vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="nl">&lt;https://example.com/stac/example1/20201211_223832_CS2&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Core Item"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2020-12-12T01:48:13.725Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A sample STAC Item that includes examples of all common metadata"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2020-12-12T01:48:13.725Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Core Item"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/text/html&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"HTML version of this STAC Item"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/application/json&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"HTML version of this STAC Item"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"text/html"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/alternate&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;http://remotedata.io/catalog/20201211_223832_CS2/index.html&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/root&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/collection&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/parent&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/example1/collection.json&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">bbox</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Polygon</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -955,6 +973,54 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
 </ul>
 <h1 id='json-ld-context'>JSON-LD Context</h1><div class="highlight"><pre class="highlight json tab-json--ldContext"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:coordinates"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:bbox"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oa:hasTarget"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation/"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.iana.org/assignments/relation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hreflang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:extent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Feature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Feature"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FeatureCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:FeatureCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"GeometryCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:GeometryCollection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"LineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:LineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiLineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiLineString"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPoint"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MultiPolygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPolygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Point"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Polygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"accessRights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:accessRights"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
@@ -1096,14 +1162,6 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:theme"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:title"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:version"</span><span class="w">
@@ -1117,39 +1175,10 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasGeneratedBy"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:coordinates"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:geometry"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:bbox"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"Feature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Feature"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"FeatureCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:FeatureCollection"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"GeometryCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:GeometryCollection"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"LineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:LineString"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MultiLineString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiLineString"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MultiPoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPoint"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"MultiPolygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:MultiPolygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Point"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Point"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Polygon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:Polygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geojson:features"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"stac_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stac:version"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stac:extensions"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:license"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"extent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:extent"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:seeAlso"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stac:hasAsset"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="p">,</span><span class="w">
@@ -1158,9 +1187,13 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
           </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:downloadURL"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:title"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:format"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"foaf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
@@ -1170,10 +1203,8 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
     </span><span class="nl">"rdf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/dcmitype/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"skos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2004/02/skos/core#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"vcard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2006/vcard/ns#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"stac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:stac:vocab#"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"@version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">

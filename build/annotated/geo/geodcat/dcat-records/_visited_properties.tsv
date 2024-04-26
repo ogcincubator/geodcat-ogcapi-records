@@ -1,17 +1,21 @@
 path	@id
-/id	
+/id	@id
 /conformsTo	
-/type	
+/type	@type
 /time	
 /time/date	
 /time/timestamp	
 /time/interval	
 /time/resolution	
-/geometry	
-/geometry/type	
-/geometry/coordinates	
+/geometry	https://purl.org/geojson/vocab#geometry
+/geometry/type	@type
+/geometry/coordinates	https://purl.org/geojson/vocab#coordinates
+/geometry/bbox	https://purl.org/geojson/vocab#bbox
 /geometry/geometries	
-/properties	
+/geometry/geometries/type	@type
+/geometry/geometries/coordinates	https://purl.org/geojson/vocab#coordinates
+/geometry/geometries/bbox	https://purl.org/geojson/vocab#bbox
+/properties	@nest
 /properties/created	
 /properties/updated	
 /properties/type	
@@ -81,13 +85,14 @@ path	@id
 /properties/contacts/roles	
 /properties/license	
 /properties/rights	
-/links	
-/links/href	
-/links/rel	
-/links/type	
-/links/hreflang	
-/links/title	
-/links/length	
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
+/links/href	http://www.w3.org/ns/oa#hasTarget
+/links/rel	http://www.iana.org/assignments/relation
+/links/anchor	
+/links/type	http://purl.org/dc/terms/type
+/links/hreflang	http://purl.org/dc/terms/language
+/links/title	http://www.w3.org/2000/01/rdf-schema#label
+/links/length	http://purl.org/dc/terms/extent
 /linkTemplates	
 /linkTemplates/rel	
 /linkTemplates/type	
@@ -99,3 +104,4 @@ path	@id
 /linkTemplates/uriTemplate	
 /linkTemplates/varBase	
 /linkTemplates/variables	
+/bbox	https://purl.org/geojson/vocab#bbox

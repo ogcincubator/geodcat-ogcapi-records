@@ -646,8 +646,8 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <proj:> .
-@prefix ns2: <eo:> .
+@prefix ns1: <eo:> .
+@prefix ns2: <proj:> .
 @prefix ns3: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -656,57 +656,58 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/raster/example-1/proj-example> a geojson:Feature ;
-    rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/json> ;
-            rdfs:label "Collection of Extension Items" ;
+    rdfs:seeAlso [ rdfs:label "Example Catalog" ;
+            dcterms:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/catalog.json> ],
+        [ rdfs:label "Collection of Extension Items" ;
+            dcterms:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/json> ;
-            rdfs:label "Collection of Extension Items" ;
+        [ rdfs:label "Collection of Extension Items" ;
+            dcterms:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/json> ;
-            rdfs:label "Example Catalog" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/catalog.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/collection.json> ] ;
     geojson:bbox ( 1.481393e+02 5.951584e+01 1.525276e+02 6.063437e+01 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.525276e+02 6.063437e+01 ) ( 1.491755e+02 6.119016e+01 ) ( 1.481393e+02 5.951584e+01 ) ( 1.513379e+02 5.897792e+01 ) ( 1.525276e+02 6.063437e+01 ) ) ) ] ;
-    ns1:bbox 169200,
+    ns2:bbox 169200,
         403200,
         3712800,
         3951000 ;
-    ns1:centroid [ ] ;
-    ns1:epsg 32614 ;
-    ns1:geometry [ a geojson:Polygon ] ;
-    ns1:projjson [ a <https://example.com/stac/raster/example-1/ProjectedCRS> ;
+    ns2:centroid [ ] ;
+    ns2:epsg 32614 ;
+    ns2:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( 169200 3712800 ) ( 403200 3712800 ) ( 403200 3951000 ) ( 169200 3951000 ) ( 169200 3712800 ) ) ) ] ;
+    ns2:projjson [ a <https://example.com/stac/raster/example-1/ProjectedCRS> ;
             geojson:bbox ( [ ] ) ] ;
-    ns1:shape 8311,
+    ns2:shape 8311,
         8391 ;
-    ns1:transform -30,
+    ns2:transform -30,
         0,
         1,
         30,
         224985,
         6790215 ;
-    ns1:wkt2 "PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]" ;
+    ns2:wkt2 "PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]" ;
     stac:extensions "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v1.0.0/schema.json" ;
     stac:hasAsset <https://example.com/stac/raster/example-1/B1>,
         <https://example.com/stac/raster/example-1/B8> ;
     stac:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/B1> rdfs:label "Band 1 (coastal)" ;
-    ns2:bands [ ] ;
+<https://example.com/stac/raster/example-1/B1> ns1:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
+    dcterms:title "Band 1 (coastal)" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF> .
 
-<https://example.com/stac/raster/example-1/B8> rdfs:label "Band 8 (panchromatic)" ;
-    ns2:bands [ ] ;
+<https://example.com/stac/raster/example-1/B8> ns1:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
+    dcterms:title "Band 8 (panchromatic)" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF> ;
-    ns1:shape 16621,
+    ns2:shape 16621,
         16781 ;
-    ns1:transform -15,
+    ns2:transform -15,
         0,
         1,
         15,
@@ -748,6 +749,15 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
+    "type": "@type",
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"
@@ -759,24 +769,14 @@ Links to the schema:
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
-    "type": "@type",
     "hreflang": "dct:language",
     "title": "rdfs:label",
     "length": "dct:extent",
     "id": "@id",
     "properties": "@nest",
     "geometry": {
-      "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
-      },
+      "@context": {},
       "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
     },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -790,6 +790,12 @@ Links to the schema:
     "features": {
       "@container": "@set",
       "@id": "geojson:features"
+    },
+    "links": {
+      "@context": {
+        "type": "dct:type"
+      },
+      "@id": "rdfs:seeAlso"
     },
     "accessRights": {
       "@id": "dct:accessRights",
@@ -949,7 +955,6 @@ Links to the schema:
     "stac_extensions": "stac:extensions",
     "license": "dct:license",
     "extent": "dct:extent",
-    "links": "rdfs:seeAlso",
     "assets": {
       "@id": "stac:hasAsset",
       "@container": "@id",
@@ -958,13 +963,14 @@ Links to the schema:
           "@id": "dcat:downloadURL",
           "@type": "@id"
         },
+        "title": "dct:title",
         "type": "dct:format"
       }
     },
+    "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
-    "geojson": "https://purl.org/geojson/vocab#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",

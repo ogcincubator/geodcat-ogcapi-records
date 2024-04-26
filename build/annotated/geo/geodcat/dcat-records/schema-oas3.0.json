@@ -1,6 +1,6 @@
 {
   "x-defs": {
-    "ogc.geo.geodcat.dcat-records": {
+    "_github_workspace_build_annotated_geo_geodcat_dcat-records_schema.json": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
@@ -188,7 +188,13 @@
       "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json"
     },
     "ogc.api.records.v1.schemas.recordGeoJSON": {
+      "description": "Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.features.feature"
+        }
+      ],
       "required": [
         "id",
         "type",
@@ -234,7 +240,7 @@
               ]
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometryGeoJSON.yaml"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson/properties/geometry"
             }
           ]
         },
@@ -344,7 +350,7 @@
         "links": {
           "type": "array",
           "items": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link"
           }
         },
         "linkTemplates": {
@@ -354,7 +360,45 @@
           }
         }
       },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.json"
+    },
+    "ogc.geo.features.feature": {
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "bbox": {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.bounding_box"
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link"
+              },
+              "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+            },
+            "type": {
+              "const": "Feature"
+            }
+          },
+          "required": [
+            "type",
+            "geometry",
+            "properties"
+          ]
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "properties": "@nest"
+      },
+      "x-jsonld-prefixes": {
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.json"
     },
     "ogc.api.records.v1.schemas.time": {
       "type": "object",
@@ -401,31 +445,593 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/time/schema.json"
     },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometryGeoJSON.yaml": {
-      "oneOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_pointGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multipointGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_linestringGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multilinestringGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_polygonGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multipolygonGeoJSON.yaml"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometrycollectionGeoJSON.yaml"
-        }
+    "ogc.geo.common.data_types.geojson": {
+      "title": "GeoJSON Feature",
+      "type": "object",
+      "required": [
+        "type",
+        "properties",
+        "geometry"
       ],
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml"
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Feature"
+          ],
+          "x-jsonld-id": "@type"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "x-jsonld-id": "@id"
+        },
+        "properties": {
+          "oneOf": [
+            {
+              "type": "object"
+            }
+          ],
+          "x-jsonld-id": "@nest",
+          "nullable": true
+        },
+        "geometry": {
+          "oneOf": [
+            {
+              "title": "GeoJSON Point",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Point"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON LineString",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "LineString"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON Polygon",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Polygon"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 4,
+                    "items": {
+                      "type": "array",
+                      "minItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiPoint",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiPoint"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiLineString",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiLineString"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "type": "array",
+                      "minItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON MultiPolygon",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "MultiPolygon"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "minItems": 4,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            },
+            {
+              "title": "GeoJSON GeometryCollection",
+              "type": "object",
+              "required": [
+                "type",
+                "geometries"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "GeometryCollection"
+                  ],
+                  "x-jsonld-id": "@type"
+                },
+                "geometries": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "title": "GeoJSON Point",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "Point"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON LineString",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "LineString"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON Polygon",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "Polygon"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 4,
+                              "items": {
+                                "type": "array",
+                                "minItems": 2,
+                                "items": {
+                                  "type": "number"
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiPoint",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiPoint"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiLineString",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiLineString"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "array",
+                                "minItems": 2,
+                                "items": {
+                                  "type": "number"
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      },
+                      {
+                        "title": "GeoJSON MultiPolygon",
+                        "type": "object",
+                        "required": [
+                          "type",
+                          "coordinates"
+                        ],
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "MultiPolygon"
+                            ],
+                            "x-jsonld-id": "@type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "array",
+                              "items": {
+                                "type": "array",
+                                "minItems": 4,
+                                "items": {
+                                  "type": "array",
+                                  "minItems": 2,
+                                  "items": {
+                                    "type": "number"
+                                  }
+                                }
+                              }
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#coordinates"
+                          },
+                          "bbox": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "x-jsonld-container": "@list",
+                            "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "bbox": {
+                  "type": "array",
+                  "minItems": 4,
+                  "items": {
+                    "type": "number"
+                  },
+                  "x-jsonld-container": "@list",
+                  "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+                }
+              }
+            }
+          ],
+          "x-jsonld-id": "https://purl.org/geojson/vocab#geometry",
+          "nullable": true
+        },
+        "bbox": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "number"
+          },
+          "x-jsonld-container": "@list",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#bbox"
+        }
+      },
+      "x-jsonld-extra-terms": {
+        "Feature": "https://purl.org/geojson/vocab#Feature",
+        "FeatureCollection": "https://purl.org/geojson/vocab#FeatureCollection",
+        "GeometryCollection": "https://purl.org/geojson/vocab#GeometryCollection",
+        "LineString": "https://purl.org/geojson/vocab#LineString",
+        "MultiLineString": "https://purl.org/geojson/vocab#MultiLineString",
+        "MultiPoint": "https://purl.org/geojson/vocab#MultiPoint",
+        "MultiPolygon": "https://purl.org/geojson/vocab#MultiPolygon",
+        "Point": "https://purl.org/geojson/vocab#Point",
+        "Polygon": "https://purl.org/geojson/vocab#Polygon",
+        "features": {
+          "x-jsonld-container": "@set",
+          "x-jsonld-id": "https://purl.org/geojson/vocab#features"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "geojson": "https://purl.org/geojson/vocab#"
+      },
+      "x-schema-version": "http://json-schema.org/draft-07/schema#",
+      "x-schema-source": "https://geojson.org/schema/Feature.json"
     },
     "ogc.api.records.v1.schemas.language": {
       "type": "object",
@@ -669,6 +1275,101 @@
       "description": "A legal document under which the resource is made available. If the resource is being made available under a common license then use an SPDX license id (https://spdx.org/licenses/). If the resource is being made available under multiple common licenses then use an SPDX license expression v2.3 string (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/) If the resource is being made available under one or more licenses that haven't been assigned an SPDX identifier or one or more custom licenses then use a string value of 'other' and include one or more links (rel=\"license\") in the `link` section of the record to the file(s) that contains the text of the license(s). There is also the case of a resource that is private or unpublished and is thus unlicensed; in this case do not register such a resource in the catalog in the first place since there is no point in making such a resource discoverable.",
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.json"
     },
+    "ogc.ogc-utils.json-link": {
+      "description": "JSON Link",
+      "type": "object",
+      "required": [
+        "href",
+        "rel"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri-reference",
+          "x-jsonld-type": "@id",
+          "x-jsonld-id": "http://www.w3.org/ns/oa#hasTarget"
+        },
+        "rel": {
+          "type": "string",
+          "x-jsonld-id": "http://www.iana.org/assignments/relation",
+          "x-jsonld-type": "@id",
+          "x-jsonld-base": "http://www.iana.org/assignments/relation/"
+        },
+        "anchor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/type"
+        },
+        "hreflang": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/language"
+        },
+        "title": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        "length": {
+          "type": "integer",
+          "x-jsonld-id": "http://purl.org/dc/terms/extent"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "oa": "http://www.w3.org/ns/oa#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dct": "http://purl.org/dc/terms/"
+      },
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json"
+    },
+    "ogc.api.records.v1.schemas.linkTemplate": {
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase"
+        },
+        {
+          "type": "object",
+          "required": [
+            "uriTemplate"
+          ],
+          "properties": {
+            "uriTemplate": {
+              "type": "string",
+              "description": "Supplies a resolvable URI to a remote resource (or resource fragment).",
+              "example": "http://data.example.com/buildings/(building-id}"
+            },
+            "varBase": {
+              "type": "string",
+              "description": "The base URI to which the variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment.",
+              "format": "url"
+            },
+            "variables": {
+              "type": "object",
+              "description": "This object contains one key per substitution variable in the templated URL.  Each key defines the schema of one substitution variable using a JSON Schema fragment and can thus include things like the data type of the variable, enumerations, minimum values, maximum values, etc."
+            }
+          }
+        }
+      ],
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.json"
+    },
+    "ogc.geo.common.data_types.bounding_box": {
+      "type": "array",
+      "oneOf": [
+        {
+          "minItems": 4,
+          "maxItems": 4
+        },
+        {
+          "minItems": 6,
+          "maxItems": 6
+        }
+      ],
+      "items": {
+        "type": "number"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.json"
+    },
     "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_link.yaml": {
       "type": "object",
       "required": [
@@ -701,227 +1402,6 @@
         }
       },
       "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/link.yaml"
-    },
-    "ogc.api.records.v1.schemas.linkTemplate": {
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase"
-        },
-        {
-          "type": "object",
-          "required": [
-            "uriTemplate"
-          ],
-          "properties": {
-            "uriTemplate": {
-              "type": "string",
-              "description": "Supplies a resolvable URI to a remote resource (or resource fragment).",
-              "example": "http://data.example.com/buildings/(building-id}"
-            },
-            "varBase": {
-              "type": "string",
-              "description": "The base URI to which the variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment.",
-              "format": "url"
-            },
-            "variables": {
-              "type": "object",
-              "description": "This object contains one key per substitution variable in the templated URL.  Each key defines the schema of one substitution variable using a JSON Schema fragment and can thus include things like the data type of the variable, enumerations, minimum values, maximum values, etc."
-            }
-          }
-        }
-      ],
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.json"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_pointGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Point"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "minItems": 2,
-          "items": {
-            "type": "number"
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/pointGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multipointGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "MultiPoint"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "minItems": 2,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipointGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_linestringGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "LineString"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "minItems": 2,
-          "items": {
-            "type": "array",
-            "minItems": 2,
-            "items": {
-              "type": "number"
-            }
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/linestringGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multilinestringGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "MultiLineString"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "minItems": 2,
-            "items": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            }
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multilinestringGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_polygonGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "Polygon"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "minItems": 4,
-            "items": {
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            }
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/polygonGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_multipolygonGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "coordinates"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "MultiPolygon"
-          ]
-        },
-        "coordinates": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "type": "array",
-                "minItems": 2,
-                "items": {
-                  "type": "number"
-                }
-              }
-            }
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipolygonGeoJSON.yaml"
-    },
-    "schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometrycollectionGeoJSON.yaml": {
-      "type": "object",
-      "required": [
-        "type",
-        "geometries"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "GeometryCollection"
-          ]
-        },
-        "geometries": {
-          "type": "array",
-          "items": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/schemas.opengis.net_ogcapi_features_part1_1.0_openapi_schemas_geometryGeoJSON.yaml"
-          }
-        }
-      },
-      "x-schema-source": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometrycollectionGeoJSON.yaml"
     },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
@@ -974,7 +1454,7 @@
   },
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.dcat-records"
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/_github_workspace_build_annotated_geo_geodcat_dcat-records_schema.json"
     }
   ]
 }
