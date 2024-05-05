@@ -656,14 +656,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/raster/example-1/proj-example> a geojson:Feature ;
-    rdfs:seeAlso [ rdfs:label "Collection of Extension Items" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
-        [ rdfs:label "Example Catalog" ;
+    rdfs:seeAlso [ rdfs:label "Example Catalog" ;
             dcterms:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/catalog.json> ],
+        [ rdfs:label "Collection of Extension Items" ;
+            dcterms:type "application/json" ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
         [ rdfs:label "Collection of Extension Items" ;
             dcterms:type "application/json" ;
             ns3:relation <http://www.iana.org/assignments/relation/collection> ;

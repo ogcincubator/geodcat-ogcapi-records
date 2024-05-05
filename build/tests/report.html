@@ -22,12 +22,36 @@
             *[data-bs-toggle].collapsed .caret {
                 transform: rotate(0deg);
             }
+            .highlighted {
+                animation: highlight-border 3500ms ease-out;
+            }
+            .highlighted h2 button {
+                animation: highlight 3500ms ease-out;
+            }
+            @keyframes highlight {
+                0% {
+                    background: #ffff90;
+                }
+                100% {
+                    background: var(--bs-accordion-active-bg);
+                }
+            }
+            @keyframes highlight-border {
+                0% {
+                    border-color: red;
+                    border-width: 2px;
+                }
+                100% {
+                    border-color: var(--bs-accordion-border-color);
+                    border-width: var(--bs-accordion-border-width);
+                }
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-04-26T06:59:04.092998+00:00</small>
+            <small class="datetime">Generated at 2024-05-05T23:28:04.282475+00:00</small>
                 <p class="summary fw-semibold text-danger">
                     Number of passing building blocks: 2 / 6 (33.33%)
                 </p>
@@ -36,9 +60,11 @@
                 <a href="#" class="collapse-all">Collapse all</a>
             </div>
                 <div class="accordion mt-2" id="bblock-reports">
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat" id="bblock-0">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat" id="bblock-ogc.geo.geodcat.dcat">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-0">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.dcat">
                                     <div class="flex-fill">
                                         Proxy placeholder for DCAT
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.dcat</small>
@@ -50,15 +76,17 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-0">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.dcat">
                                 <div class="accordion-body">
                                         <div class="alert alert-info mb-0">No tests were found for this building block.</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat" id="bblock-1">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat" id="bblock-ogc.geo.geodcat.geodcat">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-1">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat">
                                     <div class="flex-fill">
                                         GeoDCAT profile
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat</small>
@@ -70,7 +98,7 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-1">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
                                             Test passed: 1 / 1
@@ -102,9 +130,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat-records" id="bblock-2">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat-records" id="bblock-ogc.geo.geodcat.dcat-records">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-2">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.dcat-records">
                                     <div class="flex-fill">
                                         Generic DCAT profile of OGC API Records
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.dcat-records</small>
@@ -116,7 +146,7 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-2">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.dcat-records">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
                                             Test passed: 0 / 1
@@ -131,9 +161,9 @@
                                                 </div>
                                                 <div class="card-text text-danger">
                                                         <div class="font-monospace entry-message section-unknown">Traceback (most recent call last):
-,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 645, in _validate_resource
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 646, in _validate_resource
     validate_inner()
-,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 485, in validate_inner
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 486, in validate_inner
     graph.serialize(ttl_fn, format=&#x27;ttl&#x27;)
 ,  File &quot;/venv/lib/python3.10/site-packages/rdflib/graph.py&quot;, line 1360, in serialize
     serializer.serialize(stream, encoding=encoding, **args)
@@ -201,9 +231,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records" id="bblock-3">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records" id="bblock-ogc.geo.geodcat.geodcat-records">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-3">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-records">
                                     <div class="flex-fill">
                                         GeoDCAT profile of OGC API Records
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records</small>
@@ -215,7 +247,7 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-3">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-records">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
                                             Test passed: 0 / 1
@@ -230,9 +262,9 @@
                                                 </div>
                                                 <div class="card-text text-danger">
                                                         <div class="font-monospace entry-message section-unknown">Traceback (most recent call last):
-,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 645, in _validate_resource
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 646, in _validate_resource
     validate_inner()
-,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 485, in validate_inner
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 486, in validate_inner
     graph.serialize(ttl_fn, format=&#x27;ttl&#x27;)
 ,  File &quot;/venv/lib/python3.10/site-packages/rdflib/graph.py&quot;, line 1360, in serialize
     serializer.serialize(stream, encoding=encoding, **args)
@@ -244,8 +276,8 @@
     self.predicateList(subject)
 ,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 426, in predicateList
     self.objectList(properties[predicate])
-,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 437, in objectList
-    self.path(objects[0], OBJECT)
+,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 440, in objectList
+    self.path(obj, OBJECT, newline=True)
 ,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 334, in path
     self.p_squared(node, position, newline)
 ,  File &quot;/venv/lib/python3.10/site-packages/rdflib/plugins/serializers/turtle.py&quot;, line 386, in p_squared
@@ -300,9 +332,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-item" id="bblock-4">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-item" id="bblock-ogc.geo.geodcat.geodcat-stac-item">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-4">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-item">
                                     <div class="flex-fill">
                                         GeoDCAT profile of STAC item
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-item</small>
@@ -314,7 +348,7 @@
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-4">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-item">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
                                             Test passed: 0 / 2
@@ -644,9 +678,11 @@ On instance[&#x27;properties&#x27;]:
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-eo" id="bblock-5">
+                        <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-eo" id="bblock-ogc.geo.geodcat.geodcat-stac-eo">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#bblock-collapse-5">
+                                <button class="accordion-button " type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-eo">
                                     <div class="flex-fill">
                                         GeoDCAT profile of STAC Electro-Optical extension
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-eo</small>
@@ -658,7 +694,7 @@ On instance[&#x27;properties&#x27;]:
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-5">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-eo">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
                                             Test passed: 0 / 1
@@ -873,6 +909,13 @@ On instance:
                         accordionEntries.forEach(e => e.classList.remove('show'));
                     }
                 });
+                if (location.hash.startsWith('#bblock-')) {
+                    const highlight = document.querySelector(location.hash.replaceAll('.', '\\.'));
+                    if (highlight) {
+                        highlight.querySelector('.accordion-collapse').classList.add('show');
+                        highlight.classList.add('highlighted');
+                    }
+                }
             });
         </script>
     </body>
