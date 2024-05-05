@@ -13,7 +13,7 @@ Building Blocks support validation of examples against both the JSON schema and 
 Transformations to related models can be supported in the automation pipeline.
 
 Plan is to map to other metadata representations to support validation of a common content profile against multiple encodings.:
- * STAC
+ * [STAC](https://github.com/radiantearth/stac-spec) and its [extensions](https://github.com/stac-extensions)
  * ISO 19115
    
 ## Components
