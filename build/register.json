@@ -2,7 +2,7 @@
   "name": "GeoDCAT implementation using OGC API Records",
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n",
-  "modified": "2024-05-06T01:48:32.105623",
+  "modified": "2024-05-06T09:02:27.977049",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"c3f59d37227b7fd3200f4b4c75a74a145ece69fe",
@@ -57,6 +57,58 @@
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.dcat"
+        }
+      }
+    },
+    {
+      "itemIdentifier": "ogc.geo.geodcat.projjson",
+      "name": "PROJ-JSON schema",
+      "abstract": "Provides a PROJ schema as used by varioud STAC profiles",
+      "status": "under-development",
+      "dateTimeAddition": "2023-09-18T00:00:00Z",
+      "itemClass": "schema",
+      "register": "ogc-incubator",
+      "version": "0.1",
+      "dateOfLastChange": "2024-05-06",
+      "link": "https://github.com/opengeospatial/bblock-template",
+      "dependsOn": [],
+      "sources": [
+        {
+          "title": "PROJ JSON specification",
+          "link": "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+        }
+      ],
+      "scope": "dev",
+      "tags": [
+        "PROJ"
+      ],
+      "shaclRules": {},
+      "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/context.jsonld",
+      "schema": {
+        "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema.yaml",
+        "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema.json"
+      },
+      "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/projjson/schema.yaml",
+      "sourceLdContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/projjson/context.jsonld",
+      "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/projjson/",
+      "validationPassed": false,
+      "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/projjson/",
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/projjson/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/projjson/index.md"
+        },
+        "slate": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/slate-build/geo/geodcat/projjson/"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.projjson"
         }
       }
     },
@@ -253,9 +305,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item",
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.geodcat-records"
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2024-05-06",
