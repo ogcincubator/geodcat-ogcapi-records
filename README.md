@@ -8,7 +8,7 @@ The generated documentation of each Building Block can be accessed [here](https:
 
 The GeoDCAT specification itself is defined in the main [GeoDCAT SWG Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
 
-Building Blocks support validation of examples against both the JSON schema and the RDF (JSON-LD) and can be used to develop and test examples of target ontologies.
+[Building Blocks](https://ogcincubator.github.io/bblocks-docs/) support validation of examples against both the JSON schema and the RDF (JSON-LD) and can be used to develop and test examples of target ontologies.
 
 Transformations to related models can be supported in the automation pipeline.
 
@@ -45,4 +45,5 @@ Note that the these components will be consistently structured for a given type 
 - `aspects/`: groups of properties that may be included in feature types (equivalent to attribute groups in XML schema)
 - `assets/`: Documentation assets (e.g. images) directory. See [Assets](#assets) below.
 
-[More information on design and usage](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md)
+[More information on design and usage](https://ogcincubator.github.io/bblocks-docs/)
+
