@@ -2,8 +2,8 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <proj:> .
-@prefix ns2: <eo:> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <eo:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,18 +11,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/raster/example-1/proj-example> a geojson:Feature ;
-    rdfs:seeAlso [ rdfs:label "Example Catalog" ;
+    rdfs:seeAlso [ rdfs:label "Collection of Extension Items" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/catalog.json> ],
-        [ rdfs:label "Collection of Extension Items" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/collection.json> ],
         [ rdfs:label "Collection of Extension Items" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
+        [ rdfs:label "Example Catalog" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/catalog.json> ] ;
     geojson:bbox ( 1.481393e+02 5.951584e+01 1.525276e+02 6.063437e+01 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.525276e+02 6.063437e+01 ) ( 1.491755e+02 6.119016e+01 ) ( 1.481393e+02 5.951584e+01 ) ( 1.513379e+02 5.897792e+01 ) ( 1.525276e+02 6.063437e+01 ) ) ) ] ;
@@ -51,12 +51,12 @@
         <https://example.com/stac/raster/example-1/B8> ;
     stac:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/B1> ns2:bands [ ] ;
+<https://example.com/stac/raster/example-1/B1> ns3:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
     dcterms:title "Band 1 (coastal)" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF> .
 
-<https://example.com/stac/raster/example-1/B8> ns2:bands [ ] ;
+<https://example.com/stac/raster/example-1/B8> ns3:bands [ ] ;
     dcterms:format "image/tiff; application=geotiff" ;
     dcterms:title "Band 8 (panchromatic)" ;
     dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF> ;
