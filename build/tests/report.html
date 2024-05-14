@@ -51,7 +51,7 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-05-13T08:35:58.376547+00:00</small>
+            <small class="datetime">Generated at 2024-05-14T08:53:16.626012+00:00</small>
                 <p class="summary fw-semibold text-danger">
                     Number of passing building blocks: 2 / 7 (28.57%)
                 </p>
@@ -686,9 +686,113 @@ On instance[&#x27;properties&#x27;]:
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
                                                                     <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;, &#x27;id&#x27;: &#x27;proj-example&#x27;, &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2018-10-01T01:08:32.033000Z&#x27;, &#x27;proj:epsg&#x27;: 32614, &#x27;proj:wkt2&#x27;: &#x27;PROJCS[&quot;WGS 84 / UTM zone 14N&quot;,GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.01745329251994328,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,-99],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],AUTHORITY[&quot;EPSG&quot;,&quot;32614&quot;],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]&#x27;, &#x27;proj:projjson&#x27;: {&#x27;$schema&#x27;: &#x27;https://proj.org/schemas/v0.2/projjson.schema.json&#x27;, &#x27;type&#x27;: &#x27;ProjectedCRS&#x27;, &#x27;name&#x27;: &#x27;WGS 84 / UTM zone 14N&#x27;, &#x27;base_crs&#x27;: {&#x27;name&#x27;: &#x27;WGS 84&#x27;, &#x27;datum&#x27;: {&#x27;type&#x27;: &#x27;GeodeticReferenceFrame&#x27;, &#x27;name&#x27;: &#x27;World Geodetic System 1984&#x27;, &#x27;ellipsoid&#x27;: {&#x27;name&#x27;: &#x27;WGS 84&#x27;, &#x27;semi_major_axis&#x27;: 6378137, &#x27;inverse_flattening&#x27;: 298.257223563}}, &#x27;coordinate_system&#x27;: {&#x27;subtype&#x27;: &#x27;ellipsoidal&#x27;, &#x27;axis&#x27;: [{&#x27;name&#x27;: &#x27;Geodetic latitude&#x27;, &#x27;abbreviation&#x27;: &#x27;Lat&#x27;, &#x27;direction&#x27;: &#x27;north&#x27;, &#x27;unit&#x27;: &#x27;degree&#x27;}, {&#x27;name&#x27;: &#x27;Geodetic longitude&#x27;, &#x27;abbreviation&#x27;: &#x27;Lon&#x27;, &#x27;direction&#x27;: &#x27;east&#x27;, &#x27;unit&#x27;: &#x27;degree&#x27;}]}, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 4326}}, &#x27;conversion&#x27;: {&#x27;name&#x27;: &#x27;UTM zone 14N&#x27;, &#x27;method&#x27;: {&#x27;name&#x27;: &#x27;Transverse Mercator&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 9807}}, &#x27;parameters&#x27;: [{&#x27;name&#x27;: &#x27;Latitude of natural origin&#x27;, &#x27;value&#x27;: 0, &#x27;unit&#x27;: &#x27;degree&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8801}}, {&#x27;name&#x27;: &#x27;Longitude of natural origin&#x27;, &#x27;value&#x27;: -99, &#x27;unit&#x27;: &#x27;degree&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8802}}, {&#x27;name&#x27;: &#x27;Scale factor at natural origin&#x27;, &#x27;value&#x27;: 0.9996, &#x27;unit&#x27;: &#x27;unity&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8805}}, {&#x27;name&#x27;: &#x27;False easting&#x27;, &#x27;value&#x27;: 500000, &#x27;unit&#x27;: &#x27;metre&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8806}}, {&#x27;name&#x27;: &#x27;False northing&#x27;, &#x27;value&#x27;: 0, &#x27;unit&#x27;: &#x27;metre&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8807}}]}, &#x27;coordinate_system&#x27;: {&#x27;subtype&#x27;: &#x27;Cartesian&#x27;, &#x27;axis&#x27;: [{&#x27;name&#x27;: &#x27;Easting&#x27;, &#x27;abbreviation&#x27;: &#x27;E&#x27;, &#x27;direction&#x27;: &#x27;east&#x27;, &#x27;unit&#x27;: &#x27;metre&#x27;}, {&#x27;name&#x27;: &#x27;Northing&#x27;, &#x27;abbreviation&#x27;: &#x27;N&#x27;, &#x27;direction&#x27;: &#x27;north&#x27;, &#x27;unit&#x27;: &#x27;metre&#x27;}]}, &#x27;area&#x27;: &#x27;World - N hemisphere - 102°W to 96°W - by country&#x27;, &#x27;bbox&#x27;: {&#x27;south_latitude&#x27;: 0, &#x27;west_longitude&#x27;: -102, &#x27;north_latitude&#x27;: 84, &#x27;east_longitude&#x27;: -96}, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 32614}}, &#x27;proj:geometry&#x27;: {&#x27;coordinates&#x27;: [[[169200, 3712800], [403200, 3712800], [403200, 3951000], [169200, 3951000], [169200, 3712800]]], &#x27;type&#x27;: &#x27;Polygon&#x27;}, &#x27;proj:bbox&#x27;: [169200, 3712800, 403200, 3951000], &#x27;proj:centroid&#x27;: {&#x27;lat&#x27;: 34.595302781575604, &#x27;lon&#x27;: -101.34448382627504}, &#x27;proj:shape&#x27;: [8391, 8311], &#x27;proj:transform&#x27;: [30, 0, 224985, 0, -30, 6790215, 0, 0, 1]}, &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[152.52758, 60.63437], [149.1755, 61.19016], [148.13933, 59.51584], [151.33786, 58.97792], [152.52758, 60.63437]]]}, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;../../catalog.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Example Catalog&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;../collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;}, {&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;../collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;}], &#x27;assets&#x27;: {&#x27;B1&#x27;: {&#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;, &#x27;title&#x27;: &#x27;Band 1 (coastal)&#x27;, &#x27;eo:bands&#x27;: [{&#x27;name&#x27;: &#x27;B1&#x27;, &#x27;common_name&#x27;: &#x27;coastal&#x27;, &#x27;center_wavelength&#x27;: 0.44, &#x27;full_width_half_max&#x27;: 0.02}]}, &#x27;B8&#x27;: {&#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;, &#x27;title&#x27;: &#x27;Band 8 (panchromatic)&#x27;, &#x27;eo:bands&#x27;: [{&#x27;name&#x27;: &#x27;B8&#x27;, &#x27;center_wavelength&#x27;: 0.59, &#x27;full_width_half_max&#x27;: 0.18}], &#x27;proj:shape&#x27;: [16781, 16621], &#x27;proj:transform&#x27;: [15, 0, 224992.5, 0, -15, 6790207.5, 0, 0, 1]}}, &#x27;bbox&#x27;: [148.13933, 59.51584, 152.52758, 60.63437], &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v1.0.0/schema.json&#x27;, &#x27;https://stac-extensions.github.io/projection/v1.0.0/schema.json&#x27;], &#x27;collection&#x27;: &#x27;landsat-8-l1&#x27;} is not valid under any of the given schemas
 
-Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0]:
-    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml&#x27;},
-               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml&#x27;}]}
+Failed validating &#x27;oneOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][1]:
+    {&#x27;$id&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json#&#x27;,
+     &#x27;$schema&#x27;: &#x27;http://json-schema.org/draft-07/schema#&#x27;,
+     &#x27;definitions&#x27;: {&#x27;bands&#x27;: {&#x27;items&#x27;: {&#x27;minProperties&#x27;: 1,
+                                         &#x27;properties&#x27;: {&#x27;center_wavelength&#x27;: {&#x27;minimumExclusive&#x27;: 0,
+                                                                              &#x27;title&#x27;: &#x27;Center &#x27;
+                                                                                       &#x27;Wavelength&#x27;,
+                                                                              &#x27;type&#x27;: &#x27;number&#x27;},
+                                                        &#x27;common_name&#x27;: {&#x27;enum&#x27;: [&#x27;coastal&#x27;,
+                                                                                 &#x27;blue&#x27;,
+                                                                                 &#x27;green&#x27;,
+                                                                                 &#x27;red&#x27;,
+                                                                                 &#x27;rededge&#x27;,
+                                                                                 &#x27;yellow&#x27;,
+                                                                                 &#x27;pan&#x27;,
+                                                                                 &#x27;nir&#x27;,
+                                                                                 &#x27;nir08&#x27;,
+                                                                                 &#x27;nir09&#x27;,
+                                                                                 &#x27;cirrus&#x27;,
+                                                                                 &#x27;swir16&#x27;,
+                                                                                 &#x27;swir22&#x27;,
+                                                                                 &#x27;lwir&#x27;,
+                                                                                 &#x27;lwir11&#x27;,
+                                                                                 &#x27;lwir12&#x27;],
+                                                                        &#x27;title&#x27;: &#x27;Common &#x27;
+                                                                                 &#x27;Name &#x27;
+                                                                                 &#x27;of &#x27;
+                                                                                 &#x27;the &#x27;
+                                                                                 &#x27;band&#x27;,
+                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
+                                                        &#x27;description&#x27;: {&#x27;minLength&#x27;: 1,
+                                                                        &#x27;title&#x27;: &#x27;Description &#x27;
+                                                                                 &#x27;of &#x27;
+                                                                                 &#x27;the &#x27;
+                                                                                 &#x27;band&#x27;,
+                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
+                                                        &#x27;full_width_half_max&#x27;: {&#x27;minimumExclusive&#x27;: 0,
+                                                                                &#x27;title&#x27;: &#x27;Full &#x27;
+                                                                                         &#x27;Width &#x27;
+                                                                                         &#x27;Half &#x27;
+                                                                                         &#x27;Max &#x27;
+                                                                                         &#x27;(FWHM)&#x27;,
+                                                                                &#x27;type&#x27;: &#x27;number&#x27;},
+                                                        &#x27;name&#x27;: {&#x27;title&#x27;: &#x27;Name &#x27;
+                                                                          &#x27;of &#x27;
+                                                                          &#x27;the &#x27;
+                                                                          &#x27;band&#x27;,
+                                                                 &#x27;type&#x27;: &#x27;string&#x27;},
+                                                        &#x27;solar_illumination&#x27;: {&#x27;minimum&#x27;: 0,
+                                                                               &#x27;title&#x27;: &#x27;Solar &#x27;
+                                                                                        &#x27;Illumination&#x27;,
+                                                                               &#x27;type&#x27;: &#x27;number&#x27;}},
+                                         &#x27;title&#x27;: &#x27;Band&#x27;,
+                                         &#x27;type&#x27;: &#x27;object&#x27;},
+                               &#x27;minItems&#x27;: 1,
+                               &#x27;title&#x27;: &#x27;Bands&#x27;,
+                               &#x27;type&#x27;: &#x27;array&#x27;},
+                     &#x27;fields&#x27;: {&#x27;additionalProperties&#x27;: False,
+                                &#x27;patternProperties&#x27;: {&#x27;^(?!eo:)&#x27;: {}},
+                                &#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;},
+                                               &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 100,
+                                                                  &#x27;minimum&#x27;: 0,
+                                                                  &#x27;title&#x27;: &#x27;Cloud &#x27;
+                                                                           &#x27;Cover&#x27;,
+                                                                  &#x27;type&#x27;: &#x27;number&#x27;},
+                                               &#x27;eo:snow_cover&#x27;: {&#x27;maximum&#x27;: 100,
+                                                                 &#x27;minimum&#x27;: 0,
+                                                                 &#x27;title&#x27;: &#x27;Snow &#x27;
+                                                                          &#x27;and &#x27;
+                                                                          &#x27;Ice &#x27;
+                                                                          &#x27;Cover&#x27;,
+                                                                 &#x27;type&#x27;: &#x27;number&#x27;}},
+                                &#x27;type&#x27;: &#x27;object&#x27;},
+                     &#x27;stac_extensions&#x27;: {&#x27;properties&#x27;: {&#x27;stac_extensions&#x27;: {&#x27;contains&#x27;: {&#x27;const&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json&#x27;},
+                                                                            &#x27;type&#x27;: &#x27;array&#x27;}},
+                                         &#x27;required&#x27;: [&#x27;stac_extensions&#x27;],
+                                         &#x27;type&#x27;: &#x27;object&#x27;}},
+     &#x27;description&#x27;: &#x27;STAC EO Extension for STAC Items.&#x27;,
+     &#x27;oneOf&#x27;: [{&#x27;$comment&#x27;: &#x27;This is the schema for STAC Items.&#x27;,
+                &#x27;allOf&#x27;: [{&#x27;$comment&#x27;: &#x27;The if-then-else below checks &#x27;
+                                       &#x27;whether the eo:bands is given in &#x27;
+                                       &#x27;assets or not. If yes, allows &#x27;
+                                       &#x27;eo:bands in properties (else), &#x27;
+                                       &#x27;otherwise, disallows eo:bands in &#x27;
+                                       &#x27;properties (then).&#x27;,
+                           &#x27;else&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;}}}}},
+                           &#x27;if&#x27;: {&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}},
+                                                            &#x27;type&#x27;: &#x27;object&#x27;}},
+                                  &#x27;required&#x27;: [&#x27;assets&#x27;]},
+                           &#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
+                                                     &#x27;type&#x27;: &#x27;object&#x27;},
+                                          &#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
+                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Feature&#x27;}},
+                           &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;properties&#x27;, &#x27;assets&#x27;],
+                           &#x27;then&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}}}},
+                           &#x27;type&#x27;: &#x27;object&#x27;},
+                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]},
+               {&#x27;$comment&#x27;: &#x27;This is the schema for STAC Collections.&#x27;,
+                &#x27;allOf&#x27;: [{&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
+                                                     &#x27;type&#x27;: &#x27;object&#x27;},
+                                          &#x27;item_assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
+                                                          &#x27;type&#x27;: &#x27;object&#x27;},
+                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Collection&#x27;}},
+                           &#x27;required&#x27;: [&#x27;type&#x27;],
+                           &#x27;type&#x27;: &#x27;object&#x27;},
+                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]}],
+     &#x27;title&#x27;: &#x27;EO Extension&#x27;}
 
 On instance:
     {&#x27;assets&#x27;: {&#x27;B1&#x27;: {&#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.44,

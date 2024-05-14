@@ -1,14 +1,5 @@
 {
   "@context": {
-    "type": "@type",
-    "coordinates": {
-      "@container": "@list",
-      "@id": "geojson:coordinates"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"
@@ -20,6 +11,7 @@
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
+    "type": "@type",
     "hreflang": "dct:language",
     "title": "rdfs:label",
     "length": "dct:extent",
@@ -28,6 +20,10 @@
     "geometry": {
       "@context": {},
       "@id": "geojson:geometry"
+    },
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
     },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -47,6 +43,16 @@
         "type": "dct:type"
       },
       "@id": "rdfs:seeAlso"
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "created": "dct:created",
+    "updated": "dct:modified",
+    "uriTemplate": {
+      "@type": "xsd:string",
+      "@id": "oa:hasTarget"
     },
     "accessRights": {
       "@id": "dct:accessRights",
@@ -127,8 +133,6 @@
       "@type": "@id"
     },
     "modificationDate": "dct:modified",
-    "updated": "dct:modified",
-    "created": "dct:created",
     "otherIdentifier": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/adms#identifier",
@@ -218,14 +222,14 @@
         "type": "dct:format"
       }
     },
-    "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
+    "geojson": "https://purl.org/geojson/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",

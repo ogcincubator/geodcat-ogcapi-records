@@ -47,12 +47,14 @@ path	@id
 /summaries	
 /summaries/minimum	
 /summaries/maximum	
-/conformsTo	
-/time	
-/time/date	
-/time/timestamp	
-/time/interval	
-/time/resolution	
+/links/anchor	
+/links/hreflang	http://purl.org/dc/terms/language
+/links/length	http://purl.org/dc/terms/extent
+/extent/spatial/crs	
+/extent/temporal/trs	
+/itemType	
+/crs	
+/properties	@nest
 /geometry	https://purl.org/geojson/vocab#geometry
 /geometry/type	@type
 /geometry/coordinates	https://purl.org/geojson/vocab#coordinates
@@ -61,12 +63,61 @@ path	@id
 /geometry/geometries/type	@type
 /geometry/geometries/coordinates	https://purl.org/geojson/vocab#coordinates
 /geometry/geometries/bbox	https://purl.org/geojson/vocab#bbox
-/properties	@nest
-/properties/created	
-/properties/updated	
-/properties/type	
+/bbox	https://purl.org/geojson/vocab#bbox
 /properties/title	
 /properties/description	
+/properties/datetime	
+/properties/start_datetime	
+/properties/end_datetime	
+/properties/created	
+/properties/updated	
+/properties/platform	
+/properties/instruments	
+/properties/constellation	
+/properties/mission	
+/properties/gsd	
+/properties/license	
+/properties/providers	
+/properties/providers/name	
+/properties/providers/description	
+/properties/providers/roles	
+/properties/providers/url	
+/collection	
+/properties/eo:cloud_cover	
+/properties/eo:snow_cover	
+/properties/eo:bands	
+/properties/eo:bands/name	
+/properties/eo:bands/common_name	
+/properties/eo:bands/description	
+/properties/eo:bands/center_wavelength	
+/properties/eo:bands/full_width_half_max	
+/properties/eo:bands/solar_illumination	
+/assets/eo:cloud_cover	
+/assets/eo:snow_cover	
+/assets/eo:bands	
+/assets/eo:bands/name	
+/assets/eo:bands/common_name	
+/assets/eo:bands/description	
+/assets/eo:bands/center_wavelength	
+/assets/eo:bands/full_width_half_max	
+/assets/eo:bands/solar_illumination	
+/item_assets	
+/item_assets/eo:cloud_cover	
+/item_assets/eo:snow_cover	
+/item_assets/eo:bands	
+/item_assets/eo:bands/name	
+/item_assets/eo:bands/common_name	
+/item_assets/eo:bands/description	
+/item_assets/eo:bands/center_wavelength	
+/item_assets/eo:bands/full_width_half_max	
+/item_assets/eo:bands/solar_illumination	
+/conformsTo	
+/time	
+/time/date	
+/time/timestamp	
+/time/interval	
+/time/resolution	
+/properties/type	
 /properties/keywords	
 /properties/language	
 /properties/language/code	
@@ -131,62 +182,17 @@ path	@id
 /properties/contacts/hoursOfService	
 /properties/contacts/contactInstructions	
 /properties/contacts/roles	
-/properties/license	
 /properties/rights	
-/links/anchor	
-/links/hreflang	http://purl.org/dc/terms/language
-/links/length	http://purl.org/dc/terms/extent
+/links/created	http://purl.org/dc/terms/created
+/links/updated	http://purl.org/dc/terms/modified
 /linkTemplates	
-/linkTemplates/rel	
-/linkTemplates/type	
-/linkTemplates/hreflang	
-/linkTemplates/title	
-/linkTemplates/length	
-/linkTemplates/created	
-/linkTemplates/updated	
-/linkTemplates/uriTemplate	
+/linkTemplates/rel	http://www.iana.org/assignments/relation
+/linkTemplates/type	http://purl.org/dc/terms/format
+/linkTemplates/hreflang	http://purl.org/dc/terms/language
+/linkTemplates/title	http://www.w3.org/2000/01/rdf-schema#label
+/linkTemplates/length	http://purl.org/dc/terms/extent
+/linkTemplates/created	http://purl.org/dc/terms/created
+/linkTemplates/updated	http://purl.org/dc/terms/modified
+/linkTemplates/uriTemplate	http://www.w3.org/ns/oa#hasTarget
 /linkTemplates/varBase	
 /linkTemplates/variables	
-/bbox	https://purl.org/geojson/vocab#bbox
-/properties/datetime	
-/properties/start_datetime	
-/properties/end_datetime	
-/properties/platform	
-/properties/instruments	
-/properties/constellation	
-/properties/mission	
-/properties/gsd	
-/properties/providers	
-/properties/providers/name	
-/properties/providers/description	
-/properties/providers/roles	
-/properties/providers/url	
-/collection	
-/properties/eo:cloud_cover	
-/properties/eo:snow_cover	
-/properties/eo:bands	
-/properties/eo:bands/name	
-/properties/eo:bands/common_name	
-/properties/eo:bands/description	
-/properties/eo:bands/center_wavelength	
-/properties/eo:bands/full_width_half_max	
-/properties/eo:bands/solar_illumination	
-/assets/eo:cloud_cover	
-/assets/eo:snow_cover	
-/assets/eo:bands	
-/assets/eo:bands/name	
-/assets/eo:bands/common_name	
-/assets/eo:bands/description	
-/assets/eo:bands/center_wavelength	
-/assets/eo:bands/full_width_half_max	
-/assets/eo:bands/solar_illumination	
-/item_assets	
-/item_assets/eo:cloud_cover	
-/item_assets/eo:snow_cover	
-/item_assets/eo:bands	
-/item_assets/eo:bands/name	
-/item_assets/eo:bands/common_name	
-/item_assets/eo:bands/description	
-/item_assets/eo:bands/center_wavelength	
-/item_assets/eo:bands/full_width_half_max	
-/item_assets/eo:bands/solar_illumination	

@@ -277,7 +277,7 @@ x-defs:
       links:
         type: array
         items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
       linkTemplates:
         type: array
         items:
@@ -951,6 +951,98 @@ x-defs:
       unlicensed; in this case do not register such a resource in the catalog in the
       first place since there is no point in making such a resource discoverable.
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
+  ogc.api.records.v1.schemas.linkBase:
+    $comment: Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml
+    type: object
+    properties:
+      rel:
+        type: string
+        description: The type or semantics of the relation.
+        example: alternate
+        x-jsonld-id: http://www.iana.org/assignments/relation
+        x-jsonld-type: '@id'
+        x-jsonld-base: http://www.iana.org/assignments/relation/
+      type:
+        type: string
+        description: A hint indicating what the media type of the result of dereferencing
+          the link should be.
+        example: application/geo+json
+        x-jsonld-id: http://purl.org/dc/terms/format
+      hreflang:
+        type: string
+        description: A hint indicating what the language of the result of dereferencing
+          the link should be.
+        example: en
+        x-jsonld-id: http://purl.org/dc/terms/language
+      title:
+        type: string
+        description: Used to label the destination of a link such that it can be used
+          as a human-readable identifier.
+        example: Trierer Strasse 70, 53115 Bonn
+        x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+      length:
+        type: integer
+        x-jsonld-id: http://purl.org/dc/terms/extent
+      created:
+        type: string
+        description: Date of creation of the resource pointed to by the link.
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/created
+      updated:
+        type: string
+        description: Most recent date on which the resource pointed to by the link
+          was changed.
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/modified
+    x-jsonld-extra-terms:
+      href:
+        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+        x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
+    x-jsonld-prefixes:
+      oa: http://www.w3.org/ns/oa#
+      xsd: http://www.w3.org/2001/XMLSchema#
+      rdfs: http://www.w3.org/2000/01/rdf-schema#
+      dct: http://purl.org/dc/terms/
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
+  ogc.api.records.v1.schemas.linkTemplate:
+    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
+    allOf:
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
+    - type: object
+      required:
+      - uriTemplate
+      properties:
+        uriTemplate:
+          type: string
+          description: Supplies a resolvable URI to a remote resource (or resource
+            fragment).
+          example: http://data.example.com/buildings/(building-id}
+          x-jsonld-type: xsd:string
+          x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
+        varBase:
+          type: string
+          description: The base URI to which the variable name can be appended to
+            retrieve the definition of the variable as a JSON Schema fragment.
+          format: url
+        variables:
+          type: object
+          description: This object contains one key per substitution variable in the
+            templated URL.  Each key defines the schema of one substitution variable
+            using a JSON Schema fragment and can thus include things like the data
+            type of the variable, enumerations, minimum values, maximum values, etc.
+    x-jsonld-prefixes:
+      oa: http://www.w3.org/ns/oa#
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
+  ogc.geo.common.data_types.bounding_box:
+    type: array
+    oneOf:
+    - minItems: 4
+      maxItems: 4
+    - minItems: 6
+      maxItems: 6
+    items:
+      type: number
+    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.yaml
   ogc.ogc-utils.json-link:
     description: JSON Link
     type: object
@@ -988,40 +1080,6 @@ x-defs:
       dct: http://purl.org/dc/terms/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
-  ogc.api.records.v1.schemas.linkTemplate:
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
-    - type: object
-      required:
-      - uriTemplate
-      properties:
-        uriTemplate:
-          type: string
-          description: Supplies a resolvable URI to a remote resource (or resource
-            fragment).
-          example: http://data.example.com/buildings/(building-id}
-        varBase:
-          type: string
-          description: The base URI to which the variable name can be appended to
-            retrieve the definition of the variable as a JSON Schema fragment.
-          format: url
-        variables:
-          type: object
-          description: This object contains one key per substitution variable in the
-            templated URL.  Each key defines the schema of one substitution variable
-            using a JSON Schema fragment and can thus include things like the data
-            type of the variable, enumerations, minimum values, maximum values, etc.
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
-  ogc.geo.common.data_types.bounding_box:
-    type: array
-    oneOf:
-    - minItems: 4
-      maxItems: 4
-    - minItems: 6
-      maxItems: 6
-    items:
-      type: number
-    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.yaml
   ogc.api.records.v1.schemas.roles:
     description: The list of duties, job functions or permissions assigned by the
       system and associated with the context of this member.
@@ -1030,39 +1088,5 @@ x-defs:
     items:
       type: string
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml
-  ogc.api.records.v1.schemas.linkBase:
-    type: object
-    properties:
-      rel:
-        type: string
-        description: The type or semantics of the relation.
-        example: alternate
-      type:
-        type: string
-        description: A hint indicating what the media type of the result of dereferencing
-          the link should be.
-        example: application/geo+json
-      hreflang:
-        type: string
-        description: A hint indicating what the language of the result of dereferencing
-          the link should be.
-        example: en
-      title:
-        type: string
-        description: Used to label the destination of a link such that it can be used
-          as a human-readable identifier.
-        example: Trierer Strasse 70, 53115 Bonn
-      length:
-        type: integer
-      created:
-        type: string
-        description: Date of creation of the resource pointed to by the link.
-        format: date-time
-      updated:
-        type: string
-        description: Most recent date on which the resource pointed to by the link
-          was changed.
-        format: date-time
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
 allOf:
 - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-records_schema.yaml
