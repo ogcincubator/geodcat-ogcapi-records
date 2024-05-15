@@ -371,10 +371,6 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
 
 <p>That building block is expected to be stable, whilst the GeoDCAT profile is under development.</p>
 <h1 id='examples'>Examples</h1><h2 id='geodcat-ap-backwards-compatibility-example'>GeoDCAT-AP backwards compatibility example.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
@@ -593,6 +589,7 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre></div>
 <blockquote class="lang-specific json">
   <p class="example-links">
@@ -600,11 +597,6 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
     <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-records%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"</span><span class="w">
@@ -821,7 +813,8 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
       </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"license"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://woudc.org/about/data-policy.php"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote class="lang-specific jsonld">

@@ -988,13 +988,13 @@ x-defs:
         x-jsonld-id: http://purl.org/dc/terms/modified
     x-jsonld-extra-terms:
       href:
-        x-jsonld-type: http://www.w3.org/2001/XMLSchema#string
+        x-jsonld-type: '@id'
         x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
     x-jsonld-prefixes:
       oa: http://www.w3.org/ns/oa#
-      xsd: http://www.w3.org/2001/XMLSchema#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
       dct: http://purl.org/dc/terms/
+      xsd: http://www.w3.org/2001/XMLSchema#
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
   ogc.api.records.v1.schemas.linkTemplate:
     $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml

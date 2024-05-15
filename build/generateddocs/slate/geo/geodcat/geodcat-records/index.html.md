@@ -49,10 +49,6 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
 
 ```json
 {
-  "@context": [
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
-  ],
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -271,6 +267,7 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
     }
   ]
 }
+
 ```
 
 <blockquote class="lang-specific json">
@@ -284,11 +281,6 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
 
 ```jsonld
 {
-  "@context": [
-    "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
-  ],
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -505,7 +497,8 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
       "rel": "license",
       "href": "https://woudc.org/about/data-policy.php"
     }
-  ]
+  ],
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld"
 }
 ```
 

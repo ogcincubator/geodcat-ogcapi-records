@@ -23,10 +23,6 @@ Examples of OGC API Records mapped to GeoDCAT
 #### json
 ```json
 {
-  "@context": [
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
-  ],
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -245,16 +241,12 @@ Examples of OGC API Records mapped to GeoDCAT
     }
   ]
 }
+
 ```
 
 #### jsonld
 ```jsonld
 {
-  "@context": [
-    "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/context.jsonld",
-    "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/context.jsonld"
-  ],
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -471,7 +463,8 @@ Examples of OGC API Records mapped to GeoDCAT
       "rel": "license",
       "href": "https://woudc.org/about/data-policy.php"
     }
-  ]
+  ],
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld"
 }
 ```
 
