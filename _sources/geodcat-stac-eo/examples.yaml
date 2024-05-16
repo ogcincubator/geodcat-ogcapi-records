@@ -1,6 +1,13 @@
-- title: Example of Electro-Optical using projection extension
+- title: A simple Collection demonstrating EO extension fields in a Collection.
 
   snippets:
     - language: json
-      ref: https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/extensions-collection/proj-example/proj-example.json
+      ref: https://raw.githubusercontent.com/stac-extensions/eo/main/examples/collection.json
+      base-uri: https://example.com/stac/raster/example-1/
+
+- title: An example demonstrating EO extension fields in a STAC item.
+
+  snippets:
+    - language: json
+      ref: https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json
       base-uri: https://example.com/stac/raster/example-1/

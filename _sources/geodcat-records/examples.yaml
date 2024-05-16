@@ -1,8 +1,10 @@
-- title: GeoDCAT-AP backwards compatibility example.
+- title: GeoDCAT example showing binding of OGC Record examples to OGC API record schema.
   content: |-
-    Examples of OGC API Records mapped to GeoDCAT 
+    This example is to test records examples.
 
+    This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json).
+    
   snippets:
     - language: json
-      ref: ../dcat-records/examples/records-example.json
-
+      ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json
+      base-uri: "http://example.com/records/"
