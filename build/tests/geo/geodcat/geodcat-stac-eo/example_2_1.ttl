@@ -1,0 +1,56 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <eo:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <urn:stac:vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> a geojson:Feature ;
+    ns1:cloud_cover 1.2e+00 ;
+    ns1:snow_cover 0 ;
+    dcterms:created "2020-12-12T01:48:13.725Z" ;
+    dcterms:modified "2020-12-12T01:48:13.725Z" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
+    stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json" ;
+    stac:hasAsset <https://example.com/stac/raster/example-1/analytic>,
+        <https://example.com/stac/raster/example-1/thumbnail>,
+        <https://example.com/stac/raster/example-1/visual> ;
+    stac:version "1.0.0" .
+
+<https://example.com/stac/raster/example-1/analytic> ns1:bands [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "4-Band Analytic" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
+
+<https://example.com/stac/raster/example-1/thumbnail> dcterms:format "image/png" ;
+    dcterms:title "Thumbnail" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
+
+<https://example.com/stac/raster/example-1/visual> ns1:bands [ ],
+        [ ],
+        [ ] ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "3-Band Visual" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
+

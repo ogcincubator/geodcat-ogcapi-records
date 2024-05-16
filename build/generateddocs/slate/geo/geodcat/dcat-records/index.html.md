@@ -4,6 +4,7 @@ title: Generic DCAT profile of OGC API Records (Schema)
 language_tabs:
   - json: JSON
   - jsonld: JSON-LD
+  - turtle: RDF/Turtle
 
 toc_footers:
   - Version 0.1
@@ -28,8 +29,8 @@ DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT voc
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-records/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
@@ -51,15 +52,9 @@ It uses the context for a dcat:Dataset as the basis for a Record.
 ```json
 {
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
-  "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
-  ],
   "type": "Feature",
   "time": {
-    "interval": [
-      "1924-08-17T00:00:00Z",
-      ".."
-    ],
+    "interval": [ "1924-08-17T00:00:00Z", ".."],
     "resolution": "P1D"
   },
   "geometry": {
@@ -89,6 +84,9 @@ It uses the context for a dcat:Dataset as the basis for a Record.
       ]
     ]
   },
+  "conformsTo": [
+     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+  ],
   "properties": {
     "created": "2021-02-08T00:00:00Z",
     "updated": "2021-02-08T00:00:00Z",
@@ -105,8 +103,19 @@ It uses the context for a dcat:Dataset as the basis for a Record.
       "saoz"
     ],
     "language": {
-      "code": "en"
+      "code": "en-CA",
+      "name": "English (Canada)"
     },
+    "languages": [
+      {
+        "code": "en-CA",
+        "name": "English (Canada)"
+      },
+      {
+        "code": "fr-CA",
+        "name": "French (Canada)"
+      }
+    ],
     "externalId": [
       {
         "scheme": "WMO:WIS",
@@ -117,16 +126,14 @@ It uses the context for a dcat:Dataset as the basis for a Record.
       {
         "name": "World Ozone and Ultraviolet Radiation Data Centre",
         "links": [
-          {
-            "href": "https://woudc.org",
-            "rel": "about",
-            "type": "text/html"
-          }
+           {
+             "href": "https://woudc.org",
+             "rel": "about",
+             "type": "text/html"
+           }
         ],
         "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
-        "roles": [
-          "publisher"
-        ]
+        "roles": [ "publisher" ]
       }
     ],
     "themes": [
@@ -186,28 +193,13 @@ It uses the context for a dcat:Dataset as the basis for a Record.
     ],
     "license": "other"
   },
-  "links": [
-    {
-      "rel": "alternate",
-      "type": "text/html",
-      "title": "This document as HTML",
-      "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
-    },
+  "linkTemplates": [
     {
       "rel": "item",
       "type": "image/png",
-      "title": "OGC Web Map Service (WMS)",
-      "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=totalozone&width={width}&height={height}&format=image/png",
-      "templated": true,
+      "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
+      "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
       "variables": {
-        "crs": {
-          "description": "...",
-          "type": "string",
-          "enum": [
-            "EPSG:4326",
-            "EPSG:3857"
-          ]
-        },
         "bbox": {
           "description": "...",
           "type": "array",
@@ -217,6 +209,14 @@ It uses the context for a dcat:Dataset as the basis for a Record.
           },
           "minItems": 4,
           "maxItems": 4
+        },
+        "crs": {
+          "description": "...",
+          "type": "string",
+          "enum": [
+            "EPSG:4326",
+            "EPSG:3857"
+          ]
         },
         "width": {
           "description": "...",
@@ -233,6 +233,20 @@ It uses the context for a dcat:Dataset as the basis for a Record.
           "maximum": 5000
         }
       }
+    }
+  ],
+  "links": [
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
+    },
+    {
+      "rel": "preview",
+      "type": "image/png",
+      "title": "Total Ozone Preview Image",
+      "href": "https://woudc.org/data/preview.png"
     },
     {
       "rel": "enclosure",
@@ -283,9 +297,6 @@ It uses the context for a dcat:Dataset as the basis for a Record.
 ```jsonld
 {
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
-  "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
-  ],
   "type": "Feature",
   "time": {
     "interval": [
@@ -321,6 +332,9 @@ It uses the context for a dcat:Dataset as the basis for a Record.
       ]
     ]
   },
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+  ],
   "properties": {
     "created": "2021-02-08T00:00:00Z",
     "updated": "2021-02-08T00:00:00Z",
@@ -337,8 +351,19 @@ It uses the context for a dcat:Dataset as the basis for a Record.
       "saoz"
     ],
     "language": {
-      "code": "en"
+      "code": "en-CA",
+      "name": "English (Canada)"
     },
+    "languages": [
+      {
+        "code": "en-CA",
+        "name": "English (Canada)"
+      },
+      {
+        "code": "fr-CA",
+        "name": "French (Canada)"
+      }
+    ],
     "externalId": [
       {
         "scheme": "WMO:WIS",
@@ -418,28 +443,13 @@ It uses the context for a dcat:Dataset as the basis for a Record.
     ],
     "license": "other"
   },
-  "links": [
-    {
-      "rel": "alternate",
-      "type": "text/html",
-      "title": "This document as HTML",
-      "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
-    },
+  "linkTemplates": [
     {
       "rel": "item",
       "type": "image/png",
-      "title": "OGC Web Map Service (WMS)",
-      "href": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=totalozone&width={width}&height={height}&format=image/png",
-      "templated": true,
+      "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
+      "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
       "variables": {
-        "crs": {
-          "description": "...",
-          "type": "string",
-          "enum": [
-            "EPSG:4326",
-            "EPSG:3857"
-          ]
-        },
         "bbox": {
           "description": "...",
           "type": "array",
@@ -449,6 +459,14 @@ It uses the context for a dcat:Dataset as the basis for a Record.
           },
           "minItems": 4,
           "maxItems": 4
+        },
+        "crs": {
+          "description": "...",
+          "type": "string",
+          "enum": [
+            "EPSG:4326",
+            "EPSG:3857"
+          ]
         },
         "width": {
           "description": "...",
@@ -465,6 +483,20 @@ It uses the context for a dcat:Dataset as the basis for a Record.
           "maximum": 5000
         }
       }
+    }
+  ],
+  "links": [
+    {
+      "rel": "alternate",
+      "type": "text/html",
+      "title": "This document as HTML",
+      "href": "https://woudc.org/data/dataset_info.php?id=totalozone"
+    },
+    {
+      "rel": "preview",
+      "type": "image/png",
+      "title": "Total Ozone Preview Image",
+      "href": "https://woudc.org/data/preview.png"
     },
     {
       "rel": "enclosure",
@@ -510,7 +542,78 @@ It uses the context for a dcat:Dataset as the basis for a Record.
 </blockquote>
 
 
-This example is a GEODCAT-AP example to test backwards compatibility with SHACL and other RDF constraints
+
+
+```turtle
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a <http://example.com/records/dataset>,
+        geojson:Feature ;
+    rdfs:label "Total Ozone - daily observations" ;
+    dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
+    dcterms:created "2021-02-08T00:00:00Z" ;
+    dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
+    dcterms:language [ ] ;
+    dcterms:modified "2021-02-08T00:00:00Z" ;
+    rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Static dataset archive file" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "application/zip" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
+        [ rdfs:label "Data Search / Download User Interface" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
+    dcat:keyword "brewer",
+        "column",
+        "dobson",
+        "level 1.0",
+        "ozone",
+        "saoz",
+        "total" ;
+    geojson:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] .
+
+
+```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-records/example_1_1.ttl">Open in new window</a>
+</blockquote>
+
+
+This example is to test records examples.
+
+This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json](https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json).
 
 
 # JSON Schema

@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-05-15T07:15:42.912854+00:00</small>
+            <small class="datetime">Generated at 2024-05-16T07:01:59.991202+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 2 / 7 (28.57%)
+                    Number of passing building blocks: 4 / 7 (57.14%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.dcat-records" id="bblock-ogc.geo.geodcat.dcat-records">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.dcat-records">
                                     <div class="flex-fill">
@@ -193,16 +193,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.dcat-records</small>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (0% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.dcat-records">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.dcat-records">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 1
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -214,10 +214,10 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="geo/geodcat/dcat-records/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-3">
@@ -226,11 +226,9 @@
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON-LD</div>
-                                                                    <div class="font-monospace entry-message section-json_ld text-danger">Error found when uplifting JSON-LD: https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png does not look like a valid URI, trying to serialize this will break.
-</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle text-danger">&quot;https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png&quot; does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,7 +238,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records" id="bblock-ogc.geo.geodcat.geodcat-records">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-records">
                                     <div class="flex-fill">
@@ -248,16 +246,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records</small>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (0% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-records">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat-records">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 1
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 1 / 1
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -269,10 +267,10 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="geo/geodcat/geodcat-records/example_1_1.json" target="_blank">example_1_1.json</a>
+                                                    <a href="https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/examples/json/record.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-4">
@@ -281,11 +279,9 @@
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON-LD</div>
-                                                                    <div class="font-monospace entry-message section-json_ld text-danger">Error found when uplifting JSON-LD: https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png does not look like a valid URI, trying to serialize this will break.
-</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                    <div class="font-monospace entry-message section-turtle text-danger">&quot;https://geo.woudc.org/ows?service=WMS&amp;version=1.3.0&amp;request=GetMap&amp;crs={crs}&amp;bbox={bbox}&amp;layers=totalozone&amp;width={width}&amp;height={height}&amp;format=image/png&quot; does not look like a valid URI, I cannot serialize this as N3/Turtle. Perhaps you wanted to urlencode it?</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -658,7 +654,7 @@ On instance[&#x27;properties&#x27;]:
                             <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-eo">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 1
+                                            Test passed: 0 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -670,7 +666,7 @@ On instance[&#x27;properties&#x27;]:
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/extensions-collection/proj-example/proj-example.json" target="_blank">example_1_1.json</a>
+                                                    <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/collection.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-danger me-2">Failed</span>
@@ -684,275 +680,548 @@ On instance[&#x27;properties&#x27;]:
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;, &#x27;id&#x27;: &#x27;proj-example&#x27;, &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2018-10-01T01:08:32.033000Z&#x27;, &#x27;proj:epsg&#x27;: 32614, &#x27;proj:wkt2&#x27;: &#x27;PROJCS[&quot;WGS 84 / UTM zone 14N&quot;,GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.01745329251994328,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,-99],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],AUTHORITY[&quot;EPSG&quot;,&quot;32614&quot;],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]&#x27;, &#x27;proj:projjson&#x27;: {&#x27;$schema&#x27;: &#x27;https://proj.org/schemas/v0.2/projjson.schema.json&#x27;, &#x27;type&#x27;: &#x27;ProjectedCRS&#x27;, &#x27;name&#x27;: &#x27;WGS 84 / UTM zone 14N&#x27;, &#x27;base_crs&#x27;: {&#x27;name&#x27;: &#x27;WGS 84&#x27;, &#x27;datum&#x27;: {&#x27;type&#x27;: &#x27;GeodeticReferenceFrame&#x27;, &#x27;name&#x27;: &#x27;World Geodetic System 1984&#x27;, &#x27;ellipsoid&#x27;: {&#x27;name&#x27;: &#x27;WGS 84&#x27;, &#x27;semi_major_axis&#x27;: 6378137, &#x27;inverse_flattening&#x27;: 298.257223563}}, &#x27;coordinate_system&#x27;: {&#x27;subtype&#x27;: &#x27;ellipsoidal&#x27;, &#x27;axis&#x27;: [{&#x27;name&#x27;: &#x27;Geodetic latitude&#x27;, &#x27;abbreviation&#x27;: &#x27;Lat&#x27;, &#x27;direction&#x27;: &#x27;north&#x27;, &#x27;unit&#x27;: &#x27;degree&#x27;}, {&#x27;name&#x27;: &#x27;Geodetic longitude&#x27;, &#x27;abbreviation&#x27;: &#x27;Lon&#x27;, &#x27;direction&#x27;: &#x27;east&#x27;, &#x27;unit&#x27;: &#x27;degree&#x27;}]}, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 4326}}, &#x27;conversion&#x27;: {&#x27;name&#x27;: &#x27;UTM zone 14N&#x27;, &#x27;method&#x27;: {&#x27;name&#x27;: &#x27;Transverse Mercator&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 9807}}, &#x27;parameters&#x27;: [{&#x27;name&#x27;: &#x27;Latitude of natural origin&#x27;, &#x27;value&#x27;: 0, &#x27;unit&#x27;: &#x27;degree&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8801}}, {&#x27;name&#x27;: &#x27;Longitude of natural origin&#x27;, &#x27;value&#x27;: -99, &#x27;unit&#x27;: &#x27;degree&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8802}}, {&#x27;name&#x27;: &#x27;Scale factor at natural origin&#x27;, &#x27;value&#x27;: 0.9996, &#x27;unit&#x27;: &#x27;unity&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8805}}, {&#x27;name&#x27;: &#x27;False easting&#x27;, &#x27;value&#x27;: 500000, &#x27;unit&#x27;: &#x27;metre&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8806}}, {&#x27;name&#x27;: &#x27;False northing&#x27;, &#x27;value&#x27;: 0, &#x27;unit&#x27;: &#x27;metre&#x27;, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 8807}}]}, &#x27;coordinate_system&#x27;: {&#x27;subtype&#x27;: &#x27;Cartesian&#x27;, &#x27;axis&#x27;: [{&#x27;name&#x27;: &#x27;Easting&#x27;, &#x27;abbreviation&#x27;: &#x27;E&#x27;, &#x27;direction&#x27;: &#x27;east&#x27;, &#x27;unit&#x27;: &#x27;metre&#x27;}, {&#x27;name&#x27;: &#x27;Northing&#x27;, &#x27;abbreviation&#x27;: &#x27;N&#x27;, &#x27;direction&#x27;: &#x27;north&#x27;, &#x27;unit&#x27;: &#x27;metre&#x27;}]}, &#x27;area&#x27;: &#x27;World - N hemisphere - 102°W to 96°W - by country&#x27;, &#x27;bbox&#x27;: {&#x27;south_latitude&#x27;: 0, &#x27;west_longitude&#x27;: -102, &#x27;north_latitude&#x27;: 84, &#x27;east_longitude&#x27;: -96}, &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;, &#x27;code&#x27;: 32614}}, &#x27;proj:geometry&#x27;: {&#x27;coordinates&#x27;: [[[169200, 3712800], [403200, 3712800], [403200, 3951000], [169200, 3951000], [169200, 3712800]]], &#x27;type&#x27;: &#x27;Polygon&#x27;}, &#x27;proj:bbox&#x27;: [169200, 3712800, 403200, 3951000], &#x27;proj:centroid&#x27;: {&#x27;lat&#x27;: 34.595302781575604, &#x27;lon&#x27;: -101.34448382627504}, &#x27;proj:shape&#x27;: [8391, 8311], &#x27;proj:transform&#x27;: [30, 0, 224985, 0, -30, 6790215, 0, 0, 1]}, &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[152.52758, 60.63437], [149.1755, 61.19016], [148.13933, 59.51584], [151.33786, 58.97792], [152.52758, 60.63437]]]}, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;../../catalog.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Example Catalog&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;../collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;}, {&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;../collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;}], &#x27;assets&#x27;: {&#x27;B1&#x27;: {&#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;, &#x27;title&#x27;: &#x27;Band 1 (coastal)&#x27;, &#x27;eo:bands&#x27;: [{&#x27;name&#x27;: &#x27;B1&#x27;, &#x27;common_name&#x27;: &#x27;coastal&#x27;, &#x27;center_wavelength&#x27;: 0.44, &#x27;full_width_half_max&#x27;: 0.02}]}, &#x27;B8&#x27;: {&#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;, &#x27;title&#x27;: &#x27;Band 8 (panchromatic)&#x27;, &#x27;eo:bands&#x27;: [{&#x27;name&#x27;: &#x27;B8&#x27;, &#x27;center_wavelength&#x27;: 0.59, &#x27;full_width_half_max&#x27;: 0.18}], &#x27;proj:shape&#x27;: [16781, 16621], &#x27;proj:transform&#x27;: [15, 0, 224992.5, 0, -15, 6790207.5, 0, 0, 1]}}, &#x27;bbox&#x27;: [148.13933, 59.51584, 152.52758, 60.63437], &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v1.0.0/schema.json&#x27;, &#x27;https://stac-extensions.github.io/projection/v1.0.0/schema.json&#x27;], &#x27;collection&#x27;: &#x27;landsat-8-l1&#x27;} is not valid under any of the given schemas
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;properties&#x27; is a required property
 
-Failed validating &#x27;oneOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][1]:
-    {&#x27;$id&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json#&#x27;,
+Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0]:
+    {&#x27;$id&#x27;: &#x27;https://geojson.org/schema/Feature.json&#x27;,
      &#x27;$schema&#x27;: &#x27;http://json-schema.org/draft-07/schema#&#x27;,
-     &#x27;definitions&#x27;: {&#x27;bands&#x27;: {&#x27;items&#x27;: {&#x27;minProperties&#x27;: 1,
-                                         &#x27;properties&#x27;: {&#x27;center_wavelength&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                              &#x27;title&#x27;: &#x27;Center &#x27;
-                                                                                       &#x27;Wavelength&#x27;,
-                                                                              &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;common_name&#x27;: {&#x27;enum&#x27;: [&#x27;coastal&#x27;,
-                                                                                 &#x27;blue&#x27;,
-                                                                                 &#x27;green&#x27;,
-                                                                                 &#x27;red&#x27;,
-                                                                                 &#x27;rededge&#x27;,
-                                                                                 &#x27;yellow&#x27;,
-                                                                                 &#x27;pan&#x27;,
-                                                                                 &#x27;nir&#x27;,
-                                                                                 &#x27;nir08&#x27;,
-                                                                                 &#x27;nir09&#x27;,
-                                                                                 &#x27;cirrus&#x27;,
-                                                                                 &#x27;swir16&#x27;,
-                                                                                 &#x27;swir22&#x27;,
-                                                                                 &#x27;lwir&#x27;,
-                                                                                 &#x27;lwir11&#x27;,
-                                                                                 &#x27;lwir12&#x27;],
-                                                                        &#x27;title&#x27;: &#x27;Common &#x27;
-                                                                                 &#x27;Name &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;description&#x27;: {&#x27;minLength&#x27;: 1,
-                                                                        &#x27;title&#x27;: &#x27;Description &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;full_width_half_max&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                                &#x27;title&#x27;: &#x27;Full &#x27;
-                                                                                         &#x27;Width &#x27;
-                                                                                         &#x27;Half &#x27;
-                                                                                         &#x27;Max &#x27;
-                                                                                         &#x27;(FWHM)&#x27;,
-                                                                                &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;name&#x27;: {&#x27;title&#x27;: &#x27;Name &#x27;
-                                                                          &#x27;of &#x27;
-                                                                          &#x27;the &#x27;
-                                                                          &#x27;band&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;solar_illumination&#x27;: {&#x27;minimum&#x27;: 0,
-                                                                               &#x27;title&#x27;: &#x27;Solar &#x27;
-                                                                                        &#x27;Illumination&#x27;,
-                                                                               &#x27;type&#x27;: &#x27;number&#x27;}},
-                                         &#x27;title&#x27;: &#x27;Band&#x27;,
-                                         &#x27;type&#x27;: &#x27;object&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;title&#x27;: &#x27;Bands&#x27;,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                     &#x27;fields&#x27;: {&#x27;additionalProperties&#x27;: False,
-                                &#x27;patternProperties&#x27;: {&#x27;^(?!eo:)&#x27;: {}},
-                                &#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;},
-                                               &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                  &#x27;minimum&#x27;: 0,
-                                                                  &#x27;title&#x27;: &#x27;Cloud &#x27;
-                                                                           &#x27;Cover&#x27;,
-                                                                  &#x27;type&#x27;: &#x27;number&#x27;},
-                                               &#x27;eo:snow_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                 &#x27;minimum&#x27;: 0,
-                                                                 &#x27;title&#x27;: &#x27;Snow &#x27;
-                                                                          &#x27;and &#x27;
-                                                                          &#x27;Ice &#x27;
-                                                                          &#x27;Cover&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;number&#x27;}},
-                                &#x27;type&#x27;: &#x27;object&#x27;},
-                     &#x27;stac_extensions&#x27;: {&#x27;properties&#x27;: {&#x27;stac_extensions&#x27;: {&#x27;contains&#x27;: {&#x27;const&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json&#x27;},
-                                                                            &#x27;type&#x27;: &#x27;array&#x27;}},
-                                         &#x27;required&#x27;: [&#x27;stac_extensions&#x27;],
-                                         &#x27;type&#x27;: &#x27;object&#x27;}},
-     &#x27;description&#x27;: &#x27;STAC EO Extension for STAC Items.&#x27;,
-     &#x27;oneOf&#x27;: [{&#x27;$comment&#x27;: &#x27;This is the schema for STAC Items.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;$comment&#x27;: &#x27;The if-then-else below checks &#x27;
-                                       &#x27;whether the eo:bands is given in &#x27;
-                                       &#x27;assets or not. If yes, allows &#x27;
-                                       &#x27;eo:bands in properties (else), &#x27;
-                                       &#x27;otherwise, disallows eo:bands in &#x27;
-                                       &#x27;properties (then).&#x27;,
-                           &#x27;else&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;}}}}},
-                           &#x27;if&#x27;: {&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}},
-                                                            &#x27;type&#x27;: &#x27;object&#x27;}},
-                                  &#x27;required&#x27;: [&#x27;assets&#x27;]},
-                           &#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Feature&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;properties&#x27;, &#x27;assets&#x27;],
-                           &#x27;then&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}}}},
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]},
-               {&#x27;$comment&#x27;: &#x27;This is the schema for STAC Collections.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;item_assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                          &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Collection&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;],
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]}],
-     &#x27;title&#x27;: &#x27;EO Extension&#x27;}
+     &#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                             &#x27;minItems&#x27;: 4,
+                             &#x27;type&#x27;: &#x27;array&#x27;,
+                             &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                    &#x27;geometry&#x27;: {&#x27;oneOf&#x27;: [{&#x27;type&#x27;: &#x27;null&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                           &#x27;minItems&#x27;: 2,
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;Point&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON Point&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                     &#x27;minItems&#x27;: 2,
+                                                                                     &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                           &#x27;minItems&#x27;: 2,
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;LineString&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON LineString&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                               &#x27;minItems&#x27;: 2,
+                                                                                               &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                     &#x27;minItems&#x27;: 4,
+                                                                                     &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;Polygon&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON Polygon&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                     &#x27;minItems&#x27;: 2,
+                                                                                     &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiPoint&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON MultiPoint&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                               &#x27;minItems&#x27;: 2,
+                                                                                               &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                     &#x27;minItems&#x27;: 2,
+                                                                                     &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiLineString&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                     &#x27;MultiLineString&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                         &#x27;minItems&#x27;: 2,
+                                                                                                         &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                               &#x27;minItems&#x27;: 4,
+                                                                                               &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                     &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                           &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                           &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiPolygon&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;coordinates&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON MultiPolygon&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;},
+                                           {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                    &#x27;minItems&#x27;: 4,
+                                                                    &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                    &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                           &#x27;geometries&#x27;: {&#x27;items&#x27;: {&#x27;oneOf&#x27;: [{&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                              &#x27;minItems&#x27;: 2,
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;Point&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;Point&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;},
+                                                                                              {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                                        &#x27;minItems&#x27;: 2,
+                                                                                                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                              &#x27;minItems&#x27;: 2,
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;LineString&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;LineString&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;},
+                                                                                              {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                                                  &#x27;minItems&#x27;: 2,
+                                                                                                                                                  &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                                        &#x27;minItems&#x27;: 4,
+                                                                                                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;Polygon&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;Polygon&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;},
+                                                                                              {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                                        &#x27;minItems&#x27;: 2,
+                                                                                                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiPoint&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;MultiPoint&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;},
+                                                                                              {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                                                  &#x27;minItems&#x27;: 2,
+                                                                                                                                                  &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                                        &#x27;minItems&#x27;: 2,
+                                                                                                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiLineString&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;MultiLineString&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;},
+                                                                                              {&#x27;properties&#x27;: {&#x27;bbox&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                       &#x27;minItems&#x27;: 4,
+                                                                                                                       &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                       &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#bbox&#x27;},
+                                                                                                              &#x27;coordinates&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;items&#x27;: {&#x27;type&#x27;: &#x27;number&#x27;},
+                                                                                                                                                            &#x27;minItems&#x27;: 2,
+                                                                                                                                                            &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                                                  &#x27;minItems&#x27;: 4,
+                                                                                                                                                  &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                                        &#x27;type&#x27;: &#x27;array&#x27;},
+                                                                                                                              &#x27;type&#x27;: &#x27;array&#x27;,
+                                                                                                                              &#x27;x-jsonld-container&#x27;: &#x27;@list&#x27;,
+                                                                                                                              &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#coordinates&#x27;},
+                                                                                                              &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;MultiPolygon&#x27;],
+                                                                                                                       &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                                                                       &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                                                                               &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                                                                            &#x27;coordinates&#x27;],
+                                                                                               &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                                                                        &#x27;MultiPolygon&#x27;,
+                                                                                               &#x27;type&#x27;: &#x27;object&#x27;}]},
+                                                                          &#x27;type&#x27;: &#x27;array&#x27;},
+                                                           &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;GeometryCollection&#x27;],
+                                                                    &#x27;type&#x27;: &#x27;string&#x27;,
+                                                                    &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+                                            &#x27;required&#x27;: [&#x27;type&#x27;,
+                                                         &#x27;geometries&#x27;],
+                                            &#x27;title&#x27;: &#x27;GeoJSON &#x27;
+                                                     &#x27;GeometryCollection&#x27;,
+                                            &#x27;type&#x27;: &#x27;object&#x27;}],
+                                 &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#geometry&#x27;},
+                    &#x27;id&#x27;: {&#x27;oneOf&#x27;: [{&#x27;type&#x27;: &#x27;number&#x27;},
+                                     {&#x27;type&#x27;: &#x27;string&#x27;}],
+                           &#x27;x-jsonld-id&#x27;: &#x27;@id&#x27;},
+                    &#x27;properties&#x27;: {&#x27;oneOf&#x27;: [{&#x27;type&#x27;: &#x27;null&#x27;},
+                                             {&#x27;type&#x27;: &#x27;object&#x27;}],
+                                   &#x27;x-jsonld-id&#x27;: &#x27;@nest&#x27;},
+                    &#x27;type&#x27;: {&#x27;enum&#x27;: [&#x27;Feature&#x27;],
+                             &#x27;type&#x27;: &#x27;string&#x27;,
+                             &#x27;x-jsonld-id&#x27;: &#x27;@type&#x27;}},
+     &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;properties&#x27;, &#x27;geometry&#x27;],
+     &#x27;title&#x27;: &#x27;GeoJSON Feature&#x27;,
+     &#x27;type&#x27;: &#x27;object&#x27;,
+     &#x27;x-jsonld-extra-terms&#x27;: {&#x27;Feature&#x27;: &#x27;https://purl.org/geojson/vocab#Feature&#x27;,
+                              &#x27;FeatureCollection&#x27;: &#x27;https://purl.org/geojson/vocab#FeatureCollection&#x27;,
+                              &#x27;GeometryCollection&#x27;: &#x27;https://purl.org/geojson/vocab#GeometryCollection&#x27;,
+                              &#x27;LineString&#x27;: &#x27;https://purl.org/geojson/vocab#LineString&#x27;,
+                              &#x27;MultiLineString&#x27;: &#x27;https://purl.org/geojson/vocab#MultiLineString&#x27;,
+                              &#x27;MultiPoint&#x27;: &#x27;https://purl.org/geojson/vocab#MultiPoint&#x27;,
+                              &#x27;MultiPolygon&#x27;: &#x27;https://purl.org/geojson/vocab#MultiPolygon&#x27;,
+                              &#x27;Point&#x27;: &#x27;https://purl.org/geojson/vocab#Point&#x27;,
+                              &#x27;Polygon&#x27;: &#x27;https://purl.org/geojson/vocab#Polygon&#x27;,
+                              &#x27;features&#x27;: {&#x27;x-jsonld-container&#x27;: &#x27;@set&#x27;,
+                                           &#x27;x-jsonld-id&#x27;: &#x27;https://purl.org/geojson/vocab#features&#x27;}},
+     &#x27;x-jsonld-prefixes&#x27;: {&#x27;geojson&#x27;: &#x27;https://purl.org/geojson/vocab#&#x27;}}
 
 On instance:
-    {&#x27;assets&#x27;: {&#x27;B1&#x27;: {&#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.44,
-                                     &#x27;common_name&#x27;: &#x27;coastal&#x27;,
-                                     &#x27;full_width_half_max&#x27;: 0.02,
-                                     &#x27;name&#x27;: &#x27;B1&#x27;}],
-                       &#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF&#x27;,
-                       &#x27;title&#x27;: &#x27;Band 1 (coastal)&#x27;,
-                       &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;},
-                &#x27;B8&#x27;: {&#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.59,
-                                     &#x27;full_width_half_max&#x27;: 0.18,
-                                     &#x27;name&#x27;: &#x27;B8&#x27;}],
-                       &#x27;href&#x27;: &#x27;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF&#x27;,
-                       &#x27;proj:shape&#x27;: [16781, 16621],
-                       &#x27;proj:transform&#x27;: [15,
-                                          0,
-                                          224992.5,
-                                          0,
-                                          -15,
-                                          6790207.5,
-                                          0,
-                                          0,
-                                          1],
-                       &#x27;title&#x27;: &#x27;Band 8 (panchromatic)&#x27;,
-                       &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;}},
-     &#x27;bbox&#x27;: [148.13933, 59.51584, 152.52758, 60.63437],
-     &#x27;collection&#x27;: &#x27;landsat-8-l1&#x27;,
-     &#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[[152.52758, 60.63437],
-                                   [149.1755, 61.19016],
-                                   [148.13933, 59.51584],
-                                   [151.33786, 58.97792],
-                                   [152.52758, 60.63437]]],
-                  &#x27;type&#x27;: &#x27;Polygon&#x27;},
-     &#x27;id&#x27;: &#x27;proj-example&#x27;,
-     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;../../catalog.json&#x27;,
+    {&#x27;description&#x27;: &#x27;A simple Collection demonstrating EO extension fields &#x27;
+                    &#x27;in a Collection.&#x27;,
+     &#x27;extent&#x27;: {&#x27;spatial&#x27;: {&#x27;bbox&#x27;: [[172.91173669923782,
+                                      1.3438851951615003,
+                                      172.95469614953714,
+                                      1.3690476620161975]]},
+                &#x27;temporal&#x27;: {&#x27;interval&#x27;: [[&#x27;2020-12-11T22:38:32.125Z&#x27;,
+                                           &#x27;2020-12-14T18:02:31.437Z&#x27;]]}},
+     &#x27;id&#x27;: &#x27;eo-collection&#x27;,
+     &#x27;item_assets&#x27;: {&#x27;analytic&#x27;: {&#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.47,
+                                                &#x27;common_name&#x27;: &#x27;blue&#x27;,
+                                                &#x27;full_width_half_max&#x27;: 0.7,
+                                                &#x27;name&#x27;: &#x27;band1&#x27;,
+                                                &#x27;solar_illumination&#x27;: 1959.66},
+                                               {&#x27;center_wavelength&#x27;: 0.56,
+                                                &#x27;common_name&#x27;: &#x27;green&#x27;,
+                                                &#x27;full_width_half_max&#x27;: 0.08,
+                                                &#x27;name&#x27;: &#x27;band2&#x27;,
+                                                &#x27;solar_illumination&#x27;: 1823.24},
+                                               {&#x27;center_wavelength&#x27;: 0.645,
+                                                &#x27;common_name&#x27;: &#x27;red&#x27;,
+                                                &#x27;full_width_half_max&#x27;: 0.9,
+                                                &#x27;name&#x27;: &#x27;band3&#x27;,
+                                                &#x27;solar_illumination&#x27;: 1512.06},
+                                               {&#x27;center_wavelength&#x27;: 0.8,
+                                                &#x27;common_name&#x27;: &#x27;nir&#x27;,
+                                                &#x27;full_width_half_max&#x27;: 0.152,
+                                                &#x27;name&#x27;: &#x27;band4&#x27;,
+                                                &#x27;solar_illumination&#x27;: 1041.63}],
+                                  &#x27;roles&#x27;: [&#x27;data&#x27;],
+                                  &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;,
+                                  &#x27;type&#x27;: &#x27;image/tiff; &#x27;
+                                          &#x27;application=geotiff; &#x27;
+                                          &#x27;profile=cloud-optimized&#x27;},
+                     &#x27;thumbnail&#x27;: {&#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
+                                   &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
+                                   &#x27;type&#x27;: &#x27;image/png&#x27;},
+                     &#x27;visual&#x27;: {&#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.645,
+                                              &#x27;common_name&#x27;: &#x27;red&#x27;,
+                                              &#x27;full_width_half_max&#x27;: 0.09,
+                                              &#x27;name&#x27;: &#x27;band3&#x27;},
+                                             {&#x27;center_wavelength&#x27;: 0.56,
+                                              &#x27;common_name&#x27;: &#x27;green&#x27;,
+                                              &#x27;full_width_half_max&#x27;: 0.08,
+                                              &#x27;name&#x27;: &#x27;band2&#x27;},
+                                             {&#x27;center_wavelength&#x27;: 0.47,
+                                              &#x27;common_name&#x27;: &#x27;blue&#x27;,
+                                              &#x27;full_width_half_max&#x27;: 0.07,
+                                              &#x27;name&#x27;: &#x27;band1&#x27;}],
+                                &#x27;roles&#x27;: [&#x27;visual&#x27;],
+                                &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
+                                &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                        &#x27;profile=cloud-optimized&#x27;}},
+     &#x27;license&#x27;: &#x27;CC-BY-4.0&#x27;,
+     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
                 &#x27;rel&#x27;: &#x27;root&#x27;,
-                &#x27;title&#x27;: &#x27;Example Catalog&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
                 &#x27;type&#x27;: &#x27;application/json&#x27;},
-               {&#x27;href&#x27;: &#x27;../collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;parent&#x27;,
-                &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;},
-               {&#x27;href&#x27;: &#x27;../collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;collection&#x27;,
-                &#x27;title&#x27;: &#x27;Collection of Extension Items&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;}],
-     &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2018-10-01T01:08:32.033000Z&#x27;,
-                    &#x27;proj:bbox&#x27;: [169200, 3712800, 403200, 3951000],
-                    &#x27;proj:centroid&#x27;: {&#x27;lat&#x27;: 34.595302781575604,
-                                      &#x27;lon&#x27;: -101.34448382627504},
-                    &#x27;proj:epsg&#x27;: 32614,
-                    &#x27;proj:geometry&#x27;: {&#x27;coordinates&#x27;: [[[169200, 3712800],
-                                                       [403200, 3712800],
-                                                       [403200, 3951000],
-                                                       [169200, 3951000],
-                                                       [169200, 3712800]]],
-                                      &#x27;type&#x27;: &#x27;Polygon&#x27;},
-                    &#x27;proj:projjson&#x27;: {&#x27;$schema&#x27;: &#x27;https://proj.org/schemas/v0.2/projjson.schema.json&#x27;,
-                                      &#x27;area&#x27;: &#x27;World - N hemisphere - &#x27;
-                                              &#x27;102°W to 96°W - by country&#x27;,
-                                      &#x27;base_crs&#x27;: {&#x27;coordinate_system&#x27;: {&#x27;axis&#x27;: [{&#x27;abbreviation&#x27;: &#x27;Lat&#x27;,
-                                                                                   &#x27;direction&#x27;: &#x27;north&#x27;,
-                                                                                   &#x27;name&#x27;: &#x27;Geodetic &#x27;
-                                                                                           &#x27;latitude&#x27;,
-                                                                                   &#x27;unit&#x27;: &#x27;degree&#x27;},
-                                                                                  {&#x27;abbreviation&#x27;: &#x27;Lon&#x27;,
-                                                                                   &#x27;direction&#x27;: &#x27;east&#x27;,
-                                                                                   &#x27;name&#x27;: &#x27;Geodetic &#x27;
-                                                                                           &#x27;longitude&#x27;,
-                                                                                   &#x27;unit&#x27;: &#x27;degree&#x27;}],
-                                                                         &#x27;subtype&#x27;: &#x27;ellipsoidal&#x27;},
-                                                   &#x27;datum&#x27;: {&#x27;ellipsoid&#x27;: {&#x27;inverse_flattening&#x27;: 298.257223563,
-                                                                           &#x27;name&#x27;: &#x27;WGS &#x27;
-                                                                                   &#x27;84&#x27;,
-                                                                           &#x27;semi_major_axis&#x27;: 6378137},
-                                                             &#x27;name&#x27;: &#x27;World &#x27;
-                                                                     &#x27;Geodetic &#x27;
-                                                                     &#x27;System &#x27;
-                                                                     &#x27;1984&#x27;,
-                                                             &#x27;type&#x27;: &#x27;GeodeticReferenceFrame&#x27;},
-                                                   &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                          &#x27;code&#x27;: 4326},
-                                                   &#x27;name&#x27;: &#x27;WGS 84&#x27;},
-                                      &#x27;bbox&#x27;: {&#x27;east_longitude&#x27;: -96,
-                                               &#x27;north_latitude&#x27;: 84,
-                                               &#x27;south_latitude&#x27;: 0,
-                                               &#x27;west_longitude&#x27;: -102},
-                                      &#x27;conversion&#x27;: {&#x27;method&#x27;: {&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                       &#x27;code&#x27;: 9807},
-                                                                &#x27;name&#x27;: &#x27;Transverse &#x27;
-                                                                        &#x27;Mercator&#x27;},
-                                                     &#x27;name&#x27;: &#x27;UTM zone 14N&#x27;,
-                                                     &#x27;parameters&#x27;: [{&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                            &#x27;code&#x27;: 8801},
-                                                                     &#x27;name&#x27;: &#x27;Latitude &#x27;
-                                                                             &#x27;of &#x27;
-                                                                             &#x27;natural &#x27;
-                                                                             &#x27;origin&#x27;,
-                                                                     &#x27;unit&#x27;: &#x27;degree&#x27;,
-                                                                     &#x27;value&#x27;: 0},
-                                                                    {&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                            &#x27;code&#x27;: 8802},
-                                                                     &#x27;name&#x27;: &#x27;Longitude &#x27;
-                                                                             &#x27;of &#x27;
-                                                                             &#x27;natural &#x27;
-                                                                             &#x27;origin&#x27;,
-                                                                     &#x27;unit&#x27;: &#x27;degree&#x27;,
-                                                                     &#x27;value&#x27;: -99},
-                                                                    {&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                            &#x27;code&#x27;: 8805},
-                                                                     &#x27;name&#x27;: &#x27;Scale &#x27;
-                                                                             &#x27;factor &#x27;
-                                                                             &#x27;at &#x27;
-                                                                             &#x27;natural &#x27;
-                                                                             &#x27;origin&#x27;,
-                                                                     &#x27;unit&#x27;: &#x27;unity&#x27;,
-                                                                     &#x27;value&#x27;: 0.9996},
-                                                                    {&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                            &#x27;code&#x27;: 8806},
-                                                                     &#x27;name&#x27;: &#x27;False &#x27;
-                                                                             &#x27;easting&#x27;,
-                                                                     &#x27;unit&#x27;: &#x27;metre&#x27;,
-                                                                     &#x27;value&#x27;: 500000},
-                                                                    {&#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                                                            &#x27;code&#x27;: 8807},
-                                                                     &#x27;name&#x27;: &#x27;False &#x27;
-                                                                             &#x27;northing&#x27;,
-                                                                     &#x27;unit&#x27;: &#x27;metre&#x27;,
-                                                                     &#x27;value&#x27;: 0}]},
-                                      &#x27;coordinate_system&#x27;: {&#x27;axis&#x27;: [{&#x27;abbreviation&#x27;: &#x27;E&#x27;,
-                                                                      &#x27;direction&#x27;: &#x27;east&#x27;,
-                                                                      &#x27;name&#x27;: &#x27;Easting&#x27;,
-                                                                      &#x27;unit&#x27;: &#x27;metre&#x27;},
-                                                                     {&#x27;abbreviation&#x27;: &#x27;N&#x27;,
-                                                                      &#x27;direction&#x27;: &#x27;north&#x27;,
-                                                                      &#x27;name&#x27;: &#x27;Northing&#x27;,
-                                                                      &#x27;unit&#x27;: &#x27;metre&#x27;}],
-                                                            &#x27;subtype&#x27;: &#x27;Cartesian&#x27;},
-                                      &#x27;id&#x27;: {&#x27;authority&#x27;: &#x27;EPSG&#x27;,
-                                             &#x27;code&#x27;: 32614},
-                                      &#x27;name&#x27;: &#x27;WGS 84 / UTM zone 14N&#x27;,
-                                      &#x27;type&#x27;: &#x27;ProjectedCRS&#x27;},
-                    &#x27;proj:shape&#x27;: [8391, 8311],
-                    &#x27;proj:transform&#x27;: [30,
-                                       0,
-                                       224985,
-                                       0,
-                                       -30,
-                                       6790215,
-                                       0,
-                                       0,
-                                       1],
-                    &#x27;proj:wkt2&#x27;: &#x27;PROJCS[&quot;WGS 84 / UTM zone &#x27;
-                                 &#x27;14N&quot;,GEOGCS[&quot;WGS &#x27;
-                                 &#x27;84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS &#x27;
-                                 &#x27;84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.01745329251994328,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;latitude_of_origin&quot;,0],PARAMETER[&quot;central_meridian&quot;,-99],PARAMETER[&quot;scale_factor&quot;,0.9996],PARAMETER[&quot;false_easting&quot;,500000],PARAMETER[&quot;false_northing&quot;,0],AUTHORITY[&quot;EPSG&quot;,&quot;32614&quot;],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]&#x27;},
-     &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v1.0.0/schema.json&#x27;,
-                         &#x27;https://stac-extensions.github.io/projection/v1.0.0/schema.json&#x27;],
+               {&#x27;href&#x27;: &#x27;./item.json&#x27;,
+                &#x27;rel&#x27;: &#x27;item&#x27;,
+                &#x27;title&#x27;: &#x27;20201211_223832_CS2&#x27;,
+                &#x27;type&#x27;: &#x27;application/geo+json&#x27;}],
+     &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/item-assets/v1.0.0/schema.json&#x27;,
+                         &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json&#x27;],
      &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;,
-     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
+     &#x27;summaries&#x27;: {&#x27;constellation&#x27;: [&#x27;ion&#x27;],
+                   &#x27;eo:bands&#x27;: [{&#x27;center_wavelength&#x27;: 0.47,
+                                 &#x27;common_name&#x27;: &#x27;blue&#x27;,
+                                 &#x27;full_width_half_max&#x27;: 0.07,
+                                 &#x27;name&#x27;: &#x27;band1&#x27;,
+                                 &#x27;solar_illumination&#x27;: 1959.66},
+                                {&#x27;center_wavelength&#x27;: 0.56,
+                                 &#x27;common_name&#x27;: &#x27;green&#x27;,
+                                 &#x27;full_width_half_max&#x27;: 0.08,
+                                 &#x27;name&#x27;: &#x27;band2&#x27;,
+                                 &#x27;solar_illumination&#x27;: 1823.24},
+                                {&#x27;center_wavelength&#x27;: 0.645,
+                                 &#x27;common_name&#x27;: &#x27;red&#x27;,
+                                 &#x27;full_width_half_max&#x27;: 0.09,
+                                 &#x27;name&#x27;: &#x27;band3&#x27;,
+                                 &#x27;solar_illumination&#x27;: 1512.06},
+                                {&#x27;center_wavelength&#x27;: 0.8,
+                                 &#x27;common_name&#x27;: &#x27;nir&#x27;,
+                                 &#x27;full_width_half_max&#x27;: 0.152,
+                                 &#x27;name&#x27;: &#x27;band4&#x27;,
+                                 &#x27;solar_illumination&#x27;: 1041.63}],
+                   &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 50, &#x27;minimum&#x27;: 0},
+                   &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;, &#x27;cool_sensor_v2&#x27;],
+                   &#x27;platform&#x27;: [&#x27;cool_sat1&#x27;, &#x27;cool_sat2&#x27;]},
+     &#x27;title&#x27;: &#x27;Simple EO Collection&#x27;,
+     &#x27;type&#x27;: &#x27;Collection&#x27;}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item ">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json" target="_blank">example_2_1.json</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                    <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
+                                                                    <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
+                                                                    <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
+                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;type&#x27; is a required property
+
+Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;properties&#x27;]:
+    {&#x27;properties&#x27;: {&#x27;contacts&#x27;: {&#x27;description&#x27;: &#x27;A list of contacts &#x27;
+                                                &#x27;qualified by their &#x27;
+                                                &#x27;role(s) in association to &#x27;
+                                                &#x27;the record or the &#x27;
+                                                &#x27;resource described by the &#x27;
+                                                &#x27;record.&#x27;,
+                                 &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml&#x27;},
+                                 &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;created&#x27;: {&#x27;description&#x27;: &#x27;Date of creation of this &#x27;
+                                               &#x27;record.&#x27;,
+                                &#x27;format&#x27;: &#x27;date-time&#x27;,
+                                &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;description&#x27;: {&#x27;description&#x27;: &#x27;A free-text account of &#x27;
+                                                   &#x27;the resource.&#x27;,
+                                    &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;externalIds&#x27;: {&#x27;description&#x27;: &#x27;An identifier for the &#x27;
+                                                   &#x27;resource assigned by &#x27;
+                                                   &#x27;an external (to the &#x27;
+                                                   &#x27;catalog) entity.&#x27;,
+                                    &#x27;items&#x27;: {&#x27;properties&#x27;: {&#x27;scheme&#x27;: {&#x27;description&#x27;: &#x27;A &#x27;
+                                                                                       &#x27;reference &#x27;
+                                                                                       &#x27;to &#x27;
+                                                                                       &#x27;an &#x27;
+                                                                                       &#x27;authority &#x27;
+                                                                                       &#x27;or &#x27;
+                                                                                       &#x27;identifier &#x27;
+                                                                                       &#x27;for &#x27;
+                                                                                       &#x27;a &#x27;
+                                                                                       &#x27;knowledge &#x27;
+                                                                                       &#x27;organization &#x27;
+                                                                                       &#x27;system &#x27;
+                                                                                       &#x27;from &#x27;
+                                                                                       &#x27;which &#x27;
+                                                                                       &#x27;the &#x27;
+                                                                                       &#x27;external &#x27;
+                                                                                       &#x27;identifier &#x27;
+                                                                                       &#x27;was &#x27;
+                                                                                       &#x27;obtained. &#x27;
+                                                                                       &#x27;It &#x27;
+                                                                                       &#x27;is &#x27;
+                                                                                       &#x27;recommended &#x27;
+                                                                                       &#x27;that &#x27;
+                                                                                       &#x27;the &#x27;
+                                                                                       &#x27;identifier &#x27;
+                                                                                       &#x27;be &#x27;
+                                                                                       &#x27;a &#x27;
+                                                                                       &#x27;resolvable &#x27;
+                                                                                       &#x27;URI.&#x27;,
+                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
+                                                             &#x27;value&#x27;: {&#x27;description&#x27;: &#x27;The &#x27;
+                                                                                      &#x27;value &#x27;
+                                                                                      &#x27;of &#x27;
+                                                                                      &#x27;the &#x27;
+                                                                                      &#x27;identifier.&#x27;,
+                                                                       &#x27;type&#x27;: &#x27;string&#x27;}},
+                                              &#x27;required&#x27;: [&#x27;value&#x27;],
+                                              &#x27;type&#x27;: &#x27;object&#x27;},
+                                    &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;formats&#x27;: {&#x27;description&#x27;: &#x27;A list of available &#x27;
+                                               &#x27;distributions of the &#x27;
+                                               &#x27;resource.&#x27;,
+                                &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;keywords&#x27;: {&#x27;description&#x27;: &#x27;The topic or topics of &#x27;
+                                                &#x27;the resource. Typically &#x27;
+                                                &#x27;represented using &#x27;
+                                                &#x27;free-form keywords, tags, &#x27;
+                                                &#x27;key phrases, or &#x27;
+                                                &#x27;classification codes.&#x27;,
+                                 &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
+                                 &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;language&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;,
+                                 &#x27;description&#x27;: &#x27;The language used for &#x27;
+                                                &#x27;textual values in this &#x27;
+                                                &#x27;record representation.&#x27;},
+                    &#x27;languages&#x27;: {&#x27;description&#x27;: &#x27;This list of languages &#x27;
+                                                 &#x27;in which this record is &#x27;
+                                                 &#x27;available.&#x27;,
+                                  &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
+                                  &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;license&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml&#x27;},
+                    &#x27;resourceLanguages&#x27;: {&#x27;description&#x27;: &#x27;The list of &#x27;
+                                                         &#x27;languages in &#x27;
+                                                         &#x27;which the &#x27;
+                                                         &#x27;resource &#x27;
+                                                         &#x27;described by &#x27;
+                                                         &#x27;this record is &#x27;
+                                                         &#x27;available.&#x27;,
+                                          &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
+                                          &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;rights&#x27;: {&#x27;description&#x27;: &#x27;A statement that concerns &#x27;
+                                              &#x27;all rights not addressed by &#x27;
+                                              &#x27;the license such as a &#x27;
+                                              &#x27;copyright statement.&#x27;,
+                               &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;themes&#x27;: {&#x27;description&#x27;: &#x27;A knowledge organization &#x27;
+                                              &#x27;system used to classify the &#x27;
+                                              &#x27;resource.&#x27;,
+                               &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml&#x27;},
+                               &#x27;minItems&#x27;: 1,
+                               &#x27;type&#x27;: &#x27;array&#x27;},
+                    &#x27;title&#x27;: {&#x27;description&#x27;: &#x27;A human-readable name given &#x27;
+                                             &#x27;to the resource.&#x27;,
+                              &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;type&#x27;: {&#x27;description&#x27;: &#x27;The nature or genre of the &#x27;
+                                            &#x27;resource. The value should be &#x27;
+                                            &#x27;a code, convenient for &#x27;
+                                            &#x27;filtering records. Where &#x27;
+                                            &#x27;available, a link to the &#x27;
+                                            &#x27;canonical URI of the record &#x27;
+                                            &#x27;type resource will be added &#x27;
+                                            &quot;to the &#x27;links&#x27; property.&quot;,
+                             &#x27;maxLength&#x27;: 64,
+                             &#x27;type&#x27;: &#x27;string&#x27;},
+                    &#x27;updated&#x27;: {&#x27;description&#x27;: &#x27;The most recent date on &#x27;
+                                               &#x27;which the record was &#x27;
+                                               &#x27;changed.&#x27;,
+                                &#x27;format&#x27;: &#x27;date-time&#x27;,
+                                &#x27;type&#x27;: &#x27;string&#x27;}},
+     &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;title&#x27;],
+     &#x27;type&#x27;: &#x27;object&#x27;}
+
+On instance[&#x27;properties&#x27;]:
+    {&#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
+     &#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
+     &#x27;eo:cloud_cover&#x27;: 1.2,
+     &#x27;eo:snow_cover&#x27;: 0,
+     &#x27;gsd&#x27;: 0.66,
+     &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
+     &#x27;platform&#x27;: &#x27;cool_sat2&#x27;,
+     &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;}</div>
                                                     </div>
                                                 </div>
                                             </div>

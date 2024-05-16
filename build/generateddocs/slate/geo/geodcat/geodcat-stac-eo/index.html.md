@@ -42,295 +42,176 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 # Examples
 
-## Example of Electro-Optical using projection extension
+## A simple Collection demonstrating EO extension fields in a Collection.
 
 
 
 ```json
 {
-  "type": "Feature",
+  "id": "eo-collection",
+  "type": "Collection",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
   "stac_version": "1.0.0",
-  "id": "proj-example",
-  "properties": {
-    "datetime": "2018-10-01T01:08:32.033000Z",
-    "proj:epsg": 32614,
-    "proj:wkt2": "PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
-    "proj:projjson": {
-      "$schema": "https://proj.org/schemas/v0.2/projjson.schema.json",
-      "type": "ProjectedCRS",
-      "name": "WGS 84 / UTM zone 14N",
-      "base_crs": {
-        "name": "WGS 84",
-        "datum": {
-          "type": "GeodeticReferenceFrame",
-          "name": "World Geodetic System 1984",
-          "ellipsoid": {
-            "name": "WGS 84",
-            "semi_major_axis": 6378137,
-            "inverse_flattening": 298.257223563
-          }
-        },
-        "coordinate_system": {
-          "subtype": "ellipsoidal",
-          "axis": [
-            {
-              "name": "Geodetic latitude",
-              "abbreviation": "Lat",
-              "direction": "north",
-              "unit": "degree"
-            },
-            {
-              "name": "Geodetic longitude",
-              "abbreviation": "Lon",
-              "direction": "east",
-              "unit": "degree"
-            }
-          ]
-        },
-        "id": {
-          "authority": "EPSG",
-          "code": 4326
-        }
-      },
-      "conversion": {
-        "name": "UTM zone 14N",
-        "method": {
-          "name": "Transverse Mercator",
-          "id": {
-            "authority": "EPSG",
-            "code": 9807
-          }
-        },
-        "parameters": [
-          {
-            "name": "Latitude of natural origin",
-            "value": 0,
-            "unit": "degree",
-            "id": {
-              "authority": "EPSG",
-              "code": 8801
-            }
-          },
-          {
-            "name": "Longitude of natural origin",
-            "value": -99,
-            "unit": "degree",
-            "id": {
-              "authority": "EPSG",
-              "code": 8802
-            }
-          },
-          {
-            "name": "Scale factor at natural origin",
-            "value": 0.9996,
-            "unit": "unity",
-            "id": {
-              "authority": "EPSG",
-              "code": 8805
-            }
-          },
-          {
-            "name": "False easting",
-            "value": 500000,
-            "unit": "metre",
-            "id": {
-              "authority": "EPSG",
-              "code": 8806
-            }
-          },
-          {
-            "name": "False northing",
-            "value": 0,
-            "unit": "metre",
-            "id": {
-              "authority": "EPSG",
-              "code": 8807
-            }
-          }
-        ]
-      },
-      "coordinate_system": {
-        "subtype": "Cartesian",
-        "axis": [
-          {
-            "name": "Easting",
-            "abbreviation": "E",
-            "direction": "east",
-            "unit": "metre"
-          },
-          {
-            "name": "Northing",
-            "abbreviation": "N",
-            "direction": "north",
-            "unit": "metre"
-          }
-        ]
-      },
-      "area": "World - N hemisphere - 102°W to 96°W - by country",
-      "bbox": {
-        "south_latitude": 0,
-        "west_longitude": -102,
-        "north_latitude": 84,
-        "east_longitude": -96
-      },
-      "id": {
-        "authority": "EPSG",
-        "code": 32614
-      }
-    },
-    "proj:geometry": {
-      "coordinates": [
+  "description": "A simple Collection demonstrating EO extension fields in a Collection.",
+  "title": "Simple EO Collection",
+  "extent": {
+    "spatial": {
+      "bbox": [
         [
-          [
-            169200,
-            3712800
-          ],
-          [
-            403200,
-            3712800
-          ],
-          [
-            403200,
-            3951000
-          ],
-          [
-            169200,
-            3951000
-          ],
-          [
-            169200,
-            3712800
-          ]
-        ]
-      ],
-      "type": "Polygon"
-    },
-    "proj:bbox": [
-      169200,
-      3712800,
-      403200,
-      3951000
-    ],
-    "proj:centroid": {
-      "lat": 34.595302781575604,
-      "lon": -101.34448382627504
-    },
-    "proj:shape": [
-      8391,
-      8311
-    ],
-    "proj:transform": [
-      30,
-      0,
-      224985,
-      0,
-      -30,
-      6790215,
-      0,
-      0,
-      1
-    ]
-  },
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          152.52758,
-          60.63437
-        ],
-        [
-          149.1755,
-          61.19016
-        ],
-        [
-          148.13933,
-          59.51584
-        ],
-        [
-          151.33786,
-          58.97792
-        ],
-        [
-          152.52758,
-          60.63437
+          172.91173669923782,
+          1.3438851951615003,
+          172.95469614953714,
+          1.3690476620161975
         ]
       ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2020-12-11T22:38:32.125Z",
+          "2020-12-14T18:02:31.437Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "platform": [
+      "cool_sat1",
+      "cool_sat2"
+    ],
+    "constellation": [
+      "ion"
+    ],
+    "instruments": [
+      "cool_sensor_v1",
+      "cool_sensor_v2"
+    ],
+    "eo:cloud_cover": {
+      "minimum": 0,
+      "maximum": 50
+    },
+    "eo:bands": [
+      {
+        "name": "band1",
+        "common_name": "blue",
+        "center_wavelength": 0.47,
+        "full_width_half_max": 0.07,
+        "solar_illumination": 1959.66
+      },
+      {
+        "name": "band2",
+        "common_name": "green",
+        "center_wavelength": 0.56,
+        "full_width_half_max": 0.08,
+        "solar_illumination": 1823.24
+      },
+      {
+        "name": "band3",
+        "common_name": "red",
+        "center_wavelength": 0.645,
+        "full_width_half_max": 0.09,
+        "solar_illumination": 1512.06
+      },
+      {
+        "name": "band4",
+        "common_name": "nir",
+        "center_wavelength": 0.8,
+        "full_width_half_max": 0.152,
+        "solar_illumination": 1041.63
+      }
     ]
   },
   "links": [
     {
       "rel": "root",
-      "href": "../../catalog.json",
+      "href": "./collection.json",
       "type": "application/json",
-      "title": "Example Catalog"
+      "title": "Simple Example Collection"
     },
     {
-      "rel": "parent",
-      "href": "../collection.json",
-      "type": "application/json",
-      "title": "Collection of Extension Items"
-    },
-    {
-      "rel": "collection",
-      "href": "../collection.json",
-      "type": "application/json",
-      "title": "Collection of Extension Items"
+      "rel": "item",
+      "href": "./item.json",
+      "type": "application/geo+json",
+      "title": "20201211_223832_CS2"
     }
   ],
-  "assets": {
-    "B1": {
-      "href": "https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF",
-      "type": "image/tiff; application=geotiff",
-      "title": "Band 1 (coastal)",
+  "item_assets": {
+    "analytic": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "4-Band Analytic",
+      "roles": [
+        "data"
+      ],
       "eo:bands": [
         {
-          "name": "B1",
-          "common_name": "coastal",
-          "center_wavelength": 0.44,
-          "full_width_half_max": 0.02
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.7,
+          "solar_illumination": 1959.66
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08,
+          "solar_illumination": 1823.24
+        },
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.9,
+          "solar_illumination": 1512.06
+        },
+        {
+          "name": "band4",
+          "common_name": "nir",
+          "center_wavelength": 0.8,
+          "full_width_half_max": 0.152,
+          "solar_illumination": 1041.63
         }
       ]
     },
-    "B8": {
-      "href": "https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF",
-      "type": "image/tiff; application=geotiff",
-      "title": "Band 8 (panchromatic)",
+    "thumbnail": {
+      "title": "Thumbnail",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "visual": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "3-Band Visual",
+      "roles": [
+        "visual"
+      ],
       "eo:bands": [
         {
-          "name": "B8",
-          "center_wavelength": 0.59,
-          "full_width_half_max": 0.18
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08
+        },
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07
         }
-      ],
-      "proj:shape": [
-        16781,
-        16621
-      ],
-      "proj:transform": [
-        15,
-        0,
-        224992.5,
-        0,
-        -15,
-        6790207.5,
-        0,
-        0,
-        1
       ]
     }
-  },
-  "bbox": [
-    148.13933,
-    59.51584,
-    152.52758,
-    60.63437
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
-  ],
-  "collection": "landsat-8-l1"
+  }
 }
 
 ```
@@ -346,289 +227,170 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 ```jsonld
 {
-  "type": "Feature",
+  "id": "eo-collection",
+  "type": "Collection",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
   "stac_version": "1.0.0",
-  "id": "proj-example",
-  "properties": {
-    "datetime": "2018-10-01T01:08:32.033000Z",
-    "proj:epsg": 32614,
-    "proj:wkt2": "PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
-    "proj:projjson": {
-      "$schema": "https://proj.org/schemas/v0.2/projjson.schema.json",
-      "type": "ProjectedCRS",
-      "name": "WGS 84 / UTM zone 14N",
-      "base_crs": {
-        "name": "WGS 84",
-        "datum": {
-          "type": "GeodeticReferenceFrame",
-          "name": "World Geodetic System 1984",
-          "ellipsoid": {
-            "name": "WGS 84",
-            "semi_major_axis": 6378137,
-            "inverse_flattening": 298.257223563
-          }
-        },
-        "coordinate_system": {
-          "subtype": "ellipsoidal",
-          "axis": [
-            {
-              "name": "Geodetic latitude",
-              "abbreviation": "Lat",
-              "direction": "north",
-              "unit": "degree"
-            },
-            {
-              "name": "Geodetic longitude",
-              "abbreviation": "Lon",
-              "direction": "east",
-              "unit": "degree"
-            }
-          ]
-        },
-        "id": {
-          "authority": "EPSG",
-          "code": 4326
-        }
-      },
-      "conversion": {
-        "name": "UTM zone 14N",
-        "method": {
-          "name": "Transverse Mercator",
-          "id": {
-            "authority": "EPSG",
-            "code": 9807
-          }
-        },
-        "parameters": [
-          {
-            "name": "Latitude of natural origin",
-            "value": 0,
-            "unit": "degree",
-            "id": {
-              "authority": "EPSG",
-              "code": 8801
-            }
-          },
-          {
-            "name": "Longitude of natural origin",
-            "value": -99,
-            "unit": "degree",
-            "id": {
-              "authority": "EPSG",
-              "code": 8802
-            }
-          },
-          {
-            "name": "Scale factor at natural origin",
-            "value": 0.9996,
-            "unit": "unity",
-            "id": {
-              "authority": "EPSG",
-              "code": 8805
-            }
-          },
-          {
-            "name": "False easting",
-            "value": 500000,
-            "unit": "metre",
-            "id": {
-              "authority": "EPSG",
-              "code": 8806
-            }
-          },
-          {
-            "name": "False northing",
-            "value": 0,
-            "unit": "metre",
-            "id": {
-              "authority": "EPSG",
-              "code": 8807
-            }
-          }
-        ]
-      },
-      "coordinate_system": {
-        "subtype": "Cartesian",
-        "axis": [
-          {
-            "name": "Easting",
-            "abbreviation": "E",
-            "direction": "east",
-            "unit": "metre"
-          },
-          {
-            "name": "Northing",
-            "abbreviation": "N",
-            "direction": "north",
-            "unit": "metre"
-          }
-        ]
-      },
-      "area": "World - N hemisphere - 102\u00b0W to 96\u00b0W - by country",
-      "bbox": {
-        "south_latitude": 0,
-        "west_longitude": -102,
-        "north_latitude": 84,
-        "east_longitude": -96
-      },
-      "id": {
-        "authority": "EPSG",
-        "code": 32614
-      }
-    },
-    "proj:geometry": {
-      "coordinates": [
+  "description": "A simple Collection demonstrating EO extension fields in a Collection.",
+  "title": "Simple EO Collection",
+  "extent": {
+    "spatial": {
+      "bbox": [
         [
-          [
-            169200,
-            3712800
-          ],
-          [
-            403200,
-            3712800
-          ],
-          [
-            403200,
-            3951000
-          ],
-          [
-            169200,
-            3951000
-          ],
-          [
-            169200,
-            3712800
-          ]
-        ]
-      ],
-      "type": "Polygon"
-    },
-    "proj:bbox": [
-      169200,
-      3712800,
-      403200,
-      3951000
-    ],
-    "proj:centroid": {
-      "lat": 34.595302781575604,
-      "lon": -101.34448382627504
-    },
-    "proj:shape": [
-      8391,
-      8311
-    ],
-    "proj:transform": [
-      30,
-      0,
-      224985,
-      0,
-      -30,
-      6790215,
-      0,
-      0,
-      1
-    ]
-  },
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          152.52758,
-          60.63437
-        ],
-        [
-          149.1755,
-          61.19016
-        ],
-        [
-          148.13933,
-          59.51584
-        ],
-        [
-          151.33786,
-          58.97792
-        ],
-        [
-          152.52758,
-          60.63437
+          172.91173669923782,
+          1.3438851951615003,
+          172.95469614953714,
+          1.3690476620161975
         ]
       ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2020-12-11T22:38:32.125Z",
+          "2020-12-14T18:02:31.437Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "platform": [
+      "cool_sat1",
+      "cool_sat2"
+    ],
+    "constellation": [
+      "ion"
+    ],
+    "instruments": [
+      "cool_sensor_v1",
+      "cool_sensor_v2"
+    ],
+    "eo:cloud_cover": {
+      "minimum": 0,
+      "maximum": 50
+    },
+    "eo:bands": [
+      {
+        "name": "band1",
+        "common_name": "blue",
+        "center_wavelength": 0.47,
+        "full_width_half_max": 0.07,
+        "solar_illumination": 1959.66
+      },
+      {
+        "name": "band2",
+        "common_name": "green",
+        "center_wavelength": 0.56,
+        "full_width_half_max": 0.08,
+        "solar_illumination": 1823.24
+      },
+      {
+        "name": "band3",
+        "common_name": "red",
+        "center_wavelength": 0.645,
+        "full_width_half_max": 0.09,
+        "solar_illumination": 1512.06
+      },
+      {
+        "name": "band4",
+        "common_name": "nir",
+        "center_wavelength": 0.8,
+        "full_width_half_max": 0.152,
+        "solar_illumination": 1041.63
+      }
     ]
   },
   "links": [
     {
       "rel": "root",
-      "href": "../../catalog.json",
+      "href": "./collection.json",
       "type": "application/json",
-      "title": "Example Catalog"
+      "title": "Simple Example Collection"
     },
     {
-      "rel": "parent",
-      "href": "../collection.json",
-      "type": "application/json",
-      "title": "Collection of Extension Items"
-    },
-    {
-      "rel": "collection",
-      "href": "../collection.json",
-      "type": "application/json",
-      "title": "Collection of Extension Items"
+      "rel": "item",
+      "href": "./item.json",
+      "type": "application/geo+json",
+      "title": "20201211_223832_CS2"
     }
   ],
-  "assets": {
-    "B1": {
-      "href": "https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF",
-      "type": "image/tiff; application=geotiff",
-      "title": "Band 1 (coastal)",
+  "item_assets": {
+    "analytic": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "4-Band Analytic",
+      "roles": [
+        "data"
+      ],
       "eo:bands": [
         {
-          "name": "B1",
-          "common_name": "coastal",
-          "center_wavelength": 0.44,
-          "full_width_half_max": 0.02
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.7,
+          "solar_illumination": 1959.66
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08,
+          "solar_illumination": 1823.24
+        },
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.9,
+          "solar_illumination": 1512.06
+        },
+        {
+          "name": "band4",
+          "common_name": "nir",
+          "center_wavelength": 0.8,
+          "full_width_half_max": 0.152,
+          "solar_illumination": 1041.63
         }
       ]
     },
-    "B8": {
-      "href": "https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF",
-      "type": "image/tiff; application=geotiff",
-      "title": "Band 8 (panchromatic)",
+    "thumbnail": {
+      "title": "Thumbnail",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "visual": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "3-Band Visual",
+      "roles": [
+        "visual"
+      ],
       "eo:bands": [
         {
-          "name": "B8",
-          "center_wavelength": 0.59,
-          "full_width_half_max": 0.18
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08
+        },
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07
         }
-      ],
-      "proj:shape": [
-        16781,
-        16621
-      ],
-      "proj:transform": [
-        15,
-        0,
-        224992.5,
-        0,
-        -15,
-        6790207.5,
-        0,
-        0,
-        1
       ]
     }
   },
-  "bbox": [
-    148.13933,
-    59.51584,
-    152.52758,
-    60.63437
-  ],
-  "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json"
-  ],
-  "collection": "landsat-8-l1",
   "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"
 }
 ```
@@ -643,76 +405,28 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 
 ```turtle
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <proj:> .
-@prefix ns2: <eo:> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <urn:stac:vocab#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/proj-example> a geojson:Feature ;
-    rdfs:seeAlso [ rdfs:label "Example Catalog" ;
+<https://example.com/stac/raster/example-1/eo-collection> a <https://example.com/stac/raster/example-1/Collection> ;
+    rdfs:label "Simple EO Collection" ;
+    dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
+    dcterms:extent [ ] ;
+    dcterms:license "CC-BY-4.0" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/catalog.json> ],
-        [ rdfs:label "Collection of Extension Items" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ],
-        [ rdfs:label "Collection of Extension Items" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/raster/collection.json> ] ;
-    geojson:bbox ( 1.481393e+02 5.951584e+01 1.525276e+02 6.063437e+01 ) ;
-    geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 1.525276e+02 6.063437e+01 ) ( 1.491755e+02 6.119016e+01 ) ( 1.481393e+02 5.951584e+01 ) ( 1.513379e+02 5.897792e+01 ) ( 1.525276e+02 6.063437e+01 ) ) ) ] ;
-    ns1:bbox 169200,
-        403200,
-        3712800,
-        3951000 ;
-    ns1:centroid [ ] ;
-    ns1:epsg 32614 ;
-    ns1:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 169200 3712800 ) ( 403200 3712800 ) ( 403200 3951000 ) ( 169200 3951000 ) ( 169200 3712800 ) ) ) ] ;
-    ns1:projjson [ a <https://example.com/stac/raster/example-1/ProjectedCRS> ;
-            geojson:bbox ( [ ] ) ] ;
-    ns1:shape 8311,
-        8391 ;
-    ns1:transform -30,
-        0,
-        1,
-        30,
-        224985,
-        6790215 ;
-    ns1:wkt2 "PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]" ;
-    stac:extensions "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-        "https://stac-extensions.github.io/projection/v1.0.0/schema.json" ;
-    stac:hasAsset <https://example.com/stac/raster/example-1/B1>,
-        <https://example.com/stac/raster/example-1/B8> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "20201211_223832_CS2" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+    stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json" ;
     stac:version "1.0.0" .
-
-<https://example.com/stac/raster/example-1/B1> ns2:bands [ ] ;
-    dcterms:format "image/tiff; application=geotiff" ;
-    dcterms:title "Band 1 (coastal)" ;
-    dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF> .
-
-<https://example.com/stac/raster/example-1/B8> ns2:bands [ ] ;
-    dcterms:format "image/tiff; application=geotiff" ;
-    dcterms:title "Band 8 (panchromatic)" ;
-    dcat:downloadURL <https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF> ;
-    ns1:shape 16621,
-        16781 ;
-    ns1:transform -15,
-        0,
-        1,
-        15,
-        2.249925e+05,
-        6.790208e+06 .
 
 
 ```
@@ -720,6 +434,403 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 <blockquote class="lang-specific turtle">
   <p class="example-links">
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_1_1.ttl">Open in new window</a>
+</blockquote>
+
+
+
+## An example demonstrating EO extension fields in a STAC item.
+
+
+
+```json
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "20201211_223832_CS2",
+  "bbox": [
+    172.91173669923782,
+    1.3438851951615003,
+    172.95469614953714,
+    1.3690476620161975
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          172.91173669923782,
+          1.3438851951615003
+        ],
+        [
+          172.95469614953714,
+          1.3438851951615003
+        ],
+        [
+          172.95469614953714,
+          1.3690476620161975
+        ],
+        [
+          172.91173669923782,
+          1.3690476620161975
+        ],
+        [
+          172.91173669923782,
+          1.3438851951615003
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "datetime": "2020-12-11T22:38:32.125Z",
+    "created": "2020-12-12T01:48:13.725Z",
+    "updated": "2020-12-12T01:48:13.725Z",
+    "platform": "cool_sat2",
+    "instruments": [
+      "cool_sensor_v1"
+    ],
+    "gsd": 0.66,
+    "eo:cloud_cover": 1.2,
+    "eo:snow_cover": 0
+  },
+  "collection": "eo-collection",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    }
+  ],
+  "assets": {
+    "analytic": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "4-Band Analytic",
+      "roles": [
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07,
+          "solar_illumination": 1959.66
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08,
+          "solar_illumination": 1823.24
+        },
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09,
+          "solar_illumination": 1512.06
+        },
+        {
+          "name": "band4",
+          "common_name": "nir",
+          "center_wavelength": 0.8,
+          "full_width_half_max": 0.152,
+          "solar_illumination": 1041.63
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg",
+      "title": "Thumbnail",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "visual": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "3-Band Visual",
+      "roles": [
+        "visual"
+      ],
+      "eo:bands": [
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08
+        },
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07
+        }
+      ]
+    }
+  }
+}
+
+```
+
+<blockquote class="lang-specific json">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+
+
+
+
+```jsonld
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
+  "type": "Feature",
+  "id": "20201211_223832_CS2",
+  "bbox": [
+    172.91173669923782,
+    1.3438851951615003,
+    172.95469614953714,
+    1.3690476620161975
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          172.91173669923782,
+          1.3438851951615003
+        ],
+        [
+          172.95469614953714,
+          1.3438851951615003
+        ],
+        [
+          172.95469614953714,
+          1.3690476620161975
+        ],
+        [
+          172.91173669923782,
+          1.3690476620161975
+        ],
+        [
+          172.91173669923782,
+          1.3438851951615003
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "datetime": "2020-12-11T22:38:32.125Z",
+    "created": "2020-12-12T01:48:13.725Z",
+    "updated": "2020-12-12T01:48:13.725Z",
+    "platform": "cool_sat2",
+    "instruments": [
+      "cool_sensor_v1"
+    ],
+    "gsd": 0.66,
+    "eo:cloud_cover": 1.2,
+    "eo:snow_cover": 0
+  },
+  "collection": "eo-collection",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    }
+  ],
+  "assets": {
+    "analytic": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "4-Band Analytic",
+      "roles": [
+        "data"
+      ],
+      "eo:bands": [
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07,
+          "solar_illumination": 1959.66
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08,
+          "solar_illumination": 1823.24
+        },
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09,
+          "solar_illumination": 1512.06
+        },
+        {
+          "name": "band4",
+          "common_name": "nir",
+          "center_wavelength": 0.8,
+          "full_width_half_max": 0.152,
+          "solar_illumination": 1041.63
+        }
+      ]
+    },
+    "thumbnail": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg",
+      "title": "Thumbnail",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "visual": {
+      "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "3-Band Visual",
+      "roles": [
+        "visual"
+      ],
+      "eo:bands": [
+        {
+          "name": "band3",
+          "common_name": "red",
+          "center_wavelength": 0.645,
+          "full_width_half_max": 0.09
+        },
+        {
+          "name": "band2",
+          "common_name": "green",
+          "center_wavelength": 0.56,
+          "full_width_half_max": 0.08
+        },
+        {
+          "name": "band1",
+          "common_name": "blue",
+          "center_wavelength": 0.47,
+          "full_width_half_max": 0.07
+        }
+      ]
+    }
+  },
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"
+}
+```
+
+<blockquote class="lang-specific jsonld">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+
+
+
+
+```turtle
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <eo:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <urn:stac:vocab#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> a geojson:Feature ;
+    ns1:cloud_cover 1.2e+00 ;
+    ns1:snow_cover 0 ;
+    dcterms:created "2020-12-12T01:48:13.725Z" ;
+    dcterms:modified "2020-12-12T01:48:13.725Z" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
+    stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json" ;
+    stac:hasAsset <https://example.com/stac/raster/example-1/analytic>,
+        <https://example.com/stac/raster/example-1/thumbnail>,
+        <https://example.com/stac/raster/example-1/visual> ;
+    stac:version "1.0.0" .
+
+<https://example.com/stac/raster/example-1/analytic> ns1:bands [ ],
+        [ ],
+        [ ],
+        [ ] ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "4-Band Analytic" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
+
+<https://example.com/stac/raster/example-1/thumbnail> dcterms:format "image/png" ;
+    dcterms:title "Thumbnail" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
+
+<https://example.com/stac/raster/example-1/visual> ns1:bands [ ],
+        [ ],
+        [ ] ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "3-Band Visual" ;
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
+
+
+```
+
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.ttl">Open in new window</a>
 </blockquote>
 
 

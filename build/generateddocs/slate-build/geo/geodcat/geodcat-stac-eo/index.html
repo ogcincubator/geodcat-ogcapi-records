@@ -328,7 +328,10 @@
             <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#example-of-electro-optical-using-projection-extension" class="toc-h2 toc-link" data-title="Example of Electro-Optical using projection extension">Example of Electro-Optical using projection extension</a>
+                    <a href="#a-simple-collection-demonstrating-eo-extension-fields-in-a-collection" class="toc-h2 toc-link" data-title="A simple Collection demonstrating EO extension fields in a Collection.">A simple Collection demonstrating EO extension fields in a Collection.</a>
+                  </li>
+                  <li>
+                    <a href="#an-example-demonstrating-eo-extension-fields-in-a-stac-item" class="toc-h2 toc-link" data-title="An example demonstrating EO extension fields in a STAC item.">An example demonstrating EO extension fields in a STAC item.</a>
                   </li>
               </ul>
           </li>
@@ -367,290 +370,171 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
 </aside>
 <h1 id='description'>Description</h1><h2 id='stac-electro-optical-extension-bindings-for-gedcat'>STAC Electro-Optical extension bindings for GeDCAT</h2>
 <p>This building block shows a possible profile of GeoDCAT supporting semantic annotation and inclusion of STAC EO resources in a knowledge graph.</p>
-<h1 id='examples'>Examples</h1><h2 id='example-of-electro-optical-using-projection-extension'>Example of Electro-Optical using projection extension</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+<h1 id='examples'>Examples</h1><h2 id='a-simple-collection-demonstrating-eo-extension-fields-in-a-collection'>A simple Collection demonstrating EO extension fields in a Collection.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eo-collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nl">"stac_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proj-example"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-01T01:08:32.033000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:epsg"</span><span class="p">:</span><span class="w"> </span><span class="mi">32614</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:wkt2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROJCS[</span><span class="se">\"</span><span class="s2">WGS 84 / UTM zone 14N</span><span class="se">\"</span><span class="s2">,GEOGCS[</span><span class="se">\"</span><span class="s2">WGS 84</span><span class="se">\"</span><span class="s2">,DATUM[</span><span class="se">\"</span><span class="s2">WGS_1984</span><span class="se">\"</span><span class="s2">,SPHEROID[</span><span class="se">\"</span><span class="s2">WGS 84</span><span class="se">\"</span><span class="s2">,6378137,298.257223563,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">7030</span><span class="se">\"</span><span class="s2">]],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">6326</span><span class="se">\"</span><span class="s2">]],PRIMEM[</span><span class="se">\"</span><span class="s2">Greenwich</span><span class="se">\"</span><span class="s2">,0,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">8901</span><span class="se">\"</span><span class="s2">]],UNIT[</span><span class="se">\"</span><span class="s2">degree</span><span class="se">\"</span><span class="s2">,0.01745329251994328,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">9122</span><span class="se">\"</span><span class="s2">]],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">4326</span><span class="se">\"</span><span class="s2">]],UNIT[</span><span class="se">\"</span><span class="s2">metre</span><span class="se">\"</span><span class="s2">,1,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">9001</span><span class="se">\"</span><span class="s2">]],PROJECTION[</span><span class="se">\"</span><span class="s2">Transverse_Mercator</span><span class="se">\"</span><span class="s2">],PARAMETER[</span><span class="se">\"</span><span class="s2">latitude_of_origin</span><span class="se">\"</span><span class="s2">,0],PARAMETER[</span><span class="se">\"</span><span class="s2">central_meridian</span><span class="se">\"</span><span class="s2">,-99],PARAMETER[</span><span class="se">\"</span><span class="s2">scale_factor</span><span class="se">\"</span><span class="s2">,0.9996],PARAMETER[</span><span class="se">\"</span><span class="s2">false_easting</span><span class="se">\"</span><span class="s2">,500000],PARAMETER[</span><span class="se">\"</span><span class="s2">false_northing</span><span class="se">\"</span><span class="s2">,0],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">32614</span><span class="se">\"</span><span class="s2">],AXIS[</span><span class="se">\"</span><span class="s2">Easting</span><span class="se">\"</span><span class="s2">,EAST],AXIS[</span><span class="se">\"</span><span class="s2">Northing</span><span class="se">\"</span><span class="s2">,NORTH]]"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:projjson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://proj.org/schemas/v0.2/projjson.schema.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProjectedCRS"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84 / UTM zone 14N"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"base_crs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"datum"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeodeticReferenceFrame"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World Geodetic System 1984"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"ellipsoid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"semi_major_axis"</span><span class="p">:</span><span class="w"> </span><span class="mi">6378137</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"inverse_flattening"</span><span class="p">:</span><span class="w"> </span><span class="mf">298.257223563</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"coordinate_system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ellipsoidal"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geodetic latitude"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lat"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"north"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geodetic longitude"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lon"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"east"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4326</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"conversion"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTM zone 14N"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transverse Mercator"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9807</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latitude of natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8801</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Longitude of natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">-99</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8802</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scale factor at natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9996</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unity"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8805</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False easting"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8806</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False northing"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8807</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"coordinate_system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartesian"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easting"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"east"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Northing"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"north"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World - N hemisphere - 102°W to 96°W - by country"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"south_latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"west_longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">-102</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"north_latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"east_longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">-96</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">32614</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A simple Collection demonstrating EO extension fields in a Collection."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple EO Collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"extent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"spatial"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">[</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3951000</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3951000</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-      </span><span class="mi">3712800</span><span class="p">,</span><span class="w">
-      </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-      </span><span class="mi">3951000</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"proj:centroid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.595302781575604</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-101.34448382627504</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">8391</span><span class="p">,</span><span class="w">
-      </span><span class="mi">8311</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"proj:transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">30</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">224985</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">-30</span><span class="p">,</span><span class="w">
-      </span><span class="mi">6790215</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">1</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-          </span><span class="mf">60.63437</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">149.1755</span><span class="p">,</span><span class="w">
-          </span><span class="mf">61.19016</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">148.13933</span><span class="p">,</span><span class="w">
-          </span><span class="mf">59.51584</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">151.33786</span><span class="p">,</span><span class="w">
-          </span><span class="mf">58.97792</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-          </span><span class="mf">60.63437</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="p">,</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"temporal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2020-12-11T22:38:32.125Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"2020-12-14T18:02:31.437Z"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CC-BY-4.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"summaries"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sat1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cool_sat2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"constellation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"ion"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"instruments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sensor_v1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cool_sensor_v2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"eo:cloud_cover"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../../catalog.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Catalog"</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../collection.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection of Extension Items"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collection"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../collection.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection of Extension Items"</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./item.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/geo+json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20201211_223832_CS2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"B1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Band 1 (coastal)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"item_assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"analytic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-Band Analytic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"data"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coastal"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.44</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"B8"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Band 8 (panchromatic)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"visual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3-Band Visual"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"visual"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B8"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.18</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"proj:shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">16781</span><span class="p">,</span><span class="w">
-        </span><span class="mi">16621</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"proj:transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">15</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mf">224992.5</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">-15</span><span class="p">,</span><span class="w">
-        </span><span class="mf">6790207.5</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">1</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="mf">148.13933</span><span class="p">,</span><span class="w">
-    </span><span class="mf">59.51584</span><span class="p">,</span><span class="w">
-    </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-    </span><span class="mf">60.63437</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.0.0/schema.json"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"https://stac-extensions.github.io/projection/v1.0.0/schema.json"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"landsat-8-l1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -660,289 +544,170 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
     <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_1_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eo-collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nl">"stac_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"proj-example"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-01T01:08:32.033000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:epsg"</span><span class="p">:</span><span class="w"> </span><span class="mi">32614</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:wkt2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROJCS[</span><span class="se">\"</span><span class="s2">WGS 84 / UTM zone 14N</span><span class="se">\"</span><span class="s2">,GEOGCS[</span><span class="se">\"</span><span class="s2">WGS 84</span><span class="se">\"</span><span class="s2">,DATUM[</span><span class="se">\"</span><span class="s2">WGS_1984</span><span class="se">\"</span><span class="s2">,SPHEROID[</span><span class="se">\"</span><span class="s2">WGS 84</span><span class="se">\"</span><span class="s2">,6378137,298.257223563,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">7030</span><span class="se">\"</span><span class="s2">]],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">6326</span><span class="se">\"</span><span class="s2">]],PRIMEM[</span><span class="se">\"</span><span class="s2">Greenwich</span><span class="se">\"</span><span class="s2">,0,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">8901</span><span class="se">\"</span><span class="s2">]],UNIT[</span><span class="se">\"</span><span class="s2">degree</span><span class="se">\"</span><span class="s2">,0.01745329251994328,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">9122</span><span class="se">\"</span><span class="s2">]],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">4326</span><span class="se">\"</span><span class="s2">]],UNIT[</span><span class="se">\"</span><span class="s2">metre</span><span class="se">\"</span><span class="s2">,1,AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">9001</span><span class="se">\"</span><span class="s2">]],PROJECTION[</span><span class="se">\"</span><span class="s2">Transverse_Mercator</span><span class="se">\"</span><span class="s2">],PARAMETER[</span><span class="se">\"</span><span class="s2">latitude_of_origin</span><span class="se">\"</span><span class="s2">,0],PARAMETER[</span><span class="se">\"</span><span class="s2">central_meridian</span><span class="se">\"</span><span class="s2">,-99],PARAMETER[</span><span class="se">\"</span><span class="s2">scale_factor</span><span class="se">\"</span><span class="s2">,0.9996],PARAMETER[</span><span class="se">\"</span><span class="s2">false_easting</span><span class="se">\"</span><span class="s2">,500000],PARAMETER[</span><span class="se">\"</span><span class="s2">false_northing</span><span class="se">\"</span><span class="s2">,0],AUTHORITY[</span><span class="se">\"</span><span class="s2">EPSG</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">32614</span><span class="se">\"</span><span class="s2">],AXIS[</span><span class="se">\"</span><span class="s2">Easting</span><span class="se">\"</span><span class="s2">,EAST],AXIS[</span><span class="se">\"</span><span class="s2">Northing</span><span class="se">\"</span><span class="s2">,NORTH]]"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"proj:projjson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://proj.org/schemas/v0.2/projjson.schema.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProjectedCRS"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84 / UTM zone 14N"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"base_crs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"datum"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GeodeticReferenceFrame"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World Geodetic System 1984"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"ellipsoid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WGS 84"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"semi_major_axis"</span><span class="p">:</span><span class="w"> </span><span class="mi">6378137</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"inverse_flattening"</span><span class="p">:</span><span class="w"> </span><span class="mf">298.257223563</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"coordinate_system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ellipsoidal"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geodetic latitude"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lat"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"north"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Geodetic longitude"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lon"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"east"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4326</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"conversion"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTM zone 14N"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transverse Mercator"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9807</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Latitude of natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8801</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Longitude of natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">-99</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degree"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8802</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Scale factor at natural origin"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9996</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unity"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8805</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False easting"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">500000</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8806</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False northing"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8807</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"coordinate_system"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartesian"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Easting"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"east"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Northing"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"north"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metre"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"area"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World - N hemisphere - 102</span><span class="se">\u</span><span class="s2">00b0W to 96</span><span class="se">\u</span><span class="s2">00b0W - by country"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"south_latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"west_longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">-102</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"north_latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">84</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"east_longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">-96</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"authority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">32614</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A simple Collection demonstrating EO extension fields in a Collection."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple EO Collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"extent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"spatial"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">[</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3951000</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3951000</span><span class="w">
-          </span><span class="p">],</span><span class="w">
-          </span><span class="p">[</span><span class="w">
-            </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-            </span><span class="mi">3712800</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-      </span><span class="mi">3712800</span><span class="p">,</span><span class="w">
-      </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-      </span><span class="mi">3951000</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"proj:centroid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.595302781575604</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lon"</span><span class="p">:</span><span class="w"> </span><span class="mf">-101.34448382627504</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"proj:shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">8391</span><span class="p">,</span><span class="w">
-      </span><span class="mi">8311</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"proj:transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">30</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">224985</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">-30</span><span class="p">,</span><span class="w">
-      </span><span class="mi">6790215</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="mi">1</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-          </span><span class="mf">60.63437</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">149.1755</span><span class="p">,</span><span class="w">
-          </span><span class="mf">61.19016</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">148.13933</span><span class="p">,</span><span class="w">
-          </span><span class="mf">59.51584</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">151.33786</span><span class="p">,</span><span class="w">
-          </span><span class="mf">58.97792</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w">
-          </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-          </span><span class="mf">60.63437</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="p">,</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"temporal"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"2020-12-11T22:38:32.125Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"2020-12-14T18:02:31.437Z"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CC-BY-4.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"summaries"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sat1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cool_sat2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"constellation"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"ion"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"instruments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sensor_v1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cool_sensor_v2"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"eo:cloud_cover"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maximum"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../../catalog.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Catalog"</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../collection.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection of Extension Items"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collection"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"../collection.json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collection of Extension Items"</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./item.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/geo+json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20201211_223832_CS2"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"B1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Band 1 (coastal)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"item_assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"analytic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-Band Analytic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"data"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B1"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"coastal"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.44</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.02</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"B8"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Band 8 (panchromatic)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"visual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3-Band Visual"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"visual"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B8"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.59</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.18</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"proj:shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">16781</span><span class="p">,</span><span class="w">
-        </span><span class="mi">16621</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"proj:transform"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="mi">15</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mf">224992.5</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">-15</span><span class="p">,</span><span class="w">
-        </span><span class="mf">6790207.5</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">1</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="mf">148.13933</span><span class="p">,</span><span class="w">
-    </span><span class="mf">59.51584</span><span class="p">,</span><span class="w">
-    </span><span class="mf">152.52758</span><span class="p">,</span><span class="w">
-    </span><span class="mf">60.63437</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.0.0/schema.json"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"https://stac-extensions.github.io/projection/v1.0.0/schema.json"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"landsat-8-l1"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -951,82 +716,410 @@ Validation for this building block has <strong><a href="https://github.com/ogcin
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_1_1.jsonld">Open in new window</a>
     <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_1_1.jsonld">View on JSON-LD Playground</a>
 </blockquote>
-<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;proj:&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns2:</span><span class="w"> </span><span class="nl">&lt;eo:&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns3:</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">oa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/oa#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">stac:</span><span class="w"> </span><span class="nl">&lt;urn:stac:vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
-</span><span class="nl">&lt;https://example.com/stac/raster/example-1/proj-example&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Example Catalog"</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span><span class="nl">&lt;https://example.com/stac/raster/example-1/eo-collection&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/Collection&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple EO Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A simple Collection demonstrating EO extension fields in a Collection."</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">extent</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">license</span><span class="w"> </span><span class="s">"CC-BY-4.0"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns3:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/root&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/catalog.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Collection of Extension Items"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns3:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/parent&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Collection of Extension Items"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns3:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/collection&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/collection.json&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geojson:</span><span class="n">bbox</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.4</span><span class="mi">81393</span><span class="n">e+02</span><span class="w"> </span><span class="mf">5.9</span><span class="mi">51584</span><span class="n">e+01</span><span class="w"> </span><span class="mf">1.5</span><span class="mi">25276</span><span class="n">e+02</span><span class="w"> </span><span class="mf">6.0</span><span class="mi">63437</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Polygon</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.5</span><span class="mi">25276</span><span class="n">e+02</span><span class="w"> </span><span class="mf">6.0</span><span class="mi">63437</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.4</span><span class="mi">91755</span><span class="n">e+02</span><span class="w"> </span><span class="mf">6.1</span><span class="mi">19016</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.4</span><span class="mi">81393</span><span class="n">e+02</span><span class="w"> </span><span class="mf">5.9</span><span class="mi">51584</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.5</span><span class="mi">13379</span><span class="n">e+02</span><span class="w"> </span><span class="mf">5.8</span><span class="mi">97792</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.5</span><span class="mi">25276</span><span class="n">e+02</span><span class="w"> </span><span class="mf">6.0</span><span class="mi">63437</span><span class="n">e+01</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">bbox</span><span class="w"> </span><span class="mi">169200</span><span class="p">,</span><span class="w">
-        </span><span class="mi">403200</span><span class="p">,</span><span class="w">
-        </span><span class="mi">3712800</span><span class="p">,</span><span class="w">
-        </span><span class="mi">3951000</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">centroid</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">epsg</span><span class="w"> </span><span class="mi">32614</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Polygon</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">169200</span><span class="w"> </span><span class="mi">3712800</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">403200</span><span class="w"> </span><span class="mi">3712800</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">403200</span><span class="w"> </span><span class="mi">3951000</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">169200</span><span class="w"> </span><span class="mi">3951000</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">169200</span><span class="w"> </span><span class="mi">3712800</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">projjson</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/ProjectedCRS&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">geojson:</span><span class="n">bbox</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">shape</span><span class="w"> </span><span class="mi">8311</span><span class="p">,</span><span class="w">
-        </span><span class="mi">8391</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">transform</span><span class="w"> </span><span class="mi">-30</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="mi">30</span><span class="p">,</span><span class="w">
-        </span><span class="mi">224985</span><span class="p">,</span><span class="w">
-        </span><span class="mi">6790215</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">wkt2</span><span class="w"> </span><span class="s">"PROJCS[\"WGS 84 / UTM zone 14N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.01745329251994328,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-99],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],AUTHORITY[\"EPSG\",\"32614\"],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">stac:</span><span class="n">extensions</span><span class="w"> </span><span class="s">"https://stac-extensions.github.io/eo/v1.0.0/schema.json"</span><span class="p">,</span><span class="w">
-        </span><span class="s">"https://stac-extensions.github.io/projection/v1.0.0/schema.json"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">stac:</span><span class="n">hasAsset</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/B1&gt;</span><span class="p">,</span><span class="w">
-        </span><span class="nl">&lt;https://example.com/stac/raster/example-1/B8&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/root&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"20201211_223832_CS2"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/geo+json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/item&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/item.json&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">stac:</span><span class="n">extensions</span><span class="w"> </span><span class="s">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="p">,</span><span class="w">
+        </span><span class="s">"https://stac-extensions.github.io/item-assets/v1.0.0/schema.json"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">stac:</span><span class="n">version</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-</span><span class="nl">&lt;https://example.com/stac/raster/example-1/B1&gt;</span><span class="w"> </span><span class="nn">ns2:</span><span class="n">bands</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">format</span><span class="w"> </span><span class="s">"image/tiff; application=geotiff"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Band 1 (coastal)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcat:</span><span class="n">downloadURL</span><span class="w"> </span><span class="nl">&lt;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B1.TIF&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
-
-</span><span class="nl">&lt;https://example.com/stac/raster/example-1/B8&gt;</span><span class="w"> </span><span class="nn">ns2:</span><span class="n">bands</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">format</span><span class="w"> </span><span class="s">"image/tiff; application=geotiff"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Band 8 (panchromatic)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcat:</span><span class="n">downloadURL</span><span class="w"> </span><span class="nl">&lt;https://landsat-pds.s3.amazonaws.com/c1/L8/107/018/LC08_L1TP_107018_20181001_20181001_01_RT/LC08_L1TP_107018_20181001_20181001_01_RT_B8.TIF&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">shape</span><span class="w"> </span><span class="mi">16621</span><span class="p">,</span><span class="w">
-        </span><span class="mi">16781</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">ns1:</span><span class="n">transform</span><span class="w"> </span><span class="mi">-15</span><span class="p">,</span><span class="w">
-        </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="mi">15</span><span class="p">,</span><span class="w">
-        </span><span class="mf">2.2</span><span class="mi">49925</span><span class="n">e+05,
-</span><span class="w">        </span><span class="mf">6.7</span><span class="mi">90208</span><span class="n">e+06</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 
 </span></code></pre></div>
 <blockquote class="lang-specific turtle">
   <p class="example-links">
     <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_1_1.ttl">Open in new window</a>
+</blockquote>
+<h2 id='an-example-demonstrating-eo-extension-fields-in-a-stac-item'>An example demonstrating EO extension fields in a STAC item.</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"stac_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20201211_223832_CS2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.3438851951615003</span><span class="p">,</span><span class="w">
+    </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.3690476620161975</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T22:38:32.125Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12T01:48:13.725Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12T01:48:13.725Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cool_sat2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"instruments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sensor_v1"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"gsd"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eo:cloud_cover"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eo:snow_cover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eo-collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collection"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"analytic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-Band Analytic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"data"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"visual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3-Band Visual"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"visual"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<blockquote class="lang-specific json">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.json">Open in new window</a>
+    <a target="_blank" href="https://avillar.github.io/TreedocViewer/?dataParser=json&amp;dataUrl=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_2_1.json&amp;expand=2&amp;option=%7B%22showTable%22%3A+false%7D">View on JSON Viewer</a></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-jsonld"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"stac_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stac_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20201211_223832_CS2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bbox"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.3438851951615003</span><span class="p">,</span><span class="w">
+    </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+    </span><span class="mf">1.3690476620161975</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.95469614953714</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3690476620161975</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="mf">172.91173669923782</span><span class="p">,</span><span class="w">
+          </span><span class="mf">1.3438851951615003</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"datetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-11T22:38:32.125Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12T01:48:13.725Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-12T01:48:13.725Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cool_sat2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"instruments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"cool_sensor_v1"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"gsd"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eo:cloud_cover"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eo:snow_cover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"collection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eo-collection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parent"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collection"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./collection.json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Example Collection"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"analytic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4-Band Analytic"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"data"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1959.66</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1823.24</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1512.06</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nir"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.152</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"solar_illumination"</span><span class="p">:</span><span class="w"> </span><span class="mf">1041.63</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thumbnail"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"visual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3-Band Visual"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"visual"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"eo:bands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.645</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band2"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.08</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"band1"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"common_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"center_wavelength"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.47</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"full_width_half_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote class="lang-specific jsonld">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.jsonld">Open in new window</a>
+    <a target="_blank" href="https://json-ld.org/playground/#json-ld=https%3A%2F%2Fogcincubator.github.io%2Fgeodcat-ogcapi-records%2Fbuild%2Ftests%2Fgeo%2Fgeodcat%2Fgeodcat-stac-eo%2Fexample_2_1.jsonld">View on JSON-LD Playground</a>
+</blockquote>
+<div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geojson:</span><span class="w"> </span><span class="nl">&lt;https://purl.org/geojson/vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns1:</span><span class="w"> </span><span class="nl">&lt;eo:&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">ns2:</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">oa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/oa#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">stac:</span><span class="w"> </span><span class="nl">&lt;urn:stac:vocab#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://example.com/stac/raster/example-1/20201211_223832_CS2&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Feature</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">ns1:</span><span class="n">cloud_cover</span><span class="w"> </span><span class="mf">1.2</span><span class="n">e+00</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">ns1:</span><span class="n">snow_cover</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2020-12-12T01:48:13.725Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2020-12-12T01:48:13.725Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns2:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/collection&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns2:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/parent&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/collection.json&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Simple Example Collection"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns2:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/root&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/collection.json&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geojson:</span><span class="n">bbox</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">geojson:</span><span class="n">geometry</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">geojson:</span><span class="n">Polygon</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">geojson:</span><span class="n">coordinates</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29547</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">69048</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mf">1.7</span><span class="mi">29117</span><span class="n">e+02</span><span class="w"> </span><span class="mf">1.3</span><span class="mi">43885</span><span class="n">e+00</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">stac:</span><span class="n">extensions</span><span class="w"> </span><span class="s">"https://stac-extensions.github.io/eo/v1.1.0/schema.json"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">stac:</span><span class="n">hasAsset</span><span class="w"> </span><span class="nl">&lt;https://example.com/stac/raster/example-1/analytic&gt;</span><span class="p">,</span><span class="w">
+        </span><span class="nl">&lt;https://example.com/stac/raster/example-1/thumbnail&gt;</span><span class="p">,</span><span class="w">
+        </span><span class="nl">&lt;https://example.com/stac/raster/example-1/visual&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">stac:</span><span class="n">version</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://example.com/stac/raster/example-1/analytic&gt;</span><span class="w"> </span><span class="nn">ns1:</span><span class="n">bands</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">format</span><span class="w"> </span><span class="s">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"4-Band Analytic"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcat:</span><span class="n">downloadURL</span><span class="w"> </span><span class="nl">&lt;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://example.com/stac/raster/example-1/thumbnail&gt;</span><span class="w"> </span><span class="nn">dcterms:</span><span class="n">format</span><span class="w"> </span><span class="s">"image/png"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"Thumbnail"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcat:</span><span class="n">downloadURL</span><span class="w"> </span><span class="nl">&lt;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nl">&lt;https://example.com/stac/raster/example-1/visual&gt;</span><span class="w"> </span><span class="nn">ns1:</span><span class="n">bands</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">format</span><span class="w"> </span><span class="s">"image/tiff; application=geotiff; profile=cloud-optimized"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">title</span><span class="w"> </span><span class="s">"3-Band Visual"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcat:</span><span class="n">downloadURL</span><span class="w"> </span><span class="nl">&lt;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+
+</span></code></pre></div>
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-eo/example_2_1.ttl">Open in new window</a>
 </blockquote>
 <h1 id='json-schema'>JSON Schema</h1><div class="highlight"><pre class="highlight yaml tab-yaml--schema"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://json-schema.org/draft/2020-12/schema</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s">Schema for OGCAPI records profile for GeoDCAT - defines all extra elements</span>
