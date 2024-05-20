@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-05-16T07:01:59.991202+00:00</small>
+            <small class="datetime">Generated at 2024-05-20T00:23:21.545324+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 4 / 7 (57.14%)
+                    Number of passing building blocks: 5 / 7 (71.43%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -291,7 +291,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-item" id="bblock-ogc.geo.geodcat.geodcat-stac-item">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-item">
                                     <div class="flex-fill">
@@ -299,16 +299,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-item</small>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (0% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-item">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-item">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 2
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 2 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -323,7 +323,7 @@
                                                     <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/simple-item.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-5">
@@ -334,133 +334,7 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;type&#x27; is a required property
-
-Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;properties&#x27;]:
-    {&#x27;properties&#x27;: {&#x27;contacts&#x27;: {&#x27;description&#x27;: &#x27;A list of contacts &#x27;
-                                                &#x27;qualified by their &#x27;
-                                                &#x27;role(s) in association to &#x27;
-                                                &#x27;the record or the &#x27;
-                                                &#x27;resource described by the &#x27;
-                                                &#x27;record.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;created&#x27;: {&#x27;description&#x27;: &#x27;Date of creation of this &#x27;
-                                               &#x27;record.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;description&#x27;: {&#x27;description&#x27;: &#x27;A free-text account of &#x27;
-                                                   &#x27;the resource.&#x27;,
-                                    &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;externalIds&#x27;: {&#x27;description&#x27;: &#x27;An identifier for the &#x27;
-                                                   &#x27;resource assigned by &#x27;
-                                                   &#x27;an external (to the &#x27;
-                                                   &#x27;catalog) entity.&#x27;,
-                                    &#x27;items&#x27;: {&#x27;properties&#x27;: {&#x27;scheme&#x27;: {&#x27;description&#x27;: &#x27;A &#x27;
-                                                                                       &#x27;reference &#x27;
-                                                                                       &#x27;to &#x27;
-                                                                                       &#x27;an &#x27;
-                                                                                       &#x27;authority &#x27;
-                                                                                       &#x27;or &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;for &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;knowledge &#x27;
-                                                                                       &#x27;organization &#x27;
-                                                                                       &#x27;system &#x27;
-                                                                                       &#x27;from &#x27;
-                                                                                       &#x27;which &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;external &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;was &#x27;
-                                                                                       &#x27;obtained. &#x27;
-                                                                                       &#x27;It &#x27;
-                                                                                       &#x27;is &#x27;
-                                                                                       &#x27;recommended &#x27;
-                                                                                       &#x27;that &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;be &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;resolvable &#x27;
-                                                                                       &#x27;URI.&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                             &#x27;value&#x27;: {&#x27;description&#x27;: &#x27;The &#x27;
-                                                                                      &#x27;value &#x27;
-                                                                                      &#x27;of &#x27;
-                                                                                      &#x27;the &#x27;
-                                                                                      &#x27;identifier.&#x27;,
-                                                                       &#x27;type&#x27;: &#x27;string&#x27;}},
-                                              &#x27;required&#x27;: [&#x27;value&#x27;],
-                                              &#x27;type&#x27;: &#x27;object&#x27;},
-                                    &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;formats&#x27;: {&#x27;description&#x27;: &#x27;A list of available &#x27;
-                                               &#x27;distributions of the &#x27;
-                                               &#x27;resource.&#x27;,
-                                &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;keywords&#x27;: {&#x27;description&#x27;: &#x27;The topic or topics of &#x27;
-                                                &#x27;the resource. Typically &#x27;
-                                                &#x27;represented using &#x27;
-                                                &#x27;free-form keywords, tags, &#x27;
-                                                &#x27;key phrases, or &#x27;
-                                                &#x27;classification codes.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;language&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;,
-                                 &#x27;description&#x27;: &#x27;The language used for &#x27;
-                                                &#x27;textual values in this &#x27;
-                                                &#x27;record representation.&#x27;},
-                    &#x27;languages&#x27;: {&#x27;description&#x27;: &#x27;This list of languages &#x27;
-                                                 &#x27;in which this record is &#x27;
-                                                 &#x27;available.&#x27;,
-                                  &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                  &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;license&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml&#x27;},
-                    &#x27;resourceLanguages&#x27;: {&#x27;description&#x27;: &#x27;The list of &#x27;
-                                                         &#x27;languages in &#x27;
-                                                         &#x27;which the &#x27;
-                                                         &#x27;resource &#x27;
-                                                         &#x27;described by &#x27;
-                                                         &#x27;this record is &#x27;
-                                                         &#x27;available.&#x27;,
-                                          &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                          &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;rights&#x27;: {&#x27;description&#x27;: &#x27;A statement that concerns &#x27;
-                                              &#x27;all rights not addressed by &#x27;
-                                              &#x27;the license such as a &#x27;
-                                              &#x27;copyright statement.&#x27;,
-                               &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;themes&#x27;: {&#x27;description&#x27;: &#x27;A knowledge organization &#x27;
-                                              &#x27;system used to classify the &#x27;
-                                              &#x27;resource.&#x27;,
-                               &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;title&#x27;: {&#x27;description&#x27;: &#x27;A human-readable name given &#x27;
-                                             &#x27;to the resource.&#x27;,
-                              &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;type&#x27;: {&#x27;description&#x27;: &#x27;The nature or genre of the &#x27;
-                                            &#x27;resource. The value should be &#x27;
-                                            &#x27;a code, convenient for &#x27;
-                                            &#x27;filtering records. Where &#x27;
-                                            &#x27;available, a link to the &#x27;
-                                            &#x27;canonical URI of the record &#x27;
-                                            &#x27;type resource will be added &#x27;
-                                            &quot;to the &#x27;links&#x27; property.&quot;,
-                             &#x27;maxLength&#x27;: 64,
-                             &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;updated&#x27;: {&#x27;description&#x27;: &#x27;The most recent date on &#x27;
-                                               &#x27;which the record was &#x27;
-                                               &#x27;changed.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;}},
-     &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;title&#x27;],
-     &#x27;type&#x27;: &#x27;object&#x27;}
-
-On instance[&#x27;properties&#x27;]:
-    {&#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125000Z&#x27;}</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -478,7 +352,7 @@ On instance[&#x27;properties&#x27;]:
                                                     <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/core-item.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-6">
@@ -489,145 +363,7 @@ On instance[&#x27;properties&#x27;]:
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;type&#x27; is a required property
-
-Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;properties&#x27;]:
-    {&#x27;properties&#x27;: {&#x27;contacts&#x27;: {&#x27;description&#x27;: &#x27;A list of contacts &#x27;
-                                                &#x27;qualified by their &#x27;
-                                                &#x27;role(s) in association to &#x27;
-                                                &#x27;the record or the &#x27;
-                                                &#x27;resource described by the &#x27;
-                                                &#x27;record.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;created&#x27;: {&#x27;description&#x27;: &#x27;Date of creation of this &#x27;
-                                               &#x27;record.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;description&#x27;: {&#x27;description&#x27;: &#x27;A free-text account of &#x27;
-                                                   &#x27;the resource.&#x27;,
-                                    &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;externalIds&#x27;: {&#x27;description&#x27;: &#x27;An identifier for the &#x27;
-                                                   &#x27;resource assigned by &#x27;
-                                                   &#x27;an external (to the &#x27;
-                                                   &#x27;catalog) entity.&#x27;,
-                                    &#x27;items&#x27;: {&#x27;properties&#x27;: {&#x27;scheme&#x27;: {&#x27;description&#x27;: &#x27;A &#x27;
-                                                                                       &#x27;reference &#x27;
-                                                                                       &#x27;to &#x27;
-                                                                                       &#x27;an &#x27;
-                                                                                       &#x27;authority &#x27;
-                                                                                       &#x27;or &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;for &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;knowledge &#x27;
-                                                                                       &#x27;organization &#x27;
-                                                                                       &#x27;system &#x27;
-                                                                                       &#x27;from &#x27;
-                                                                                       &#x27;which &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;external &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;was &#x27;
-                                                                                       &#x27;obtained. &#x27;
-                                                                                       &#x27;It &#x27;
-                                                                                       &#x27;is &#x27;
-                                                                                       &#x27;recommended &#x27;
-                                                                                       &#x27;that &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;be &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;resolvable &#x27;
-                                                                                       &#x27;URI.&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                             &#x27;value&#x27;: {&#x27;description&#x27;: &#x27;The &#x27;
-                                                                                      &#x27;value &#x27;
-                                                                                      &#x27;of &#x27;
-                                                                                      &#x27;the &#x27;
-                                                                                      &#x27;identifier.&#x27;,
-                                                                       &#x27;type&#x27;: &#x27;string&#x27;}},
-                                              &#x27;required&#x27;: [&#x27;value&#x27;],
-                                              &#x27;type&#x27;: &#x27;object&#x27;},
-                                    &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;formats&#x27;: {&#x27;description&#x27;: &#x27;A list of available &#x27;
-                                               &#x27;distributions of the &#x27;
-                                               &#x27;resource.&#x27;,
-                                &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;keywords&#x27;: {&#x27;description&#x27;: &#x27;The topic or topics of &#x27;
-                                                &#x27;the resource. Typically &#x27;
-                                                &#x27;represented using &#x27;
-                                                &#x27;free-form keywords, tags, &#x27;
-                                                &#x27;key phrases, or &#x27;
-                                                &#x27;classification codes.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;language&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;,
-                                 &#x27;description&#x27;: &#x27;The language used for &#x27;
-                                                &#x27;textual values in this &#x27;
-                                                &#x27;record representation.&#x27;},
-                    &#x27;languages&#x27;: {&#x27;description&#x27;: &#x27;This list of languages &#x27;
-                                                 &#x27;in which this record is &#x27;
-                                                 &#x27;available.&#x27;,
-                                  &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                  &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;license&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml&#x27;},
-                    &#x27;resourceLanguages&#x27;: {&#x27;description&#x27;: &#x27;The list of &#x27;
-                                                         &#x27;languages in &#x27;
-                                                         &#x27;which the &#x27;
-                                                         &#x27;resource &#x27;
-                                                         &#x27;described by &#x27;
-                                                         &#x27;this record is &#x27;
-                                                         &#x27;available.&#x27;,
-                                          &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                          &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;rights&#x27;: {&#x27;description&#x27;: &#x27;A statement that concerns &#x27;
-                                              &#x27;all rights not addressed by &#x27;
-                                              &#x27;the license such as a &#x27;
-                                              &#x27;copyright statement.&#x27;,
-                               &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;themes&#x27;: {&#x27;description&#x27;: &#x27;A knowledge organization &#x27;
-                                              &#x27;system used to classify the &#x27;
-                                              &#x27;resource.&#x27;,
-                               &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;title&#x27;: {&#x27;description&#x27;: &#x27;A human-readable name given &#x27;
-                                             &#x27;to the resource.&#x27;,
-                              &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;type&#x27;: {&#x27;description&#x27;: &#x27;The nature or genre of the &#x27;
-                                            &#x27;resource. The value should be &#x27;
-                                            &#x27;a code, convenient for &#x27;
-                                            &#x27;filtering records. Where &#x27;
-                                            &#x27;available, a link to the &#x27;
-                                            &#x27;canonical URI of the record &#x27;
-                                            &#x27;type resource will be added &#x27;
-                                            &quot;to the &#x27;links&#x27; property.&quot;,
-                             &#x27;maxLength&#x27;: 64,
-                             &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;updated&#x27;: {&#x27;description&#x27;: &#x27;The most recent date on &#x27;
-                                               &#x27;which the record was &#x27;
-                                               &#x27;changed.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;}},
-     &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;title&#x27;],
-     &#x27;type&#x27;: &#x27;object&#x27;}
-
-On instance[&#x27;properties&#x27;]:
-    {&#x27;constellation&#x27;: &#x27;ion&#x27;,
-     &#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
-     &#x27;datetime&#x27;: None,
-     &#x27;description&#x27;: &#x27;A sample STAC Item that includes examples of all &#x27;
-                    &#x27;common metadata&#x27;,
-     &#x27;end_datetime&#x27;: &#x27;2020-12-11T22:38:32.327Z&#x27;,
-     &#x27;gsd&#x27;: 0.512,
-     &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
-     &#x27;mission&#x27;: &#x27;collection 5624&#x27;,
-     &#x27;platform&#x27;: &#x27;cool_sat1&#x27;,
-     &#x27;start_datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
-     &#x27;title&#x27;: &#x27;Core Item&#x27;,
-     &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;}</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -647,14 +383,14 @@ On instance[&#x27;properties&#x27;]:
 
                                     <span class="badge text-bg-danger me-2">
                                             Tests Failed
-                                            (0% passed)
+                                            (50% passed)
                                     </span>
                                 </button>
                             </h2>
                             <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-eo">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 2
+                                            Test passed: 1 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -1077,7 +813,7 @@ On instance:
                                                     <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-8">
@@ -1088,140 +824,7 @@ On instance:
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;type&#x27; is a required property
-
-Failed validating &#x27;required&#x27; in schema[&#x27;allOf&#x27;][1][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;properties&#x27;]:
-    {&#x27;properties&#x27;: {&#x27;contacts&#x27;: {&#x27;description&#x27;: &#x27;A list of contacts &#x27;
-                                                &#x27;qualified by their &#x27;
-                                                &#x27;role(s) in association to &#x27;
-                                                &#x27;the record or the &#x27;
-                                                &#x27;resource described by the &#x27;
-                                                &#x27;record.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;created&#x27;: {&#x27;description&#x27;: &#x27;Date of creation of this &#x27;
-                                               &#x27;record.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;description&#x27;: {&#x27;description&#x27;: &#x27;A free-text account of &#x27;
-                                                   &#x27;the resource.&#x27;,
-                                    &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;externalIds&#x27;: {&#x27;description&#x27;: &#x27;An identifier for the &#x27;
-                                                   &#x27;resource assigned by &#x27;
-                                                   &#x27;an external (to the &#x27;
-                                                   &#x27;catalog) entity.&#x27;,
-                                    &#x27;items&#x27;: {&#x27;properties&#x27;: {&#x27;scheme&#x27;: {&#x27;description&#x27;: &#x27;A &#x27;
-                                                                                       &#x27;reference &#x27;
-                                                                                       &#x27;to &#x27;
-                                                                                       &#x27;an &#x27;
-                                                                                       &#x27;authority &#x27;
-                                                                                       &#x27;or &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;for &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;knowledge &#x27;
-                                                                                       &#x27;organization &#x27;
-                                                                                       &#x27;system &#x27;
-                                                                                       &#x27;from &#x27;
-                                                                                       &#x27;which &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;external &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;was &#x27;
-                                                                                       &#x27;obtained. &#x27;
-                                                                                       &#x27;It &#x27;
-                                                                                       &#x27;is &#x27;
-                                                                                       &#x27;recommended &#x27;
-                                                                                       &#x27;that &#x27;
-                                                                                       &#x27;the &#x27;
-                                                                                       &#x27;identifier &#x27;
-                                                                                       &#x27;be &#x27;
-                                                                                       &#x27;a &#x27;
-                                                                                       &#x27;resolvable &#x27;
-                                                                                       &#x27;URI.&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                             &#x27;value&#x27;: {&#x27;description&#x27;: &#x27;The &#x27;
-                                                                                      &#x27;value &#x27;
-                                                                                      &#x27;of &#x27;
-                                                                                      &#x27;the &#x27;
-                                                                                      &#x27;identifier.&#x27;,
-                                                                       &#x27;type&#x27;: &#x27;string&#x27;}},
-                                              &#x27;required&#x27;: [&#x27;value&#x27;],
-                                              &#x27;type&#x27;: &#x27;object&#x27;},
-                                    &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;formats&#x27;: {&#x27;description&#x27;: &#x27;A list of available &#x27;
-                                               &#x27;distributions of the &#x27;
-                                               &#x27;resource.&#x27;,
-                                &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;keywords&#x27;: {&#x27;description&#x27;: &#x27;The topic or topics of &#x27;
-                                                &#x27;the resource. Typically &#x27;
-                                                &#x27;represented using &#x27;
-                                                &#x27;free-form keywords, tags, &#x27;
-                                                &#x27;key phrases, or &#x27;
-                                                &#x27;classification codes.&#x27;,
-                                 &#x27;items&#x27;: {&#x27;type&#x27;: &#x27;string&#x27;},
-                                 &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;language&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;,
-                                 &#x27;description&#x27;: &#x27;The language used for &#x27;
-                                                &#x27;textual values in this &#x27;
-                                                &#x27;record representation.&#x27;},
-                    &#x27;languages&#x27;: {&#x27;description&#x27;: &#x27;This list of languages &#x27;
-                                                 &#x27;in which this record is &#x27;
-                                                 &#x27;available.&#x27;,
-                                  &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                  &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;license&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml&#x27;},
-                    &#x27;resourceLanguages&#x27;: {&#x27;description&#x27;: &#x27;The list of &#x27;
-                                                         &#x27;languages in &#x27;
-                                                         &#x27;which the &#x27;
-                                                         &#x27;resource &#x27;
-                                                         &#x27;described by &#x27;
-                                                         &#x27;this record is &#x27;
-                                                         &#x27;available.&#x27;,
-                                          &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml&#x27;},
-                                          &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;rights&#x27;: {&#x27;description&#x27;: &#x27;A statement that concerns &#x27;
-                                              &#x27;all rights not addressed by &#x27;
-                                              &#x27;the license such as a &#x27;
-                                              &#x27;copyright statement.&#x27;,
-                               &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;themes&#x27;: {&#x27;description&#x27;: &#x27;A knowledge organization &#x27;
-                                              &#x27;system used to classify the &#x27;
-                                              &#x27;resource.&#x27;,
-                               &#x27;items&#x27;: {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                    &#x27;title&#x27;: {&#x27;description&#x27;: &#x27;A human-readable name given &#x27;
-                                             &#x27;to the resource.&#x27;,
-                              &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;type&#x27;: {&#x27;description&#x27;: &#x27;The nature or genre of the &#x27;
-                                            &#x27;resource. The value should be &#x27;
-                                            &#x27;a code, convenient for &#x27;
-                                            &#x27;filtering records. Where &#x27;
-                                            &#x27;available, a link to the &#x27;
-                                            &#x27;canonical URI of the record &#x27;
-                                            &#x27;type resource will be added &#x27;
-                                            &quot;to the &#x27;links&#x27; property.&quot;,
-                             &#x27;maxLength&#x27;: 64,
-                             &#x27;type&#x27;: &#x27;string&#x27;},
-                    &#x27;updated&#x27;: {&#x27;description&#x27;: &#x27;The most recent date on &#x27;
-                                               &#x27;which the record was &#x27;
-                                               &#x27;changed.&#x27;,
-                                &#x27;format&#x27;: &#x27;date-time&#x27;,
-                                &#x27;type&#x27;: &#x27;string&#x27;}},
-     &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;title&#x27;],
-     &#x27;type&#x27;: &#x27;object&#x27;}
-
-On instance[&#x27;properties&#x27;]:
-    {&#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
-     &#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
-     &#x27;eo:cloud_cover&#x27;: 1.2,
-     &#x27;eo:snow_cover&#x27;: 0,
-     &#x27;gsd&#x27;: 0.66,
-     &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
-     &#x27;platform&#x27;: &#x27;cool_sat2&#x27;,
-     &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;}</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                     </div>
                                                 </div>
                                             </div>

@@ -170,7 +170,6 @@ x-defs:
       id:
         type: string
         description: A unique identifier of the catalog record.
-        format: uri
       conformsTo:
         type: array
         items:
@@ -191,9 +190,6 @@ x-defs:
         - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson/properties/geometry
       properties:
         type: object
-        required:
-        - type
-        - title
         properties:
           created:
             type: string

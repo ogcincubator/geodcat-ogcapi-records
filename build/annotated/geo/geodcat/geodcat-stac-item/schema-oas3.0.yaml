@@ -41,6 +41,7 @@ x-defs:
     description: STAC Collection
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml
@@ -215,6 +216,131 @@ x-defs:
     x-jsonld-prefixes:
       rdfs: http://www.w3.org/2000/01/rdf-schema#
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml
+  ogc.api.records.v1.schemas.recordGeoJSON:
+    description: Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml
+    type: object
+    allOf:
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
+    required:
+    - id
+    - type
+    - geometry
+    - properties
+    - links
+    properties:
+      id:
+        type: string
+        description: A unique identifier of the catalog record.
+      conformsTo:
+        type: array
+        items:
+          type: string
+      type:
+        type: string
+        enum:
+        - Feature
+      time:
+        oneOf:
+        - enum:
+          - null
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.time
+      geometry:
+        oneOf:
+        - enum:
+          - null
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson/properties/geometry
+      properties:
+        type: object
+        properties:
+          created:
+            type: string
+            description: Date of creation of this record.
+            format: date-time
+          updated:
+            type: string
+            description: The most recent date on which the record was changed.
+            format: date-time
+          type:
+            type: string
+            description: The nature or genre of the resource. The value should be
+              a code, convenient for filtering records. Where available, a link to
+              the canonical URI of the record type resource will be added to the 'links'
+              property.
+            maxLength: 64
+          title:
+            type: string
+            description: A human-readable name given to the resource.
+          description:
+            type: string
+            description: A free-text account of the resource.
+          keywords:
+            type: array
+            description: The topic or topics of the resource. Typically represented
+              using free-form keywords, tags, key phrases, or classification codes.
+            items:
+              type: string
+          language: {}
+          languages:
+            type: array
+            description: This list of languages in which this record is available.
+            items:
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
+          resourceLanguages:
+            type: array
+            description: The list of languages in which the resource described by
+              this record is available.
+            items:
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
+          externalIds:
+            type: array
+            description: An identifier for the resource assigned by an external (to
+              the catalog) entity.
+            items:
+              type: object
+              properties:
+                scheme:
+                  type: string
+                  description: A reference to an authority or identifier for a knowledge
+                    organization system from which the external identifier was obtained.
+                    It is recommended that the identifier be a resolvable URI.
+                value:
+                  type: string
+                  description: The value of the identifier.
+              required:
+              - value
+          themes:
+            type: array
+            description: A knowledge organization system used to classify the resource.
+            minItems: 1
+            items:
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.theme
+          formats:
+            type: array
+            description: A list of available distributions of the resource.
+            items:
+              type: string
+          contacts:
+            type: array
+            description: A list of contacts qualified by their role(s) in association
+              to the record or the resource described by the record.
+            items:
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.contact
+          license:
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.license
+          rights:
+            type: string
+            description: A statement that concerns all rights not addressed by the
+              license such as a copyright statement.
+      links:
+        type: array
+        items:
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
+      linkTemplates:
+        type: array
+        items:
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkTemplate
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
   github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json:
     title: STAC Item
     type: object
@@ -382,135 +508,6 @@ x-defs:
         - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata
     x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#
-  ogc.api.records.v1.schemas.recordGeoJSON:
-    description: Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml
-    type: object
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
-    required:
-    - id
-    - type
-    - geometry
-    - properties
-    - links
-    properties:
-      id:
-        type: string
-        description: A unique identifier of the catalog record.
-        format: uri
-      conformsTo:
-        type: array
-        items:
-          type: string
-      type:
-        type: string
-        enum:
-        - Feature
-      time:
-        oneOf:
-        - enum:
-          - null
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.time
-      geometry:
-        oneOf:
-        - enum:
-          - null
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson/properties/geometry
-      properties:
-        type: object
-        required:
-        - type
-        - title
-        properties:
-          created:
-            type: string
-            description: Date of creation of this record.
-            format: date-time
-          updated:
-            type: string
-            description: The most recent date on which the record was changed.
-            format: date-time
-          type:
-            type: string
-            description: The nature or genre of the resource. The value should be
-              a code, convenient for filtering records. Where available, a link to
-              the canonical URI of the record type resource will be added to the 'links'
-              property.
-            maxLength: 64
-          title:
-            type: string
-            description: A human-readable name given to the resource.
-          description:
-            type: string
-            description: A free-text account of the resource.
-          keywords:
-            type: array
-            description: The topic or topics of the resource. Typically represented
-              using free-form keywords, tags, key phrases, or classification codes.
-            items:
-              type: string
-          language: {}
-          languages:
-            type: array
-            description: This list of languages in which this record is available.
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
-          resourceLanguages:
-            type: array
-            description: The list of languages in which the resource described by
-              this record is available.
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
-          externalIds:
-            type: array
-            description: An identifier for the resource assigned by an external (to
-              the catalog) entity.
-            items:
-              type: object
-              properties:
-                scheme:
-                  type: string
-                  description: A reference to an authority or identifier for a knowledge
-                    organization system from which the external identifier was obtained.
-                    It is recommended that the identifier be a resolvable URI.
-                value:
-                  type: string
-                  description: The value of the identifier.
-              required:
-              - value
-          themes:
-            type: array
-            description: A knowledge organization system used to classify the resource.
-            minItems: 1
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.theme
-          formats:
-            type: array
-            description: A list of available distributions of the resource.
-            items:
-              type: string
-          contacts:
-            type: array
-            description: A list of contacts qualified by their role(s) in association
-              to the record or the resource described by the record.
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.contact
-          license:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.license
-          rights:
-            type: string
-            description: A statement that concerns all rights not addressed by the
-              license such as a copyright statement.
-      links:
-        type: array
-        items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
-      linkTemplates:
-        type: array
-        items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkTemplate
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
   ogc.geo.common.data_types.geojson:
     title: GeoJSON Feature
     type: object
@@ -975,6 +972,315 @@ x-defs:
       dct: http://purl.org/dc/terms/
     x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+  ogc.api.records.v1.schemas.time:
+    type: object
+    nullable: true
+    properties:
+      date:
+        type: string
+        pattern: ^\d{4}-\d{2}-\d{2}$
+      timestamp:
+        type: string
+        pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$
+      interval:
+        type: array
+        minItems: 2
+        maxItems: 2
+        items:
+          oneOf:
+          - type: string
+            pattern: ^\d{4}-\d{2}-\d{2}$
+          - type: string
+            pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$
+          - type: string
+            enum:
+            - ..
+      resolution:
+        type: string
+        description: Minimum time period resolvable in the dataset, as an ISO 8601
+          duration
+        example:
+        - P1D
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/time/schema.yaml
+  ogc.api.records.v1.schemas.language:
+    type: object
+    description: The language used for textual values in this record.
+    required:
+    - code
+    properties:
+      code:
+        type: string
+        description: The language tag as per RFC-5646.
+        example: el
+      name:
+        type: string
+        minLength: 1
+        description: The untranslated name of of the language.
+        example: "\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC"
+      alternate:
+        type: string
+        description: The name of the language in another well-understood language,
+          usually English.
+        example: Greek
+      dir:
+        type: string
+        description: The direction for text in this language. The default, `ltr` (left-to-right),
+          represents the most common situation. However, care should be taken to set
+          the value of `dir` appropriately if the language direction is not `ltr`.
+          Other values supported are `rtl` (right-to-left), `ttb` (top-to-bottom),
+          and `btt` (bottom-to-top).
+        enum:
+        - ltr
+        - rtl
+        - ttb
+        - btt
+        default:
+        - ltr
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml
+  ogc.api.records.v1.schemas.theme:
+    type: object
+    required:
+    - concepts
+    - scheme
+    properties:
+      concepts:
+        type: array
+        description: One or more entity/concept identifiers from this knowledge system.
+          it is recommended that a resolvable URI be used for each entity/concept
+          identifier.
+        minItems: 1
+        items:
+          type: object
+          required:
+          - id
+          properties:
+            id:
+              type: string
+              description: An identifier for the concept.
+            title:
+              type: string
+              description: A human readable title for the concept.
+            description:
+              type: string
+              description: A human readable description for the concept.
+            url:
+              type: string
+              format: uri
+              description: A URI providing further description of the concept.
+      scheme:
+        type: string
+        description: An identifier for the knowledge organization system used to classify
+          the resource.  It is recommended that the identifier be a resolvable URI.  The
+          list of schemes used in a searchable catalog can be determined by inspecting
+          the server's OpenAPI document or, if the server implements CQL2, by exposing
+          a queryable (e.g. named `scheme`) and enumerating the list of schemes in
+          the queryable's schema definition.
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml
+  ogc.api.records.v1.schemas.contact:
+    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml
+    type: object
+    description: 'Identification of, and means of communication with, person responsible
+
+      for the resource.'
+    anyOf:
+    - required:
+      - name
+    - required:
+      - organization
+    properties:
+      identifier:
+        type: string
+        description: A value uniquely identifying a contact.
+      name:
+        type: string
+        description: The name of the responsible person.
+      position:
+        type: string
+        description: The name of the role or position of the responsible person taken
+          from the organization's formal organizational hierarchy or chart.
+      organization:
+        type: string
+        description: Organization/affiliation of the contact.
+      logo:
+        description: Graphic identifying a contact. The link relation should be `icon`
+          and the media type should be an image media type.
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
+        - type: object
+          required:
+          - rel
+          - type
+          properties:
+            rel:
+              enum:
+              - icon
+      phones:
+        type: array
+        description: Telephone numbers at which contact can be made.
+        items:
+          type: object
+          required:
+          - value
+          properties:
+            value:
+              type: string
+              description: The value is the phone number itself.
+              pattern: ^\+[1-9]{1}[0-9]{3,14}$
+              example: '+14165550142'
+            roles: {}
+      emails:
+        type: array
+        description: Email addresses at which contact can be made.
+        items:
+          type: object
+          required:
+          - value
+          properties:
+            value:
+              type: string
+              description: The value is the email number itself.
+              format: email
+            roles: {}
+      addresses:
+        type: array
+        description: Physical location at which contact can be made.
+        items:
+          type: object
+          properties:
+            deliveryPoint:
+              type: array
+              description: Address lines for the location.
+              items:
+                type: string
+            city:
+              type: string
+              description: City for the location.
+            administrativeArea:
+              type: string
+              description: State or province of the location.
+            postalCode:
+              type: string
+              description: ZIP or other postal code.
+            country:
+              type: string
+              description: Country of the physical address.  ISO 3166-1 is recommended.
+            roles: {}
+      links:
+        type: array
+        description: On-line information about the contact.
+        items:
+          allOf:
+          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
+          - type: object
+            required:
+            - type
+      hoursOfService:
+        type: string
+        description: Time period when the contact can be contacted.
+        example: 'Hours: Mo-Fr 10am-7pm Sa 10am-22pm Su 10am-21pm'
+      contactInstructions:
+        type: string
+        description: 'Supplemental instructions on how or when to contact the
+
+          responsible party.'
+      roles: {}
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml
+  ogc.api.records.v1.schemas.license:
+    type: string
+    description: A legal document under which the resource is made available. If the
+      resource is being made available under a common license then use an SPDX license
+      id (https://spdx.org/licenses/). If the resource is being made available under
+      multiple common licenses then use an SPDX license expression v2.3 string (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/)
+      If the resource is being made available under one or more licenses that haven't
+      been assigned an SPDX identifier or one or more custom licenses then use a string
+      value of 'other' and include one or more links (rel="license") in the `link`
+      section of the record to the file(s) that contains the text of the license(s).
+      There is also the case of a resource that is private or unpublished and is thus
+      unlicensed; in this case do not register such a resource in the catalog in the
+      first place since there is no point in making such a resource discoverable.
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
+  ogc.api.records.v1.schemas.linkBase:
+    $comment: Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml
+    type: object
+    properties:
+      rel:
+        type: string
+        description: The type or semantics of the relation.
+        example: alternate
+        x-jsonld-id: http://www.iana.org/assignments/relation
+        x-jsonld-type: '@id'
+        x-jsonld-base: http://www.iana.org/assignments/relation/
+      type:
+        type: string
+        description: A hint indicating what the media type of the result of dereferencing
+          the link should be.
+        example: application/geo+json
+        x-jsonld-id: http://purl.org/dc/terms/format
+      hreflang:
+        type: string
+        description: A hint indicating what the language of the result of dereferencing
+          the link should be.
+        example: en
+        x-jsonld-id: http://purl.org/dc/terms/language
+      title:
+        type: string
+        description: Used to label the destination of a link such that it can be used
+          as a human-readable identifier.
+        example: Trierer Strasse 70, 53115 Bonn
+        x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+      length:
+        type: integer
+        x-jsonld-id: http://purl.org/dc/terms/extent
+      created:
+        type: string
+        description: Date of creation of the resource pointed to by the link.
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/created
+      updated:
+        type: string
+        description: Most recent date on which the resource pointed to by the link
+          was changed.
+        format: date-time
+        x-jsonld-id: http://purl.org/dc/terms/modified
+    x-jsonld-extra-terms:
+      href:
+        x-jsonld-type: '@id'
+        x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
+    x-jsonld-prefixes:
+      oa: http://www.w3.org/ns/oa#
+      rdfs: http://www.w3.org/2000/01/rdf-schema#
+      dct: http://purl.org/dc/terms/
+      xsd: http://www.w3.org/2001/XMLSchema#
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
+  ogc.api.records.v1.schemas.linkTemplate:
+    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
+    allOf:
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
+    - type: object
+      required:
+      - uriTemplate
+      properties:
+        uriTemplate:
+          type: string
+          description: Supplies a resolvable URI to a remote resource (or resource
+            fragment).
+          example: http://data.example.com/buildings/(building-id}
+          x-jsonld-type: xsd:string
+          x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
+        varBase:
+          type: string
+          description: The base URI to which the variable name can be appended to
+            retrieve the definition of the variable as a JSON Schema fragment.
+          format: url
+        variables:
+          type: object
+          description: This object contains one key per substitution variable in the
+            templated URL.  Each key defines the schema of one substitution variable
+            using a JSON Schema fragment and can thus include things like the data
+            type of the variable, enumerations, minimum values, maximum values, etc.
+    x-jsonld-prefixes:
+      oa: http://www.w3.org/ns/oa#
+    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
   schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json:
     title: STAC Item
     type: object
@@ -1749,315 +2055,6 @@ x-defs:
             type: number
     x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/Geometry.json
-  ogc.api.records.v1.schemas.time:
-    type: object
-    nullable: true
-    properties:
-      date:
-        type: string
-        pattern: ^\d{4}-\d{2}-\d{2}$
-      timestamp:
-        type: string
-        pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$
-      interval:
-        type: array
-        minItems: 2
-        maxItems: 2
-        items:
-          oneOf:
-          - type: string
-            pattern: ^\d{4}-\d{2}-\d{2}$
-          - type: string
-            pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$
-          - type: string
-            enum:
-            - ..
-      resolution:
-        type: string
-        description: Minimum time period resolvable in the dataset, as an ISO 8601
-          duration
-        example:
-        - P1D
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/time/schema.yaml
-  ogc.api.records.v1.schemas.language:
-    type: object
-    description: The language used for textual values in this record.
-    required:
-    - code
-    properties:
-      code:
-        type: string
-        description: The language tag as per RFC-5646.
-        example: el
-      name:
-        type: string
-        minLength: 1
-        description: The untranslated name of of the language.
-        example: "\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC"
-      alternate:
-        type: string
-        description: The name of the language in another well-understood language,
-          usually English.
-        example: Greek
-      dir:
-        type: string
-        description: The direction for text in this language. The default, `ltr` (left-to-right),
-          represents the most common situation. However, care should be taken to set
-          the value of `dir` appropriately if the language direction is not `ltr`.
-          Other values supported are `rtl` (right-to-left), `ttb` (top-to-bottom),
-          and `btt` (bottom-to-top).
-        enum:
-        - ltr
-        - rtl
-        - ttb
-        - btt
-        default:
-        - ltr
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml
-  ogc.api.records.v1.schemas.theme:
-    type: object
-    required:
-    - concepts
-    - scheme
-    properties:
-      concepts:
-        type: array
-        description: One or more entity/concept identifiers from this knowledge system.
-          it is recommended that a resolvable URI be used for each entity/concept
-          identifier.
-        minItems: 1
-        items:
-          type: object
-          required:
-          - id
-          properties:
-            id:
-              type: string
-              description: An identifier for the concept.
-            title:
-              type: string
-              description: A human readable title for the concept.
-            description:
-              type: string
-              description: A human readable description for the concept.
-            url:
-              type: string
-              format: uri
-              description: A URI providing further description of the concept.
-      scheme:
-        type: string
-        description: An identifier for the knowledge organization system used to classify
-          the resource.  It is recommended that the identifier be a resolvable URI.  The
-          list of schemes used in a searchable catalog can be determined by inspecting
-          the server's OpenAPI document or, if the server implements CQL2, by exposing
-          a queryable (e.g. named `scheme`) and enumerating the list of schemes in
-          the queryable's schema definition.
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml
-  ogc.api.records.v1.schemas.contact:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml
-    type: object
-    description: 'Identification of, and means of communication with, person responsible
-
-      for the resource.'
-    anyOf:
-    - required:
-      - name
-    - required:
-      - organization
-    properties:
-      identifier:
-        type: string
-        description: A value uniquely identifying a contact.
-      name:
-        type: string
-        description: The name of the responsible person.
-      position:
-        type: string
-        description: The name of the role or position of the responsible person taken
-          from the organization's formal organizational hierarchy or chart.
-      organization:
-        type: string
-        description: Organization/affiliation of the contact.
-      logo:
-        description: Graphic identifying a contact. The link relation should be `icon`
-          and the media type should be an image media type.
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
-        - type: object
-          required:
-          - rel
-          - type
-          properties:
-            rel:
-              enum:
-              - icon
-      phones:
-        type: array
-        description: Telephone numbers at which contact can be made.
-        items:
-          type: object
-          required:
-          - value
-          properties:
-            value:
-              type: string
-              description: The value is the phone number itself.
-              pattern: ^\+[1-9]{1}[0-9]{3,14}$
-              example: '+14165550142'
-            roles: {}
-      emails:
-        type: array
-        description: Email addresses at which contact can be made.
-        items:
-          type: object
-          required:
-          - value
-          properties:
-            value:
-              type: string
-              description: The value is the email number itself.
-              format: email
-            roles: {}
-      addresses:
-        type: array
-        description: Physical location at which contact can be made.
-        items:
-          type: object
-          properties:
-            deliveryPoint:
-              type: array
-              description: Address lines for the location.
-              items:
-                type: string
-            city:
-              type: string
-              description: City for the location.
-            administrativeArea:
-              type: string
-              description: State or province of the location.
-            postalCode:
-              type: string
-              description: ZIP or other postal code.
-            country:
-              type: string
-              description: Country of the physical address.  ISO 3166-1 is recommended.
-            roles: {}
-      links:
-        type: array
-        description: On-line information about the contact.
-        items:
-          allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
-          - type: object
-            required:
-            - type
-      hoursOfService:
-        type: string
-        description: Time period when the contact can be contacted.
-        example: 'Hours: Mo-Fr 10am-7pm Sa 10am-22pm Su 10am-21pm'
-      contactInstructions:
-        type: string
-        description: 'Supplemental instructions on how or when to contact the
-
-          responsible party.'
-      roles: {}
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml
-  ogc.api.records.v1.schemas.license:
-    type: string
-    description: A legal document under which the resource is made available. If the
-      resource is being made available under a common license then use an SPDX license
-      id (https://spdx.org/licenses/). If the resource is being made available under
-      multiple common licenses then use an SPDX license expression v2.3 string (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/)
-      If the resource is being made available under one or more licenses that haven't
-      been assigned an SPDX identifier or one or more custom licenses then use a string
-      value of 'other' and include one or more links (rel="license") in the `link`
-      section of the record to the file(s) that contains the text of the license(s).
-      There is also the case of a resource that is private or unpublished and is thus
-      unlicensed; in this case do not register such a resource in the catalog in the
-      first place since there is no point in making such a resource discoverable.
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
-  ogc.api.records.v1.schemas.linkBase:
-    $comment: Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml
-    type: object
-    properties:
-      rel:
-        type: string
-        description: The type or semantics of the relation.
-        example: alternate
-        x-jsonld-id: http://www.iana.org/assignments/relation
-        x-jsonld-type: '@id'
-        x-jsonld-base: http://www.iana.org/assignments/relation/
-      type:
-        type: string
-        description: A hint indicating what the media type of the result of dereferencing
-          the link should be.
-        example: application/geo+json
-        x-jsonld-id: http://purl.org/dc/terms/format
-      hreflang:
-        type: string
-        description: A hint indicating what the language of the result of dereferencing
-          the link should be.
-        example: en
-        x-jsonld-id: http://purl.org/dc/terms/language
-      title:
-        type: string
-        description: Used to label the destination of a link such that it can be used
-          as a human-readable identifier.
-        example: Trierer Strasse 70, 53115 Bonn
-        x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
-      length:
-        type: integer
-        x-jsonld-id: http://purl.org/dc/terms/extent
-      created:
-        type: string
-        description: Date of creation of the resource pointed to by the link.
-        format: date-time
-        x-jsonld-id: http://purl.org/dc/terms/created
-      updated:
-        type: string
-        description: Most recent date on which the resource pointed to by the link
-          was changed.
-        format: date-time
-        x-jsonld-id: http://purl.org/dc/terms/modified
-    x-jsonld-extra-terms:
-      href:
-        x-jsonld-type: '@id'
-        x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
-    x-jsonld-prefixes:
-      oa: http://www.w3.org/ns/oa#
-      rdfs: http://www.w3.org/2000/01/rdf-schema#
-      dct: http://purl.org/dc/terms/
-      xsd: http://www.w3.org/2001/XMLSchema#
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
-  ogc.api.records.v1.schemas.linkTemplate:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
-    - type: object
-      required:
-      - uriTemplate
-      properties:
-        uriTemplate:
-          type: string
-          description: Supplies a resolvable URI to a remote resource (or resource
-            fragment).
-          example: http://data.example.com/buildings/(building-id}
-          x-jsonld-type: xsd:string
-          x-jsonld-id: http://www.w3.org/ns/oa#hasTarget
-        varBase:
-          type: string
-          description: The base URI to which the variable name can be appended to
-            retrieve the definition of the variable as a JSON Schema fragment.
-          format: url
-        variables:
-          type: object
-          description: This object contains one key per substitution variable in the
-            templated URL.  Each key defines the schema of one substitution variable
-            using a JSON Schema fragment and can thus include things like the data
-            type of the variable, enumerations, minimum values, maximum values, etc.
-    x-jsonld-prefixes:
-      oa: http://www.w3.org/ns/oa#
-    x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
   ogc.api.records.v1.schemas.roles:
     description: The list of duties, job functions or permissions assigned by the
       system and associated with the context of this member.
