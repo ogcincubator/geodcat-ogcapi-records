@@ -1,0 +1,5 @@
+"$schema": https://json-schema.org/draft/2020-12/schema
+description: 'Schema for OGCAPI records profile for GeoDCAT + PROV'
+allOf:
+  - $ref: ../geodcat-records/schema.yaml
+  - $ref: bblocks://ogc.ogc-utils.prov#/$defs/Entity

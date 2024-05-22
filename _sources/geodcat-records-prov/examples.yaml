@@ -1,0 +1,33 @@
+- title: STAC item with link to provenance
+  content: |
+    This is the simple item example from the STAC specification, augmented with the simplest possible form of provenance - a link to a resource that provides provenance details. 
+
+    a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-O.
+
+  snippets:
+    - language: json
+      ref: https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_1_1.json
+      base-uri: 'https://example.com/stac/example1/'
+
+
+- title: STAC item with a generation activity description
+  content: |
+    This is the simple item example from the STAC specification, augmented a description of the activity that generated it, with nested set of entities the object derives from. 
+
+    A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-O. 
+
+  snippets:
+    - language: json
+      ref: https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_2_1.json
+      base-uri: 'https://example.com/stac/example1/'
+
+- title: STAC item with a provenance graph
+  content: |
+    This is the simple item example from the STAC specification, augmented an array of Provenance objects that define a DAG (Directed Acyclic Graph) that can fully describe a set of contributing activities, entities and agents.) 
+
+    A STAC item is a prov:Entity with the "has_provenance" property whose range is an array of objects defined by the PROV-O model. 
+
+  snippets:
+    - language: json
+      ref: https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json
+      base-uri: 'https://example.com/stac/example1/'
