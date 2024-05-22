@@ -34,30 +34,8 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
   },
   "geometry": {
     "type": "Polygon",
-    "coordinates": [
-      [
-        [
-          -180,
-          -90
-        ],
-        [
-          -180,
-          90
-        ],
-        [
-          180,
-          90
-        ],
-        [
-          180,
-          -90
-        ],
-        [
-          -180,
-          -90
-        ]
-      ]
-    ]
+    "coordinates": [ [ [ -180, -90 ], [ -180, 90 ],
+          [ 180, 90 ], [ 180, -90 ], [ -180, -90 ] ] ]
   },
   "conformsTo": [
      "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
@@ -68,15 +46,8 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     "type": "dataset",
     "title": "Total Ozone - daily observations",
     "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
-    "keywords": [
-      "total",
-      "ozone",
-      "level 1.0",
-      "column",
-      "dobson",
-      "brewer",
-      "saoz"
-    ],
+    "keywords": [ "total", "ozone", "level 1.0", "column",
+                  "dobson", "brewer", "saoz" ],
     "language": {
       "code": "en-CA",
       "name": "English (Canada)"
@@ -91,7 +62,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "name": "French (Canada)"
       }
     ],
-    "externalId": [
+    "externalIds": [
       {
         "scheme": "WMO:WIS",
         "value": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"
@@ -114,63 +85,28 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     "themes": [
       {
         "concepts": [
-          {
-            "id": "dobson"
-          },
-          {
-            "id": "brewer"
-          },
-          {
-            "id": "vassey"
-          },
-          {
-            "id": "pion"
-          },
-          {
-            "id": "microtops"
-          },
-          {
-            "id": "spectral"
-          },
-          {
-            "id": "hoelper"
-          },
-          {
-            "id": "saoz"
-          },
-          {
-            "id": "filter"
-          }
+          { "id": "dobson" }, { "id": "brewer" },
+          { "id": "vassey" }, { "id": "pion" },
+          { "id": "microtops" }, { "id": "spectral" },
+          { "id": "hoelper" }, { "id": "saoz" },
+          { "id": "filter" }
         ],
         "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
       },
       {
         "concepts": [
-          {
-            "id": "atmosphericComposition"
-          },
-          {
-            "id": "pollution"
-          },
-          {
-            "id": "observationPlatform"
-          },
-          {
-            "id": "rocketSounding"
-          }
+          { "id": "atmosphericComposition" }, { "id": "pollution" },
+          { "id": "observationPlatform" }, { "id": "rocketSounding" }
         ],
         "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
       }
     ],
-    "formats": [
-      "CSV",
-      "GeoJSON"
-    ],
+    "formats": [ "CSV", "GeoJSON" ],
     "license": "other"
   },
   "linkTemplates": [
     {
-      "rel": "item",
+      "rel": "describes",
       "type": "image/png",
       "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
       "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
@@ -331,7 +267,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "name": "French (Canada)"
       }
     ],
-    "externalId": [
+    "externalIds": [
       {
         "scheme": "WMO:WIS",
         "value": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone"
@@ -412,7 +348,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
   },
   "linkTemplates": [
     {
-      "rel": "item",
+      "rel": "describes",
       "type": "image/png",
       "title": "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations",
       "uriTemplate": "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png",
@@ -521,36 +457,36 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
     dcterms:language [ ] ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "Data Search / Download User Interface" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+    rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
+        [ rdfs:label "Data Search / Download User Interface" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
     dcat:keyword "brewer",
         "column",
         "dobson",
