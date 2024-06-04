@@ -1,0 +1,57 @@
+@prefix cs: <https://www.opengis.net/def/ogc-api/records> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rec:hasLinkTemplate a owl:objectProperty,
+        skos:Concept ;
+    rdfs:range rec:LinkTemplate ;
+    skos:inScheme cs: ;
+    skos:prefLabel "has link template" .
+
+rec:hasVariable a owl:objectProperty,
+        skos:Concept ;
+    rdfs:domain rec:linkTemplate ;
+    rdfs:range rec:LinkTemplateVariable ;
+    skos:inScheme cs: ;
+    skos:prefLabel "has variable" .
+
+rec:uriTemplate a owl:datatypeProperty,
+        skos:Concept ;
+    rdfs:domain rec:linkTemplate ;
+    rdfs:range xsd:string ;
+    skos:definition "Supplies a resolvable URI to a remote resource (or resource fragment)." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "URI template" .
+
+rec:varBase a owl:dataTypeProperty,
+        skos:Concept ;
+    rdfs:domain rec:linkTemplate ;
+    rdfs:range xsd:string ;
+    skos:definition "The base URI to which the variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "variable base" .
+
+rec:LinkTemplate a owl:Class,
+        skos:Concept ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Link template" .
+
+rec:LinkTemplateVariable a owl:Class,
+        skos:Concept ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty dct:identifier ],
+        [ a owl:Restriction ;
+            owl:onClass <https://www.w3.org/2019/wot/json-schema#DataSchema> ;
+            owl:onProperty dct:format ;
+            owl:qualifiedMinCardinality 1 ] ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Link Template Variable" .
+
+cs: a skos:ConceptScheme ;
+    skos:prefLabel "OGC API Records" .
+
