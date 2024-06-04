@@ -207,6 +207,16 @@ x-defs:
         type: object
         properties:
           id: {}
+          type:
+            oneOf:
+            - type: string
+              const: Activity
+            - type: array
+              contains:
+                type: string
+                const: Activity
+              items:
+                type: string
           activityType: {}
           endedAtTime: {}
           wasAssociatedWith: {}
@@ -275,6 +285,8 @@ x-defs:
           - startedAtTime
         - required:
           - wasAssociatedWith
+        - required:
+          - type
         allOf:
         - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/influenced
       Agent:
@@ -357,60 +369,66 @@ x-defs:
         required:
         - atTime
         - entity
+      ActivityInfluence:
+        type: object
+        properties:
+          id: {}
+          atTime: {}
+          hadRole: {}
+          influencer: {}
+          hadActivity: {}
+          activity: {}
       Generation:
-        type: object
-        properties:
-          id: {}
-          type:
-            oneOf:
-            - type: string
-              const: Generation
-            - type: array
-              contains:
-                type: string
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/ActivityInfluence
+        - type: object
+          properties:
+            type:
+              oneOf:
+              - type: string
                 const: Generation
-              items:
-                type: string
-          atTime: {}
-        required:
-        - atTime
+              - type: array
+                contains:
+                  type: string
+                  const: Generation
+                items:
+                  type: string
+          required:
+          - type
       Invalidation:
-        type: object
-        properties:
-          id: {}
-          type:
-            oneOf:
-            - type: string
-              const: Invalidation
-            - type: array
-              contains:
-                type: string
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/ActivityInfluence
+        - type: object
+          properties:
+            type:
+              oneOf:
+              - type: string
                 const: Invalidation
-              items:
-                type: string
-          atTime: {}
-        required:
-        - atTime
+              - type: array
+                contains:
+                  type: string
+                  const: Invalidation
+                items:
+                  type: string
+          required:
+          - type
       Communication:
-        type: object
-        properties:
-          id: {}
-          type:
-            oneOf:
-            - type: string
-              const: Communication
-            - type: array
-              contains:
-                type: string
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/ActivityInfluence
+        - type: object
+          properties:
+            type:
+              oneOf:
+              - type: string
                 const: Communication
-              items:
-                type: string
-          activity:
-            oneOf:
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/objectref
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/Activity
-        required:
-        - activity
+              - type: array
+                contains:
+                  type: string
+                  const: Communication
+                items:
+                  type: string
+          required:
+          - type
       StartOrEnd:
         type: object
         properties:
@@ -575,8 +593,7 @@ x-defs:
             x-jsonld-id: http://www.w3.org/ns/prov#influencer
             x-jsonld-type: '@id'
           entity: {}
-          activity:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds
+          activity: {}
           agent: {}
         anyOf:
         - required:
@@ -737,6 +754,10 @@ x-defs:
       accessRights:
         x-jsonld-id: http://purl.org/dc/terms/accessRights
         x-jsonld-type: '@id'
+      time: http://purl.org/dc/terms/temporal
+      interval:
+        x-jsonld-id: http://www.w3.org/2006/time#hasTime
+        x-jsonld-container: '@list'
       conformsTo:
         x-jsonld-container: '@set'
         x-jsonld-id: http://purl.org/dc/terms/conformsTo
@@ -791,10 +812,11 @@ x-defs:
         x-jsonld-container: '@set'
         x-jsonld-id: http://www.w3.org/ns/dcat#landingPage
         x-jsonld-type: '@id'
-      language:
+      language: '@nest'
+      languages:
         x-jsonld-container: '@set'
         x-jsonld-id: http://purl.org/dc/terms/language
-        x-jsonld-type: '@id'
+      code: http://purl.org/dc/terms/language
       modificationDate: http://purl.org/dc/terms/modified
       updated: http://purl.org/dc/terms/modified
       created: http://purl.org/dc/terms/created
@@ -864,6 +886,7 @@ x-defs:
         x-jsonld-type: '@id'
     x-jsonld-prefixes:
       dct: http://purl.org/dc/terms/
+      w3ctime: http://www.w3.org/2006/time#
       dcat: http://www.w3.org/ns/dcat#
       foaf: http://xmlns.com/foaf/0.1/
       prov: http://www.w3.org/ns/prov#

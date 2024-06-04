@@ -447,6 +447,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a <http://example.com/records/dataset>,
@@ -455,28 +456,15 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:created "2021-02-08T00:00:00Z" ;
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ ] ;
+    dcterms:language [ dcterms:language "en-CA" ],
+        [ dcterms:language "fr-CA" ],
+        "en-CA" ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
+    dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
     rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "Static dataset archive file" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "application/zip" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
         [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "This document as HTML" ;
@@ -486,7 +474,23 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+        [ rdfs:label "Static dataset archive file" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "application/zip" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ] ;
     dcat:keyword "brewer",
         "column",
         "dobson",
@@ -512,6 +516,10 @@ x-jsonld-extra-terms:
   accessRights:
     x-jsonld-id: http://purl.org/dc/terms/accessRights
     x-jsonld-type: '@id'
+  time: http://purl.org/dc/terms/temporal
+  interval:
+    x-jsonld-id: http://www.w3.org/2006/time#hasTime
+    x-jsonld-container: '@list'
   conformsTo:
     x-jsonld-container: '@set'
     x-jsonld-id: http://purl.org/dc/terms/conformsTo
@@ -566,10 +574,11 @@ x-jsonld-extra-terms:
     x-jsonld-container: '@set'
     x-jsonld-id: http://www.w3.org/ns/dcat#landingPage
     x-jsonld-type: '@id'
-  language:
+  language: '@nest'
+  languages:
     x-jsonld-container: '@set'
     x-jsonld-id: http://purl.org/dc/terms/language
-    x-jsonld-type: '@id'
+  code: http://purl.org/dc/terms/language
   modificationDate: http://purl.org/dc/terms/modified
   updated: http://purl.org/dc/terms/modified
   created: http://purl.org/dc/terms/created
@@ -639,6 +648,7 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
+  w3ctime: http://www.w3.org/2006/time#
   dcat: http://www.w3.org/ns/dcat#
   foaf: http://xmlns.com/foaf/0.1/
   prov: http://www.w3.org/ns/prov#
@@ -721,6 +731,11 @@ Links to the schema:
       "@id": "dct:accessRights",
       "@type": "@id"
     },
+    "time": "dct:temporal",
+    "interval": {
+      "@id": "w3ctime:hasTime",
+      "@container": "@list"
+    },
     "conformsTo": {
       "@container": "@set",
       "@id": "dct:conformsTo",
@@ -790,11 +805,12 @@ Links to the schema:
       "@id": "dcat:landingPage",
       "@type": "@id"
     },
-    "language": {
+    "language": "@nest",
+    "languages": {
       "@container": "@set",
-      "@id": "dct:language",
-      "@type": "@id"
+      "@id": "dct:language"
     },
+    "code": "dct:language",
     "modificationDate": "dct:modified",
     "otherIdentifier": {
       "@container": "@set",
@@ -874,6 +890,7 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",

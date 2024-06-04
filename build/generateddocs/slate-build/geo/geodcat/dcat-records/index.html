@@ -797,6 +797,7 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">oa:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/oa#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">time:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/time#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 </span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
 
 </span><span class="nl">&lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nl">&lt;http://example.com/records/dataset&gt;</span><span class="p">,</span><span class="w">
@@ -805,28 +806,15 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     </span><span class="nn">dcterms:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">description</span><span class="w"> </span><span class="s">"A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily"</span><span class="w"> </span><span class="p">;</span><span class="w">
-    </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="s">"en-CA"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">dcterms:</span><span class="n">language</span><span class="w"> </span><span class="s">"fr-CA"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="s">"en-CA"</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2021-02-08T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+    </span><span class="nn">dcterms:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">time:</span><span class="n">hasTime</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">"1924-08-17T00:00:00Z"</span><span class="w"> </span><span class="s">".."</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">rdfs:</span><span class="n">seeAlso</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"OGC Web Feature Service (WFS)"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/xml"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/service&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://geo.woudc.org/ows&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Web Accessible Folder (WAF)"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"text/html"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/enclosure&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Total Ozone Preview Image"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"image/png"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/preview&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/data/preview.png&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Static dataset archive file"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/zip"</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/enclosure&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
         </span><span class="p">[</span><span class="w"> </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/license&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/about/data-policy.php&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
         </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"This document as HTML"</span><span class="w"> </span><span class="p">;</span><span class="w">
@@ -836,7 +824,23 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
         </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Data Search / Download User Interface"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"text/html"</span><span class="w"> </span><span class="p">;</span><span class="w">
             </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/search&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
-            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/data/explore.php?dataset=totalozone&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/data/explore.php?dataset=totalozone&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Total Ozone Preview Image"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"image/png"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/preview&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/data/preview.png&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Web Accessible Folder (WAF)"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"text/html"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/enclosure&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1&gt;</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="p">[</span><span class="w"> </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"Static dataset archive file"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">created</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">modified</span><span class="w"> </span><span class="s">"2015-01-23T00:00:00Z"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">dcterms:</span><span class="n">type</span><span class="w"> </span><span class="s">"application/zip"</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">ns1:</span><span class="n">relation</span><span class="w"> </span><span class="nl">&lt;http://www.iana.org/assignments/relation/enclosure&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+            </span><span class="nn">oa:</span><span class="n">hasTarget</span><span class="w"> </span><span class="nl">&lt;https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
     </span><span class="nn">dcat:</span><span class="n">keyword</span><span class="w"> </span><span class="s">"brewer"</span><span class="p">,</span><span class="w">
         </span><span class="s">"column"</span><span class="p">,</span><span class="w">
         </span><span class="s">"dobson"</span><span class="p">,</span><span class="w">
@@ -866,6 +870,10 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
   <span class="na">accessRights</span><span class="pi">:</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/accessRights</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">time</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/temporal</span>
+  <span class="na">interval</span><span class="pi">:</span>
+    <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/2006/time#hasTime</span>
+    <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@list'</span>
   <span class="na">conformsTo</span><span class="pi">:</span>
     <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/conformsTo</span>
@@ -920,10 +928,11 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#landingPage</span>
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
-  <span class="na">language</span><span class="pi">:</span>
+  <span class="na">language</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@nest'</span>
+  <span class="na">languages</span><span class="pi">:</span>
     <span class="na">x-jsonld-container</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@set'</span>
     <span class="na">x-jsonld-id</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/language</span>
-    <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
+  <span class="na">code</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/language</span>
   <span class="na">modificationDate</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/modified</span>
   <span class="na">updated</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/modified</span>
   <span class="na">created</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/created</span>
@@ -993,6 +1002,7 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     <span class="na">x-jsonld-type</span><span class="pi">:</span> <span class="s1">'</span><span class="s">@id'</span>
 <span class="na">x-jsonld-prefixes</span><span class="pi">:</span>
   <span class="na">dct</span><span class="pi">:</span> <span class="s">http://purl.org/dc/terms/</span>
+  <span class="na">w3ctime</span><span class="pi">:</span> <span class="s">http://www.w3.org/2006/time#</span>
   <span class="na">dcat</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/dcat#</span>
   <span class="na">foaf</span><span class="pi">:</span> <span class="s">http://xmlns.com/foaf/0.1/</span>
   <span class="na">prov</span><span class="pi">:</span> <span class="s">http://www.w3.org/ns/prov#</span>
@@ -1075,6 +1085,11 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:accessRights"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:temporal"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"w3ctime:hasTime"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@list"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"conformsTo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:conformsTo"</span><span class="p">,</span><span class="w">
@@ -1144,11 +1159,12 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dcat:landingPage"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@nest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"languages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:language"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"modificationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:modified"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"otherIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="p">,</span><span class="w">
@@ -1228,6 +1244,7 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://purl.org/dc/terms/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"xsd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"w3ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2006/time#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"dcat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/dcat#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"foaf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://xmlns.com/foaf/0.1/"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"prov"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/prov#"</span><span class="p">,</span><span class="w">

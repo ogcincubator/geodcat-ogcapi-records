@@ -58,6 +58,11 @@
       "@id": "dct:accessRights",
       "@type": "@id"
     },
+    "time": "dct:temporal",
+    "interval": {
+      "@id": "w3ctime:hasTime",
+      "@container": "@list"
+    },
     "conformsTo": {
       "@container": "@set",
       "@id": "dct:conformsTo",
@@ -127,11 +132,12 @@
       "@id": "dcat:landingPage",
       "@type": "@id"
     },
-    "language": {
+    "language": "@nest",
+    "languages": {
       "@container": "@set",
-      "@id": "dct:language",
-      "@type": "@id"
+      "@id": "dct:language"
     },
+    "code": "dct:language",
     "modificationDate": "dct:modified",
     "otherIdentifier": {
       "@container": "@set",
@@ -227,6 +233,7 @@
     "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",
