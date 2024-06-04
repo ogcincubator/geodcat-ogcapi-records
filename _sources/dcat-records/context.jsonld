@@ -3,6 +3,7 @@
     "dct": "http://purl.org/dc/terms/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
@@ -14,6 +15,11 @@
     "accessRights": {
       "@id": "dct:accessRights",
       "@type": "@id"
+    },
+    "time": "dct:temporal",
+    "interval": {
+      "@id": "w3ctime:hasTime",
+      "@container": "@list"
     },
     "conformsTo": {
       "@container": "@set",
@@ -84,11 +90,12 @@
       "@id": "dcat:landingPage",
       "@type": "@id"
     },
-    "language": {
-      "@container": "@set",
-      "@id": "dct:language",
-      "@type": "@id"
+    "language": "@nest",
+    "languages": {
+     "@container": "@set",
+      "@id": "dct:language"
     },
+    "code": "dct:language",
     "modificationDate": {
       "@id": "dct:modified"
     },
