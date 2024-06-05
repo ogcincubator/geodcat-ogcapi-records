@@ -1,0 +1,30 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix rec:     <https://www.opengis.net/def/ogc-api/records/> .
+@base <https://www.ogc.org/rules/rec/> .
+
+<#testVarExists>
+    a                  sh:NodeShape ;
+    sh:targetObjectsOf rec:hasLinkTemplate ;
+    sh:message         "variables must exist in uri template" ;
+    sh:sparql          [ sh:select """
+PREFIX rec:    <https://www.opengis.net/def/ogc-api/records/>
+      prefix oa: <http://www.w3.org/ns/oa#>
+      SELECT $this ?path ?value ?template
+      WHERE {
+        BIND (rec:hasVariable as ?path)
+        $this rec:hasVariable ?var .
+        $this oa:hasTarget ?template .
+        BIND ( STRAFTER ( STR(?var),"http://example.com/variables/") AS ?value )
+      }
+      GROUP BY $this ?path ?value ?template
+      HAVING ( COUNT(?var) != SUM(
+         IF(
+            CONTAINS(?template, CONCAT("{",?value,"}"  )),1,0 )
+  ) )
+
+    """ ; ]
+.

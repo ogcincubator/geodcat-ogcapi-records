@@ -1,5 +1,6 @@
 {
   "@context": {
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "dct": "http://purl.org/dc/terms/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -92,7 +93,7 @@
     },
     "language": "@nest",
     "languages": {
-     "@container": "@set",
+      "@container": "@set",
       "@id": "dct:language"
     },
     "code": "dct:language",
@@ -187,6 +188,15 @@
       "@container": "@set",
       "@id": "prov:wasGeneratedBy",
       "@type": "@id"
+    },
+    "linkTemplates": "rec:hasLinkTemplate",
+    "variables": {
+      "@container": "@id",
+      "@id": "rec:hasVariable",
+      "@context": {
+        "@base": "http://example.com/variables/",
+        "@vocab": "rec:"
+      }
     }
   }
 }
