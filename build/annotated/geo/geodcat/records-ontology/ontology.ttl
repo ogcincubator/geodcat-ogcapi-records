@@ -19,7 +19,7 @@ rec:hasVariable a owl:ObjectProperty,
     skos:inScheme cs: ;
     skos:prefLabel "has variable" .
 
-rec:uriTemplate a owl:DataTypeProperty,
+rec:uriTemplate a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range xsd:string ;
@@ -27,7 +27,7 @@ rec:uriTemplate a owl:DataTypeProperty,
     skos:inScheme cs: ;
     skos:prefLabel "URI template" .
 
-rec:varBase a owl:DataTypeProperty,
+rec:varBase a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range xsd:string ;
