@@ -497,12 +497,16 @@ It uses the context for a dcat:Dataset as the basis for a Record.
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:created "2021-02-08T00:00:00Z" ;
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ dcterms:language "fr-CA" ],
-        [ dcterms:language "en-CA" ],
+    dcterms:language [ dcterms:language "en-CA" ],
+        [ dcterms:language "fr-CA" ],
         "en-CA" ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
-    rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
+    rdfs:seeAlso [ rdfs:label "Data Search / Download User Interface" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
@@ -512,6 +516,10 @@ It uses the context for a dcat:Dataset as the basis for a Record.
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
@@ -523,15 +531,7 @@ It uses the context for a dcat:Dataset as the basis for a Record.
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "Data Search / Download User Interface" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
+            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ] ;
     dcat:keyword "brewer",
         "column",
         "dobson",

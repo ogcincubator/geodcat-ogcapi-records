@@ -6,20 +6,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-rec:hasLinkTemplate a owl:objectProperty,
+rec:hasLinkTemplate a owl:ObjectProperty,
         skos:Concept ;
     rdfs:range rec:LinkTemplate ;
     skos:inScheme cs: ;
     skos:prefLabel "has link template" .
 
-rec:hasVariable a owl:objectProperty,
+rec:hasVariable a owl:ObjectProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range rec:LinkTemplateVariable ;
     skos:inScheme cs: ;
     skos:prefLabel "has variable" .
 
-rec:uriTemplate a owl:datatypeProperty,
+rec:uriTemplate a owl:DataTypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range xsd:string ;
@@ -27,7 +27,7 @@ rec:uriTemplate a owl:datatypeProperty,
     skos:inScheme cs: ;
     skos:prefLabel "URI template" .
 
-rec:varBase a owl:dataTypeProperty,
+rec:varBase a owl:DataTypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range xsd:string ;
