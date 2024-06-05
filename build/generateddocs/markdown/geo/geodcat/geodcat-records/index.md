@@ -442,10 +442,12 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns1: <https://www.opengis.net/def/ogc-api/records/rec:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -460,36 +462,36 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "en-CA" ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
-    rdfs:seeAlso [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
+    rdfs:seeAlso [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            ns2:relation <http://www.iana.org/assignments/relation/preview> ;
             oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            ns2:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            ns2:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ ns2:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ] ;
     dcat:keyword "brewer",
         "column",
         "dobson",
@@ -498,7 +500,39 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "saoz",
         "total" ;
     geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] .
+            geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
+    rec:hasLinkTemplate [ a <http://example.com/records/image/png> ;
+            rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
+            ns2:relation <http://www.iana.org/assignments/relation/describes> ;
+            oa:hasTarget "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png"^^xsd:string ;
+            rec:hasVariable <http://example.com/variables/bbox>,
+                <http://example.com/variables/crs>,
+                <http://example.com/variables/height>,
+                <http://example.com/variables/width> ] .
+
+<http://example.com/variables/bbox> a ns1:array ;
+    dcterms:description "..." ;
+    ns1:items [ a ns1:number ;
+            ns1:format "double" ] ;
+    ns1:maxItems 4 ;
+    ns1:minItems 4 .
+
+<http://example.com/variables/crs> a ns1:string ;
+    dcterms:description "..." ;
+    ns1:enum "EPSG:3857",
+        "EPSG:4326" .
+
+<http://example.com/variables/height> a ns1:number ;
+    dcterms:description "..." ;
+    ns1:format "integer" ;
+    ns1:maximum 5000 ;
+    ns1:minimum 600 .
+
+<http://example.com/variables/width> a ns1:number ;
+    dcterms:description "..." ;
+    ns1:format "integer" ;
+    ns1:maximum 5000 ;
+    ns1:minimum 600 .
 
 
 ```
@@ -738,11 +772,21 @@ Links to the schema:
       "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
+    "linkTemplates": "rec:hasLinkTemplate",
+    "variables": {
+      "@container": "@id",
+      "@id": "rec:hasVariable",
+      "@context": {
+        "@base": "http://example.com/variables/",
+        "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
+      }
+    },
     "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",

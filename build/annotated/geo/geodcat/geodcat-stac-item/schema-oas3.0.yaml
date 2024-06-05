@@ -184,7 +184,15 @@ x-defs:
         x-jsonld-container: '@set'
         x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
         x-jsonld-type: '@id'
+      linkTemplates: https://www.opengis.net/def/ogc-api/records/hasLinkTemplate
+      variables:
+        x-jsonld-container: '@id'
+        x-jsonld-id: https://www.opengis.net/def/ogc-api/records/hasVariable
+        x-jsonld-context:
+          '@base': http://example.com/variables/
+          '@vocab': 'https://www.opengis.net/def/ogc-api/records/rec:'
     x-jsonld-prefixes:
+      rec: https://www.opengis.net/def/ogc-api/records/
       dct: http://purl.org/dc/terms/
       w3ctime: http://www.w3.org/2006/time#
       dcat: http://www.w3.org/ns/dcat#

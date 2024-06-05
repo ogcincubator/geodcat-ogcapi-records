@@ -1,0 +1,175 @@
+{
+  "title": "Validation report for ogc.geo.geodcat.records-ontology - OGC API Records Ontology",
+  "bblockName": "OGC API Records Ontology",
+  "bblockId": "ogc.geo.geodcat.records-ontology",
+  "generated": "2024-06-05T08:43:21.737523+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "TEST_RESOURCE",
+        "requireFail": true,
+        "filename": "_sources/records-ontology/tests/var-exists-fail.ttl",
+        "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/tests/var-exists-fail.ttl",
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": [
+            {
+              "op": "require-fail",
+              "isError": false,
+              "message": "Test was expected to fail and it did."
+            }
+          ]
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using var-exists-fail.ttl from test resources"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": []
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "graph": "@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix ns2: <http://www.w3.org/ns/oa#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rec: <https://www.opengis.net/def/ogc-api/records/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a <http://example.com/records/image/png> ;\n                    rdfs:label \"World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations\" ;\n                    ns1:relation <http://www.iana.org/assignments/relation/describes> ;\n                    ns2:hasTarget \"https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={fail-to-match-bbox}&layers=stations&width={width}&height={height}&format=image/png\"^^xsd:string ;\n                    rec:hasVariable <http://example.com/variables/bbox>,\n                        <http://example.com/variables/crs>,\n                        <http://example.com/variables/height>,\n                        <http://example.com/variables/width> ] ;\n            sh:resultMessage \"variables must exist in uri template\" ;\n            sh:resultPath rec:hasVariable ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:select \"\"\"\nPREFIX rec:    <https://www.opengis.net/def/ogc-api/records/>\n      prefix oa: <http://www.w3.org/ns/oa#>\n      SELECT $this ?path ?value ?template\n      WHERE {\n        BIND (rec:hasVariable as ?path)\n        $this rec:hasVariable ?var .\n        $this oa:hasTarget ?template .\n        BIND ( STRAFTER ( STR(?var),\"http://example.com/variables/\") AS ?value )\n      }\n      GROUP BY $this ?path ?value ?template\n      HAVING ( COUNT(?var) != SUM(\n         IF(\n            CONTAINS(?template, CONCAT(\"{\",?value,\"}\"  )),1,0 )\n  ) )\n\n    \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/rec/#testVarExists> ;\n            sh:value \"bbox\" ] .\n\n",
+              "isError": true,
+              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/rec/#testVarExists>\n  \tFocus Node: [ ns2:relation <http://www.iana.org/assignments/relation/describes> ; oa:hasTarget Literal(\"https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={fail-to-match-bbox}&layers=stations&width={width}&height={height}&format=image/png\", datatype=xsd:string) ; rdf:type <http://example.com/records/image/png> ; rdfs:label Literal(\"World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations\") ; rec:hasVariable <http://example.com/variables/bbox>, <http://example.com/variables/crs>, <http://example.com/variables/height>, <http://example.com/variables/width> ]\n  \tValue Node: Literal(\"bbox\")\n  \tResult Path: rec:hasVariable\n  \tSource Constraint: [ sh:select Literal(\"\n  PREFIX rec:    <https://www.opengis.net/def/ogc-api/records/>\n        prefix oa: <http://www.w3.org/ns/oa#>\n        SELECT $this ?path ?value ?template\n        WHERE {\n          BIND (rec:hasVariable as ?path)\n          $this rec:hasVariable ?var .\n          $this oa:hasTarget ?template .\n          BIND ( STRAFTER ( STR(?var),\"http://example.com/variables/\") AS ?value )\n        }\n        GROUP BY $this ?path ?value ?template\n        HAVING ( COUNT(?var) != SUM(\n           IF(\n              CONTAINS(?template, CONCAT(\"{\",?value,\"}\"  )),1,0 )\n    ) )\n  \n      \") ]\n  \tMessage: variables must exist in uri template\n  "
+            },
+            {
+              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                  "nodes": [
+                    "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/geo/geodcat/records-ontology/example_1_1.ttl",
+        "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/records-ontology/example_1_1.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "ttl"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "GENERAL",
+          "title": "General",
+          "entries": []
+        },
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.ttl from examples"
+            },
+            {
+              "op": "ttl-create",
+              "empty": false,
+              "filename": "example_1_1.ttl",
+              "size": 127,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": []
+        },
+        {
+          "name": "JSON_LD",
+          "title": "JSON-LD",
+          "entries": []
+        },
+        {
+          "name": "TURTLE",
+          "title": "Turtle",
+          "entries": []
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "focusNodes": {
+                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                  "nodes": [
+                    "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate\n"
+            }
+          ]
+        },
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": []
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0
+  }
+}
