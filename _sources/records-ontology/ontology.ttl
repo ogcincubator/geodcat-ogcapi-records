@@ -11,7 +11,7 @@
 cs: a skos:ConceptScheme ;
   skos:prefLabel "OGC API Records" .
 
-rec:hasLinkTemplate a skos:Concept, owl:objectProperty ;
+rec:hasLinkTemplate a skos:Concept, owl:ObjectProperty ;
   skos:inScheme cs: ;
   skos:prefLabel "has link template" ;
   rdfs:range rec:LinkTemplate ;
@@ -22,7 +22,7 @@ rec:LinkTemplate a skos:Concept, owl:Class ;
   skos:inScheme cs: ;
 .
 
-rec:uriTemplate a skos:Concept, owl:datatypeProperty ;
+rec:uriTemplate a skos:Concept, owl:DataTypeProperty ;
   skos:prefLabel "URI template" ;
   skos:definition "Supplies a resolvable URI to a remote resource (or resource fragment)." ;
   skos:inScheme cs: ;
@@ -30,7 +30,7 @@ rec:uriTemplate a skos:Concept, owl:datatypeProperty ;
   rdfs:range xsd:string ;
 .
 
-rec:varBase a skos:Concept, owl:dataTypeProperty ;
+rec:varBase a skos:Concept, owl:DataTypeProperty ;
   skos:prefLabel "variable base" ;
   skos:definition "The base URI to which the variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment." ;
   skos:inScheme cs: ;
@@ -38,7 +38,7 @@ rec:varBase a skos:Concept, owl:dataTypeProperty ;
   rdfs:range xsd:string ;
 .
 
-rec:hasVariable a skos:Concept, owl:objectProperty ;
+rec:hasVariable a skos:Concept, owl:ObjectProperty ;
   skos:prefLabel "has variable" ;
   skos:inScheme cs: ;
   rdfs:domain rec:linkTemplate ;
