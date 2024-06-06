@@ -586,7 +586,7 @@ This is the simple item example from the STAC specification.
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "HTML version of this STAC Item" ;
             dcterms:type "text/html" ;
@@ -598,7 +598,7 @@ This is the simple item example from the STAC specification.
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -957,11 +957,21 @@ Links to the schema:
 You can find the full JSON-LD context here:
 <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/context.jsonld" target="_blank">https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/context.jsonld</a>
 
+# Validation
+
+## SHACL Shapes
+
+The following sets of SHACL shapes are used for validating this building block:
+
+* OGC API Records Ontology <small><code>ogc.geo.geodcat.records-ontology</code></small>
+  * [https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl](https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl)
+
 # References
 
 * [GeoDCAT Specification](http://www.opengis.net/def/metamodel/profiles/geodcat)
 * [GeoDCAT Resources](http://www.opengis.net/def/metamodel/profiles/geodcat)
 * [GeoDCAT Specification Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
+* [STAC Specification](https://github.com/radiantearth/stac-spec)
 
 # For developers
 

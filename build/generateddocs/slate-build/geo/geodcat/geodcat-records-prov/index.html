@@ -345,6 +345,14 @@
             <a href="#json-ld-context" class="toc-h1 toc-link" data-title="JSON-LD Context">JSON-LD Context</a>
           </li>
           <li>
+            <a href="#validation" class="toc-h1 toc-link" data-title="Validation">Validation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#shacl-shapes" class="toc-h2 toc-link" data-title="SHACL Shapes">SHACL Shapes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
           </li>
           <li>
@@ -1697,138 +1705,175 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"wasInvalidatedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="nl">"activityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"endedAtTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:endedAtTime"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"wasAssociatedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"activityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"endedAtTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:endedAtTime"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasAssociatedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasAssociatedWith"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasInformedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasInformedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:used"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasStartedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasStartedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasEndedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasEndedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"invalidated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:invalidated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:generated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedUsage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedUsage"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedCommunication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"influencer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:influencer"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:activity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedCommunication"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedStart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedStart"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedEnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedEnd"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedAssociation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadPlan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadPlan"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAssociation"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
                   </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
               </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasAssociatedWith"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"wasInformedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasInformedBy"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:used"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"wasStartedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasStartedBy"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"wasEndedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasEndedBy"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"invalidated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:invalidated"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:generated"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"qualifiedUsage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedUsage"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"qualifiedCommunication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"influencer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:influencer"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:activity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedCommunication"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"qualifiedStart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedStart"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"qualifiedEnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedEnd"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"qualifiedAssociation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
+                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"hadPlan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadPlan"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAssociation"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -1836,423 +1881,11 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"wasQuotedFrom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"activityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"endedAtTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:endedAtTime"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasAssociatedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasAssociatedWith"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasInformedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasInformedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:used"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasStartedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasStartedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasEndedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasEndedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"invalidated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:invalidated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:generated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedUsage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedUsage"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedCommunication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"influencer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:influencer"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:activity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedCommunication"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedStart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedStart"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedEnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedEnd"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedAssociation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadPlan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadPlan"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAssociation"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasQuotedFrom"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"wasRevisionOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"activityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"endedAtTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:endedAtTime"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasAssociatedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasAssociatedWith"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasInformedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasInformedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:used"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasStartedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasStartedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasEndedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasEndedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"invalidated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:invalidated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:generated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedUsage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedUsage"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedCommunication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"influencer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:influencer"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:activity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedCommunication"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedStart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedStart"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedEnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedEnd"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedAssociation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadPlan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadPlan"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAssociation"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasRevisionOf"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"mentionOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dct:type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"agentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rdfs:label"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"actedOnBehalfOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:actedOnBehalfOf"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"qualifiedDelegation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:agent"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"hadActivity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"activityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@type"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"endedAtTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:endedAtTime"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasAssociatedWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasAssociatedWith"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasInformedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasInformedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"used"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:used"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasStartedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasStartedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"wasEndedBy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:wasEndedBy"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"invalidated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:invalidated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"generated"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:generated"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedUsage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedUsage"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedCommunication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"influencer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:influencer"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"activity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:activity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedCommunication"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedStart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedStart"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedEnd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"atTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:atTime"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2001/XMLSchema#dateTime"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:entity"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedEnd"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="nl">"qualifiedAssociation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="nl">"hadRole"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadRole"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">},</span><span class="w">
-                    </span><span class="nl">"hadPlan"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadPlan"</span><span class="p">,</span><span class="w">
-                      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                  </span><span class="p">},</span><span class="w">
-                  </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedAssociation"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-              </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:hadActivity"</span><span class="p">,</span><span class="w">
-              </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">
-          </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:qualifiedDelegation"</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:mentionOf"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"atLocation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3768,6 +3401,10 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
       </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:asInBundle"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"mentionOf"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prov:mentionOf"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nl">"geojson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://purl.org/geojson/vocab#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"oa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/ns/oa#"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"rdfs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#"</span><span class="p">,</span><span class="w">
@@ -3793,6 +3430,16 @@ This building block is <strong><a href="https://github.com/ogcincubator/geodcat-
 
 <p>You can find the full JSON-LD context here:
 <a href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld" target="_blank">https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld</a></p>
+<h1 id='validation'>Validation</h1><h2 id='shacl-shapes'>SHACL Shapes</h2>
+<p>The following sets of SHACL shapes are used for validating this building block:</p>
+
+<ul>
+<li>OGC API Records Ontology <small><code>ogc.geo.geodcat.records-ontology</code></small>
+
+<ul>
+<li><a href="https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl">https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl</a></li>
+</ul></li>
+</ul>
 <h1 id='references'>References</h1>
 <ul>
 <li><a href="http://www.opengis.net/def/metamodel/profiles/geodcat">GeoDCAT Specification</a></li>

@@ -1,27 +1,18 @@
 x-defs:
-  _github_workspace_build_annotated_geo_geodcat_projjson_schema.yaml:
-    description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
-      elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_en_latest_schemas_v0.2_projjson.schema.json
-    x-jsonld-prefixes:
-      proj: http://someuri.org/proj/
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml
-  proj.org_en_latest_schemas_v0.2_projjson.schema.json:
+  projjson:
     description: Schema for PROJJSON (v0.2.1)
     $comment: This document is copyright Even Rouault and PROJ contributors, 2019-2020,
       and subject to the MIT license. This file exists both in data/ and in schemas/vXXX/.
       Keep both in sync. And if changing the value of $id, change PROJJSON_CURRENT_VERSION
       accordingly in io.cpp
     oneOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/prime_meridian
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/single_operation
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/concatenated_operation
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/datum
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/datum_ensemble
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ellipsoid
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/prime_meridian
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/single_operation
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/concatenated_operation
     definitions:
       abridged_transformation:
         type: object
@@ -33,21 +24,23 @@ x-defs:
           name:
             type: string
           method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/method
           parameters:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parameter_value
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         - method
         - parameters
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       axis:
         type: object
@@ -104,17 +97,19 @@ x-defs:
             - past
             - unspecified
           unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/unit
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         - abbreviation
         - direction
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       bbox:
         type: object
@@ -141,11 +136,13 @@ x-defs:
             enum:
             - BoundCRS
           source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           transformation:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/abridged_transformation
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/abridged_transformation
+          x-schema-version:
+            type: string
         required:
         - source_crs
         - target_crs
@@ -154,7 +151,7 @@ x-defs:
       compound_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -165,7 +162,7 @@ x-defs:
           components:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           scope: {}
           area: {}
           bbox: {}
@@ -180,7 +177,7 @@ x-defs:
       concatenated_operation:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -189,13 +186,13 @@ x-defs:
           name:
             type: string
           source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           steps:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/single_operation
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/single_operation
           scope: {}
           area: {}
           bbox: {}
@@ -219,20 +216,22 @@ x-defs:
           name:
             type: string
           method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/method
           parameters:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parameter_value
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         - method
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       coordinate_system:
         type: object
@@ -258,42 +257,44 @@ x-defs:
           axis:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/axis
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/axis
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - subtype
         - axis
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       crs:
         oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bound_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/compound_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_engineering_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_geodetic_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_parametric_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_projected_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_temporal_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_vertical_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/projected_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/bound_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/compound_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_engineering_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_geodetic_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_parametric_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_projected_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_temporal_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/derived_vertical_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/engineering_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parametric_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/projected_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/temporal_crs
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/vertical_crs
       datum:
         oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_geodetic_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_vertical_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_datum
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_datum
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_datum
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/vertical_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/dynamic_geodetic_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/dynamic_vertical_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/temporal_datum
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parametric_datum
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/engineering_datum
       datum_ensemble:
         type: object
         properties:
@@ -311,33 +312,35 @@ x-defs:
                 name:
                   type: string
                 id:
-                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
                 ids:
-                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
               required:
               - name
               allOf:
-              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
               additionalProperties: false
           ellipsoid:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ellipsoid
           accuracy:
             type: string
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         - members
         - accuracy
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       derived_engineering_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -346,11 +349,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/engineering_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -367,7 +370,7 @@ x-defs:
       derived_geodetic_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -377,11 +380,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -398,7 +401,7 @@ x-defs:
       derived_parametric_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -407,11 +410,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parametric_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -428,7 +431,7 @@ x-defs:
       derived_projected_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -437,11 +440,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/projected_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/projected_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -458,7 +461,7 @@ x-defs:
       derived_temporal_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -467,11 +470,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/temporal_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -488,7 +491,7 @@ x-defs:
       derived_vertical_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -497,11 +500,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/vertical_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -518,7 +521,7 @@ x-defs:
       dynamic_geodetic_reference_frame:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_reference_frame
         properties:
           type:
             type: string
@@ -547,7 +550,7 @@ x-defs:
       dynamic_vertical_reference_frame:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/vertical_reference_frame
         properties:
           type:
             type: string
@@ -581,13 +584,15 @@ x-defs:
             name:
               type: string
             semi_major_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_in_metre_or_value_and_unit
             semi_minor_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_in_metre_or_value_and_unit
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+            x-schema-version:
+              type: string
           required:
           - name
           - semi_major_axis
@@ -601,13 +606,15 @@ x-defs:
             name:
               type: string
             semi_major_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_in_metre_or_value_and_unit
             inverse_flattening:
               type: number
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+            x-schema-version:
+              type: string
           required:
           - name
           - semi_major_axis
@@ -621,21 +628,23 @@ x-defs:
             name:
               type: string
             radius:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_in_metre_or_value_and_unit
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+            x-schema-version:
+              type: string
           required:
           - name
           - radius
           additionalProperties: false
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
       engineering_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -644,9 +653,9 @@ x-defs:
           name:
             type: string
           datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_datum
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/engineering_datum
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -661,7 +670,7 @@ x-defs:
       engineering_datum:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -693,12 +702,12 @@ x-defs:
             type: string
           datum:
             oneOf:
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_geodetic_reference_frame
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_reference_frame
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/dynamic_geodetic_reference_frame
           datum_ensemble:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/datum_ensemble
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -710,13 +719,13 @@ x-defs:
         - name
         description: One and only one of datum and datum_ensemble must be provided
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/one_and_only_one_of_datum_or_datum_ensemble
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/one_and_only_one_of_datum_or_datum_ensemble
         additionalProperties: false
       geodetic_reference_frame:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -727,9 +736,9 @@ x-defs:
           anchor:
             type: string
           ellipsoid:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ellipsoid
           prime_meridian:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/prime_meridian
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/prime_meridian
           scope: {}
           area: {}
           bbox: {}
@@ -757,7 +766,7 @@ x-defs:
       ids:
         type: array
         items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
       method:
         type: object
         properties:
@@ -768,13 +777,15 @@ x-defs:
           name:
             type: string
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       id_ids_mutually_exclusive:
         not:
@@ -805,27 +816,31 @@ x-defs:
             area:
               type: string
             bbox:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bbox
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/bbox
             remarks:
               type: string
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+            x-schema-version:
+              type: string
           allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         - type: object
           properties:
             usages:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/usages
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/usages
             remarks:
               type: string
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+            x-schema-version:
+              type: string
           allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
       parameter_value:
         type: object
         properties:
@@ -840,21 +855,23 @@ x-defs:
             - type: string
             - type: number
           unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/unit
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         - value
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       parametric_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -863,9 +880,9 @@ x-defs:
           name:
             type: string
           datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_datum
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parametric_datum
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -880,7 +897,7 @@ x-defs:
       parametric_datum:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -910,24 +927,26 @@ x-defs:
           name:
             type: string
           longitude:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_degree_or_value_and_unit
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_in_degree_or_value_and_unit
           id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
           ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
+          x-schema-version:
+            type: string
         required:
         - name
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
         additionalProperties: false
       single_operation:
         oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/transformation
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/transformation
       projected_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -936,11 +955,11 @@ x-defs:
           name:
             type: string
           base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/geodetic_crs
           conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/conversion
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -957,7 +976,7 @@ x-defs:
       temporal_crs:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -966,9 +985,9 @@ x-defs:
           name:
             type: string
           datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_datum
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/temporal_datum
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           scope: {}
           area: {}
           bbox: {}
@@ -983,7 +1002,7 @@ x-defs:
       temporal_datum:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -1009,7 +1028,7 @@ x-defs:
       transformation:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -1018,17 +1037,17 @@ x-defs:
           name:
             type: string
           source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           interpolation_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
           method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/method
           parameters:
             type: array
             items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/parameter_value
           accuracy:
             type: string
           scope: {}
@@ -1068,14 +1087,14 @@ x-defs:
             conversion_factor:
               type: number
             id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/ids
           required:
           - type
           - name
           allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
+          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id_ids_mutually_exclusive
           additionalProperties: false
       usages:
         type: array
@@ -1087,7 +1106,7 @@ x-defs:
             area:
               type: string
             bbox:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bbox
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/bbox
           additionalProperties: false
       value_and_unit:
         type: object
@@ -1095,7 +1114,7 @@ x-defs:
           value:
             type: number
           unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/unit
         required:
         - value
         - unit
@@ -1103,11 +1122,11 @@ x-defs:
       value_in_degree_or_value_and_unit:
         oneOf:
         - type: number
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_and_unit
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_and_unit
       value_in_metre_or_value_and_unit:
         oneOf:
         - type: number
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_and_unit
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/value_and_unit
       vertical_crs:
         type: object
         properties:
@@ -1119,21 +1138,21 @@ x-defs:
             type: string
           datum:
             oneOf:
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_vertical_reference_frame
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/vertical_reference_frame
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/dynamic_vertical_reference_frame
           datum_ensemble:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/datum_ensemble
           coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
+            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/coordinate_system
           geoid_model:
             type: object
             properties:
               name:
                 type: string
               interpolation_crs:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
+                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/crs
               id:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
+                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/id
             required:
             - name
             additionalProperties: false
@@ -1148,13 +1167,13 @@ x-defs:
         - name
         description: One and only one of datum and datum_ensemble must be provided
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/one_and_only_one_of_datum_or_datum_ensemble
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/one_and_only_one_of_datum_or_datum_ensemble
         additionalProperties: false
       vertical_reference_frame:
         type: object
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson/definitions/object_usage
         properties:
           type:
             type: string
@@ -1174,1175 +1193,13 @@ x-defs:
         required:
         - name
         additionalProperties: false
+    x-schema-source: https://proj.org/en/latest/schemas/v0.2/projjson.schema.json
+    x-schema-id: https://proj.org/schemas/v0.2/projjson.schema.json
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://proj.org/schemas/v0.2/projjson.schema.json
-  proj.org_schemas_v0.2_projjson.schema.json:
-    description: Schema for PROJJSON (v0.2.1)
-    $comment: This document is copyright Even Rouault and PROJ contributors, 2019-2020,
-      and subject to the MIT license. This file exists both in data/ and in schemas/vXXX/.
-      Keep both in sync. And if changing the value of $id, change PROJJSON_CURRENT_VERSION
-      accordingly in io.cpp
-    oneOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/prime_meridian
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/single_operation
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/concatenated_operation
-    definitions:
-      abridged_transformation:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - AbridgedTransformation
-          name:
-            type: string
-          method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
-          parameters:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        - method
-        - parameters
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      axis:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - Axis
-          name:
-            type: string
-          abbreviation:
-            type: string
-          direction:
-            type: string
-            enum:
-            - north
-            - northNorthEast
-            - northEast
-            - eastNorthEast
-            - east
-            - eastSouthEast
-            - southEast
-            - southSouthEast
-            - south
-            - southSouthWest
-            - southWest
-            - westSouthWest
-            - west
-            - westNorthWest
-            - northWest
-            - northNorthWest
-            - up
-            - down
-            - geocentricX
-            - geocentricY
-            - geocentricZ
-            - columnPositive
-            - columnNegative
-            - rowPositive
-            - rowNegative
-            - displayRight
-            - displayLeft
-            - displayUp
-            - displayDown
-            - forward
-            - aft
-            - port
-            - starboard
-            - clockwise
-            - counterClockwise
-            - towards
-            - awayFrom
-            - future
-            - past
-            - unspecified
-          unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        - abbreviation
-        - direction
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      bbox:
-        type: object
-        properties:
-          east_longitude:
-            type: number
-          west_longitude:
-            type: number
-          south_latitude:
-            type: number
-          north_latitude:
-            type: number
-        required:
-        - east_longitude
-        - west_longitude
-        - south_latitude
-        - north_latitude
-        additionalProperties: false
-      bound_crs:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - BoundCRS
-          source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          transformation:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/abridged_transformation
-        required:
-        - source_crs
-        - target_crs
-        - transformation
-        additionalProperties: false
-      compound_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - CompoundCRS
-          name:
-            type: string
-          components:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - components
-        additionalProperties: false
-      concatenated_operation:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - ConcatenatedOperation
-          name:
-            type: string
-          source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          steps:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/single_operation
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - source_crs
-        - target_crs
-        - steps
-        additionalProperties: false
-      conversion:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - Conversion
-          name:
-            type: string
-          method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
-          parameters:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        - method
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      coordinate_system:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - CoordinateSystem
-          name:
-            type: string
-          subtype:
-            type: string
-            enum:
-            - Cartesian
-            - spherical
-            - ellipsoidal
-            - vertical
-            - ordinal
-            - parametric
-            - TemporalDateTime
-            - TemporalCount
-            - TemporalMeasure
-          axis:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/axis
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - subtype
-        - axis
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      crs:
-        oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bound_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/compound_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_engineering_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_geodetic_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_parametric_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_projected_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_temporal_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/derived_vertical_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/projected_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_crs
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_crs
-      datum:
-        oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_geodetic_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_vertical_reference_frame
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_datum
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_datum
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_datum
-      datum_ensemble:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - DatumEnsemble
-          name:
-            type: string
-          members:
-            type: array
-            items:
-              type: object
-              properties:
-                name:
-                  type: string
-                id:
-                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-                ids:
-                  $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-              required:
-              - name
-              allOf:
-              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-              additionalProperties: false
-          ellipsoid:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
-          accuracy:
-            type: string
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        - members
-        - accuracy
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      derived_engineering_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedEngineeringCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      derived_geodetic_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedGeodeticCRS
-            - DerivedGeographicCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      derived_parametric_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedParametricCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      derived_projected_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedProjectedCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/projected_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      derived_temporal_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedTemporalCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      derived_vertical_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - DerivedVerticalCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      dynamic_geodetic_reference_frame:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
-        properties:
-          type:
-            type: string
-            enum:
-            - DynamicGeodeticReferenceFrame
-          name: {}
-          anchor: {}
-          ellipsoid: {}
-          prime_meridian: {}
-          frame_reference_epoch:
-            type: number
-          deformation_model:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - ellipsoid
-        - frame_reference_epoch
-        additionalProperties: false
-      dynamic_vertical_reference_frame:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
-        properties:
-          type:
-            type: string
-            enum:
-            - DynamicVerticalReferenceFrame
-          name: {}
-          anchor: {}
-          frame_reference_epoch:
-            type: number
-          deformation_model:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - frame_reference_epoch
-        additionalProperties: false
-      ellipsoid:
-        type: object
-        oneOf:
-        - properties:
-            type:
-              type: string
-              enum:
-              - Ellipsoid
-            name:
-              type: string
-            semi_major_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
-            semi_minor_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          required:
-          - name
-          - semi_major_axis
-          - semi_minor_axis
-          additionalProperties: false
-        - properties:
-            type:
-              type: string
-              enum:
-              - Ellipsoid
-            name:
-              type: string
-            semi_major_axis:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
-            inverse_flattening:
-              type: number
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          required:
-          - name
-          - semi_major_axis
-          - inverse_flattening
-          additionalProperties: false
-        - properties:
-            type:
-              type: string
-              enum:
-              - Ellipsoid
-            name:
-              type: string
-            radius:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_metre_or_value_and_unit
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          required:
-          - name
-          - radius
-          additionalProperties: false
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-      engineering_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - EngineeringCRS
-          name:
-            type: string
-          datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/engineering_datum
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - datum
-        additionalProperties: false
-      engineering_datum:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - EngineeringDatum
-          name:
-            type: string
-          anchor:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        additionalProperties: false
-      geodetic_crs:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - GeodeticCRS
-            - GeographicCRS
-          name:
-            type: string
-          datum:
-            oneOf:
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_reference_frame
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_geodetic_reference_frame
-          datum_ensemble:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        description: One and only one of datum and datum_ensemble must be provided
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/one_and_only_one_of_datum_or_datum_ensemble
-        additionalProperties: false
-      geodetic_reference_frame:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - GeodeticReferenceFrame
-          name:
-            type: string
-          anchor:
-            type: string
-          ellipsoid:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ellipsoid
-          prime_meridian:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/prime_meridian
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - ellipsoid
-        additionalProperties: false
-      id:
-        type: object
-        properties:
-          authority:
-            type: string
-          code:
-            oneOf:
-            - type: string
-            - type: integer
-        required:
-        - authority
-        - code
-        additionalProperties: false
-      ids:
-        type: array
-        items:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-      method:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - OperationMethod
-          name:
-            type: string
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      id_ids_mutually_exclusive:
-        not:
-          type: object
-          required:
-          - id
-          - ids
-      one_and_only_one_of_datum_or_datum_ensemble:
-        allOf:
-        - not:
-            type: object
-            required:
-            - datum
-            - datum_ensemble
-        - oneOf:
-          - type: object
-            required:
-            - datum
-          - type: object
-            required:
-            - datum_ensemble
-      object_usage:
-        anyOf:
-        - type: object
-          properties:
-            scope:
-              type: string
-            area:
-              type: string
-            bbox:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bbox
-            remarks:
-              type: string
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        - type: object
-          properties:
-            usages:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/usages
-            remarks:
-              type: string
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-      parameter_value:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - ParameterValue
-          name:
-            type: string
-          value:
-            oneOf:
-            - type: string
-            - type: number
-          unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        - value
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      parametric_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - ParametricCRS
-          name:
-            type: string
-          datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parametric_datum
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - datum
-        additionalProperties: false
-      parametric_datum:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - ParametricDatum
-          name:
-            type: string
-          anchor:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        additionalProperties: false
-      prime_meridian:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - PrimeMeridian
-          name:
-            type: string
-          longitude:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_in_degree_or_value_and_unit
-          id:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-          ids:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-        required:
-        - name
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-        additionalProperties: false
-      single_operation:
-        oneOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/transformation
-      projected_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - ProjectedCRS
-          name:
-            type: string
-          base_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/geodetic_crs
-          conversion:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/conversion
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - base_crs
-        - conversion
-        - coordinate_system
-        additionalProperties: false
-      temporal_crs:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - TemporalCRS
-          name:
-            type: string
-          datum:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/temporal_datum
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - datum
-        additionalProperties: false
-      temporal_datum:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - TemporalDatum
-          name:
-            type: string
-          calendar:
-            type: string
-          time_origin:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - calendar
-        additionalProperties: false
-      transformation:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - Transformation
-          name:
-            type: string
-          source_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          target_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          interpolation_crs:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-          method:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/method
-          parameters:
-            type: array
-            items:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/parameter_value
-          accuracy:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        - source_crs
-        - target_crs
-        - method
-        - parameters
-        additionalProperties: false
-      unit:
-        oneOf:
-        - type: string
-          enum:
-          - metre
-          - degree
-          - unity
-        - type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - LinearUnit
-              - AngularUnit
-              - ScaleUnit
-              - TimeUnit
-              - ParametricUnit
-              - Unit
-            name:
-              type: string
-            conversion_factor:
-              type: number
-            id:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            ids:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/ids
-          required:
-          - type
-          - name
-          allOf:
-          - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id_ids_mutually_exclusive
-          additionalProperties: false
-      usages:
-        type: array
-        items:
-          type: object
-          properties:
-            scope:
-              type: string
-            area:
-              type: string
-            bbox:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/bbox
-          additionalProperties: false
-      value_and_unit:
-        type: object
-        properties:
-          value:
-            type: number
-          unit:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/unit
-        required:
-        - value
-        - unit
-        additionalProperties: false
-      value_in_degree_or_value_and_unit:
-        oneOf:
-        - type: number
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_and_unit
-      value_in_metre_or_value_and_unit:
-        oneOf:
-        - type: number
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/value_and_unit
-      vertical_crs:
-        type: object
-        properties:
-          type:
-            type: string
-            enum:
-            - VerticalCRS
-          name:
-            type: string
-          datum:
-            oneOf:
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/vertical_reference_frame
-            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/dynamic_vertical_reference_frame
-          datum_ensemble:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/datum_ensemble
-          coordinate_system:
-            $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/coordinate_system
-          geoid_model:
-            type: object
-            properties:
-              name:
-                type: string
-              interpolation_crs:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/crs
-              id:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/id
-            required:
-            - name
-            additionalProperties: false
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        description: One and only one of datum and datum_ensemble must be provided
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/one_and_only_one_of_datum_or_datum_ensemble
-        additionalProperties: false
-      vertical_reference_frame:
-        type: object
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/proj.org_schemas_v0.2_projjson.schema.json/definitions/object_usage
-        properties:
-          type:
-            type: string
-            enum:
-            - VerticalReferenceFrame
-          name:
-            type: string
-          anchor:
-            type: string
-          scope: {}
-          area: {}
-          bbox: {}
-          usages: {}
-          remarks: {}
-          id: {}
-          ids: {}
-        required:
-        - name
-        additionalProperties: false
-    x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://proj.org/schemas/v0.2/projjson.schema.json
+description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/_github_workspace_build_annotated_geo_geodcat_projjson_schema.yaml
+- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/projjson/schema-oas3.0.yaml#/x-defs/projjson
+x-jsonld-prefixes:
+  proj: http://someuri.org/proj/
+x-schema-version: https://json-schema.org/draft/2020-12/schema

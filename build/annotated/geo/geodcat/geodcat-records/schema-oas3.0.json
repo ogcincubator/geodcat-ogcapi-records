@@ -1,19 +1,6 @@
 {
   "x-defs": {
-    "_github_workspace_build_annotated_geo_geodcat_geodcat-records_schema.json": {
-      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.json"
-        },
-        {
-          "description": "Other elements required for DCAT"
-        }
-      ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json"
-    },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.json": {
+    "ogc.geo.geodcat.dcat-records": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
@@ -214,8 +201,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "vcard": "http://www.w3.org/2006/vcard/ns#"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.records.v1.schemas.recordGeoJSON": {
       "description": "Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml",
@@ -306,7 +293,14 @@
                 "type": "string"
               }
             },
-            "language": {},
+            "language": {
+              "description": "The language used for textual values in this record representation.",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language"
+                }
+              ]
+            },
             "languages": {
               "type": "array",
               "description": "This list of languages in which this record is available.",
@@ -385,8 +379,8 @@
           }
         }
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.geo.features.feature": {
       "allOf": [
@@ -407,7 +401,9 @@
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
             },
             "type": {
-              "const": "Feature"
+              "enum": [
+                "Feature"
+              ]
             }
           },
           "required": [
@@ -1055,8 +1051,9 @@
       "x-jsonld-prefixes": {
         "geojson": "https://purl.org/geojson/vocab#"
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.records.v1.schemas.language": {
       "type": "object",
@@ -1211,7 +1208,14 @@
                 "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
                 "example": "+14165550142"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of phone number (e.g. home, work, fax, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1229,7 +1233,14 @@
                 "description": "The value is the email number itself.",
                 "format": "email"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of email (e.g. home, work, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1262,7 +1273,14 @@
                 "type": "string",
                 "description": "Country of the physical address.  ISO 3166-1 is recommended."
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of address (e.g. office, home, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1292,7 +1310,14 @@
           "type": "string",
           "description": "Supplemental instructions on how or when to contact the\nresponsible party."
         },
-        "roles": {}
+        "roles": {
+          "description": "The set of named duties, job functions and/or permissions associated with this contact. (e.g. developer, administrator, etc.).",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+            }
+          ]
+        }
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml"
     },
@@ -1460,8 +1485,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dct": "http://purl.org/dc/terms/"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
@@ -1473,9 +1498,14 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml"
     }
   },
+  "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-records_schema.json"
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.dcat-records"
+    },
+    {
+      "description": "Other elements required for DCAT"
     }
-  ]
+  ],
+  "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
 }

@@ -1,13 +1,5 @@
 x-defs:
-  _github_workspace_build_annotated_geo_geodcat_geodcat-records_schema.yaml:
-    description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
-      elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml
-    - description: Other elements required for DCAT
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml
-  ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml:
+  ogc.geo.geodcat.dcat-records:
     description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
       elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
     allOf:
@@ -167,8 +159,8 @@ x-defs:
       skos: http://www.w3.org/2004/02/skos/core#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
       vcard: http://www.w3.org/2006/vcard/ns#
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.api.records.v1.schemas.recordGeoJSON:
     description: Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml
     type: object
@@ -232,7 +224,10 @@ x-defs:
               using free-form keywords, tags, key phrases, or classification codes.
             items:
               type: string
-          language: {}
+          language:
+            description: The language used for textual values in this record representation.
+            allOf:
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
           languages:
             type: array
             description: This list of languages in which this record is available.
@@ -292,8 +287,8 @@ x-defs:
         type: array
         items:
           $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkTemplate
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.geo.features.feature:
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson
@@ -307,7 +302,8 @@ x-defs:
             $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
         type:
-          const: Feature
+          enum:
+          - Feature
       required:
       - type
       - geometry
@@ -762,8 +758,9 @@ x-defs:
         x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-prefixes:
       geojson: https://purl.org/geojson/vocab#
+    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml
+    x-schema-id: https://geojson.org/schema/Feature.json
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://geojson.org/schema/Feature.json
   ogc.api.records.v1.schemas.language:
     type: object
     description: The language used for textual values in this record.
@@ -889,7 +886,10 @@ x-defs:
               description: The value is the phone number itself.
               pattern: ^\+[1-9]{1}[0-9]{3,14}$
               example: '+14165550142'
-            roles: {}
+            roles:
+              description: The type of phone number (e.g. home, work, fax, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       emails:
         type: array
         description: Email addresses at which contact can be made.
@@ -902,7 +902,10 @@ x-defs:
               type: string
               description: The value is the email number itself.
               format: email
-            roles: {}
+            roles:
+              description: The type of email (e.g. home, work, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       addresses:
         type: array
         description: Physical location at which contact can be made.
@@ -926,7 +929,10 @@ x-defs:
             country:
               type: string
               description: Country of the physical address.  ISO 3166-1 is recommended.
-            roles: {}
+            roles:
+              description: The type of address (e.g. office, home, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       links:
         type: array
         description: On-line information about the contact.
@@ -945,7 +951,11 @@ x-defs:
         description: 'Supplemental instructions on how or when to contact the
 
           responsible party.'
-      roles: {}
+      roles:
+        description: The set of named duties, job functions and/or permissions associated
+          with this contact. (e.g. developer, administrator, etc.).
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml
   ogc.api.records.v1.schemas.license:
     type: string
@@ -1088,8 +1098,8 @@ x-defs:
       oa: http://www.w3.org/ns/oa#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
       dct: http://purl.org/dc/terms/
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.api.records.v1.schemas.roles:
     description: The list of duties, job functions or permissions assigned by the
       system and associated with the context of this member.
@@ -1098,5 +1108,9 @@ x-defs:
     items:
       type: string
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml
+description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-records_schema.yaml
+- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.geo.geodcat.dcat-records
+- description: Other elements required for DCAT
+x-schema-version: https://json-schema.org/draft/2020-12/schema

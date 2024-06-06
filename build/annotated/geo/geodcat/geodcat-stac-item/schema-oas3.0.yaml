@@ -1,51 +1,21 @@
 x-defs:
-  _github_workspace_build_annotated_geo_geodcat_geodcat-stac-item_schema.yaml:
+  ogc.geo.geodcat.geodcat-records:
     description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
       elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
     allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.yaml
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.contrib.stac.item
-    - description: STAC core profile bound to GeoDCAT
-    x-jsonld-extra-terms:
-      stac_version: urn:stac:vocab#version
-      stac_extensions: urn:stac:vocab#extensions
-      description: http://purl.org/dc/terms/description
-      license: http://purl.org/dc/terms/license
-      keywords: http://purl.org/dc/terms/subject
-      extent: http://purl.org/dc/terms/extent
-      links: rdfs:seeAlso
-      assets:
-        x-jsonld-id: urn:stac:vocab#hasAsset
-        x-jsonld-container: '@id'
-        x-jsonld-context:
-          href:
-            '@id': http://www.w3.org/ns/dcat#downloadURL
-            '@type': '@id'
-          title: http://purl.org/dc/terms/title
-          type: http://purl.org/dc/terms/format
-    x-jsonld-prefixes:
-      stac: urn:stac:vocab#
-      dct: http://purl.org/dc/terms/
-      dcat: http://www.w3.org/ns/dcat#
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
-    x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml
-  ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.yaml:
-    description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
-      elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.geodcat.dcat-records
     - description: Other elements required for DCAT
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.contrib.stac.item:
     description: STAC Collection
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.features.feature
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item
     x-schema-source: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml
-  ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml:
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
+  ogc.geo.geodcat.dcat-records:
     description: Schema for OGCAPI records profile for GeoDCAT - defines all extra
       elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
     allOf:
@@ -205,8 +175,8 @@ x-defs:
       skos: http://www.w3.org/2004/02/skos/core#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
       vcard: http://www.w3.org/2006/vcard/ns#
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.geo.features.feature:
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson
@@ -220,7 +190,8 @@ x-defs:
             $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.ogc-utils.json-link
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#seeAlso
         type:
-          const: Feature
+          enum:
+          - Feature
       required:
       - type
       - geometry
@@ -293,7 +264,10 @@ x-defs:
               using free-form keywords, tags, key phrases, or classification codes.
             items:
               type: string
-          language: {}
+          language:
+            description: The language used for textual values in this record representation.
+            allOf:
+            - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.language
           languages:
             type: array
             description: This list of languages in which this record is available.
@@ -353,26 +327,26 @@ x-defs:
         type: array
         items:
           $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkTemplate
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
-  github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json:
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
+  item:
     title: STAC Item
     type: object
     description: This object represents the metadata for an item in a SpatioTemporal
       Asset Catalog.
     allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/core
+    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/core
     definitions:
       common_metadata:
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/basics
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/datetime
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/instrument
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/licensing
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/provider
       core:
         allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson_
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson_1
         - oneOf:
           - type: object
             required:
@@ -380,7 +354,7 @@ x-defs:
             - bbox
             properties:
               geometry:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/geojson.org_schema_Geometry.json
+                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/Geometry
               bbox:
                 type: array
                 oneOf:
@@ -409,7 +383,8 @@ x-defs:
             stac_version:
               title: STAC version
               type: string
-              const: 1.0.0
+              enum:
+              - 1.0.0
             stac_extensions:
               title: STAC extensions
               type: array
@@ -428,12 +403,12 @@ x-defs:
               description: Links to item relations
               type: array
               items:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/link
+                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/link
             assets:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets
+              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/assets
             properties:
               allOf:
-              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/common_metadata
               - anyOf:
                 - required:
                   - datetime
@@ -453,7 +428,8 @@ x-defs:
                   - rel
                   properties:
                     rel:
-                      const: collection
+                      enum:
+                      - collection
           then:
             required:
             - collection
@@ -493,7 +469,7 @@ x-defs:
         description: Links to assets
         type: object
         additionalProperties:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/asset
+          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/asset
       asset:
         allOf:
         - type: object
@@ -519,9 +495,10 @@ x-defs:
               type: array
               items:
                 type: string
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/item/definitions/common_metadata
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/item.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#
   ogc.geo.common.data_types.geojson:
     title: GeoJSON Feature
     type: object
@@ -937,8 +914,9 @@ x-defs:
         x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-prefixes:
       geojson: https://purl.org/geojson/vocab#
+    x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml
+    x-schema-id: https://geojson.org/schema/Feature.json
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://geojson.org/schema/Feature.json
   ogc.geo.common.data_types.bounding_box:
     type: array
     oneOf:
@@ -984,8 +962,8 @@ x-defs:
       oa: http://www.w3.org/ns/oa#
       rdfs: http://www.w3.org/2000/01/rdf-schema#
       dct: http://purl.org/dc/terms/
-    x-schema-version: https://json-schema.org/draft/2020-12/schema
     x-schema-source: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml
+    x-schema-version: https://json-schema.org/draft/2020-12/schema
   ogc.api.records.v1.schemas.time:
     type: object
     nullable: true
@@ -1141,7 +1119,10 @@ x-defs:
               description: The value is the phone number itself.
               pattern: ^\+[1-9]{1}[0-9]{3,14}$
               example: '+14165550142'
-            roles: {}
+            roles:
+              description: The type of phone number (e.g. home, work, fax, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       emails:
         type: array
         description: Email addresses at which contact can be made.
@@ -1154,7 +1135,10 @@ x-defs:
               type: string
               description: The value is the email number itself.
               format: email
-            roles: {}
+            roles:
+              description: The type of email (e.g. home, work, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       addresses:
         type: array
         description: Physical location at which contact can be made.
@@ -1178,7 +1162,10 @@ x-defs:
             country:
               type: string
               description: Country of the physical address.  ISO 3166-1 is recommended.
-            roles: {}
+            roles:
+              description: The type of address (e.g. office, home, etc.).
+              allOf:
+              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
       links:
         type: array
         description: On-line information about the contact.
@@ -1197,7 +1184,11 @@ x-defs:
         description: 'Supplemental instructions on how or when to contact the
 
           responsible party.'
-      roles: {}
+      roles:
+        description: The set of named duties, job functions and/or permissions associated
+          with this contact. (e.g. developer, administrator, etc.).
+        allOf:
+        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.roles
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml
   ogc.api.records.v1.schemas.license:
     type: string
@@ -1295,174 +1286,7 @@ x-defs:
     x-jsonld-prefixes:
       oa: http://www.w3.org/ns/oa#
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json:
-    title: STAC Item
-    type: object
-    description: This object represents the metadata for an item in a SpatioTemporal
-      Asset Catalog.
-    allOf:
-    - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/core
-    definitions:
-      common_metadata:
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json
-      core:
-        allOf:
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.common.data_types.geojson_
-        - oneOf:
-          - type: object
-            required:
-            - geometry
-            - bbox
-            properties:
-              geometry:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/geojson.org_schema_Geometry.json
-              bbox:
-                type: array
-                oneOf:
-                - minItems: 4
-                  maxItems: 4
-                - minItems: 6
-                  maxItems: 6
-                items:
-                  type: number
-          - type: object
-            required:
-            - geometry
-            properties:
-              geometry:
-                nullable: true
-              bbox:
-                not: {}
-        - type: object
-          required:
-          - stac_version
-          - id
-          - links
-          - assets
-          - properties
-          properties:
-            stac_version:
-              title: STAC version
-              type: string
-              const: 1.0.0
-            stac_extensions:
-              title: STAC extensions
-              type: array
-              uniqueItems: true
-              items:
-                title: Reference to a JSON Schema
-                type: string
-                format: iri
-            id:
-              title: Provider ID
-              description: Provider item ID
-              type: string
-              minLength: 1
-            links:
-              title: Item links
-              description: Links to item relations
-              type: array
-              items:
-                $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/link
-            assets:
-              $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets
-            properties:
-              allOf:
-              - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata
-              - anyOf:
-                - required:
-                  - datetime
-                  properties:
-                    datetime:
-                      not:
-                        nullable: true
-                - required:
-                  - datetime
-                  - start_datetime
-                  - end_datetime
-          if:
-            properties:
-              links:
-                contains:
-                  required:
-                  - rel
-                  properties:
-                    rel:
-                      const: collection
-          then:
-            required:
-            - collection
-            properties:
-              collection:
-                title: Collection ID
-                description: The ID of the STAC Collection this Item references to.
-                type: string
-                minLength: 1
-          else:
-            properties:
-              collection:
-                not: {}
-      link:
-        type: object
-        required:
-        - rel
-        - href
-        properties:
-          href:
-            title: Link reference
-            type: string
-            format: iri-reference
-            minLength: 1
-          rel:
-            title: Link relation type
-            type: string
-            minLength: 1
-          type:
-            title: Link type
-            type: string
-          title:
-            title: Link title
-            type: string
-      assets:
-        title: Asset links
-        description: Links to assets
-        type: object
-        additionalProperties:
-          $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/asset
-      asset:
-        allOf:
-        - type: object
-          required:
-          - href
-          properties:
-            href:
-              title: Asset reference
-              type: string
-              format: iri-reference
-              minLength: 1
-            title:
-              title: Asset title
-              type: string
-            description:
-              title: Asset description
-              type: string
-            type:
-              title: Asset type
-              type: string
-            roles:
-              title: Asset roles
-              type: array
-              items:
-                type: string
-        - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata
-    x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json:
+  basics:
     title: Basic Descriptive Fields
     type: object
     properties:
@@ -1474,9 +1298,10 @@ x-defs:
         title: Item Description
         description: Detailed multi-line description to fully explain the Item.
         type: string
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/basics.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/basics.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/basics.json#
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json:
+  datetime:
     title: Date and Time Fields
     type: object
     dependencies:
@@ -1519,9 +1344,10 @@ x-defs:
         type: string
         format: date-time
         pattern: (\+00:00|Z)$
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/datetime.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json#
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json:
+  instrument:
     title: Instrument Fields
     type: object
     properties:
@@ -1543,18 +1369,20 @@ x-defs:
         title: Ground Sample Distance
         type: number
         exclusiveMinimum: 0
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/instrument.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/instrument.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/instrument.json#
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json:
+  licensing:
     title: Licensing Fields
     type: object
     properties:
       license:
         type: string
         pattern: ^[\w\-\.\+]+$
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/licensing.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json#
-  schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json:
+  provider:
     title: Provider Fields
     type: object
     properties:
@@ -1587,9 +1415,10 @@ x-defs:
               title: Organization homepage
               type: string
               format: iri
+    x-schema-source: https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/provider.json
+    x-schema-id: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
-    x-schema-source: https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json#
-  ogc.geo.common.data_types.geojson_:
+  ogc.geo.common.data_types.geojson_1:
     title: GeoJSON Feature
     type: object
     required:
@@ -1920,9 +1749,10 @@ x-defs:
         minItems: 4
         items:
           type: number
-    x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/Feature.json
-  geojson.org_schema_Geometry.json:
+    x-schema-id: https://geojson.org/schema/Feature.json
+    x-schema-version: http://json-schema.org/draft-07/schema#
+  Geometry:
     title: GeoJSON Geometry
     oneOf:
     - title: GeoJSON Point
@@ -2067,8 +1897,9 @@ x-defs:
           minItems: 4
           items:
             type: number
-    x-schema-version: http://json-schema.org/draft-07/schema#
     x-schema-source: https://geojson.org/schema/Geometry.json
+    x-schema-id: https://geojson.org/schema/Geometry.json
+    x-schema-version: http://json-schema.org/draft-07/schema#
   ogc.api.records.v1.schemas.roles:
     description: The list of duties, job functions or permissions assigned by the
       system and associated with the context of this member.
@@ -2077,5 +1908,31 @@ x-defs:
     items:
       type: string
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml
+description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-stac-item_schema.yaml
+- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.geo.geodcat.geodcat-records
+- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema-oas3.0.yaml#/x-defs/ogc.contrib.stac.item
+- description: STAC core profile bound to GeoDCAT
+x-jsonld-extra-terms:
+  stac_version: urn:stac:vocab#version
+  stac_extensions: urn:stac:vocab#extensions
+  description: http://purl.org/dc/terms/description
+  license: http://purl.org/dc/terms/license
+  keywords: http://purl.org/dc/terms/subject
+  extent: http://purl.org/dc/terms/extent
+  links: rdfs:seeAlso
+  assets:
+    x-jsonld-id: urn:stac:vocab#hasAsset
+    x-jsonld-container: '@id'
+    x-jsonld-context:
+      href:
+        '@id': http://www.w3.org/ns/dcat#downloadURL
+        '@type': '@id'
+      title: http://purl.org/dc/terms/title
+      type: http://purl.org/dc/terms/format
+x-jsonld-prefixes:
+  stac: urn:stac:vocab#
+  dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
+x-schema-version: https://json-schema.org/draft/2020-12/schema

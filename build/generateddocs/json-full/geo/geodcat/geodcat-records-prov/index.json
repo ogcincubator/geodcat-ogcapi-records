@@ -10,12 +10,12 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.ogc-utils.prov",
     "ogc.geo.geodcat.geodcat-records",
-    "ogc.geo.geodcat.prov"
+    "ogc.geo.geodcat.prov",
+    "ogc.ogc-utils.prov"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2024-06-05",
+  "dateOfLastChange": "2024-06-06",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -34,7 +34,11 @@
     "Records",
     "STAC"
   ],
-  "shaclRules": {},
+  "shaclRules": {
+    "ogc.geo.geodcat.records-ontology": [
+      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
+    ]
+  },
   "schema": {
     "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.yaml",
     "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.json"

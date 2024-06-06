@@ -1,18 +1,5 @@
 {
   "x-defs": {
-    "_github_workspace_build_annotated_geo_geodcat_geodcat-stac-eo_schema.json": {
-      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.contrib.stac.extensions.eo"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-stac-item_schema.json"
-        }
-      ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json"
-    },
     "ogc.contrib.stac.extensions.eo": {
       "title": "Forecast Extension",
       "description": "STAC Forecast Extension for STAC Items and STAC Collections.",
@@ -28,20 +15,20 @@
           ]
         },
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema"
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-stac-item_schema.json": {
+    "ogc.geo.geodcat.geodcat-stac-item": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.yaml"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.geodcat-records"
         },
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.contrib.stac.item_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.contrib.stac.item_1"
         },
         {
           "description": "STAC core profile bound to GeoDCAT"
@@ -73,14 +60,53 @@
         "dct": "http://purl.org/dc/terms/",
         "dcat": "http://www.w3.org/ns/dcat#"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "ogc.geo.geodcat.geodcat-stac-collection": {
+      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.contrib.stac.collection_1"
+        },
+        {
+          "description": "STAC core profile bound to GeoDCAT"
+        }
+      ],
+      "x-jsonld-extra-terms": {
+        "stac_version": "urn:stac:vocab#version",
+        "stac_extensions": "urn:stac:vocab#extensions",
+        "description": "http://purl.org/dc/terms/description",
+        "license": "http://purl.org/dc/terms/license",
+        "keywords": "http://purl.org/dc/terms/subject",
+        "extent": "http://purl.org/dc/terms/extent",
+        "links": "rdfs:seeAlso",
+        "assets": {
+          "x-jsonld-id": "urn:stac:vocab#hasAsset",
+          "x-jsonld-container": "@id",
+          "x-jsonld-context": {
+            "href": {
+              "@id": "http://www.w3.org/ns/dcat#downloadURL",
+              "@type": "@id"
+            },
+            "title": "http://purl.org/dc/terms/title",
+            "type": "http://purl.org/dc/terms/format"
+          }
+        }
+      },
+      "x-jsonld-prefixes": {
+        "stac": "urn:stac:vocab#",
+        "dct": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#"
+      },
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-collection/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.contrib.stac.collection": {
       "description": "STAC Collection",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/github.com_radiantearth_stac-spec_raw_master_collection-spec_json-schema_collection.json"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/collection"
         },
         {
           "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.features.v1.schemas.collection"
@@ -97,8 +123,8 @@
           }
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.contrib.stac.item": {
       "description": "STAC Collection",
@@ -110,13 +136,13 @@
           "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON"
         },
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item"
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "stac-extensions.github.io_eo_v1.1.0_schema.json": {
+    "eo_v1.1.0_schema": {
       "title": "EO Extension",
       "description": "STAC EO Extension for STAC Items.",
       "oneOf": [
@@ -132,15 +158,17 @@
               ],
               "properties": {
                 "type": {
-                  "const": "Feature"
+                  "enum": [
+                    "Feature"
+                  ]
                 },
                 "properties": {
-                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/fields"
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/fields"
                 },
                 "assets": {
                   "type": "object",
                   "additionalProperties": {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/fields"
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/fields"
                   }
                 }
               },
@@ -174,7 +202,7 @@
                   "properties": {
                     "properties": {
                       "eo:bands": {
-                        "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/bands"
+                        "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/bands"
                       }
                     }
                   }
@@ -182,7 +210,7 @@
               }
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/stac_extensions"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/stac_extensions"
             }
           ]
         },
@@ -196,24 +224,26 @@
               ],
               "properties": {
                 "type": {
-                  "const": "Collection"
+                  "enum": [
+                    "Collection"
+                  ]
                 },
                 "assets": {
                   "type": "object",
                   "additionalProperties": {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/fields"
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/fields"
                   }
                 },
                 "item_assets": {
                   "type": "object",
                   "additionalProperties": {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/fields"
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/fields"
                   }
                 }
               }
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/stac_extensions"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/stac_extensions"
             }
           ]
         }
@@ -228,7 +258,9 @@
             "stac_extensions": {
               "type": "array",
               "contains": {
-                "const": "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+                "enum": [
+                  "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+                ]
               }
             }
           }
@@ -249,7 +281,7 @@
               "maximum": 100
             },
             "eo:bands": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/stac-extensions.github.io_eo_v1.1.0_schema.json/definitions/bands"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/bands"
             }
           },
           "patternProperties": {
@@ -316,44 +348,69 @@
           }
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://stac-extensions.github.io/eo/v1.1.0/schema.json#"
+      "x-schema-source": "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+      "x-schema-id": "https://stac-extensions.github.io/eo/v1.1.0/schema.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.yaml": {
+    "ogc.geo.geodcat.geodcat-records": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.dcat-records"
         },
         {
           "description": "Other elements required for DCAT"
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "ogc.contrib.stac.item_": {
+    "ogc.contrib.stac.item_1": {
       "description": "STAC Collection",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.features.feature_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.features.feature_1"
         },
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON_1"
         },
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item"
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "github.com_radiantearth_stac-spec_raw_master_collection-spec_json-schema_collection.json": {
+    "ogc.contrib.stac.collection_1": {
+      "description": "STAC Collection",
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/collection"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.features.v1.schemas.collection_1"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "links": {
+              "type": "array",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
+              }
+            }
+          }
+        }
+      ],
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "collection": {
       "title": "STAC Collection Specification",
       "description": "This object represents Collections in a SpatioTemporal Asset Catalog.",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/collection"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/collection/definitions/collection"
         }
       ],
       "definitions": {
@@ -374,7 +431,9 @@
             "stac_version": {
               "title": "STAC version",
               "type": "string",
-              "const": "1.0.0"
+              "enum": [
+                "1.0.0"
+              ]
             },
             "stac_extensions": {
               "title": "STAC extensions",
@@ -388,7 +447,9 @@
             },
             "type": {
               "title": "Type of STAC entity",
-              "const": "Collection"
+              "enum": [
+                "Collection"
+              ]
             },
             "id": {
               "title": "Identifier",
@@ -521,17 +582,17 @@
               }
             },
             "assets": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/assets"
             },
             "links": {
               "title": "Links",
               "type": "array",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/link"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/collection/definitions/link"
               }
             },
             "summaries": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/summaries"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/collection/definitions/summaries"
             }
           }
         },
@@ -573,7 +634,7 @@
                 "minProperties": 1,
                 "allOf": [
                   {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/json-schema.org_draft-07_schema"
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
                   }
                 ]
               },
@@ -587,37 +648,25 @@
                 "properties": {
                   "minimum": {
                     "title": "Minimum value",
-                    "type": [
-                      "number",
-                      "string"
-                    ],
-                    "anyOf": {
-                      "anyOf": [
-                        {
-                          "type": "number"
-                        },
-                        {
-                          "type": "string"
-                        }
-                      ]
-                    }
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
                   },
                   "maximum": {
                     "title": "Maximum value",
-                    "type": [
-                      "number",
-                      "string"
-                    ],
-                    "anyOf": {
-                      "anyOf": [
-                        {
-                          "type": "number"
-                        },
-                        {
-                          "type": "string"
-                        }
-                      ]
-                    }
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
                   }
                 }
               },
@@ -633,8 +682,9 @@
           }
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/collection-spec/json-schema/collection.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.features.v1.schemas.collection": {
       "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml",
@@ -746,8 +796,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dct": "http://purl.org/dc/terms/"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.geo.features.feature": {
       "allOf": [
@@ -768,7 +818,9 @@
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
             },
             "type": {
-              "const": "Feature"
+              "enum": [
+                "Feature"
+              ]
             }
           },
           "required": [
@@ -875,7 +927,14 @@
                 "type": "string"
               }
             },
-            "language": {},
+            "language": {
+              "description": "The language used for textual values in this record representation.",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language"
+                }
+              ]
+            },
             "languages": {
               "type": "array",
               "description": "This list of languages in which this record is available.",
@@ -954,42 +1013,42 @@
           }
         }
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "github.com_radiantearth_stac-spec_raw_master_item-spec_json-schema_item.json": {
+    "item": {
       "title": "STAC Item",
       "type": "object",
       "description": "This object represents the metadata for an item in a SpatioTemporal Asset Catalog.",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/core"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/core"
         }
       ],
       "definitions": {
         "common_metadata": {
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/basics"
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/datetime"
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/instrument"
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/licensing"
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/provider"
             }
           ]
         },
         "core": {
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson_1"
             },
             {
               "oneOf": [
@@ -1001,7 +1060,7 @@
                   ],
                   "properties": {
                     "geometry": {
-                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/geojson.org_schema_Geometry.json"
+                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/Geometry"
                     },
                     "bbox": {
                       "type": "array",
@@ -1050,7 +1109,9 @@
                 "stac_version": {
                   "title": "STAC version",
                   "type": "string",
-                  "const": "1.0.0"
+                  "enum": [
+                    "1.0.0"
+                  ]
                 },
                 "stac_extensions": {
                   "title": "STAC extensions",
@@ -1073,16 +1134,16 @@
                   "description": "Links to item relations",
                   "type": "array",
                   "items": {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/link"
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/link"
                   }
                 },
                 "assets": {
-                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets"
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/assets"
                 },
                 "properties": {
                   "allOf": [
                     {
-                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata"
+                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/common_metadata"
                     },
                     {
                       "anyOf": [
@@ -1119,7 +1180,9 @@
                       ],
                       "properties": {
                         "rel": {
-                          "const": "collection"
+                          "enum": [
+                            "collection"
+                          ]
                         }
                       }
                     }
@@ -1182,7 +1245,7 @@
           "description": "Links to assets",
           "type": "object",
           "additionalProperties": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/asset"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/asset"
           }
         },
         "asset": {
@@ -1221,19 +1284,20 @@
               }
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/item/definitions/common_metadata"
             }
           ]
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/item.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml": {
+    "ogc.geo.geodcat.dcat-records": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON_1"
         }
       ],
       "x-jsonld-extra-terms": {
@@ -1430,29 +1494,31 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "vcard": "http://www.w3.org/2006/vcard/ns#"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "ogc.geo.features.feature_": {
+    "ogc.geo.features.feature_1": {
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson__"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson_2"
         },
         {
           "type": "object",
           "properties": {
             "bbox": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.bounding_box_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.bounding_box_1"
             },
             "links": {
               "type": "array",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
               },
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
             },
             "type": {
-              "const": "Feature"
+              "enum": [
+                "Feature"
+              ]
             }
           },
           "required": [
@@ -1470,12 +1536,12 @@
       },
       "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.recordGeoJSON_": {
+    "ogc.api.records.v1.schemas.recordGeoJSON_1": {
       "description": "Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml",
       "type": "object",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.features.feature_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.features.feature_1"
         }
       ],
       "required": [
@@ -1510,7 +1576,7 @@
               ]
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.time_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.time_1"
             }
           ]
         },
@@ -1522,7 +1588,7 @@
               ]
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson__/properties/geometry"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson_2/properties/geometry"
             }
           ]
         },
@@ -1559,19 +1625,26 @@
                 "type": "string"
               }
             },
-            "language": {},
+            "language": {
+              "description": "The language used for textual values in this record representation.",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language_1"
+                }
+              ]
+            },
             "languages": {
               "type": "array",
               "description": "This list of languages in which this record is available.",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language_1"
               }
             },
             "resourceLanguages": {
               "type": "array",
               "description": "The list of languages in which the resource described by this record is available.",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language_1"
               }
             },
             "externalIds": {
@@ -1599,7 +1672,7 @@
               "description": "A knowledge organization system used to classify the resource.",
               "minItems": 1,
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.theme_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.theme_1"
               }
             },
             "formats": {
@@ -1613,11 +1686,11 @@
               "type": "array",
               "description": "A list of contacts qualified by their role(s) in association to the record or the resource described by the record.",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.contact_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.contact_1"
               }
             },
             "license": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.license_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.license_1"
             },
             "rights": {
               "type": "string",
@@ -1628,587 +1701,140 @@
         "links": {
           "type": "array",
           "items": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase_"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase_1"
           }
         },
         "linkTemplates": {
           "type": "array",
           "items": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkTemplate_"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkTemplate_1"
           }
         }
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json": {
-      "title": "STAC Collection Specification",
-      "description": "This object represents Collections in a SpatioTemporal Asset Catalog.",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/collection"
-        }
-      ],
-      "definitions": {
-        "collection": {
-          "title": "STAC Collection",
-          "description": "These are the fields specific to a STAC Collection. All other fields are inherited from STAC Catalog.",
-          "type": "object",
-          "required": [
-            "stac_version",
-            "type",
-            "id",
-            "description",
-            "license",
-            "extent",
-            "links"
-          ],
-          "properties": {
-            "stac_version": {
-              "title": "STAC version",
-              "type": "string",
-              "const": "1.0.0"
-            },
-            "stac_extensions": {
-              "title": "STAC extensions",
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "title": "Reference to a JSON Schema",
-                "type": "string",
-                "format": "iri"
-              }
-            },
-            "type": {
-              "title": "Type of STAC entity",
-              "const": "Collection"
-            },
-            "id": {
-              "title": "Identifier",
-              "type": "string",
-              "minLength": 1
-            },
-            "title": {
-              "title": "Title",
-              "type": "string"
-            },
-            "description": {
-              "title": "Description",
-              "type": "string",
-              "minLength": 1
-            },
-            "keywords": {
-              "title": "Keywords",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "license": {
-              "title": "Collection License Name",
-              "type": "string",
-              "pattern": "^[\\w\\-\\.\\+]+$"
-            },
-            "providers": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "title": "Organization name",
-                    "type": "string"
-                  },
-                  "description": {
-                    "title": "Organization description",
-                    "type": "string"
-                  },
-                  "roles": {
-                    "title": "Organization roles",
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "producer",
-                        "licensor",
-                        "processor",
-                        "host"
-                      ]
-                    }
-                  },
-                  "url": {
-                    "title": "Organization homepage",
-                    "type": "string",
-                    "format": "iri"
-                  }
-                }
-              }
-            },
-            "extent": {
-              "title": "Extents",
-              "type": "object",
-              "required": [
-                "spatial",
-                "temporal"
-              ],
-              "properties": {
-                "spatial": {
-                  "title": "Spatial extent object",
-                  "type": "object",
-                  "required": [
-                    "bbox"
-                  ],
-                  "properties": {
-                    "bbox": {
-                      "title": "Spatial extents",
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "title": "Spatial extent",
-                        "type": "array",
-                        "oneOf": [
-                          {
-                            "minItems": 4,
-                            "maxItems": 4
-                          },
-                          {
-                            "minItems": 6,
-                            "maxItems": 6
-                          }
-                        ],
-                        "items": {
-                          "type": "number"
-                        }
-                      }
-                    }
-                  }
-                },
-                "temporal": {
-                  "title": "Temporal extent object",
-                  "type": "object",
-                  "required": [
-                    "interval"
-                  ],
-                  "properties": {
-                    "interval": {
-                      "title": "Temporal extents",
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "title": "Temporal extent",
-                        "type": "array",
-                        "minItems": 2,
-                        "maxItems": 2,
-                        "items": {
-                          "type": "string",
-                          "format": "date-time",
-                          "pattern": "(\\+00:00|Z)$",
-                          "nullable": true
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "assets": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets"
-            },
-            "links": {
-              "title": "Links",
-              "type": "array",
-              "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/link"
-              }
-            },
-            "summaries": {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_collection-spec_json-schema_collection.json/definitions/summaries"
-            }
-          }
-        },
-        "link": {
-          "type": "object",
-          "required": [
-            "rel",
-            "href"
-          ],
-          "properties": {
-            "href": {
-              "title": "Link reference",
-              "type": "string",
-              "format": "iri-reference",
-              "minLength": 1
-            },
-            "rel": {
-              "title": "Link relation type",
-              "type": "string",
-              "minLength": 1
-            },
-            "type": {
-              "title": "Link type",
-              "type": "string"
-            },
-            "title": {
-              "title": "Link title",
-              "type": "string"
-            }
-          }
-        },
-        "summaries": {
-          "type": "object",
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "title": "JSON Schema",
-                "type": "object",
-                "minProperties": 1,
-                "allOf": [
-                  {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/json-schema.org_draft-07_schema"
-                  }
-                ]
-              },
-              {
-                "title": "Range",
-                "type": "object",
-                "required": [
-                  "minimum",
-                  "maximum"
-                ],
-                "properties": {
-                  "minimum": {
-                    "title": "Minimum value",
-                    "type": [
-                      "number",
-                      "string"
-                    ],
-                    "anyOf": {
-                      "anyOf": [
-                        {
-                          "type": "number"
-                        },
-                        {
-                          "type": "string"
-                        }
-                      ]
-                    }
-                  },
-                  "maximum": {
-                    "title": "Maximum value",
-                    "type": [
-                      "number",
-                      "string"
-                    ],
-                    "anyOf": {
-                      "anyOf": [
-                        {
-                          "type": "number"
-                        },
-                        {
-                          "type": "string"
-                        }
-                      ]
-                    }
-                  }
-                }
-              },
-              {
-                "title": "Set of values",
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "description": "For each field only the original data type of the property can occur (except for arrays), but we can't validate that in JSON Schema yet. See the sumamry description in the STAC specification for details."
-                }
-              }
-            ]
-          }
-        }
-      },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json#"
-    },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json": {
-      "title": "STAC Item",
+    "ogc.api.features.v1.schemas.collection_1": {
+      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml",
       "type": "object",
-      "description": "This object represents the metadata for an item in a SpatioTemporal Asset Catalog.",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/core"
-        }
+      "required": [
+        "id",
+        "links"
       ],
-      "definitions": {
-        "common_metadata": {
-          "allOf": [
+      "properties": {
+        "id": {
+          "description": "identifier of the collection used, for example, in URIs",
+          "type": "string",
+          "example": "address"
+        },
+        "title": {
+          "description": "human readable title of the collection",
+          "type": "string",
+          "example": "address"
+        },
+        "description": {
+          "description": "a description of the features in the collection",
+          "type": "string",
+          "example": "An address."
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
+          },
+          "example": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json"
+              "href": "http://data.example.com/buildings",
+              "rel": "item"
             },
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json"
-            },
-            {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json"
-            },
-            {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json"
-            },
-            {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json"
+              "href": "http://example.com/concepts/buildings.html",
+              "rel": "describedby",
+              "type": "text/html"
             }
           ]
         },
-        "core": {
-          "allOf": [
-            {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.geojson_"
-            },
-            {
-              "oneOf": [
-                {
-                  "type": "object",
-                  "required": [
-                    "geometry",
-                    "bbox"
-                  ],
-                  "properties": {
-                    "geometry": {
-                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/geojson.org_schema_Geometry.json"
-                    },
-                    "bbox": {
-                      "type": "array",
-                      "oneOf": [
-                        {
-                          "minItems": 4,
-                          "maxItems": 4
-                        },
-                        {
-                          "minItems": 6,
-                          "maxItems": 6
-                        }
-                      ],
-                      "items": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "required": [
-                    "geometry"
-                  ],
-                  "properties": {
-                    "geometry": {
-                      "nullable": true
-                    },
-                    "bbox": {
-                      "not": {}
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "type": "object",
-              "required": [
-                "stac_version",
-                "id",
-                "links",
-                "assets",
-                "properties"
-              ],
-              "properties": {
-                "stac_version": {
-                  "title": "STAC version",
-                  "type": "string",
-                  "const": "1.0.0"
-                },
-                "stac_extensions": {
-                  "title": "STAC extensions",
-                  "type": "array",
-                  "uniqueItems": true,
-                  "items": {
-                    "title": "Reference to a JSON Schema",
-                    "type": "string",
-                    "format": "iri"
-                  }
-                },
-                "id": {
-                  "title": "Provider ID",
-                  "description": "Provider item ID",
-                  "type": "string",
-                  "minLength": 1
-                },
-                "links": {
-                  "title": "Item links",
-                  "description": "Links to item relations",
-                  "type": "array",
-                  "items": {
-                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/link"
-                  }
-                },
-                "assets": {
-                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/assets"
-                },
-                "properties": {
-                  "allOf": [
-                    {
-                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata"
-                    },
-                    {
-                      "anyOf": [
-                        {
-                          "required": [
-                            "datetime"
-                          ],
-                          "properties": {
-                            "datetime": {
-                              "not": {
-                                "nullable": true
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "required": [
-                            "datetime",
-                            "start_datetime",
-                            "end_datetime"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              },
-              "if": {
-                "properties": {
-                  "links": {
-                    "contains": {
-                      "required": [
-                        "rel"
-                      ],
-                      "properties": {
-                        "rel": {
-                          "const": "collection"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "then": {
-                "required": [
-                  "collection"
-                ],
-                "properties": {
-                  "collection": {
-                    "title": "Collection ID",
-                    "description": "The ID of the STAC Collection this Item references to.",
-                    "type": "string",
-                    "minLength": 1
-                  }
-                }
-              },
-              "else": {
-                "properties": {
-                  "collection": {
-                    "not": {}
-                  }
-                }
-              }
-            }
-          ]
+        "extent": {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.features.v1.schemas.extent_1"
         },
-        "link": {
-          "type": "object",
-          "required": [
-            "rel",
-            "href"
+        "itemType": {
+          "description": "indicator about the type of the items in the collection (the default value is 'feature').",
+          "type": "string",
+          "default": "feature"
+        },
+        "crs": {
+          "description": "the list of coordinate reference systems supported by the service",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
           ],
-          "properties": {
-            "href": {
-              "title": "Link reference",
-              "type": "string",
-              "format": "iri-reference",
-              "minLength": 1
-            },
-            "rel": {
-              "title": "Link relation type",
-              "type": "string",
-              "minLength": 1
-            },
-            "type": {
-              "title": "Link type",
-              "type": "string"
-            },
-            "title": {
-              "title": "Link title",
-              "type": "string"
-            }
-          }
-        },
-        "assets": {
-          "title": "Asset links",
-          "description": "Links to assets",
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/asset"
-          }
-        },
-        "asset": {
-          "allOf": [
-            {
-              "type": "object",
-              "required": [
-                "href"
-              ],
-              "properties": {
-                "href": {
-                  "title": "Asset reference",
-                  "type": "string",
-                  "format": "iri-reference",
-                  "minLength": 1
-                },
-                "title": {
-                  "title": "Asset title",
-                  "type": "string"
-                },
-                "description": {
-                  "title": "Asset description",
-                  "type": "string"
-                },
-                "type": {
-                  "title": "Asset type",
-                  "type": "string"
-                },
-                "roles": {
-                  "title": "Asset roles",
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            },
-            {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/schemas.stacspec.org_v1.0.0_item-spec_json-schema_item.json/definitions/common_metadata"
-            }
+          "example": [
+            "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+            "http://www.opengis.net/def/crs/EPSG/0/4326"
           ]
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json#"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-features/build/annotated/api/features/v1/schemas/collection/schema.yaml"
     },
-    "json-schema.org_draft-07_schema": {
+    "ogc.ogc-utils.json-link_1": {
+      "description": "JSON Link",
+      "type": "object",
+      "required": [
+        "href",
+        "rel"
+      ],
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri-reference",
+          "x-jsonld-type": "@id",
+          "x-jsonld-id": "http://www.w3.org/ns/oa#hasTarget"
+        },
+        "rel": {
+          "type": "string",
+          "x-jsonld-id": "http://www.iana.org/assignments/relation",
+          "x-jsonld-type": "@id",
+          "x-jsonld-base": "http://www.iana.org/assignments/relation/"
+        },
+        "anchor": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/type"
+        },
+        "hreflang": {
+          "type": "string",
+          "x-jsonld-id": "http://purl.org/dc/terms/language"
+        },
+        "title": {
+          "type": "string",
+          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        "length": {
+          "type": "integer",
+          "x-jsonld-id": "http://purl.org/dc/terms/extent"
+        }
+      },
+      "x-jsonld-prefixes": {
+        "oa": "http://www.w3.org/ns/oa#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dct": "http://purl.org/dc/terms/"
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "draft-07_schema": {
       "title": "Core schema meta-schema",
       "definitions": {
         "schemaArray": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/json-schema.org_draft-07_schema"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
           }
         },
         "nonNegativeInteger": {
@@ -2218,7 +1844,7 @@
         "nonNegativeIntegerDefault0": {
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/json-schema.org_draft-07_schema/definitions/nonNegativeInteger"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeInteger"
             },
             {
               "default": 0
@@ -2245,10 +1871,6 @@
           "default": []
         }
       },
-      "type": [
-        "object",
-        "boolean"
-      ],
       "properties": {
         "$ref": {
           "type": "string",
@@ -2293,72 +1915,72 @@
           "type": "number"
         },
         "maxLength": {
-          "$ref": "#/definitions/nonNegativeInteger"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeInteger"
         },
         "minLength": {
-          "$ref": "#/definitions/nonNegativeIntegerDefault0"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeIntegerDefault0"
         },
         "pattern": {
           "type": "string",
           "format": "regex"
         },
         "additionalItems": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "items": {
           "anyOf": [
             {
-              "$ref": "#"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
             },
             {
-              "$ref": "#/definitions/schemaArray"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/schemaArray"
             }
           ],
           "default": true
         },
         "maxItems": {
-          "$ref": "#/definitions/nonNegativeInteger"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeInteger"
         },
         "minItems": {
-          "$ref": "#/definitions/nonNegativeIntegerDefault0"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeIntegerDefault0"
         },
         "uniqueItems": {
           "type": "boolean",
           "default": false
         },
         "contains": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "maxProperties": {
-          "$ref": "#/definitions/nonNegativeInteger"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeInteger"
         },
         "minProperties": {
-          "$ref": "#/definitions/nonNegativeIntegerDefault0"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/nonNegativeIntegerDefault0"
         },
         "required": {
-          "$ref": "#/definitions/stringArray"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/stringArray"
         },
         "additionalProperties": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "definitions": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
           },
           "default": {}
         },
         "properties": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
           },
           "default": {}
         },
         "patternProperties": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#"
+            "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
           },
           "propertyNames": {
             "format": "regex"
@@ -2370,16 +1992,16 @@
           "additionalProperties": {
             "anyOf": [
               {
-                "$ref": "#"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
               },
               {
-                "$ref": "#/definitions/stringArray"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/stringArray"
               }
             ]
           }
         },
         "propertyNames": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "const": true,
         "enum": {
@@ -2391,12 +2013,12 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/definitions/simpleTypes"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/simpleTypes"
             },
             {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/simpleTypes"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/simpleTypes"
               },
               "minItems": 1,
               "uniqueItems": true
@@ -2413,40 +2035,47 @@
           "type": "string"
         },
         "if": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "then": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "else": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
         },
         "allOf": {
-          "$ref": "#/definitions/schemaArray"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/schemaArray"
         },
         "anyOf": {
-          "$ref": "#/definitions/schemaArray"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/schemaArray"
         },
         "oneOf": {
-          "$ref": "#/definitions/schemaArray"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema/definitions/schemaArray"
         },
         "not": {
-          "$ref": "#"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/draft-07_schema"
+        },
+        "x-schema-id": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "x-schema-version": {
+          "type": "string",
+          "format": "uri"
         }
       },
       "default": true,
-      "anyOf": {
-        "anyOf": [
-          {
-            "type": "object"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
+      "x-schema-source": "http://json-schema.org/draft-07/schema",
+      "x-schema-id": "http://json-schema.org/draft-07/schema#",
       "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "http://json-schema.org/draft-07/schema#"
+      "anyOf": [
+        {
+          "type": "object"
+        },
+        {
+          "type": "boolean"
+        }
+      ]
     },
     "ogc.api.features.v1.schemas.extent": {
       "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml",
@@ -3096,8 +2725,9 @@
       "x-jsonld-prefixes": {
         "geojson": "https://purl.org/geojson/vocab#"
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.json",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.geo.common.data_types.bounding_box": {
       "type": "array",
@@ -3314,7 +2944,14 @@
                 "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
                 "example": "+14165550142"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of phone number (e.g. home, work, fax, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -3332,7 +2969,14 @@
                 "description": "The value is the email number itself.",
                 "format": "email"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of email (e.g. home, work, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -3365,7 +3009,14 @@
                 "type": "string",
                 "description": "Country of the physical address.  ISO 3166-1 is recommended."
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of address (e.g. office, home, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -3395,7 +3046,14 @@
           "type": "string",
           "description": "Supplemental instructions on how or when to contact the\nresponsible party."
         },
-        "roles": {}
+        "roles": {
+          "description": "The set of named duties, job functions and/or permissions associated with this contact. (e.g. developer, administrator, etc.).",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+            }
+          ]
+        }
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.json"
     },
@@ -3501,7 +3159,7 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.json"
     },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_basics.json": {
+    "basics": {
       "title": "Basic Descriptive Fields",
       "type": "object",
       "properties": {
@@ -3516,10 +3174,11 @@
           "type": "string"
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/basics.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/basics.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/basics.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_datetime.json": {
+    "datetime": {
       "title": "Date and Time Fields",
       "type": "object",
       "dependencies": {
@@ -3570,10 +3229,11 @@
           "pattern": "(\\+00:00|Z)$"
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/datetime.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_instrument.json": {
+    "instrument": {
       "title": "Instrument Fields",
       "type": "object",
       "properties": {
@@ -3602,10 +3262,11 @@
           "exclusiveMinimum": 0
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/instrument.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/instrument.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/instrument.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_licensing.json": {
+    "licensing": {
       "title": "Licensing Fields",
       "type": "object",
       "properties": {
@@ -3614,10 +3275,11 @@
           "pattern": "^[\\w\\-\\.\\+]+$"
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/licensing.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/licensing.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "schemas.stacspec.org_v1.0.0_item-spec_json-schema_provider.json": {
+    "provider": {
       "title": "Provider Fields",
       "type": "object",
       "properties": {
@@ -3661,10 +3323,11 @@
           }
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json#"
+      "x-schema-source": "https://github.com/radiantearth/stac-spec/raw/master/item-spec/json-schema/provider.json",
+      "x-schema-id": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/provider.json#",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "ogc.geo.common.data_types.geojson_": {
+    "ogc.geo.common.data_types.geojson_1": {
       "title": "GeoJSON Feature",
       "type": "object",
       "required": [
@@ -4162,10 +3825,11 @@
           }
         }
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://geojson.org/schema/Feature.json",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "geojson.org_schema_Geometry.json": {
+    "Geometry": {
       "title": "GeoJSON Geometry",
       "oneOf": [
         {
@@ -4380,10 +4044,11 @@
           }
         }
       ],
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Geometry.json"
+      "x-schema-source": "https://geojson.org/schema/Geometry.json",
+      "x-schema-id": "https://geojson.org/schema/Geometry.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "ogc.geo.common.data_types.geojson__": {
+    "ogc.geo.common.data_types.geojson_2": {
       "title": "GeoJSON Feature",
       "type": "object",
       "required": [
@@ -4968,10 +4633,11 @@
       "x-jsonld-prefixes": {
         "geojson": "https://purl.org/geojson/vocab#"
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
-    "ogc.geo.common.data_types.bounding_box_": {
+    "ogc.geo.common.data_types.bounding_box_1": {
       "type": "array",
       "oneOf": [
         {
@@ -4988,55 +4654,7 @@
       },
       "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.yaml"
     },
-    "ogc.ogc-utils.json-link_": {
-      "description": "JSON Link",
-      "type": "object",
-      "required": [
-        "href",
-        "rel"
-      ],
-      "properties": {
-        "href": {
-          "type": "string",
-          "format": "uri-reference",
-          "x-jsonld-type": "@id",
-          "x-jsonld-id": "http://www.w3.org/ns/oa#hasTarget"
-        },
-        "rel": {
-          "type": "string",
-          "x-jsonld-id": "http://www.iana.org/assignments/relation",
-          "x-jsonld-type": "@id",
-          "x-jsonld-base": "http://www.iana.org/assignments/relation/"
-        },
-        "anchor": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string",
-          "x-jsonld-id": "http://purl.org/dc/terms/type"
-        },
-        "hreflang": {
-          "type": "string",
-          "x-jsonld-id": "http://purl.org/dc/terms/language"
-        },
-        "title": {
-          "type": "string",
-          "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
-        },
-        "length": {
-          "type": "integer",
-          "x-jsonld-id": "http://purl.org/dc/terms/extent"
-        }
-      },
-      "x-jsonld-prefixes": {
-        "oa": "http://www.w3.org/ns/oa#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "dct": "http://purl.org/dc/terms/"
-      },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml"
-    },
-    "ogc.api.records.v1.schemas.time_": {
+    "ogc.api.records.v1.schemas.time_1": {
       "type": "object",
       "nullable": true,
       "properties": {
@@ -5081,7 +4699,7 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/time/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.language_": {
+    "ogc.api.records.v1.schemas.language_1": {
       "type": "object",
       "description": "The language used for textual values in this record.",
       "required": [
@@ -5120,7 +4738,7 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/language/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.theme_": {
+    "ogc.api.records.v1.schemas.theme_1": {
       "type": "object",
       "required": [
         "concepts",
@@ -5164,7 +4782,7 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.contact_": {
+    "ogc.api.records.v1.schemas.contact_1": {
       "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml",
       "type": "object",
       "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
@@ -5201,7 +4819,7 @@
           "description": "Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type.",
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
             },
             {
               "type": "object",
@@ -5234,7 +4852,14 @@
                 "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
                 "example": "+14165550142"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of phone number (e.g. home, work, fax, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles_1"
+                  }
+                ]
+              }
             }
           }
         },
@@ -5252,7 +4877,14 @@
                 "description": "The value is the email number itself.",
                 "format": "email"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of email (e.g. home, work, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles_1"
+                  }
+                ]
+              }
             }
           }
         },
@@ -5285,7 +4917,14 @@
                 "type": "string",
                 "description": "Country of the physical address.  ISO 3166-1 is recommended."
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of address (e.g. office, home, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles_1"
+                  }
+                ]
+              }
             }
           }
         },
@@ -5295,7 +4934,7 @@
           "items": {
             "allOf": [
               {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
               },
               {
                 "type": "object",
@@ -5315,16 +4954,23 @@
           "type": "string",
           "description": "Supplemental instructions on how or when to contact the\nresponsible party."
         },
-        "roles": {}
+        "roles": {
+          "description": "The set of named duties, job functions and/or permissions associated with this contact. (e.g. developer, administrator, etc.).",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles_1"
+            }
+          ]
+        }
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.license_": {
+    "ogc.api.records.v1.schemas.license_1": {
       "type": "string",
       "description": "A legal document under which the resource is made available. If the resource is being made available under a common license then use an SPDX license id (https://spdx.org/licenses/). If the resource is being made available under multiple common licenses then use an SPDX license expression v2.3 string (https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/) If the resource is being made available under one or more licenses that haven't been assigned an SPDX identifier or one or more custom licenses then use a string value of 'other' and include one or more links (rel=\"license\") in the `link` section of the record to the file(s) that contains the text of the license(s). There is also the case of a resource that is private or unpublished and is thus unlicensed; in this case do not register such a resource in the catalog in the first place since there is no point in making such a resource discoverable.",
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.linkBase_": {
+    "ogc.api.records.v1.schemas.linkBase_1": {
       "$comment": "Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml",
       "type": "object",
       "properties": {
@@ -5385,11 +5031,11 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml"
     },
-    "ogc.api.records.v1.schemas.linkTemplate_": {
+    "ogc.api.records.v1.schemas.linkTemplate_1": {
       "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase_"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase_1"
         },
         {
           "type": "object",
@@ -5421,6 +5067,69 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml"
     },
+    "ogc.api.features.v1.schemas.extent_1": {
+      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml",
+      "description": "The extent of the features in the collection. In the Core only spatial and temporal\nextents are specified. Extensions may add additional members to represent other\nextents, for example, thermal or pressure ranges.\n\nAn array of extents is provided for each extent type (spatial, temporal). The first item\nin the array describes the overall extent of the data. All subsequent items describe more\nprecise extents, e.g., to identify clusters of data. Clients only interested in the\noverall extent will only need to access the first extent in the array.",
+      "type": "object",
+      "properties": {
+        "spatial": {
+          "description": "The spatial extent of the features in the collection.",
+          "type": "object",
+          "properties": {
+            "bbox": {
+              "type": "array",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.common.data_types.bounding_box_1"
+              }
+            },
+            "crs": {
+              "description": "Coordinate reference system of the coordinates in the spatial extent\n(property `bbox`). The default reference system is WGS 84 longitude/latitude.\nIn the Core the only other supported coordinate reference system is\nWGS 84 longitude/latitude/ellipsoidal height for coordinates with height.\nExtensions may support additional coordinate reference systems and add\nadditional enum values.",
+              "type": "string",
+              "enum": [
+                "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
+                "http://www.opengis.net/def/crs/OGC/0/CRS84h"
+              ],
+              "default": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+            }
+          }
+        },
+        "temporal": {
+          "description": "The temporal extent of the features in the collection.",
+          "type": "object",
+          "properties": {
+            "interval": {
+              "description": "One or more time intervals that describe the temporal extent of the dataset.\nIn the Core only a single time interval is supported.\n\nExtensions may support multiple intervals.\nThe first time interval describes the overall\ntemporal extent of the data. All subsequent time intervals describe\nmore precise time intervals, e.g., to identify clusters of data.\nClients only interested in the overall temporal extent will only need\nto access the first time interval in the array (a pair of lower and upper\nbound instants).",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "description": "Begin and end times of the time interval. The timestamps are in the\ntemporal coordinate reference system specified in `trs`. By default\nthis is the Gregorian calendar.\n\nThe value `null` at start or end is supported and indicates a half-bounded interval.",
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "example": [
+                  "2011-11-11T12:22:11Z",
+                  null
+                ]
+              }
+            },
+            "trs": {
+              "description": "Coordinate reference system of the coordinates in the temporal extent\n(property `interval`). The default reference system is the Gregorian calendar.\nIn the Core this is the only supported temporal coordinate reference system.\nExtensions may support additional temporal coordinate reference systems and add\nadditional enum values.",
+              "type": "string",
+              "enum": [
+                "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+              ],
+              "default": "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"
+            }
+          }
+        }
+      },
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-features/build/annotated/api/features/v1/schemas/extent/schema.yaml"
+    },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
       "type": "array",
@@ -5430,7 +5139,7 @@
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.json"
     },
-    "ogc.api.records.v1.schemas.roles_": {
+    "ogc.api.records.v1.schemas.roles_1": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
       "type": "array",
       "minItems": 1,
@@ -5440,9 +5149,21 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml"
     }
   },
+  "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-stac-eo_schema.json"
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.contrib.stac.extensions.eo"
+    },
+    {
+      "oneOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.geodcat-stac-item"
+        },
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.geodcat-stac-collection"
+        }
+      ]
     }
-  ]
+  ],
+  "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
 }

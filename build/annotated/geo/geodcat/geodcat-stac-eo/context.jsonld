@@ -11,14 +11,16 @@
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
-    "type": "@type",
+    "type": "dct:type",
     "hreflang": "dct:language",
     "title": "rdfs:label",
     "length": "dct:extent",
     "id": "@id",
     "properties": "@nest",
     "geometry": {
-      "@context": {},
+      "@context": {
+        "type": "@type"
+      },
       "@id": "geojson:geometry"
     },
     "bbox": {
@@ -39,9 +41,7 @@
       "@id": "geojson:features"
     },
     "links": {
-      "@context": {
-        "type": "dct:type"
-      },
+      "@context": {},
       "@id": "rdfs:seeAlso"
     },
     "coordinates": {

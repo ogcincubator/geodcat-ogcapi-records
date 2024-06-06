@@ -1,209 +1,5 @@
 {
   "x-defs": {
-    "_github_workspace_build_annotated_geo_geodcat_dcat-records_schema.json": {
-      "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON"
-        }
-      ],
-      "x-jsonld-extra-terms": {
-        "accessRights": {
-          "x-jsonld-id": "http://purl.org/dc/terms/accessRights",
-          "x-jsonld-type": "@id"
-        },
-        "time": "http://purl.org/dc/terms/temporal",
-        "interval": {
-          "x-jsonld-id": "http://www.w3.org/2006/time#hasTime",
-          "x-jsonld-container": "@list"
-        },
-        "conformsTo": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/conformsTo",
-          "x-jsonld-type": "@id"
-        },
-        "contactPoint": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#contactPoint",
-          "x-jsonld-type": "@id"
-        },
-        "creator": {
-          "x-jsonld-id": "http://purl.org/dc/terms/creator",
-          "x-jsonld-type": "@id"
-        },
-        "datasetDistribution": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#distribution",
-          "x-jsonld-type": "@id"
-        },
-        "description": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/description"
-        },
-        "documentation": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://xmlns.com/foaf/0.1/page",
-          "x-jsonld-type": "@id"
-        },
-        "frequency": {
-          "x-jsonld-id": "http://purl.org/dc/terms/accrualPeriodicity",
-          "x-jsonld-type": "@id"
-        },
-        "geographicalCoverage": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/spatial",
-          "x-jsonld-type": "@id"
-        },
-        "hasVersion": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#hasVersion",
-          "x-jsonld-type": "@id"
-        },
-        "identifier": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/identifier"
-        },
-        "isReferencedBy": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/isReferencedBy",
-          "x-jsonld-type": "@id"
-        },
-        "isVersionOf": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#isVersionOf",
-          "x-jsonld-type": "@id"
-        },
-        "keyword": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
-        },
-        "keywords": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
-        },
-        "landingPage": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#landingPage",
-          "x-jsonld-type": "@id"
-        },
-        "language": "@nest",
-        "languages": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/language"
-        },
-        "code": "http://purl.org/dc/terms/language",
-        "modificationDate": "http://purl.org/dc/terms/modified",
-        "updated": "http://purl.org/dc/terms/modified",
-        "created": "http://purl.org/dc/terms/created",
-        "otherIdentifier": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/adms#identifier",
-          "x-jsonld-type": "@id"
-        },
-        "provenance": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/provenance",
-          "x-jsonld-type": "@id"
-        },
-        "publisher": {
-          "x-jsonld-id": "http://purl.org/dc/terms/publisher",
-          "x-jsonld-type": "@id"
-        },
-        "qualifiedAttribution": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/prov#qualifiedAttribution",
-          "x-jsonld-type": "@id"
-        },
-        "qualifiedRelation": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#qualifiedRelation",
-          "x-jsonld-type": "@id"
-        },
-        "relatedResource": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/relation",
-          "x-jsonld-type": "@id"
-        },
-        "releaseDate": "http://purl.org/dc/terms/issued",
-        "sample": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/adms#sample",
-          "x-jsonld-type": "@id"
-        },
-        "source": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/source",
-          "x-jsonld-type": "@id"
-        },
-        "spatialResolution": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
-          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#decimal"
-        },
-        "temporalCoverage": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/temporal",
-          "x-jsonld-type": "@id"
-        },
-        "temporalResolution": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#temporalResolution",
-          "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#duration"
-        },
-        "theme": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#theme",
-          "x-jsonld-type": "@id"
-        },
-        "title": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://purl.org/dc/terms/title"
-        },
-        "type": {
-          "x-jsonld-id": "http://purl.org/dc/terms/type",
-          "x-jsonld-type": "@id"
-        },
-        "version": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/dcat#version"
-        },
-        "versionNotes": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/adms#versionNotes"
-        },
-        "wasGeneratedBy": {
-          "x-jsonld-container": "@set",
-          "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
-          "x-jsonld-type": "@id"
-        },
-        "linkTemplates": "https://www.opengis.net/def/ogc-api/records/hasLinkTemplate",
-        "variables": {
-          "x-jsonld-container": "@id",
-          "x-jsonld-id": "https://www.opengis.net/def/ogc-api/records/hasVariable",
-          "x-jsonld-context": {
-            "@base": "http://example.com/variables/",
-            "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
-          }
-        }
-      },
-      "x-jsonld-prefixes": {
-        "rec": "https://www.opengis.net/def/ogc-api/records/",
-        "dct": "http://purl.org/dc/terms/",
-        "w3ctime": "http://www.w3.org/2006/time#",
-        "dcat": "http://www.w3.org/ns/dcat#",
-        "foaf": "http://xmlns.com/foaf/0.1/",
-        "prov": "http://www.w3.org/ns/prov#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "owl": "http://www.w3.org/2002/07/owl#",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "dctype": "http://purl.org/dc/dcmitype/",
-        "skos": "http://www.w3.org/2004/02/skos/core#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "vcard": "http://www.w3.org/2006/vcard/ns#"
-      },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json"
-    },
     "ogc.api.records.v1.schemas.recordGeoJSON": {
       "description": "Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml",
       "type": "object",
@@ -293,7 +89,14 @@
                 "type": "string"
               }
             },
-            "language": {},
+            "language": {
+              "description": "The language used for textual values in this record representation.",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language"
+                }
+              ]
+            },
             "languages": {
               "type": "array",
               "description": "This list of languages in which this record is available.",
@@ -372,8 +175,8 @@
           }
         }
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.geo.features.feature": {
       "allOf": [
@@ -394,7 +197,9 @@
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
             },
             "type": {
-              "const": "Feature"
+              "enum": [
+                "Feature"
+              ]
             }
           },
           "required": [
@@ -1042,8 +847,9 @@
       "x-jsonld-prefixes": {
         "geojson": "https://purl.org/geojson/vocab#"
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.json",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.records.v1.schemas.language": {
       "type": "object",
@@ -1198,7 +1004,14 @@
                 "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
                 "example": "+14165550142"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of phone number (e.g. home, work, fax, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1216,7 +1029,14 @@
                 "description": "The value is the email number itself.",
                 "format": "email"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of email (e.g. home, work, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1249,7 +1069,14 @@
                 "type": "string",
                 "description": "Country of the physical address.  ISO 3166-1 is recommended."
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of address (e.g. office, home, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -1279,7 +1106,14 @@
           "type": "string",
           "description": "Supplemental instructions on how or when to contact the\nresponsible party."
         },
-        "roles": {}
+        "roles": {
+          "description": "The set of named duties, job functions and/or permissions associated with this contact. (e.g. developer, administrator, etc.).",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+            }
+          ]
+        }
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.json"
     },
@@ -1447,8 +1281,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dct": "http://purl.org/dc/terms/"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
@@ -1460,9 +1294,205 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.json"
     }
   },
+  "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/_github_workspace_build_annotated_geo_geodcat_dcat-records_schema.json"
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.recordGeoJSON"
     }
-  ]
+  ],
+  "x-jsonld-extra-terms": {
+    "accessRights": {
+      "x-jsonld-id": "http://purl.org/dc/terms/accessRights",
+      "x-jsonld-type": "@id"
+    },
+    "time": "http://purl.org/dc/terms/temporal",
+    "interval": {
+      "x-jsonld-id": "http://www.w3.org/2006/time#hasTime",
+      "x-jsonld-container": "@list"
+    },
+    "conformsTo": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/conformsTo",
+      "x-jsonld-type": "@id"
+    },
+    "contactPoint": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#contactPoint",
+      "x-jsonld-type": "@id"
+    },
+    "creator": {
+      "x-jsonld-id": "http://purl.org/dc/terms/creator",
+      "x-jsonld-type": "@id"
+    },
+    "datasetDistribution": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#distribution",
+      "x-jsonld-type": "@id"
+    },
+    "description": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/description"
+    },
+    "documentation": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://xmlns.com/foaf/0.1/page",
+      "x-jsonld-type": "@id"
+    },
+    "frequency": {
+      "x-jsonld-id": "http://purl.org/dc/terms/accrualPeriodicity",
+      "x-jsonld-type": "@id"
+    },
+    "geographicalCoverage": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/spatial",
+      "x-jsonld-type": "@id"
+    },
+    "hasVersion": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#hasVersion",
+      "x-jsonld-type": "@id"
+    },
+    "identifier": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/identifier"
+    },
+    "isReferencedBy": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/isReferencedBy",
+      "x-jsonld-type": "@id"
+    },
+    "isVersionOf": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#isVersionOf",
+      "x-jsonld-type": "@id"
+    },
+    "keyword": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
+    },
+    "keywords": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#keyword"
+    },
+    "landingPage": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#landingPage",
+      "x-jsonld-type": "@id"
+    },
+    "language": "@nest",
+    "languages": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/language"
+    },
+    "code": "http://purl.org/dc/terms/language",
+    "modificationDate": "http://purl.org/dc/terms/modified",
+    "updated": "http://purl.org/dc/terms/modified",
+    "created": "http://purl.org/dc/terms/created",
+    "otherIdentifier": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/adms#identifier",
+      "x-jsonld-type": "@id"
+    },
+    "provenance": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/provenance",
+      "x-jsonld-type": "@id"
+    },
+    "publisher": {
+      "x-jsonld-id": "http://purl.org/dc/terms/publisher",
+      "x-jsonld-type": "@id"
+    },
+    "qualifiedAttribution": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/prov#qualifiedAttribution",
+      "x-jsonld-type": "@id"
+    },
+    "qualifiedRelation": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#qualifiedRelation",
+      "x-jsonld-type": "@id"
+    },
+    "relatedResource": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/relation",
+      "x-jsonld-type": "@id"
+    },
+    "releaseDate": "http://purl.org/dc/terms/issued",
+    "sample": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/adms#sample",
+      "x-jsonld-type": "@id"
+    },
+    "source": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/source",
+      "x-jsonld-type": "@id"
+    },
+    "spatialResolution": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#spatialResolutionInMeters",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "temporalCoverage": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/temporal",
+      "x-jsonld-type": "@id"
+    },
+    "temporalResolution": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#temporalResolution",
+      "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "theme": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#theme",
+      "x-jsonld-type": "@id"
+    },
+    "title": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://purl.org/dc/terms/title"
+    },
+    "type": {
+      "x-jsonld-id": "http://purl.org/dc/terms/type",
+      "x-jsonld-type": "@id"
+    },
+    "version": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/dcat#version"
+    },
+    "versionNotes": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/adms#versionNotes"
+    },
+    "wasGeneratedBy": {
+      "x-jsonld-container": "@set",
+      "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "x-jsonld-type": "@id"
+    },
+    "linkTemplates": "https://www.opengis.net/def/ogc-api/records/hasLinkTemplate",
+    "variables": {
+      "x-jsonld-container": "@id",
+      "x-jsonld-id": "https://www.opengis.net/def/ogc-api/records/hasVariable",
+      "x-jsonld-context": {
+        "@base": "http://example.com/variables/",
+        "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
+      }
+    }
+  },
+  "x-jsonld-prefixes": {
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
+    "dct": "http://purl.org/dc/terms/",
+    "w3ctime": "http://www.w3.org/2006/time#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dctype": "http://purl.org/dc/dcmitype/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#"
+  },
+  "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
 }

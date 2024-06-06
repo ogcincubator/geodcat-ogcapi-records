@@ -1,35 +1,29 @@
 {
   "x-defs": {
-    "_github_workspace_build_annotated_geo_geodcat_geodcat-records-prov_schema.json": {
-      "description": "Schema for OGCAPI records profile for GeoDCAT + PROV",
-      "allOf": [
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.json"
-        },
-        {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/Entity"
-        }
-      ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json"
-    },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_geodcat-records_schema.json": {
+    "ogc.geo.geodcat.geodcat-records": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml"
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.dcat-records"
         },
         {
           "description": "Other elements required for DCAT"
         }
       ],
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.ogc-utils.prov": {
       "description": "Provenance Chain using PROV-O core model supporting both an ID based object graph and nesting",
       "$defs": {
-        "objectref": {},
+        "objectref": {
+          "$anchor": "objectref",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie"
+            }
+          ]
+        },
         "oneOrMoreObjectref": {
           "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/MultipleOrObject"
         },
@@ -153,24 +147,156 @@
             }
           }
         },
+        "EntityType": {
+          "type": "string",
+          "enum": [
+            "Entity",
+            "Bundle",
+            "Plan",
+            "prov:Entity",
+            "prov:Bundle",
+            "prov:Plan"
+          ]
+        },
+        "EntityTypes": {
+          "oneOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/EntityType"
+            },
+            {
+              "type": "array",
+              "contains": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/EntityType"
+              }
+            }
+          ]
+        },
         "Entity": {
           "type": "object",
           "properties": {
-            "id": {},
-            "featureType": {},
-            "entityType": {},
-            "has_provenance": {},
-            "wasGeneratedBy": {},
-            "wasAttributedTo": {},
-            "wasDerivedFrom": {},
-            "alternateOf": {},
-            "hadPrimarySource": {},
-            "specializationOf": {},
-            "wasInvalidatedBy": {},
-            "wasQuotedFrom": {},
-            "wasRevisionOf": {},
-            "mentionOf": {},
-            "atLocation": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
+            "featureType": {
+              "x-jsonld-id": "@type",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "entityType": {
+              "x-jsonld-id": "@type",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "has_provenance": {
+              "x-jsonld-id": "http://purl.org/dc/terms/provenance",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/Prov"
+                }
+              ]
+            },
+            "wasGeneratedBy": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            },
+            "wasAttributedTo": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasAttributedTo",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreAgentsOrRefIds"
+                }
+              ]
+            },
+            "wasDerivedFrom": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "alternateOf": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#alternateOf",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "hadPrimarySource": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#hadPrimarySource",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "specializationOf": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#specializationOf",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "wasInvalidatedBy": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasInvalidatedBy",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            },
+            "wasQuotedFrom": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasQuotedFrom",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "wasRevisionOf": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasRevisionOf",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "atLocation": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atLocation",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "links": {
               "type": "array",
               "items": {
@@ -286,32 +412,36 @@
             {
               "properties": {
                 "provType": {
-                  "oneOf": [
+                  "x-jsonld-id": "@type",
+                  "allOf": [
                     {
-                      "type": "string",
-                      "enum": [
-                        "Entity",
-                        "Bundle",
-                        "Plan"
-                      ]
-                    },
-                    {
-                      "type": "array",
-                      "contains": {
-                        "type": "string",
-                        "enum": [
-                          "Entity",
-                          "Bundle",
-                          "Plan"
-                        ]
-                      }
+                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/EntityTypes"
                     }
-                  ],
-                  "x-jsonld-id": "@type"
+                  ]
                 }
               },
               "required": [
                 "provType"
+              ]
+            },
+            {
+              "properties": {
+                "prov:type": {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/EntityTypes"
+                }
+              },
+              "required": [
+                "prov:type"
+              ]
+            },
+            {
+              "properties": {
+                "type": {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/EntityTypes"
+                }
+              },
+              "required": [
+                "type"
               ]
             },
             {
@@ -348,7 +478,9 @@
               "properties": {
                 "type": {
                   "type": "string",
-                  "const": "Collection"
+                  "enum": [
+                    "Collection"
+                  ]
                 },
                 "hadMember": {
                   "type": "array",
@@ -368,7 +500,9 @@
               "properties": {
                 "type": {
                   "type": "string",
-                  "const": "EmptyCollection"
+                  "enum": [
+                    "EmptyCollection"
+                  ]
                 },
                 "hadMember": {
                   "type": "array",
@@ -394,38 +528,136 @@
           "format": "date-time",
           "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})?$"
         },
+        "ActivityTypes": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "Activity",
+                "prov:Activity"
+              ]
+            },
+            {
+              "type": "array",
+              "contains": {
+                "type": "string",
+                "enum": [
+                  "Activity",
+                  "prov:Activity"
+                ]
+              },
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
         "Activity": {
           "type": "object",
           "properties": {
-            "id": {},
-            "type": {
-              "oneOf": [
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
                 {
-                  "type": "string",
-                  "const": "Activity"
-                },
-                {
-                  "type": "array",
-                  "contains": {
-                    "type": "string",
-                    "const": "Activity"
-                  },
-                  "items": {
-                    "type": "string"
-                  }
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
                 }
               ]
             },
-            "activityType": {},
-            "endedAtTime": {},
-            "wasAssociatedWith": {},
-            "wasInformedBy": {},
-            "used": {},
-            "wasStartedBy": {},
-            "wasEndedBy": {},
-            "invalidated": {},
-            "generated": {},
-            "atLocation": {},
+            "type": {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/ActivityTypes"
+            },
+            "activityType": {
+              "x-jsonld-id": "@type",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "prov:type": {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/ActivityTypes"
+            },
+            "endedAtTime": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#endedAtTime",
+              "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/dateTime"
+                }
+              ]
+            },
+            "wasAssociatedWith": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasAssociatedWith",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreAgentsOrRefIds"
+                }
+              ]
+            },
+            "wasInformedBy": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasInformedBy",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            },
+            "used": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#used",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "wasStartedBy": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasStartedBy",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "wasEndedBy": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#wasEndedBy",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "invalidated": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#invalidated",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "generated": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#generated",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "atLocation": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atLocation",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "qualifiedUsage": {
               "oneOf": [
                 {
@@ -534,6 +766,16 @@
             },
             {
               "required": [
+                "prov:type"
+              ]
+            },
+            {
+              "required": [
+                "type"
+              ]
+            },
+            {
+              "required": [
                 "used"
               ]
             },
@@ -556,11 +798,6 @@
               "required": [
                 "wasAssociatedWith"
               ]
-            },
-            {
-              "required": [
-                "type"
-              ]
             }
           ],
           "allOf": [
@@ -569,17 +806,79 @@
             }
           ]
         },
+        "AgentTypes": {
+          "type": "string",
+          "enum": [
+            "Agent",
+            "Organization",
+            "Person",
+            "SoftwareAgent",
+            "SoftwareDescription",
+            "DirectQueryService",
+            "prov:Agent",
+            "prov:Organization",
+            "prov:Person",
+            "prov:SoftwareAgent",
+            "prov:SoftwareDescription",
+            "prov:DirectQueryService"
+          ]
+        },
+        "AgentType": {
+          "oneOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/AgentTypes"
+            },
+            {
+              "type": "array",
+              "items": {
+                "contains": {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/AgentTypes"
+                }
+              }
+            }
+          ]
+        },
         "Agent": {
           "type": "object",
           "properties": {
-            "agentType": {},
+            "agentType": {
+              "x-jsonld-id": "@type",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
             "name": {
               "type": "string",
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
             },
-            "id": {},
-            "actedOnBehalfOf": {},
-            "atLocation": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
+            "actedOnBehalfOf": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#actedOnBehalfOf",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreAgentsOrRefIds"
+                }
+              ]
+            },
+            "atLocation": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atLocation",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "qualifiedDelegation": {
               "oneOf": [
                 {
@@ -613,37 +912,12 @@
             {
               "properties": {
                 "provType": {
-                  "oneOf": [
+                  "x-jsonld-id": "@type",
+                  "allOf": [
                     {
-                      "type": "string",
-                      "enum": [
-                        "Agent",
-                        "Organization",
-                        "Person",
-                        "SoftwareAgent",
-                        "SoftwareDescription",
-                        "DirectQueryService"
-                      ]
-                    },
-                    {
-                      "type": "array",
-                      "contains": {
-                        "type": "string",
-                        "enum": [
-                          "Agent",
-                          "Organization",
-                          "Person",
-                          "SoftwareAgent",
-                          "SoftwareDescription",
-                          "DirectQueryService"
-                        ]
-                      },
-                      "items": {
-                        "type": "string"
-                      }
+                      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/AgentType"
                     }
-                  ],
-                  "x-jsonld-id": "@type"
+                  ]
                 }
               },
               "required": [
@@ -651,8 +925,23 @@
               ]
             },
             {
+              "properties": {
+                "type": {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/AgentType"
+                }
+              },
               "required": [
-                "agentType"
+                "type"
+              ]
+            },
+            {
+              "properties": {
+                "prov:type": {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/AgentType"
+                }
+              },
+              "required": [
+                "prov:type"
               ]
             },
             {
@@ -670,18 +959,31 @@
         "Usage": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
                   "type": "string",
-                  "const": "Usage"
+                  "enum": [
+                    "prov:Usage",
+                    "Usage"
+                  ]
                 },
                 {
                   "type": "array",
                   "contains": {
                     "type": "string",
-                    "const": "Usage"
+                    "enum": [
+                      "prov:Usage",
+                      "Usage"
+                    ]
                   },
                   "items": {
                     "type": "string"
@@ -689,34 +991,85 @@
                 }
               ]
             },
-            "atTime": {},
-            "entity": {
-              "oneOf": [
+            "atTime": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atTime",
+              "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "allOf": [
                 {
-                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
-                },
-                {
-                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/Entity"
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/dateTime"
                 }
-              ],
+              ]
+            },
+            "entity": {
               "x-jsonld-id": "http://www.w3.org/ns/prov#entity",
-              "x-jsonld-type": "@id"
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
             }
           },
           "required": [
-            "atTime",
             "entity"
           ]
         },
         "ActivityInfluence": {
           "type": "object",
           "properties": {
-            "id": {},
-            "atTime": {},
-            "hadRole": {},
-            "influencer": {},
-            "hadActivity": {},
-            "activity": {}
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
+            "atTime": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atTime",
+              "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/dateTime"
+                }
+              ]
+            },
+            "hadRole": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#hadRole",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "influencer": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#influencer",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "hadActivity": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#hadActivity",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            },
+            "activity": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#activity",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            }
           }
         },
         "Generation": {
@@ -731,13 +1084,17 @@
                   "oneOf": [
                     {
                       "type": "string",
-                      "const": "Generation"
+                      "enum": [
+                        "Generation"
+                      ]
                     },
                     {
                       "type": "array",
                       "contains": {
                         "type": "string",
-                        "const": "Generation"
+                        "enum": [
+                          "Generation"
+                        ]
                       },
                       "items": {
                         "type": "string"
@@ -764,13 +1121,17 @@
                   "oneOf": [
                     {
                       "type": "string",
-                      "const": "Invalidation"
+                      "enum": [
+                        "Invalidation"
+                      ]
                     },
                     {
                       "type": "array",
                       "contains": {
                         "type": "string",
-                        "const": "Invalidation"
+                        "enum": [
+                          "Invalidation"
+                        ]
                       },
                       "items": {
                         "type": "string"
@@ -797,13 +1158,17 @@
                   "oneOf": [
                     {
                       "type": "string",
-                      "const": "Communication"
+                      "enum": [
+                        "Communication"
+                      ]
                     },
                     {
                       "type": "array",
                       "contains": {
                         "type": "string",
-                        "const": "Communication"
+                        "enum": [
+                          "Communication"
+                        ]
                       },
                       "items": {
                         "type": "string"
@@ -821,7 +1186,14 @@
         "StartOrEnd": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
@@ -835,7 +1207,15 @@
                 }
               ]
             },
-            "atTime": {},
+            "atTime": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#atTime",
+              "x-jsonld-type": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/dateTime"
+                }
+              ]
+            },
             "entity": {
               "oneOf": [
                 {
@@ -875,11 +1255,15 @@
                 "type": {
                   "anyOf": [
                     {
-                      "const": "Start"
+                      "enum": [
+                        "Start"
+                      ]
                     },
                     {
                       "contains": {
-                        "const": "Start"
+                        "enum": [
+                          "Start"
+                        ]
                       }
                     }
                   ]
@@ -898,11 +1282,15 @@
                 "type": {
                   "anyOf": [
                     {
-                      "const": "End"
+                      "enum": [
+                        "End"
+                      ]
                     },
                     {
                       "contains": {
-                        "const": "End"
+                        "enum": [
+                          "End"
+                        ]
                       }
                     }
                   ]
@@ -914,18 +1302,29 @@
         "Derivation": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
                   "type": "string",
-                  "const": "Derivation"
+                  "enum": [
+                    "Derivation"
+                  ]
                 },
                 {
                   "type": "array",
                   "contains": {
                     "type": "string",
-                    "const": "Derivation"
+                    "enum": [
+                      "Derivation"
+                    ]
                   },
                   "items": {
                     "type": "string"
@@ -990,18 +1389,29 @@
         "Delegation": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
                   "type": "string",
-                  "const": "Delegation"
+                  "enum": [
+                    "Delegation"
+                  ]
                 },
                 {
                   "type": "array",
                   "contains": {
                     "type": "string",
-                    "const": "Delegation"
+                    "enum": [
+                      "Delegation"
+                    ]
                   },
                   "items": {
                     "type": "string"
@@ -1038,18 +1448,29 @@
         "Attribution": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
                   "type": "string",
-                  "const": "Attribution"
+                  "enum": [
+                    "Attribution"
+                  ]
                 },
                 {
                   "type": "array",
                   "contains": {
                     "type": "string",
-                    "const": "Attribution"
+                    "enum": [
+                      "Attribution"
+                    ]
                   },
                   "items": {
                     "type": "string"
@@ -1074,18 +1495,29 @@
         "Association": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "type": {
               "oneOf": [
                 {
                   "type": "string",
-                  "const": "Association"
+                  "enum": [
+                    "Association"
+                  ]
                 },
                 {
                   "type": "array",
                   "contains": {
                     "type": "string",
-                    "const": "Association"
+                    "enum": [
+                      "Association"
+                    ]
                   },
                   "items": {
                     "type": "string"
@@ -1105,14 +1537,37 @@
               "x-jsonld-id": "http://www.w3.org/ns/prov#agent",
               "x-jsonld-type": "@id"
             },
-            "hadRole": {},
-            "hadPlan": {}
+            "hadRole": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#hadRole",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            },
+            "hadPlan": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#hadPlan",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreObjectref"
+                }
+              ]
+            }
           }
         },
         "Influence": {
           "type": "object",
           "properties": {
-            "id": {},
+            "id": {
+              "x-jsonld-id": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/objectref"
+                }
+              ]
+            },
             "influencer": {
               "anyOf": [
                 {
@@ -1128,9 +1583,33 @@
               "x-jsonld-id": "http://www.w3.org/ns/prov#influencer",
               "x-jsonld-type": "@id"
             },
-            "entity": {},
-            "activity": {},
-            "agent": {}
+            "entity": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#entity",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreEntitiesOrRefIds"
+                }
+              ]
+            },
+            "activity": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#activity",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreActivitiesOrRefIds"
+                }
+              ]
+            },
+            "agent": {
+              "x-jsonld-id": "http://www.w3.org/ns/prov#agent",
+              "x-jsonld-type": "@id",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/oneOrMoreAgentsOrRefIds"
+                }
+              ]
+            }
           },
           "anyOf": [
             {
@@ -1324,6 +1803,10 @@
         "asInBundle": {
           "x-jsonld-id": "http://www.w3.org/ns/prov#asInBundle",
           "x-jsonld-type": "@id"
+        },
+        "mentionOf": {
+          "x-jsonld-id": "http://www.w3.org/ns/prov#mentionOf",
+          "x-jsonld-type": "@id"
         }
       },
       "x-jsonld-prefixes": {
@@ -1333,10 +1816,10 @@
         "dct": "http://purl.org/dc/terms/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json"
+      "x-schema-source": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
-    "ogcincubator.github.io_geodcat-ogcapi-records_build_annotated_geo_geodcat_dcat-records_schema.yaml": {
+    "ogc.geo.geodcat.dcat-records": {
       "description": "Schema for OGCAPI records profile for GeoDCAT - defines all extra elements defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF",
       "allOf": [
         {
@@ -1537,12 +2020,76 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "vcard": "http://www.w3.org/2006/vcard/ns#"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.ogc-utils.iri-or-curie": {
+      "description": "IRI or CURIE",
+      "$defs": {
+        "IRI": {
+          "type": "string",
+          "pattern": "^\\w+:/*([^:<>{}|\\\\^`\"\\s/]+[^<>{}|\\\\^`\"\\s]*(:[^:<>{}|\\\\^`\"\\s]+)?)?$"
+        },
+        "CURIE": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][^\\s:/]*:[^:<>{}|\\\\^`\"\\s]*(\\?[^<>{}|\\\\^`\" ]*)?(#[^<>{}|\\\\^`\"\\s]*)?$"
+        },
+        "LocalPart": {
+          "type": "string",
+          "pattern": "^[^:<>{}|\\\\^`\"\\s]*(\\?[^<>{}|\\\\^`\"\\s]*)?(#[^<>{}|\\\\^`\"\\s]*)?$"
+        },
+        "Single": {
+          "anyOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/IRI"
+            },
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/CURIE"
+            },
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/LocalPart"
+            }
+          ]
+        },
+        "Multiple": {
+          "oneOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/Single"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/Single"
+              }
+            }
+          ]
+        },
+        "MultipleOrObject": {
+          "oneOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/Multiple"
+            },
+            {
+              "type": "object"
+            }
+          ]
+        },
+        "MultipleOrObjectOrNull": {
+          "oneOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/MultipleOrObject"
+            }
+          ],
+          "nullable": true
+        }
+      },
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json",
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json"
+      "allOf": [
+        {
+          "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.iri-or-curie/$defs/Single"
+        }
+      ]
     },
     "ogc.ogc-utils.json-link": {
       "description": "JSON Link",
@@ -1589,8 +2136,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dct": "http://purl.org/dc/terms/"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.json",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.records.v1.schemas.recordGeoJSON": {
       "description": "Normative records schema - adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/recordGeoJSON.yaml",
@@ -1681,7 +2228,14 @@
                 "type": "string"
               }
             },
-            "language": {},
+            "language": {
+              "description": "The language used for textual values in this record representation.",
+              "allOf": [
+                {
+                  "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.language"
+                }
+              ]
+            },
             "languages": {
               "type": "array",
               "description": "This list of languages in which this record is available.",
@@ -1760,8 +2314,8 @@
           }
         }
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml"
+      "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.geo.features.feature": {
       "allOf": [
@@ -1777,12 +2331,14 @@
             "links": {
               "type": "array",
               "items": {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
               },
               "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
             },
             "type": {
-              "const": "Feature"
+              "enum": [
+                "Feature"
+              ]
             }
           },
           "required": [
@@ -2430,8 +2986,9 @@
       "x-jsonld-prefixes": {
         "geojson": "https://purl.org/geojson/vocab#"
       },
-      "x-schema-version": "http://json-schema.org/draft-07/schema#",
-      "x-schema-source": "https://geojson.org/schema/Feature.json"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/geojson/schema.yaml",
+      "x-schema-id": "https://geojson.org/schema/Feature.json",
+      "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.records.v1.schemas.language": {
       "type": "object",
@@ -2553,7 +3110,7 @@
           "description": "Graphic identifying a contact. The link relation should be `icon` and the media type should be an image media type.",
           "allOf": [
             {
-              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
             },
             {
               "type": "object",
@@ -2586,7 +3143,14 @@
                 "pattern": "^\\+[1-9]{1}[0-9]{3,14}$",
                 "example": "+14165550142"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of phone number (e.g. home, work, fax, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -2604,7 +3168,14 @@
                 "description": "The value is the email number itself.",
                 "format": "email"
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of email (e.g. home, work, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -2637,7 +3208,14 @@
                 "type": "string",
                 "description": "Country of the physical address.  ISO 3166-1 is recommended."
               },
-              "roles": {}
+              "roles": {
+                "description": "The type of address (e.g. office, home, etc.).",
+                "allOf": [
+                  {
+                    "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+                  }
+                ]
+              }
             }
           }
         },
@@ -2647,7 +3225,7 @@
           "items": {
             "allOf": [
               {
-                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_"
+                "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.json-link_1"
               },
               {
                 "type": "object",
@@ -2667,7 +3245,14 @@
           "type": "string",
           "description": "Supplemental instructions on how or when to contact the\nresponsible party."
         },
-        "roles": {}
+        "roles": {
+          "description": "The set of named duties, job functions and/or permissions associated with this contact. (e.g. developer, administrator, etc.).",
+          "allOf": [
+            {
+              "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.roles"
+            }
+          ]
+        }
       },
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml"
     },
@@ -2790,7 +3375,7 @@
       },
       "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/common/data_types/bounding_box/schema.yaml"
     },
-    "ogc.ogc-utils.json-link_": {
+    "ogc.ogc-utils.json-link_1": {
       "description": "JSON Link",
       "type": "object",
       "required": [
@@ -2835,8 +3420,8 @@
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "dct": "http://purl.org/dc/terms/"
       },
-      "x-schema-version": "https://json-schema.org/draft/2020-12/schema",
-      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml"
+      "x-schema-source": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/json-link/schema.yaml",
+      "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.records.v1.schemas.roles": {
       "description": "The list of duties, job functions or permissions assigned by the system and associated with the context of this member.",
@@ -2848,9 +3433,14 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/roles/schema.yaml"
     }
   },
+  "description": "Schema for OGCAPI records profile for GeoDCAT + PROV",
   "allOf": [
     {
-      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/_github_workspace_build_annotated_geo_geodcat_geodcat-records-prov_schema.json"
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.geo.geodcat.geodcat-records"
+    },
+    {
+      "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema-oas3.0.json#/x-defs/ogc.ogc-utils.prov/$defs/Entity"
     }
-  ]
+  ],
+  "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
 }

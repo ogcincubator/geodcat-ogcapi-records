@@ -1,0 +1,35 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <urn:stac:vocab#> .
+
+[] rdfs:label "Simple Example Collection" ;
+    dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
+    dcterms:extent [ ] ;
+    dcterms:license "CC-BY-4.0" ;
+    dcterms:type "Collection" ;
+    rdfs:seeAlso [ rdfs:label "Core Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
+        [ rdfs:label "Extended Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+        [ rdfs:label "Simple Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
+    stac:extensions "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
+    stac:version "1.0.0" .
+

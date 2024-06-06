@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.dcat-records - Generic DCAT profile of OGC API Records
-Generated 2024-06-05T08:43:22.224729+00:00
+Generated 2024-06-06T08:40:37.671949+00:00
 === Files ===
 Using example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -10,4 +10,14 @@ Output Turtle example_1_1.ttl created
 === JSON Schema ===
 Validation passed
 === End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/records-ontology/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/records-ontology/rules.shacl:
+ - Shape <https://www.ogc.org/rules/rec/#testVarExists>: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate
+
+=== End SHACL ===
 

@@ -367,19 +367,19 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <urn:stac:vocab#> .
 
-<https://example.com/stac/raster/example-1/eo-collection> a <https://example.com/stac/raster/example-1/Collection> ;
-    rdfs:label "Simple EO Collection" ;
+<https://example.com/stac/raster/example-1/eo-collection> rdfs:label "Simple EO Collection" ;
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
-    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
-        [ rdfs:label "Simple Example Collection" ;
+    dcterms:type "Collection" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "20201211_223832_CS2" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
     stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
         "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json" ;
     stac:version "1.0.0" .
@@ -712,22 +712,22 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/20201211_223832_CS2> a geojson:Feature ;
-    ns2:cloud_cover 1.2e+00 ;
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> ns2:cloud_cover 1.2e+00 ;
     ns2:snow_cover 0 ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
+    dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -768,7 +768,9 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/schema.yaml
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.yaml
+- oneOf:
+  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.yaml
+  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-collection/schema.yaml
 
 ```
 
@@ -794,14 +796,16 @@ Links to the schema:
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
-    "type": "@type",
+    "type": "dct:type",
     "hreflang": "dct:language",
     "title": "rdfs:label",
     "length": "dct:extent",
     "id": "@id",
     "properties": "@nest",
     "geometry": {
-      "@context": {},
+      "@context": {
+        "type": "@type"
+      },
       "@id": "geojson:geometry"
     },
     "bbox": {
@@ -822,9 +826,7 @@ Links to the schema:
       "@id": "geojson:features"
     },
     "links": {
-      "@context": {
-        "type": "dct:type"
-      },
+      "@context": {},
       "@id": "rdfs:seeAlso"
     },
     "coordinates": {
