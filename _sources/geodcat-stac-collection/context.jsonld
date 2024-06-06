@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "stac": "urn:stac:vocab#",
+    "dct": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "stac_version": "stac:version",
+    "stac_extensions": "stac:extensions",
+    "description": "dct:description",
+    "license": "dct:license",
+    "keywords": "dct:subject",
+    "extent": "dct:extent",
+    "links": "rdfs:seeAlso",
+    "assets": {
+        "@id": "stac:hasAsset",
+        "@container": "@id",
+        "@context": {
+            "href": {
+                "@id": "dcat:downloadURL",
+                "@type": "@id"
+            },
+            "title": "dct:title",
+            "type": "dct:format"
+        }
+    }
+  }
+}
