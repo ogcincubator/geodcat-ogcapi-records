@@ -2,9 +2,9 @@
 
 {
   "itemIdentifier": "ogc.geo.geodcat.geodcat-stac-collection",
-  "name": "GeoDCAT profile of STAC collection",
+  "name": "GeoDCAT mapping for STAC collection",
   "highlighted": true,
-  "abstract": "GeoDCAT profile of STAC collection binds the STAC collections schema to the core GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+  "abstract": "This building block defines mappings from the STAC collections schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.",
   "status": "under-development",
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "schema",
@@ -14,7 +14,7 @@
     "ogc.geo.geodcat.geodcat"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2024-06-06",
+  "dateOfLastChange": "2024-06-19",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -72,7 +72,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix stac: <urn:stac:vocab#> .\n\n[] rdfs:label \"Simple Example Collection\" ;\n    dcterms:description \"A simple collection demonstrating core catalog fields with links to a couple of items\" ;\n    dcterms:extent [ ] ;\n    dcterms:license \"CC-BY-4.0\" ;\n    dcterms:type \"Collection\" ;\n    rdfs:seeAlso [ rdfs:label \"Core Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],\n        [ rdfs:label \"Extended Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],\n        [ rdfs:label \"Simple Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],\n        [ dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ],\n        [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/root> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;\n    stac:extensions \"https://stac-extensions.github.io/eo/v1.0.0/schema.json\",\n        \"https://stac-extensions.github.io/projection/v1.0.0/schema.json\",\n        \"https://stac-extensions.github.io/view/v1.0.0/schema.json\" ;\n    stac:version \"1.0.0\" .\n\n",
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix stac: <urn:stac:vocab#> .\n\n[] rdfs:label \"Simple Example Collection\" ;\n    dcterms:description \"A simple collection demonstrating core catalog fields with links to a couple of items\" ;\n    dcterms:extent [ ] ;\n    dcterms:license \"CC-BY-4.0\" ;\n    dcterms:type \"Collection\" ;\n    rdfs:seeAlso [ rdfs:label \"Extended Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],\n        [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/root> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ],\n        [ rdfs:label \"Simple Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],\n        [ rdfs:label \"Core Item\" ;\n            dcterms:type \"application/geo+json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/item> ;\n            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],\n        [ dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ] ;\n    stac:extensions \"https://stac-extensions.github.io/eo/v1.0.0/schema.json\",\n        \"https://stac-extensions.github.io/projection/v1.0.0/schema.json\",\n        \"https://stac-extensions.github.io/view/v1.0.0/schema.json\" ;\n    stac:version \"1.0.0\" .\n\n",
           "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-stac-collection/example_1_1.ttl"
         }
       ]

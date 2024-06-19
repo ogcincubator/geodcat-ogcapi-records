@@ -1,0 +1,191 @@
+Validation report for ogc.geo.geodcat.geodcat-stac-item - GeoDCAT mapping to STAC item
+Generated 2024-06-19T14:17:59.660498+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 909, in resolve_from_url
+    document = self.store[url]
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_utils.py", line 28, in __getitem__
+    return self.store[self.normalize(uri)]
+,KeyError: 'https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json'
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/urllib3/connection.py", line 196, in _new_conn
+    sock = connection.create_connection(
+,  File "/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+,  File "/usr/local/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+,socket.gaierror: [Errno -3] Try again
+,
+The above exception was the direct cause of the following exception:
+
+,Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+,  File "/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+,  File "/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+,  File "/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+,  File "/venv/lib/python3.10/site-packages/urllib3/connection.py", line 615, in connect
+    self.sock = sock = self._new_conn()
+,  File "/venv/lib/python3.10/site-packages/urllib3/connection.py", line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+,urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370>: Failed to resolve 'schemas.stacspec.org' ([Errno -3] Try again)
+,
+The above exception was the direct cause of the following exception:
+
+,Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+,  File "/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+,  File "/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+,urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='schemas.stacspec.org', port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370>: Failed to resolve 'schemas.stacspec.org' ([Errno -3] Try again)"))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 912, in resolve_from_url
+    document = self.resolve_remote(url)
+,  File "/src/ogc/bblocks/validate.py", line 917, in resolve_remote
+    result = load_yaml(content=requests.get(uri).content)
+,  File "/venv/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+,  File "/venv/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+,  File "/venv/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+,  File "/venv/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+,  File "/venv/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+,requests.exceptions.ConnectionError: HTTPSConnectionPool(host='schemas.stacspec.org', port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370>: Failed to resolve 'schemas.stacspec.org' ([Errno -3] Try again)"))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 533, in validate_inner
+    validate_json(json_doc, schema_validator)
+,  File "/src/ogc/bblocks/validate.py", line 944, in validate_json
+    error = jsonschema.exceptions.best_match(validator.iter_errors(instance))
+,  File "/venv/lib/python3.10/site-packages/jsonschema/exceptions.py", line 384, in best_match
+    best = next(errors, None)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 332, in properties
+    yield from validator.descend(
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 46, in additionalProperties
+    yield from validator.descend(instance[extra], aP, path=extra)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 294, in ref
+    scope, resolved = validator.resolver.resolve(ref)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 898, in resolve
+    return url, self._remote_cache(url)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 914, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+,jsonschema.exceptions.RefResolutionError: HTTPSConnectionPool(host='schemas.stacspec.org', port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370>: Failed to resolve 'schemas.stacspec.org' ([Errno -3] Try again)"))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 657, in _validate_resource
+    validate_inner()
+,  File "/src/ogc/bblocks/validate.py", line 553, in validate_inner
+    'errorMessage': e.message,
+,AttributeError: 'RefResolutionError' object has no attribute 'message'
+
+=== End Unknown errors ===
+

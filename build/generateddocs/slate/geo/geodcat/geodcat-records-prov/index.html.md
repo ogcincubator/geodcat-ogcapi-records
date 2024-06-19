@@ -757,7 +757,7 @@ Links to the schema:
                     "activityType": "@type",
                     "endedAtTime": {
                       "@id": "prov:endedAtTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "wasAssociatedWith": {
                       "@context": {
@@ -794,7 +794,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         },
                         "entity": {
                           "@id": "prov:entity",
@@ -808,7 +808,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         },
                         "hadRole": {
                           "@id": "prov:hadRole",
@@ -830,7 +830,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         },
                         "entity": {
                           "@id": "prov:entity",
@@ -844,7 +844,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         },
                         "entity": {
                           "@id": "prov:entity",
@@ -906,7 +906,7 @@ Links to the schema:
     "spatialResolution": {
       "@container": "@set",
       "@id": "dcat:spatialResolutionInMeters",
-      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      "@type": "xsd:decimal"
     },
     "temporalCoverage": {
       "@container": "@set",
@@ -916,7 +916,7 @@ Links to the schema:
     "temporalResolution": {
       "@container": "@set",
       "@id": "dcat:temporalResolution",
-      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+      "@type": "xsd:duration"
     },
     "theme": {
       "@container": "@set",
@@ -939,7 +939,7 @@ Links to the schema:
         "activityType": "@type",
         "endedAtTime": {
           "@id": "prov:endedAtTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "wasAssociatedWith": {
           "@context": {
@@ -996,7 +996,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1010,7 +1010,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "hadRole": {
               "@id": "prov:hadRole",
@@ -1036,7 +1036,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1054,7 +1054,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1125,7 +1125,7 @@ Links to the schema:
         "activityType": "@type",
         "endedAtTime": {
           "@id": "prov:endedAtTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "wasAssociatedWith": {
           "@context": {
@@ -1162,7 +1162,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1176,7 +1176,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "hadRole": {
               "@id": "prov:hadRole",
@@ -1202,7 +1202,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1220,7 +1220,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1299,7 +1299,7 @@ Links to the schema:
                 "activityType": "@type",
                 "endedAtTime": {
                   "@id": "prov:endedAtTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "wasAssociatedWith": {
                   "@id": "prov:wasAssociatedWith",
@@ -1333,7 +1333,7 @@ Links to the schema:
                   "@context": {
                     "atTime": {
                       "@id": "prov:atTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "entity": {
                       "@id": "prov:entity",
@@ -1347,7 +1347,7 @@ Links to the schema:
                   "@context": {
                     "atTime": {
                       "@id": "prov:atTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "hadRole": {
                       "@id": "prov:hadRole",
@@ -1369,7 +1369,7 @@ Links to the schema:
                   "@context": {
                     "atTime": {
                       "@id": "prov:atTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "entity": {
                       "@id": "prov:entity",
@@ -1383,7 +1383,7 @@ Links to the schema:
                   "@context": {
                     "atTime": {
                       "@id": "prov:atTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "entity": {
                       "@id": "prov:entity",
@@ -1440,7 +1440,7 @@ Links to the schema:
         "activityType": "@type",
         "endedAtTime": {
           "@id": "prov:endedAtTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "wasAssociatedWith": {
           "@context": {
@@ -1497,7 +1497,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1511,7 +1511,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "hadRole": {
               "@id": "prov:hadRole",
@@ -1537,7 +1537,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1555,7 +1555,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -1628,7 +1628,7 @@ Links to the schema:
       "@context": {
         "atTime": {
           "@id": "prov:atTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "hadRole": {
           "@id": "prov:hadRole",
@@ -1643,7 +1643,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -1764,7 +1764,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -1888,7 +1888,7 @@ Links to the schema:
       "@context": {
         "atTime": {
           "@id": "prov:atTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "hadRole": {
           "@id": "prov:hadRole",
@@ -1903,7 +1903,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -2024,7 +2024,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -2150,7 +2150,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "hadRole": {
               "@id": "prov:hadRole",
@@ -2165,7 +2165,7 @@ Links to the schema:
                 "activityType": "@type",
                 "endedAtTime": {
                   "@id": "prov:endedAtTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "wasAssociatedWith": {
                   "@context": {
@@ -2272,7 +2272,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -2325,7 +2325,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 }
               },
               "@id": "prov:qualifiedUsage",
@@ -2335,7 +2335,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadRole": {
                   "@id": "prov:hadRole",
@@ -2357,7 +2357,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 }
               },
               "@id": "prov:qualifiedStart",
@@ -2367,7 +2367,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 }
               },
               "@id": "prov:qualifiedEnd",
@@ -2414,7 +2414,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             }
           },
           "@id": "prov:hadUsage",
@@ -2433,7 +2433,7 @@ Links to the schema:
         "activityType": "@type",
         "endedAtTime": {
           "@id": "prov:endedAtTime",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "wasAssociatedWith": {
           "@id": "prov:wasAssociatedWith",
@@ -2467,7 +2467,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -2481,7 +2481,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "hadRole": {
               "@id": "prov:hadRole",
@@ -2507,7 +2507,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -2525,7 +2525,7 @@ Links to the schema:
           "@context": {
             "atTime": {
               "@id": "prov:atTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "entity": {
               "@id": "prov:entity",
@@ -2589,7 +2589,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@id": "prov:wasAssociatedWith",
@@ -2623,7 +2623,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 }
               },
               "@id": "prov:qualifiedUsage",
@@ -2633,7 +2633,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadRole": {
                   "@id": "prov:hadRole",
@@ -2651,7 +2651,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadActivity": {
                   "@id": "prov:hadActivity",
@@ -2665,7 +2665,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadActivity": {
                   "@id": "prov:hadActivity",
@@ -2719,7 +2719,7 @@ Links to the schema:
             "activityType": "@type",
             "endedAtTime": {
               "@id": "prov:endedAtTime",
-              "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "@type": "xsd:dateTime"
             },
             "wasAssociatedWith": {
               "@context": {
@@ -2772,7 +2772,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 }
               },
               "@id": "prov:qualifiedUsage",
@@ -2782,7 +2782,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadRole": {
                   "@id": "prov:hadRole",
@@ -2800,7 +2800,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadActivity": {
                   "@id": "prov:hadActivity",
@@ -2814,7 +2814,7 @@ Links to the schema:
               "@context": {
                 "atTime": {
                   "@id": "prov:atTime",
-                  "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                  "@type": "xsd:dateTime"
                 },
                 "hadActivity": {
                   "@id": "prov:hadActivity",
@@ -2883,7 +2883,7 @@ Links to the schema:
                     "activityType": "@type",
                     "endedAtTime": {
                       "@id": "prov:endedAtTime",
-                      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                      "@type": "xsd:dateTime"
                     },
                     "wasAssociatedWith": {
                       "@id": "prov:wasAssociatedWith",
@@ -2917,7 +2917,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         }
                       },
                       "@id": "prov:qualifiedUsage",
@@ -2927,7 +2927,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         },
                         "hadRole": {
                           "@id": "prov:hadRole",
@@ -2941,7 +2941,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         }
                       },
                       "@id": "prov:qualifiedStart",
@@ -2951,7 +2951,7 @@ Links to the schema:
                       "@context": {
                         "atTime": {
                           "@id": "prov:atTime",
-                          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+                          "@type": "xsd:dateTime"
                         }
                       },
                       "@id": "prov:qualifiedEnd",
@@ -3045,25 +3045,25 @@ Links to the schema:
     "Removal": "prov:Removal",
     "generatedAtTime": {
       "@id": "prov:generatedAtTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@type": "xsd:dateTime"
     },
     "invalidatedAtTime": {
       "@id": "prov:invalidatedAtTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@type": "xsd:dateTime"
     },
     "startedAtTime": {
       "@id": "prov:startedAtTime",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@type": "xsd:dateTime"
     },
     "value": "prov:value",
     "provenanceUriTemplate": "prov:provenanceUriTemplate",
     "pairKey": {
       "@id": "prov:pairKey",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type": "rdfs:Literal"
     },
     "removedKey": {
       "@id": "prov:removedKey",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type": "rdfs:Literal"
     },
     "influenced": {
       "@id": "prov:influenced",

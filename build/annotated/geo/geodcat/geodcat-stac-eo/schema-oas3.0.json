@@ -147,7 +147,6 @@
       "description": "STAC EO Extension for STAC Items.",
       "oneOf": [
         {
-          "$comment": "This is the schema for STAC Items.",
           "allOf": [
             {
               "type": "object",
@@ -172,7 +171,6 @@
                   }
                 }
               },
-              "$comment": "The if-then-else below checks whether the eo:bands is given in assets or not. If yes, allows eo:bands in properties (else), otherwise, disallows eo:bands in properties (then).",
               "if": {
                 "required": [
                   "assets"
@@ -215,7 +213,6 @@
           ]
         },
         {
-          "$comment": "This is the schema for STAC Collections.",
           "allOf": [
             {
               "type": "object",
@@ -283,9 +280,6 @@
             "eo:bands": {
               "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/eo_v1.1.0_schema/definitions/bands"
             }
-          },
-          "patternProperties": {
-            "^(?!eo:)": {}
           },
           "additionalProperties": false
         },
@@ -687,7 +681,6 @@
       "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.features.v1.schemas.collection": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml",
       "type": "object",
       "required": [
         "id",
@@ -1715,7 +1708,6 @@
       "x-schema-version": "https://json-schema.org/draft/2020-12/schema"
     },
     "ogc.api.features.v1.schemas.collection_1": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml",
       "type": "object",
       "required": [
         "id",
@@ -2078,7 +2070,6 @@
       ]
     },
     "ogc.api.features.v1.schemas.extent": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml",
       "description": "The extent of the features in the collection. In the Core only spatial and temporal\nextents are specified. Extensions may add additional members to represent other\nextents, for example, thermal or pressure ranges.\n\nAn array of extents is provided for each extent type (spatial, temporal). The first item\nin the array describes the overall extent of the data. All subsequent items describe more\nprecise extents, e.g., to identify clusters of data. Clients only interested in the\noverall extent will only need to access the first extent in the array.",
       "type": "object",
       "properties": {
@@ -2875,7 +2866,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.json"
     },
     "ogc.api.records.v1.schemas.contact": {
-      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml",
       "type": "object",
       "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
       "anyOf": [
@@ -3063,7 +3053,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.json"
     },
     "ogc.api.records.v1.schemas.linkBase": {
-      "$comment": "Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml",
       "type": "object",
       "properties": {
         "rel": {
@@ -3124,7 +3113,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.json"
     },
     "ogc.api.records.v1.schemas.linkTemplate": {
-      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml",
       "allOf": [
         {
           "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase"
@@ -4783,7 +4771,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml"
     },
     "ogc.api.records.v1.schemas.contact_1": {
-      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml",
       "type": "object",
       "description": "Identification of, and means of communication with, person responsible\nfor the resource.",
       "anyOf": [
@@ -4971,7 +4958,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml"
     },
     "ogc.api.records.v1.schemas.linkBase_1": {
-      "$comment": "Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml",
       "type": "object",
       "properties": {
         "rel": {
@@ -5032,7 +5018,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml"
     },
     "ogc.api.records.v1.schemas.linkTemplate_1": {
-      "$comment": "Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml",
       "allOf": [
         {
           "$ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.json#/x-defs/ogc.api.records.v1.schemas.linkBase_1"
@@ -5068,7 +5053,6 @@
       "x-schema-source": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkTemplate/schema.yaml"
     },
     "ogc.api.features.v1.schemas.extent_1": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml",
       "description": "The extent of the features in the collection. In the Core only spatial and temporal\nextents are specified. Extensions may add additional members to represent other\nextents, for example, thermal or pressure ranges.\n\nAn array of extents is provided for each extent type (spatial, temporal). The first item\nin the array describes the overall extent of the data. All subsequent items describe more\nprecise extents, e.g., to identify clusters of data. Clients only interested in the\noverall extent will only need to access the first extent in the array.",
       "type": "object",
       "properties": {

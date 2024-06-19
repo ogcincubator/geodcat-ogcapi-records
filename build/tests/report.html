@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-06-06T08:40:42.305278+00:00</small>
+            <small class="datetime">Generated at 2024-06-19T14:18:26.698503+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 9 / 10 (90%)
+                    Number of passing building blocks: 8 / 10 (80%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -367,7 +367,7 @@
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-collection">
                                     <div class="flex-fill">
-                                        GeoDCAT profile of STAC collection
+                                        GeoDCAT mapping for STAC collection
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-collection</small>
                                     </div>
 
@@ -420,7 +420,7 @@
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-records">
                                     <div class="flex-fill">
-                                        GeoDCAT profile of OGC API Records
+                                        GeoDCAT mapping for OGC API Records
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records</small>
                                     </div>
 
@@ -612,25 +612,214 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-item" id="bblock-ogc.geo.geodcat.geodcat-stac-item">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-item">
                                     <div class="flex-fill">
-                                        GeoDCAT profile of STAC item
+                                        GeoDCAT mapping to STAC item
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-item</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (50% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-item">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-item">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 1 / 2
                                         </p>
+                                        <div class="card mb-2 global-validation-item validation-item">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    Building block global validation errors
+                                                    <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text text-danger">
+                                                        <div class="font-monospace entry-message section-unknown">Traceback (most recent call last):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 909, in resolve_from_url
+    document = self.store[url]
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_utils.py&quot;, line 28, in __getitem__
+    return self.store[self.normalize(uri)]
+,KeyError: &#x27;https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/datetime.json&#x27;
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connection.py&quot;, line 196, in _new_conn
+    sock = connection.create_connection(
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/util/connection.py&quot;, line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+,  File &quot;/usr/local/lib/python3.10/socket.py&quot;, line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+,socket.gaierror: [Errno -3] Try again
+,
+The above exception was the direct cause of the following exception:
+
+,Traceback (most recent call last):
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connectionpool.py&quot;, line 789, in urlopen
+    response = self._make_request(
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connectionpool.py&quot;, line 490, in _make_request
+    raise new_e
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connectionpool.py&quot;, line 466, in _make_request
+    self._validate_conn(conn)
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connectionpool.py&quot;, line 1095, in _validate_conn
+    conn.connect()
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connection.py&quot;, line 615, in connect
+    self.sock = sock = self._new_conn()
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connection.py&quot;, line 203, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+,urllib3.exceptions.NameResolutionError: &lt;urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370&gt;: Failed to resolve &#x27;schemas.stacspec.org&#x27; ([Errno -3] Try again)
+,
+The above exception was the direct cause of the following exception:
+
+,Traceback (most recent call last):
+,  File &quot;/venv/lib/python3.10/site-packages/requests/adapters.py&quot;, line 486, in send
+    resp = conn.urlopen(
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/connectionpool.py&quot;, line 843, in urlopen
+    retries = retries.increment(
+,  File &quot;/venv/lib/python3.10/site-packages/urllib3/util/retry.py&quot;, line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+,urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host=&#x27;schemas.stacspec.org&#x27;, port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError(&quot;&lt;urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370&gt;: Failed to resolve &#x27;schemas.stacspec.org&#x27; ([Errno -3] Try again)&quot;))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 912, in resolve_from_url
+    document = self.resolve_remote(url)
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 917, in resolve_remote
+    result = load_yaml(content=requests.get(uri).content)
+,  File &quot;/venv/lib/python3.10/site-packages/requests/api.py&quot;, line 73, in get
+    return request(&quot;get&quot;, url, params=params, **kwargs)
+,  File &quot;/venv/lib/python3.10/site-packages/requests/api.py&quot;, line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+,  File &quot;/venv/lib/python3.10/site-packages/requests/sessions.py&quot;, line 589, in request
+    resp = self.send(prep, **send_kwargs)
+,  File &quot;/venv/lib/python3.10/site-packages/requests/sessions.py&quot;, line 703, in send
+    r = adapter.send(request, **kwargs)
+,  File &quot;/venv/lib/python3.10/site-packages/requests/adapters.py&quot;, line 519, in send
+    raise ConnectionError(e, request=request)
+,requests.exceptions.ConnectionError: HTTPSConnectionPool(host=&#x27;schemas.stacspec.org&#x27;, port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError(&quot;&lt;urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370&gt;: Failed to resolve &#x27;schemas.stacspec.org&#x27; ([Errno -3] Try again)&quot;))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 533, in validate_inner
+    validate_json(json_doc, schema_validator)
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 944, in validate_json
+    error = jsonschema.exceptions.best_match(validator.iter_errors(instance))
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/exceptions.py&quot;, line 384, in best_match
+    best = next(errors, None)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 332, in properties
+    yield from validator.descend(
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 46, in additionalProperties
+    yield from validator.descend(instance[extra], aP, path=extra)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 288, in iter_errors
+    for error in errors:
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/_validators.py&quot;, line 294, in ref
+    scope, resolved = validator.resolver.resolve(ref)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 898, in resolve
+    return url, self._remote_cache(url)
+,  File &quot;/venv/lib/python3.10/site-packages/jsonschema/validators.py&quot;, line 914, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+,jsonschema.exceptions.RefResolutionError: HTTPSConnectionPool(host=&#x27;schemas.stacspec.org&#x27;, port=443): Max retries exceeded with url: /v1.0.0/item-spec/json-schema/datetime.json (Caused by NameResolutionError(&quot;&lt;urllib3.connection.HTTPSConnection object at 0x7f37ce2ec370&gt;: Failed to resolve &#x27;schemas.stacspec.org&#x27; ([Errno -3] Try again)&quot;))
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 657, in _validate_resource
+    validate_inner()
+,  File &quot;/src/ogc/bblocks/validate.py&quot;, line 553, in validate_inner
+    &#x27;errorMessage&#x27;: e.message,
+,AttributeError: &#x27;RefResolutionError&#x27; object has no attribute &#x27;message&#x27;
+</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
                                                 <div class="card-title mb-0">
@@ -644,26 +833,17 @@
                                                     <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/simple-item.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-11">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_1_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/records-ontology/rules.shacl:
- - Shape &lt;https://www.ogc.org/rules/rec/#testVarExists&gt;: *none*
-</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -686,6 +866,7 @@
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-12">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                     <div class="font-monospace entry-message section-files ">Using example_2_1.json from examples</div>
                                                                     <div class="font-monospace entry-message section-files ">JSON-LD context is present - uplifting</div>

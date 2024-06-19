@@ -2,12 +2,12 @@
   "name": "GeoDCAT implementation using OGC API Records",
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
-  "modified": "2024-06-06T08:40:15.970855",
+  "modified": "2024-06-19T14:17:06.453596",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"4f88cb1c96833f8205a6efc8aaee31c2f3eafbad",
-      "shortCommitId": "\"4f88cb",
-      "date": "2024-06-06T07:29:55+00:00\""
+      "commitId": "\"6badef16348eb4c240d1a1e4389d783ba62b56b9",
+      "shortCommitId": "\"6badef",
+      "date": "2024-06-18T18:19:19+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -30,7 +30,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [],
       "scope": "dev",
@@ -69,7 +69,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -118,7 +118,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [],
       "sources": [
@@ -170,7 +170,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "ogc.geo.geodcat.dcat"
@@ -226,12 +226,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "ogc.api.records.v1.schemas.recordGeoJSON",
+        "ogc.geo.geodcat.records-ontology",
         "ogc.geo.geodcat.dcat",
-        "ogc.geo.geodcat.records-ontology"
+        "ogc.api.records.v1.schemas.recordGeoJSON"
       ],
       "sources": [
         {
@@ -285,9 +285,9 @@
     },
     {
       "itemIdentifier": "ogc.geo.geodcat.geodcat-stac-collection",
-      "name": "GeoDCAT profile of STAC collection",
+      "name": "GeoDCAT mapping for STAC collection",
       "highlighted": true,
-      "abstract": "GeoDCAT profile of STAC collection binds the STAC collections schema to the core GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+      "abstract": "This building block defines mappings from the STAC collections schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
       "itemClass": "schema",
@@ -297,7 +297,7 @@
         "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -356,19 +356,19 @@
     },
     {
       "itemIdentifier": "ogc.geo.geodcat.geodcat-records",
-      "name": "GeoDCAT profile of OGC API Records",
+      "name": "GeoDCAT mapping for OGC API Records",
       "highlighted": true,
-      "abstract": "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+      "abstract": "GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.available profile",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-records"
+        "ogc.geo.geodcat.dcat-records",
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [
         {
@@ -434,12 +434,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.geo.geodcat.prov",
+        "ogc.geo.geodcat.geodcat-records",
         "ogc.ogc-utils.prov"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -493,20 +493,20 @@
     },
     {
       "itemIdentifier": "ogc.geo.geodcat.geodcat-stac-item",
-      "name": "GeoDCAT profile of STAC item",
+      "name": "GeoDCAT mapping to STAC item",
       "highlighted": true,
-      "abstract": "GeoDCAT profile of STAC item binds the STAC schema to the core GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile",
+      "abstract": "This building block defines mappings from the STAC item schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.geo.geodcat.geodcat",
-        "ogc.contrib.stac.item"
+        "ogc.contrib.stac.item",
+        "ogc.geo.geodcat.geodcat-records"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -546,7 +546,7 @@
       "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-stac-item/schema.yaml",
       "sourceLdContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-stac-item/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-stac-item/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-stac-item/",
       "documentation": {
         "markdown": {
@@ -571,18 +571,18 @@
       "itemIdentifier": "ogc.geo.geodcat.geodcat-stac-eo",
       "name": "GeoDCAT profile of STAC Electro-Optical extension",
       "highlighted": true,
-      "abstract": "GeoDCAT profile of STAC Electro-Optical extension binds the STAC schema to the an \"Electro-Optical extension\" GeoDCAT profile.",
+      "abstract": "This profile binds the schema for the STAC Electro-Optical extension to a profile of GeoDCAT.  It inherits a common mapping of STAC and OGC API Records Item and Collection objects to the DCAT model. Additional terminology reequired for the semantics of the extension can be mapped to additional ontologies as required. (Note this is a work in progress, the building blocks provide a test harness for these mappings, allowing systematic development of a GeoDCAT core ontology to meet the requirements of these existing metadata schemas.",
       "status": "under-development",
       "dateTimeAddition": "2023-09-18T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
         "ogc.contrib.stac.extensions.eo",
-        "ogc.geo.geodcat.geodcat-stac-item",
-        "ogc.geo.geodcat.geodcat-stac-collection"
+        "ogc.geo.geodcat.geodcat-stac-collection",
+        "ogc.geo.geodcat.geodcat-stac-item"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-06-06",
+      "dateOfLastChange": "2024-06-19",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {

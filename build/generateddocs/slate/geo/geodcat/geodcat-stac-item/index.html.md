@@ -1,5 +1,5 @@
 ---
-title: GeoDCAT profile of STAC item (Schema)
+title: GeoDCAT mapping to STAC item (Schema)
 
 language_tabs:
   - json: JSON
@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - Version 0.1
-  - <a href='#'>GeoDCAT profile of STAC item</a>
+  - <a href='#'>GeoDCAT mapping to STAC item</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -16,21 +16,21 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: GeoDCAT profile of STAC item (Schema)
+  - name: GeoDCAT mapping to STAC item (Schema)
 ---
 
 
-# GeoDCAT profile of STAC item `ogc.geo.geodcat.geodcat-stac-item`
+# GeoDCAT mapping to STAC item `ogc.geo.geodcat.geodcat-stac-item`
 
-GeoDCAT profile of STAC item binds the STAC schema to the core GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile
+This building block defines mappings from the STAC item schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="success">
-This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-stac-item/" target="_blank">valid</a></strong>
+<aside class="warning">
+Validation for this building block has <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-stac-item/" target="_blank">failed</a></strong>
 </aside>
 
 # Description
@@ -250,11 +250,11 @@ This profile extends a building block that uses the official JSON-LD context for
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -586,20 +586,20 @@ This is the simple item example from the STAC specification.
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "HTML version of this STAC Item" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
+        [ rdfs:label "HTML version of this STAC Item" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
@@ -876,7 +876,7 @@ Links to the schema:
     "spatialResolution": {
       "@container": "@set",
       "@id": "dcat:spatialResolutionInMeters",
-      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      "@type": "xsd:decimal"
     },
     "temporalCoverage": {
       "@container": "@set",
@@ -886,7 +886,7 @@ Links to the schema:
     "temporalResolution": {
       "@container": "@set",
       "@id": "dcat:temporalResolution",
-      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+      "@type": "xsd:duration"
     },
     "theme": {
       "@container": "@set",

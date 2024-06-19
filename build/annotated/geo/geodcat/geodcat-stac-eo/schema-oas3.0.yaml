@@ -93,8 +93,7 @@ x-defs:
     title: EO Extension
     description: STAC EO Extension for STAC Items.
     oneOf:
-    - $comment: This is the schema for STAC Items.
-      allOf:
+    - allOf:
       - type: object
         required:
         - type
@@ -110,9 +109,6 @@ x-defs:
             type: object
             additionalProperties:
               $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.yaml#/x-defs/eo_v1.1.0_schema/definitions/fields
-        $comment: The if-then-else below checks whether the eo:bands is given in assets
-          or not. If yes, allows eo:bands in properties (else), otherwise, disallows
-          eo:bands in properties (then).
         if:
           required:
           - assets
@@ -134,8 +130,7 @@ x-defs:
                 eo:bands:
                   $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.yaml#/x-defs/eo_v1.1.0_schema/definitions/bands
       - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.yaml#/x-defs/eo_v1.1.0_schema/definitions/stac_extensions
-    - $comment: This is the schema for STAC Collections.
-      allOf:
+    - allOf:
       - type: object
         required:
         - type
@@ -178,8 +173,6 @@ x-defs:
             maximum: 100
           eo:bands:
             $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.yaml#/x-defs/eo_v1.1.0_schema/definitions/bands
-        patternProperties:
-          ^(?!eo:): {}
         additionalProperties: false
       bands:
         title: Bands
@@ -438,7 +431,6 @@ x-defs:
     x-schema-id: https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json#
     x-schema-version: http://json-schema.org/draft-07/schema#
   ogc.api.features.v1.schemas.collection:
-    $comment: Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml
     type: object
     required:
     - id
@@ -1170,7 +1162,6 @@ x-defs:
     - type: object
     - type: boolean
   ogc.api.features.v1.schemas.extent:
-    $comment: Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml
     description: 'The extent of the features in the collection. In the Core only spatial
       and temporal
 
@@ -1817,7 +1808,6 @@ x-defs:
           the queryable's schema definition.
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml
   ogc.api.records.v1.schemas.contact:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml
     type: object
     description: 'Identification of, and means of communication with, person responsible
 
@@ -1953,7 +1943,6 @@ x-defs:
       first place since there is no point in making such a resource discoverable.
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
   ogc.api.records.v1.schemas.linkBase:
-    $comment: Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml
     type: object
     properties:
       rel:
@@ -2006,7 +1995,6 @@ x-defs:
       xsd: http://www.w3.org/2001/XMLSchema#
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
   ogc.api.records.v1.schemas.linkTemplate:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
     - type: object

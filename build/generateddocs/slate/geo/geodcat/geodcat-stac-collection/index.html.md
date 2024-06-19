@@ -1,5 +1,5 @@
 ---
-title: GeoDCAT profile of STAC collection (Schema)
+title: GeoDCAT mapping for STAC collection (Schema)
 
 language_tabs:
   - json: JSON
@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - Version 0.1
-  - <a href='#'>GeoDCAT profile of STAC collection</a>
+  - <a href='#'>GeoDCAT mapping for STAC collection</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -16,13 +16,13 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: GeoDCAT profile of STAC collection (Schema)
+  - name: GeoDCAT mapping for STAC collection (Schema)
 ---
 
 
-# GeoDCAT profile of STAC collection `ogc.geo.geodcat.geodcat-stac-collection`
+# GeoDCAT mapping for STAC collection `ogc.geo.geodcat.geodcat-stac-collection`
 
-GeoDCAT profile of STAC collection binds the STAC collections schema to the core GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile
+This building block defines mappings from the STAC collections schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -310,25 +310,25 @@ This profile extends a building block that uses the official JSON-LD context for
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Core Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
-        [ rdfs:label "Extended Item" ;
+    rdfs:seeAlso [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ rdfs:label "Core Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
         [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ] ;
     stac:extensions "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;

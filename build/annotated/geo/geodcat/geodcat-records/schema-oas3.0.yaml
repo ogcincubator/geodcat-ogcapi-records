@@ -836,7 +836,6 @@ x-defs:
           the queryable's schema definition.
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/theme/schema.yaml
   ogc.api.records.v1.schemas.contact:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/contact.yaml
     type: object
     description: 'Identification of, and means of communication with, person responsible
 
@@ -972,7 +971,6 @@ x-defs:
       first place since there is no point in making such a resource discoverable.
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/license/schema.yaml
   ogc.api.records.v1.schemas.linkBase:
-    $comment: Adapted from https://github.com/opengeospatial/ogcapi-records/raw/master/core/openapi/schemas/linkBase.yaml
     type: object
     properties:
       rel:
@@ -1025,7 +1023,6 @@ x-defs:
       xsd: http://www.w3.org/2001/XMLSchema#
     x-schema-source: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/linkBase/schema.yaml
   ogc.api.records.v1.schemas.linkTemplate:
-    $comment: Adapted from https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/schemas/linkTemplate.yaml
     allOf:
     - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema-oas3.0.yaml#/x-defs/ogc.api.records.v1.schemas.linkBase
     - type: object

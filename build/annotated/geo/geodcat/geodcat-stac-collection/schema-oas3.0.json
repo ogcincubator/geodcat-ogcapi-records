@@ -306,7 +306,6 @@
       "x-schema-version": "http://json-schema.org/draft-07/schema#"
     },
     "ogc.api.features.v1.schemas.collection": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/collection.yaml",
       "type": "object",
       "required": [
         "id",
@@ -946,7 +945,6 @@
       ]
     },
     "ogc.api.features.v1.schemas.extent": {
-      "$comment": "Adapted from https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/extent.yaml",
       "description": "The extent of the features in the collection. In the Core only spatial and temporal\nextents are specified. Extensions may add additional members to represent other\nextents, for example, thermal or pressure ranges.\n\nAn array of extents is provided for each extent type (spatial, temporal). The first item\nin the array describes the overall extent of the data. All subsequent items describe more\nprecise extents, e.g., to identify clusters of data. Clients only interested in the\noverall extent will only need to access the first extent in the array.",
       "type": "object",
       "properties": {

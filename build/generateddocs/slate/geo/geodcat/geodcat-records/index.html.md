@@ -1,5 +1,5 @@
 ---
-title: GeoDCAT profile of OGC API Records (Schema)
+title: GeoDCAT mapping for OGC API Records (Schema)
 
 language_tabs:
   - json: JSON
@@ -8,7 +8,7 @@ language_tabs:
 
 toc_footers:
   - Version 0.1
-  - <a href='#'>GeoDCAT profile of OGC API Records</a>
+  - <a href='#'>GeoDCAT mapping for OGC API Records</a>
   - <a href='https://blocks.ogc.org/register.html'>Building Blocks register</a>
 
 search: true
@@ -16,13 +16,13 @@ search: true
 code_clipboard: true
 
 meta:
-  - name: GeoDCAT profile of OGC API Records (Schema)
+  - name: GeoDCAT mapping for OGC API Records (Schema)
 ---
 
 
-# GeoDCAT profile of OGC API Records `ogc.geo.geodcat.geodcat-records`
+# GeoDCAT mapping for OGC API Records `ogc.geo.geodcat.geodcat-records`
 
-GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT. Additional schema elements are defined for each element of GeoDCAT not directly expressible in OGC API Records schema or other available profile
+GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDCAT profile of DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.available profile
 
 <p class="status">
     <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
@@ -498,17 +498,25 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:created "2021-02-08T00:00:00Z" ;
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ dcterms:language "fr-CA" ],
-        [ dcterms:language "en-CA" ],
+    dcterms:language [ dcterms:language "en-CA" ],
+        [ dcterms:language "fr-CA" ],
         "en-CA" ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
-    rdfs:seeAlso [ rdfs:label "Data Search / Download User Interface" ;
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
@@ -521,14 +529,6 @@ That building block is expected to be stable, whilst the GeoDCAT profile is unde
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
@@ -796,7 +796,7 @@ Links to the schema:
     "spatialResolution": {
       "@container": "@set",
       "@id": "dcat:spatialResolutionInMeters",
-      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      "@type": "xsd:decimal"
     },
     "temporalCoverage": {
       "@container": "@set",
@@ -806,7 +806,7 @@ Links to the schema:
     "temporalResolution": {
       "@container": "@set",
       "@id": "dcat:temporalResolution",
-      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+      "@type": "xsd:duration"
     },
     "theme": {
       "@container": "@set",
