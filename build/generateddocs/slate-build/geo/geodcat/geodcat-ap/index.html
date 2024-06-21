@@ -1,0 +1,471 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="GeoDCAT-AP profile (Model)"
+        >
+    <title>GeoDCAT-AP profile (Model)</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../../../stylesheets/screen-39090b13.css" rel="stylesheet" media="screen" />
+    <link href="../../../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="../../../javascripts/all-a25e0d73.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="geo geo_geodcat geo_geodcat_geodcat-ap geo_geodcat_geodcat-ap_index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../../../images/logo-4d9dfd05.svg" class="logo" alt="" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#geodcat-ap-profile-ogc-geo-geodcat-geodcat-ap" class="toc-h1 toc-link" data-title="GeoDCAT-AP profile ogc.geo.geodcat.geodcat-ap">GeoDCAT-AP profile <code>ogc.geo.geodcat.geodcat-ap</code></a>
+          </li>
+          <li>
+            <a href="#description" class="toc-h1 toc-link" data-title="Description">Description</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#geodcat-ap" class="toc-h2 toc-link" data-title="GeoDCAT-AP">GeoDCAT-AP</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#geodcat-ap-example" class="toc-h2 toc-link" data-title="GeoDCAT-AP example">GeoDCAT-AP example</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#references" class="toc-h1 toc-link" data-title="References">References</a>
+          </li>
+          <li>
+            <a href="#for-developers" class="toc-h1 toc-link" data-title="For developers">For developers</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li>Version 0.1</li>
+            <li><a href='#'>GeoDCAT-AP profile</a></li>
+            <li><a href='https://blocks.ogc.org/register.html'>Building Blocks register</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='geodcat-ap-profile-ogc-geo-geodcat-geodcat-ap'>GeoDCAT-AP profile <code>ogc.geo.geodcat.geodcat-ap</code></h1>
+<p>Provides a CI/CT/CD environment for the testing compatibility of GeoDCAT-AP with a regions neutral GeoDCAT definition.</p>
+
+<p class="status">
+    <span data-rainbow-uri="http://www.opengis.net/def/status">Status</span>:
+    <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
+</p>
+
+<aside class="success">
+This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-ap/" target="_blank">valid</a></strong>
+</aside>
+<h1 id='description'>Description</h1><h2 id='geodcat-ap'>GeoDCAT-AP</h2>
+<p>This building block provides a framework to test compatibility og GeoDCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.</p>
+<h1 id='examples'>Examples</h1><h2 id='geodcat-ap-example'>GeoDCAT-AP example</h2><div class="highlight"><pre class="highlight turtle tab-turtle"><code><span class="kd">@prefix</span><span class="w"> </span><span class="nn">adms:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/adms#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dcat:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/dcat#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">dct:</span><span class="w"> </span><span class="nl">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">foaf:</span><span class="w"> </span><span class="nl">&lt;http://xmlns.com/foaf/0.1/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">geodcat:</span><span class="w"> </span><span class="nl">&lt;http://data.europa.eu/930/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">gsp:</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">locn:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/locn#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">prov:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/ns/prov#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">record:</span><span class="w"> </span><span class="nl">&lt;https://some.catalogue/record/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">resource:</span><span class="w"> </span><span class="nl">&lt;https://some.catalogue/resource/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">vcard:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2006/vcard/ns#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xml:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/XML/1998/namespace&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span><span class="kd">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span><span class="nn">resource:</span><span class="n">eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">Dataset</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">geodcat:</span><span class="n">custodian</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/corporate-body/EEA&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">accrualPeriodicity</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/frequency/IRREG&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengis.net/def/crs/EPSG/0/3035&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">created</span><span class="w"> </span><span class="s">"2019-10-31"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"""
+    The data set includes the rasterized noise contours which have been
+    reported by countries under the terms of the Environmental Noise
+    Directive (END) by the 33 EEA member countries (EEA-33) excluding
+    Turkey for the third round of noise mapping in 2017. The data set
+    includes submissions from the countries until 01/01/2019.
+    ...
+  """</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">identifier</span><span class="w"> </span><span class="s">"eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00"</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">language</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/language/ENG&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">provenance</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">ProvenanceStatement</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"The raster data sets have been created out of the Noise Spatial Database, which in turn contains all versions delivered by the relevant countries (EU and EFTA) to Reportnet (CDR). The data from Reportnet is automatically incorporated into the database, with the exception of those data sets which require a manual review (due to problems with naming conventions or Coordinate Reference System). The data set covers any submission by the countries until 01/01/2019."</span><span class="na">@en</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">spatial</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">Location</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dcat:</span><span class="n">bbox</span><span class="w"> </span><span class="s">"&lt;gml:Envelope srsName=\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\"&gt;&lt;gml:lowerCorner&gt;-31.285 27.642&lt;/gml:lowerCorner&gt;&lt;gml:upperCorner&gt;34.099 70.075&lt;/gml:upperCorner&gt;&lt;/gml:Envelope&gt;"</span><span class="p">^^</span><span class="nn">gsp:</span><span class="n">gmlLiteral,
+</span><span class="w">        </span><span class="s">"POLYGON((-31.285 70.075,34.099 70.075,34.099 27.642,-31.285 27.642,-31.285 70.075))"</span><span class="p">^^</span><span class="nn">gsp:</span><span class="n">wktLiteral</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">subject</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">temporal</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">PeriodOfTime</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dcat:</span><span class="n">endDate</span><span class="w"> </span><span class="s">"2016-12-31"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dcat:</span><span class="n">startDate</span><span class="w"> </span><span class="s">"2016-01-01"</span><span class="p">^^</span><span class="nn">xsd:</span><span class="n">date</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">title</span><span class="w"> </span><span class="s">"Noise contours data reported under Environmental Noise Directive (END) 2017 (raster 10m) - version 2019, Oct. 2019"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dct:</span><span class="n">type</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dcat:</span><span class="n">contactPoint</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">vcard:</span><span class="n">Organization</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">vcard:</span><span class="n">fn</span><span class="w"> </span><span class="s">"European Environment Agency"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">vcard:</span><span class="n">hasAddress</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">vcard:</span><span class="n">Address</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">vcard:</span><span class="n">country-name</span><span class="w"> </span><span class="s">"Denmark"</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">vcard:</span><span class="n">locality</span><span class="w"> </span><span class="s">"Copenhagen"</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">vcard:</span><span class="n">postal-code</span><span class="w"> </span><span class="s">"1050"</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">vcard:</span><span class="n">region</span><span class="w"> </span><span class="s">"K"</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">vcard:</span><span class="n">street-address</span><span class="w"> </span><span class="s">"Kongens Nytorv 6"</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">vcard:</span><span class="n">hasEmail</span><span class="w"> </span><span class="nl">&lt;mailto:info@eea.europa.eu&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">vcard:</span><span class="n">hasURL</span><span class="w"> </span><span class="nl">&lt;http://www.eea.europa.eu&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dcat:</span><span class="n">distribution</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">Distribution</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dct:</span><span class="n">accessRights</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"NoiseContours_air_lnight"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dct:</span><span class="n">format</span><span class="w"> </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/file-type/TIFF&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dct:</span><span class="n">license</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dct:</span><span class="n">LicenseDocument</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">rdfs:</span><span class="n">label</span><span class="w"> </span><span class="s">"The full noise contour maps data set is in principle only available for EEA internal use. A public version of the data set may in the future be available, excluding those data sets for which there is any limitation or restriction in their use (beyond acknowledgement)."</span><span class="na">@en</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">adms:</span><span class="n">representationTechnique</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dcat:</span><span class="n">accessService</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">dcat:</span><span class="n">DataService</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">dct:</span><span class="n">conformsTo</span><span class="w"> </span><span class="nl">&lt;http://www.opengeospatial.org/standards/wms&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">dcat:</span><span class="n">endpointDescription</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">dcat:</span><span class="n">endpointURL</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">dcat:</span><span class="n">accessURL</span><span class="w"> </span><span class="nl">&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dcat:</span><span class="n">keyword</span><span class="w"> </span><span class="s">"Environmental Noise Directive"</span><span class="na">@en</span><span class="p">,</span><span class="w">
+    </span><span class="s">"Noise map"</span><span class="na">@en</span><span class="p">,</span><span class="w">
+    </span><span class="s">"agglomerations"</span><span class="na">@en</span><span class="p">,</span><span class="w">
+    </span><span class="s">"noise contour"</span><span class="na">@en</span><span class="p">,</span><span class="w">
+    </span><span class="s">"noise source"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dcat:</span><span class="n">spatialResolutionInMeters</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">dcat:</span><span class="n">theme</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/theme/hh&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="nl">&lt;http://publications.europa.eu/resource/authority/data-theme/HEAL&gt;</span><span class="p">,</span><span class="w">
+    </span><span class="nl">&lt;http://www.eionet.europa.eu/gemet/concept/2884&gt;</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">prov:</span><span class="n">wasUsedBy</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Activity</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">prov:</span><span class="n">generated</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Entity</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">dct:</span><span class="n">description</span><span class="w"> </span><span class="s">"See the referenced specification"</span><span class="na">@en</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">dct:</span><span class="n">type</span><span class="w"> </span><span class="nl">&lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+      </span><span class="nn">prov:</span><span class="n">qualifiedAssociation</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Association</span><span class="w"> </span><span class="p">;</span><span class="w">
+          </span><span class="nn">prov:</span><span class="n">hadPlan</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">a</span><span class="w"> </span><span class="nn">prov:</span><span class="n">Plan</span><span class="w"> </span><span class="p">;</span><span class="w">
+              </span><span class="nn">prov:</span><span class="n">wasDerivedFrom</span><span class="w"> </span><span class="nl">&lt;http://data.europa.eu/eli/reg/2010/1089&gt;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">foaf:</span><span class="n">isPrimaryTopicOf</span><span class="w"> </span><span class="nn">record:</span><span class="n">e7807ecb-a8e6-4a33-baa2-d119eec9ce24</span><span class="w"> </span><span class="p">;</span><span class="w">
+  </span><span class="nn">foaf:</span><span class="n">page</span><span class="w"> </span><span class="nl">&lt;https://noise.eea.europa.eu/&gt;</span><span class="w"> </span><span class="p">.</span><span class="w">
+
+</span></code></pre></div>
+<blockquote class="lang-specific turtle">
+  <p class="example-links">
+    <a target="_blank" href="https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-ap/example_1_1.ttl">Open in new window</a>
+</blockquote>
+
+<p>This example from GeoDCAT-AP</p>
+<h1 id='references'>References</h1>
+<ul>
+<li><a href="http://www.opengis.net/def/metamodel/profiles/geodcat">GeoDCAT Specification</a></li>
+<li><a href="https://github.com/opengeospatial/GeoDCAT-SWG">GeoDCAT Specification Repository</a></li>
+<li><a href="https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld">DCAT-AP JSON-LD context</a></li>
+</ul>
+<h1 id='for-developers'>For developers</h1>
+<p>The source code for this Building Block can be found in the following repository:</p>
+
+<ul>
+<li>URL: <a href="https://github.com/ogcincubator/geodcat-ogcapi-records" target="_blank">https://github.com/ogcincubator/geodcat-ogcapi-records</a></li>
+<li>Path:
+<code><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/HEAD/_sources/geodcat-ap" target="_blank">_sources/geodcat-ap</a></code></li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

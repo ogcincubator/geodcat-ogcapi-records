@@ -704,30 +704,30 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <eo:> .
+@prefix ns1: <eo:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/20201211_223832_CS2> ns2:cloud_cover 1.2e+00 ;
-    ns2:snow_cover 0 ;
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> ns1:cloud_cover 1.2e+00 ;
+    ns1:snow_cover 0 ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -738,7 +738,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         <https://example.com/stac/raster/example-1/visual> ;
     stac:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/analytic> ns2:bands [ ],
+<https://example.com/stac/raster/example-1/analytic> ns1:bands [ ],
         [ ],
         [ ],
         [ ] ;
@@ -750,7 +750,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:title "Thumbnail" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
-<https://example.com/stac/raster/example-1/visual> ns2:bands [ ],
+<https://example.com/stac/raster/example-1/visual> ns1:bands [ ],
         [ ],
         [ ] ;
     dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;

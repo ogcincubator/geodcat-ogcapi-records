@@ -1,5 +1,5 @@
 
-# GeoDCAT profile (Schema)
+# GeoDCAT profile (Model)
 
 `ogc.geo.geodcat.geodcat` *v0.1*
 
