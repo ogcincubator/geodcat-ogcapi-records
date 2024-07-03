@@ -1,0 +1,62 @@
+{
+  "stac_version": "1.0.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json"
+  ],
+  "type": "Feature",
+  "id": "item",
+  "bbox": [
+    172.9,
+    1.3,
+    173,
+    1.4
+  ],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          172.9,
+          1.3
+        ],
+        [
+          173,
+          1.3
+        ],
+        [
+          173,
+          1.4
+        ],
+        [
+          172.9,
+          1.4
+        ],
+        [
+          172.9,
+          1.3
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "datetime": "2020-12-11T22:38:32Z",
+    "accuracy:geometric_x_bias": 0,
+    "accuracy:geometric_y_bias": 0,
+    "accuracy:geometric_x_stddev": 0.5,
+    "accuracy:geometric_y_stddev": 0.5,
+    "accuracy:geometric_rmse": 1,
+    "accuracy:measurement_relative": 0.01,
+    "accuracy:measurement_absolute": 0.02
+  },
+  "links": [
+    {
+      "href": "https://example.com/examples/item.json",
+      "rel": "self"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "https://example.com/examples/file.xyz"
+    }
+  }
+}
