@@ -94,34 +94,34 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "minimum": 0,
       "maximum": 50
     },
-    "eo:bands": [
+    "bands": [
       {
         "name": "band1",
-        "common_name": "blue",
-        "center_wavelength": 0.47,
-        "full_width_half_max": 0.07,
-        "solar_illumination": 1959.66
+        "eo:common_name": "blue",
+        "eo:center_wavelength": 0.47,
+        "eo:full_width_half_max": 0.07,
+        "eo:solar_illumination": 1959.66
       },
       {
         "name": "band2",
-        "common_name": "green",
-        "center_wavelength": 0.56,
-        "full_width_half_max": 0.08,
-        "solar_illumination": 1823.24
+        "eo:common_name": "green",
+        "eo:center_wavelength": 0.56,
+        "eo:full_width_half_max": 0.08,
+        "eo:solar_illumination": 1823.24
       },
       {
         "name": "band3",
-        "common_name": "red",
-        "center_wavelength": 0.645,
-        "full_width_half_max": 0.09,
-        "solar_illumination": 1512.06
+        "eo:common_name": "red",
+        "eo:center_wavelength": 0.645,
+        "eo:full_width_half_max": 0.09,
+        "eo:solar_illumination": 1512.06
       },
       {
         "name": "band4",
-        "common_name": "nir",
-        "center_wavelength": 0.8,
-        "full_width_half_max": 0.152,
-        "solar_illumination": 1041.63
+        "eo:common_name": "nir",
+        "eo:center_wavelength": 0.8,
+        "eo:full_width_half_max": 0.152,
+        "eo:solar_illumination": 1041.63
       }
     ]
   },
@@ -146,34 +146,34 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "data"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.7,
-          "solar_illumination": 1959.66
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.7,
+          "eo:solar_illumination": 1959.66
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08,
-          "solar_illumination": 1823.24
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08,
+          "eo:solar_illumination": 1823.24
         },
         {
           "name": "band3",
           "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.9,
-          "solar_illumination": 1512.06
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.9,
+          "eo:solar_illumination": 1512.06
         },
         {
           "name": "band4",
-          "common_name": "nir",
-          "center_wavelength": 0.8,
-          "full_width_half_max": 0.152,
-          "solar_illumination": 1041.63
+          "eo:common_name": "nir",
+          "eo:center_wavelength": 0.8,
+          "eo:full_width_half_max": 0.152,
+          "eo:solar_illumination": 1041.63
         }
       ]
     },
@@ -190,24 +190,24 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "visual"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08
         },
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07
         }
       ]
     }
@@ -273,34 +273,34 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "minimum": 0,
       "maximum": 50
     },
-    "eo:bands": [
+    "bands": [
       {
         "name": "band1",
-        "common_name": "blue",
-        "center_wavelength": 0.47,
-        "full_width_half_max": 0.07,
-        "solar_illumination": 1959.66
+        "eo:common_name": "blue",
+        "eo:center_wavelength": 0.47,
+        "eo:full_width_half_max": 0.07,
+        "eo:solar_illumination": 1959.66
       },
       {
         "name": "band2",
-        "common_name": "green",
-        "center_wavelength": 0.56,
-        "full_width_half_max": 0.08,
-        "solar_illumination": 1823.24
+        "eo:common_name": "green",
+        "eo:center_wavelength": 0.56,
+        "eo:full_width_half_max": 0.08,
+        "eo:solar_illumination": 1823.24
       },
       {
         "name": "band3",
-        "common_name": "red",
-        "center_wavelength": 0.645,
-        "full_width_half_max": 0.09,
-        "solar_illumination": 1512.06
+        "eo:common_name": "red",
+        "eo:center_wavelength": 0.645,
+        "eo:full_width_half_max": 0.09,
+        "eo:solar_illumination": 1512.06
       },
       {
         "name": "band4",
-        "common_name": "nir",
-        "center_wavelength": 0.8,
-        "full_width_half_max": 0.152,
-        "solar_illumination": 1041.63
+        "eo:common_name": "nir",
+        "eo:center_wavelength": 0.8,
+        "eo:full_width_half_max": 0.152,
+        "eo:solar_illumination": 1041.63
       }
     ]
   },
@@ -325,34 +325,34 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "data"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.7,
-          "solar_illumination": 1959.66
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.7,
+          "eo:solar_illumination": 1959.66
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08,
-          "solar_illumination": 1823.24
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08,
+          "eo:solar_illumination": 1823.24
         },
         {
           "name": "band3",
           "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.9,
-          "solar_illumination": 1512.06
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.9,
+          "eo:solar_illumination": 1512.06
         },
         {
           "name": "band4",
-          "common_name": "nir",
-          "center_wavelength": 0.8,
-          "full_width_half_max": 0.152,
-          "solar_illumination": 1041.63
+          "eo:common_name": "nir",
+          "eo:center_wavelength": 0.8,
+          "eo:full_width_half_max": 0.152,
+          "eo:solar_illumination": 1041.63
         }
       ]
     },
@@ -369,24 +369,24 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "visual"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08
         },
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07
         }
       ]
     }
@@ -524,34 +524,35 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "data"
       ],
-      "eo:bands": [
+      "eo:cloud_cover": 1.2,
+      "bands": [
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07,
-          "solar_illumination": 1959.66
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07,
+          "eo:solar_illumination": 1959.66
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08,
-          "solar_illumination": 1823.24
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08,
+          "eo:solar_illumination": 1823.24
         },
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09,
-          "solar_illumination": 1512.06
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09,
+          "eo:solar_illumination": 1512.06
         },
         {
           "name": "band4",
-          "common_name": "nir",
-          "center_wavelength": 0.8,
-          "full_width_half_max": 0.152,
-          "solar_illumination": 1041.63
+          "eo:common_name": "nir",
+          "eo:center_wavelength": 0.8,
+          "eo:full_width_half_max": 0.152,
+          "eo:solar_illumination": 1041.63
         }
       ]
     },
@@ -570,30 +571,29 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "visual"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08
         },
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07
         }
       ]
     }
   }
 }
-
 ```
 
 <blockquote class="lang-specific json">
@@ -687,34 +687,35 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "data"
       ],
-      "eo:bands": [
+      "eo:cloud_cover": 1.2,
+      "bands": [
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07,
-          "solar_illumination": 1959.66
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07,
+          "eo:solar_illumination": 1959.66
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08,
-          "solar_illumination": 1823.24
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08,
+          "eo:solar_illumination": 1823.24
         },
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09,
-          "solar_illumination": 1512.06
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09,
+          "eo:solar_illumination": 1512.06
         },
         {
           "name": "band4",
-          "common_name": "nir",
-          "center_wavelength": 0.8,
-          "full_width_half_max": 0.152,
-          "solar_illumination": 1041.63
+          "eo:common_name": "nir",
+          "eo:center_wavelength": 0.8,
+          "eo:full_width_half_max": 0.152,
+          "eo:solar_illumination": 1041.63
         }
       ]
     },
@@ -733,24 +734,24 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       "roles": [
         "visual"
       ],
-      "eo:bands": [
+      "bands": [
         {
           "name": "band3",
-          "common_name": "red",
-          "center_wavelength": 0.645,
-          "full_width_half_max": 0.09
+          "eo:common_name": "red",
+          "eo:center_wavelength": 0.645,
+          "eo:full_width_half_max": 0.09
         },
         {
           "name": "band2",
-          "common_name": "green",
-          "center_wavelength": 0.56,
-          "full_width_half_max": 0.08
+          "eo:common_name": "green",
+          "eo:center_wavelength": 0.56,
+          "eo:full_width_half_max": 0.08
         },
         {
           "name": "band1",
-          "common_name": "blue",
-          "center_wavelength": 0.47,
-          "full_width_half_max": 0.07
+          "eo:common_name": "blue",
+          "eo:center_wavelength": 0.47,
+          "eo:full_width_half_max": 0.07
         }
       ]
     }
@@ -787,11 +788,11 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -806,10 +807,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         <https://example.com/stac/raster/example-1/visual> ;
     stac:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/analytic> ns2:bands [ ],
-        [ ],
-        [ ],
-        [ ] ;
+<https://example.com/stac/raster/example-1/analytic> ns2:cloud_cover 1.2e+00 ;
     dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "4-Band Analytic" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
@@ -818,10 +816,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:title "Thumbnail" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
-<https://example.com/stac/raster/example-1/visual> ns2:bands [ ],
-        [ ],
-        [ ] ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/raster/example-1/visual> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "3-Band Visual" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 

@@ -16,11 +16,11 @@
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -35,10 +35,7 @@
         <https://example.com/stac/raster/example-1/visual> ;
     stac:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/analytic> ns2:bands [ ],
-        [ ],
-        [ ],
-        [ ] ;
+<https://example.com/stac/raster/example-1/analytic> ns2:cloud_cover 1.2e+00 ;
     dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "4-Band Analytic" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
@@ -47,10 +44,7 @@
     dcterms:title "Thumbnail" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
-<https://example.com/stac/raster/example-1/visual> ns2:bands [ ],
-        [ ],
-        [ ] ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/raster/example-1/visual> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "3-Band Visual" ;
     dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 
