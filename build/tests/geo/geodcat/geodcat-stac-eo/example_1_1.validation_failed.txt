@@ -1,0 +1,226 @@
+Validation report for ogc.geo.geodcat.geodcat-stac-eo - GeoDCAT profile of STAC Electro-Optical extension
+Generated 2024-08-01T10:35:16.934673+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'id': 'eo-collection', 'type': 'Collection', 'stac_extensions': ['https://stac-extensions.github.io/item-assets/v1.0.0/schema.json', 'https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json'], 'stac_version': '1.0.0', 'description': 'A simple Collection demonstrating EO extension fields in a Collection.', 'title': 'Simple EO Collection', 'extent': {'spatial': {'bbox': [[172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975]]}, 'temporal': {'interval': [['2020-12-11T22:38:32.125Z', '2020-12-14T18:02:31.437Z']]}}, 'license': 'CC-BY-4.0', 'summaries': {'platform': ['cool_sat1', 'cool_sat2'], 'constellation': ['ion'], 'instruments': ['cool_sensor_v1', 'cool_sensor_v2'], 'eo:cloud_cover': {'minimum': 0, 'maximum': 50}, 'bands': [{'name': 'band1', 'eo:common_name': 'blue', 'eo:center_wavelength': 0.47, 'eo:full_width_half_max': 0.07, 'eo:solar_illumination': 1959.66}, {'name': 'band2', 'eo:common_name': 'green', 'eo:center_wavelength': 0.56, 'eo:full_width_half_max': 0.08, 'eo:solar_illumination': 1823.24}, {'name': 'band3', 'eo:common_name': 'red', 'eo:center_wavelength': 0.645, 'eo:full_width_half_max': 0.09, 'eo:solar_illumination': 1512.06}, {'name': 'band4', 'eo:common_name': 'nir', 'eo:center_wavelength': 0.8, 'eo:full_width_half_max': 0.152, 'eo:solar_illumination': 1041.63}]}, 'links': [{'rel': 'root', 'href': './collection.json', 'type': 'application/json', 'title': 'Simple Example Collection'}, {'rel': 'item', 'href': './item.json', 'type': 'application/geo+json', 'title': '20201211_223832_CS2'}], 'item_assets': {'analytic': {'type': 'image/tiff; application=geotiff; profile=cloud-optimized', 'title': '4-Band Analytic', 'roles': ['data'], 'bands': [{'name': 'band1', 'eo:common_name': 'blue', 'eo:center_wavelength': 0.47, 'eo:full_width_half_max': 0.7, 'eo:solar_illumination': 1959.66}, {'name': 'band2', 'eo:common_name': 'green', 'eo:center_wavelength': 0.56, 'eo:full_width_half_max': 0.08, 'eo:solar_illumination': 1823.24}, {'name': 'band3', 'common_name': 'red', 'eo:center_wavelength': 0.645, 'eo:full_width_half_max': 0.9, 'eo:solar_illumination': 1512.06}, {'name': 'band4', 'eo:common_name': 'nir', 'eo:center_wavelength': 0.8, 'eo:full_width_half_max': 0.152, 'eo:solar_illumination': 1041.63}]}, 'thumbnail': {'title': 'Thumbnail', 'type': 'image/png', 'roles': ['thumbnail']}, 'visual': {'type': 'image/tiff; application=geotiff; profile=cloud-optimized', 'title': '3-Band Visual', 'roles': ['visual'], 'bands': [{'name': 'band3', 'eo:common_name': 'red', 'eo:center_wavelength': 0.645, 'eo:full_width_half_max': 0.09}, {'name': 'band2', 'eo:common_name': 'green', 'eo:center_wavelength': 0.56, 'eo:full_width_half_max': 0.08}, {'name': 'band1', 'eo:common_name': 'blue', 'eo:center_wavelength': 0.47, 'eo:full_width_half_max': 0.07}]}}} is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['allOf'][0]['allOf'][1]:
+    {'$id': 'https://stac-extensions.github.io/eo/v1.1.0/schema.json#',
+     '$schema': 'http://json-schema.org/draft-07/schema#',
+     'definitions': {'bands': {'items': {'minProperties': 1,
+                                         'properties': {'center_wavelength': {'minimumExclusive': 0,
+                                                                              'title': 'Center '
+                                                                                       'Wavelength',
+                                                                              'type': 'number'},
+                                                        'common_name': {'enum': ['coastal',
+                                                                                 'blue',
+                                                                                 'green',
+                                                                                 'red',
+                                                                                 'rededge',
+                                                                                 'yellow',
+                                                                                 'pan',
+                                                                                 'nir',
+                                                                                 'nir08',
+                                                                                 'nir09',
+                                                                                 'cirrus',
+                                                                                 'swir16',
+                                                                                 'swir22',
+                                                                                 'lwir',
+                                                                                 'lwir11',
+                                                                                 'lwir12'],
+                                                                        'title': 'Common '
+                                                                                 'Name '
+                                                                                 'of '
+                                                                                 'the '
+                                                                                 'band',
+                                                                        'type': 'string'},
+                                                        'description': {'minLength': 1,
+                                                                        'title': 'Description '
+                                                                                 'of '
+                                                                                 'the '
+                                                                                 'band',
+                                                                        'type': 'string'},
+                                                        'full_width_half_max': {'minimumExclusive': 0,
+                                                                                'title': 'Full '
+                                                                                         'Width '
+                                                                                         'Half '
+                                                                                         'Max '
+                                                                                         '(FWHM)',
+                                                                                'type': 'number'},
+                                                        'name': {'title': 'Name '
+                                                                          'of '
+                                                                          'the '
+                                                                          'band',
+                                                                 'type': 'string'},
+                                                        'solar_illumination': {'minimum': 0,
+                                                                               'title': 'Solar '
+                                                                                        'Illumination',
+                                                                               'type': 'number'}},
+                                         'title': 'Band',
+                                         'type': 'object'},
+                               'minItems': 1,
+                               'title': 'Bands',
+                               'type': 'array'},
+                     'fields': {'additionalProperties': False,
+                                'patternProperties': {'^(?!eo:)': {}},
+                                'properties': {'eo:bands': {'$ref': '#/definitions/bands'},
+                                               'eo:cloud_cover': {'maximum': 100,
+                                                                  'minimum': 0,
+                                                                  'title': 'Cloud '
+                                                                           'Cover',
+                                                                  'type': 'number'},
+                                               'eo:snow_cover': {'maximum': 100,
+                                                                 'minimum': 0,
+                                                                 'title': 'Snow '
+                                                                          'and '
+                                                                          'Ice '
+                                                                          'Cover',
+                                                                 'type': 'number'}},
+                                'type': 'object'},
+                     'stac_extensions': {'properties': {'stac_extensions': {'contains': {'const': 'https://stac-extensions.github.io/eo/v1.1.0/schema.json'},
+                                                                            'type': 'array'}},
+                                         'required': ['stac_extensions'],
+                                         'type': 'object'}},
+     'description': 'STAC EO Extension for STAC Items.',
+     'oneOf': [{'$comment': 'This is the schema for STAC Items.',
+                'allOf': [{'$comment': 'The if-then-else below checks '
+                                       'whether the eo:bands is given in '
+                                       'assets or not. If yes, allows '
+                                       'eo:bands in properties (else), '
+                                       'otherwise, disallows eo:bands in '
+                                       'properties (then).',
+                           'else': {'properties': {'properties': {'properties': {'eo:bands': {'$ref': '#/definitions/bands'}}}}},
+                           'if': {'properties': {'assets': {'additionalProperties': {'properties': {'eo:bands': False}},
+                                                            'type': 'object'}},
+                                  'required': ['assets']},
+                           'properties': {'assets': {'additionalProperties': {'$ref': '#/definitions/fields'},
+                                                     'type': 'object'},
+                                          'properties': {'$ref': '#/definitions/fields'},
+                                          'type': {'const': 'Feature'}},
+                           'required': ['type', 'properties', 'assets'],
+                           'then': {'properties': {'properties': {'properties': {'eo:bands': False}}}},
+                           'type': 'object'},
+                          {'$ref': '#/definitions/stac_extensions'}]},
+               {'$comment': 'This is the schema for STAC Collections.',
+                'allOf': [{'properties': {'assets': {'additionalProperties': {'$ref': '#/definitions/fields'},
+                                                     'type': 'object'},
+                                          'item_assets': {'additionalProperties': {'$ref': '#/definitions/fields'},
+                                                          'type': 'object'},
+                                          'type': {'const': 'Collection'}},
+                           'required': ['type'],
+                           'type': 'object'},
+                          {'$ref': '#/definitions/stac_extensions'}]}],
+     'title': 'EO Extension'}
+
+On instance:
+    {'description': 'A simple Collection demonstrating EO extension fields '
+                    'in a Collection.',
+     'extent': {'spatial': {'bbox': [[172.91173669923782,
+                                      1.3438851951615003,
+                                      172.95469614953714,
+                                      1.3690476620161975]]},
+                'temporal': {'interval': [['2020-12-11T22:38:32.125Z',
+                                           '2020-12-14T18:02:31.437Z']]}},
+     'id': 'eo-collection',
+     'item_assets': {'analytic': {'bands': [{'eo:center_wavelength': 0.47,
+                                             'eo:common_name': 'blue',
+                                             'eo:full_width_half_max': 0.7,
+                                             'eo:solar_illumination': 1959.66,
+                                             'name': 'band1'},
+                                            {'eo:center_wavelength': 0.56,
+                                             'eo:common_name': 'green',
+                                             'eo:full_width_half_max': 0.08,
+                                             'eo:solar_illumination': 1823.24,
+                                             'name': 'band2'},
+                                            {'common_name': 'red',
+                                             'eo:center_wavelength': 0.645,
+                                             'eo:full_width_half_max': 0.9,
+                                             'eo:solar_illumination': 1512.06,
+                                             'name': 'band3'},
+                                            {'eo:center_wavelength': 0.8,
+                                             'eo:common_name': 'nir',
+                                             'eo:full_width_half_max': 0.152,
+                                             'eo:solar_illumination': 1041.63,
+                                             'name': 'band4'}],
+                                  'roles': ['data'],
+                                  'title': '4-Band Analytic',
+                                  'type': 'image/tiff; '
+                                          'application=geotiff; '
+                                          'profile=cloud-optimized'},
+                     'thumbnail': {'roles': ['thumbnail'],
+                                   'title': 'Thumbnail',
+                                   'type': 'image/png'},
+                     'visual': {'bands': [{'eo:center_wavelength': 0.645,
+                                           'eo:common_name': 'red',
+                                           'eo:full_width_half_max': 0.09,
+                                           'name': 'band3'},
+                                          {'eo:center_wavelength': 0.56,
+                                           'eo:common_name': 'green',
+                                           'eo:full_width_half_max': 0.08,
+                                           'name': 'band2'},
+                                          {'eo:center_wavelength': 0.47,
+                                           'eo:common_name': 'blue',
+                                           'eo:full_width_half_max': 0.07,
+                                           'name': 'band1'}],
+                                'roles': ['visual'],
+                                'title': '3-Band Visual',
+                                'type': 'image/tiff; application=geotiff; '
+                                        'profile=cloud-optimized'}},
+     'license': 'CC-BY-4.0',
+     'links': [{'href': './collection.json',
+                'rel': 'root',
+                'title': 'Simple Example Collection',
+                'type': 'application/json'},
+               {'href': './item.json',
+                'rel': 'item',
+                'title': '20201211_223832_CS2',
+                'type': 'application/geo+json'}],
+     'stac_extensions': ['https://stac-extensions.github.io/item-assets/v1.0.0/schema.json',
+                         'https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json'],
+     'stac_version': '1.0.0',
+     'summaries': {'bands': [{'eo:center_wavelength': 0.47,
+                              'eo:common_name': 'blue',
+                              'eo:full_width_half_max': 0.07,
+                              'eo:solar_illumination': 1959.66,
+                              'name': 'band1'},
+                             {'eo:center_wavelength': 0.56,
+                              'eo:common_name': 'green',
+                              'eo:full_width_half_max': 0.08,
+                              'eo:solar_illumination': 1823.24,
+                              'name': 'band2'},
+                             {'eo:center_wavelength': 0.645,
+                              'eo:common_name': 'red',
+                              'eo:full_width_half_max': 0.09,
+                              'eo:solar_illumination': 1512.06,
+                              'name': 'band3'},
+                             {'eo:center_wavelength': 0.8,
+                              'eo:common_name': 'nir',
+                              'eo:full_width_half_max': 0.152,
+                              'eo:solar_illumination': 1041.63,
+                              'name': 'band4'}],
+                   'constellation': ['ion'],
+                   'eo:cloud_cover': {'maximum': 50, 'minimum': 0},
+                   'instruments': ['cool_sensor_v1', 'cool_sensor_v2'],
+                   'platform': ['cool_sat1', 'cool_sat2']},
+     'title': 'Simple EO Collection',
+     'type': 'Collection'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/records-ontology/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/records-ontology/rules.shacl:
+ - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*
+
+=== End SHACL ===
+

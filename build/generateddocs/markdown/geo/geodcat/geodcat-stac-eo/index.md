@@ -24,7 +24,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
   "type": "Collection",
   "stac_extensions": [
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
   "stac_version": "1.0.0",
   "description": "A simple Collection demonstrating EO extension fields in a Collection.",
@@ -195,7 +195,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
   "type": "Collection",
   "stac_extensions": [
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
   "stac_version": "1.0.0",
   "description": "A simple Collection demonstrating EO extension fields in a Collection.",
@@ -363,26 +363,26 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <urn:stac:vocab#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix stac: <urn:stac:vocab#> .
 
 <https://example.com/stac/raster/example-1/eo-collection> rdfs:label "Simple EO Collection" ;
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "20201211_223832_CS2" ;
+    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
-    stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+    ns2:extensions "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
         "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json" ;
-    stac:version "1.0.0" .
+    ns2:version "1.0.0" .
 
 
 ```
@@ -394,7 +394,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
   "type": "Feature",
   "id": "20201211_223832_CS2",
@@ -549,7 +549,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 {
   "stac_version": "1.0.0",
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
   "type": "Feature",
   "id": "20201211_223832_CS2",
@@ -704,45 +704,45 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 ```ttl
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eo: <https://w3id.org/ogc/stac/eo/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <eo:> .
+@prefix ns1: <urn:stac:vocab#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/20201211_223832_CS2> ns2:cloud_cover 1.2e+00 ;
-    ns2:snow_cover 0 ;
-    dcterms:created "2020-12-12T01:48:13.725Z" ;
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
-    stac:extensions "https://stac-extensions.github.io/eo/v1.1.0/schema.json" ;
-    stac:hasAsset <https://example.com/stac/raster/example-1/analytic>,
+    eo:cloud_cover 1.2e+00 ;
+    eo:snow_cover 0 ;
+    ns1:extensions "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json" ;
+    ns1:hasAsset <https://example.com/stac/raster/example-1/analytic>,
         <https://example.com/stac/raster/example-1/thumbnail>,
         <https://example.com/stac/raster/example-1/visual> ;
-    stac:version "1.0.0" .
+    ns1:version "1.0.0" .
 
-<https://example.com/stac/raster/example-1/analytic> ns2:cloud_cover 1.2e+00 ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/raster/example-1/analytic> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "4-Band Analytic" ;
-    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
+    dcat:downloadURL <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
+    eo:cloud_cover 1.2e+00 .
 
 <https://example.com/stac/raster/example-1/thumbnail> dcterms:format "image/png" ;
     dcterms:title "Thumbnail" ;
@@ -820,10 +820,7 @@ Links to the schema:
       "@container": "@set",
       "@id": "geojson:features"
     },
-    "links": {
-      "@context": {},
-      "@id": "rdfs:seeAlso"
-    },
+    "links": "rdfs:seeAlso",
     "coordinates": {
       "@container": "@list",
       "@id": "geojson:coordinates"
@@ -833,6 +830,24 @@ Links to the schema:
     "uriTemplate": {
       "@type": "xsd:string",
       "@id": "oa:hasTarget"
+    },
+    "assets": {
+      "@id": "urn:stac:vocab#hasAsset",
+      "@container": "@id",
+      "@context": {
+        "href": {
+          "@id": "dcat:downloadURL",
+          "@type": "@id"
+        },
+        "title": "dct:title",
+        "type": "dct:format"
+      }
+    },
+    "eo:bands": {
+      "@id": "eo:bands",
+      "@context": {
+        "@vocab": "https://w3id.org/ogc/stac/eo/"
+      }
     },
     "accessRights": {
       "@id": "dct:accessRights",
@@ -905,7 +920,7 @@ Links to the schema:
     },
     "keywords": {
       "@container": "@set",
-      "@id": "dcat:keyword"
+      "@id": "dct:subject"
     },
     "landingPage": {
       "@container": "@set",
@@ -998,41 +1013,30 @@ Links to the schema:
       "@id": "rec:hasVariable",
       "@context": {
         "@base": "http://example.com/variables/",
-        "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
+        "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
-    "stac_version": "stac:version",
-    "stac_extensions": "stac:extensions",
+    "stac_version": "urn:stac:vocab#version",
+    "stac_extensions": "urn:stac:vocab#extensions",
     "license": "dct:license",
     "extent": "dct:extent",
-    "assets": {
-      "@id": "stac:hasAsset",
-      "@container": "@id",
-      "@context": {
-        "href": {
-          "@id": "dcat:downloadURL",
-          "@type": "@id"
-        },
-        "title": "dct:title",
-        "type": "dct:format"
-      }
-    },
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
+    "eo": "https://w3id.org/ogc/stac/eo/",
     "geojson": "https://purl.org/geojson/vocab#",
+    "stac": "https://w3id.org/ogc/stac/core/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "stac": "urn:stac:vocab#",
     "@version": 1.1
   }
 }

@@ -31,10 +31,7 @@
     },
     "id": "@id",
     "properties": "@nest",
-    "geometry": {
-      "@context": {},
-      "@id": "geojson:geometry"
-    },
+    "geometry": "geojson:geometry",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",
@@ -218,7 +215,7 @@
       "@id": "rec:hasVariable",
       "@context": {
         "@base": "http://example.com/variables/",
-        "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
+        "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
     "geojson": "https://purl.org/geojson/vocab#",
@@ -226,11 +223,11 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",

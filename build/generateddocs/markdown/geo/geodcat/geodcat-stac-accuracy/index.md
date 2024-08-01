@@ -154,10 +154,10 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <urn:stac:vocab#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix stac: <urn:stac:vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/accuracy/example-1/item> accuracy:geometric_rmse 1 ;
@@ -173,9 +173,9 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
-    stac:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    stac:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
-    stac:version "1.0.0" .
+    ns2:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    ns2:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
+    ns2:version "1.0.0" .
 
 <https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .
 
@@ -252,10 +252,7 @@ Links to the schema:
       "@container": "@set",
       "@id": "geojson:features"
     },
-    "links": {
-      "@context": {},
-      "@id": "rdfs:seeAlso"
-    },
+    "links": "rdfs:seeAlso",
     "coordinates": {
       "@container": "@list",
       "@id": "geojson:coordinates"
@@ -265,6 +262,18 @@ Links to the schema:
     "uriTemplate": {
       "@type": "xsd:string",
       "@id": "oa:hasTarget"
+    },
+    "assets": {
+      "@id": "urn:stac:vocab#hasAsset",
+      "@container": "@id",
+      "@context": {
+        "href": {
+          "@id": "dcat:downloadURL",
+          "@type": "@id"
+        },
+        "title": "dct:title",
+        "type": "dct:format"
+      }
     },
     "accessRights": {
       "@id": "dct:accessRights",
@@ -337,7 +346,7 @@ Links to the schema:
     },
     "keywords": {
       "@container": "@set",
-      "@id": "dcat:keyword"
+      "@id": "dct:subject"
     },
     "landingPage": {
       "@container": "@set",
@@ -430,44 +439,32 @@ Links to the schema:
       "@id": "rec:hasVariable",
       "@context": {
         "@base": "http://example.com/variables/",
-        "@vocab": "https://www.opengis.net/def/ogc-api/records/rec:"
+        "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
-    "stac_version": "stac:version",
-    "stac_extensions": "stac:extensions",
+    "stac_version": "urn:stac:vocab#version",
+    "stac_extensions": "urn:stac:vocab#extensions",
     "license": "dct:license",
     "extent": "dct:extent",
-    "assets": {
-      "@id": "stac:hasAsset",
-      "@container": "@id",
-      "@context": {
-        "href": {
-          "@id": "dcat:downloadURL",
-          "@type": "@id"
-        },
-        "title": "dct:title",
-        "type": "dct:format"
-      }
-    },
     "geometric_rmse": "accuracy:geometric_rmse",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
+    "stac": "https://w3id.org/ogc/stac/core/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "accuracy": "http://example,org/accuracy#",
     "dqv": "http://dqv,org/tdb#",
-    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "prov": "http://www.w3.org/ns/prov#",
+    "rec": "https://www.opengis.net/def/ogc-api/records/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "stac": "urn:stac:vocab#",
     "@version": 1.1
   }
 }
