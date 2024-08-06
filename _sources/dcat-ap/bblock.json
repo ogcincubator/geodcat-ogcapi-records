@@ -1,0 +1,27 @@
+{
+  "name": "Proxy placeholder for DCAT-AP profile",
+  "abstract": "Proxy for the DCAT-AP (european profile of DCAT)",
+  "status": "stable",
+  "dateTimeAddition": "2023-09-18T00:00:00Z",
+  "itemClass": "model",
+  "register": "ogc-incubator",
+  "version": "0.1",
+  "dateOfLastChange": "2023-09-18",
+  "link": "https://github.com/opengeospatial/bblock-template",
+  "dependsOn": [
+        "ogc.geo.geodcat.dcat"
+      ],
+  "sources": [
+    {
+      "title": "DCAT-AP Specification",
+      "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/"
+    },
+    {
+      "title": "DCAT-AP JSON-LD context",
+      "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
+    }
+  ],
+  "shaclShapes": [ "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl" ],
+  "scope": "dev",
+  "tags": ["DCAT", "profile"]
+}
