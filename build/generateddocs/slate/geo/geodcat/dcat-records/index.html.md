@@ -503,26 +503,26 @@ It uses the context for a dcat:Dataset as the basis for a Record.
         "en-CA" ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;

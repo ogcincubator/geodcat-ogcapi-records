@@ -1,10 +1,10 @@
 
 
 {
-  "itemIdentifier": "ogc.geo.geodcat.geodcat-ap",
-  "name": "GeoDCAT-AP profile",
-  "abstract": "Provides a CI/CT/CD environment for the testing compatibility of GeoDCAT-AP with a regions neutral GeoDCAT definition.",
-  "status": "under-development",
+  "itemIdentifier": "ogc.geo.geodcat.dcat-ap",
+  "name": "Proxy placeholder for DCAT-AP profile",
+  "abstract": "Proxy for the DCAT-AP (european profile of DCAT)",
+  "status": "stable",
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "model",
   "register": "ogc-incubator",
@@ -12,22 +12,20 @@
   "dateOfLastChange": "2024-08-06",
   "link": "https://github.com/opengeospatial/bblock-template",
   "dependsOn": [
-    "ogc.geo.geodcat.geodcat",
-    "ogc.geo.geodcat.dcat-ap"
+    "ogc.geo.geodcat.dcat"
   ],
   "sources": [
     {
-      "title": "GeoDCAT Specification",
-      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
-    },
-    {
-      "title": "GeoDCAT Specification Repository",
-      "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+      "title": "DCAT-AP Specification",
+      "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/"
     },
     {
       "title": "DCAT-AP JSON-LD context",
       "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
     }
+  ],
+  "shaclShapes": [
+    "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
   ],
   "scope": "dev",
   "tags": [
@@ -35,25 +33,25 @@
     "profile"
   ],
   "shaclRules": {},
-  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-ap/",
+  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/",
   "validationPassed": true,
-  "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-ap/",
-  "description": "## GeoDCAT-AP \n\nThis building block provides a framework to test compatibility og GeoDCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.\n",
+  "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-ap/",
+  "description": "## DCAT-AP \n\nThis building block provides a framework to test compatibility of the DCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.\n",
   "examples": [
     {
       "title": "GeoDCAT-AP example",
-      "content": "This example from GeoDCAT-AP",
+      "content": "This example from the GeoDCAT-AP profile",
       "snippets": [
         {
           "language": "ttl",
-          "ref": "examples/geodcat-ap-regression.ttl",
+          "ref": "../geodcat-ap/examples/geodcat-ap-regression.ttl",
           "code": "@prefix adms: <http://www.w3.org/ns/adms#> .\n@prefix dcat: <http://www.w3.org/ns/dcat#> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix geodcat: <http://data.europa.eu/930/> .\n@prefix gsp: <http://www.opengis.net/ont/geosparql#> .\n@prefix locn: <http://www.w3.org/ns/locn#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix record: <https://some.catalogue/record/> .\n@prefix resource: <https://some.catalogue/resource/> .\n@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .\n@prefix xml: <http://www.w3.org/XML/1998/namespace> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\nresource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00 a dcat:Dataset ;\n  geodcat:custodian <http://publications.europa.eu/resource/authority/corporate-body/EEA> ;\n  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;\n  dct:conformsTo <http://www.opengis.net/def/crs/EPSG/0/3035> ;\n  dct:created \"2019-10-31\"^^xsd:date ;\n  dct:description \"\"\"\n    The data set includes the rasterized noise contours which have been\n    reported by countries under the terms of the Environmental Noise\n    Directive (END) by the 33 EEA member countries (EEA-33) excluding\n    Turkey for the third round of noise mapping in 2017. The data set\n    includes submissions from the countries until 01/01/2019.\n    ...\n  \"\"\"@en ;\n  dct:identifier \"eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00\" ;\n  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;\n  dct:provenance [ a dct:ProvenanceStatement ;\n      rdfs:label \"The raster data sets have been created out of the Noise Spatial Database, which in turn contains all versions delivered by the relevant countries (EU and EFTA) to Reportnet (CDR). The data from Reportnet is automatically incorporated into the database, with the exception of those data sets which require a manual review (due to problems with naming conventions or Coordinate Reference System). The data set covers any submission by the countries until 01/01/2019.\"@en ] ;\n  dct:spatial [ a dct:Location ;\n      dcat:bbox \"<gml:Envelope srsName=\\\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\\\"><gml:lowerCorner>-31.285 27.642</gml:lowerCorner><gml:upperCorner>34.099 70.075</gml:upperCorner></gml:Envelope>\"^^gsp:gmlLiteral,\n        \"POLYGON((-31.285 70.075,34.099 70.075,34.099 27.642,-31.285 27.642,-31.285 70.075))\"^^gsp:wktLiteral ] ;\n  dct:subject <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment>,\n    <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health>,\n    <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation> ;\n  dct:temporal [ a dct:PeriodOfTime ;\n      dcat:endDate \"2016-12-31\"^^xsd:date ;\n      dcat:startDate \"2016-01-01\"^^xsd:date ] ;\n  dct:title \"Noise contours data reported under Environmental Noise Directive (END) 2017 (raster 10m) - version 2019, Oct. 2019\"@en ;\n  dct:type <http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset> ;\n  dcat:contactPoint [ a vcard:Organization ;\n      vcard:fn \"European Environment Agency\"@en ;\n      vcard:hasAddress [ a vcard:Address ;\n          vcard:country-name \"Denmark\" ;\n          vcard:locality \"Copenhagen\" ;\n          vcard:postal-code \"1050\" ;\n          vcard:region \"K\" ;\n          vcard:street-address \"Kongens Nytorv 6\" ] ;\n      vcard:hasEmail <mailto:info@eea.europa.eu> ;\n      vcard:hasURL <http://www.eea.europa.eu> ] ;\n  dcat:distribution [ a dcat:Distribution ;\n      dct:accessRights <http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e> ;\n      dct:description \"NoiseContours_air_lnight\"@en ;\n      dct:format <http://publications.europa.eu/resource/authority/file-type/TIFF> ;\n      dct:license [ a dct:LicenseDocument ;\n          rdfs:label \"The full noise contour maps data set is in principle only available for EEA internal use. A public version of the data set may in the future be available, excluding those data sets for which there is any limitation or restriction in their use (beyond acknowledgement).\"@en ] ;\n      adms:representationTechnique <http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid> ;\n      dcat:accessService [ a dcat:DataService ;\n          dct:conformsTo <http://www.opengeospatial.org/standards/wms> ;\n          dcat:endpointDescription <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS> ;\n          dcat:endpointURL <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer> ] ;\n      dcat:accessURL <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS> ] ;\n  dcat:keyword \"Environmental Noise Directive\"@en,\n    \"Noise map\"@en,\n    \"agglomerations\"@en,\n    \"noise contour\"@en,\n    \"noise source\"@en ;\n  dcat:spatialResolutionInMeters 10.0 ;\n  dcat:theme <http://inspire.ec.europa.eu/theme/hh>,\n    <http://publications.europa.eu/resource/authority/data-theme/HEAL>,\n    <http://www.eionet.europa.eu/gemet/concept/2884> ;\n  prov:wasUsedBy [ a prov:Activity ;\n      prov:generated [ a prov:Entity ;\n          dct:description \"See the referenced specification\"@en ;\n          dct:type <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated> ] ;\n      prov:qualifiedAssociation [ a prov:Association ;\n          prov:hadPlan [ a prov:Plan ;\n              prov:wasDerivedFrom <http://data.europa.eu/eli/reg/2010/1089> ] ] ] ;\n  foaf:isPrimaryTopicOf record:e7807ecb-a8e6-4a33-baa2-d119eec9ce24 ;\n  foaf:page <https://noise.eea.europa.eu/> .\n",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-ap/example_1_1.ttl"
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-ap/example_1_1.ttl"
         }
       ]
     }
   ],
   "annotatedSchema": null,
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
-  "gitPath": "_sources/geodcat-ap"
+  "gitPath": "_sources/dcat-ap"
 }

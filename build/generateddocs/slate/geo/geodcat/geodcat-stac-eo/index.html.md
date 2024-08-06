@@ -125,20 +125,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       }
     ]
   },
-  "links": [
-    {
-      "rel": "root",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "item",
-      "href": "./item.json",
-      "type": "application/geo+json",
-      "title": "20201211_223832_CS2"
-    }
-  ],
   "item_assets": {
     "analytic": {
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -211,7 +197,21 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         }
       ]
     }
-  }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "item",
+      "href": "./item.json",
+      "type": "application/geo+json",
+      "title": "20201211_223832_CS2"
+    }
+  ]
 }
 
 ```
@@ -304,20 +304,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       }
     ]
   },
-  "links": [
-    {
-      "rel": "root",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "item",
-      "href": "./item.json",
-      "type": "application/geo+json",
-      "title": "20201211_223832_CS2"
-    }
-  ],
   "item_assets": {
     "analytic": {
       "type": "image/tiff; application=geotiff; profile=cloud-optimized",
@@ -391,6 +377,20 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       ]
     }
   },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "item",
+      "href": "./item.json",
+      "type": "application/geo+json",
+      "title": "20201211_223832_CS2"
+    }
+  ],
   "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"
 }
 ```
@@ -450,6 +450,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
   ],
   "type": "Feature",
   "id": "20201211_223832_CS2",
+  "collection": "eo-collection",
   "bbox": [
     172.91173669923782,
     1.3438851951615003,
@@ -495,27 +496,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     "eo:cloud_cover": 1.2,
     "eo:snow_cover": 0
   },
-  "collection": "eo-collection",
-  "links": [
-    {
-      "rel": "root",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "parent",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "collection",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    }
-  ],
   "assets": {
     "analytic": {
       "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif",
@@ -592,7 +572,27 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         }
       ]
     }
-  }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    }
+  ]
 }
 ```
 
@@ -613,6 +613,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
   ],
   "type": "Feature",
   "id": "20201211_223832_CS2",
+  "collection": "eo-collection",
   "bbox": [
     172.91173669923782,
     1.3438851951615003,
@@ -658,27 +659,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     "eo:cloud_cover": 1.2,
     "eo:snow_cover": 0
   },
-  "collection": "eo-collection",
-  "links": [
-    {
-      "rel": "root",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "parent",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    },
-    {
-      "rel": "collection",
-      "href": "./collection.json",
-      "type": "application/json",
-      "title": "Simple Example Collection"
-    }
-  ],
   "assets": {
     "analytic": {
       "href": "https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif",
@@ -756,6 +736,26 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
       ]
     }
   },
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "parent",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    },
+    {
+      "rel": "collection",
+      "href": "./collection.json",
+      "type": "application/json",
+      "title": "Simple Example Collection"
+    }
+  ],
   "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-eo/context.jsonld"
 }
 ```
@@ -786,15 +786,15 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
