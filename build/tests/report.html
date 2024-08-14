@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-08-06T01:10:01.672677+00:00</small>
+            <small class="datetime">Generated at 2024-08-14T06:34:39.375833+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 11 / 13 (84.62%)
+                    Number of passing building blocks: 12 / 13 (92.31%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -843,7 +843,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-stac-eo" id="bblock-ogc.geo.geodcat.geodcat-stac-eo">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button " type="button"
+                                <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-stac-eo">
                                     <div class="flex-fill">
@@ -851,16 +851,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-stac-eo</small>
                                     </div>
 
-                                    <span class="badge text-bg-danger me-2">
-                                            Tests Failed
-                                            (0% passed)
+                                    <span class="badge text-bg-success me-2">
+                                            Passed
+                                            (100% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-eo">
+                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat-stac-eo">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-danger">
-                                            Test passed: 0 / 2
+                                        <p class="summary fw-semibold text-success">
+                                            Test passed: 2 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -875,7 +875,7 @@
                                                     <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/collection.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-15">
@@ -886,208 +886,7 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;id&#x27;: &#x27;eo-collection&#x27;, &#x27;type&#x27;: &#x27;Collection&#x27;, &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/item-assets/v1.0.0/schema.json&#x27;, &#x27;https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json&#x27;], &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;, &#x27;description&#x27;: &#x27;A simple Collection demonstrating EO extension fields in a Collection.&#x27;, &#x27;title&#x27;: &#x27;Simple EO Collection&#x27;, &#x27;extent&#x27;: {&#x27;spatial&#x27;: {&#x27;bbox&#x27;: [[172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975]]}, &#x27;temporal&#x27;: {&#x27;interval&#x27;: [[&#x27;2020-12-11T22:38:32.125Z&#x27;, &#x27;2020-12-14T18:02:31.437Z&#x27;]]}}, &#x27;license&#x27;: &#x27;CC-BY-4.0&#x27;, &#x27;summaries&#x27;: {&#x27;platform&#x27;: [&#x27;cool_sat1&#x27;, &#x27;cool_sat2&#x27;], &#x27;constellation&#x27;: [&#x27;ion&#x27;], &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;, &#x27;cool_sensor_v2&#x27;], &#x27;eo:cloud_cover&#x27;: {&#x27;minimum&#x27;: 0, &#x27;maximum&#x27;: 50}, &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07, &#x27;eo:solar_illumination&#x27;: 1959.66}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08, &#x27;eo:solar_illumination&#x27;: 1823.24}, {&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09, &#x27;eo:solar_illumination&#x27;: 1512.06}, {&#x27;name&#x27;: &#x27;band4&#x27;, &#x27;eo:common_name&#x27;: &#x27;nir&#x27;, &#x27;eo:center_wavelength&#x27;: 0.8, &#x27;eo:full_width_half_max&#x27;: 0.152, &#x27;eo:solar_illumination&#x27;: 1041.63}]}, &#x27;item_assets&#x27;: {&#x27;analytic&#x27;: {&#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;, &#x27;roles&#x27;: [&#x27;data&#x27;], &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.7, &#x27;eo:solar_illumination&#x27;: 1959.66}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08, &#x27;eo:solar_illumination&#x27;: 1823.24}, {&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.9, &#x27;eo:solar_illumination&#x27;: 1512.06}, {&#x27;name&#x27;: &#x27;band4&#x27;, &#x27;eo:common_name&#x27;: &#x27;nir&#x27;, &#x27;eo:center_wavelength&#x27;: 0.8, &#x27;eo:full_width_half_max&#x27;: 0.152, &#x27;eo:solar_illumination&#x27;: 1041.63}]}, &#x27;thumbnail&#x27;: {&#x27;title&#x27;: &#x27;Thumbnail&#x27;, &#x27;type&#x27;: &#x27;image/png&#x27;, &#x27;roles&#x27;: [&#x27;thumbnail&#x27;]}, &#x27;visual&#x27;: {&#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;3-Band Visual&#x27;, &#x27;roles&#x27;: [&#x27;visual&#x27;], &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08}, {&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07}]}}, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;item&#x27;, &#x27;href&#x27;: &#x27;./item.json&#x27;, &#x27;type&#x27;: &#x27;application/geo+json&#x27;, &#x27;title&#x27;: &#x27;20201211_223832_CS2&#x27;}]} is not valid under any of the given schemas
-
-Failed validating &#x27;oneOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][1]:
-    {&#x27;$id&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json#&#x27;,
-     &#x27;$schema&#x27;: &#x27;http://json-schema.org/draft-07/schema#&#x27;,
-     &#x27;definitions&#x27;: {&#x27;bands&#x27;: {&#x27;items&#x27;: {&#x27;minProperties&#x27;: 1,
-                                         &#x27;properties&#x27;: {&#x27;center_wavelength&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                              &#x27;title&#x27;: &#x27;Center &#x27;
-                                                                                       &#x27;Wavelength&#x27;,
-                                                                              &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;common_name&#x27;: {&#x27;enum&#x27;: [&#x27;coastal&#x27;,
-                                                                                 &#x27;blue&#x27;,
-                                                                                 &#x27;green&#x27;,
-                                                                                 &#x27;red&#x27;,
-                                                                                 &#x27;rededge&#x27;,
-                                                                                 &#x27;yellow&#x27;,
-                                                                                 &#x27;pan&#x27;,
-                                                                                 &#x27;nir&#x27;,
-                                                                                 &#x27;nir08&#x27;,
-                                                                                 &#x27;nir09&#x27;,
-                                                                                 &#x27;cirrus&#x27;,
-                                                                                 &#x27;swir16&#x27;,
-                                                                                 &#x27;swir22&#x27;,
-                                                                                 &#x27;lwir&#x27;,
-                                                                                 &#x27;lwir11&#x27;,
-                                                                                 &#x27;lwir12&#x27;],
-                                                                        &#x27;title&#x27;: &#x27;Common &#x27;
-                                                                                 &#x27;Name &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;description&#x27;: {&#x27;minLength&#x27;: 1,
-                                                                        &#x27;title&#x27;: &#x27;Description &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;full_width_half_max&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                                &#x27;title&#x27;: &#x27;Full &#x27;
-                                                                                         &#x27;Width &#x27;
-                                                                                         &#x27;Half &#x27;
-                                                                                         &#x27;Max &#x27;
-                                                                                         &#x27;(FWHM)&#x27;,
-                                                                                &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;name&#x27;: {&#x27;title&#x27;: &#x27;Name &#x27;
-                                                                          &#x27;of &#x27;
-                                                                          &#x27;the &#x27;
-                                                                          &#x27;band&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;solar_illumination&#x27;: {&#x27;minimum&#x27;: 0,
-                                                                               &#x27;title&#x27;: &#x27;Solar &#x27;
-                                                                                        &#x27;Illumination&#x27;,
-                                                                               &#x27;type&#x27;: &#x27;number&#x27;}},
-                                         &#x27;title&#x27;: &#x27;Band&#x27;,
-                                         &#x27;type&#x27;: &#x27;object&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;title&#x27;: &#x27;Bands&#x27;,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                     &#x27;fields&#x27;: {&#x27;additionalProperties&#x27;: False,
-                                &#x27;patternProperties&#x27;: {&#x27;^(?!eo:)&#x27;: {}},
-                                &#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;},
-                                               &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                  &#x27;minimum&#x27;: 0,
-                                                                  &#x27;title&#x27;: &#x27;Cloud &#x27;
-                                                                           &#x27;Cover&#x27;,
-                                                                  &#x27;type&#x27;: &#x27;number&#x27;},
-                                               &#x27;eo:snow_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                 &#x27;minimum&#x27;: 0,
-                                                                 &#x27;title&#x27;: &#x27;Snow &#x27;
-                                                                          &#x27;and &#x27;
-                                                                          &#x27;Ice &#x27;
-                                                                          &#x27;Cover&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;number&#x27;}},
-                                &#x27;type&#x27;: &#x27;object&#x27;},
-                     &#x27;stac_extensions&#x27;: {&#x27;properties&#x27;: {&#x27;stac_extensions&#x27;: {&#x27;contains&#x27;: {&#x27;const&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json&#x27;},
-                                                                            &#x27;type&#x27;: &#x27;array&#x27;}},
-                                         &#x27;required&#x27;: [&#x27;stac_extensions&#x27;],
-                                         &#x27;type&#x27;: &#x27;object&#x27;}},
-     &#x27;description&#x27;: &#x27;STAC EO Extension for STAC Items.&#x27;,
-     &#x27;oneOf&#x27;: [{&#x27;$comment&#x27;: &#x27;This is the schema for STAC Items.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;$comment&#x27;: &#x27;The if-then-else below checks &#x27;
-                                       &#x27;whether the eo:bands is given in &#x27;
-                                       &#x27;assets or not. If yes, allows &#x27;
-                                       &#x27;eo:bands in properties (else), &#x27;
-                                       &#x27;otherwise, disallows eo:bands in &#x27;
-                                       &#x27;properties (then).&#x27;,
-                           &#x27;else&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;}}}}},
-                           &#x27;if&#x27;: {&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}},
-                                                            &#x27;type&#x27;: &#x27;object&#x27;}},
-                                  &#x27;required&#x27;: [&#x27;assets&#x27;]},
-                           &#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Feature&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;properties&#x27;, &#x27;assets&#x27;],
-                           &#x27;then&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}}}},
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]},
-               {&#x27;$comment&#x27;: &#x27;This is the schema for STAC Collections.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;item_assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                          &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Collection&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;],
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]}],
-     &#x27;title&#x27;: &#x27;EO Extension&#x27;}
-
-On instance:
-    {&#x27;description&#x27;: &#x27;A simple Collection demonstrating EO extension fields &#x27;
-                    &#x27;in a Collection.&#x27;,
-     &#x27;extent&#x27;: {&#x27;spatial&#x27;: {&#x27;bbox&#x27;: [[172.91173669923782,
-                                      1.3438851951615003,
-                                      172.95469614953714,
-                                      1.3690476620161975]]},
-                &#x27;temporal&#x27;: {&#x27;interval&#x27;: [[&#x27;2020-12-11T22:38:32.125Z&#x27;,
-                                           &#x27;2020-12-14T18:02:31.437Z&#x27;]]}},
-     &#x27;id&#x27;: &#x27;eo-collection&#x27;,
-     &#x27;item_assets&#x27;: {&#x27;analytic&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.47,
-                                             &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
-                                             &#x27;eo:full_width_half_max&#x27;: 0.7,
-                                             &#x27;eo:solar_illumination&#x27;: 1959.66,
-                                             &#x27;name&#x27;: &#x27;band1&#x27;},
-                                            {&#x27;eo:center_wavelength&#x27;: 0.56,
-                                             &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
-                                             &#x27;eo:full_width_half_max&#x27;: 0.08,
-                                             &#x27;eo:solar_illumination&#x27;: 1823.24,
-                                             &#x27;name&#x27;: &#x27;band2&#x27;},
-                                            {&#x27;common_name&#x27;: &#x27;red&#x27;,
-                                             &#x27;eo:center_wavelength&#x27;: 0.645,
-                                             &#x27;eo:full_width_half_max&#x27;: 0.9,
-                                             &#x27;eo:solar_illumination&#x27;: 1512.06,
-                                             &#x27;name&#x27;: &#x27;band3&#x27;},
-                                            {&#x27;eo:center_wavelength&#x27;: 0.8,
-                                             &#x27;eo:common_name&#x27;: &#x27;nir&#x27;,
-                                             &#x27;eo:full_width_half_max&#x27;: 0.152,
-                                             &#x27;eo:solar_illumination&#x27;: 1041.63,
-                                             &#x27;name&#x27;: &#x27;band4&#x27;}],
-                                  &#x27;roles&#x27;: [&#x27;data&#x27;],
-                                  &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;,
-                                  &#x27;type&#x27;: &#x27;image/tiff; &#x27;
-                                          &#x27;application=geotiff; &#x27;
-                                          &#x27;profile=cloud-optimized&#x27;},
-                     &#x27;thumbnail&#x27;: {&#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
-                                   &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
-                                   &#x27;type&#x27;: &#x27;image/png&#x27;},
-                     &#x27;visual&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.645,
-                                           &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
-                                           &#x27;eo:full_width_half_max&#x27;: 0.09,
-                                           &#x27;name&#x27;: &#x27;band3&#x27;},
-                                          {&#x27;eo:center_wavelength&#x27;: 0.56,
-                                           &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
-                                           &#x27;eo:full_width_half_max&#x27;: 0.08,
-                                           &#x27;name&#x27;: &#x27;band2&#x27;},
-                                          {&#x27;eo:center_wavelength&#x27;: 0.47,
-                                           &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
-                                           &#x27;eo:full_width_half_max&#x27;: 0.07,
-                                           &#x27;name&#x27;: &#x27;band1&#x27;}],
-                                &#x27;roles&#x27;: [&#x27;visual&#x27;],
-                                &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
-                                &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
-                                        &#x27;profile=cloud-optimized&#x27;}},
-     &#x27;license&#x27;: &#x27;CC-BY-4.0&#x27;,
-     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;root&#x27;,
-                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;},
-               {&#x27;href&#x27;: &#x27;./item.json&#x27;,
-                &#x27;rel&#x27;: &#x27;item&#x27;,
-                &#x27;title&#x27;: &#x27;20201211_223832_CS2&#x27;,
-                &#x27;type&#x27;: &#x27;application/geo+json&#x27;}],
-     &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/item-assets/v1.0.0/schema.json&#x27;,
-                         &#x27;https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json&#x27;],
-     &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;,
-     &#x27;summaries&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.47,
-                              &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
-                              &#x27;eo:full_width_half_max&#x27;: 0.07,
-                              &#x27;eo:solar_illumination&#x27;: 1959.66,
-                              &#x27;name&#x27;: &#x27;band1&#x27;},
-                             {&#x27;eo:center_wavelength&#x27;: 0.56,
-                              &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
-                              &#x27;eo:full_width_half_max&#x27;: 0.08,
-                              &#x27;eo:solar_illumination&#x27;: 1823.24,
-                              &#x27;name&#x27;: &#x27;band2&#x27;},
-                             {&#x27;eo:center_wavelength&#x27;: 0.645,
-                              &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
-                              &#x27;eo:full_width_half_max&#x27;: 0.09,
-                              &#x27;eo:solar_illumination&#x27;: 1512.06,
-                              &#x27;name&#x27;: &#x27;band3&#x27;},
-                             {&#x27;eo:center_wavelength&#x27;: 0.8,
-                              &#x27;eo:common_name&#x27;: &#x27;nir&#x27;,
-                              &#x27;eo:full_width_half_max&#x27;: 0.152,
-                              &#x27;eo:solar_illumination&#x27;: 1041.63,
-                              &#x27;name&#x27;: &#x27;band4&#x27;}],
-                   &#x27;constellation&#x27;: [&#x27;ion&#x27;],
-                   &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 50, &#x27;minimum&#x27;: 0},
-                   &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;, &#x27;cool_sensor_v2&#x27;],
-                   &#x27;platform&#x27;: [&#x27;cool_sat1&#x27;, &#x27;cool_sat2&#x27;]},
-     &#x27;title&#x27;: &#x27;Simple EO Collection&#x27;,
-     &#x27;type&#x27;: &#x27;Collection&#x27;}</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -1113,7 +912,7 @@ On instance:
                                                     <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-danger me-2">Failed</span>
+                                                            <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-16">
@@ -1124,200 +923,7 @@ On instance:
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;stac_version&#x27;: &#x27;1.0.0&#x27;, &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json&#x27;], &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;, &#x27;collection&#x27;: &#x27;eo-collection&#x27;, &#x27;bbox&#x27;: [172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975], &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003], [172.95469614953714, 1.3438851951615003], [172.95469614953714, 1.3690476620161975], [172.91173669923782, 1.3690476620161975], [172.91173669923782, 1.3438851951615003]]]}, &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;, &#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;platform&#x27;: &#x27;cool_sat2&#x27;, &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;], &#x27;gsd&#x27;: 0.66, &#x27;eo:cloud_cover&#x27;: 1.2, &#x27;eo:snow_cover&#x27;: 0}, &#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;, &#x27;roles&#x27;: [&#x27;data&#x27;], &#x27;eo:cloud_cover&#x27;: 1.2, &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07, &#x27;eo:solar_illumination&#x27;: 1959.66}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08, &#x27;eo:solar_illumination&#x27;: 1823.24}, {&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09, &#x27;eo:solar_illumination&#x27;: 1512.06}, {&#x27;name&#x27;: &#x27;band4&#x27;, &#x27;eo:common_name&#x27;: &#x27;nir&#x27;, &#x27;eo:center_wavelength&#x27;: 0.8, &#x27;eo:full_width_half_max&#x27;: 0.152, &#x27;eo:solar_illumination&#x27;: 1041.63}]}, &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;, &#x27;title&#x27;: &#x27;Thumbnail&#x27;, &#x27;type&#x27;: &#x27;image/png&#x27;, &#x27;roles&#x27;: [&#x27;thumbnail&#x27;]}, &#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;3-Band Visual&#x27;, &#x27;roles&#x27;: [&#x27;visual&#x27;], &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08}, {&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07}]}}, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}]} is not valid under any of the given schemas
-
-Failed validating &#x27;oneOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][1]:
-    {&#x27;$id&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json#&#x27;,
-     &#x27;$schema&#x27;: &#x27;http://json-schema.org/draft-07/schema#&#x27;,
-     &#x27;definitions&#x27;: {&#x27;bands&#x27;: {&#x27;items&#x27;: {&#x27;minProperties&#x27;: 1,
-                                         &#x27;properties&#x27;: {&#x27;center_wavelength&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                              &#x27;title&#x27;: &#x27;Center &#x27;
-                                                                                       &#x27;Wavelength&#x27;,
-                                                                              &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;common_name&#x27;: {&#x27;enum&#x27;: [&#x27;coastal&#x27;,
-                                                                                 &#x27;blue&#x27;,
-                                                                                 &#x27;green&#x27;,
-                                                                                 &#x27;red&#x27;,
-                                                                                 &#x27;rededge&#x27;,
-                                                                                 &#x27;yellow&#x27;,
-                                                                                 &#x27;pan&#x27;,
-                                                                                 &#x27;nir&#x27;,
-                                                                                 &#x27;nir08&#x27;,
-                                                                                 &#x27;nir09&#x27;,
-                                                                                 &#x27;cirrus&#x27;,
-                                                                                 &#x27;swir16&#x27;,
-                                                                                 &#x27;swir22&#x27;,
-                                                                                 &#x27;lwir&#x27;,
-                                                                                 &#x27;lwir11&#x27;,
-                                                                                 &#x27;lwir12&#x27;],
-                                                                        &#x27;title&#x27;: &#x27;Common &#x27;
-                                                                                 &#x27;Name &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;description&#x27;: {&#x27;minLength&#x27;: 1,
-                                                                        &#x27;title&#x27;: &#x27;Description &#x27;
-                                                                                 &#x27;of &#x27;
-                                                                                 &#x27;the &#x27;
-                                                                                 &#x27;band&#x27;,
-                                                                        &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;full_width_half_max&#x27;: {&#x27;minimumExclusive&#x27;: 0,
-                                                                                &#x27;title&#x27;: &#x27;Full &#x27;
-                                                                                         &#x27;Width &#x27;
-                                                                                         &#x27;Half &#x27;
-                                                                                         &#x27;Max &#x27;
-                                                                                         &#x27;(FWHM)&#x27;,
-                                                                                &#x27;type&#x27;: &#x27;number&#x27;},
-                                                        &#x27;name&#x27;: {&#x27;title&#x27;: &#x27;Name &#x27;
-                                                                          &#x27;of &#x27;
-                                                                          &#x27;the &#x27;
-                                                                          &#x27;band&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;string&#x27;},
-                                                        &#x27;solar_illumination&#x27;: {&#x27;minimum&#x27;: 0,
-                                                                               &#x27;title&#x27;: &#x27;Solar &#x27;
-                                                                                        &#x27;Illumination&#x27;,
-                                                                               &#x27;type&#x27;: &#x27;number&#x27;}},
-                                         &#x27;title&#x27;: &#x27;Band&#x27;,
-                                         &#x27;type&#x27;: &#x27;object&#x27;},
-                               &#x27;minItems&#x27;: 1,
-                               &#x27;title&#x27;: &#x27;Bands&#x27;,
-                               &#x27;type&#x27;: &#x27;array&#x27;},
-                     &#x27;fields&#x27;: {&#x27;additionalProperties&#x27;: False,
-                                &#x27;patternProperties&#x27;: {&#x27;^(?!eo:)&#x27;: {}},
-                                &#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;},
-                                               &#x27;eo:cloud_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                  &#x27;minimum&#x27;: 0,
-                                                                  &#x27;title&#x27;: &#x27;Cloud &#x27;
-                                                                           &#x27;Cover&#x27;,
-                                                                  &#x27;type&#x27;: &#x27;number&#x27;},
-                                               &#x27;eo:snow_cover&#x27;: {&#x27;maximum&#x27;: 100,
-                                                                 &#x27;minimum&#x27;: 0,
-                                                                 &#x27;title&#x27;: &#x27;Snow &#x27;
-                                                                          &#x27;and &#x27;
-                                                                          &#x27;Ice &#x27;
-                                                                          &#x27;Cover&#x27;,
-                                                                 &#x27;type&#x27;: &#x27;number&#x27;}},
-                                &#x27;type&#x27;: &#x27;object&#x27;},
-                     &#x27;stac_extensions&#x27;: {&#x27;properties&#x27;: {&#x27;stac_extensions&#x27;: {&#x27;contains&#x27;: {&#x27;const&#x27;: &#x27;https://stac-extensions.github.io/eo/v1.1.0/schema.json&#x27;},
-                                                                            &#x27;type&#x27;: &#x27;array&#x27;}},
-                                         &#x27;required&#x27;: [&#x27;stac_extensions&#x27;],
-                                         &#x27;type&#x27;: &#x27;object&#x27;}},
-     &#x27;description&#x27;: &#x27;STAC EO Extension for STAC Items.&#x27;,
-     &#x27;oneOf&#x27;: [{&#x27;$comment&#x27;: &#x27;This is the schema for STAC Items.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;$comment&#x27;: &#x27;The if-then-else below checks &#x27;
-                                       &#x27;whether the eo:bands is given in &#x27;
-                                       &#x27;assets or not. If yes, allows &#x27;
-                                       &#x27;eo:bands in properties (else), &#x27;
-                                       &#x27;otherwise, disallows eo:bands in &#x27;
-                                       &#x27;properties (then).&#x27;,
-                           &#x27;else&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/bands&#x27;}}}}},
-                           &#x27;if&#x27;: {&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}},
-                                                            &#x27;type&#x27;: &#x27;object&#x27;}},
-                                  &#x27;required&#x27;: [&#x27;assets&#x27;]},
-                           &#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;properties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Feature&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;, &#x27;properties&#x27;, &#x27;assets&#x27;],
-                           &#x27;then&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;properties&#x27;: {&#x27;eo:bands&#x27;: False}}}},
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]},
-               {&#x27;$comment&#x27;: &#x27;This is the schema for STAC Collections.&#x27;,
-                &#x27;allOf&#x27;: [{&#x27;properties&#x27;: {&#x27;assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                     &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;item_assets&#x27;: {&#x27;additionalProperties&#x27;: {&#x27;$ref&#x27;: &#x27;#/definitions/fields&#x27;},
-                                                          &#x27;type&#x27;: &#x27;object&#x27;},
-                                          &#x27;type&#x27;: {&#x27;const&#x27;: &#x27;Collection&#x27;}},
-                           &#x27;required&#x27;: [&#x27;type&#x27;],
-                           &#x27;type&#x27;: &#x27;object&#x27;},
-                          {&#x27;$ref&#x27;: &#x27;#/definitions/stac_extensions&#x27;}]}],
-     &#x27;title&#x27;: &#x27;EO Extension&#x27;}
-
-On instance:
-    {&#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.47,
-                                        &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
-                                        &#x27;eo:full_width_half_max&#x27;: 0.07,
-                                        &#x27;eo:solar_illumination&#x27;: 1959.66,
-                                        &#x27;name&#x27;: &#x27;band1&#x27;},
-                                       {&#x27;eo:center_wavelength&#x27;: 0.56,
-                                        &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
-                                        &#x27;eo:full_width_half_max&#x27;: 0.08,
-                                        &#x27;eo:solar_illumination&#x27;: 1823.24,
-                                        &#x27;name&#x27;: &#x27;band2&#x27;},
-                                       {&#x27;eo:center_wavelength&#x27;: 0.645,
-                                        &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
-                                        &#x27;eo:full_width_half_max&#x27;: 0.09,
-                                        &#x27;eo:solar_illumination&#x27;: 1512.06,
-                                        &#x27;name&#x27;: &#x27;band3&#x27;},
-                                       {&#x27;eo:center_wavelength&#x27;: 0.8,
-                                        &#x27;eo:common_name&#x27;: &#x27;nir&#x27;,
-                                        &#x27;eo:full_width_half_max&#x27;: 0.152,
-                                        &#x27;eo:solar_illumination&#x27;: 1041.63,
-                                        &#x27;name&#x27;: &#x27;band4&#x27;}],
-                             &#x27;eo:cloud_cover&#x27;: 1.2,
-                             &#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;,
-                             &#x27;roles&#x27;: [&#x27;data&#x27;],
-                             &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;,
-                             &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
-                                     &#x27;profile=cloud-optimized&#x27;},
-                &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;,
-                              &#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
-                              &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
-                              &#x27;type&#x27;: &#x27;image/png&#x27;},
-                &#x27;visual&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.645,
-                                      &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
-                                      &#x27;eo:full_width_half_max&#x27;: 0.09,
-                                      &#x27;name&#x27;: &#x27;band3&#x27;},
-                                     {&#x27;eo:center_wavelength&#x27;: 0.56,
-                                      &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
-                                      &#x27;eo:full_width_half_max&#x27;: 0.08,
-                                      &#x27;name&#x27;: &#x27;band2&#x27;},
-                                     {&#x27;eo:center_wavelength&#x27;: 0.47,
-                                      &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
-                                      &#x27;eo:full_width_half_max&#x27;: 0.07,
-                                      &#x27;name&#x27;: &#x27;band1&#x27;}],
-                           &#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;,
-                           &#x27;roles&#x27;: [&#x27;visual&#x27;],
-                           &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
-                           &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
-                                   &#x27;profile=cloud-optimized&#x27;}},
-     &#x27;bbox&#x27;: [172.91173669923782,
-              1.3438851951615003,
-              172.95469614953714,
-              1.3690476620161975],
-     &#x27;collection&#x27;: &#x27;eo-collection&#x27;,
-     &#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003],
-                                   [172.95469614953714, 1.3438851951615003],
-                                   [172.95469614953714, 1.3690476620161975],
-                                   [172.91173669923782, 1.3690476620161975],
-                                   [172.91173669923782,
-                                    1.3438851951615003]]],
-                  &#x27;type&#x27;: &#x27;Polygon&#x27;},
-     &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;,
-     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;root&#x27;,
-                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;},
-               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;parent&#x27;,
-                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;},
-               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
-                &#x27;rel&#x27;: &#x27;collection&#x27;,
-                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
-                &#x27;type&#x27;: &#x27;application/json&#x27;}],
-     &#x27;properties&#x27;: {&#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
-                    &#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
-                    &#x27;eo:cloud_cover&#x27;: 1.2,
-                    &#x27;eo:snow_cover&#x27;: 0,
-                    &#x27;gsd&#x27;: 0.66,
-                    &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
-                    &#x27;platform&#x27;: &#x27;cool_sat2&#x27;,
-                    &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;},
-     &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json&#x27;],
-     &#x27;stac_version&#x27;: &#x27;1.0.0&#x27;,
-     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
+                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report

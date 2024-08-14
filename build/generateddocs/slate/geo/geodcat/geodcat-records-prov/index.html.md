@@ -50,7 +50,7 @@ This profile extends a building block that uses the official JSON-LD context for
 
 ```json
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -97,7 +97,7 @@ This profile extends a building block that uses the official JSON-LD context for
 
 ```jsonld
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -184,7 +184,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 
 ```json
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -248,7 +248,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 
 ```jsonld
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -354,7 +354,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 
 ```json
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -426,7 +426,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 
 ```jsonld
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],

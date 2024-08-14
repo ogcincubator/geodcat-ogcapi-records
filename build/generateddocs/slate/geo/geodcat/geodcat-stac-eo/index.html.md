@@ -29,8 +29,8 @@ This profile binds the schema for the STAC Electro-Optical extension to a profil
     <a href="http://www.opengis.net/def/status/under-development" target="_blank" data-rainbow-uri>Under development</a>
 </p>
 
-<aside class="warning">
-Validation for this building block has <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-stac-eo/" target="_blank">failed</a></strong>
+<aside class="success">
+This building block is <strong><a href="https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-stac-eo/" target="_blank">valid</a></strong>
 </aside>
 
 # Description
@@ -54,7 +54,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "description": "A simple Collection demonstrating EO extension fields in a Collection.",
   "title": "Simple EO Collection",
   "extent": {
@@ -233,7 +233,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json",
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "description": "A simple Collection demonstrating EO extension fields in a Collection.",
   "title": "Simple EO Collection",
   "extent": {
@@ -426,7 +426,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     ns2:extensions "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
         "https://stac-extensions.github.io/item-assets/v1.0.0/schema.json" ;
-    ns2:version "1.0.0" .
+    ns2:version "1.1.0-beta.1" .
 
 
 ```
@@ -444,7 +444,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 ```json
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
@@ -607,7 +607,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 ```jsonld
 {
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json"
   ],
@@ -786,15 +786,15 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -805,7 +805,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     ns1:hasAsset <https://example.com/stac/raster/example-1/analytic>,
         <https://example.com/stac/raster/example-1/thumbnail>,
         <https://example.com/stac/raster/example-1/visual> ;
-    ns1:version "1.0.0" .
+    ns1:version "1.1.0-beta.1" .
 
 <https://example.com/stac/raster/example-1/analytic> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "4-Band Analytic" ;
@@ -838,7 +838,7 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/schema.yaml
-- oneOf:
+- anyOf:
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.yaml
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-collection/schema.yaml
 

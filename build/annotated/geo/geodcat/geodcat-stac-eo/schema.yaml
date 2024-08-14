@@ -3,6 +3,6 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/schema.yaml
-- oneOf:
+- anyOf:
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.yaml
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-collection/schema.yaml

@@ -27,13 +27,18 @@ This is the collection example from the STAC specification.
   "id": "simple-collection",
   "type": "Collection",
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/view/v1.0.0/schema.json"
   ],
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "description": "A simple collection demonstrating core catalog fields with links to a couple of items",
   "title": "Simple Example Collection",
+  "keywords": [
+    "simple",
+    "example",
+    "collection"
+  ],
   "providers": [
     {
       "name": "Remote Data, Inc",
@@ -86,10 +91,9 @@ This is the collection example from the STAC specification.
       "minimum": 1.2,
       "maximum": 1.2
     },
-    "proj:epsg": {
-      "minimum": 32659,
-      "maximum": 32659
-    },
+    "proj:cpde": [
+      "EPSG:32659"
+    ],
     "view:sun_elevation": {
       "minimum": 54.9,
       "maximum": 54.9
@@ -130,7 +134,7 @@ This is the collection example from the STAC specification.
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json",
+      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0-beta.1/examples/collection.json",
       "type": "application/json"
     }
   ]
@@ -144,13 +148,18 @@ This is the collection example from the STAC specification.
   "id": "simple-collection",
   "type": "Collection",
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/view/v1.0.0/schema.json"
   ],
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0-beta.1",
   "description": "A simple collection demonstrating core catalog fields with links to a couple of items",
   "title": "Simple Example Collection",
+  "keywords": [
+    "simple",
+    "example",
+    "collection"
+  ],
   "providers": [
     {
       "name": "Remote Data, Inc",
@@ -203,10 +212,9 @@ This is the collection example from the STAC specification.
       "minimum": 1.2,
       "maximum": 1.2
     },
-    "proj:epsg": {
-      "minimum": 32659,
-      "maximum": 32659
-    },
+    "proj:cpde": [
+      "EPSG:32659"
+    ],
     "view:sun_elevation": {
       "minimum": 54.9,
       "maximum": 54.9
@@ -247,7 +255,7 @@ This is the collection example from the STAC specification.
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json",
+      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0-beta.1/examples/collection.json",
       "type": "application/json"
     }
   ],
@@ -267,30 +275,33 @@ This is the collection example from the STAC specification.
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
+    dcterms:subject "collection",
+        "example",
+        "simple" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Item" ;
+    rdfs:seeAlso [ rdfs:label "Extended Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0-beta.1/examples/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Extended Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.0.0/examples/collection.json> ] ;
-    stac:extensions "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
-        "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ] ;
+    stac:extensions "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+        "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
-    stac:version "1.0.0" .
+    stac:version "1.1.0-beta.1" .
 
 
 ```
@@ -299,10 +310,11 @@ This is the collection example from the STAC specification.
 
 ```yaml
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+description: Schema for OGC API Records profile for GeoDCAT - defines all extra elements
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
-allOf:
+anyOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml
 - description: STAC core profile bound to GeoDCAT
 x-jsonld-extra-terms:
   stac_version: urn:stac:vocab#version

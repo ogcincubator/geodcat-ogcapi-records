@@ -1,8 +1,9 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
+description: Schema for OGC API Records profile for GeoDCAT - defines all extra elements
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
-allOf:
+anyOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml
 - description: STAC core profile bound to GeoDCAT
 x-jsonld-extra-terms:
   stac_version: urn:stac:vocab#version

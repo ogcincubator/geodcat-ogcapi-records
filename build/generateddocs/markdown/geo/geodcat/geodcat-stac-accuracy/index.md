@@ -153,8 +153,8 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <urn:stac:vocab#> .
+@prefix ns1: <urn:stac:vocab#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -168,14 +168,14 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
     accuracy:measurement_absolute 2e-02 ;
     accuracy:measurement_relative 1e-02 ;
     dcterms:type "Feature" ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
+    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
-    ns2:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    ns2:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
-    ns2:version "1.0.0" .
+    ns1:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
+    ns1:version "1.0.0" .
 
 <https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .
 
@@ -190,7 +190,7 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy/schema.yaml
-- oneOf:
+- anyOf:
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-item/schema.yaml
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-stac-collection/schema.yaml
 x-jsonld-extra-terms:

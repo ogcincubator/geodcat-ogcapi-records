@@ -171,7 +171,7 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://proj.org/en/latest/schemas/v0.2/projjson.schema.json
 x-jsonld-prefixes:
-  proj: http://someuri.org/proj/
+  proj: https://proj.org/ontology/
 
 ```
 
@@ -188,7 +188,7 @@ Links to the schema:
 ```json--ldContext
 {
   "@context": {
-    "proj": "http://someuri.org/proj/",
+    "proj": "https://proj.org/ontology/",
     "@version": 1.1
   }
 }
