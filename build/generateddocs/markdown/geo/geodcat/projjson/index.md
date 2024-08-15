@@ -119,6 +119,35 @@ Example from PROJJSON spec at [https://proj.org/en/9.4/specifications/projjson.h
 
 #### ttl
 ```ttl
+@prefix ns1: <https://proj.org/ontology/$> .
+@prefix proj: <https://proj.org/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] ns1:schema "https://proj.org/schemas/v0.4/projjson.schema.json" ;
+    proj:area "Puerto Rico - onshore and offshore. United States (USA) onshore and offshore - Alabama; Alaska; Arizona; Arkansas; California; Colorado; Connecticut; Delaware; Florida; Georgia; Idaho; Illinois; Indiana; Iowa; Kansas; Kentucky; Louisiana; Maine; Maryland; Massachusetts; Michigan; Minnesota; Mississippi; Missouri; Montana; Nebraska; Nevada; New Hampshire; New Jersey; New Mexico; New York; North Carolina; North Dakota; Ohio; Oklahoma; Oregon; Pennsylvania; Rhode Island; South Carolina; South Dakota; Tennessee; Texas; Utah; Vermont; Virginia; Washington; West Virginia; Wisconsin; Wyoming. US Virgin Islands - onshore and offshore." ;
+    proj:bbox [ proj:east_longitude -6.388e+01 ;
+            proj:north_latitude 7.471e+01 ;
+            proj:south_latitude 1.492e+01 ;
+            proj:west_longitude 1.6765e+02 ] ;
+    proj:coordinate_system [ proj:axis [ proj:abbreviation "Lon" ;
+                    proj:direction "east" ;
+                    proj:name "Geodetic longitude" ;
+                    proj:unit "degree" ],
+                [ proj:abbreviation "Lat" ;
+                    proj:direction "north" ;
+                    proj:name "Geodetic latitude" ;
+                    proj:unit "degree" ] ;
+            proj:subtype "ellipsoidal" ] ;
+    proj:datum [ proj:ellipsoid [ proj:inverse_flattening 2.982572e+02 ;
+                    proj:name "GRS 1980" ;
+                    proj:semi_major_axis 6378137 ] ;
+            proj:name "NAD83 (National Spatial Reference System 2011)" ;
+            proj:type "GeodeticReferenceFrame" ] ;
+    proj:id [ proj:authority "EPSG" ;
+            proj:code 6318 ] ;
+    proj:name "NAD83(2011)" ;
+    proj:scope "Horizontal component of 3D system." ;
+    proj:type "GeographicCRS" .
 
 
 ```
@@ -131,6 +160,7 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
 - $ref: https://proj.org/en/latest/schemas/v0.2/projjson.schema.json
+x-jsonld-vocab: https://proj.org/ontology/
 x-jsonld-prefixes:
   proj: https://proj.org/ontology/
 
@@ -147,6 +177,7 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "@vocab": "https://proj.org/ontology/",
     "proj": "https://proj.org/ontology/",
     "@version": 1.1
   }

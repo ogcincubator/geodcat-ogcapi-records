@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.projjson - PROJ-JSON schema",
   "bblockName": "PROJ-JSON schema",
   "bblockId": "ogc.geo.geodcat.projjson",
-  "generated": "2024-08-14T06:34:29.192561+00:00",
-  "result": false,
+  "generated": "2024-08-15T07:16:24.714213+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -38,11 +38,11 @@
             },
             {
               "op": "ttl-create",
-              "empty": true,
+              "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 0,
-              "isError": true,
-              "message": "**Empty** output Turtle example_1_1.ttl created"
+              "size": 32,
+              "isError": false,
+              "message": "Output Turtle example_1_1.ttl created"
             }
           ]
         },
@@ -64,7 +64,7 @@
   "globalErrors": {},
   "counts": {
     "total": 1,
-    "passed": 0,
-    "failed": 1
+    "passed": 1,
+    "failed": 0
   }
 }
