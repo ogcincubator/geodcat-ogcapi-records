@@ -2,11 +2,11 @@
   "id": "simple-collection",
   "type": "Collection",
   "stac_extensions": [
-    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/view/v1.0.0/schema.json"
   ],
-  "stac_version": "1.1.0-beta.1",
+  "stac_version": "1.1.0",
   "description": "A simple collection demonstrating core catalog fields with links to a couple of items",
   "title": "Simple Example Collection",
   "keywords": [
@@ -80,6 +80,26 @@
     "view:sun_azimuth": {
       "minimum": 135.7,
       "maximum": 135.7
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "vegetation": {
+          "description": "Percentage of pixels that are detected as vegetation, e.g. forests, grasslands, etc.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "water": {
+          "description": "Percentage of pixels that are detected as water, e.g. rivers, oceans and ponds.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "urban": {
+          "description": "Percentage of pixels that detected as urban, e.g. roads and buildings.",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
     }
   },
   "links": [
@@ -109,7 +129,7 @@
     },
     {
       "rel": "self",
-      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0-beta.1/examples/collection.json",
+      "href": "https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json",
       "type": "application/json"
     }
   ],
