@@ -3,5 +3,5 @@ description: 'Schema for OGCAPI records profile for GeoDCAT - defines all extra 
 allOf:
   - $ref: bblocks://ogc.contrib.stac.extensions.eo
   - anyOf:
-    - $ref: ../geodcat-stac-item/schema.yaml
-    - $ref: ../geodcat-stac-collection/schema.yaml
+    - $ref: bblocks://ogc.geo.geodcat.stac.geodcat-stac-item
+    - $ref: bblocks://ogc.geo.geodcat.stac.geodcat-stac-collection
