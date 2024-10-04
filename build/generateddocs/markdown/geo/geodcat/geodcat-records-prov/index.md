@@ -26,7 +26,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### json
 ```json
 {
-  "stac_version": "1.1.0-beta.1",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -65,7 +65,8 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### jsonld
 ```jsonld
 {
-  "stac_version": "1.1.0-beta.1",
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -97,8 +98,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
       "title": "Simple Example Collection"
     }
   ],
-  "assets": {},
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld"
+  "assets": {}
 }
 ```
 
@@ -135,7 +135,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### json
 ```json
 {
-  "stac_version": "1.1.0-beta.1",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -191,7 +191,8 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### jsonld
 ```jsonld
 {
-  "stac_version": "1.1.0-beta.1",
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -240,8 +241,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
       "title": "Simple Example Collection"
     }
   ],
-  "assets": {},
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld"
+  "assets": {}
 }
 ```
 
@@ -280,7 +280,7 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
 #### json
 ```json
 {
-  "stac_version": "1.1.0-beta.1",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -344,7 +344,8 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
 #### jsonld
 ```jsonld
 {
-  "stac_version": "1.1.0-beta.1",
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
   ],
@@ -401,8 +402,7 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
       "title": "Simple Example Collection"
     }
   ],
-  "assets": {},
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld"
+  "assets": {}
 }
 ```
 
@@ -519,82 +519,18 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "accessRights": {
-      "@id": "dct:accessRights",
-      "@type": "@id"
-    },
     "time": "dct:temporal",
-    "interval": {
-      "@id": "w3ctime:hasTime",
-      "@container": "@list"
-    },
-    "conformsTo": {
-      "@container": "@set",
-      "@id": "dct:conformsTo",
-      "@type": "@id"
-    },
-    "contactPoint": {
-      "@container": "@set",
-      "@id": "dcat:contactPoint",
-      "@type": "@id"
-    },
-    "creator": {
-      "@id": "dct:creator",
-      "@type": "@id"
-    },
-    "datasetDistribution": {
-      "@container": "@set",
-      "@id": "dcat:distribution",
-      "@type": "@id"
-    },
     "description": {
       "@container": "@set",
       "@id": "dct:description"
-    },
-    "documentation": {
-      "@container": "@set",
-      "@id": "foaf:page",
-      "@type": "@id"
-    },
-    "frequency": {
-      "@id": "dct:accrualPeriodicity",
-      "@type": "@id"
-    },
-    "geographicalCoverage": {
-      "@container": "@set",
-      "@id": "dct:spatial",
-      "@type": "@id"
-    },
-    "hasVersion": {
-      "@container": "@set",
-      "@id": "dcat:hasVersion",
-      "@type": "@id"
-    },
-    "identifier": {
-      "@container": "@set",
-      "@id": "dct:identifier"
-    },
-    "isReferencedBy": {
-      "@container": "@set",
-      "@id": "dct:isReferencedBy",
-      "@type": "@id"
-    },
-    "isVersionOf": {
-      "@container": "@set",
-      "@id": "dcat:isVersionOf",
-      "@type": "@id"
-    },
-    "keyword": {
-      "@container": "@set",
-      "@id": "dcat:keyword"
     },
     "keywords": {
       "@container": "@set",
       "@id": "dcat:keyword"
     },
-    "landingPage": {
+    "conformsTo": {
       "@container": "@set",
-      "@id": "dcat:landingPage",
+      "@id": "dct:conformsTo",
       "@type": "@id"
     },
     "language": "@nest",
@@ -602,105 +538,35 @@ Links to the schema:
       "@container": "@set",
       "@id": "dct:language"
     },
-    "code": "dct:language",
-    "modificationDate": "dct:modified",
-    "otherIdentifier": {
+    "resourceLanguages": {
       "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "@id"
+      "@id": "dct:language"
     },
-    "provenance": {
+    "externalIds": {
       "@container": "@set",
-      "@id": "dct:provenance",
-      "@type": "@id"
-    },
-    "publisher": {
-      "@id": "dct:publisher",
-      "@type": "@id"
-    },
-    "qualifiedAttribution": {
-      "@container": "@set",
-      "@id": "prov:qualifiedAttribution",
-      "@type": "@id",
+      "@id": "rec:scopedIdentifier",
       "@context": {
-        "agent": {
-          "@context": {
-            "agentType": "@type",
-            "name": "rdfs:label",
-            "actedOnBehalfOf": {
-              "@id": "prov:actedOnBehalfOf",
-              "@type": "@id"
-            },
-            "qualifiedDelegation": {
-              "@context": {
-                "hadActivity": {
-                  "@id": "prov:hadActivity",
-                  "@type": "@id"
-                }
-              },
-              "@id": "prov:qualifiedDelegation",
-              "@type": "@id"
-            }
-          },
-          "@id": "prov:agent",
-          "@type": "@id"
-        }
+        "scheme": "rec:scheme",
+        "value": "rec:id"
       }
     },
-    "qualifiedRelation": {
-      "@container": "@set",
-      "@id": "dcat:qualifiedRelation",
-      "@type": "@id"
-    },
-    "relatedResource": {
-      "@container": "@set",
-      "@id": "dct:relation",
-      "@type": "@id"
-    },
-    "releaseDate": "dct:issued",
-    "sample": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#sample",
-      "@type": "@id"
-    },
-    "source": {
-      "@container": "@set",
-      "@id": "dct:source",
-      "@type": "@id"
-    },
-    "spatialResolution": {
-      "@container": "@set",
-      "@id": "dcat:spatialResolutionInMeters",
-      "@type": "xsd:decimal"
-    },
-    "temporalCoverage": {
-      "@container": "@set",
-      "@id": "dct:temporal",
-      "@type": "@id"
-    },
-    "temporalResolution": {
-      "@container": "@set",
-      "@id": "dcat:temporalResolution",
-      "@type": "xsd:duration"
-    },
-    "theme": {
+    "themes": {
       "@container": "@set",
       "@id": "dcat:theme",
       "@type": "@id"
     },
-    "version": {
+    "formats": {
       "@container": "@set",
-      "@id": "dcat:version"
-    },
-    "versionNotes": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#versionNotes"
-    },
-    "wasGeneratedBy": {
-      "@container": "@set",
-      "@id": "prov:wasGeneratedBy",
+      "@id": "rec:format",
       "@type": "@id"
     },
+    "contacts": {
+      "@container": "@set",
+      "@id": "dcat:contactPoint",
+      "@type": "@id"
+    },
+    "license": "dcat:license",
+    "rights": "dcat:rights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
       "@container": "@id",
@@ -866,6 +732,10 @@ Links to the schema:
         }
       },
       "@id": "dct:provenance",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
     "wasAttributedTo": {
@@ -1161,6 +1031,34 @@ Links to the schema:
       "@id": "prov:qualifiedDerivation",
       "@type": "@id"
     },
+    "qualifiedAttribution": {
+      "@context": {
+        "agent": {
+          "@context": {
+            "agentType": "@type",
+            "name": "rdfs:label",
+            "actedOnBehalfOf": {
+              "@id": "prov:actedOnBehalfOf",
+              "@type": "@id"
+            },
+            "qualifiedDelegation": {
+              "@context": {
+                "hadActivity": {
+                  "@id": "prov:hadActivity",
+                  "@type": "@id"
+                }
+              },
+              "@id": "prov:qualifiedDelegation",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
     "wasInfluencedBy": {
       "@id": "prov:wasInfluencedBy",
       "@type": "@id"
@@ -1341,16 +1239,16 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "prov": "http://www.w3.org/ns/prov#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
     "@version": 1.1
   }
 }

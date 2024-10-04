@@ -1,5 +1,5 @@
 
-# Generic DCAT profile of OGC API Records (Schema)
+# DCAT/Records binding (Schema)
 
 `ogc.geo.geodcat.dcat-records` *v0.1*
 
@@ -199,6 +199,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 #### jsonld
 ```jsonld
 {
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld",
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "type": "Feature",
   "time": {
@@ -433,8 +434,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
       "rel": "license",
       "href": "https://woudc.org/about/data-policy.php"
     }
-  ],
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld"
+  ]
 }
 ```
 
@@ -448,7 +448,6 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
-@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a <http://example.com/records/dataset>,
@@ -457,41 +456,43 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:created "2021-02-08T00:00:00Z" ;
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ dcterms:language "fr-CA" ],
-        [ dcterms:language "en-CA" ],
-        "en-CA" ;
+    dcterms:language [ ],
+        [ ] ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
-    dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ] ;
-    rdfs:seeAlso [ rdfs:label "Static dataset archive file" ;
+    dcterms:temporal [ ] ;
+    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ] ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
+    dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
+                    ns1:relation <http://www.iana.org/assignments/relation/about> ;
+                    oa:hasTarget <https://woudc.org> ] ] ;
     dcat:keyword "brewer",
         "column",
         "dobson",
@@ -499,8 +500,13 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "ozone",
         "saoz",
         "total" ;
+    dcat:license "other" ;
+    dcat:theme [ ],
+        [ ] ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
+    rec:format <http://example.com/records/CSV>,
+        <http://example.com/records/GeoJSON> ;
     rec:hasLinkTemplate [ a <http://example.com/records/image/png> ;
             rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
@@ -508,7 +514,9 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             rec:hasVariable <http://example.com/variables/bbox>,
                 <http://example.com/variables/crs>,
                 <http://example.com/variables/height>,
-                <http://example.com/variables/width> ] .
+                <http://example.com/variables/width> ] ;
+    rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
+            rec:scheme "WMO:WIS" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
     dcterms:description "..." ;
@@ -546,139 +554,52 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
 x-jsonld-extra-terms:
-  accessRights:
-    x-jsonld-id: http://purl.org/dc/terms/accessRights
-    x-jsonld-type: '@id'
   time: http://purl.org/dc/terms/temporal
-  interval:
-    x-jsonld-id: http://www.w3.org/2006/time#hasTime
-    x-jsonld-container: '@list'
-  conformsTo:
+  created: http://purl.org/dc/terms/created
+  updated: http://purl.org/dc/terms/modified
+  type:
+    x-jsonld-id: http://purl.org/dc/terms/type
+    x-jsonld-type: '@id'
+  title:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/conformsTo
-    x-jsonld-type: '@id'
-  contactPoint:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#contactPoint
-    x-jsonld-type: '@id'
-  creator:
-    x-jsonld-id: http://purl.org/dc/terms/creator
-    x-jsonld-type: '@id'
-  datasetDistribution:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#distribution
-    x-jsonld-type: '@id'
+    x-jsonld-id: http://purl.org/dc/terms/title
   description:
     x-jsonld-container: '@set'
     x-jsonld-id: http://purl.org/dc/terms/description
-  documentation:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://xmlns.com/foaf/0.1/page
-    x-jsonld-type: '@id'
-  frequency:
-    x-jsonld-id: http://purl.org/dc/terms/accrualPeriodicity
-    x-jsonld-type: '@id'
-  geographicalCoverage:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/spatial
-    x-jsonld-type: '@id'
-  hasVersion:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#hasVersion
-    x-jsonld-type: '@id'
-  identifier:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/identifier
-  isReferencedBy:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/isReferencedBy
-    x-jsonld-type: '@id'
-  isVersionOf:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#isVersionOf
-    x-jsonld-type: '@id'
-  keyword:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#keyword
   keywords:
     x-jsonld-container: '@set'
     x-jsonld-id: http://www.w3.org/ns/dcat#keyword
-  landingPage:
+  conformsTo:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#landingPage
+    x-jsonld-id: http://purl.org/dc/terms/conformsTo
     x-jsonld-type: '@id'
   language: '@nest'
   languages:
     x-jsonld-container: '@set'
     x-jsonld-id: http://purl.org/dc/terms/language
-  code: http://purl.org/dc/terms/language
-  modificationDate: http://purl.org/dc/terms/modified
-  updated: http://purl.org/dc/terms/modified
-  created: http://purl.org/dc/terms/created
-  otherIdentifier:
+  resourceLanguages:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/adms#identifier
-    x-jsonld-type: '@id'
-  provenance:
+    x-jsonld-id: http://purl.org/dc/terms/language
+  externalIds:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/provenance
-    x-jsonld-type: '@id'
-  publisher:
-    x-jsonld-id: http://purl.org/dc/terms/publisher
-    x-jsonld-type: '@id'
-  qualifiedAttribution:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/prov#qualifiedAttribution
-    x-jsonld-type: '@id'
-  qualifiedRelation:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#qualifiedRelation
-    x-jsonld-type: '@id'
-  relatedResource:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/relation
-    x-jsonld-type: '@id'
-  releaseDate: http://purl.org/dc/terms/issued
-  sample:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/adms#sample
-    x-jsonld-type: '@id'
-  source:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/source
-    x-jsonld-type: '@id'
-  spatialResolution:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#spatialResolutionInMeters
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#decimal
-  temporalCoverage:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/temporal
-    x-jsonld-type: '@id'
-  temporalResolution:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#temporalResolution
-    x-jsonld-type: http://www.w3.org/2001/XMLSchema#duration
-  theme:
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/scopedIdentifier
+    x-jsonld-context:
+      scheme: https://www.opengis.net/def/ogc-api/records/scheme
+      value: https://www.opengis.net/def/ogc-api/records/id
+  themes:
     x-jsonld-container: '@set'
     x-jsonld-id: http://www.w3.org/ns/dcat#theme
     x-jsonld-type: '@id'
-  title:
+  formats:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/title
-  type:
-    x-jsonld-id: http://purl.org/dc/terms/type
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/format
     x-jsonld-type: '@id'
-  version:
+  contacts:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#version
-  versionNotes:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/adms#versionNotes
-  wasGeneratedBy:
-    x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/prov#wasGeneratedBy
+    x-jsonld-id: http://www.w3.org/ns/dcat#contactPoint
     x-jsonld-type: '@id'
+  license: http://www.w3.org/ns/dcat#license
+  rights: http://www.w3.org/ns/dcat#rights
   linkTemplates: https://www.opengis.net/def/ogc-api/records/hasLinkTemplate
   variables:
     x-jsonld-container: '@id'
@@ -688,18 +609,18 @@ x-jsonld-extra-terms:
       '@vocab': https://www.opengis.net/def/ogc-api/records/
 x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
-  w3ctime: http://www.w3.org/2006/time#
   dcat: http://www.w3.org/ns/dcat#
-  foaf: http://xmlns.com/foaf/0.1/
-  prov: http://www.w3.org/ns/prov#
-  xsd: http://www.w3.org/2001/XMLSchema#
   rec: https://www.opengis.net/def/ogc-api/records/
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  w3ctime: http://www.w3.org/2006/time#
   dctype: http://purl.org/dc/dcmitype/
+  xsd: http://www.w3.org/2001/XMLSchema#
   skos: http://www.w3.org/2004/02/skos/core#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   vcard: http://www.w3.org/2006/vcard/ns#
+  prov: http://www.w3.org/ns/prov#
+  foaf: http://xmlns.com/foaf/0.1/
 
 ```
 
@@ -765,82 +686,18 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "accessRights": {
-      "@id": "dct:accessRights",
-      "@type": "@id"
-    },
     "time": "dct:temporal",
-    "interval": {
-      "@id": "w3ctime:hasTime",
-      "@container": "@list"
-    },
-    "conformsTo": {
-      "@container": "@set",
-      "@id": "dct:conformsTo",
-      "@type": "@id"
-    },
-    "contactPoint": {
-      "@container": "@set",
-      "@id": "dcat:contactPoint",
-      "@type": "@id"
-    },
-    "creator": {
-      "@id": "dct:creator",
-      "@type": "@id"
-    },
-    "datasetDistribution": {
-      "@container": "@set",
-      "@id": "dcat:distribution",
-      "@type": "@id"
-    },
     "description": {
       "@container": "@set",
       "@id": "dct:description"
-    },
-    "documentation": {
-      "@container": "@set",
-      "@id": "foaf:page",
-      "@type": "@id"
-    },
-    "frequency": {
-      "@id": "dct:accrualPeriodicity",
-      "@type": "@id"
-    },
-    "geographicalCoverage": {
-      "@container": "@set",
-      "@id": "dct:spatial",
-      "@type": "@id"
-    },
-    "hasVersion": {
-      "@container": "@set",
-      "@id": "dcat:hasVersion",
-      "@type": "@id"
-    },
-    "identifier": {
-      "@container": "@set",
-      "@id": "dct:identifier"
-    },
-    "isReferencedBy": {
-      "@container": "@set",
-      "@id": "dct:isReferencedBy",
-      "@type": "@id"
-    },
-    "isVersionOf": {
-      "@container": "@set",
-      "@id": "dcat:isVersionOf",
-      "@type": "@id"
-    },
-    "keyword": {
-      "@container": "@set",
-      "@id": "dcat:keyword"
     },
     "keywords": {
       "@container": "@set",
       "@id": "dcat:keyword"
     },
-    "landingPage": {
+    "conformsTo": {
       "@container": "@set",
-      "@id": "dcat:landingPage",
+      "@id": "dct:conformsTo",
       "@type": "@id"
     },
     "language": "@nest",
@@ -848,81 +705,35 @@ Links to the schema:
       "@container": "@set",
       "@id": "dct:language"
     },
-    "code": "dct:language",
-    "modificationDate": "dct:modified",
-    "otherIdentifier": {
+    "resourceLanguages": {
       "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#identifier",
-      "@type": "@id"
+      "@id": "dct:language"
     },
-    "provenance": {
+    "externalIds": {
       "@container": "@set",
-      "@id": "dct:provenance",
-      "@type": "@id"
+      "@id": "rec:scopedIdentifier",
+      "@context": {
+        "scheme": "rec:scheme",
+        "value": "rec:id"
+      }
     },
-    "publisher": {
-      "@id": "dct:publisher",
-      "@type": "@id"
-    },
-    "qualifiedAttribution": {
-      "@container": "@set",
-      "@id": "prov:qualifiedAttribution",
-      "@type": "@id"
-    },
-    "qualifiedRelation": {
-      "@container": "@set",
-      "@id": "dcat:qualifiedRelation",
-      "@type": "@id"
-    },
-    "relatedResource": {
-      "@container": "@set",
-      "@id": "dct:relation",
-      "@type": "@id"
-    },
-    "releaseDate": "dct:issued",
-    "sample": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#sample",
-      "@type": "@id"
-    },
-    "source": {
-      "@container": "@set",
-      "@id": "dct:source",
-      "@type": "@id"
-    },
-    "spatialResolution": {
-      "@container": "@set",
-      "@id": "dcat:spatialResolutionInMeters",
-      "@type": "xsd:decimal"
-    },
-    "temporalCoverage": {
-      "@container": "@set",
-      "@id": "dct:temporal",
-      "@type": "@id"
-    },
-    "temporalResolution": {
-      "@container": "@set",
-      "@id": "dcat:temporalResolution",
-      "@type": "xsd:duration"
-    },
-    "theme": {
+    "themes": {
       "@container": "@set",
       "@id": "dcat:theme",
       "@type": "@id"
     },
-    "version": {
+    "formats": {
       "@container": "@set",
-      "@id": "dcat:version"
-    },
-    "versionNotes": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/adms#versionNotes"
-    },
-    "wasGeneratedBy": {
-      "@container": "@set",
-      "@id": "prov:wasGeneratedBy",
+      "@id": "rec:format",
       "@type": "@id"
     },
+    "contacts": {
+      "@container": "@set",
+      "@id": "dcat:contactPoint",
+      "@type": "@id"
+    },
+    "license": "dcat:license",
+    "rights": "dcat:rights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
       "@container": "@id",
@@ -937,16 +748,16 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "w3ctime": "http://www.w3.org/2006/time#",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "prov": "http://www.w3.org/ns/prov#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
     "@version": 1.1
   }
 }

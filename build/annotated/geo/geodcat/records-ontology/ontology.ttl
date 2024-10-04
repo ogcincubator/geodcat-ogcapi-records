@@ -6,6 +6,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+rec:format a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:range xsd:string ;
+    skos:definition "Available distributions of the resource" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Available Format" .
+
 rec:hasLinkTemplate a owl:ObjectProperty,
         skos:Concept ;
     rdfs:range rec:LinkTemplate ;
@@ -19,6 +26,20 @@ rec:hasVariable a owl:ObjectProperty,
     skos:inScheme cs: ;
     skos:prefLabel "has variable" .
 
+rec:iso8601period a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:range xsd:string ;
+    skos:definition "A Time period expressed in ISO 8601 notation - such as P1D" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "TimePeriod" .
+
+rec:scheme a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:range xsd:string ;
+    skos:definition "A reference to an authority or identifier for a knowledge organization system from which the external identifier was obtained. It is recommended that the identifier be a resolvable URI." ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Id scheme" .
+
 rec:uriTemplate a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
@@ -26,6 +47,13 @@ rec:uriTemplate a owl:DatatypeProperty,
     skos:definition "Supplies a resolvable URI to a remote resource (or resource fragment)." ;
     skos:inScheme cs: ;
     skos:prefLabel "URI template" .
+
+rec:value a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:range xsd:string ;
+    skos:definition "The value of the identifier" ;
+    skos:inScheme cs: ;
+    skos:prefLabel "Identifier" .
 
 rec:varBase a owl:DatatypeProperty,
         skos:Concept ;

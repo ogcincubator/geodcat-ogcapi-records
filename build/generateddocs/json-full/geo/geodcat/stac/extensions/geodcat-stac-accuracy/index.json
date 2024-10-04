@@ -1,0 +1,85 @@
+
+
+{
+  "itemIdentifier": "ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy",
+  "name": "GeoDCAT profile of STAC Accuracy extension",
+  "highlighted": true,
+  "abstract": "This profile binds the schema for the STAC Accuracy extension to a profile of GeoDCAT.  It inherits a common mapping of STAC and OGC API Records Item and Collection objects to the DCAT model. Additional terminology reequired for the semantics of the extension can be mapped to additional ontologies as required. (Note this is a work in progress, the building blocks provide a test harness for these mappings, allowing systematic development of a GeoDCAT core ontology to meet the requirements of these existing metadata schemas.",
+  "status": "under-development",
+  "dateTimeAddition": "2023-09-18T00:00:00Z",
+  "itemClass": "schema",
+  "register": "ogc-incubator",
+  "dependsOn": [
+    "ogc.geo.geodcat.stac.geodcat-stac-collection",
+    "ogc.geo.geodcat.stac.geodcat-stac-item",
+    "ogc.contrib.stac.extensions.accuracy"
+  ],
+  "version": "0.1",
+  "dateOfLastChange": "2024-10-04",
+  "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
+  "sources": [
+    {
+      "title": "GeoDCAT Specification",
+      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+    },
+    {
+      "title": "GeoDCAT Resources",
+      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+    },
+    {
+      "title": "GeoDCAT Specification Repository",
+      "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+    }
+  ],
+  "scope": "dev",
+  "tags": [
+    "DCAT",
+    "profile",
+    "Records",
+    "STAC",
+    "STAC Accuracy extension"
+  ],
+  "shaclRules": {
+    "ogc.geo.geodcat.records-ontology": [
+      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
+    ]
+  },
+  "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",
+  "schema": {
+    "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.json"
+  },
+  "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/schema.yaml",
+  "sourceLdContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/context.jsonld",
+  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/",
+  "description": "## TDB\n",
+  "examples": [
+    {
+      "title": "An example demonstrating EO extension fields in a STAC item.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://raw.githubusercontent.com/stac-extensions/accuracy/main/examples/item.json",
+          "base-uri": "https://example.com/stac/accuracy/example-1/",
+          "code": "{\n  \"stac_version\": \"1.0.0\",\n  \"stac_extensions\": [\n    \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\"\n  ],\n  \"type\": \"Feature\",\n  \"id\": \"item\",\n  \"bbox\": [\n    172.9,\n    1.3,\n    173,\n    1.4\n  ],\n  \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          172.9,\n          1.3\n        ],\n        [\n          173,\n          1.3\n        ],\n        [\n          173,\n          1.4\n        ],\n        [\n          172.9,\n          1.4\n        ],\n        [\n          172.9,\n          1.3\n        ]\n      ]\n    ]\n  },\n  \"properties\": {\n    \"datetime\": \"2020-12-11T22:38:32Z\",\n    \"accuracy:geometric_x_bias\": 0,\n    \"accuracy:geometric_y_bias\": 0,\n    \"accuracy:geometric_x_stddev\": 0.5,\n    \"accuracy:geometric_y_stddev\": 0.5,\n    \"accuracy:geometric_rmse\": 1,\n    \"accuracy:measurement_relative\": 0.01,\n    \"accuracy:measurement_absolute\": 0.02\n  },\n  \"links\": [\n    {\n      \"href\": \"https://example.com/examples/item.json\",\n      \"rel\": \"self\"\n    }\n  ],\n  \"assets\": {\n    \"data\": {\n      \"href\": \"https://example.com/examples/file.xyz\"\n    }\n  }\n}",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld\",\n  \"stac_version\": \"1.0.0\",\n  \"stac_extensions\": [\n    \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\"\n  ],\n  \"type\": \"Feature\",\n  \"id\": \"item\",\n  \"bbox\": [\n    172.9,\n    1.3,\n    173,\n    1.4\n  ],\n  \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          172.9,\n          1.3\n        ],\n        [\n          173,\n          1.3\n        ],\n        [\n          173,\n          1.4\n        ],\n        [\n          172.9,\n          1.4\n        ],\n        [\n          172.9,\n          1.3\n        ]\n      ]\n    ]\n  },\n  \"properties\": {\n    \"datetime\": \"2020-12-11T22:38:32Z\",\n    \"accuracy:geometric_x_bias\": 0,\n    \"accuracy:geometric_y_bias\": 0,\n    \"accuracy:geometric_x_stddev\": 0.5,\n    \"accuracy:geometric_y_stddev\": 0.5,\n    \"accuracy:geometric_rmse\": 1,\n    \"accuracy:measurement_relative\": 0.01,\n    \"accuracy:measurement_absolute\": 0.02\n  },\n  \"links\": [\n    {\n      \"href\": \"https://example.com/examples/item.json\",\n      \"rel\": \"self\"\n    }\n  ],\n  \"assets\": {\n    \"data\": {\n      \"href\": \"https://example.com/examples/file.xyz\"\n    }\n  }\n}",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix accuracy: <http://example,org/accuracy#> .\n@prefix dcat: <http://www.w3.org/ns/dcat#> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <urn:stac:vocab#> .\n@prefix ns2: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/accuracy/example-1/item> accuracy:geometric_rmse 1 ;\n    accuracy:geometric_x_bias 0 ;\n    accuracy:geometric_x_stddev 5e-01 ;\n    accuracy:geometric_y_bias 0 ;\n    accuracy:geometric_y_stddev 5e-01 ;\n    accuracy:measurement_absolute 2e-02 ;\n    accuracy:measurement_relative 1e-02 ;\n    dcterms:type \"Feature\" ;\n    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://example.com/examples/item.json> ] ;\n    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;\n    geojson:geometry [ a geojson:Polygon ;\n            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;\n    ns1:extensions \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\" ;\n    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;\n    ns1:version \"1.0.0\" .\n\n<https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .\n\n",
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.ttl"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements\n  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF\nallOf:\n- $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy/schema.yaml\n- anyOf:\n  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml\n  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml\nx-jsonld-extra-terms:\n  geometric_rmse: http://example,org/accuracy#geometric_rmse\nx-jsonld-prefixes:\n  accuracy: http://example,org/accuracy#\n  dqv: http://dqv,org/tdb#\n",
+  "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
+  "gitPath": "_sources/stac/extensions/geodcat-stac-accuracy"
+}
