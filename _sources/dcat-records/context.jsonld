@@ -16,13 +16,15 @@
       "foaf": "http://xmlns.com/foaf/0.1/"
     },
     {
-      "time": "dct:temporal",
-      "@context": {
-        "interval": {
-          "@id": "w3ctime:hasTime",
-          "@container": "@list"
-        },
-        "resolution": "rec:iso8601period"
+      "time": {
+        "@id": "dct:temporal",
+        "@context": {
+          "interval": {
+            "@id": "w3ctime:hasTime",
+            "@container": "@list"
+          },
+          "resolution": "rec:iso8601period"
+        }
       },
       "created": {
         "@id": "dct:created"
@@ -51,14 +53,28 @@
         "@id": "dct:conformsTo",
         "@type": "@id"
       },
-      "language": "@nest",
+      "language": {
+        "@id": "rec:language",
+        "@context": {
+          "code": "rec:languageCode",
+          "name": "skos:prefLabel"
+        }
+      },
       "languages": {
         "@container": "@set",
-        "@id": "dct:language"
+        "@id": "rec:languages",
+        "@context": {
+          "code": "rec:languageCode",
+          "name": "skos:prefLabel"
+        }
       },
       "resourceLanguages": {
         "@container": "@set",
-        "@id": "dct:language"
+        "@id": "rec:resourceLanguages",
+        "@context": {
+          "code": "rec:languageCode",
+          "name": "skos:prefLabel"
+        }
       },
       "externalIds": {
         "@container": "@set",
@@ -70,8 +86,16 @@
       },
       "themes": {
         "@container": "@set",
-        "@id": "dcat:theme",
-        "@type": "@id"
+        "@id": "rec:themes",
+        "@context": {
+          "concepts": {
+            "@id": "rec:concept",
+            "@context": {
+              "id": { "@type":  "xsd:string" , "@id": "rec:conceptID" }
+            }
+          },
+          "scheme": "rec:scheme"
+        }
       },
       "formats": {
         "@container": "@set",
