@@ -448,6 +448,8 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a <http://example.com/records/dataset>,
@@ -456,11 +458,16 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:created "2021-02-08T00:00:00Z" ;
     dcterms:description "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily" ;
-    dcterms:language [ ],
-        [ ] ;
     dcterms:modified "2021-02-08T00:00:00Z" ;
-    dcterms:temporal [ ] ;
-    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
+    dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
+            rec:iso8601period "P1D" ] ;
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
@@ -470,26 +477,20 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -501,8 +502,6 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         "saoz",
         "total" ;
     dcat:license "other" ;
-    dcat:theme [ ],
-        [ ] ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
     rec:format <http://example.com/records/CSV>,
@@ -515,8 +514,29 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
                 <http://example.com/variables/crs>,
                 <http://example.com/variables/height>,
                 <http://example.com/variables/width> ] ;
+    rec:language [ skos:prefLabel "English (Canada)" ;
+            rec:languageCode "en-CA" ] ;
+    rec:languages [ skos:prefLabel "English (Canada)" ;
+            rec:languageCode "en-CA" ],
+        [ skos:prefLabel "French (Canada)" ;
+            rec:languageCode "fr-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
-            rec:scheme "WMO:WIS" ] .
+            rec:scheme "WMO:WIS" ] ;
+    rec:themes [ rec:concept <http://example.com/records/atmosphericComposition>,
+                <http://example.com/records/observationPlatform>,
+                <http://example.com/records/pollution>,
+                <http://example.com/records/rocketSounding> ;
+            rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
+        [ rec:concept <http://example.com/records/brewer>,
+                <http://example.com/records/dobson>,
+                <http://example.com/records/filter>,
+                <http://example.com/records/hoelper>,
+                <http://example.com/records/microtops>,
+                <http://example.com/records/pion>,
+                <http://example.com/records/saoz>,
+                <http://example.com/records/spectral>,
+                <http://example.com/records/vassey> ;
+            rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
     dcterms:description "..." ;
@@ -554,7 +574,13 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordGeoJSON/schema.yaml
 x-jsonld-extra-terms:
-  time: http://purl.org/dc/terms/temporal
+  time:
+    x-jsonld-id: http://purl.org/dc/terms/temporal
+    x-jsonld-context:
+      interval:
+        '@id': http://www.w3.org/2006/time#hasTime
+        '@container': '@list'
+      resolution: https://www.opengis.net/def/ogc-api/records/iso8601period
   created: http://purl.org/dc/terms/created
   updated: http://purl.org/dc/terms/modified
   type:
@@ -573,13 +599,23 @@ x-jsonld-extra-terms:
     x-jsonld-container: '@set'
     x-jsonld-id: http://purl.org/dc/terms/conformsTo
     x-jsonld-type: '@id'
-  language: '@nest'
+  language:
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/language
+    x-jsonld-context:
+      code: https://www.opengis.net/def/ogc-api/records/languageCode
+      name: http://www.w3.org/2004/02/skos/core#prefLabel
   languages:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/language
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/languages
+    x-jsonld-context:
+      code: https://www.opengis.net/def/ogc-api/records/languageCode
+      name: http://www.w3.org/2004/02/skos/core#prefLabel
   resourceLanguages:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://purl.org/dc/terms/language
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/resourceLanguages
+    x-jsonld-context:
+      code: https://www.opengis.net/def/ogc-api/records/languageCode
+      name: http://www.w3.org/2004/02/skos/core#prefLabel
   externalIds:
     x-jsonld-container: '@set'
     x-jsonld-id: https://www.opengis.net/def/ogc-api/records/scopedIdentifier
@@ -588,8 +624,15 @@ x-jsonld-extra-terms:
       value: https://www.opengis.net/def/ogc-api/records/id
   themes:
     x-jsonld-container: '@set'
-    x-jsonld-id: http://www.w3.org/ns/dcat#theme
-    x-jsonld-type: '@id'
+    x-jsonld-id: https://www.opengis.net/def/ogc-api/records/themes
+    x-jsonld-context:
+      concepts:
+        '@id': https://www.opengis.net/def/ogc-api/records/concept
+        '@context':
+          id:
+            '@type': http://www.w3.org/2001/XMLSchema#string
+            '@id': https://www.opengis.net/def/ogc-api/records/conceptID
+      scheme: https://www.opengis.net/def/ogc-api/records/scheme
   formats:
     x-jsonld-container: '@set'
     x-jsonld-id: https://www.opengis.net/def/ogc-api/records/format
@@ -609,14 +652,14 @@ x-jsonld-extra-terms:
       '@vocab': https://www.opengis.net/def/ogc-api/records/
 x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
-  dcat: http://www.w3.org/ns/dcat#
+  w3ctime: http://www.w3.org/2006/time#
   rec: https://www.opengis.net/def/ogc-api/records/
+  dcat: http://www.w3.org/ns/dcat#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  w3ctime: http://www.w3.org/2006/time#
   dctype: http://purl.org/dc/dcmitype/
-  xsd: http://www.w3.org/2001/XMLSchema#
-  skos: http://www.w3.org/2004/02/skos/core#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   vcard: http://www.w3.org/2006/vcard/ns#
   prov: http://www.w3.org/ns/prov#
@@ -686,7 +729,16 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "time": "dct:temporal",
+    "time": {
+      "@id": "dct:temporal",
+      "@context": {
+        "interval": {
+          "@id": "w3ctime:hasTime",
+          "@container": "@list"
+        },
+        "resolution": "rec:iso8601period"
+      }
+    },
     "description": {
       "@container": "@set",
       "@id": "dct:description"
@@ -700,14 +752,28 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "language": "@nest",
+    "language": {
+      "@id": "rec:language",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
     "languages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:languages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "resourceLanguages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:resourceLanguages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "externalIds": {
       "@container": "@set",
@@ -719,8 +785,19 @@ Links to the schema:
     },
     "themes": {
       "@container": "@set",
-      "@id": "dcat:theme",
-      "@type": "@id"
+      "@id": "rec:themes",
+      "@context": {
+        "concepts": {
+          "@id": "rec:concept",
+          "@context": {
+            "id": {
+              "@type": "xsd:string",
+              "@id": "rec:conceptID"
+            }
+          }
+        },
+        "scheme": "rec:scheme"
+      }
     },
     "formats": {
       "@container": "@set",
@@ -748,13 +825,13 @@ Links to the schema:
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "dcat": "http://www.w3.org/ns/dcat#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",

@@ -6,8 +6,7 @@ allOf:
 - anyOf:
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
-x-jsonld-extra-terms:
-  geometric_rmse: http://example,org/accuracy#geometric_rmse
 x-jsonld-prefixes:
-  accuracy: http://example,org/accuracy#
-  dqv: http://dqv,org/tdb#
+  dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
+  dqv: http://dqv.org/tdb#
+  accuracy: https://www.opengis.net/def/ogc-api/stac/accuracy/

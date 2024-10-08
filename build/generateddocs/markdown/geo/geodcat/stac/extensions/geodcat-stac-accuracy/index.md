@@ -149,7 +149,7 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 
 #### ttl
 ```ttl
-@prefix accuracy: <http://example,org/accuracy#> .
+@prefix accuracy: <https://www.opengis.net/def/ogc-api/stac/accuracy/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
@@ -160,19 +160,19 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/accuracy/example-1/item> accuracy:geometric_rmse 1 ;
+<https://example.com/stac/accuracy/example-1/item> dcterms:type "Feature" ;
+    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://example.com/examples/item.json> ] ;
+    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
+    geojson:geometry [ a geojson:Polygon ;
+            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
+    accuracy:geometric_rmse 1 ;
     accuracy:geometric_x_bias 0 ;
     accuracy:geometric_x_stddev 5e-01 ;
     accuracy:geometric_y_bias 0 ;
     accuracy:geometric_y_stddev 5e-01 ;
     accuracy:measurement_absolute 2e-02 ;
     accuracy:measurement_relative 1e-02 ;
-    dcterms:type "Feature" ;
-    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://example.com/examples/item.json> ] ;
-    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
-    geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
     ns1:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
     ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
     ns1:version "1.0.0" .
@@ -193,11 +193,10 @@ allOf:
 - anyOf:
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
   - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
-x-jsonld-extra-terms:
-  geometric_rmse: http://example,org/accuracy#geometric_rmse
 x-jsonld-prefixes:
-  accuracy: http://example,org/accuracy#
-  dqv: http://dqv,org/tdb#
+  dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
+  dqv: http://dqv.org/tdb#
+  accuracy: https://www.opengis.net/def/ogc-api/stac/accuracy/
 
 ```
 
@@ -275,7 +274,16 @@ Links to the schema:
         "type": "dct:format"
       }
     },
-    "time": "dct:temporal",
+    "time": {
+      "@id": "dct:temporal",
+      "@context": {
+        "interval": {
+          "@id": "w3ctime:hasTime",
+          "@container": "@list"
+        },
+        "resolution": "rec:iso8601period"
+      }
+    },
     "description": {
       "@container": "@set",
       "@id": "dct:description"
@@ -289,14 +297,28 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "language": "@nest",
+    "language": {
+      "@id": "rec:language",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
     "languages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:languages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "resourceLanguages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:resourceLanguages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "externalIds": {
       "@container": "@set",
@@ -308,8 +330,19 @@ Links to the schema:
     },
     "themes": {
       "@container": "@set",
-      "@id": "dcat:theme",
-      "@type": "@id"
+      "@id": "rec:themes",
+      "@context": {
+        "concepts": {
+          "@id": "rec:concept",
+          "@context": {
+            "id": {
+              "@type": "xsd:string",
+              "@id": "rec:conceptID"
+            }
+          }
+        },
+        "scheme": "rec:scheme"
+      }
     },
     "formats": {
       "@container": "@set",
@@ -335,22 +368,22 @@ Links to the schema:
     "stac_version": "urn:stac:vocab#version",
     "stac_extensions": "urn:stac:vocab#extensions",
     "extent": "dct:extent",
-    "geometric_rmse": "accuracy:geometric_rmse",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "geojson": "https://purl.org/geojson/vocab#",
     "stac": "https://w3id.org/ogc/stac/core/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "accuracy": "http://example,org/accuracy#",
-    "dqv": "http://dqv,org/tdb#",
-    "dcat": "http://www.w3.org/ns/dcat#",
+    "dqm": "https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/",
+    "dqv": "http://dqv.org/tdb#",
+    "accuracy": "https://www.opengis.net/def/ogc-api/stac/accuracy/",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",

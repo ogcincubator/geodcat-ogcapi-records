@@ -51,7 +51,16 @@
       },
       "@id": "rdfs:seeAlso"
     },
-    "time": "dct:temporal",
+    "time": {
+      "@id": "dct:temporal",
+      "@context": {
+        "interval": {
+          "@id": "w3ctime:hasTime",
+          "@container": "@list"
+        },
+        "resolution": "rec:iso8601period"
+      }
+    },
     "description": {
       "@container": "@set",
       "@id": "dct:description"
@@ -65,14 +74,28 @@
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "language": "@nest",
+    "language": {
+      "@id": "rec:language",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
     "languages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:languages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "resourceLanguages": {
       "@container": "@set",
-      "@id": "dct:language"
+      "@id": "rec:resourceLanguages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
     },
     "externalIds": {
       "@container": "@set",
@@ -84,8 +107,19 @@
     },
     "themes": {
       "@container": "@set",
-      "@id": "dcat:theme",
-      "@type": "@id"
+      "@id": "rec:themes",
+      "@context": {
+        "concepts": {
+          "@id": "rec:concept",
+          "@context": {
+            "id": {
+              "@type": "xsd:string",
+              "@id": "rec:conceptID"
+            }
+          }
+        },
+        "scheme": "rec:scheme"
+      }
     },
     "formats": {
       "@container": "@set",
@@ -113,13 +147,13 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "dcat": "http://www.w3.org/ns/dcat#",
+    "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
