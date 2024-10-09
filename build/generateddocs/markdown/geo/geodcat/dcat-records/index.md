@@ -463,34 +463,34 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             rec:iso8601period "P1D" ] ;
     rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
         [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Data Search / Download User Interface" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
             oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
+        [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -522,21 +522,21 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             rec:languageCode "fr-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
-    rec:themes [ rec:concept <http://example.com/records/atmosphericComposition>,
-                <http://example.com/records/observationPlatform>,
-                <http://example.com/records/pollution>,
-                <http://example.com/records/rocketSounding> ;
-            rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
-        [ rec:concept <http://example.com/records/brewer>,
-                <http://example.com/records/dobson>,
-                <http://example.com/records/filter>,
-                <http://example.com/records/hoelper>,
-                <http://example.com/records/microtops>,
-                <http://example.com/records/pion>,
-                <http://example.com/records/saoz>,
-                <http://example.com/records/spectral>,
-                <http://example.com/records/vassey> ;
-            rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ] .
+    rec:themes [ rec:concept [ rec:conceptID "spectral"^^xsd:string ],
+                [ rec:conceptID "filter"^^xsd:string ],
+                [ rec:conceptID "vassey"^^xsd:string ],
+                [ rec:conceptID "brewer"^^xsd:string ],
+                [ rec:conceptID "microtops"^^xsd:string ],
+                [ rec:conceptID "hoelper"^^xsd:string ],
+                [ rec:conceptID "dobson"^^xsd:string ],
+                [ rec:conceptID "pion"^^xsd:string ],
+                [ rec:conceptID "saoz"^^xsd:string ] ;
+            rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
+        [ rec:concept [ rec:conceptID "rocketSounding"^^xsd:string ],
+                [ rec:conceptID "observationPlatform"^^xsd:string ],
+                [ rec:conceptID "atmosphericComposition"^^xsd:string ],
+                [ rec:conceptID "pollution"^^xsd:string ] ;
+            rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
     dcterms:description "..." ;
