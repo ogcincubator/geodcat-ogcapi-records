@@ -29,16 +29,41 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "type": "Feature",
   "time": {
-    "interval": [ "1924-08-17T00:00:00Z", ".."],
+    "interval": [
+      "1924-08-17T00:00:00Z",
+      ".."
+    ],
     "resolution": "P1D"
   },
   "geometry": {
     "type": "Polygon",
-    "coordinates": [ [ [ -180, -90 ], [ -180, 90 ],
-          [ 180, 90 ], [ 180, -90 ], [ -180, -90 ] ] ]
+    "coordinates": [
+      [
+        [
+          -180,
+          -90
+        ],
+        [
+          -180,
+          90
+        ],
+        [
+          180,
+          90
+        ],
+        [
+          180,
+          -90
+        ],
+        [
+          -180,
+          -90
+        ]
+      ]
+    ]
   },
   "conformsTo": [
-     "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+    "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
   ],
   "properties": {
     "created": "2021-02-08T00:00:00Z",
@@ -46,8 +71,15 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     "type": "dataset",
     "title": "Total Ozone - daily observations",
     "description": "A measurement of the total amount of atmospheric ozone in a given column from the surface to the edge of the atmosphere. Ground based instruments such as spectrophotometers and ozonemeters are used to measure results daily",
-    "keywords": [ "total", "ozone", "level 1.0", "column",
-                  "dobson", "brewer", "saoz" ],
+    "keywords": [
+      "total",
+      "ozone",
+      "level 1.0",
+      "column",
+      "dobson",
+      "brewer",
+      "saoz"
+    ],
     "language": {
       "code": "en-CA",
       "name": "English (Canada)"
@@ -72,36 +104,54 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
       {
         "name": "World Ozone and Ultraviolet Radiation Data Centre",
         "links": [
-           {
-             "href": "https://woudc.org",
-             "rel": "about",
-             "type": "text/html"
-           }
+          {
+            "href": "https://woudc.org",
+            "rel": "about",
+            "type": "text/html"
+          }
         ],
         "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
-        "roles": [ "publisher" ]
+        "roles": [
+          "publisher"
+        ]
       }
     ],
     "themes": [
       {
         "concepts": [
-          { "id": "dobson" }, { "id": "brewer" },
-          { "id": "vassey" }, { "id": "pion" },
-          { "id": "microtops" }, { "id": "spectral" },
-          { "id": "hoelper" }, { "id": "saoz" },
-          { "id": "filter" }
+          {
+            "id": "dobson",
+            "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
+          },
+          {
+            "id": "brewer",
+            "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
+          }
         ],
         "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
       },
       {
         "concepts": [
-          { "id": "atmosphericComposition" }, { "id": "pollution" },
-          { "id": "observationPlatform" }, { "id": "rocketSounding" }
+          {
+            "id": "atmosphericComposition"
+          },
+          {
+            "id": "pollution"
+          },
+          {
+            "id": "observationPlatform"
+          },
+          {
+            "id": "rocketSounding"
+          }
         ],
         "scheme": "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode"
       }
     ],
-    "formats": [ "CSV", "GeoJSON" ],
+    "formats": [
+      "CSV",
+      "GeoJSON"
+    ],
     "license": "other"
   },
   "linkTemplates": [
@@ -193,7 +243,6 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     }
   ]
 }
-
 ```
 
 #### jsonld
@@ -294,31 +343,12 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
       {
         "concepts": [
           {
-            "id": "dobson"
+            "id": "dobson",
+            "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson"
           },
           {
-            "id": "brewer"
-          },
-          {
-            "id": "vassey"
-          },
-          {
-            "id": "pion"
-          },
-          {
-            "id": "microtops"
-          },
-          {
-            "id": "spectral"
-          },
-          {
-            "id": "hoelper"
-          },
-          {
-            "id": "saoz"
-          },
-          {
-            "id": "filter"
+            "id": "brewer",
+            "url": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer"
           }
         ],
         "scheme": "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode"
@@ -461,12 +491,20 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
             rec:iso8601period "P1D" ] ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "This document as HTML" ;
+    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Data Search / Download User Interface" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
@@ -482,15 +520,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:type "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "Data Search / Download User Interface" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ] ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -522,20 +552,15 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             rec:languageCode "fr-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
-    rec:themes [ rec:concept [ rec:conceptID "spectral"^^xsd:string ],
-                [ rec:conceptID "filter"^^xsd:string ],
-                [ rec:conceptID "vassey"^^xsd:string ],
-                [ rec:conceptID "brewer"^^xsd:string ],
-                [ rec:conceptID "microtops"^^xsd:string ],
-                [ rec:conceptID "hoelper"^^xsd:string ],
-                [ rec:conceptID "dobson"^^xsd:string ],
-                [ rec:conceptID "pion"^^xsd:string ],
-                [ rec:conceptID "saoz"^^xsd:string ] ;
+    rec:themes [ rec:concept [ dcterms:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> ;
+                    rec:conceptID "brewer"^^xsd:string ],
+                [ dcterms:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
+                    rec:conceptID "dobson"^^xsd:string ] ;
             rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ rec:concept [ rec:conceptID "rocketSounding"^^xsd:string ],
-                [ rec:conceptID "observationPlatform"^^xsd:string ],
-                [ rec:conceptID "atmosphericComposition"^^xsd:string ],
-                [ rec:conceptID "pollution"^^xsd:string ] ;
+        [ rec:concept [ rec:conceptID "atmosphericComposition"^^xsd:string ],
+                [ rec:conceptID "pollution"^^xsd:string ],
+                [ rec:conceptID "rocketSounding"^^xsd:string ],
+                [ rec:conceptID "observationPlatform"^^xsd:string ] ;
             rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
@@ -632,6 +657,9 @@ x-jsonld-extra-terms:
           id:
             '@type': http://www.w3.org/2001/XMLSchema#string
             '@id': https://www.opengis.net/def/ogc-api/records/conceptID
+          url:
+            '@type': '@id'
+            '@id': http://purl.org/dc/terms/theme
       scheme: https://www.opengis.net/def/ogc-api/records/scheme
   formats:
     x-jsonld-container: '@set'
@@ -793,6 +821,10 @@ Links to the schema:
             "id": {
               "@type": "xsd:string",
               "@id": "rec:conceptID"
+            },
+            "url": {
+              "@type": "@id",
+              "@id": "dct:theme"
             }
           }
         },

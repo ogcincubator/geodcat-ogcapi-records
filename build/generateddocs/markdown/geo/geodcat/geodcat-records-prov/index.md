@@ -583,6 +583,10 @@ Links to the schema:
             "id": {
               "@type": "xsd:string",
               "@id": "rec:conceptID"
+            },
+            "url": {
+              "@type": "@id",
+              "@id": "dct:theme"
             }
           }
         },
