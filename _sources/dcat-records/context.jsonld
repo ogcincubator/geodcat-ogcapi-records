@@ -91,7 +91,8 @@
           "concepts": {
             "@id": "rec:concept",
             "@context": {
-              "id": { "@type":  "xsd:string" , "@id": "rec:conceptID" }
+              "id": { "@type":  "xsd:string" , "@id": "rec:conceptID" },
+              "url": { "@type":  "@id" , "@id": "dct:theme" }
             }
           },
           "scheme": "rec:scheme"
