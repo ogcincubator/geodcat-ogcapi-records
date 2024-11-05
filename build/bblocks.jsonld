@@ -106,12 +106,12 @@
   "name": "Building Blocks - GeoDCAT implementation using OGC API Records",
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
-  "modified": "2024-10-25T02:11:48.891279",
+  "modified": "2024-11-05T01:24:40.019548",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"d42a292b30b8f9c89b07edcdc1ce6c98d4a1e6a2",
-      "shortCommitId": "\"d42a29",
-      "date": "2024-10-21T10:16:59+00:00\""
+      "commitId": "\"bff70fac492a7e2f3fe3779b0b9b150f4e315e8f",
+      "shortCommitId": "\"bff70f",
+      "date": "2024-10-30T09:32:11+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -139,7 +139,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [],
       "scope": "dev",
@@ -179,7 +179,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -229,7 +229,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [],
       "sources": [
@@ -282,7 +282,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "ogc.geo.geodcat.dcat"
@@ -338,7 +338,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "ogc.geo.geodcat.dcat"
@@ -394,11 +394,11 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "ogc.geo.geodcat.dcat-ap",
-        "ogc.geo.geodcat.geodcat"
+        "ogc.geo.geodcat.geodcat",
+        "ogc.geo.geodcat.dcat-ap"
       ],
       "sources": [
         {
@@ -452,7 +452,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "ogc.api.records.v1.schemas.recordGeoJSON",
@@ -520,12 +520,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.collection-v1-0-0",
         "ogc.geo.geodcat.geodcat",
+        "ogc.contrib.stac.collection-v1-0-0",
         "ogc.contrib.stac.collection"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -593,11 +593,11 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.dcat-records",
-        "ogc.geo.geodcat.geodcat"
+        "ogc.geo.geodcat.geodcat",
+        "ogc.geo.geodcat.dcat-records"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [
         {
@@ -634,6 +634,73 @@
       "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/",
       "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records/",
+      "transforms": [
+        {
+          "id": "scoped-ids",
+          "description": "Converts OGC API Records \"Scoped Identifer\" construct into DCAT dcterms:identifier URI form",
+          "type": "sparql-update",
+          "ref": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records/transforms/scoped-ids.sparql",
+          "code": "prefix rec: <https://www.opengis.net/def/ogc-api/records/>\nprefix dcterms: <http://purl.org/dc/terms/>\nprefix dcat: <http://www.w3.org/ns/dcat#>\n\nDELETE {}\nINSERT \n{ ?dataset dcterms:identifier ?identifier}\nWHERE\n{\n    ?dataset rec:scopedIdentifier ?sid .\n    ?sid rec:id ?id .\n    ?sid rec:scheme ?scheme_string .\n    BIND( URI( CONCAT(?scheme_string,\"/\", ?id )) AS ?identifier )\n}",
+          "inputs": {
+            "mediaTypes": [
+              {
+                "id": "ttl",
+                "defaultExtension": "ttl",
+                "label": "RDF/Turtle",
+                "mimeType": "text/turtle",
+                "aliases": [
+                  "turtle",
+                  "rdf/turtle"
+                ],
+                "extensions": [
+                  "ttl"
+                ]
+              },
+              {
+                "id": "rdf",
+                "defaultExtension": "rdf",
+                "label": "RDF/XML",
+                "mimeType": "application/rdf+xml",
+                "aliases": [
+                  "rdf/xml"
+                ],
+                "extensions": [
+                  "rdf"
+                ]
+              }
+            ]
+          },
+          "outputs": {
+            "mediaTypes": [
+              {
+                "id": "ttl",
+                "defaultExtension": "ttl",
+                "label": "RDF/Turtle",
+                "mimeType": "text/turtle",
+                "aliases": [
+                  "turtle",
+                  "rdf/turtle"
+                ],
+                "extensions": [
+                  "ttl"
+                ]
+              },
+              {
+                "id": "rdf",
+                "defaultExtension": "rdf",
+                "label": "RDF/XML",
+                "mimeType": "application/rdf+xml",
+                "aliases": [
+                  "rdf/xml"
+                ],
+                "extensions": [
+                  "rdf"
+                ]
+              }
+            ]
+          }
+        }
+      ],
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
@@ -664,12 +731,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.ogc-utils.prov",
         "ogc.geo.geodcat.geodcat-records",
-        "ogc.geo.geodcat.prov"
+        "ogc.geo.geodcat.prov",
+        "ogc.ogc-utils.prov"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -732,13 +799,13 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat-records",
-        "ogc.contrib.stac.item-v1-0-0",
         "ogc.geo.geodcat.geodcat",
-        "ogc.contrib.stac.item"
+        "ogc.contrib.stac.item",
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.geo.geodcat.geodcat-records"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -810,12 +877,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "ogc.geo.geodcat.stac.geodcat-stac-collection",
         "ogc.contrib.stac.extensions.accuracy",
-        "ogc.geo.geodcat.stac.geodcat-stac-item",
-        "ogc.geo.geodcat.stac.geodcat-stac-collection"
+        "ogc.geo.geodcat.stac.geodcat-stac-item"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -884,12 +951,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-item",
+        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-collection"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2024-10-25",
+      "dateOfLastChange": "2024-11-05",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
