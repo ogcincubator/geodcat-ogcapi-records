@@ -1,0 +1,14 @@
+prefix rec: <https://www.opengis.net/def/ogc-api/records/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix dcat: <http://www.w3.org/ns/dcat#>
+
+DELETE {}
+INSERT 
+{ ?dataset dcterms:identifier ?identifier}
+WHERE
+{
+    ?dataset rec:scopedIdentifier ?sid .
+    ?sid rec:id ?id .
+    ?sid rec:scheme ?scheme_string .
+    BIND( URI( CONCAT(?scheme_string,"/", ?id )) AS ?identifier )
+}
