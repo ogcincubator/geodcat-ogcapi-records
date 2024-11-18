@@ -1,6 +1,8 @@
 name: Validate and process Building Blocks
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 3 */3 * *"
   push:
     branches:
       - master
