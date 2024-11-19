@@ -51,9 +51,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2024-11-18T18:55:34.364308+00:00</small>
-                <p class="summary fw-semibold text-success">
-                    Number of passing building blocks: 13 / 13 (100%)
+            <small class="datetime">Generated at 2024-11-19T03:39:59.367646+00:00</small>
+                <p class="summary fw-semibold text-danger">
+                    Number of passing building blocks: 10 / 13 (76.92%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -549,7 +549,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.geodcat-records-prov" id="bblock-ogc.geo.geodcat.geodcat-records-prov">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.geodcat-records-prov">
                                     <div class="flex-fill">
@@ -557,16 +557,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.geodcat-records-prov</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.geodcat-records-prov">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.geodcat-records-prov">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 3 / 3
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 3
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -581,7 +581,7 @@
                                                     <a href="https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_1_1.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-9">
@@ -592,7 +592,14 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;./collection.json&#x27; does not match &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;
+
+Failed validating &#x27;pattern&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;links&#x27;][&#x27;items&#x27;][&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;href&#x27;][&#x27;allOf&#x27;][1]:
+    {&#x27;pattern&#x27;: &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;,
+     &#x27;type&#x27;: &#x27;string&#x27;}
+
+On instance[&#x27;links&#x27;][0][&#x27;href&#x27;]:
+    &#x27;./collection.json&#x27;</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -618,7 +625,7 @@
                                                     <a href="https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_2_1.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-10">
@@ -629,7 +636,14 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;./collection.json&#x27; does not match &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;
+
+Failed validating &#x27;pattern&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;links&#x27;][&#x27;items&#x27;][&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;href&#x27;][&#x27;allOf&#x27;][1]:
+    {&#x27;pattern&#x27;: &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;,
+     &#x27;type&#x27;: &#x27;string&#x27;}
+
+On instance[&#x27;links&#x27;][0][&#x27;href&#x27;]:
+    &#x27;./collection.json&#x27;</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -655,7 +669,7 @@
                                                     <a href="https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json" target="_blank">example_3_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-11">
@@ -666,7 +680,14 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_3_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_3_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: &#x27;./collection.json&#x27; does not match &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;
+
+Failed validating &#x27;pattern&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0][&#x27;properties&#x27;][&#x27;links&#x27;][&#x27;items&#x27;][&#x27;allOf&#x27;][1][&#x27;properties&#x27;][&#x27;href&#x27;][&#x27;allOf&#x27;][1]:
+    {&#x27;pattern&#x27;: &#x27;^\\w+:/*([^:&lt;&gt;{}|\\\\^`&quot;\\s/]+[^&lt;&gt;{}|\\\\^`&quot;\\s]*(:[^:&lt;&gt;{}|\\\\^`&quot;\\s]+)?)?$&#x27;,
+     &#x27;type&#x27;: &#x27;string&#x27;}
+
+On instance[&#x27;links&#x27;][0][&#x27;href&#x27;]:
+    &#x27;./collection.json&#x27;</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -684,7 +705,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.stac.geodcat-stac-item" id="bblock-ogc.geo.geodcat.stac.geodcat-stac-item">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.stac\.geodcat-stac-item">
                                     <div class="flex-fill">
@@ -692,16 +713,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.stac.geodcat-stac-item</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.stac.geodcat-stac-item">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.stac.geodcat-stac-item">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -716,7 +737,7 @@
                                                     <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/simple-item.json" target="_blank">example_1_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-12">
@@ -727,7 +748,51 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_1_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_1_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;stac_version&#x27;: &#x27;1.1.0&#x27;, &#x27;stac_extensions&#x27;: [], &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;, &#x27;bbox&#x27;: [172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975], &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003], [172.95469614953714, 1.3438851951615003], [172.95469614953714, 1.3690476620161975], [172.91173669923782, 1.3690476620161975], [172.91173669923782, 1.3438851951615003]]]}, &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125000Z&#x27;}, &#x27;collection&#x27;: &#x27;simple-collection&#x27;, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}], &#x27;assets&#x27;: {&#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;3-Band Visual&#x27;, &#x27;roles&#x27;: [&#x27;visual&#x27;]}, &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;, &#x27;title&#x27;: &#x27;Thumbnail&#x27;, &#x27;type&#x27;: &#x27;image/jpeg&#x27;, &#x27;roles&#x27;: [&#x27;thumbnail&#x27;]}}} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml&#x27;},
+               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item-v1-0-0/schema.yaml&#x27;}]}
+
+On instance:
+    {&#x27;assets&#x27;: {&#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;,
+                              &#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
+                              &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
+                              &#x27;type&#x27;: &#x27;image/jpeg&#x27;},
+                &#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;,
+                           &#x27;roles&#x27;: [&#x27;visual&#x27;],
+                           &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
+                           &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                   &#x27;profile=cloud-optimized&#x27;}},
+     &#x27;bbox&#x27;: [172.91173669923782,
+              1.3438851951615003,
+              172.95469614953714,
+              1.3690476620161975],
+     &#x27;collection&#x27;: &#x27;simple-collection&#x27;,
+     &#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003],
+                                   [172.95469614953714, 1.3438851951615003],
+                                   [172.95469614953714, 1.3690476620161975],
+                                   [172.91173669923782, 1.3690476620161975],
+                                   [172.91173669923782,
+                                    1.3438851951615003]]],
+                  &#x27;type&#x27;: &#x27;Polygon&#x27;},
+     &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;,
+     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;collection&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;root&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;parent&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;}],
+     &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125000Z&#x27;},
+     &#x27;stac_extensions&#x27;: [],
+     &#x27;stac_version&#x27;: &#x27;1.1.0&#x27;,
+     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -753,7 +818,7 @@
                                                     <a href="https://raw.githubusercontent.com/radiantearth/stac-spec/master/examples/core-item.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-13">
@@ -764,7 +829,81 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;stac_version&#x27;: &#x27;1.1.0&#x27;, &#x27;stac_extensions&#x27;: [], &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;, &#x27;bbox&#x27;: [172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975], &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003], [172.95469614953714, 1.3438851951615003], [172.95469614953714, 1.3690476620161975], [172.91173669923782, 1.3690476620161975], [172.91173669923782, 1.3438851951615003]]]}, &#x27;properties&#x27;: {&#x27;title&#x27;: &#x27;Core Item&#x27;, &#x27;description&#x27;: &#x27;A sample STAC Item that includes examples of all common metadata&#x27;, &#x27;datetime&#x27;: None, &#x27;start_datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;, &#x27;end_datetime&#x27;: &#x27;2020-12-11T22:38:32.327Z&#x27;, &#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;platform&#x27;: &#x27;cool_sat1&#x27;, &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;], &#x27;constellation&#x27;: &#x27;ion&#x27;, &#x27;mission&#x27;: &#x27;collection 5624&#x27;, &#x27;gsd&#x27;: 0.512}, &#x27;collection&#x27;: &#x27;simple-collection&#x27;, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;alternate&#x27;, &#x27;type&#x27;: &#x27;text/html&#x27;, &#x27;href&#x27;: &#x27;http://remotedata.io/catalog/20201211_223832_CS2/index.html&#x27;, &#x27;title&#x27;: &#x27;HTML version of this STAC Item&#x27;}], &#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;, &#x27;roles&#x27;: [&#x27;data&#x27;]}, &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;, &#x27;title&#x27;: &#x27;Thumbnail&#x27;, &#x27;type&#x27;: &#x27;image/png&#x27;, &#x27;roles&#x27;: [&#x27;thumbnail&#x27;]}, &#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;3-Band Visual&#x27;, &#x27;roles&#x27;: [&#x27;visual&#x27;]}, &#x27;udm&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif&#x27;, &#x27;title&#x27;: &#x27;Unusable Data Mask&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;}, &#x27;json-metadata&#x27;: {&#x27;href&#x27;: &#x27;http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json&#x27;, &#x27;title&#x27;: &#x27;Extended Metadata&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;roles&#x27;: [&#x27;metadata&#x27;]}, &#x27;ephemeris&#x27;: {&#x27;href&#x27;: &#x27;http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH&#x27;, &#x27;title&#x27;: &#x27;Satellite Ephemeris Metadata&#x27;}}} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][1]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml&#x27;},
+               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item-v1-0-0/schema.yaml&#x27;}]}
+
+On instance:
+    {&#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;,
+                             &#x27;roles&#x27;: [&#x27;data&#x27;],
+                             &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;,
+                             &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                     &#x27;profile=cloud-optimized&#x27;},
+                &#x27;ephemeris&#x27;: {&#x27;href&#x27;: &#x27;http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH&#x27;,
+                              &#x27;title&#x27;: &#x27;Satellite Ephemeris Metadata&#x27;},
+                &#x27;json-metadata&#x27;: {&#x27;href&#x27;: &#x27;http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json&#x27;,
+                                  &#x27;roles&#x27;: [&#x27;metadata&#x27;],
+                                  &#x27;title&#x27;: &#x27;Extended Metadata&#x27;,
+                                  &#x27;type&#x27;: &#x27;application/json&#x27;},
+                &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;,
+                              &#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
+                              &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
+                              &#x27;type&#x27;: &#x27;image/png&#x27;},
+                &#x27;udm&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif&#x27;,
+                        &#x27;title&#x27;: &#x27;Unusable Data Mask&#x27;,
+                        &#x27;type&#x27;: &#x27;image/tiff; application=geotiff&#x27;},
+                &#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;,
+                           &#x27;roles&#x27;: [&#x27;visual&#x27;],
+                           &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
+                           &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                   &#x27;profile=cloud-optimized&#x27;}},
+     &#x27;bbox&#x27;: [172.91173669923782,
+              1.3438851951615003,
+              172.95469614953714,
+              1.3690476620161975],
+     &#x27;collection&#x27;: &#x27;simple-collection&#x27;,
+     &#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003],
+                                   [172.95469614953714, 1.3438851951615003],
+                                   [172.95469614953714, 1.3690476620161975],
+                                   [172.91173669923782, 1.3690476620161975],
+                                   [172.91173669923782,
+                                    1.3438851951615003]]],
+                  &#x27;type&#x27;: &#x27;Polygon&#x27;},
+     &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;,
+     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;collection&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;root&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;parent&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;http://remotedata.io/catalog/20201211_223832_CS2/index.html&#x27;,
+                &#x27;rel&#x27;: &#x27;alternate&#x27;,
+                &#x27;title&#x27;: &#x27;HTML version of this STAC Item&#x27;,
+                &#x27;type&#x27;: &#x27;text/html&#x27;}],
+     &#x27;properties&#x27;: {&#x27;constellation&#x27;: &#x27;ion&#x27;,
+                    &#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
+                    &#x27;datetime&#x27;: None,
+                    &#x27;description&#x27;: &#x27;A sample STAC Item that includes &#x27;
+                                   &#x27;examples of all common metadata&#x27;,
+                    &#x27;end_datetime&#x27;: &#x27;2020-12-11T22:38:32.327Z&#x27;,
+                    &#x27;gsd&#x27;: 0.512,
+                    &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
+                    &#x27;mission&#x27;: &#x27;collection 5624&#x27;,
+                    &#x27;platform&#x27;: &#x27;cool_sat1&#x27;,
+                    &#x27;start_datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
+                    &#x27;title&#x27;: &#x27;Core Item&#x27;,
+                    &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;},
+     &#x27;stac_extensions&#x27;: [],
+     &#x27;stac_version&#x27;: &#x27;1.1.0&#x27;,
+     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report
@@ -843,7 +982,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.stac.extensions.geodcat-stac-eo" id="bblock-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
                             <h2 class="accordion-header bblock-title">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.stac\.extensions\.geodcat-stac-eo">
                                     <div class="flex-fill">
@@ -851,16 +990,16 @@
                                         <small class="ms-2 bblock-id">ogc.geo.geodcat.stac.extensions.geodcat-stac-eo</small>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (50% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 1 / 2
                                         </p>
                                         <div class="card mb-2 validation-item ">
                                             <div class="card-body">
@@ -912,7 +1051,7 @@
                                                     <a href="https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json" target="_blank">example_2_1.json</a>
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-16">
@@ -923,7 +1062,98 @@
                                                                     <div class="font-monospace entry-message section-files ">Output JSON-LD example_2_1.jsonld created</div>
                                                                     <div class="font-monospace entry-message section-files ">Output Turtle example_2_1.ttl created</div>
                                                                     <div class="font-monospace subsection-title mt-2">JSON Schema</div>
-                                                                    <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
+                                                                    <div class="font-monospace entry-message section-json_schema text-danger">ValidationError: {&#x27;stac_version&#x27;: &#x27;1.1.0&#x27;, &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v2.0.0/schema.json&#x27;], &#x27;type&#x27;: &#x27;Feature&#x27;, &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;, &#x27;collection&#x27;: &#x27;eo-collection&#x27;, &#x27;bbox&#x27;: [172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975], &#x27;geometry&#x27;: {&#x27;type&#x27;: &#x27;Polygon&#x27;, &#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003], [172.95469614953714, 1.3438851951615003], [172.95469614953714, 1.3690476620161975], [172.91173669923782, 1.3690476620161975], [172.91173669923782, 1.3438851951615003]]]}, &#x27;properties&#x27;: {&#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;, &#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;, &#x27;platform&#x27;: &#x27;cool_sat2&#x27;, &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;], &#x27;gsd&#x27;: 0.66, &#x27;eo:cloud_cover&#x27;: 1.2, &#x27;eo:snow_cover&#x27;: 0}, &#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;, &#x27;roles&#x27;: [&#x27;data&#x27;], &#x27;eo:cloud_cover&#x27;: 1.2, &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07, &#x27;eo:solar_illumination&#x27;: 1959.66}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08, &#x27;eo:solar_illumination&#x27;: 1823.24}, {&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09, &#x27;eo:solar_illumination&#x27;: 1512.06}, {&#x27;name&#x27;: &#x27;band4&#x27;, &#x27;eo:common_name&#x27;: &#x27;nir&#x27;, &#x27;eo:center_wavelength&#x27;: 0.8, &#x27;eo:full_width_half_max&#x27;: 0.152, &#x27;eo:solar_illumination&#x27;: 1041.63}]}, &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;, &#x27;title&#x27;: &#x27;Thumbnail&#x27;, &#x27;type&#x27;: &#x27;image/png&#x27;, &#x27;roles&#x27;: [&#x27;thumbnail&#x27;]}, &#x27;visual&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;, &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; profile=cloud-optimized&#x27;, &#x27;title&#x27;: &#x27;3-Band Visual&#x27;, &#x27;roles&#x27;: [&#x27;visual&#x27;], &#x27;bands&#x27;: [{&#x27;name&#x27;: &#x27;band3&#x27;, &#x27;eo:common_name&#x27;: &#x27;red&#x27;, &#x27;eo:center_wavelength&#x27;: 0.645, &#x27;eo:full_width_half_max&#x27;: 0.09}, {&#x27;name&#x27;: &#x27;band2&#x27;, &#x27;eo:common_name&#x27;: &#x27;green&#x27;, &#x27;eo:center_wavelength&#x27;: 0.56, &#x27;eo:full_width_half_max&#x27;: 0.08}, {&#x27;name&#x27;: &#x27;band1&#x27;, &#x27;eo:common_name&#x27;: &#x27;blue&#x27;, &#x27;eo:center_wavelength&#x27;: 0.47, &#x27;eo:full_width_half_max&#x27;: 0.07}]}}, &#x27;links&#x27;: [{&#x27;rel&#x27;: &#x27;root&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;parent&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}, {&#x27;rel&#x27;: &#x27;collection&#x27;, &#x27;href&#x27;: &#x27;./collection.json&#x27;, &#x27;type&#x27;: &#x27;application/json&#x27;, &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;}]} is not valid under any of the given schemas
+
+Failed validating &#x27;anyOf&#x27; in schema[&#x27;allOf&#x27;][0][&#x27;allOf&#x27;][0]:
+    {&#x27;anyOf&#x27;: [{&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml&#x27;},
+               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml&#x27;},
+               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml&#x27;},
+               {&#x27;$ref&#x27;: &#x27;https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item-v1-0-0/schema.yaml&#x27;}]}
+
+On instance:
+    {&#x27;assets&#x27;: {&#x27;analytic&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.47,
+                                        &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
+                                        &#x27;eo:full_width_half_max&#x27;: 0.07,
+                                        &#x27;eo:solar_illumination&#x27;: 1959.66,
+                                        &#x27;name&#x27;: &#x27;band1&#x27;},
+                                       {&#x27;eo:center_wavelength&#x27;: 0.56,
+                                        &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
+                                        &#x27;eo:full_width_half_max&#x27;: 0.08,
+                                        &#x27;eo:solar_illumination&#x27;: 1823.24,
+                                        &#x27;name&#x27;: &#x27;band2&#x27;},
+                                       {&#x27;eo:center_wavelength&#x27;: 0.645,
+                                        &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
+                                        &#x27;eo:full_width_half_max&#x27;: 0.09,
+                                        &#x27;eo:solar_illumination&#x27;: 1512.06,
+                                        &#x27;name&#x27;: &#x27;band3&#x27;},
+                                       {&#x27;eo:center_wavelength&#x27;: 0.8,
+                                        &#x27;eo:common_name&#x27;: &#x27;nir&#x27;,
+                                        &#x27;eo:full_width_half_max&#x27;: 0.152,
+                                        &#x27;eo:solar_illumination&#x27;: 1041.63,
+                                        &#x27;name&#x27;: &#x27;band4&#x27;}],
+                             &#x27;eo:cloud_cover&#x27;: 1.2,
+                             &#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif&#x27;,
+                             &#x27;roles&#x27;: [&#x27;data&#x27;],
+                             &#x27;title&#x27;: &#x27;4-Band Analytic&#x27;,
+                             &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                     &#x27;profile=cloud-optimized&#x27;},
+                &#x27;thumbnail&#x27;: {&#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg&#x27;,
+                              &#x27;roles&#x27;: [&#x27;thumbnail&#x27;],
+                              &#x27;title&#x27;: &#x27;Thumbnail&#x27;,
+                              &#x27;type&#x27;: &#x27;image/png&#x27;},
+                &#x27;visual&#x27;: {&#x27;bands&#x27;: [{&#x27;eo:center_wavelength&#x27;: 0.645,
+                                      &#x27;eo:common_name&#x27;: &#x27;red&#x27;,
+                                      &#x27;eo:full_width_half_max&#x27;: 0.09,
+                                      &#x27;name&#x27;: &#x27;band3&#x27;},
+                                     {&#x27;eo:center_wavelength&#x27;: 0.56,
+                                      &#x27;eo:common_name&#x27;: &#x27;green&#x27;,
+                                      &#x27;eo:full_width_half_max&#x27;: 0.08,
+                                      &#x27;name&#x27;: &#x27;band2&#x27;},
+                                     {&#x27;eo:center_wavelength&#x27;: 0.47,
+                                      &#x27;eo:common_name&#x27;: &#x27;blue&#x27;,
+                                      &#x27;eo:full_width_half_max&#x27;: 0.07,
+                                      &#x27;name&#x27;: &#x27;band1&#x27;}],
+                           &#x27;href&#x27;: &#x27;https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif&#x27;,
+                           &#x27;roles&#x27;: [&#x27;visual&#x27;],
+                           &#x27;title&#x27;: &#x27;3-Band Visual&#x27;,
+                           &#x27;type&#x27;: &#x27;image/tiff; application=geotiff; &#x27;
+                                   &#x27;profile=cloud-optimized&#x27;}},
+     &#x27;bbox&#x27;: [172.91173669923782,
+              1.3438851951615003,
+              172.95469614953714,
+              1.3690476620161975],
+     &#x27;collection&#x27;: &#x27;eo-collection&#x27;,
+     &#x27;geometry&#x27;: {&#x27;coordinates&#x27;: [[[172.91173669923782, 1.3438851951615003],
+                                   [172.95469614953714, 1.3438851951615003],
+                                   [172.95469614953714, 1.3690476620161975],
+                                   [172.91173669923782, 1.3690476620161975],
+                                   [172.91173669923782,
+                                    1.3438851951615003]]],
+                  &#x27;type&#x27;: &#x27;Polygon&#x27;},
+     &#x27;id&#x27;: &#x27;20201211_223832_CS2&#x27;,
+     &#x27;links&#x27;: [{&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;root&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;parent&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;},
+               {&#x27;href&#x27;: &#x27;./collection.json&#x27;,
+                &#x27;rel&#x27;: &#x27;collection&#x27;,
+                &#x27;title&#x27;: &#x27;Simple Example Collection&#x27;,
+                &#x27;type&#x27;: &#x27;application/json&#x27;}],
+     &#x27;properties&#x27;: {&#x27;created&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;,
+                    &#x27;datetime&#x27;: &#x27;2020-12-11T22:38:32.125Z&#x27;,
+                    &#x27;eo:cloud_cover&#x27;: 1.2,
+                    &#x27;eo:snow_cover&#x27;: 0,
+                    &#x27;gsd&#x27;: 0.66,
+                    &#x27;instruments&#x27;: [&#x27;cool_sensor_v1&#x27;],
+                    &#x27;platform&#x27;: &#x27;cool_sat2&#x27;,
+                    &#x27;updated&#x27;: &#x27;2020-12-12T01:48:13.725Z&#x27;},
+     &#x27;stac_extensions&#x27;: [&#x27;https://stac-extensions.github.io/eo/v2.0.0/schema.json&#x27;],
+     &#x27;stac_version&#x27;: &#x27;1.1.0&#x27;,
+     &#x27;type&#x27;: &#x27;Feature&#x27;}</div>
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for _sources/records-ontology/rules.shacl:
   Validation Report

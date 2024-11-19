@@ -1,0 +1,69 @@
+Validation report for ogc.geo.geodcat.stac.geodcat-stac-item - GeoDCAT mapping to STAC item
+Generated 2024-11-19T03:39:54.529171+00:00
+=== Files ===
+Using example_1_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_1_1.jsonld created
+Output Turtle example_1_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'stac_version': '1.1.0', 'stac_extensions': [], 'type': 'Feature', 'id': '20201211_223832_CS2', 'bbox': [172.91173669923782, 1.3438851951615003, 172.95469614953714, 1.3690476620161975], 'geometry': {'type': 'Polygon', 'coordinates': [[[172.91173669923782, 1.3438851951615003], [172.95469614953714, 1.3438851951615003], [172.95469614953714, 1.3690476620161975], [172.91173669923782, 1.3690476620161975], [172.91173669923782, 1.3438851951615003]]]}, 'properties': {'datetime': '2020-12-11T22:38:32.125000Z'}, 'collection': 'simple-collection', 'links': [{'rel': 'collection', 'href': './collection.json', 'type': 'application/json', 'title': 'Simple Example Collection'}, {'rel': 'root', 'href': './collection.json', 'type': 'application/json', 'title': 'Simple Example Collection'}, {'rel': 'parent', 'href': './collection.json', 'type': 'application/json', 'title': 'Simple Example Collection'}], 'assets': {'visual': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif', 'type': 'image/tiff; application=geotiff; profile=cloud-optimized', 'title': '3-Band Visual', 'roles': ['visual']}, 'thumbnail': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg', 'title': 'Thumbnail', 'type': 'image/jpeg', 'roles': ['thumbnail']}}} is not valid under any of the given schemas
+
+Failed validating 'anyOf' in schema['allOf'][1]:
+    {'anyOf': [{'$ref': 'https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/schema.yaml'},
+               {'$ref': 'https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item-v1-0-0/schema.yaml'}]}
+
+On instance:
+    {'assets': {'thumbnail': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg',
+                              'roles': ['thumbnail'],
+                              'title': 'Thumbnail',
+                              'type': 'image/jpeg'},
+                'visual': {'href': 'https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif',
+                           'roles': ['visual'],
+                           'title': '3-Band Visual',
+                           'type': 'image/tiff; application=geotiff; '
+                                   'profile=cloud-optimized'}},
+     'bbox': [172.91173669923782,
+              1.3438851951615003,
+              172.95469614953714,
+              1.3690476620161975],
+     'collection': 'simple-collection',
+     'geometry': {'coordinates': [[[172.91173669923782, 1.3438851951615003],
+                                   [172.95469614953714, 1.3438851951615003],
+                                   [172.95469614953714, 1.3690476620161975],
+                                   [172.91173669923782, 1.3690476620161975],
+                                   [172.91173669923782,
+                                    1.3438851951615003]]],
+                  'type': 'Polygon'},
+     'id': '20201211_223832_CS2',
+     'links': [{'href': './collection.json',
+                'rel': 'collection',
+                'title': 'Simple Example Collection',
+                'type': 'application/json'},
+               {'href': './collection.json',
+                'rel': 'root',
+                'title': 'Simple Example Collection',
+                'type': 'application/json'},
+               {'href': './collection.json',
+                'rel': 'parent',
+                'title': 'Simple Example Collection',
+                'type': 'application/json'}],
+     'properties': {'datetime': '2020-12-11T22:38:32.125000Z'},
+     'stac_extensions': [],
+     'stac_version': '1.1.0',
+     'type': 'Feature'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/records-ontology/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/records-ontology/rules.shacl:
+ - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*
+
+=== End SHACL ===
+
