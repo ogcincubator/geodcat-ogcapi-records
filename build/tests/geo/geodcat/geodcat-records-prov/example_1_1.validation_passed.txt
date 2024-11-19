@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile
-Generated 2024-11-19T03:39:51.688831+00:00
+Generated 2024-11-19T11:02:44.797548+00:00
 === Files ===
 Using example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -8,16 +8,7 @@ Output Turtle example_1_1.ttl created
 === End Files ===
 
 === JSON Schema ===
-
-** Validation error **
-ValidationError: './collection.json' does not match '^\\w+:/*([^:<>{}|\\\\^`"\\s/]+[^<>{}|\\\\^`"\\s]*(:[^:<>{}|\\\\^`"\\s]+)?)?$'
-
-Failed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['properties']['links']['items']['allOf'][1]['properties']['href']['allOf'][1]:
-    {'pattern': '^\\w+:/*([^:<>{}|\\\\^`"\\s/]+[^<>{}|\\\\^`"\\s]*(:[^:<>{}|\\\\^`"\\s]+)?)?$',
-     'type': 'string'}
-
-On instance['links'][0]['href']:
-    './collection.json'
+Validation passed
 === End JSON Schema ===
 
 === SHACL ===

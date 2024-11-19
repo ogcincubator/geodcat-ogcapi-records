@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile",
   "bblockName": "GeoDCAT + PROV profile",
   "bblockId": "ogc.geo.geodcat.geodcat-records-prov",
-  "generated": "2024-11-19T03:39:51.725142+00:00",
-  "result": false,
+  "generated": "2024-11-19T11:02:44.833637+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -16,7 +16,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_1_1.json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -53,11 +53,9 @@
           "entries": [
             {
               "op": "validation",
-              "result": false,
-              "exception": "ValidationError",
-              "errorMessage": "'./collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'",
-              "isError": true,
-              "message": "ValidationError: './collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'\n\nFailed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['properties']['links']['items']['allOf'][1]['properties']['href']['allOf'][1]:\n    {'pattern': '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$',\n     'type': 'string'}\n\nOn instance['links'][0]['href']:\n    './collection.json'"
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         },
@@ -97,7 +95,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_2_1.json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -134,11 +132,9 @@
           "entries": [
             {
               "op": "validation",
-              "result": false,
-              "exception": "ValidationError",
-              "errorMessage": "'./collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'",
-              "isError": true,
-              "message": "ValidationError: './collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'\n\nFailed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['properties']['links']['items']['allOf'][1]['properties']['href']['allOf'][1]:\n    {'pattern': '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$',\n     'type': 'string'}\n\nOn instance['links'][0]['href']:\n    './collection.json'"
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         },
@@ -178,7 +174,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -215,11 +211,9 @@
           "entries": [
             {
               "op": "validation",
-              "result": false,
-              "exception": "ValidationError",
-              "errorMessage": "'./collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'",
-              "isError": true,
-              "message": "ValidationError: './collection.json' does not match '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$'\n\nFailed validating 'pattern' in schema['allOf'][0]['allOf'][0]['allOf'][0]['properties']['links']['items']['allOf'][1]['properties']['href']['allOf'][1]:\n    {'pattern': '^\\\\w+:/*([^:<>{}|\\\\\\\\^`\"\\\\s/]+[^<>{}|\\\\\\\\^`\"\\\\s]*(:[^:<>{}|\\\\\\\\^`\"\\\\s]+)?)?$',\n     'type': 'string'}\n\nOn instance['links'][0]['href']:\n    './collection.json'"
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         },
@@ -252,7 +246,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 0,
-    "failed": 3
+    "passed": 3,
+    "failed": 0
   }
 }
