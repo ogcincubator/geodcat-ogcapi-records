@@ -10,9 +10,9 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
+    "ogc.geo.geodcat.stac.geodcat-stac-collection",
     "ogc.geo.geodcat.stac.geodcat-stac-item",
-    "ogc.contrib.stac.extensions.accuracy",
-    "ogc.geo.geodcat.stac.geodcat-stac-collection"
+    "ogc.contrib.stac.extensions.accuracy"
   ],
   "version": "0.1",
   "dateOfLastChange": "2023-09-18",
@@ -52,6 +52,9 @@
   "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/schema.yaml",
   "sourceLdContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/context.jsonld",
   "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/",
+  "rdfData": [
+    "https://ogcincubator.github.io/geodcat-ogcapi-records/data.ttl"
+  ],
   "validationPassed": true,
   "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/",
   "description": "## TDB\n",

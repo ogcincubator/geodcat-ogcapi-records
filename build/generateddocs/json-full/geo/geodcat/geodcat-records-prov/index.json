@@ -10,8 +10,8 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.geo.geodcat.geodcat-records",
     "ogc.geo.geodcat.prov",
+    "ogc.geo.geodcat.geodcat-records",
     "ogc.ogc-utils.prov"
   ],
   "version": "0.1",
@@ -46,6 +46,9 @@
   "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records-prov/schema.yaml",
   "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records-prov/",
+  "rdfData": [
+    "https://ogcincubator.github.io/geodcat-ogcapi-records/data.ttl"
+  ],
   "validationPassed": true,
   "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records-prov/",
   "description": "## GeoDCAT with PROV\n\nAdds PROV model to GeoDCAT - treating a dcat:Dataset as a prov:Entity.\n\nThis profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.\n\n",
