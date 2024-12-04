@@ -492,7 +492,13 @@ This was then modified according to suggested guidance in [records issue #21](ht
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
             rec:iso8601period "P1D" ] ;
-    rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
+    rdfs:seeAlso [ rdfs:label "Static dataset archive file" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "application/zip" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
@@ -515,13 +521,7 @@ This was then modified according to suggested guidance in [records issue #21](ht
         [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ rdfs:label "Static dataset archive file" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "application/zip" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ] ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -558,10 +558,10 @@ This was then modified according to suggested guidance in [records issue #21](ht
                 [ dcterms:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> ;
                     rec:conceptID "brewer"^^xsd:string ] ;
             rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ rec:concept [ rec:conceptID "observationPlatform"^^xsd:string ],
+        [ rec:concept [ rec:conceptID "atmosphericComposition"^^xsd:string ],
                 [ rec:conceptID "pollution"^^xsd:string ],
-                [ rec:conceptID "atmosphericComposition"^^xsd:string ],
-                [ rec:conceptID "rocketSounding"^^xsd:string ] ;
+                [ rec:conceptID "rocketSounding"^^xsd:string ],
+                [ rec:conceptID "observationPlatform"^^xsd:string ] ;
             rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
