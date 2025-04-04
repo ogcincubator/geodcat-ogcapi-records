@@ -1,12 +1,16 @@
 {
-  "name": "Proxy placeholder for DCAT",
-  "abstract": "For completeness, allows machine readable validations to be scoped to DCAT itself.",
-  "status": "under-development",
+  "name": "DCAT V3",
+   "abstract": "W3C DCAT version 3, extends V2, packaged as a building block to support inheritance of SHACL rules for validation and relationships to other standards.",
+  "status": "stable",
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-incubator",
-  "version": "0.1",
+  "version": "3.0",
   "dateOfLastChange": "2023-09-18",
+  "dependsOn": [
+    "ogc.geo.geodcat.dcat2"
+    ],
+  "ontology": "https://www.w3.org/ns/dcat3.ttl",
   "link": "https://github.com/opengeospatial/bblock-template",
   "sources": [
   ],
