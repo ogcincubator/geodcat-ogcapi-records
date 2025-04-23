@@ -1,8 +1,18 @@
-- title: GeoDCAT-AP example
+# - title: GeoDCAT-AP example
+#   content: |-
+#     This example from the GeoDCAT-AP profile
+
+#   snippets:
+#     - language: ttl
+#       ref: ../geodcat-ap/examples/geodcat-ap-regression.ttl
+
+- title: DCAT-AP 3.0 example
   content: |-
-    This example from the GeoDCAT-AP profile
+    This is an example conforming to DCAT-AP 3.0
+
+    It shows a Dataset with multilingual properties as well as a Distribution. 
+    The specific DCAT-AP related property is dcatap:applicableLegislation and there are a number of required properties defined via shacl.
 
   snippets:
     - language: ttl
-      ref: ../geodcat-ap/examples/geodcat-ap-regression.ttl
-
+      ref: ./examples/dataset-example.ttl
