@@ -131,6 +131,6 @@ exampleMS:1T2p3o4B-dist-SHP a dcat:Distribution ;
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
+* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
 * Path: `_sources/dcat-ap`
 

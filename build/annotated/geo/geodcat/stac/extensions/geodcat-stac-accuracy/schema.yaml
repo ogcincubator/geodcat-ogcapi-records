@@ -4,8 +4,8 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy/schema.yaml
 - anyOf:
-  - $ref: https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
-  - $ref: https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
+  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
+  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
 x-jsonld-prefixes:
   dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
   dqv: http://dqv.org/tdb#

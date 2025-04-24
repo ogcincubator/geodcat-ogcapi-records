@@ -72,7 +72,7 @@ Example from PROJJSON spec at [https://proj.org/en/9.4/specifications/projjson.h
 #### jsonld
 ```jsonld
 {
-  "@context": "https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/context.jsonld",
+  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/context.jsonld",
   "$schema": "https://proj.org/schemas/v0.4/projjson.schema.json",
   "type": "GeographicCRS",
   "name": "NAD83(2011)",
@@ -129,13 +129,13 @@ Example from PROJJSON spec at [https://proj.org/en/9.4/specifications/projjson.h
             proj:north_latitude 7.471e+01 ;
             proj:south_latitude 1.492e+01 ;
             proj:west_longitude 1.6765e+02 ] ;
-    proj:coordinate_system [ proj:axis [ proj:abbreviation "Lat" ;
-                    proj:direction "north" ;
-                    proj:name "Geodetic latitude" ;
-                    proj:unit "degree" ],
-                [ proj:abbreviation "Lon" ;
+    proj:coordinate_system [ proj:axis [ proj:abbreviation "Lon" ;
                     proj:direction "east" ;
                     proj:name "Geodetic longitude" ;
+                    proj:unit "degree" ],
+                [ proj:abbreviation "Lat" ;
+                    proj:direction "north" ;
+                    proj:name "Geodetic latitude" ;
                     proj:unit "degree" ] ;
             proj:subtype "ellipsoidal" ] ;
     proj:datum [ proj:ellipsoid [ proj:inverse_flattening 2.982572e+02 ;
@@ -168,8 +168,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/schema.json)
-* JSON version: [schema.json](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/schema.yaml)
 
 
 # JSON-LD Context
@@ -185,7 +185,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/projjson/context.jsonld)
 
 ## Sources
 
@@ -195,6 +195,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
+* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
 * Path: `_sources/stac/projjson`
 

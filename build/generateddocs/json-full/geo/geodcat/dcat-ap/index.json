@@ -9,7 +9,7 @@
   "itemClass": "model",
   "register": "ogc-incubator",
   "version": "0.2",
-  "dateOfLastChange": "2025-04-23",
+  "dateOfLastChange": "2025-04-24",
   "link": "https://github.com/opengeospatial/bblock-template",
   "dependsOn": [
     "ogc.geo.geodcat.dcat"
@@ -34,13 +34,13 @@
   ],
   "shaclRules": {
     "ogc.geo.geodcat.dcat-ap": [
-      "https://nielshoffmann.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
+      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
     ]
   },
-  "sourceFiles": "https://nielshoffmann.github.io/geodcat-ogcapi-records/_sources/dcat-ap/",
+  "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/",
   "rdfData": [],
   "validationPassed": true,
-  "testOutputs": "https://github.com/NielsHoffmann/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-ap/",
+  "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/dcat-ap/",
   "description": "## DCAT-AP 3.0\n\nThis building block provides a framework to test compatibility of GeoDCAT with DCAT-AP 3.0, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.\n",
   "examples": [
     {
@@ -51,12 +51,12 @@
           "language": "ttl",
           "ref": "./examples/dataset-example.ttl",
           "code": "\n@prefix exampleMS: <https://data.exampleMS.gov/id/data/>.\n@prefix adms: <http://www.w3.org/ns/adms#>.\n@prefix dcat: <http://www.w3.org/ns/dcat#>.\n@prefix dcatap: <http://data.europa.eu/r5r/>.\n@prefix dct: <http://purl.org/dc/terms/>.\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.\n@prefix eli: <http://data.europa.eu/eli/ontology#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\nexampleMS:1T2p3o4B a dcat:Dataset;\n   dct:title \"Naam van de dataset\"@nl;\n   dct:title \"Title of the dataset\"@en;\n   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;\n   dcatap:applicableLegislation <http://data.europa.eu/eli/reg_impl/2023/138/oj>;\n   dct:conformsTo <http://data.europa.eu/eli/reg/2010/1089>;\n   dcat:contactPoint [\n     a <https://json-ld.org/playground/Organization>, vcard:Kind ;\n     vcard:fn \"Mijn Organisatie\"@nl ;\n     vcard:fn \"My Organization\"@en ;\n     vcard:hasEmail <mailto:opendata@mijnorganisatie.nl> ;\n     vcard:hasURL \"http://mijnorganisatie.org/\" ;\n     vcard:organization-name \"Mijn Organisatie\"@nl ;\n     vcard:organization-name \"My Organization\"@en\n     ] ; \n   dct:creator [\n     dct:type <http://purl.org/adms/publishertype/LocalAuthority> ;\n     a foaf:Agent ;\n     foaf:name \"Mijn Organisatie\"@nl;\n     foaf:name \"My Organization\"@en\n     ] ;\n   dct:description \"beschrijving van de dataset\"@nl;\n   dct:description \"description of the dataset in english\"@en;\n   dct:identifier \"https://data.exampleMS.gov/id/dataset/1T2p3o4B\";\n   dcat:keyword \"trefwoord 1\"@nl;\n   dcat:keyword \"trefwoord 2\"@nl;\n   dcat:keyword \"keyword 1\"@en;\n   dcat:keyword \"keyword 2\"@en;\n   dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;\n   dct:publisher [\n     dct:type <http://purl.org/adms/publishertype/LocalAuthority> ;\n     a foaf:Agent ;\n     foaf:name \"Mijn Organisatie\"@nl;\n     foaf:name \"My Organization\"@en\n     ] ;\n   dct:spatial <https://www.geonames.org/2750405>;\n   dct:spatial [a dct:Location ;\n                  dcat:bbox \"POLYGON ((3.053 47.975,7.24 47.975,7.24 53.504,3.053 53.504,3.053 47.975))\"^^rdf:wktLiteral;\n  ] ;\n   dct:temporal [ a dct:PeriodOfTime ;\n     dcat:startDate \"2016-03-28\"^^xsd:date ;\n     dcat:endDate   \"2018-08-25\"^^xsd:date ;\n     ] ;\n   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC>;\n   dcat:distribution exampleMS:1T2p3o4B-dist-SHP\n   .\n\nexampleMS:1T2p3o4B-dist-SHP a dcat:Distribution ;\n  dcat:accessURL <https://orgea.exampleMS.gov/files/1T2p3o4B.shp> ;\n  dcatap:applicableLegislation <http://data.europa.eu/eli/reg_impl/2023/138/oj>;\n  dcat:downloadURL <https://orgea.exampleMS.gov/files/1T2p3o4B.shp> ;\n  dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;\n  dct:license <http://creativecommons.org/publicdomain/zero/1.0/deed.nl> ;\n  dct:conformsTo <http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd> ;\n  dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.shp>\n  .\n\n<https://orgea.exampleMS.gov/files/1T2p3o4B.shp> a rdfs:Resource .\n\n<http://creativecommons.org/publicdomain/zero/1.0/deed.nl> a dct:LicenseDocument .\n\n<http://publications.europa.eu/resource/authority/access-right/PUBLIC> a dct:RightsStatement .\n\n<http://publications.europa.eu/resource/authority/language/NLD> a dct:LinguisticSystem .\n\n\n<http://data.europa.eu/eli/reg_impl/2023/138/oj> a eli:LegalResource .\n\n\n<http://data.europa.eu/eli/reg/2010/1089> a dct:Standard .\n\n\n<https://www.geonames.org/2750405> a dct:Location .\n\n\n<http://purl.org/adms/publishertype/LocalAuthority> a skos:Concept ;\n skos:prefLabel\"Local Authority\"@en .\n\n<http://publications.europa.eu/resource/authority/data-theme/EDUC> a skos:Concept ;\n skos:prefLabel \"EDUC\"@en .\n\n<https://www.iana.org/assignments/media-types/application/vnd.shp> a dct:MediaType .\n\n<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd> a dct:Standard .",
-          "url": "https://nielshoffmann.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-ap/example_1_1.ttl"
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/dcat-ap/example_1_1.ttl"
         }
       ]
     }
   ],
   "annotatedSchema": null,
-  "gitRepository": "https://github.com/NielsHoffmann/geodcat-ogcapi-records",
+  "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
   "gitPath": "_sources/dcat-ap"
 }
