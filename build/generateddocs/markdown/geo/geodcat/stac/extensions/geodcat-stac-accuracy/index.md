@@ -83,7 +83,7 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",
+  "@context": "https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json"
@@ -191,8 +191,8 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy/schema.yaml
 - anyOf:
-  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
-  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
+  - $ref: https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
+  - $ref: https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
 x-jsonld-prefixes:
   dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
   dqv: http://dqv.org/tdb#
@@ -202,8 +202,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.yaml)
+* YAML version: [schema.yaml](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.json)
+* JSON version: [schema.json](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.yaml)
 
 
 # JSON-LD Context
@@ -397,7 +397,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld)
+[context.jsonld](https://nielshoffmann.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld)
 
 ## Sources
 
@@ -409,6 +409,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/stac/extensions/geodcat-stac-accuracy`
 

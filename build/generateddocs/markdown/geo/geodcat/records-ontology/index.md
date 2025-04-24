@@ -119,6 +119,6 @@ Example of an OGC Record schema mapped to the records ontology
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/records-ontology`
 

@@ -1,120 +1,136 @@
 
-# Proxy placeholder for DCAT-AP profile (Model)
+# DCAT-AP 3.0 profile (Model)
 
-`ogc.geo.geodcat.dcat-ap` *v0.1*
+`ogc.geo.geodcat.dcat-ap` *v0.2*
 
-Proxy for the DCAT-AP (european profile of DCAT)
+DCAT-AP 3.0 (european profile of DCAT)
 
-[*Status*](http://www.opengis.net/def/status): Stable
+[*Status*](http://www.opengis.net/def/status): Under development
 
 ## Description
 
-## DCAT-AP 
+## DCAT-AP 3.0
 
-This building block provides a framework to test compatibility of the DCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
+This building block provides a framework to test compatibility of GeoDCAT with DCAT-AP 3.0, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
 
 ## Examples
 
-### GeoDCAT-AP example
-This example from the GeoDCAT-AP profile
+### DCAT-AP 3.0 example
+This is an example conforming to DCAT-AP 3.0
+
+It shows a Dataset with multilingual properties as well as a Distribution. 
+The specific DCAT-AP related property is dcatap:applicableLegislation and there are a number of required properties defined via shacl.
 #### ttl
 ```ttl
-@prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geodcat: <http://data.europa.eu/930/> .
-@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
-@prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
+
+@prefix exampleMS: <https://data.exampleMS.gov/id/data/>.
+@prefix adms: <http://www.w3.org/ns/adms#>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcatap: <http://data.europa.eu/r5r/>.
+@prefix dct: <http://purl.org/dc/terms/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix record: <https://some.catalogue/record/> .
-@prefix resource: <https://some.catalogue/resource/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00 a dcat:Dataset ;
-  geodcat:custodian <http://publications.europa.eu/resource/authority/corporate-body/EEA> ;
-  dct:accrualPeriodicity <http://publications.europa.eu/resource/authority/frequency/IRREG> ;
-  dct:conformsTo <http://www.opengis.net/def/crs/EPSG/0/3035> ;
-  dct:created "2019-10-31"^^xsd:date ;
-  dct:description """
-    The data set includes the rasterized noise contours which have been
-    reported by countries under the terms of the Environmental Noise
-    Directive (END) by the 33 EEA member countries (EEA-33) excluding
-    Turkey for the third round of noise mapping in 2017. The data set
-    includes submissions from the countries until 01/01/2019.
-    ...
-  """@en ;
-  dct:identifier "eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00" ;
-  dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
-  dct:provenance [ a dct:ProvenanceStatement ;
-      rdfs:label "The raster data sets have been created out of the Noise Spatial Database, which in turn contains all versions delivered by the relevant countries (EU and EFTA) to Reportnet (CDR). The data from Reportnet is automatically incorporated into the database, with the exception of those data sets which require a manual review (due to problems with naming conventions or Coordinate Reference System). The data set covers any submission by the countries until 01/01/2019."@en ] ;
-  dct:spatial [ a dct:Location ;
-      dcat:bbox "<gml:Envelope srsName=\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\"><gml:lowerCorner>-31.285 27.642</gml:lowerCorner><gml:upperCorner>34.099 70.075</gml:upperCorner></gml:Envelope>"^^gsp:gmlLiteral,
-        "POLYGON((-31.285 70.075,34.099 70.075,34.099 27.642,-31.285 27.642,-31.285 70.075))"^^gsp:wktLiteral ] ;
-  dct:subject <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/environment>,
-    <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/health>,
-    <http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/transportation> ;
-  dct:temporal [ a dct:PeriodOfTime ;
-      dcat:endDate "2016-12-31"^^xsd:date ;
-      dcat:startDate "2016-01-01"^^xsd:date ] ;
-  dct:title "Noise contours data reported under Environmental Noise Directive (END) 2017 (raster 10m) - version 2019, Oct. 2019"@en ;
-  dct:type <http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset> ;
-  dcat:contactPoint [ a vcard:Organization ;
-      vcard:fn "European Environment Agency"@en ;
-      vcard:hasAddress [ a vcard:Address ;
-          vcard:country-name "Denmark" ;
-          vcard:locality "Copenhagen" ;
-          vcard:postal-code "1050" ;
-          vcard:region "K" ;
-          vcard:street-address "Kongens Nytorv 6" ] ;
-      vcard:hasEmail <mailto:info@eea.europa.eu> ;
-      vcard:hasURL <http://www.eea.europa.eu> ] ;
-  dcat:distribution [ a dcat:Distribution ;
-      dct:accessRights <http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e> ;
-      dct:description "NoiseContours_air_lnight"@en ;
-      dct:format <http://publications.europa.eu/resource/authority/file-type/TIFF> ;
-      dct:license [ a dct:LicenseDocument ;
-          rdfs:label "The full noise contour maps data set is in principle only available for EEA internal use. A public version of the data set may in the future be available, excluding those data sets for which there is any limitation or restriction in their use (beyond acknowledgement)."@en ] ;
-      adms:representationTechnique <http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid> ;
-      dcat:accessService [ a dcat:DataService ;
-          dct:conformsTo <http://www.opengeospatial.org/standards/wms> ;
-          dcat:endpointDescription <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS> ;
-          dcat:endpointURL <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer> ] ;
-      dcat:accessURL <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS> ] ;
-  dcat:keyword "Environmental Noise Directive"@en,
-    "Noise map"@en,
-    "agglomerations"@en,
-    "noise contour"@en,
-    "noise source"@en ;
-  dcat:spatialResolutionInMeters 10.0 ;
-  dcat:theme <http://inspire.ec.europa.eu/theme/hh>,
-    <http://publications.europa.eu/resource/authority/data-theme/HEAL>,
-    <http://www.eionet.europa.eu/gemet/concept/2884> ;
-  prov:wasUsedBy [ a prov:Activity ;
-      prov:generated [ a prov:Entity ;
-          dct:description "See the referenced specification"@en ;
-          dct:type <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated> ] ;
-      prov:qualifiedAssociation [ a prov:Association ;
-          prov:hadPlan [ a prov:Plan ;
-              prov:wasDerivedFrom <http://data.europa.eu/eli/reg/2010/1089> ] ] ] ;
-  foaf:isPrimaryTopicOf record:e7807ecb-a8e6-4a33-baa2-d119eec9ce24 ;
-  foaf:page <https://noise.eea.europa.eu/> .
+exampleMS:1T2p3o4B a dcat:Dataset;
+   dct:title "Naam van de dataset"@nl;
+   dct:title "Title of the dataset"@en;
+   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+   dcatap:applicableLegislation <http://data.europa.eu/eli/reg_impl/2023/138/oj>;
+   dct:conformsTo <http://data.europa.eu/eli/reg/2010/1089>;
+   dcat:contactPoint [
+     a <https://json-ld.org/playground/Organization>, vcard:Kind ;
+     vcard:fn "Mijn Organisatie"@nl ;
+     vcard:fn "My Organization"@en ;
+     vcard:hasEmail <mailto:opendata@mijnorganisatie.nl> ;
+     vcard:hasURL "http://mijnorganisatie.org/" ;
+     vcard:organization-name "Mijn Organisatie"@nl ;
+     vcard:organization-name "My Organization"@en
+     ] ; 
+   dct:creator [
+     dct:type <http://purl.org/adms/publishertype/LocalAuthority> ;
+     a foaf:Agent ;
+     foaf:name "Mijn Organisatie"@nl;
+     foaf:name "My Organization"@en
+     ] ;
+   dct:description "beschrijving van de dataset"@nl;
+   dct:description "description of the dataset in english"@en;
+   dct:identifier "https://data.exampleMS.gov/id/dataset/1T2p3o4B";
+   dcat:keyword "trefwoord 1"@nl;
+   dcat:keyword "trefwoord 2"@nl;
+   dcat:keyword "keyword 1"@en;
+   dcat:keyword "keyword 2"@en;
+   dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;
+   dct:publisher [
+     dct:type <http://purl.org/adms/publishertype/LocalAuthority> ;
+     a foaf:Agent ;
+     foaf:name "Mijn Organisatie"@nl;
+     foaf:name "My Organization"@en
+     ] ;
+   dct:spatial <https://www.geonames.org/2750405>;
+   dct:spatial [a dct:Location ;
+                  dcat:bbox "POLYGON ((3.053 47.975,7.24 47.975,7.24 53.504,3.053 53.504,3.053 47.975))"^^rdf:wktLiteral;
+  ] ;
+   dct:temporal [ a dct:PeriodOfTime ;
+     dcat:startDate "2016-03-28"^^xsd:date ;
+     dcat:endDate   "2018-08-25"^^xsd:date ;
+     ] ;
+   dcat:theme <http://publications.europa.eu/resource/authority/data-theme/EDUC>;
+   dcat:distribution exampleMS:1T2p3o4B-dist-SHP
+   .
 
+exampleMS:1T2p3o4B-dist-SHP a dcat:Distribution ;
+  dcat:accessURL <https://orgea.exampleMS.gov/files/1T2p3o4B.shp> ;
+  dcatap:applicableLegislation <http://data.europa.eu/eli/reg_impl/2023/138/oj>;
+  dcat:downloadURL <https://orgea.exampleMS.gov/files/1T2p3o4B.shp> ;
+  dct:language <http://publications.europa.eu/resource/authority/language/NLD> ;
+  dct:license <http://creativecommons.org/publicdomain/zero/1.0/deed.nl> ;
+  dct:conformsTo <http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd> ;
+  dcat:mediaType <https://www.iana.org/assignments/media-types/application/vnd.shp>
+  .
+
+<https://orgea.exampleMS.gov/files/1T2p3o4B.shp> a rdfs:Resource .
+
+<http://creativecommons.org/publicdomain/zero/1.0/deed.nl> a dct:LicenseDocument .
+
+<http://publications.europa.eu/resource/authority/access-right/PUBLIC> a dct:RightsStatement .
+
+<http://publications.europa.eu/resource/authority/language/NLD> a dct:LinguisticSystem .
+
+
+<http://data.europa.eu/eli/reg_impl/2023/138/oj> a eli:LegalResource .
+
+
+<http://data.europa.eu/eli/reg/2010/1089> a dct:Standard .
+
+
+<https://www.geonames.org/2750405> a dct:Location .
+
+
+<http://purl.org/adms/publishertype/LocalAuthority> a skos:Concept ;
+ skos:prefLabel"Local Authority"@en .
+
+<http://publications.europa.eu/resource/authority/data-theme/EDUC> a skos:Concept ;
+ skos:prefLabel "EDUC"@en .
+
+<https://www.iana.org/assignments/media-types/application/vnd.shp> a dct:MediaType .
+
+<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd> a dct:Standard .
 ```
 
 ## Sources
 
-* [DCAT-AP Specification](https://semiceu.github.io/DCAT-AP/releases/3.0.0/)
-* [DCAT-AP JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
+* [DCAT-AP 3.0 Specification](https://semiceu.github.io/DCAT-AP/releases/3.0.0/)
+* [DCAT-AP 3.0 JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/dcat-ap`
 
