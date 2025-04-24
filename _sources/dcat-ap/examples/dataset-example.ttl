@@ -1,28 +1,4 @@
 
-# DCAT-AP 3.0 profile (Model)
-
-`ogc.geo.geodcat.dcat-ap` *v0.2*
-
-DCAT-AP 3.0 (european profile of DCAT)
-
-[*Status*](http://www.opengis.net/def/status): Under development
-
-## Description
-
-## DCAT-AP 3.0
-
-This building block provides a framework to test compatibility of GeoDCAT with DCAT-AP 3.0, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
-
-## Examples
-
-### DCAT-AP 3.0 example
-This is an example conforming to DCAT-AP 3.0
-
-It shows a Dataset with multilingual properties as well as a Distribution. 
-The specific DCAT-AP related property is dcatap:applicableLegislation and there are a number of required properties defined via shacl.
-#### ttl
-```ttl
-
 @prefix exampleMS: <https://data.exampleMS.gov/id/data/>.
 @prefix adms: <http://www.w3.org/ns/adms#>.
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
@@ -120,17 +96,3 @@ exampleMS:1T2p3o4B-dist-SHP a dcat:Distribution ;
 <https://www.iana.org/assignments/media-types/application/vnd.shp> a dct:MediaType .
 
 <http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd> a dct:Standard .
-```
-
-## Sources
-
-* [DCAT-AP 3.0 Specification](https://semiceu.github.io/DCAT-AP/releases/3.0.0/)
-* [DCAT-AP 3.0 JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
-
-# For developers
-
-The source code for this Building Block can be found in the following repository:
-
-* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
-* Path: `_sources/dcat-ap`
-
