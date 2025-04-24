@@ -83,7 +83,7 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",
   "stac_version": "1.0.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json"
@@ -153,15 +153,15 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <urn:stac:vocab#> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <urn:stac:vocab#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/accuracy/example-1/item> dcterms:type "Feature" ;
-    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -173,9 +173,9 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
     accuracy:geometric_y_stddev 5e-01 ;
     accuracy:measurement_absolute 2e-02 ;
     accuracy:measurement_relative 1e-02 ;
-    ns1:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
-    ns1:version "1.0.0" .
+    ns2:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    ns2:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
+    ns2:version "1.0.0" .
 
 <https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .
 
@@ -191,8 +191,8 @@ description: Schema for OGCAPI records profile for GeoDCAT - defines all extra e
 allOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy/schema.yaml
 - anyOf:
-  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
-  - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
+  - $ref: https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/geodcat-stac-item/schema.yaml
+  - $ref: https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/geodcat-stac-collection/schema.yaml
 x-jsonld-prefixes:
   dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
   dqv: http://dqv.org/tdb#
@@ -202,8 +202,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.yaml)
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/schema.yaml)
 
 
 # JSON-LD Context
@@ -397,7 +397,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld)
+[context.jsonld](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld)
 
 ## Sources
 
@@ -409,6 +409,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/stac/extensions/geodcat-stac-accuracy`
 

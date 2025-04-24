@@ -65,7 +65,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
@@ -191,7 +191,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
@@ -344,7 +344,7 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/prov/v1.0.0/schema.json"
@@ -452,15 +452,15 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
 $schema: https://json-schema.org/draft/2020-12/schema
 description: Schema for OGCAPI records profile for GeoDCAT + PROV
 allOf:
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml
+- $ref: https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records/schema.yaml
 - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#/$defs/Entity
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.yaml)
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/schema.yaml)
 
 
 # JSON-LD Context
@@ -1293,7 +1293,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld)
+[context.jsonld](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld)
 
 ## Sources
 
@@ -1304,6 +1304,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/geodcat-records-prov`
 

@@ -249,7 +249,7 @@ This was then modified according to suggested guidance in [records issue #21](ht
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
   "id": "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone",
   "type": "Feature",
   "time": {
@@ -492,22 +492,20 @@ This was then modified according to suggested guidance in [records issue #21](ht
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
             rec:iso8601period "P1D" ] ;
-    rdfs:seeAlso [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+    rdfs:seeAlso [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Data Search / Download User Interface" ;
@@ -518,10 +516,12 @@ This was then modified according to suggested guidance in [records issue #21](ht
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "This document as HTML" ;
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -547,10 +547,10 @@ This was then modified according to suggested guidance in [records issue #21](ht
                 <http://example.com/variables/width> ] ;
     rec:language [ skos:prefLabel "English (Canada)" ;
             rec:languageCode "en-CA" ] ;
-    rec:languages [ skos:prefLabel "English (Canada)" ;
-            rec:languageCode "en-CA" ],
-        [ skos:prefLabel "French (Canada)" ;
-            rec:languageCode "fr-CA" ] ;
+    rec:languages [ skos:prefLabel "French (Canada)" ;
+            rec:languageCode "fr-CA" ],
+        [ skos:prefLabel "English (Canada)" ;
+            rec:languageCode "en-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
     rec:themes [ rec:concept [ dcterms:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
@@ -558,10 +558,10 @@ This was then modified according to suggested guidance in [records issue #21](ht
                 [ dcterms:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> ;
                     rec:conceptID "brewer"^^xsd:string ] ;
             rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ rec:concept [ rec:conceptID "atmosphericComposition"^^xsd:string ],
+        [ rec:concept [ rec:conceptID "pollution"^^xsd:string ],
                 [ rec:conceptID "observationPlatform"^^xsd:string ],
-                [ rec:conceptID "pollution"^^xsd:string ],
-                [ rec:conceptID "rocketSounding"^^xsd:string ] ;
+                [ rec:conceptID "rocketSounding"^^xsd:string ],
+                [ rec:conceptID "atmosphericComposition"^^xsd:string ] ;
             rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
@@ -598,15 +598,15 @@ $schema: https://json-schema.org/draft/2020-12/schema
 description: Schema for OGCAPI records profile for GeoDCAT - defines all extra elements
   defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
 allOf:
-- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/schema.yaml
+- $ref: https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/dcat-records/schema.yaml
 - description: Other elements required for DCAT
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml)
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records/schema.yaml)
 
 
 # JSON-LD Context
@@ -781,7 +781,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld)
+[context.jsonld](https://raw.githubusercontent.com/NielsHoffmann/geodcat-ogcapi-records/undefined/build/annotated/geo/geodcat/geodcat-records/context.jsonld)
 
 ## Sources
 
@@ -793,6 +793,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
+* URL: [https://github.com/NielsHoffmann/geodcat-ogcapi-records](https://github.com/NielsHoffmann/geodcat-ogcapi-records)
 * Path: `_sources/geodcat-records`
 
