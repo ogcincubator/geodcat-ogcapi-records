@@ -112,7 +112,7 @@
   "name": "Building Blocks - GeoDCAT implementation using OGC API Records",
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
-  "modified": "2025-06-04T13:14:50.386416",
+  "modified": "2025-06-07T03:43:48.090536",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"fefb79b13766e7c935eb926409c3e6816b4f7593",
@@ -461,9 +461,9 @@
       "dateOfLastChange": "2025-06-04",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "ogc.geo.geodcat.dcat",
+        "ogc.api.records.v1.schemas.recordGeoJSON",
         "ogc.geo.geodcat.records-ontology",
-        "ogc.api.records.v1.schemas.recordGeoJSON"
+        "ogc.geo.geodcat.dcat"
       ],
       "sources": [
         {
@@ -590,9 +590,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "ogc.contrib.stac.collection",
         "ogc.geo.geodcat.geodcat",
-        "ogc.contrib.stac.collection-v1-0-0",
-        "ogc.contrib.stac.collection"
+        "ogc.contrib.stac.collection-v1-0-0"
       ],
       "version": "0.1",
       "dateOfLastChange": "2025-06-04",
@@ -803,9 +803,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.model.cross-domain.prov",
-        "ogc.ogc-utils.prov"
+        "ogc.ogc-utils.prov",
+        "ogc.geo.geodcat.geodcat-records"
       ],
       "version": "0.1",
       "dateOfLastChange": "2025-06-04",
@@ -828,11 +828,11 @@
         "STAC"
       ],
       "shaclRules": {
-        "ogc.geo.geodcat.records-ontology": [
-          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
-        ],
         "ogc.model.cross-domain.prov": [
           "http://qudt.org/2.1/schema/shacl/qudt"
+        ],
+        "ogc.geo.geodcat.records-ontology": [
+          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
         ]
       },
       "schema": {
@@ -875,10 +875,10 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "ogc.contrib.stac.item-v1-0-0",
         "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item",
-        "ogc.contrib.stac.item-v1-0-0"
+        "ogc.geo.geodcat.geodcat-records"
       ],
       "version": "0.1",
       "dateOfLastChange": "2025-06-04",
@@ -954,8 +954,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.accuracy",
         "ogc.geo.geodcat.stac.geodcat-stac-collection",
+        "ogc.contrib.stac.extensions.accuracy",
         "ogc.geo.geodcat.stac.geodcat-stac-item"
       ],
       "version": "0.1",
@@ -1029,8 +1029,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-collection",
+        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-item"
       ],
       "version": "0.1",
