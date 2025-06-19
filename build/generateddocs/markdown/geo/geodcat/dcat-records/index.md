@@ -491,23 +491,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
             rec:iso8601period "P1D" ] ;
-    rdfs:seeAlso [ rdfs:label "Static dataset archive file" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            dcterms:type "application/zip" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
-        [ rdfs:label "Data Search / Download User Interface" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "This document as HTML" ;
+    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
@@ -517,6 +501,22 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
+        [ rdfs:label "Data Search / Download User Interface" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/search> ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "Static dataset archive file" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "application/zip" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
         [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:type "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
@@ -558,9 +558,9 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
                     rec:conceptID "dobson"^^xsd:string ] ;
             rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
         [ rec:concept [ rec:conceptID "pollution"^^xsd:string ],
-                [ rec:conceptID "atmosphericComposition"^^xsd:string ],
                 [ rec:conceptID "rocketSounding"^^xsd:string ],
-                [ rec:conceptID "observationPlatform"^^xsd:string ] ;
+                [ rec:conceptID "observationPlatform"^^xsd:string ],
+                [ rec:conceptID "atmosphericComposition"^^xsd:string ] ;
             rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> a rec:array ;
