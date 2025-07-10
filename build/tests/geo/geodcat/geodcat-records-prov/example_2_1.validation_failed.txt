@@ -1,0 +1,181 @@
+Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile
+Generated 2025-07-10T03:46:46.270576+00:00
+=== Files ===
+Using example_2_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Validation result for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: sh-prov-o:wasGeneratedBy-subjects-shape
+  	Focus Node: <https://example.com/stac/example1/20201211_223832_CS2>
+  	Value Node: <https://example.com/stac/example1/20201211_223832_CS2>
+  	Message: Value does not have class prov:Entity
+  
+Focus nodes for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:
+ - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:Activity-disjointWith-Entity-shape/sh:not: *none*
+ - Shape sh-prov-o:qualifiedAssociation-objects-shape: *none*
+ - Shape sh-prov-o:influencer-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedInfluence-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedForm-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b67: *none*
+ - Shape sh-prov-o:qualifiedInfluence-subjects-shape: *none*
+ - Shape sh-prov-o:editorsDefinition-shape: *none*
+ - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:hadActivity-objects-shape: *none*
+ - Shape sh-prov-o:wasGeneratedBy-objects-shape: <surveys:DP-1-S1>
+ - Shape sh-prov-o:hadMember-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedPrimarySource-subjects-shape: *none*
+ - Shape sh-prov-o:influenced-objects-shape: *none*
+ - Shape sh-prov-o:startedAtTime-objects-shape: *none*
+ - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not: *none*
+ - Shape sh-prov-o:invalidated-subjects-shape: *none*
+ - Shape sh-prov-o:specializationOf-objects-shape: *none*
+ - Shape sh-prov-o:wasAssociatedWith-subjects-shape: *none*
+ - Shape sh-prov-o:influenced-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedGeneration-objects-shape: *none*
+ - Shape sh-prov-o:wasRevisionOf-objects-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b49: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b61: *none*
+ - Shape sh-prov-o:hadPrimarySource-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedDerivation-subjects-shape: *none*
+ - Shape sh-prov-o:category-shape: *none*
+ - Shape sh-prov-o:hadRole-subjects-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b55: *none*
+ - Shape sh-prov-o:hadActivity-subjects-shape: *none*
+ - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:activity-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedQuotation-objects-shape: *none*
+ - Shape sh-prov-o:editorialNote-shape: *none*
+ - Shape sh-prov-o:generatedAtTime-subjects-shape: *none*
+ - Shape sh-prov-o:actedOnBehalfOf-subjects-shape: *none*
+ - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not: *none*
+ - Shape sh-prov-o:EntityInfluence-shape: *none*
+ - Shape sh-prov-o:EmptyCollection-shape: *none*
+ - Shape sh-prov-o:sharesDefinitionWith-shape: *none*
+ - Shape sh-prov-o:entity-objects-shape: *none*
+ - Shape sh-prov-o:hadUsage-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedEnd-subjects-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b29: *none*
+ - Shape sh-prov-o:endedAtTime-subjects-shape: *none*
+ - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:wasAttributedTo-subjects-shape: *none*
+ - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:qualifiedCommunication-subjects-shape: *none*
+ - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape: *none*
+ - Shape sh-prov-o:wasQuotedFrom-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedInvalidation-subjects-shape: *none*
+ - Shape sh-prov-o:wasEndedBy-objects-shape: *none*
+ - Shape sh-prov-o:atTime-subjects-shape: *none*
+ - Shape sh-prov-o:hadMember-objects-shape: *none*
+ - Shape sh-prov-o:hadPrimarySource-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedDelegation-subjects-shape: *none*
+ - Shape sh-prov-o:n-shape: *none*
+ - Shape sh-prov-o:invalidatedAtTime-objects-shape: *none*
+ - Shape sh-prov-o:wasAttributedTo-objects-shape: *none*
+ - Shape sh-prov-o:dm-shape: *none*
+ - Shape sh-prov-o:Activity-disjointWith-Entity-shape: <surveys:DP-1-S1>
+ - Shape sh-prov-o:generated-subjects-shape: *none*
+ - Shape sh-prov-o:startedAtTime-subjects-shape: *none*
+ - Shape sh-prov-o:agent-objects-shape: *none*
+ - Shape sh-prov-o:hadGeneration-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedDerivation-objects-shape: *none*
+ - Shape sh-prov-o:component-shape: *none*
+ - Shape sh-prov-o:atLocation-objects-shape: *none*
+ - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:qualifiedRevision-subjects-shape: *none*
+ - Shape sh-prov-o:wasStartedBy-subjects-shape: *none*
+ - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:wasInformedBy-subjects-shape: *none*
+ - Shape sh-prov-o:wasRevisionOf-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedRevision-objects-shape: *none*
+ - Shape sh-prov-o:wasInfluencedBy-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedAssociation-subjects-shape: *none*
+ - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:AgentInfluence-shape: *none*
+ - Shape sh-prov-o:atLocation-subjects-shape: *none*
+ - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:qualifiedGeneration-subjects-shape: *none*
+ - Shape sh-prov-o:agent-subjects-shape: *none*
+ - Shape sh-prov-o:generatedAtTime-objects-shape: *none*
+ - Shape sh-prov-o:wasInfluencedBy-subjects-shape: *none*
+ - Shape sh-prov-o:unqualifiedForm-shape: *none*
+ - Shape sh-prov-o:influencer-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedInvalidation-objects-shape: *none*
+ - Shape sh-prov-o:atTime-objects-shape: *none*
+ - Shape sh-prov-o:ActivityInfluence-shape: *none*
+ - Shape sh-prov-o:used-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedStart-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedDelegation-objects-shape: *none*
+ - Shape sh-prov-o:hadPlan-objects-shape: *none*
+ - Shape sh-prov-o:specializationOf-subjects-shape: *none*
+ - Shape sh-prov-o:alternateOf-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedAttribution-objects-shape: *none*
+ - Shape sh-prov-o:wasDerivedFrom-objects-shape: *none*
+ - Shape sh-prov-o:wasAssociatedWith-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedEnd-objects-shape: *none*
+ - Shape sh-prov-o:qualifiedUsage-objects-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b38: *none*
+ - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:wasQuotedFrom-subjects-shape: *none*
+ - Shape sh-prov-o:entity-subjects-shape: *none*
+ - Shape sh-prov-o:wasDerivedFrom-subjects-shape: *none*
+ - Shape sh-prov-o:generated-objects-shape: *none*
+ - Shape sh-prov-o:Influence-shape: *none*
+ - Shape sh-prov-o:qualifiedCommunication-objects-shape: *none*
+ - Shape sh-prov-o:value-subjects-shape: *none*
+ - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b30: *none*
+ - Shape sh-prov-o:wasInvalidatedBy-objects-shape: *none*
+ - Shape sh-prov-o:inverse-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b37: *none*
+ - Shape sh-prov-o:wasInvalidatedBy-subjects-shape: *none*
+ - Shape sh-prov-o:used-subjects-shape: *none*
+ - Shape sh-prov-o:invalidatedAtTime-subjects-shape: *none*
+ - Shape sh-prov-o:wasEndedBy-subjects-shape: *none*
+ - Shape sh-prov-o:qualifiedUsage-subjects-shape: *none*
+ - Shape sh-prov-o:hadUsage-subjects-shape: *none*
+ - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape: *none*
+ - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:wasInformedBy-objects-shape: *none*
+ - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape sh-prov-o:qualifiedQuotation-subjects-shape: *none*
+ - Shape sh-prov-o:hadGeneration-objects-shape: *none*
+ - Shape sh-prov-o:actedOnBehalfOf-objects-shape: *none*
+ - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:hadPlan-subjects-shape: *none*
+ - Shape sh-prov-o:hadRole-objects-shape: *none*
+ - Shape sh-prov-o:wasStartedBy-objects-shape: *none*
+ - Shape _:nc09c380fe1324236823ef6959bf16074b73: *none*
+ - Shape sh-prov-o:qualifiedStart-subjects-shape: *none*
+ - Shape sh-prov-o:wasGeneratedBy-subjects-shape: <https://example.com/stac/example1/20201211_223832_CS2>
+ - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape: *none*
+ - Shape sh-prov-o:qualifiedPrimarySource-objects-shape: *none*
+ - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not: *none*
+ - Shape sh-prov-o:alternateOf-objects-shape: *none*
+ - Shape sh-prov-o:constraints-shape: *none*
+ - Shape sh-prov-o:endedAtTime-objects-shape: *none*
+ - Shape sh-prov-o:definition-shape: *none*
+ - Shape sh-prov-o:qualifiedAttribution-subjects-shape: *none*
+ - Shape sh-prov-o:invalidated-objects-shape: *none*
+ - Shape sh-prov-o:value-objects-shape: *none*
+ - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first: *none*
+ - Shape sh-prov-o:activity-objects-shape: *none*
+
+=== End SHACL ===
+
