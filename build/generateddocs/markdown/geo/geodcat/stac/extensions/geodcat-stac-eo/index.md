@@ -370,14 +370,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "20201211_223832_CS2" ;
+    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     ns2:extensions "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     ns2:version "1.1.0" .
 
@@ -708,18 +708,20 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <http://stacspec.org/ontology/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/raster/example-1/20201211_223832_CS2> dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     dcterms:type "Feature" ;
+    stac:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -828,6 +830,24 @@ Links to the schema:
       "@type": "xsd:string",
       "@id": "oa:hasTarget"
     },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "license": "dct:license",
+    "extent": "dct:extent",
+    "datetime": {
+      "@id": "stac:datetime",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
     "assets": {
       "@id": "urn:stac:vocab#hasAsset",
       "@container": "@id",
@@ -840,6 +860,7 @@ Links to the schema:
         "type": "dct:format"
       }
     },
+    "media_type": "stac:mediaType",
     "eo:bands": {
       "@id": "eo:bands",
       "@context": {
@@ -855,10 +876,6 @@ Links to the schema:
         },
         "resolution": "rec:iso8601period"
       }
-    },
-    "description": {
-      "@container": "@set",
-      "@id": "dct:description"
     },
     "keywords": {
       "@container": "@set",
@@ -930,7 +947,6 @@ Links to the schema:
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "dct:license",
     "rights": "dcat:rights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
@@ -943,13 +959,14 @@ Links to the schema:
     },
     "stac_version": "urn:stac:vocab#version",
     "stac_extensions": "urn:stac:vocab#extensions",
-    "extent": "dct:extent",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "eo": "https://w3id.org/ogc/stac/eo/",
     "geojson": "https://purl.org/geojson/vocab#",
-    "stac": "https://w3id.org/ogc/stac/core/",
+    "stac": "http://stacspec.org/ontology/core#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "prov": "http://www.w3.org/ns/prov#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
@@ -959,7 +976,6 @@ Links to the schema:
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "@version": 1.1
   }

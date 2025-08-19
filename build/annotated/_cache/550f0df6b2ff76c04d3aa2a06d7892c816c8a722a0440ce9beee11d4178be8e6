@@ -2,7 +2,7 @@
   "name": "OGC Building Blocks for STAC",
   "abstract": "These [Building Blocks](https://ogcincubator.github.io/bblocks-docs/) provide a validation and documentation wrapper over STAC and extension schemas, and aid in transparent re-use of STAC elements",
   "description": "Allows for validation and testing of STAC examples.\n\n**STAC extends OGC API Records** (i.e. Records is designed to be compatible with the prior STAC mode) - this packaging supports validation of STAC extensions against underlying Records, Features and Common elements.\n\nSupports definition and testing of transformations to/from STAC from other formats.\n\nImplementers can fork this repository and add additional examples in the `tests/` directory of each Building Block and run validation processes locally.\n\nProvides a framework for documentation and testing of additional extensions.\n",
-  "modified": "2025-08-16T02:59:31.979797",
+  "modified": "2025-08-18T10:04:48.641796",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"90449d8d782b37e989efa59d628701428c5ec209",
@@ -17,11 +17,50 @@
   "validationReport": "https://ogcincubator.github.io/bblocks-stac/build/tests/report.html",
   "imports": [
     "https://opengeospatial.github.io/bblocks/register.json",
-    "https://ogcincubator.github.io/bblocks-ogcapi-features/build/register.json",
-    "https://ogcincubator.github.io/bblocks-ogcapi-records/build/register.json",
-    "https://ogcincubator.github.io/bblock-prov-schema/build/register.json"
+    "https://ogcincubator.github.io/cross-domain-model/build/register.json",
+    "https://ogcincubator.github.io/bblock-prov-schema/build/register.json",
+    "https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json"
   ],
   "bblocks": [
+    {
+      "itemIdentifier": "ogc.contrib.stac.core-ontology",
+      "name": "STAC Core Ontology",
+      "highlighted": true,
+      "title": "Definitions for STAC elements Ontology",
+      "description": "Describes STAC objects",
+      "status": "stable",
+      "version": "0.1",
+      "itemClass": "model",
+      "dependsOn": [
+        "ogc.model.cross-domain.prov"
+      ],
+      "rules": [],
+      "dateTimeAddition": "2025-06-12T00:00:00Z",
+      "dateOfLastChange": "2025-08-18",
+      "shaclRules": {
+        "ogc.model.cross-domain.prov": [
+          "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl"
+        ]
+      },
+      "ontology": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl",
+      "sourceFiles": "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/",
+      "rdfData": [],
+      "validationPassed": true,
+      "documentation": {
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/bblocks-stac/build/generateddocs/json-full/contrib/stac/core-ontology/index.json"
+        },
+        "markdown": {
+          "mediatype": "text/markdown",
+          "url": "https://ogcincubator.github.io/bblocks-stac/build/generateddocs/markdown/contrib/stac/core-ontology/index.md"
+        },
+        "bblocks-viewer": {
+          "mediatype": "text/html",
+          "url": "https://ogcincubator.github.io/bblocks-stac/bblock/ogc.contrib.stac.core-ontology"
+        }
+      }
+    },
     {
       "itemIdentifier": "ogc.contrib.stac.collection",
       "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
@@ -33,7 +72,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator-building-block-register",
       "version": "1.1.0",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "sources": [
         {
           "title": "STAC Specification",
@@ -47,8 +86,8 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.api.features.v1.schemas.collection",
-        "ogc.ogc-utils.json-link"
+        "ogc.ogc-utils.json-link",
+        "ogc.api.features.v1.schemas.collection"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml",
@@ -86,7 +125,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator-building-block-register",
       "version": "1.0.0",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "sources": [
         {
           "title": "STAC Specification",
@@ -100,8 +139,8 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.api.features.v1.schemas.collection",
-        "ogc.ogc-utils.json-link"
+        "ogc.ogc-utils.json-link",
+        "ogc.api.features.v1.schemas.collection"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml",
@@ -138,7 +177,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "sources": [
         {
           "title": "STAC Specification",
@@ -152,8 +191,8 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.geo.features.feature",
-        "ogc.api.records.v1.schemas.recordGeoJSON"
+        "ogc.api.records.v1.schemas.recordGeoJSON",
+        "ogc.geo.features.feature"
       ],
       "ldContext": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item/context.jsonld",
       "schema": {
@@ -192,7 +231,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "sources": [
         {
           "title": "STAC Specification",
@@ -206,8 +245,8 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.geo.features.feature",
-        "ogc.api.records.v1.schemas.recordGeoJSON"
+        "ogc.api.records.v1.schemas.recordGeoJSON",
+        "ogc.geo.features.feature"
       ],
       "ldContext": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/item-v1-0-0/context.jsonld",
       "schema": {
@@ -244,7 +283,7 @@
       "itemClass": "schema",
       "register": "bblocks-stac",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "link": "https://github.com/stac-extensions/eo",
       "sources": [
         {
@@ -261,9 +300,7 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.contrib.stac.collection",
         "ogc.contrib.stac.item-v1-0-0",
-        "ogc.contrib.stac.item",
         "ogc.contrib.stac.collection-v1-0-0"
       ],
       "schema": {
@@ -300,19 +337,19 @@
       "dateTimeAddition": "2023-12-08T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
-      "link": "https://github.com/stac-extensions/raster",
+      "version": "2.0.0",
+      "dateOfLastChange": "2025-08-18",
+      "link": "https://github.com/stac-extensions/classification",
       "dependsOn": [
-        "ogc.contrib.stac.collection",
-        "ogc.contrib.stac.item-v1-0-0",
         "ogc.contrib.stac.item",
-        "ogc.contrib.stac.collection-v1-0-0"
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.contrib.stac.collection-v1-0-0",
+        "ogc.contrib.stac.collection"
       ],
       "sources": [
         {
           "title": "GitHub Repository",
-          "link": "https://github.com/stac-extensions/mlm"
+          "link": "https://github.com/stac-extensions/classification"
         }
       ],
       "scope": "contrib",
@@ -358,7 +395,7 @@
       "itemClass": "schema",
       "register": "bblocks-stac",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "link": "https://github.com/stac-extensions/eo",
       "sources": [
         {
@@ -375,10 +412,10 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.contrib.stac.collection",
-        "ogc.contrib.stac.item-v1-0-0",
         "ogc.contrib.stac.item",
-        "ogc.contrib.stac.collection-v1-0-0"
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.contrib.stac.collection-v1-0-0",
+        "ogc.contrib.stac.collection"
       ],
       "ldContext": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo/context.jsonld",
       "schema": {
@@ -415,13 +452,13 @@
       "dateTimeAddition": "2023-12-08T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "version": "1.2.0",
+      "dateOfLastChange": "2025-08-18",
       "dependsOn": [
-        "ogc.contrib.stac.collection",
-        "ogc.contrib.stac.item-v1-0-0",
         "ogc.contrib.stac.item",
-        "ogc.contrib.stac.collection-v1-0-0"
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.contrib.stac.collection-v1-0-0",
+        "ogc.contrib.stac.collection"
       ],
       "sources": [
         {
@@ -445,7 +482,7 @@
       "sourceLdContext": "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing/",
       "rdfData": [],
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/bblocks-stac/blob/master/build/tests/contrib/stac/extensions/processing/",
       "documentation": {
         "json-full": {
@@ -472,7 +509,7 @@
       "itemClass": "schema",
       "register": "ogc-building-block-register",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "link": "https://github.com/stac-extensions/raster",
       "sources": [
         {
@@ -488,10 +525,10 @@
       ],
       "shaclRules": {},
       "dependsOn": [
-        "ogc.contrib.stac.collection",
-        "ogc.contrib.stac.item-v1-0-0",
         "ogc.contrib.stac.item",
-        "ogc.contrib.stac.collection-v1-0-0"
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.contrib.stac.collection-v1-0-0",
+        "ogc.contrib.stac.collection"
       ],
       "ldContext": "https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster/context.jsonld",
       "schema": {
@@ -530,7 +567,7 @@
       "itemClass": "schema",
       "register": "ogcincubator",
       "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
+      "dateOfLastChange": "2025-08-18",
       "sources": [
         {
           "title": "STAC Specification",
@@ -587,18 +624,17 @@
       "dateTimeAddition": "2023-12-08T00:00:00Z",
       "itemClass": "schema",
       "register": "ogc-building-block-register",
-      "version": "0.1",
-      "dateOfLastChange": "2025-08-16",
-      "link": "https://github.com/stac-extensions/raster",
+      "version": "1.4.0",
+      "dateOfLastChange": "2025-08-18",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.classification",
-        "ogc.contrib.stac.item-v1-0-0",
-        "ogc.contrib.stac.collection",
+        "ogc.contrib.stac.extensions.eo",
         "ogc.contrib.stac.item",
         "ogc.contrib.stac.collection-v1-0-0",
         "ogc.contrib.stac.extensions.raster",
-        "ogc.contrib.stac.extensions.eo",
-        "ogc.contrib.stac.extensions.processing"
+        "ogc.contrib.stac.extensions.processing",
+        "ogc.contrib.stac.item-v1-0-0",
+        "ogc.contrib.stac.collection",
+        "ogc.contrib.stac.extensions.classification"
       ],
       "sources": [
         {
@@ -622,7 +658,7 @@
       "sourceLdContext": "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm/context.jsonld",
       "sourceFiles": "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm/",
       "rdfData": [],
-      "validationPassed": false,
+      "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/bblocks-stac/blob/master/build/tests/contrib/stac/extensions/mlm/",
       "documentation": {
         "json-full": {

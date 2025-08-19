@@ -63,7 +63,7 @@
     },
     "description": {
       "@container": "@set",
-      "@id": "dct:description"
+      "@id": "http://stacspec.org/ontology/core#description"
     },
     "keywords": {
       "@container": "@set",
@@ -135,7 +135,7 @@
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "dcat:license",
+    "license": "http://stacspec.org/ontology/core#license",
     "rights": "dcat:rights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
@@ -146,13 +146,26 @@
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
+    "extent": "http://stacspec.org/ontology/core#extent",
+    "datetime": {
+      "@id": "http://stacspec.org/ontology/core#datetime",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "http://stacspec.org/ontology/core#start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "http://stacspec.org/ontology/core#end_datetime",
+      "@type": "xsd:dateTime"
+    },
     "assets": {
       "@id": "https://w3id.org/ogc/stac/core/assets",
       "@container": "@id"
     },
+    "media_type": "http://stacspec.org/ontology/core#mediaType",
     "stac_version": "stac:version",
     "stac_extensions": "stac:extensions",
-    "extent": "dct:extent",
     "geojson": "https://purl.org/geojson/vocab#",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -169,6 +182,7 @@
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "stac": "https://www.opengis.net/def/ogc-api/stac/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
     "@version": 1.1
   }
 }

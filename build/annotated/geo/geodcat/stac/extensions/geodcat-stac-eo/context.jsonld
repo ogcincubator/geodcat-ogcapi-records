@@ -51,6 +51,24 @@
       "@type": "xsd:string",
       "@id": "oa:hasTarget"
     },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "license": "dct:license",
+    "extent": "dct:extent",
+    "datetime": {
+      "@id": "stac:datetime",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
     "assets": {
       "@id": "urn:stac:vocab#hasAsset",
       "@container": "@id",
@@ -63,6 +81,7 @@
         "type": "dct:format"
       }
     },
+    "media_type": "stac:mediaType",
     "eo:bands": {
       "@id": "eo:bands",
       "@context": {
@@ -78,10 +97,6 @@
         },
         "resolution": "rec:iso8601period"
       }
-    },
-    "description": {
-      "@container": "@set",
-      "@id": "dct:description"
     },
     "keywords": {
       "@container": "@set",
@@ -153,7 +168,6 @@
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "dct:license",
     "rights": "dcat:rights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
@@ -166,13 +180,14 @@
     },
     "stac_version": "urn:stac:vocab#version",
     "stac_extensions": "urn:stac:vocab#extensions",
-    "extent": "dct:extent",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
     "eo": "https://w3id.org/ogc/stac/eo/",
     "geojson": "https://purl.org/geojson/vocab#",
-    "stac": "https://w3id.org/ogc/stac/core/",
+    "stac": "http://stacspec.org/ontology/core#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "prov": "http://www.w3.org/ns/prov#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
@@ -182,7 +197,6 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "@version": 1.1
   }

@@ -158,9 +158,22 @@
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
+    "extent": "dct:extent",
+    "datetime": {
+      "@id": "http://stacspec.org/ontology/core#datetime",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "http://stacspec.org/ontology/core#start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "http://stacspec.org/ontology/core#end_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "media_type": "http://stacspec.org/ontology/core#mediaType",
     "stac_version": "urn:stac:vocab#version",
     "stac_extensions": "urn:stac:vocab#extensions",
-    "extent": "dct:extent",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
@@ -180,6 +193,7 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
     "@version": 1.1
   }
 }
