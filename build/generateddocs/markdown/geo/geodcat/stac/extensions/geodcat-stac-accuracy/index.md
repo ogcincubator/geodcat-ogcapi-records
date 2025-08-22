@@ -153,17 +153,17 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <http://stacspec.org/ontology/core#> .
-@prefix ns3: <urn:stac:vocab#> .
+@prefix ns1: <urn:stac:vocab#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <http://stacspec.org/ontology/core#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/accuracy/example-1/item> dcterms:type "Feature" ;
-    ns2:datetime "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
+    ns3:datetime "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
+    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -175,9 +175,9 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
     accuracy:geometric_y_stddev 5e-01 ;
     accuracy:measurement_absolute 2e-02 ;
     accuracy:measurement_relative 1e-02 ;
-    ns3:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    ns3:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
-    ns3:version "1.0.0" .
+    ns1:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
+    ns1:version "1.0.0" .
 
 <https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .
 
