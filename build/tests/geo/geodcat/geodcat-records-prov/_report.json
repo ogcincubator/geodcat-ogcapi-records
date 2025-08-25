@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile",
   "bblockName": "GeoDCAT + PROV profile",
   "bblockId": "ogc.geo.geodcat.geodcat-records-prov",
-  "generated": "2025-08-22T03:43:07.555653+00:00",
-  "result": true,
+  "generated": "2025-08-25T03:45:11.970035+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -16,7 +16,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_1_1.json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -65,20 +65,471 @@
           "entries": [
             {
               "op": "shacl-report",
-              "shaclFile": "_sources/records-ontology/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sh-prov-o: <http://example.org/shapes/sh-prov-o/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://example.com/stac/example1/20201211_223832_CS2> ;\n            sh:resultMessage \"Value does not have class prov:Entity\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasGeneratedBy-subjects-shape ;\n            sh:value <https://example.com/stac/example1/20201211_223832_CS2> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <http://mysystem.io/prov?object=20201211_223832_CS2> ;\n            sh:resultMessage \"Value does not have class prov:Activity\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasGeneratedBy-objects-shape ;\n            sh:value <http://mysystem.io/prov?object=20201211_223832_CS2> ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n  Validation Report\n  Conforms: False\n  Results (2):\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasGeneratedBy-objects-shape\n  \tFocus Node: <http://mysystem.io/prov?object=20201211_223832_CS2>\n  \tValue Node: <http://mysystem.io/prov?object=20201211_223832_CS2>\n  \tMessage: Value does not have class prov:Activity\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasGeneratedBy-subjects-shape\n  \tFocus Node: <https://example.com/stac/example1/20201211_223832_CS2>\n  \tValue Node: <https://example.com/stac/example1/20201211_223832_CS2>\n  \tMessage: Value does not have class prov:Entity\n  "
             },
             {
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                "sh-prov-o:influenced-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAssociatedWith-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDelegation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:definition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:inverse-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:dm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:alternateOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:n-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:used-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorsDefinition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b49": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:unqualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:AgentInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:constraints-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAttribution-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b55": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-objects-shape": {
+                  "nodes": [
+                    "<http://mysystem.io/prov?object=20201211_223832_CS2>"
+                  ]
+                },
+                "sh-prov-o:used-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b38": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-subjects-shape": {
+                  "nodes": [
+                    "<https://example.com/stac/example1/20201211_223832_CS2>"
+                  ]
+                },
+                "sh-prov-o:wasInformedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b73": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:component-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAssociatedWith-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:alternateOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorialNote-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Influence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInformedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:EmptyCollection-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasRevisionOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-objects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b30": {
+                  "nodes": []
+                },
+                "sh-prov-o:category-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b67": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b61": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDelegation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b37": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b29": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:sharesDefinitionWith-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAttribution-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasRevisionOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-objects-shape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n - Shape sh-prov-o:influenced-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:startedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-objects-shape: *none*\n - Shape sh-prov-o:wasAssociatedWith-objects-shape: *none*\n - Shape sh-prov-o:qualifiedDelegation-subjects-shape: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape: *none*\n - Shape sh-prov-o:definition-shape: *none*\n - Shape sh-prov-o:atTime-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-subjects-shape: *none*\n - Shape sh-prov-o:inverse-shape: *none*\n - Shape sh-prov-o:dm-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedGeneration-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasInvalidatedBy-objects-shape: *none*\n - Shape sh-prov-o:alternateOf-objects-shape: *none*\n - Shape sh-prov-o:actedOnBehalfOf-objects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-objects-shape: *none*\n - Shape sh-prov-o:n-shape: *none*\n - Shape sh-prov-o:used-subjects-shape: *none*\n - Shape sh-prov-o:hadActivity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-subjects-shape: *none*\n - Shape sh-prov-o:editorsDefinition-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-objects-shape: *none*\n - Shape sh-prov-o:atLocation-objects-shape: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape/sh:not: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape: *none*\n - Shape sh-prov-o:invalidatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:generated-subjects-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape: *none*\n - Shape sh-prov-o:influencer-objects-shape: *none*\n - Shape sh-prov-o:qualifiedForm-shape: *none*\n - Shape sh-prov-o:hadPlan-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b49: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasEndedBy-objects-shape: *none*\n - Shape sh-prov-o:wasEndedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-objects-shape: *none*\n - Shape sh-prov-o:unqualifiedForm-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-objects-shape: *none*\n - Shape sh-prov-o:invalidated-objects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedDerivation-subjects-shape: *none*\n - Shape sh-prov-o:AgentInfluence-shape: *none*\n - Shape sh-prov-o:startedAtTime-objects-shape: *none*\n - Shape sh-prov-o:influencer-subjects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-objects-shape: *none*\n - Shape sh-prov-o:activity-objects-shape: *none*\n - Shape sh-prov-o:constraints-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasAttributedTo-objects-shape: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape: *none*\n - Shape sh-prov-o:qualifiedAttribution-subjects-shape: *none*\n - Shape sh-prov-o:atTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:invalidated-subjects-shape: *none*\n - Shape sh-prov-o:invalidatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b55: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:influenced-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-objects-shape: *none*\n - Shape sh-prov-o:generatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-objects-shape: <http://mysystem.io/prov?object=20201211_223832_CS2>\n - Shape sh-prov-o:used-objects-shape: *none*\n - Shape sh-prov-o:EntityInfluence-shape: *none*\n - Shape sh-prov-o:value-objects-shape: *none*\n - Shape sh-prov-o:hadMember-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b38: *none*\n - Shape sh-prov-o:qualifiedGeneration-objects-shape: *none*\n - Shape sh-prov-o:hadUsage-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedStart-subjects-shape: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-subjects-shape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape sh-prov-o:wasInformedBy-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape: *none*\n - Shape sh-prov-o:entity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b73: *none*\n - Shape sh-prov-o:agent-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape: *none*\n - Shape sh-prov-o:wasAttributedTo-subjects-shape: *none*\n - Shape sh-prov-o:component-shape: *none*\n - Shape sh-prov-o:endedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:wasAssociatedWith-subjects-shape: *none*\n - Shape sh-prov-o:alternateOf-subjects-shape: *none*\n - Shape sh-prov-o:editorialNote-shape: *none*\n - Shape sh-prov-o:Influence-shape: *none*\n - Shape sh-prov-o:generatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:wasInformedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:EmptyCollection-shape: *none*\n - Shape sh-prov-o:wasInvalidatedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:actedOnBehalfOf-subjects-shape: *none*\n - Shape sh-prov-o:wasRevisionOf-subjects-shape: *none*\n - Shape sh-prov-o:hadPlan-objects-shape: *none*\n - Shape sh-prov-o:qualifiedDerivation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-subjects-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedStart-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:hadUsage-objects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b30: *none*\n - Shape sh-prov-o:category-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b67: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b61: *none*\n - Shape sh-prov-o:qualifiedDelegation-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b37: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b29: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:value-subjects-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:activity-subjects-shape: *none*\n - Shape sh-prov-o:generated-objects-shape: *none*\n - Shape sh-prov-o:sharesDefinitionWith-shape: *none*\n - Shape sh-prov-o:hadMember-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAttribution-objects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-subjects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape: *none*\n - Shape sh-prov-o:endedAtTime-objects-shape: *none*\n - Shape sh-prov-o:wasRevisionOf-objects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-objects-shape: *none*\n - Shape sh-prov-o:entity-subjects-shape: *none*\n - Shape sh-prov-o:agent-objects-shape: *none*\n"
             }
           ]
         }
@@ -95,7 +546,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_2_1.json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -144,20 +595,473 @@
           "entries": [
             {
               "op": "shacl-report",
-              "shaclFile": "_sources/records-ontology/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sh-prov-o: <http://example.org/shapes/sh-prov-o/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <https://example.com/stac/example1/20201211_223832_CS2> ;\n            sh:resultMessage \"Value does not have class prov:Entity\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasGeneratedBy-subjects-shape ;\n            sh:value <https://example.com/stac/example1/20201211_223832_CS2> ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasGeneratedBy-subjects-shape\n  \tFocus Node: <https://example.com/stac/example1/20201211_223832_CS2>\n  \tValue Node: <https://example.com/stac/example1/20201211_223832_CS2>\n  \tMessage: Value does not have class prov:Entity\n  "
             },
             {
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                "sh-prov-o:influenced-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAssociatedWith-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDelegation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:definition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:inverse-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:dm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:alternateOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:n-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:used-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorsDefinition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:invalidatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b49": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:unqualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:AgentInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:constraints-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAttribution-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b55": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-objects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:used-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b38": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-subjects-shape": {
+                  "nodes": [
+                    "<https://example.com/stac/example1/20201211_223832_CS2>"
+                  ]
+                },
+                "sh-prov-o:wasInformedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b73": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:component-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAssociatedWith-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:alternateOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorialNote-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Influence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInformedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:EmptyCollection-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasRevisionOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-objects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b30": {
+                  "nodes": []
+                },
+                "sh-prov-o:category-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b67": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b61": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDelegation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b37": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b29": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:sharesDefinitionWith-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAttribution-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasRevisionOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-objects-shape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n - Shape sh-prov-o:influenced-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:startedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-objects-shape: *none*\n - Shape sh-prov-o:wasAssociatedWith-objects-shape: *none*\n - Shape sh-prov-o:qualifiedDelegation-subjects-shape: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape: *none*\n - Shape sh-prov-o:definition-shape: *none*\n - Shape sh-prov-o:atTime-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-subjects-shape: *none*\n - Shape sh-prov-o:inverse-shape: *none*\n - Shape sh-prov-o:dm-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedGeneration-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasInvalidatedBy-objects-shape: *none*\n - Shape sh-prov-o:alternateOf-objects-shape: *none*\n - Shape sh-prov-o:actedOnBehalfOf-objects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-objects-shape: *none*\n - Shape sh-prov-o:n-shape: *none*\n - Shape sh-prov-o:used-subjects-shape: *none*\n - Shape sh-prov-o:hadActivity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-subjects-shape: *none*\n - Shape sh-prov-o:editorsDefinition-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-objects-shape: *none*\n - Shape sh-prov-o:atLocation-objects-shape: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape/sh:not: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:invalidatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:generated-subjects-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape: *none*\n - Shape sh-prov-o:influencer-objects-shape: *none*\n - Shape sh-prov-o:qualifiedForm-shape: *none*\n - Shape sh-prov-o:hadPlan-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b49: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasEndedBy-objects-shape: *none*\n - Shape sh-prov-o:wasEndedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-objects-shape: *none*\n - Shape sh-prov-o:unqualifiedForm-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-objects-shape: *none*\n - Shape sh-prov-o:invalidated-objects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedDerivation-subjects-shape: *none*\n - Shape sh-prov-o:AgentInfluence-shape: *none*\n - Shape sh-prov-o:startedAtTime-objects-shape: *none*\n - Shape sh-prov-o:influencer-subjects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-objects-shape: *none*\n - Shape sh-prov-o:activity-objects-shape: *none*\n - Shape sh-prov-o:constraints-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasAttributedTo-objects-shape: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape: *none*\n - Shape sh-prov-o:qualifiedAttribution-subjects-shape: *none*\n - Shape sh-prov-o:atTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:invalidated-subjects-shape: *none*\n - Shape sh-prov-o:invalidatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b55: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:influenced-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-objects-shape: *none*\n - Shape sh-prov-o:generatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-objects-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:used-objects-shape: *none*\n - Shape sh-prov-o:EntityInfluence-shape: *none*\n - Shape sh-prov-o:value-objects-shape: *none*\n - Shape sh-prov-o:hadMember-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b38: *none*\n - Shape sh-prov-o:qualifiedGeneration-objects-shape: *none*\n - Shape sh-prov-o:hadUsage-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedStart-subjects-shape: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-subjects-shape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape sh-prov-o:wasInformedBy-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape: *none*\n - Shape sh-prov-o:entity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b73: *none*\n - Shape sh-prov-o:agent-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape: *none*\n - Shape sh-prov-o:wasAttributedTo-subjects-shape: *none*\n - Shape sh-prov-o:component-shape: *none*\n - Shape sh-prov-o:endedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:wasAssociatedWith-subjects-shape: *none*\n - Shape sh-prov-o:alternateOf-subjects-shape: *none*\n - Shape sh-prov-o:editorialNote-shape: *none*\n - Shape sh-prov-o:Influence-shape: *none*\n - Shape sh-prov-o:generatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:wasInformedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:EmptyCollection-shape: *none*\n - Shape sh-prov-o:wasInvalidatedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:actedOnBehalfOf-subjects-shape: *none*\n - Shape sh-prov-o:wasRevisionOf-subjects-shape: *none*\n - Shape sh-prov-o:hadPlan-objects-shape: *none*\n - Shape sh-prov-o:qualifiedDerivation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-subjects-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedStart-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:hadUsage-objects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b30: *none*\n - Shape sh-prov-o:category-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b67: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b61: *none*\n - Shape sh-prov-o:qualifiedDelegation-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b37: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b29: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:value-subjects-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:activity-subjects-shape: *none*\n - Shape sh-prov-o:generated-objects-shape: *none*\n - Shape sh-prov-o:sharesDefinitionWith-shape: *none*\n - Shape sh-prov-o:hadMember-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAttribution-objects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-subjects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape: *none*\n - Shape sh-prov-o:endedAtTime-objects-shape: *none*\n - Shape sh-prov-o:wasRevisionOf-objects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-objects-shape: *none*\n - Shape sh-prov-o:entity-subjects-shape: *none*\n - Shape sh-prov-o:agent-objects-shape: *none*\n"
             }
           ]
         }
@@ -174,7 +1078,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -223,20 +1127,491 @@
           "entries": [
             {
               "op": "shacl-report",
-              "shaclFile": "_sources/records-ontology/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sh-prov-o: <http://example.org/shapes/sh-prov-o/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <regulations:Act3> ;\n            sh:resultMessage \"Value does not have class prov:Entity\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:used-objects-shape ;\n            sh:value <regulations:Act3> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <staff:jd234> ;\n            sh:resultMessage \"Value does not have class prov:Agent\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasAssociatedWith-objects-shape ;\n            sh:value <staff:jd234> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <agents:someGovernment> ;\n            sh:resultMessage \"Value does not have class prov:Agent\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasAttributedTo-objects-shape ;\n            sh:value <agents:someGovernment> ],\n        [ a sh:ValidationResult ;\n            sh:focusNode <regulations:Act3> ;\n            sh:resultMessage \"Value does not have class prov:Entity\" ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:ClassConstraintComponent ;\n            sh:sourceShape sh-prov-o:wasAttributedTo-subjects-shape ;\n            sh:value <regulations:Act3> ] .\n\n",
+              "isError": true,
+              "message": "Validation result for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n  Validation Report\n  Conforms: False\n  Results (4):\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasAssociatedWith-objects-shape\n  \tFocus Node: <staff:jd234>\n  \tValue Node: <staff:jd234>\n  \tMessage: Value does not have class prov:Agent\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasAttributedTo-objects-shape\n  \tFocus Node: <agents:someGovernment>\n  \tValue Node: <agents:someGovernment>\n  \tMessage: Value does not have class prov:Agent\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:used-objects-shape\n  \tFocus Node: <regulations:Act3>\n  \tValue Node: <regulations:Act3>\n  \tMessage: Value does not have class prov:Entity\n  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: sh-prov-o:wasAttributedTo-subjects-shape\n  \tFocus Node: <regulations:Act3>\n  \tValue Node: <regulations:Act3>\n  \tMessage: Value does not have class prov:Entity\n  "
             },
             {
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                "sh-prov-o:influenced-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAssociatedWith-objects-shape": {
+                  "nodes": [
+                    "<staff:jd234>"
+                  ]
+                },
+                "sh-prov-o:qualifiedDelegation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:definition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:inverse-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:dm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:alternateOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:n-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:used-subjects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:hadActivity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorsDefinition-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Activity-disjointWith-Entity-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:invalidatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasDerivedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:specializationOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atLocation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b49": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasEndedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:unqualifiedForm-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:AgentInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:startedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influencer-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:constraints-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-objects-shape": {
+                  "nodes": [
+                    "<agents:someGovernment>"
+                  ]
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape": {
+                  "nodes": [
+                    "<https://example.com/stac/example1/DP-2223>"
+                  ]
+                },
+                "sh-prov-o:qualifiedAttribution-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:atTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidated-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:invalidatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedQuotation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b55": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-objects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:used-objects-shape": {
+                  "nodes": [
+                    "<regulations:Act3>"
+                  ]
+                },
+                "sh-prov-o:EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b38": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedGeneration-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasGeneratedBy-subjects-shape": {
+                  "nodes": [
+                    "<https://example.com/stac/example1/DP-2223>"
+                  ]
+                },
+                "sh-prov-o:wasInformedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAssociation-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b73": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadRole-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasAttributedTo-subjects-shape": {
+                  "nodes": [
+                    "<regulations:Act3>"
+                  ]
+                },
+                "sh-prov-o:component-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-subjects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:wasAssociatedWith-subjects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>"
+                  ]
+                },
+                "sh-prov-o:alternateOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:editorialNote-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Influence-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generatedAtTime-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInformedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedEnd-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:EmptyCollection-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInvalidatedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:actedOnBehalfOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasRevisionOf-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPlan-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDerivation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInvalidation-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedStart-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadUsage-objects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b30": {
+                  "nodes": []
+                },
+                "sh-prov-o:category-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedPrimarySource-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b67": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b61": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedDelegation-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b37": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedInfluence-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasStartedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "_:n99c7af31436542f98661b941dae40448b29": {
+                  "nodes": []
+                },
+                "sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not": {
+                  "nodes": []
+                },
+                "sh-prov-o:value-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadPrimarySource-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:activity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:generated-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:sharesDefinitionWith-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:hadMember-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedAttribution-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedCommunication-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedUsage-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasInfluencedBy-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:endedAtTime-objects-shape": {
+                  "nodes": [
+                    "<surveys:DP-1-S1>/prov:endedAtTime"
+                  ]
+                },
+                "sh-prov-o:wasRevisionOf-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:wasQuotedFrom-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:qualifiedRevision-objects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:entity-subjects-shape": {
+                  "nodes": []
+                },
+                "sh-prov-o:agent-objects-shape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl:\n - Shape sh-prov-o:influenced-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:startedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-objects-shape: *none*\n - Shape sh-prov-o:wasAssociatedWith-objects-shape: <staff:jd234>\n - Shape sh-prov-o:qualifiedDelegation-subjects-shape: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape: *none*\n - Shape sh-prov-o:definition-shape: *none*\n - Shape sh-prov-o:atTime-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-subjects-shape: *none*\n - Shape sh-prov-o:inverse-shape: *none*\n - Shape sh-prov-o:dm-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedGeneration-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasInvalidatedBy-objects-shape: *none*\n - Shape sh-prov-o:alternateOf-objects-shape: *none*\n - Shape sh-prov-o:actedOnBehalfOf-objects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-objects-shape: *none*\n - Shape sh-prov-o:n-shape: *none*\n - Shape sh-prov-o:used-subjects-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:hadActivity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-subjects-shape: *none*\n - Shape sh-prov-o:editorsDefinition-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-objects-shape: *none*\n - Shape sh-prov-o:atLocation-objects-shape: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape/sh:not: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:Activity-disjointWith-Entity-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:invalidatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:generated-subjects-shape: *none*\n - Shape sh-prov-o:wasDerivedFrom-subjects-shape: *none*\n - Shape sh-prov-o:specializationOf-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape: *none*\n - Shape sh-prov-o:atLocation-subjects-shape: *none*\n - Shape sh-prov-o:influencer-objects-shape: *none*\n - Shape sh-prov-o:qualifiedForm-shape: *none*\n - Shape sh-prov-o:hadPlan-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b49: *none*\n - Shape sh-prov-o:influenced-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasEndedBy-objects-shape: *none*\n - Shape sh-prov-o:wasEndedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-objects-shape: *none*\n - Shape sh-prov-o:unqualifiedForm-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-objects-shape: *none*\n - Shape sh-prov-o:invalidated-objects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedDerivation-subjects-shape: *none*\n - Shape sh-prov-o:AgentInfluence-shape: *none*\n - Shape sh-prov-o:startedAtTime-objects-shape: *none*\n - Shape sh-prov-o:influencer-subjects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-objects-shape: *none*\n - Shape sh-prov-o:activity-objects-shape: *none*\n - Shape sh-prov-o:constraints-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:wasAttributedTo-objects-shape: <agents:someGovernment>\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape: <https://example.com/stac/example1/DP-2223>\n - Shape sh-prov-o:qualifiedAttribution-subjects-shape: *none*\n - Shape sh-prov-o:atTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:invalidated-subjects-shape: *none*\n - Shape sh-prov-o:invalidatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:qualifiedQuotation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b55: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:influenced-objects-shape: *none*\n - Shape sh-prov-o:hadGeneration-objects-shape: *none*\n - Shape sh-prov-o:generatedAtTime-subjects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-objects-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:used-objects-shape: <regulations:Act3>\n - Shape sh-prov-o:EntityInfluence-shape: *none*\n - Shape sh-prov-o:value-objects-shape: *none*\n - Shape sh-prov-o:hadMember-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b38: *none*\n - Shape sh-prov-o:qualifiedGeneration-objects-shape: *none*\n - Shape sh-prov-o:hadUsage-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedStart-subjects-shape: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape: *none*\n - Shape sh-prov-o:wasGeneratedBy-subjects-shape: <https://example.com/stac/example1/DP-2223>\n - Shape sh-prov-o:wasInformedBy-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape: *none*\n - Shape sh-prov-o:entity-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAssociation-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b73: *none*\n - Shape sh-prov-o:agent-subjects-shape: *none*\n - Shape sh-prov-o:hadRole-subjects-shape: *none*\n - Shape sh-prov-o:wasAttributedTo-subjects-shape: <regulations:Act3>\n - Shape sh-prov-o:component-shape: *none*\n - Shape sh-prov-o:endedAtTime-subjects-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:wasAssociatedWith-subjects-shape: <surveys:DP-1-S1>\n - Shape sh-prov-o:alternateOf-subjects-shape: *none*\n - Shape sh-prov-o:editorialNote-shape: *none*\n - Shape sh-prov-o:Influence-shape: *none*\n - Shape sh-prov-o:generatedAtTime-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:wasInformedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedEnd-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:EmptyCollection-shape: *none*\n - Shape sh-prov-o:wasInvalidatedBy-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:Entity-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:actedOnBehalfOf-subjects-shape: *none*\n - Shape sh-prov-o:wasRevisionOf-subjects-shape: *none*\n - Shape sh-prov-o:hadPlan-objects-shape: *none*\n - Shape sh-prov-o:qualifiedDerivation-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInvalidation-subjects-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:qualifiedInfluence-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedStart-objects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape/sh:or/rdf:first: *none*\n - Shape sh-prov-o:hadUsage-objects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b30: *none*\n - Shape sh-prov-o:category-shape: *none*\n - Shape sh-prov-o:influenced-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:hadActivity-subjects-shape/sh:or/rdf:rest/rdf:first: *none*\n - Shape sh-prov-o:qualifiedPrimarySource-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b67: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b61: *none*\n - Shape sh-prov-o:qualifiedDelegation-objects-shape: *none*\n - Shape sh-prov-o:ActivityInfluence-disjointWith-EntityInfluence-shape/sh:not: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b37: *none*\n - Shape sh-prov-o:wasInfluencedBy-objects-shape: *none*\n - Shape sh-prov-o:qualifiedInfluence-objects-shape: *none*\n - Shape sh-prov-o:wasStartedBy-subjects-shape: *none*\n - Shape _:n99c7af31436542f98661b941dae40448b29: *none*\n - Shape sh-prov-o:Agent-disjointWith-InstantaneousEvent-shape/sh:not: *none*\n - Shape sh-prov-o:value-subjects-shape: *none*\n - Shape sh-prov-o:hadPrimarySource-objects-shape: *none*\n - Shape sh-prov-o:activity-subjects-shape: *none*\n - Shape sh-prov-o:generated-objects-shape: *none*\n - Shape sh-prov-o:sharesDefinitionWith-shape: *none*\n - Shape sh-prov-o:hadMember-objects-shape: *none*\n - Shape sh-prov-o:qualifiedAttribution-objects-shape: *none*\n - Shape sh-prov-o:qualifiedCommunication-subjects-shape: *none*\n - Shape sh-prov-o:qualifiedUsage-subjects-shape: *none*\n - Shape sh-prov-o:wasInfluencedBy-subjects-shape: *none*\n - Shape sh-prov-o:endedAtTime-objects-shape: <surveys:DP-1-S1>/prov:endedAtTime\n - Shape sh-prov-o:wasRevisionOf-objects-shape: *none*\n - Shape sh-prov-o:wasQuotedFrom-objects-shape: *none*\n - Shape sh-prov-o:qualifiedRevision-objects-shape: *none*\n - Shape sh-prov-o:entity-subjects-shape: *none*\n - Shape sh-prov-o:agent-objects-shape: *none*\n"
             }
           ]
         }
@@ -246,7 +1621,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 0,
+    "failed": 3
   }
 }
