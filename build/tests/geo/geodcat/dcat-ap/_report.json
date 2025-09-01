@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.dcat-ap - DCAT-AP 3.0 profile",
   "bblockName": "DCAT-AP 3.0 profile",
   "bblockId": "ogc.geo.geodcat.dcat-ap",
-  "generated": "2025-08-31T03:40:59.408382+00:00",
+  "generated": "2025-09-01T03:46:30.393411+00:00",
   "result": true,
   "items": [
     {
@@ -52,13 +52,13 @@
                 ":DateOrDateTimeDataType": {
                   "nodes": []
                 },
-                "dcat:Dataset": {
-                  "nodes": []
-                },
                 "dcat:CatalogRecord": {
                   "nodes": []
                 },
-                "dcat:Distribution": {
+                "dcat:Dataset": {
+                  "nodes": []
+                },
+                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 ":DateOrDateTimeDataType/sh:or/rdf:first": {
@@ -67,12 +67,12 @@
                 "dcat:Catalog": {
                   "nodes": []
                 },
-                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
+                "dcat:Distribution": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape :DateOrDateTimeDataType: *none*\n - Shape dcat:Dataset: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Distribution: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape dcat:Catalog: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape :DateOrDateTimeDataType: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape dcat:Catalog: *none*\n - Shape dcat:Distribution: *none*\n"
             }
           ]
         }

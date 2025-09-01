@@ -197,9 +197,9 @@ This is the simple item example from the STAC specification.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://stacspec.org/ontology/core#> .
 @prefix ns2: <https://w3id.org/ogc/stac/core/> .
-@prefix ns3: <http://stacspec.org/ontology/core#> .
+@prefix ns3: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -207,18 +207,18 @@ This is the simple item example from the STAC specification.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
-    ns3:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    ns1:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns3:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -505,9 +505,9 @@ This is the complete "core" item example from the STAC specification.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://stacspec.org/ontology/core#> .
+@prefix ns1: <http://www.iana.org/assignments/> .
 @prefix ns2: <https://w3id.org/ogc/stac/core/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns3: <http://stacspec.org/ontology/core#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -518,24 +518,24 @@ This is the complete "core" item example from the STAC specification.
     rdfs:label "Core Item" ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    ns1:description "A sample STAC Item that includes examples of all common metadata" ;
-    ns1:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
-    ns1:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
-    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
+    ns3:description "A sample STAC Item that includes examples of all common metadata" ;
+    ns3:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
+    ns3:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "HTML version of this STAC Item" ;
             dcterms:type "text/html" ;
-            ns3:relation <http://www.iana.org/assignments/relation/alternate> ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
