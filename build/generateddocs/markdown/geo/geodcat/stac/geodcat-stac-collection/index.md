@@ -319,7 +319,10 @@ This is the collection example from the STAC specification.
         "example",
         "simple" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Item" ;
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
+        [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
@@ -327,9 +330,6 @@ This is the collection example from the STAC specification.
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
