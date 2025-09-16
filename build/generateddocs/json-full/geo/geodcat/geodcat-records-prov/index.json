@@ -10,12 +10,12 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.geo.geodcat.geodcat-records",
     "ogc.ogc-utils.prov",
-    "ogc.model.cross-domain.prov"
+    "ogc.model.cross-domain.prov",
+    "ogc.geo.geodcat.geodcat-records"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2025-09-10",
+  "dateOfLastChange": "2025-09-13",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -35,11 +35,11 @@
     "STAC"
   ],
   "shaclShapes": {
-    "ogc.geo.geodcat.records-ontology": [
-      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
-    ],
     "ogc.model.cross-domain.prov": [
       "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl"
+    ],
+    "ogc.geo.geodcat.records-ontology": [
+      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
     ]
   },
   "schema": {
@@ -50,7 +50,7 @@
   "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records-prov/",
   "rdfData": [],
-  "validationPassed": true,
+  "validationPassed": false,
   "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records-prov/",
   "description": "## GeoDCAT with PROV\n\nAdds PROV model to GeoDCAT - treating a dcat:Dataset as a prov:Entity.\n\nThis profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.\n\n",
   "examples": [
