@@ -188,10 +188,6 @@
         },
         "qualifiedUsage": {
           "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
             "entity": {
               "@id": "prov:entity",
               "@type": "@id"
@@ -202,24 +198,12 @@
         },
         "qualifiedCommunication": {
           "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
             "hadRole": {
               "@id": "prov:hadRole",
               "@type": "@id"
             },
-            "influencer": {
-              "@id": "prov:influencer",
-              "@type": "@id"
-            },
             "hadActivity": {
               "@id": "prov:hadActivity",
-              "@type": "@id"
-            },
-            "activity": {
-              "@id": "prov:activity",
               "@type": "@id"
             }
           },
@@ -228,10 +212,6 @@
         },
         "qualifiedStart": {
           "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
             "entity": {
               "@id": "prov:entity",
               "@type": "@id"
@@ -246,10 +226,6 @@
         },
         "qualifiedEnd": {
           "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
             "entity": {
               "@id": "prov:entity",
               "@type": "@id"
@@ -369,24 +345,12 @@
     },
     "qualifiedGeneration": {
       "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
         "hadRole": {
           "@id": "prov:hadRole",
           "@type": "@id"
         },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
         "hadActivity": {
           "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
           "@type": "@id"
         }
       },
@@ -395,24 +359,12 @@
     },
     "qualifiedInvalidation": {
       "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
         "hadRole": {
           "@id": "prov:hadRole",
           "@type": "@id"
         },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
         "hadActivity": {
           "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
           "@type": "@id"
         }
       },
@@ -423,20 +375,8 @@
       "@context": {
         "hadGeneration": {
           "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
             "hadRole": {
               "@id": "prov:hadRole",
-              "@type": "@id"
-            },
-            "influencer": {
-              "@id": "prov:influencer",
-              "@type": "@id"
-            },
-            "activity": {
-              "@id": "prov:activity",
               "@type": "@id"
             }
           },
@@ -498,31 +438,13 @@
               "@type": "@id"
             },
             "qualifiedUsage": {
-              "@context": {
-                "atTime": {
-                  "@id": "prov:atTime",
-                  "@type": "xsd:dateTime"
-                }
-              },
               "@id": "prov:qualifiedUsage",
               "@type": "@id"
             },
             "qualifiedCommunication": {
               "@context": {
-                "atTime": {
-                  "@id": "prov:atTime",
-                  "@type": "xsd:dateTime"
-                },
                 "hadRole": {
                   "@id": "prov:hadRole",
-                  "@type": "@id"
-                },
-                "influencer": {
-                  "@id": "prov:influencer",
-                  "@type": "@id"
-                },
-                "activity": {
-                  "@id": "prov:activity",
                   "@type": "@id"
                 }
               },
@@ -530,22 +452,10 @@
               "@type": "@id"
             },
             "qualifiedStart": {
-              "@context": {
-                "atTime": {
-                  "@id": "prov:atTime",
-                  "@type": "xsd:dateTime"
-                }
-              },
               "@id": "prov:qualifiedStart",
               "@type": "@id"
             },
             "qualifiedEnd": {
-              "@context": {
-                "atTime": {
-                  "@id": "prov:atTime",
-                  "@type": "xsd:dateTime"
-                }
-              },
               "@id": "prov:qualifiedEnd",
               "@type": "@id"
             },
@@ -584,12 +494,6 @@
           "@type": "@id"
         },
         "hadUsage": {
-          "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            }
-          },
           "@id": "prov:hadUsage",
           "@type": "@id"
         },
@@ -635,16 +539,8 @@
     },
     "qualifiedInfluence": {
       "@context": {
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
         "entity": {
           "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
           "@type": "@id"
         },
         "agent": {
@@ -710,6 +606,10 @@
     "KeyEntityPair": "prov:KeyEntityPair",
     "Insertion": "prov:Insertion",
     "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
     "generatedAtTime": {
       "@id": "prov:generatedAtTime",
       "@type": "xsd:dateTime"
@@ -732,8 +632,16 @@
       "@id": "prov:removedKey",
       "@type": "rdfs:Literal"
     },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
     "influenced": {
       "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
       "@type": "@id"
     },
     "qualifiedPrimarySource": {

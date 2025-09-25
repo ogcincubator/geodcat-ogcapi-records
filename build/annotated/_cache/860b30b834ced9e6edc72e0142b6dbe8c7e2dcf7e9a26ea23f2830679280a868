@@ -2,12 +2,12 @@
   "name": "JSON schema for W3C PROV model",
   "abstract": "Defines a standardised JSON schema for PROV ontology elements - supporting a graph structure based on an array of objects implementing PROV defined classes with object cross references.",
   "description": "Provenance defined using the [W3C PROV-O model](https://www.w3.org/TR/prov-o/) is a DAG (non-cyclic graph) based on three main object types: Entity, Activity and Agent.\n\nThis repository defines a JSON schema and matching JSON-LD context using the [OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) methodology, \nfor W3C PROV-O model, using the canonical terminology used in the PROV ontology as element names.\n\nIt also defines a context for an optional schema property \"has_provenance\" that can be used to wrap a provenance graph as an array of such objects, to extend the property prov:wasGeneratedBy (whose range is one or more Entity objects) with an explicit schema.\n\n![](https://www.w3.org/TR/prov-o/diagrams/starting-points.svg)\n\nNote that the PROV working group originally defined a number of JSON serialisation options, however these have limited uptake and do no allow PROV-O to annotate other schemas. This implementation uses modern JSON schema and JSON-LD mechanisms to provide a complete mapping from JSON to PROV-O model.\n",
-  "modified": "2025-03-17T08:30:15.784542",
+  "modified": "2025-09-23T07:34:33.470716",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"d55f19ed1d0bbb9bb303b0c60ac20ed4e4fb3c36",
-      "shortCommitId": "\"d55f19",
-      "date": "2025-02-19T20:00:57+00:00\""
+      "commitId": "\"cbdf0741daa8bb5e8edcce157ff8f4bb6d0d71fa",
+      "shortCommitId": "\"cbdf07",
+      "date": "2025-09-22T08:13:53+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/bblock-prov-schema",
@@ -16,7 +16,8 @@
   "viewerURL": "https://ogcincubator.github.io/bblock-prov-schema/",
   "validationReport": "https://ogcincubator.github.io/bblock-prov-schema/build/tests/report.html",
   "imports": [
-    "https://opengeospatial.github.io/bblocks/register.json"
+    "https://opengeospatial.github.io/bblocks/register.json",
+    "https://ogcincubator.github.io/cross-domain-model/build/register.json"
   ],
   "bblocks": [
     {
@@ -29,7 +30,12 @@
       "itemClass": "schema",
       "register": "ogc-utils",
       "version": "0.1",
-      "dateOfLastChange": "2025-03-17",
+      "dateOfLastChange": "2025-09-23",
+      "dependsOn": [
+        "ogc.ogc-utils.iri-or-curie",
+        "ogc.model.cross-domain.prov",
+        "ogc.ogc-utils.json-link"
+      ],
       "sources": [
         {
           "link": "https://www.w3.org/TR/prov-o/",
@@ -42,11 +48,7 @@
         "prov",
         "utils"
       ],
-      "shaclRules": {},
-      "dependsOn": [
-        "ogc.ogc-utils.iri-or-curie",
-        "ogc.ogc-utils.json-link"
-      ],
+      "shaclShapes": {},
       "ldContext": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/context.jsonld",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml",
@@ -73,5 +75,6 @@
         }
       }
     }
-  ]
+  ],
+  "remoteCacheDir": "https://ogcincubator.github.io/bblock-prov-schema/build/annotated/_cache"
 }
