@@ -717,7 +717,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     stac:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -725,7 +725,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
