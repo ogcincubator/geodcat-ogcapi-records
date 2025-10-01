@@ -1,36 +1,36 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <https://w3id.org/ogc/stac/core/> .
-@prefix ns2: <http://stacspec.org/ontology/core#> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <http://stacspec.org/ontology/core#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://www.opengis.net/def/ogc-api/stac/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
-    rdfs:label "Core Item" ;
+<https://example.com/stac/example1/20201211_223832_CS2> rdfs:label "Core Item" ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
+    dcterms:format "Feature" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    ns2:description "A sample STAC Item that includes examples of all common metadata" ;
-    ns2:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
-    ns2:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "HTML version of this STAC Item" ;
+    ns3:description "A sample STAC Item that includes examples of all common metadata" ;
+    ns3:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
+    ns3:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
             dcterms:type "text/html" ;
-            ns3:relation <http://www.iana.org/assignments/relation/alternate> ;
+            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -44,22 +44,25 @@
     stac:version "1.1.0" .
 
 <https://example.com/stac/example1/analytic> rdfs:label "4-Band Analytic" ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
 
 <https://example.com/stac/example1/ephemeris> rdfs:label "Satellite Ephemeris Metadata" ;
     oa:hasTarget <http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH> .
 
-<https://example.com/stac/example1/json-metadata> a <https://example.com/stac/example1/application/json> ;
-    rdfs:label "Extended Metadata" ;
+<https://example.com/stac/example1/json-metadata> rdfs:label "Extended Metadata" ;
+    dcterms:format "application/json" ;
     oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json> .
 
-<https://example.com/stac/example1/thumbnail> a <https://example.com/stac/example1/image/png> ;
-    rdfs:label "Thumbnail" ;
+<https://example.com/stac/example1/thumbnail> rdfs:label "Thumbnail" ;
+    dcterms:format "image/png" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
 <https://example.com/stac/example1/udm> rdfs:label "Unusable Data Mask" ;
+    dcterms:format "image/tiff; application=geotiff" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif> .
 
 <https://example.com/stac/example1/visual> rdfs:label "3-Band Visual" ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 

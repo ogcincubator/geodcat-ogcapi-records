@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.dcat-ap - DCAT-AP 3.0 profile",
   "bblockName": "DCAT-AP 3.0 profile",
   "bblockId": "ogc.geo.geodcat.dcat-ap",
-  "generated": "2025-09-28T03:41:41.502127+00:00",
+  "generated": "2025-10-01T03:43:22.988659+00:00",
   "result": true,
   "items": [
     {
@@ -49,10 +49,10 @@
             {
               "shaclFile": "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
               "focusNodes": {
-                "dcat:Catalog": {
+                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "dcat:CatalogRecord": {
+                "dcat:Distribution": {
                   "nodes": []
                 },
                 "dcat:Dataset": {
@@ -61,10 +61,10 @@
                 ":DateOrDateTimeDataType/sh:or/rdf:first": {
                   "nodes": []
                 },
-                "dcat:Distribution": {
+                "dcat:CatalogRecord": {
                   "nodes": []
                 },
-                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
+                "dcat:Catalog": {
                   "nodes": []
                 },
                 ":DateOrDateTimeDataType": {
@@ -72,7 +72,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:Catalog: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape dcat:Distribution: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape :DateOrDateTimeDataType: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Catalog: *none*\n - Shape :DateOrDateTimeDataType: *none*\n"
             }
           ]
         }

@@ -1,12 +1,7 @@
 path	@id
-/id	@id
-/conformsTo	
 /type	@type
-/time	
-/time/date	
-/time/timestamp	
-/time/interval	
-/time/resolution	
+/id	@id
+/properties	@nest
 /geometry	https://purl.org/geojson/vocab#geometry
 /geometry/type	@type
 /geometry/coordinates	https://purl.org/geojson/vocab#coordinates
@@ -15,7 +10,21 @@ path	@id
 /geometry/geometries/type	@type
 /geometry/geometries/coordinates	https://purl.org/geojson/vocab#coordinates
 /geometry/geometries/bbox	https://purl.org/geojson/vocab#bbox
-/properties	@nest
+/bbox	https://purl.org/geojson/vocab#bbox
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
+/links/href	http://www.w3.org/ns/oa#hasTarget
+/links/rel	http://www.iana.org/assignments/relation
+/links/anchor	
+/links/type	http://purl.org/dc/terms/format
+/links/hreflang	http://purl.org/dc/terms/language
+/links/title	http://www.w3.org/2000/01/rdf-schema#label
+/links/length	http://purl.org/dc/terms/extent
+/conformsTo	
+/time	
+/time/date	
+/time/timestamp	
+/time/interval	
+/time/resolution	
 /properties/created	
 /properties/updated	
 /properties/type	
@@ -87,15 +96,8 @@ path	@id
 /properties/contacts/roles	
 /properties/license	
 /properties/rights	
-/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
-/links/rel	http://www.iana.org/assignments/relation
-/links/type	http://purl.org/dc/terms/type
-/links/hreflang	http://purl.org/dc/terms/language
-/links/title	http://www.w3.org/2000/01/rdf-schema#label
-/links/length	http://purl.org/dc/terms/extent
 /links/created	http://purl.org/dc/terms/created
 /links/updated	http://purl.org/dc/terms/modified
-/links/href	http://www.w3.org/ns/oa#hasTarget
 /linkTemplates	
 /linkTemplates/rel	http://www.iana.org/assignments/relation
 /linkTemplates/type	http://purl.org/dc/terms/format
@@ -107,8 +109,39 @@ path	@id
 /linkTemplates/uriTemplate	http://www.w3.org/ns/oa#hasTarget
 /linkTemplates/varBase	
 /linkTemplates/variables	
-/bbox	https://purl.org/geojson/vocab#bbox
-/links/anchor	
+/collection	
+/properties/bands	
+/properties/bands/title	
+/properties/bands/description	
+/properties/bands/keywords	
+/properties/bands/roles	
+/properties/bands/datetime	
+/properties/bands/start_datetime	
+/properties/bands/end_datetime	
+/properties/bands/created	
+/properties/bands/updated	
+/properties/bands/data_type	
+/properties/bands/nodata	
+/properties/bands/statistics	
+/properties/bands/statistics/minimum	
+/properties/bands/statistics/maximum	
+/properties/bands/statistics/mean	
+/properties/bands/statistics/stddev	
+/properties/bands/statistics/count	
+/properties/bands/statistics/valid_percent	
+/properties/bands/unit	
+/properties/bands/platform	
+/properties/bands/instruments	
+/properties/bands/constellation	
+/properties/bands/mission	
+/properties/bands/gsd	
+/properties/bands/license	
+/properties/bands/providers	
+/properties/bands/providers/name	
+/properties/bands/providers/description	
+/properties/bands/providers/roles	
+/properties/bands/providers/url	
+/properties/bands/name	
 /stac_version	
 /stac_extensions	
 /links/method	
@@ -179,8 +212,6 @@ path	@id
 /assets/providers/roles	
 /assets/providers/url	
 /properties/roles	
-/properties/bands	
-/properties/bands/name	
 /properties/datetime	
 /properties/start_datetime	
 /properties/end_datetime	
@@ -204,34 +235,3 @@ path	@id
 /properties/providers/description	
 /properties/providers/roles	
 /properties/providers/url	
-/collection	
-/properties/bands/title	
-/properties/bands/description	
-/properties/bands/keywords	
-/properties/bands/roles	
-/properties/bands/datetime	
-/properties/bands/start_datetime	
-/properties/bands/end_datetime	
-/properties/bands/created	
-/properties/bands/updated	
-/properties/bands/data_type	
-/properties/bands/nodata	
-/properties/bands/statistics	
-/properties/bands/statistics/minimum	
-/properties/bands/statistics/maximum	
-/properties/bands/statistics/mean	
-/properties/bands/statistics/stddev	
-/properties/bands/statistics/count	
-/properties/bands/statistics/valid_percent	
-/properties/bands/unit	
-/properties/bands/platform	
-/properties/bands/instruments	
-/properties/bands/constellation	
-/properties/bands/mission	
-/properties/bands/gsd	
-/properties/bands/license	
-/properties/bands/providers	
-/properties/bands/providers/name	
-/properties/bands/providers/description	
-/properties/bands/providers/roles	
-/properties/bands/providers/url	

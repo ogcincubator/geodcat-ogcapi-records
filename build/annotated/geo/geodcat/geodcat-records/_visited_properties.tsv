@@ -1,12 +1,7 @@
 path	@id
-/id	@id
-/conformsTo	
 /type	@type
-/time	
-/time/date	
-/time/timestamp	
-/time/interval	
-/time/resolution	
+/id	@id
+/properties	@nest
 /geometry	https://purl.org/geojson/vocab#geometry
 /geometry/type	@type
 /geometry/coordinates	https://purl.org/geojson/vocab#coordinates
@@ -15,7 +10,21 @@ path	@id
 /geometry/geometries/type	@type
 /geometry/geometries/coordinates	https://purl.org/geojson/vocab#coordinates
 /geometry/geometries/bbox	https://purl.org/geojson/vocab#bbox
-/properties	@nest
+/bbox	https://purl.org/geojson/vocab#bbox
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
+/links/href	http://www.w3.org/ns/oa#hasTarget
+/links/rel	http://www.iana.org/assignments/relation
+/links/anchor	
+/links/type	http://purl.org/dc/terms/format
+/links/hreflang	http://purl.org/dc/terms/language
+/links/title	http://www.w3.org/2000/01/rdf-schema#label
+/links/length	http://purl.org/dc/terms/extent
+/conformsTo	
+/time	
+/time/date	
+/time/timestamp	
+/time/interval	
+/time/resolution	
 /properties/created	
 /properties/updated	
 /properties/type	
@@ -87,15 +96,8 @@ path	@id
 /properties/contacts/roles	
 /properties/license	
 /properties/rights	
-/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
-/links/rel	http://www.iana.org/assignments/relation
-/links/type	http://purl.org/dc/terms/type
-/links/hreflang	http://purl.org/dc/terms/language
-/links/title	http://www.w3.org/2000/01/rdf-schema#label
-/links/length	http://purl.org/dc/terms/extent
 /links/created	http://purl.org/dc/terms/created
 /links/updated	http://purl.org/dc/terms/modified
-/links/href	http://www.w3.org/ns/oa#hasTarget
 /linkTemplates	
 /linkTemplates/rel	http://www.iana.org/assignments/relation
 /linkTemplates/type	http://purl.org/dc/terms/format
@@ -107,5 +109,3 @@ path	@id
 /linkTemplates/uriTemplate	http://www.w3.org/ns/oa#hasTarget
 /linkTemplates/varBase	
 /linkTemplates/variables	
-/bbox	https://purl.org/geojson/vocab#bbox
-/links/anchor	

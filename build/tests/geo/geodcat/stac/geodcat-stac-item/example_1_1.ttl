@@ -9,7 +9,7 @@
 @prefix stac: <https://www.opengis.net/def/ogc-api/stac/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
+<https://example.com/stac/example1/20201211_223832_CS2> dcterms:format "Feature" ;
     ns3:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -17,11 +17,11 @@
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -30,10 +30,11 @@
         <https://example.com/stac/example1/visual> ;
     stac:version "1.1.0" .
 
-<https://example.com/stac/example1/thumbnail> a <https://example.com/stac/example1/image/jpeg> ;
-    rdfs:label "Thumbnail" ;
+<https://example.com/stac/example1/thumbnail> rdfs:label "Thumbnail" ;
+    dcterms:format "image/jpeg" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
 <https://example.com/stac/example1/visual> rdfs:label "3-Band Visual" ;
+    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 
