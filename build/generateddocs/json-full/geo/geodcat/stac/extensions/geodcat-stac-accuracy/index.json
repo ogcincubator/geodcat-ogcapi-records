@@ -10,12 +10,12 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.geo.geodcat.stac.geodcat-stac-collection",
+    "ogc.geo.geodcat.stac.geodcat-stac-item",
     "ogc.contrib.stac.extensions.accuracy",
-    "ogc.geo.geodcat.stac.geodcat-stac-item"
+    "ogc.geo.geodcat.stac.geodcat-stac-collection"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2025-09-28",
+  "dateOfLastChange": "2025-10-01",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -74,7 +74,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix accuracy: <https://www.opengis.net/def/ogc-api/stac/accuracy/> .\n@prefix dcat: <http://www.w3.org/ns/dcat#> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://stacspec.org/ontology/core#> .\n@prefix ns2: <urn:stac:vocab#> .\n@prefix ns3: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/accuracy/example-1/item> dcterms:type \"Feature\" ;\n    ns1:datetime \"2020-12-11T22:38:32+00:00\"^^xsd:dateTime ;\n    rdfs:seeAlso [ ns3:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://example.com/examples/item.json> ] ;\n    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;\n    geojson:geometry [ a geojson:Polygon ;\n            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;\n    accuracy:geometric_rmse 1 ;\n    accuracy:geometric_x_bias 0 ;\n    accuracy:geometric_x_stddev 5e-01 ;\n    accuracy:geometric_y_bias 0 ;\n    accuracy:geometric_y_stddev 5e-01 ;\n    accuracy:measurement_absolute 2e-02 ;\n    accuracy:measurement_relative 1e-02 ;\n    ns2:extensions \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\" ;\n    ns2:hasAsset <https://example.com/stac/accuracy/example-1/data> ;\n    ns2:version \"1.0.0\" .\n\n<https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .\n\n",
+          "code": "@prefix accuracy: <https://www.opengis.net/def/ogc-api/stac/accuracy/> .\n@prefix dcat: <http://www.w3.org/ns/dcat#> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <urn:stac:vocab#> .\n@prefix ns2: <http://stacspec.org/ontology/core#> .\n@prefix ns3: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/accuracy/example-1/item> dcterms:type \"Feature\" ;\n    ns2:datetime \"2020-12-11T22:38:32+00:00\"^^xsd:dateTime ;\n    rdfs:seeAlso [ ns3:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://example.com/examples/item.json> ] ;\n    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;\n    geojson:geometry [ a geojson:Polygon ;\n            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;\n    accuracy:geometric_rmse 1 ;\n    accuracy:geometric_x_bias 0 ;\n    accuracy:geometric_x_stddev 5e-01 ;\n    accuracy:geometric_y_bias 0 ;\n    accuracy:geometric_y_stddev 5e-01 ;\n    accuracy:measurement_absolute 2e-02 ;\n    accuracy:measurement_relative 1e-02 ;\n    ns1:extensions \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\" ;\n    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;\n    ns1:version \"1.0.0\" .\n\n<https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .\n\n",
           "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.ttl"
         }
       ]
