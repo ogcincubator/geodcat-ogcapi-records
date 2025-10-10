@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-ap - GeoDCAT-AP profile",
   "bblockName": "GeoDCAT-AP profile",
   "bblockId": "ogc.geo.geodcat.geodcat-ap",
-  "generated": "2025-10-07T03:38:50.611935+00:00",
+  "generated": "2025-10-10T03:39:18.459455+00:00",
   "result": true,
   "items": [
     {
@@ -49,30 +49,30 @@
             {
               "shaclFile": "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
               "focusNodes": {
-                "dcat:Dataset": {
-                  "nodes": []
-                },
-                "dcat:Catalog": {
-                  "nodes": []
-                },
-                ":DateOrDateTimeDataType": {
+                "dcat:CatalogRecord": {
                   "nodes": []
                 },
                 "dcat:Distribution": {
                   "nodes": []
                 },
-                "dcat:CatalogRecord": {
+                "dcat:Catalog": {
+                  "nodes": []
+                },
+                "dcat:Dataset": {
+                  "nodes": []
+                },
+                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
                 ":DateOrDateTimeDataType/sh:or/rdf:first": {
                   "nodes": []
                 },
-                ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
+                ":DateOrDateTimeDataType": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:Dataset: *none*\n - Shape dcat:Catalog: *none*\n - Shape :DateOrDateTimeDataType: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:Catalog: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape :DateOrDateTimeDataType: *none*\n"
             }
           ]
         }
