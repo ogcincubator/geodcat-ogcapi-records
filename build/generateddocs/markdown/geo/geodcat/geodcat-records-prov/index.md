@@ -603,9 +603,10 @@ Links to the schema:
       }
     },
     "formats": {
-      "@container": "@set",
       "@id": "rec:format",
-      "@type": "@id"
+      "@context": {
+        "name": "rec:name"
+      }
     },
     "contacts": {
       "@container": "@set",

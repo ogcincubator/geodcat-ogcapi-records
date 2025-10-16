@@ -67,9 +67,10 @@ x-jsonld-extra-terms:
             '@id': http://purl.org/dc/terms/theme
       scheme: https://www.opengis.net/def/ogc-api/records/scheme
   formats:
-    x-jsonld-container: '@set'
     x-jsonld-id: https://www.opengis.net/def/ogc-api/records/format
-    x-jsonld-type: '@id'
+    x-jsonld-context:
+      name:
+        '@id': https://www.opengis.net/def/ogc-api/records/name
   contacts:
     x-jsonld-container: '@set'
     x-jsonld-id: http://www.w3.org/ns/dcat#contactPoint

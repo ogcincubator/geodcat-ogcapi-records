@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT mapping for OGC API Records",
   "bblockName": "GeoDCAT mapping for OGC API Records",
   "bblockId": "ogc.geo.geodcat.geodcat-records",
-  "generated": "2025-10-16T01:51:33.644247+00:00",
-  "result": false,
+  "generated": "2025-10-16T02:54:53.694002+00:00",
+  "result": true,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": false,
+      "result": true,
       "sections": [
         {
           "name": "FILES",
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 161,
+              "size": 163,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -52,11 +52,9 @@
           "entries": [
             {
               "op": "validation",
-              "result": false,
-              "exception": "ValidationError",
-              "errorMessage": "'CSV' is not of type 'object'",
-              "isError": true,
-              "message": "ValidationError: 'CSV' is not of type 'object'\n\nFailed validating 'type' in schema['allOf'][0]['allOf'][0]['properties']['properties']['properties']['formats']['items']:\n    {'anyOf': [{'required': ['name']}, {'required': ['mediaType']}],\n     'properties': {'mediaType': {'type': 'string'},\n                    'name': {'type': 'string'}},\n     'type': 'object'}\n\nOn instance['properties']['formats'][0]:\n    'CSV'"
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
             }
           ]
         },
@@ -91,7 +89,7 @@
   "globalErrors": {},
   "counts": {
     "total": 1,
-    "passed": 0,
-    "failed": 1
+    "passed": 1,
+    "failed": 0
   }
 }
