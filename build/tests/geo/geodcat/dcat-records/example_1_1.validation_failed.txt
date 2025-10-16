@@ -1,5 +1,5 @@
-Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT mapping for OGC API Records
-Generated 2025-10-13T03:43:41.086002+00:00
+Validation report for ogc.geo.geodcat.dcat-records - DCAT/Records binding
+Generated 2025-10-16T01:51:30.451711+00:00
 === Files ===
 Using example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -8,7 +8,18 @@ Output Turtle example_1_1.ttl created
 === End Files ===
 
 === JSON Schema ===
-Validation passed
+
+** Validation error **
+ValidationError: 'CSV' is not of type 'object'
+
+Failed validating 'type' in schema['allOf'][0]['properties']['properties']['properties']['formats']['items']:
+    {'anyOf': [{'required': ['name']}, {'required': ['mediaType']}],
+     'properties': {'mediaType': {'type': 'string'},
+                    'name': {'type': 'string'}},
+     'type': 'object'}
+
+On instance['properties']['formats'][0]:
+    'CSV'
 === End JSON Schema ===
 
 === SHACL ===

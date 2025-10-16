@@ -1,0 +1,36 @@
+Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile
+Generated 2025-10-16T01:51:34.196559+00:00
+=== Files ===
+Using example_3_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_3_1.jsonld created
+Output Turtle example_3_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'id': 'DP-2223', 'provType': 'Entity', 'featureType': 'ftc:SomeKindOfSurvey', 'wasGeneratedBy': 'surveys:DP-1-S1'} is valid under each of {'$ref': '#Activity'}, {'$ref': '#Entity'}
+
+Failed validating 'oneOf' in schema[0]['properties']['has_provenance']['items']:
+    {'oneOf': [{'$ref': '#Entity'},
+               {'$ref': '#Agent'},
+               {'$ref': '#Activity'}]}
+
+On instance['has_provenance'][0]:
+    {'featureType': 'ftc:SomeKindOfSurvey',
+     'id': 'DP-2223',
+     'provType': 'Entity',
+     'wasGeneratedBy': 'surveys:DP-1-S1'}
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/records-ontology/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/records-ontology/rules.shacl:
+ - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*
+
+=== End SHACL ===
+

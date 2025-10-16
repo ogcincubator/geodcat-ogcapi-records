@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile",
   "bblockName": "GeoDCAT + PROV profile",
   "bblockId": "ogc.geo.geodcat.geodcat-records-prov",
-  "generated": "2025-10-13T03:43:41.564884+00:00",
-  "result": true,
+  "generated": "2025-10-16T01:51:34.196627+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -174,7 +174,7 @@
         "language": "application/json",
         "sourceUrl": "https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -211,9 +211,11 @@
           "entries": [
             {
               "op": "validation",
-              "result": true,
-              "isError": false,
-              "message": "Validation passed"
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "{'id': 'DP-2223', 'provType': 'Entity', 'featureType': 'ftc:SomeKindOfSurvey', 'wasGeneratedBy': 'surveys:DP-1-S1'} is valid under each of {'$ref': '#Activity'}, {'$ref': '#Entity'}",
+              "isError": true,
+              "message": "ValidationError: {'id': 'DP-2223', 'provType': 'Entity', 'featureType': 'ftc:SomeKindOfSurvey', 'wasGeneratedBy': 'surveys:DP-1-S1'} is valid under each of {'$ref': '#Activity'}, {'$ref': '#Entity'}\n\nFailed validating 'oneOf' in schema[0]['properties']['has_provenance']['items']:\n    {'oneOf': [{'$ref': '#Entity'},\n               {'$ref': '#Agent'},\n               {'$ref': '#Activity'}]}\n\nOn instance['has_provenance'][0]:\n    {'featureType': 'ftc:SomeKindOfSurvey',\n     'id': 'DP-2223',\n     'provType': 'Entity',\n     'wasGeneratedBy': 'surveys:DP-1-S1'}"
             }
           ]
         },
@@ -246,7 +248,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 2,
+    "failed": 1
   }
 }

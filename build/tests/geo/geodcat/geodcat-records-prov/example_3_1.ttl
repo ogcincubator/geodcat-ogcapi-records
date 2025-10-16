@@ -7,9 +7,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/20201211_223832_CS2> dcterms:format "Feature" ;
-    dcterms:provenance <https://example.com/stac/example1/DP-2223>,
+<https://example.com/stac/example1/20201211_223832_CS2> dcterms:provenance <https://example.com/stac/example1/DP-2223>,
         <surveys:DP-1-S1> ;
+    dcterms:type "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
