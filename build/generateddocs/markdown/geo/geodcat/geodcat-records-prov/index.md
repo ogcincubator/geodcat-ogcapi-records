@@ -595,7 +595,7 @@ Links to the schema:
             },
             "url": {
               "@type": "@id",
-              "@id": "dct:theme"
+              "@id": "dcat:theme"
             }
           }
         },
@@ -613,8 +613,8 @@ Links to the schema:
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "dcat:license",
-    "rights": "dcat:rights",
+    "license": "dct:license",
+    "accessrights": "dct:accessRights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
       "@container": "@id",
