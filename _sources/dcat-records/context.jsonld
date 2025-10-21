@@ -92,7 +92,7 @@
             "@id": "rec:concept",
             "@context": {
               "id": { "@type":  "xsd:string" , "@id": "rec:conceptID" },
-              "url": { "@type":  "@id" , "@id": "dct:theme" }
+              "url": { "@type":  "@id" , "@id": "dcat:theme" }
             }
           },
           "scheme": "rec:scheme"
@@ -109,8 +109,8 @@
         "@id": "dcat:contactPoint",
         "@type": "@id"
       },
-      "license": "dcat:license",
-      "rights": "dcat:rights",
+      "license": "dct:license",
+      "accessrights": "dct:accessRights",
       "linkTemplates": "rec:hasLinkTemplate",
       "variables": {
         "@container": "@id",
