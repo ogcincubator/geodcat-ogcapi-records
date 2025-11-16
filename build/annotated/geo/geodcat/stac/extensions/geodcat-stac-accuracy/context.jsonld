@@ -55,12 +55,20 @@
       "@id": "urn:stac:vocab#hasAsset",
       "@container": "@id",
       "@context": {
+        "thumbnail": "http://stacspec.org/ontology/core#thumbnail",
+        "overview": "http://stacspec.org/ontology/core#overview",
+        "data": "http://stacspec.org/ontology/core#data",
+        "metadata": "http://stacspec.org/ontology/core#metadata",
+        "type": "dct:format",
+        "title": "dct:title",
+        "roles": {
+          "@id": "http://stacspec.org/ontology/core#roles",
+          "@container": "@set"
+        },
         "href": {
           "@id": "dcat:downloadURL",
           "@type": "@id"
-        },
-        "title": "dct:title",
-        "type": "dct:format"
+        }
       }
     },
     "time": {
@@ -161,7 +169,7 @@
     },
     "extent": "dct:extent",
     "datetime": {
-      "@id": "http://stacspec.org/ontology/core#datetime",
+      "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
@@ -172,7 +180,7 @@
       "@id": "http://stacspec.org/ontology/core#end_datetime",
       "@type": "xsd:dateTime"
     },
-    "media_type": "http://stacspec.org/ontology/core#mediaType",
+    "media_type": "dct:format",
     "stac_version": "urn:stac:vocab#version",
     "stac_extensions": "urn:stac:vocab#extensions",
     "oa": "http://www.w3.org/ns/oa#",
@@ -194,7 +202,6 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
-    "geo": "http://www.opengis.net/ont/geosparql#",
     "@version": 1.1
   }
 }

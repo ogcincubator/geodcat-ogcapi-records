@@ -58,7 +58,7 @@
     "license": "dct:license",
     "extent": "dct:extent",
     "datetime": {
-      "@id": "stac:datetime",
+      "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
@@ -73,15 +73,23 @@
       "@id": "urn:stac:vocab#hasAsset",
       "@container": "@id",
       "@context": {
+        "thumbnail": "stac:thumbnail",
+        "overview": "stac:overview",
+        "data": "stac:data",
+        "metadata": "stac:metadata",
+        "type": "dct:format",
+        "title": "dct:title",
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        },
         "href": {
           "@id": "dcat:downloadURL",
           "@type": "@id"
-        },
-        "title": "dct:title",
-        "type": "dct:format"
+        }
       }
     },
-    "media_type": "stac:mediaType",
+    "media_type": "dct:format",
     "eo:bands": {
       "@id": "eo:bands",
       "@context": {
@@ -187,8 +195,6 @@
     "eo": "https://w3id.org/ogc/stac/eo/",
     "geojson": "https://purl.org/geojson/vocab#",
     "stac": "http://stacspec.org/ontology/core#",
-    "geo": "http://www.opengis.net/ont/geosparql#",
-    "prov": "http://www.w3.org/ns/prov#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
@@ -198,6 +204,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "@version": 1.1
   }

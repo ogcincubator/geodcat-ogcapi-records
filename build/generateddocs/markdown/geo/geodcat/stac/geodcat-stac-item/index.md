@@ -197,42 +197,44 @@ This is the simple item example from the STAC specification.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://stacspec.org/ontology/core#> .
+@prefix ns1: <https://w3id.org/ogc/stac/core/> .
 @prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <https://w3id.org/ogc/stac/core/> .
+@prefix ns3: <http://stacspec.org/ontology/core#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://www.opengis.net/def/ogc-api/stac/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/20201211_223832_CS2> dcterms:format "Feature" ;
-    ns1:datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+<https://example.com/stac/example1/20201211_223832_CS2> dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    dcterms:format "Feature" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
-    ns3:assets <https://example.com/stac/example1/thumbnail>,
+    ns1:assets <https://example.com/stac/example1/thumbnail>,
         <https://example.com/stac/example1/visual> ;
     stac:version "1.1.0" .
 
-<https://example.com/stac/example1/thumbnail> rdfs:label "Thumbnail" ;
-    dcterms:format "image/jpeg" ;
+<https://example.com/stac/example1/thumbnail> dcterms:format "image/jpeg" ;
+    dcterms:title "Thumbnail" ;
+    ns3:roles "thumbnail" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
-<https://example.com/stac/example1/visual> rdfs:label "3-Band Visual" ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/example1/visual> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "3-Band Visual" ;
+    ns3:roles "visual" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 
 
@@ -517,27 +519,27 @@ This is the complete "core" item example from the STAC specification.
 
 <https://example.com/stac/example1/20201211_223832_CS2> rdfs:label "Core Item" ;
     dcterms:created "2020-12-12T01:48:13.725Z" ;
+    dcterms:description "A sample STAC Item that includes examples of all common metadata" ;
     dcterms:format "Feature" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    ns3:description "A sample STAC Item that includes examples of all common metadata" ;
     ns3:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
     ns3:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
+            dcterms:type "text/html" ;
+            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "HTML version of this STAC Item" ;
-            dcterms:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ] ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
@@ -549,27 +551,31 @@ This is the complete "core" item example from the STAC specification.
         <https://example.com/stac/example1/visual> ;
     stac:version "1.1.0" .
 
-<https://example.com/stac/example1/analytic> rdfs:label "4-Band Analytic" ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/example1/analytic> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "4-Band Analytic" ;
+    ns3:roles "data" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> .
 
-<https://example.com/stac/example1/ephemeris> rdfs:label "Satellite Ephemeris Metadata" ;
+<https://example.com/stac/example1/ephemeris> dcterms:title "Satellite Ephemeris Metadata" ;
     oa:hasTarget <http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH> .
 
-<https://example.com/stac/example1/json-metadata> rdfs:label "Extended Metadata" ;
-    dcterms:format "application/json" ;
+<https://example.com/stac/example1/json-metadata> dcterms:format "application/json" ;
+    dcterms:title "Extended Metadata" ;
+    ns3:roles "metadata" ;
     oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json> .
 
-<https://example.com/stac/example1/thumbnail> rdfs:label "Thumbnail" ;
-    dcterms:format "image/png" ;
+<https://example.com/stac/example1/thumbnail> dcterms:format "image/png" ;
+    dcterms:title "Thumbnail" ;
+    ns3:roles "thumbnail" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> .
 
-<https://example.com/stac/example1/udm> rdfs:label "Unusable Data Mask" ;
-    dcterms:format "image/tiff; application=geotiff" ;
+<https://example.com/stac/example1/udm> dcterms:format "image/tiff; application=geotiff" ;
+    dcterms:title "Unusable Data Mask" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif> .
 
-<https://example.com/stac/example1/visual> rdfs:label "3-Band Visual" ;
-    dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+<https://example.com/stac/example1/visual> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+    dcterms:title "3-Band Visual" ;
+    ns3:roles "visual" ;
     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> .
 
 
@@ -690,7 +696,7 @@ Links to the schema:
     },
     "description": {
       "@container": "@set",
-      "@id": "http://stacspec.org/ontology/core#description"
+      "@id": "dct:description"
     },
     "keywords": {
       "@container": "@set",
@@ -763,7 +769,7 @@ Links to the schema:
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "http://stacspec.org/ontology/core#license",
+    "license": "dct:license",
     "accessrights": "dct:accessRights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
@@ -774,9 +780,9 @@ Links to the schema:
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
-    "extent": "http://stacspec.org/ontology/core#extent",
+    "extent": "dct:extent",
     "datetime": {
-      "@id": "http://stacspec.org/ontology/core#datetime",
+      "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
@@ -789,9 +795,20 @@ Links to the schema:
     },
     "assets": {
       "@id": "https://w3id.org/ogc/stac/core/assets",
-      "@container": "@id"
+      "@container": "@id",
+      "@context": {
+        "thumbnail": "http://stacspec.org/ontology/core#thumbnail",
+        "overview": "http://stacspec.org/ontology/core#overview",
+        "data": "http://stacspec.org/ontology/core#data",
+        "metadata": "http://stacspec.org/ontology/core#metadata",
+        "title": "dct:title",
+        "roles": {
+          "@id": "http://stacspec.org/ontology/core#roles",
+          "@container": "@set"
+        }
+      }
     },
-    "media_type": "http://stacspec.org/ontology/core#mediaType",
+    "media_type": "dct:format",
     "stac_version": "stac:version",
     "stac_extensions": "stac:extensions",
     "geojson": "https://purl.org/geojson/vocab#",
@@ -810,7 +827,6 @@ Links to the schema:
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "stac": "https://www.opengis.net/def/ogc-api/stac/",
-    "geo": "http://www.opengis.net/ont/geosparql#",
     "@version": 1.1
   }
 }

@@ -68,7 +68,7 @@
     },
     "description": {
       "@container": "@set",
-      "@id": "http://stacspec.org/ontology/core#description"
+      "@id": "dct:description"
     },
     "keywords": {
       "@container": "@set",
@@ -141,7 +141,7 @@
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "http://stacspec.org/ontology/core#license",
+    "license": "dct:license",
     "accessrights": "dct:accessRights",
     "linkTemplates": "rec:hasLinkTemplate",
     "variables": {
@@ -152,9 +152,9 @@
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
-    "extent": "http://stacspec.org/ontology/core#extent",
+    "extent": "dct:extent",
     "datetime": {
-      "@id": "http://stacspec.org/ontology/core#datetime",
+      "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
@@ -167,9 +167,20 @@
     },
     "assets": {
       "@id": "https://w3id.org/ogc/stac/core/assets",
-      "@container": "@id"
+      "@container": "@id",
+      "@context": {
+        "thumbnail": "http://stacspec.org/ontology/core#thumbnail",
+        "overview": "http://stacspec.org/ontology/core#overview",
+        "data": "http://stacspec.org/ontology/core#data",
+        "metadata": "http://stacspec.org/ontology/core#metadata",
+        "title": "dct:title",
+        "roles": {
+          "@id": "http://stacspec.org/ontology/core#roles",
+          "@container": "@set"
+        }
+      }
     },
-    "media_type": "http://stacspec.org/ontology/core#mediaType",
+    "media_type": "dct:format",
     "stac_version": "stac:version",
     "stac_extensions": "stac:extensions",
     "geojson": "https://purl.org/geojson/vocab#",
@@ -188,7 +199,6 @@
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "stac": "https://www.opengis.net/def/ogc-api/stac/",
-    "geo": "http://www.opengis.net/ont/geosparql#",
     "@version": 1.1
   }
 }
