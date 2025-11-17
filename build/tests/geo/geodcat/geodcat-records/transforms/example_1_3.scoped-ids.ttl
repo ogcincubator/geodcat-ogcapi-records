@@ -21,36 +21,36 @@
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ time:hasTime ( "1924-08-17T00:00:00Z" ".." ) ;
             rec:iso8601period "P1D" ] ;
-    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:type "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:type "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
+        [ rdfs:label "This document as HTML" ;
             dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             dcterms:type "application/zip" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:type "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:type "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:type "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -63,8 +63,8 @@
         "total" ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
-    rec:format [ rec:name "CSV" ],
-        [ rec:name "GeoJSON" ] ;
+    rec:format [ rec:name "GeoJSON" ],
+        [ rec:name "CSV" ] ;
     rec:hasLinkTemplate [ rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
@@ -86,10 +86,10 @@
                 [ dcat:theme <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> ;
                     rec:conceptID "brewer"^^xsd:string ] ;
             rec:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ rec:concept [ rec:conceptID "observationPlatform"^^xsd:string ],
-                [ rec:conceptID "pollution"^^xsd:string ],
-                [ rec:conceptID "rocketSounding"^^xsd:string ],
-                [ rec:conceptID "atmosphericComposition"^^xsd:string ] ;
+        [ rec:concept [ rec:conceptID "rocketSounding"^^xsd:string ],
+                [ rec:conceptID "observationPlatform"^^xsd:string ],
+                [ rec:conceptID "atmosphericComposition"^^xsd:string ],
+                [ rec:conceptID "pollution"^^xsd:string ] ;
             rec:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
 
 <http://example.com/variables/bbox> dcterms:description "..." ;
