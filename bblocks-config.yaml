@@ -15,7 +15,15 @@ imports:
   # note that a PROV profile is intended as a key example of extending GeoDCAT
   # - https://ogcincubator.github.io/bblock-prov-schema/build/register.json
 
+# this config means ontology contents are automatically pushed to the test environment
 
+sparql:
+  push: https://defs-dev.opengis.net/fuseki/data
+  # graph: https://my.bblocks.example.com/  # SPARQL Graph where data will be uploaded
+                                            #  if left empty, the base URL for the publication will be used
+  query: https://defs-dev.opengis.net/fuseki/sparql
+  resources:
+    ontologies: true
 
 
 
