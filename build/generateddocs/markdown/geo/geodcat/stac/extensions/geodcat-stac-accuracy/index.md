@@ -149,34 +149,34 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 
 #### ttl
 ```ttl
-@prefix accuracy: <https://www.opengis.net/def/ogc-api/stac/accuracy/> .
+@prefix accuracy: <https://w3id.org/ogc/stac/extension/accuracy/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <urn:stac:vocab#> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/accuracy/example-1/item> dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
     dcterms:type "Feature" ;
-    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/self> ;
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
+    stac:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    stac:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
+    stac:version "1.0.0" ;
     accuracy:geometric_rmse 1 ;
     accuracy:geometric_x_bias 0 ;
     accuracy:geometric_x_stddev 5e-01 ;
     accuracy:geometric_y_bias 0 ;
     accuracy:geometric_y_stddev 5e-01 ;
     accuracy:measurement_absolute 2e-02 ;
-    accuracy:measurement_relative 1e-02 ;
-    ns1:extensions "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    ns1:hasAsset <https://example.com/stac/accuracy/example-1/data> ;
-    ns1:version "1.0.0" .
+    accuracy:measurement_relative 1e-02 .
 
 <https://example.com/stac/accuracy/example-1/data> dcat:downloadURL <https://example.com/examples/file.xyz> .
 
@@ -197,7 +197,7 @@ allOf:
 x-jsonld-prefixes:
   dqm: https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/
   dqv: http://dqv.org/tdb#
-  accuracy: https://www.opengis.net/def/ogc-api/stac/accuracy/
+  accuracy: https://w3id.org/ogc/stac/extension/accuracy/
 
 ```
 
@@ -264,17 +264,17 @@ Links to the schema:
       "@id": "oa:hasTarget"
     },
     "assets": {
-      "@id": "urn:stac:vocab#hasAsset",
+      "@id": "stac:hasAsset",
       "@container": "@id",
       "@context": {
-        "thumbnail": "http://stacspec.org/ontology/core#thumbnail",
-        "overview": "http://stacspec.org/ontology/core#overview",
-        "data": "http://stacspec.org/ontology/core#data",
-        "metadata": "http://stacspec.org/ontology/core#metadata",
+        "thumbnail": "stac:thumbnail",
+        "overview": "stac:overview",
+        "data": "stac:data",
+        "metadata": "stac:metadata",
         "type": "dct:format",
         "title": "dct:title",
         "roles": {
-          "@id": "http://stacspec.org/ontology/core#roles",
+          "@id": "stac:roles",
           "@container": "@set"
         },
         "href": {
@@ -385,16 +385,16 @@ Links to the schema:
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
-      "@id": "http://stacspec.org/ontology/core#start_datetime",
+      "@id": "stac:start_datetime",
       "@type": "xsd:dateTime"
     },
     "end_datetime": {
-      "@id": "http://stacspec.org/ontology/core#end_datetime",
+      "@id": "stac:end_datetime",
       "@type": "xsd:dateTime"
     },
     "media_type": "dct:format",
-    "stac_version": "urn:stac:vocab#version",
-    "stac_extensions": "urn:stac:vocab#extensions",
+    "stac_version": "stac:version",
+    "stac_extensions": "stac:extensions",
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
@@ -403,7 +403,7 @@ Links to the schema:
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dqm": "https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/",
     "dqv": "http://dqv.org/tdb#",
-    "accuracy": "https://www.opengis.net/def/ogc-api/stac/accuracy/",
+    "accuracy": "https://w3id.org/ogc/stac/extension/accuracy/",
     "w3ctime": "http://www.w3.org/2006/time#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
     "dcat": "http://www.w3.org/ns/dcat#",

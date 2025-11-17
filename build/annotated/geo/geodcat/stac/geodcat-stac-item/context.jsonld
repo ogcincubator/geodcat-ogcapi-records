@@ -158,24 +158,24 @@
       "@type": "xsd:dateTime"
     },
     "start_datetime": {
-      "@id": "http://stacspec.org/ontology/core#start_datetime",
+      "@id": "stac:start_datetime",
       "@type": "xsd:dateTime"
     },
     "end_datetime": {
-      "@id": "http://stacspec.org/ontology/core#end_datetime",
+      "@id": "stac:end_datetime",
       "@type": "xsd:dateTime"
     },
     "assets": {
-      "@id": "https://w3id.org/ogc/stac/core/assets",
+      "@id": "stac:assets",
       "@container": "@id",
       "@context": {
-        "thumbnail": "http://stacspec.org/ontology/core#thumbnail",
-        "overview": "http://stacspec.org/ontology/core#overview",
-        "data": "http://stacspec.org/ontology/core#data",
-        "metadata": "http://stacspec.org/ontology/core#metadata",
+        "thumbnail": "stac:thumbnail",
+        "overview": "stac:overview",
+        "data": "stac:data",
+        "metadata": "stac:metadata",
         "title": "dct:title",
         "roles": {
-          "@id": "http://stacspec.org/ontology/core#roles",
+          "@id": "stac:roles",
           "@container": "@set"
         }
       }
@@ -198,7 +198,7 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
-    "stac": "https://www.opengis.net/def/ogc-api/stac/",
+    "stac": "https://w3id.org/ogc/stac/core/",
     "@version": 1.1
   }
 }

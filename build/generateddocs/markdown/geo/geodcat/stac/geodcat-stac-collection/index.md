@@ -309,7 +309,7 @@ This is the collection example from the STAC specification.
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix stac: <urn:stac:vocab#> .
+@prefix stac: <https://w3id.org/ogc/stac/core/> .
 
 [] rdfs:label "Simple Example Collection" ;
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
@@ -319,10 +319,10 @@ This is the collection example from the STAC specification.
         "example",
         "simple" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+    rdfs:seeAlso [ rdfs:label "Simple Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
@@ -330,10 +330,10 @@ This is the collection example from the STAC specification.
         [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
-        [ rdfs:label "Simple Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
@@ -357,15 +357,15 @@ anyOf:
 - $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml
 - description: STAC core profile bound to GeoDCAT
 x-jsonld-extra-terms:
-  stac_version: urn:stac:vocab#version
-  stac_extensions: urn:stac:vocab#extensions
+  stac_version: https://w3id.org/ogc/stac/core/version
+  stac_extensions: https://w3id.org/ogc/stac/core/extensions
   description: http://purl.org/dc/terms/description
   license: http://purl.org/dc/terms/license
   keywords: http://purl.org/dc/terms/subject
   extent: http://purl.org/dc/terms/extent
   links: rdfs:seeAlso
   assets:
-    x-jsonld-id: urn:stac:vocab#hasAsset
+    x-jsonld-id: https://w3id.org/ogc/stac/core/hasAsset
     x-jsonld-container: '@id'
     x-jsonld-context:
       href:
@@ -374,7 +374,7 @@ x-jsonld-extra-terms:
       title: http://purl.org/dc/terms/title
       type: http://purl.org/dc/terms/format
 x-jsonld-prefixes:
-  stac: urn:stac:vocab#
+  stac: https://w3id.org/ogc/stac/core/
   dct: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
 
@@ -428,7 +428,7 @@ Links to the schema:
     "oa": "http://www.w3.org/ns/oa#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "dct": "http://purl.org/dc/terms/",
-    "stac": "urn:stac:vocab#",
+    "stac": "https://w3id.org/ogc/stac/core/",
     "dcat": "http://www.w3.org/ns/dcat#",
     "@version": 1.1
   }

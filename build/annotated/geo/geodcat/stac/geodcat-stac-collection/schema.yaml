@@ -1,0 +1,28 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Schema for OGC API Records profile for GeoDCAT - defines all extra elements
+  defined by GeoDCAT so that the JSON-LD context can map to GeoDCAT RDF
+anyOf:
+- $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection/schema.yaml
+- $ref: https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/collection-v1-0-0/schema.yaml
+- description: STAC core profile bound to GeoDCAT
+x-jsonld-extra-terms:
+  stac_version: https://w3id.org/ogc/stac/core/version
+  stac_extensions: https://w3id.org/ogc/stac/core/extensions
+  description: http://purl.org/dc/terms/description
+  license: http://purl.org/dc/terms/license
+  keywords: http://purl.org/dc/terms/subject
+  extent: http://purl.org/dc/terms/extent
+  links: rdfs:seeAlso
+  assets:
+    x-jsonld-id: https://w3id.org/ogc/stac/core/hasAsset
+    x-jsonld-container: '@id'
+    x-jsonld-context:
+      href:
+        '@id': http://www.w3.org/ns/dcat#downloadURL
+        '@type': '@id'
+      title: http://purl.org/dc/terms/title
+      type: http://purl.org/dc/terms/format
+x-jsonld-prefixes:
+  stac: https://w3id.org/ogc/stac/core/
+  dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
