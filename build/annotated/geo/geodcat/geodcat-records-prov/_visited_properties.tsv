@@ -113,30 +113,11 @@ path	@id
 /linkTemplates/variables	https://www.opengis.net/def/ogc-api/records/hasVariable
 /wasInfluencedBy	http://www.w3.org/ns/prov#wasInfluencedBy
 /wasInfluencedBy/id	
-/wasInfluencedBy/type	
+/wasInfluencedBy/type	http://purl.org/dc/terms/type
 /wasInfluencedBy/activityType	
 /wasInfluencedBy/prov:type	
 /wasInfluencedBy/endedAtTime	
 /wasInfluencedBy/wasAssociatedWith	
-/wasInfluencedBy/wasAssociatedWith/href	http://www.w3.org/ns/oa#hasTarget
-/wasInfluencedBy/wasAssociatedWith/rel	http://www.iana.org/assignments/relation
-/wasInfluencedBy/wasAssociatedWith/anchor	
-/wasInfluencedBy/wasAssociatedWith/type	http://purl.org/dc/terms/type
-/wasInfluencedBy/wasAssociatedWith/hreflang	http://purl.org/dc/terms/language
-/wasInfluencedBy/wasAssociatedWith/title	http://www.w3.org/2000/01/rdf-schema#label
-/wasInfluencedBy/wasAssociatedWith/length	http://purl.org/dc/terms/extent
-/wasInfluencedBy/wasAssociatedWith/provType	
-/wasInfluencedBy/wasAssociatedWith/agentType	
-/wasInfluencedBy/wasAssociatedWith/prov:type	
-/wasInfluencedBy/wasAssociatedWith/name	
-/wasInfluencedBy/wasAssociatedWith/id	
-/wasInfluencedBy/wasAssociatedWith/actedOnBehalfOf	
-/wasInfluencedBy/wasAssociatedWith/atLocation	
-/wasInfluencedBy/wasAssociatedWith/qualifiedDelegation	
-/wasInfluencedBy/wasAssociatedWith/qualifiedDelegation/id	
-/wasInfluencedBy/wasAssociatedWith/qualifiedDelegation/type	
-/wasInfluencedBy/wasAssociatedWith/qualifiedDelegation/agent	
-/wasInfluencedBy/wasAssociatedWith/qualifiedDelegation/hadActivity	
 /wasInfluencedBy/wasInformedBy	
 /wasInfluencedBy/used	
 /wasInfluencedBy/wasStartedBy	
@@ -169,8 +150,27 @@ path	@id
 /wasInfluencedBy/qualifiedAssociation/id	
 /wasInfluencedBy/qualifiedAssociation/type	
 /wasInfluencedBy/qualifiedAssociation/agent	
+/wasInfluencedBy/qualifiedAssociation/agent/provType	
+/wasInfluencedBy/qualifiedAssociation/agent/type	
+/wasInfluencedBy/qualifiedAssociation/agent/agentType	
+/wasInfluencedBy/qualifiedAssociation/agent/prov:type	
+/wasInfluencedBy/qualifiedAssociation/agent/name	
+/wasInfluencedBy/qualifiedAssociation/agent/id	
+/wasInfluencedBy/qualifiedAssociation/agent/actedOnBehalfOf	
+/wasInfluencedBy/qualifiedAssociation/agent/atLocation	
+/wasInfluencedBy/qualifiedAssociation/agent/qualifiedDelegation	
+/wasInfluencedBy/qualifiedAssociation/agent/qualifiedDelegation/id	
+/wasInfluencedBy/qualifiedAssociation/agent/qualifiedDelegation/type	
+/wasInfluencedBy/qualifiedAssociation/agent/qualifiedDelegation/agent	
+/wasInfluencedBy/qualifiedAssociation/agent/qualifiedDelegation/hadActivity	
 /wasInfluencedBy/qualifiedAssociation/hadRole	
 /wasInfluencedBy/qualifiedAssociation/hadPlan	
+/wasInfluencedBy/href	http://www.w3.org/ns/oa#hasTarget
+/wasInfluencedBy/rel	http://www.iana.org/assignments/relation
+/wasInfluencedBy/anchor	
+/wasInfluencedBy/hreflang	http://purl.org/dc/terms/language
+/wasInfluencedBy/title	http://www.w3.org/2000/01/rdf-schema#label
+/wasInfluencedBy/length	http://purl.org/dc/terms/extent
 /qualifiedInfluence	http://www.w3.org/ns/prov#qualifiedInfluence
 /qualifiedInfluence/id	@id
 /qualifiedInfluence/influencer	http://www.w3.org/ns/prov#influencer

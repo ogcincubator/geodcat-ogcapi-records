@@ -311,7 +311,7 @@ This is the collection example from the STAC specification.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 
-[] rdfs:label "Simple Example Collection" ;
+<https://example.com/stac/example1/simple-collection> rdfs:label "Simple Example Collection" ;
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
@@ -319,9 +319,10 @@ This is the collection example from the STAC specification.
         "example",
         "simple" ;
     dcterms:type "Collection" ;
-    rdfs:seeAlso [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
+    rdfs:seeAlso [ rdfs:label "Core Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
@@ -334,13 +335,13 @@ This is the collection example from the STAC specification.
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
-        [ rdfs:label "Core Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/core-item.json> ] ;
-    stac:extensions "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ] ;
+    stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
+    stac:hasProvider [ dcterms:description "Producers of awesome spatiotemporal assets" ] ;
     stac:version "1.1.0" .
 
 
@@ -391,6 +392,46 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "stac_version": "stac:version",
+    "stac_extensions": "stac:hasExtension",
+    "type": "dct:type",
+    "id": "@id",
+    "extent": "dct:extent",
+    "assets": {
+      "@context": {
+        "title": "dct:title",
+        "type": "dct:format",
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        },
+        "thumbnail": "stac:thumbnail",
+        "overview": "stac:overview",
+        "data": "stac:data",
+        "metadata": "stac:metadata"
+      },
+      "@id": "stac:hasAsset",
+      "@container": "@set"
+    },
+    "title": "rdfs:label",
+    "description": "dct:description",
+    "links": "rdfs:seeAlso",
+    "keywords": "dct:subject",
+    "license": "dct:license",
+    "datetime": {
+      "@id": "dct:date",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "providers": "stac:hasProvider",
+    "media_type": "dct:format",
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"
@@ -402,33 +443,12 @@ Links to the schema:
       "@id": "http://www.iana.org/assignments/relation",
       "@type": "@id"
     },
-    "type": "dct:type",
     "hreflang": "dct:language",
-    "title": "rdfs:label",
     "length": "dct:extent",
-    "stac_version": "stac:version",
-    "stac_extensions": "stac:extensions",
-    "description": "dct:description",
-    "license": "dct:license",
-    "keywords": "dct:subject",
-    "extent": "dct:extent",
-    "links": "rdfs:seeAlso",
-    "assets": {
-      "@id": "stac:hasAsset",
-      "@container": "@id",
-      "@context": {
-        "href": {
-          "@id": "dcat:downloadURL",
-          "@type": "@id"
-        },
-        "title": "dct:title",
-        "type": "dct:format"
-      }
-    },
-    "oa": "http://www.w3.org/ns/oa#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "dct": "http://purl.org/dc/terms/",
     "stac": "https://w3id.org/ogc/stac/core/",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "@version": 1.1
   }

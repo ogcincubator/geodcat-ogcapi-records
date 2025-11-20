@@ -1,21 +1,51 @@
 path	@id
-/stac_version	
-/stac_extensions	
-/type	
-/id	
-/extent	
+/stac_version	https://w3id.org/ogc/stac/core/version
+/stac_extensions	https://w3id.org/ogc/stac/core/hasExtension
+/type	@type
+/id	@id
+/extent	http://purl.org/dc/terms/extent
 /extent/spatial	
 /extent/spatial/bbox	
 /extent/temporal	
 /extent/temporal/interval	
-/assets	
+/assets	https://w3id.org/ogc/stac/core/hasAsset
 /assets/href	
-/assets/title	
-/assets/description	
-/assets/type	
-/assets/roles	
+/assets/title	http://purl.org/dc/terms/title
+/assets/description	http://purl.org/dc/terms/description
+/assets/type	http://purl.org/dc/terms/format
+/assets/roles	https://w3id.org/ogc/stac/core/roles
 /assets/keywords	
 /assets/bands	
+/assets/bands/title	
+/assets/bands/description	
+/assets/bands/keywords	
+/assets/bands/roles	
+/assets/bands/datetime	
+/assets/bands/start_datetime	
+/assets/bands/end_datetime	
+/assets/bands/created	
+/assets/bands/updated	
+/assets/bands/data_type	
+/assets/bands/nodata	
+/assets/bands/statistics	
+/assets/bands/statistics/minimum	
+/assets/bands/statistics/maximum	
+/assets/bands/statistics/mean	
+/assets/bands/statistics/stddev	
+/assets/bands/statistics/count	
+/assets/bands/statistics/valid_percent	
+/assets/bands/unit	
+/assets/bands/platform	
+/assets/bands/instruments	
+/assets/bands/constellation	
+/assets/bands/mission	
+/assets/bands/gsd	
+/assets/bands/license	
+/assets/bands/providers	
+/assets/bands/providers/name	
+/assets/bands/providers/description	
+/assets/bands/providers/roles	
+/assets/bands/providers/url	
 /assets/bands/name	
 /assets/datetime	
 /assets/start_datetime	
@@ -45,12 +75,42 @@ path	@id
 /assets/providers/url	
 /item_assets	
 /item_assets/href	
-/item_assets/title	
-/item_assets/description	
-/item_assets/type	
+/item_assets/title	http://purl.org/dc/terms/title
+/item_assets/description	http://purl.org/dc/terms/description
+/item_assets/type	@type
 /item_assets/roles	
 /item_assets/keywords	
 /item_assets/bands	
+/item_assets/bands/title	
+/item_assets/bands/description	
+/item_assets/bands/keywords	
+/item_assets/bands/roles	
+/item_assets/bands/datetime	
+/item_assets/bands/start_datetime	
+/item_assets/bands/end_datetime	
+/item_assets/bands/created	
+/item_assets/bands/updated	
+/item_assets/bands/data_type	
+/item_assets/bands/nodata	
+/item_assets/bands/statistics	
+/item_assets/bands/statistics/minimum	
+/item_assets/bands/statistics/maximum	
+/item_assets/bands/statistics/mean	
+/item_assets/bands/statistics/stddev	
+/item_assets/bands/statistics/count	
+/item_assets/bands/statistics/valid_percent	
+/item_assets/bands/unit	
+/item_assets/bands/platform	
+/item_assets/bands/instruments	
+/item_assets/bands/constellation	
+/item_assets/bands/mission	
+/item_assets/bands/gsd	
+/item_assets/bands/license	
+/item_assets/bands/providers	
+/item_assets/bands/providers/name	
+/item_assets/bands/providers/description	
+/item_assets/bands/providers/roles	
+/item_assets/bands/providers/url	
 /item_assets/bands/name	
 /item_assets/datetime	
 /item_assets/start_datetime	
@@ -78,45 +138,14 @@ path	@id
 /item_assets/providers/description	
 /item_assets/providers/roles	
 /item_assets/providers/url	
-/links	
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
 /links/href	http://www.w3.org/ns/oa#hasTarget
 /links/rel	http://www.iana.org/assignments/relation
+/links/anchor	
 /links/type	http://purl.org/dc/terms/type
+/links/hreflang	http://purl.org/dc/terms/language
 /links/title	http://www.w3.org/2000/01/rdf-schema#label
-/links/method	
-/links/headers	
-/links/body	
-/links/description	
-/links/keywords	
-/links/roles	
-/links/bands	
-/links/bands/name	
-/links/datetime	
-/links/start_datetime	
-/links/end_datetime	
-/links/created	
-/links/updated	
-/links/data_type	
-/links/nodata	
-/links/statistics	
-/links/statistics/minimum	
-/links/statistics/maximum	
-/links/statistics/mean	
-/links/statistics/stddev	
-/links/statistics/count	
-/links/statistics/valid_percent	
-/links/unit	
-/links/platform	
-/links/instruments	
-/links/constellation	
-/links/mission	
-/links/gsd	
-/links/license	
-/links/providers	
-/links/providers/name	
-/links/providers/description	
-/links/providers/roles	
-/links/providers/url	
+/links/length	http://purl.org/dc/terms/extent
 /summaries	
 /summaries/minimum	
 /summaries/maximum	
@@ -125,6 +154,36 @@ path	@id
 /keywords	
 /roles	
 /bands	
+/bands/title	
+/bands/description	
+/bands/keywords	
+/bands/roles	
+/bands/datetime	
+/bands/start_datetime	
+/bands/end_datetime	
+/bands/created	
+/bands/updated	
+/bands/data_type	
+/bands/nodata	
+/bands/statistics	
+/bands/statistics/minimum	
+/bands/statistics/maximum	
+/bands/statistics/mean	
+/bands/statistics/stddev	
+/bands/statistics/count	
+/bands/statistics/valid_percent	
+/bands/unit	
+/bands/platform	
+/bands/instruments	
+/bands/constellation	
+/bands/mission	
+/bands/gsd	
+/bands/license	
+/bands/providers	
+/bands/providers/name	
+/bands/providers/description	
+/bands/providers/roles	
+/bands/providers/url	
 /bands/name	
 /datetime	
 /start_datetime	
@@ -152,10 +211,5 @@ path	@id
 /providers/description	
 /providers/roles	
 /providers/url	
-/links/anchor	
-/links/hreflang	http://purl.org/dc/terms/language
-/links/length	http://purl.org/dc/terms/extent
-/extent/spatial/crs	
-/extent/temporal/trs	
 /itemType	
 /crs	
