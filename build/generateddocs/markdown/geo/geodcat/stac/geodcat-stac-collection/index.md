@@ -311,22 +311,18 @@ This is the collection example from the STAC specification.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 
-<https://example.com/stac/example1/simple-collection> rdfs:label "Simple Example Collection" ;
+<https://example.com/stac/example1/simple-collection> a <https://example.com/stac/example1/Collection> ;
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:subject "collection",
         "example",
         "simple" ;
-    dcterms:type "Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Item" ;
+    dcterms:title "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
-        [ rdfs:label "Core Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
@@ -334,10 +330,14 @@ This is the collection example from the STAC specification.
         [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
-        [ rdfs:label "Extended Item" ;
+        [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ] ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ rdfs:label "Core Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
@@ -394,12 +394,11 @@ Links to the schema:
   "@context": {
     "stac_version": "stac:version",
     "stac_extensions": "stac:hasExtension",
-    "type": "dct:type",
+    "type": "@type",
     "id": "@id",
     "extent": "dct:extent",
     "assets": {
       "@context": {
-        "title": "dct:title",
         "type": "dct:format",
         "roles": {
           "@id": "stac:roles",
@@ -413,9 +412,28 @@ Links to the schema:
       "@id": "stac:hasAsset",
       "@container": "@set"
     },
-    "title": "rdfs:label",
+    "title": "dct:title",
     "description": "dct:description",
-    "links": "rdfs:seeAlso",
+    "links": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "oa:hasTarget"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
     "keywords": "dct:subject",
     "license": "dct:license",
     "datetime": {
@@ -432,19 +450,6 @@ Links to the schema:
     },
     "providers": "stac:hasProvider",
     "media_type": "dct:format",
-    "href": {
-      "@type": "@id",
-      "@id": "oa:hasTarget"
-    },
-    "rel": {
-      "@context": {
-        "@base": "http://www.iana.org/assignments/relation/"
-      },
-      "@id": "http://www.iana.org/assignments/relation",
-      "@type": "@id"
-    },
-    "hreflang": "dct:language",
-    "length": "dct:extent",
     "stac": "https://w3id.org/ogc/stac/core/",
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",

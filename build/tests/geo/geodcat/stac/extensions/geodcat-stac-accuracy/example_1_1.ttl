@@ -8,8 +8,8 @@
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/accuracy/example-1/item> dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
-    dcterms:type "Feature" ;
+<https://example.com/stac/accuracy/example-1/item> a geojson:Feature ;
+    dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;

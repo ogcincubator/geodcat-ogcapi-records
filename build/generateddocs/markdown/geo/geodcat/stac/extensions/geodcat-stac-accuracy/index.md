@@ -159,8 +159,8 @@ This profile binds the schema for the STAC Accuracy extension to a profile of Ge
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/accuracy/example-1/item> dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
-    dcterms:type "Feature" ;
+<https://example.com/stac/accuracy/example-1/item> a geojson:Feature ;
+    dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
@@ -209,28 +209,21 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "href": {
-      "@type": "@id",
-      "@id": "oa:hasTarget"
-    },
-    "rel": {
+    "links": {
       "@context": {
-        "@base": "http://www.iana.org/assignments/relation/"
+        "type": "dct:type",
+        "title": "rdfs:label"
       },
-      "@id": "http://www.iana.org/assignments/relation",
-      "@type": "@id"
+      "@id": "rdfs:seeAlso"
     },
-    "type": "dct:type",
-    "hreflang": "dct:language",
-    "title": {
-      "@id": "rdfs:label",
-      "@container": "@set"
-    },
-    "length": "dct:extent",
-    "links": "rdfs:seeAlso",
     "stac_version": "stac:version",
     "stac_extensions": "stac:hasExtension",
     "id": "@id",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@set"
+    },
+    "type": "@type",
     "description": {
       "@id": "dct:description",
       "@container": "@set"
@@ -262,7 +255,6 @@ Links to the schema:
         "data": "stac:data",
         "metadata": "stac:metadata",
         "type": "dct:format",
-        "title": "dct:title",
         "roles": {
           "@id": "stac:roles",
           "@container": "@set"
@@ -287,7 +279,6 @@ Links to the schema:
     "properties": "@nest",
     "geometry": {
       "@context": {
-        "type": "@type",
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
@@ -334,6 +325,10 @@ Links to the schema:
       "@type": "@id"
     },
     "contacts": {
+      "@context": {
+        "type": "dct:type",
+        "title": "rdfs:label"
+      },
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
@@ -342,6 +337,7 @@ Links to the schema:
     "linkTemplates": {
       "@context": {
         "type": "dct:format",
+        "title": "rdfs:label",
         "uriTemplate": {
           "@type": "xsd:string",
           "@id": "rec:uriTemplate"
@@ -365,6 +361,19 @@ Links to the schema:
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
+    "href": {
+      "@type": "@id",
+      "@id": "oa:hasTarget"
+    },
+    "rel": {
+      "@context": {
+        "@base": "http://www.iana.org/assignments/relation/"
+      },
+      "@id": "http://www.iana.org/assignments/relation",
+      "@type": "@id"
+    },
+    "hreflang": "dct:language",
+    "length": "dct:extent",
     "stac": "https://w3id.org/ogc/stac/core/",
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
