@@ -16,6 +16,9 @@ rec:format a owl:DatatypeProperty,
 rec:hasLinkTemplate a owl:ObjectProperty,
         skos:Concept ;
     rdfs:range rec:LinkTemplate ;
+    skos:definition """"a link template based on the schema for a link that includes substitution variables who’s values are filled in at runtime prior to resolving the link.
+
+Information about the substitution variables can be obtained in one of two ways. The variable property may be used to encode the definitions of substitution variables in-line in the link. Alternatively, the varBase property can be used to specify a base URI to which a variable name may be appended to retrieve the definition of the specified substitution variable.""" ;
     skos:inScheme cs: ;
     skos:prefLabel "has link template" .
 
@@ -23,6 +26,7 @@ rec:hasVariable a owl:ObjectProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range rec:LinkTemplateVariable ;
+    skos:definition "\"a substitution variable in the associated linkTemplate" ;
     skos:inScheme cs: ;
     skos:prefLabel "has variable" .
 
@@ -59,12 +63,15 @@ rec:varBase a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:domain rec:linkTemplate ;
     rdfs:range xsd:string ;
-    skos:definition "The base URI to which the variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment." ;
+    skos:definition "The base URI to which a variable name can be appended to retrieve the definition of the variable as a JSON Schema fragment." ;
     skos:inScheme cs: ;
     skos:prefLabel "variable base" .
 
 rec:LinkTemplate a owl:Class,
         skos:Concept ;
+    skos:definition """"a link template based on the schema for a link that includes substitution variables who’s values are filled in at runtime prior to resolving the link.
+
+Information about the substitution variables can be obtained in one of two ways. The variable property may be used to encode the definitions of substitution variables in-line in the link. Alternatively, the varBase property can be used to specify a base URI to which a variable name may be appended to retrieve the definition of the specified substitution variable.""" ;
     skos:inScheme cs: ;
     skos:prefLabel "Link template" .
 
@@ -77,6 +84,7 @@ rec:LinkTemplateVariable a owl:Class,
             owl:onClass <https://www.w3.org/2019/wot/json-schema#DataSchema> ;
             owl:onProperty dct:format ;
             owl:qualifiedMinCardinality 1 ] ;
+    skos:definition "\"a substitution variable in the associated linkTemplate" ;
     skos:inScheme cs: ;
     skos:prefLabel "Link Template Variable" .
 
