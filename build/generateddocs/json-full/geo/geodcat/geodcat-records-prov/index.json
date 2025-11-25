@@ -9,13 +9,8 @@
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "schema",
   "register": "ogc-incubator",
-  "dependsOn": [
-    "ogc.model.cross-domain.prov",
-    "ogc.ogc-utils.prov",
-    "ogc.geo.geodcat.geodcat-records"
-  ],
   "version": "0.1",
-  "dateOfLastChange": "2025-11-24",
+  "dateOfLastChange": "2025-11-25",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -35,10 +30,14 @@
     "STAC"
   ],
   "shaclShapes": {
-    "ogc.geo.geodcat.records-ontology": [
-      "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/records-ontology/rules.shacl"
+    "ogc.api.records.v1.schemas.linkTemplate": [
+      "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
     ]
   },
+  "dependsOn": [
+    "ogc.geo.geodcat.geodcat-records",
+    "ogc.ogc-utils.prov"
+  ],
   "schema": {
     "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.yaml",
     "application/json": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.json"

@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.geodcat-stac-collection - GeoDCAT mapping for STAC collection",
   "bblockName": "GeoDCAT mapping for STAC collection",
   "bblockId": "ogc.geo.geodcat.stac.geodcat-stac-collection",
-  "generated": "2025-11-25T03:45:37.084493+00:00",
+  "generated": "2025-11-25T21:59:04.229652+00:00",
   "result": true,
   "items": [
     {
@@ -56,6 +56,29 @@
               "result": true,
               "isError": false,
               "message": "Validation passed"
+            }
+          ]
+        },
+        {
+          "name": "SHACL",
+          "title": "SHACL",
+          "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
+              "focusNodes": {
+                "rec:testVarExists": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n - Shape rec:testVarExists: *none*\n"
             }
           ]
         }

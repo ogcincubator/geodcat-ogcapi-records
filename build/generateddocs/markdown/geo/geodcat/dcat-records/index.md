@@ -503,14 +503,6 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:modified "2015-01-23T00:00:00Z" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:format "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:format "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Static dataset archive file" ;
@@ -519,6 +511,10 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:modified "2015-01-23T00:00:00Z" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:format "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
@@ -526,7 +522,11 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:format "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:format "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -540,12 +540,23 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcat:license "other" ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
-    rec:format [ rec:name "GeoJSON" ],
-        [ rec:name "CSV" ] ;
+    rec:format [ rec:name "CSV" ],
+        [ rec:name "GeoJSON" ] ;
     rec:hasLinkTemplate [ rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
-            rec:hasVariable "{\"bbox\":{\"description\":\"...\",\"items\":{\"format\":\"double\",\"type\":\"number\"},\"maxItems\":4,\"minItems\":4,\"type\":\"array\"},\"crs\":{\"description\":\"...\",\"enum\":[\"EPSG:4326\",\"EPSG:3857\"],\"type\":\"string\"},\"height\":{\"description\":\"...\",\"format\":\"integer\",\"maximum\":5000,\"minimum\":600,\"type\":\"number\"},\"width\":{\"description\":\"...\",\"format\":\"integer\",\"maximum\":5000,\"minimum\":600,\"type\":\"number\"}}"^^rdf:JSON ;
+            rec:hasVariable [ dcterms:description "..." ;
+                    dcterms:format "number" ;
+                    dcterms:identifier "width" ],
+                [ dcterms:description "..." ;
+                    dcterms:format "number" ;
+                    dcterms:identifier "height" ],
+                [ dcterms:description "..." ;
+                    dcterms:format "string" ;
+                    dcterms:identifier "crs" ],
+                [ dcterms:description "..." ;
+                    dcterms:format "array" ;
+                    dcterms:identifier "bbox" ] ;
             rec:uriTemplate "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png"^^xsd:string ] ;
     rec:language [ ] ;
     rec:languages [ ],
@@ -553,9 +564,9 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
     rec:themes [ thns:concepts [ thns:id "atmosphericComposition" ],
+                [ thns:id "pollution" ],
                 [ thns:id "observationPlatform" ],
-                [ thns:id "rocketSounding" ],
-                [ thns:id "pollution" ] ;
+                [ thns:id "rocketSounding" ] ;
             thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
         [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
                 <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
@@ -832,8 +843,7 @@ Links to the schema:
         "variables": {
           "@id": "rec:hasVariable",
           "@container": "@index",
-          "@index": "dct:identifier",
-          "@type": "@json"
+          "@index": "dct:identifier"
         }
       },
       "@id": "rec:hasLinkTemplate"

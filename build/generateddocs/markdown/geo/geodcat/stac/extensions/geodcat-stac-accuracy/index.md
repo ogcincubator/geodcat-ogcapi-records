@@ -361,8 +361,7 @@ Links to the schema:
         "variables": {
           "@id": "rec:hasVariable",
           "@container": "@index",
-          "@index": "dct:identifier",
-          "@type": "@json"
+          "@index": "dct:identifier"
         }
       },
       "@id": "rec:hasLinkTemplate"

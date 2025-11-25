@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension",
   "bblockName": "GeoDCAT profile of STAC Accuracy extension",
   "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy",
-  "generated": "2025-11-25T03:45:40.095506+00:00",
+  "generated": "2025-11-25T21:59:08.853574+00:00",
   "result": true,
   "items": [
     {
@@ -65,20 +65,20 @@
           "entries": [
             {
               "op": "shacl-report",
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
               "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
               "isError": false,
-              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "message": "Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
             },
             {
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                "rec:testVarExists": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n - Shape rec:testVarExists: *none*\n"
             }
           ]
         }

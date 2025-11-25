@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.dcat-records - DCAT/Records binding",
   "bblockName": "DCAT/Records binding",
   "bblockId": "ogc.geo.geodcat.dcat-records",
-  "generated": "2025-11-25T03:45:34.630300+00:00",
+  "generated": "2025-11-25T21:59:01.874765+00:00",
   "result": true,
   "items": [
     {
@@ -40,7 +40,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 125,
+              "size": 140,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -64,22 +64,22 @@
           "entries": [
             {
               "op": "shacl-report",
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
               "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
               "isError": false,
-              "message": "Validation result for _sources/records-ontology/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "message": "Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
             },
             {
-              "shaclFile": "_sources/records-ontology/rules.shacl",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
               "focusNodes": {
-                "<https://www.ogc.org/rules/rec/#testVarExists>": {
+                "rec:testVarExists": {
                   "nodes": [
                     "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/records-ontology/rules.shacl:\n - Shape <https://www.ogc.org/rules/rec/#testVarExists>: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n - Shape rec:testVarExists: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate\n"
             }
           ]
         }
