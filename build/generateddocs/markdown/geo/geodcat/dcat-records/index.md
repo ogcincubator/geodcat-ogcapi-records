@@ -486,6 +486,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
+@prefix thns: <https://w3id.org/ogc/stac/themes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a <http://example.com/records/dataset>,
@@ -496,14 +497,22 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ ] ;
     dcterms:title "Total Ozone - daily observations" ;
-    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
+    rdfs:seeAlso [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
         [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:format "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:format "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "application/zip" ;
@@ -517,15 +526,7 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
-            dcterms:format "text/html" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:format "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -539,8 +540,8 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcat:license "other" ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
-    rec:format [ rec:name "CSV" ],
-        [ rec:name "GeoJSON" ] ;
+    rec:format [ rec:name "GeoJSON" ],
+        [ rec:name "CSV" ] ;
     rec:hasLinkTemplate [ rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
@@ -551,8 +552,18 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
-    rec:themes [ ],
-        [ ] .
+    rec:themes [ thns:concepts [ thns:id "atmosphericComposition" ],
+                [ thns:id "observationPlatform" ],
+                [ thns:id "rocketSounding" ],
+                [ thns:id "pollution" ] ;
+            thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
+        [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
+                <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
+            thns:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ] .
+
+<https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> thns:id "brewer" .
+
+<https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> thns:id "dobson" .
 
 
 ```
@@ -757,6 +768,17 @@ Links to the schema:
       "@id": "rec:scopedIdentifier"
     },
     "themes": {
+      "@context": {
+        "concepts": {
+          "@context": {
+            "id": "thns:id",
+            "url": "@id"
+          },
+          "@id": "thns:concepts",
+          "@container": "@set"
+        },
+        "scheme": "thns:scheme"
+      },
       "@container": "@set",
       "@id": "rec:themes"
     },
@@ -844,6 +866,7 @@ Links to the schema:
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
+    "thns": "https://w3id.org/ogc/stac/themes/",
     "@version": 1.1
   }
 }

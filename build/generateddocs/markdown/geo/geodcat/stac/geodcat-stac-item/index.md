@@ -212,11 +212,11 @@ This is the simple item example from the STAC specification.
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -698,6 +698,17 @@ Links to the schema:
       "@id": "rec:scopedIdentifier"
     },
     "themes": {
+      "@context": {
+        "concepts": {
+          "@context": {
+            "id": "thns:id",
+            "url": "@id"
+          },
+          "@id": "thns:concepts",
+          "@container": "@set"
+        },
+        "scheme": "thns:scheme"
+      },
       "@container": "@set",
       "@id": "rec:themes"
     },
@@ -804,6 +815,7 @@ Links to the schema:
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
+    "thns": "https://w3id.org/ogc/stac/themes/",
     "stac": "https://w3id.org/ogc/stac/core/",
     "@version": 1.1
   }
