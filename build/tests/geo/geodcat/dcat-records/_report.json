@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.geo.geodcat.dcat-records - DCAT/Records binding",
   "bblockName": "DCAT/Records binding",
   "bblockId": "ogc.geo.geodcat.dcat-records",
-  "generated": "2025-11-25T21:59:01.874765+00:00",
-  "result": true,
+  "generated": "2025-11-28T03:44:37.830550+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -15,7 +15,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -59,27 +59,13 @@
           ]
         },
         {
-          "name": "SHACL",
-          "title": "SHACL",
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
           "entries": [
             {
-              "op": "shacl-report",
-              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl",
-              "focusNodes": {
-                "rec:testVarExists": {
-                  "nodes": [
-                    "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:\n - Shape rec:testVarExists: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>/rec:hasLinkTemplate\n"
+              "exception": "Exception",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 196, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 396, in validate\n    shacl_conforms, shacl_result, shacl_report, focus_nodes = shacl_validate(\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 38, in shacl_validate\n    conforms, shacl_result, shacl_report = validator.run()\n,  File \"/venv/lib/python3.10/site-packages/pyshacl/validate.py\", line 265, in run\n    _is_conform, _reports = s.validate(\n,  File \"/venv/lib/python3.10/site-packages/pyshacl/shape.py\", line 511, in validate\n    _is_conform, _reports = c.evaluate(target_graph, focus_value_nodes, _e_p)\n,  File \"/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py\", line 104, in evaluate\n    _nc, _r = self._evaluate_sparql_constraint(query_helper, target_graph, focus_value_nodes)\n,  File \"/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py\", line 121, in _evaluate_sparql_constraint\n    violating_vals = self._validate_sparql_query(sparql_text, init_binds, target_graph)\n,  File \"/venv/lib/python3.10/site-packages/pyshacl/constraints/sparql/sparql_based_constraints.py\", line 166, in _validate_sparql_query\n    results = target_graph.query(query, initBindings=init_binds)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1567, in query\n    return result(processor.query(query_object, initBindings, initNs, **kwargs))  # type: ignore[arg-type]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/processor.py\", line 137, in query\n    query = translateQuery(parsetree, base, initNs)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 934, in translateQuery\n    q[1] = traverse(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 469, in traverse\n    r = _traverse(tree, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in _traverse\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in <listcomp>\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in _traverse\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in <listcomp>\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in _traverse\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in <listcomp>\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in _traverse\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in <listcomp>\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in _traverse\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 419, in <listcomp>\n    return [_traverse(x, visitPre, visitPost) for x in e]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 426, in _traverse\n    e[k] = _traverse(val, visitPre, visitPost)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 429, in _traverse\n    _e = visitPost(e)  # type: ignore[unreachable]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/algebra.py\", line 197, in translatePName\n    return prologue.absolutize(p)  # type: ignore[return-value]\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/sparql.py\", line 430, in absolutize\n    return self.resolvePName(iri.prefix, iri.localname)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/plugins/sparql/sparql.py\", line 412, in resolvePName\n    raise Exception(\"Unknown namespace prefix : %s\" % prefix)\n,Exception: Unknown namespace prefix : dct\n"
             }
           ]
         }
@@ -89,7 +75,7 @@
   "globalErrors": {},
   "counts": {
     "total": 1,
-    "passed": 1,
-    "failed": 0
+    "passed": 0,
+    "failed": 1
   }
 }
