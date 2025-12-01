@@ -305,23 +305,33 @@ This is the collection example from the STAC specification.
 
 #### ttl
 ```ttl
+@prefix : <https://w3id.org/ogc/stac/assets/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <view:> .
+@prefix ns3: <eo:> .
+@prefix ns4: <proj:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/simple-collection> a <https://example.com/stac/example1/Collection> ;
-    dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
-    dcterms:extent [ ] ;
-    dcterms:license "CC-BY-4.0" ;
-    dcterms:subject "collection",
-        "example",
-        "simple" ;
+<https://example.com/stac/example1/simple-collection> dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
+    dcterms:extent [ :spatial [ :bbox 1.343885e+00,
+                        1.369048e+00,
+                        1.729117e+02,
+                        1.729547e+02 ] ;
+            :temporal [ :interval "2020-12-11T22:38:32.125Z",
+                        "2020-12-14T18:02:31.437Z" ] ] ;
+    dcterms:format "Collection" ;
     dcterms:title "Simple Example Collection" ;
     rdfs:seeAlso [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
+        [ rdfs:label "Extended Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
@@ -333,15 +343,45 @@ This is the collection example from the STAC specification.
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Extended Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ] ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
+    :keywords "collection",
+        "example",
+        "simple" ;
+    :license "CC-BY-4.0" ;
+    :providers [ dcterms:description "Producers of awesome spatiotemporal assets" ;
+            :name "Remote Data, Inc" ;
+            :url "http://remotedata.io" ;
+            stac:roles "processor",
+                "producer" ] ;
+    :summaries [ ns3:cloud_cover [ :maximum 1.2e+00 ;
+                    :minimum 1.2e+00 ] ;
+            :constellation "ion" ;
+            :gsd [ :maximum 6.6e-01 ;
+                    :minimum 5.12e-01 ] ;
+            :instruments "cool_sensor_v1",
+                "cool_sensor_v2" ;
+            :platform "cool_sat1",
+                "cool_sat2" ;
+            :statistics [ dcterms:format "object" ;
+                    :properties [ :urban [ dcterms:description "Percentage of pixels that detected as urban, e.g. roads and buildings." ;
+                                    :maximum 100 ;
+                                    :minimum 0 ] ;
+                            :vegetation [ dcterms:description "Percentage of pixels that are detected as vegetation, e.g. forests, grasslands, etc." ;
+                                    :maximum 100 ;
+                                    :minimum 0 ] ;
+                            :water [ dcterms:description "Percentage of pixels that are detected as water, e.g. rivers, oceans and ponds." ;
+                                    :maximum 100 ;
+                                    :minimum 0 ] ] ] ;
+            ns4:cpde "EPSG:32659" ;
+            ns2:off_nadir [ :maximum 3.8e+00 ;
+                    :minimum 3.8e+00 ] ;
+            ns2:sun_azimuth [ :maximum 1.357e+02 ;
+                    :minimum 1.357e+02 ] ;
+            ns2:sun_elevation [ :maximum 5.49e+01 ;
+                    :minimum 5.49e+01 ] ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
-    stac:hasProvider [ dcterms:description "Producers of awesome spatiotemporal assets" ] ;
     stac:version "1.1.0" .
 
 
@@ -392,28 +432,30 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "stac_version": "stac:version",
     "stac_extensions": "stac:hasExtension",
-    "type": "@type",
+    "type": "dct:format",
     "id": "@id",
-    "extent": "dct:extent",
-    "assets": {
+    "extent": {
       "@context": {
-        "type": "dct:format",
-        "roles": {
-          "@id": "stac:roles",
-          "@container": "@set"
+        "spatial": {
+          "@context": {
+            "bbox": {}
+          }
         },
-        "thumbnail": "stac:thumbnail",
-        "overview": "stac:overview",
-        "data": "stac:data",
-        "metadata": "stac:metadata"
+        "temporal": {
+          "@context": {
+            "interval": {}
+          }
+        }
       },
-      "@id": "stac:hasAsset",
-      "@container": "@set"
+      "@id": "dct:extent"
     },
-    "title": "dct:title",
-    "description": "dct:description",
+    "item_assets": {
+      "@context": {
+        "href": {},
+        "type": "@type"
+      }
+    },
     "links": {
       "@context": {
         "href": {
@@ -427,6 +469,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
+        "anchor": {},
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
@@ -434,21 +477,63 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "keywords": "dct:subject",
-    "license": "dct:license",
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
+    "summaries": {
+      "@context": {
+        "minimum": {},
+        "maximum": {}
+      }
     },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
+    "title": "dct:title",
+    "description": "dct:description",
+    "keywords": {},
+    "roles": {
+      "@id": "stac:roles",
+      "@container": "@set"
     },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
+    "bands": {
+      "@context": {
+        "name": {}
+      }
     },
-    "providers": "stac:hasProvider",
+    "datetime": {},
+    "start_datetime": {},
+    "end_datetime": {},
+    "created": {},
+    "updated": {},
+    "data_type": {},
+    "nodata": {},
+    "statistics": {
+      "@context": {
+        "minimum": {},
+        "maximum": {},
+        "mean": {},
+        "stddev": {},
+        "count": {},
+        "valid_percent": {}
+      }
+    },
+    "unit": {},
+    "platform": {},
+    "instruments": {},
+    "constellation": {},
+    "mission": {},
+    "gsd": {},
+    "license": {},
+    "providers": {
+      "@context": {
+        "name": {},
+        "url": {}
+      }
+    },
+    "@vocab": "https://w3id.org/ogc/stac/assets/",
+    "assets": {
+      "@context": {
+        "href": {}
+      },
+      "@id": "stac:hasAsset",
+      "@container": "@set"
+    },
+    "stac_version": "stac:version",
     "media_type": "dct:format",
     "stac": "https://w3id.org/ogc/stac/core/",
     "dct": "http://purl.org/dc/terms/",

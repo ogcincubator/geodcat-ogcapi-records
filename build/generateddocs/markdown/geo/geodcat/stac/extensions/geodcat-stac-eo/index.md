@@ -359,16 +359,23 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 #### ttl
 ```ttl
+@prefix : <https://w3id.org/ogc/stac/assets/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eo: <https://w3id.org/ogc/stac/eo/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/eo-collection> a <https://example.com/stac/raster/example-1/Collection> ;
-    dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
-    dcterms:extent [ ] ;
-    dcterms:license "CC-BY-4.0" ;
+<https://example.com/stac/raster/example-1/eo-collection> dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
+    dcterms:extent [ :spatial [ geojson:bbox ( ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ) ] ;
+            :temporal [ :interval "2020-12-11T22:38:32.125Z",
+                        "2020-12-14T18:02:31.437Z" ] ] ;
+    dcterms:format "Collection" ;
     dcterms:title "Simple EO Collection" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -378,6 +385,73 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+    dcat:license "CC-BY-4.0" ;
+    :item_assets [ :analytic [ dcterms:title "4-Band Analytic" ;
+                    :bands [ :common_name "red" ;
+                            :name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:full_width_half_max 9e-01 ;
+                            eo:solar_illumination 1.51206e+03 ],
+                        [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ;
+                            eo:solar_illumination 1.82324e+03 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-01 ;
+                            eo:solar_illumination 1.95966e+03 ],
+                        [ :name "band4" ;
+                            eo:center_wavelength 8e-01 ;
+                            eo:common_name "nir" ;
+                            eo:full_width_half_max 1.52e-01 ;
+                            eo:solar_illumination 1.04163e+03 ] ;
+                    stac:roles "data" ] ;
+            :thumbnail [ a <https://w3id.org/ogc/stac/assets/image/png> ;
+                    dcterms:title "Thumbnail" ;
+                    stac:roles "thumbnail" ] ;
+            :visual [ dcterms:title "3-Band Visual" ;
+                    :bands [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ],
+                        [ :name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:common_name "red" ;
+                            eo:full_width_half_max 9e-02 ] ;
+                    stac:roles "visual" ] ] ;
+    :summaries [ :bands [ :name "band3" ;
+                    eo:center_wavelength 6.45e-01 ;
+                    eo:common_name "red" ;
+                    eo:full_width_half_max 9e-02 ;
+                    eo:solar_illumination 1.51206e+03 ],
+                [ :name "band2" ;
+                    eo:center_wavelength 5.6e-01 ;
+                    eo:common_name "green" ;
+                    eo:full_width_half_max 8e-02 ;
+                    eo:solar_illumination 1.82324e+03 ],
+                [ :name "band1" ;
+                    eo:center_wavelength 4.7e-01 ;
+                    eo:common_name "blue" ;
+                    eo:full_width_half_max 7e-02 ;
+                    eo:solar_illumination 1.95966e+03 ],
+                [ :name "band4" ;
+                    eo:center_wavelength 8e-01 ;
+                    eo:common_name "nir" ;
+                    eo:full_width_half_max 1.52e-01 ;
+                    eo:solar_illumination 1.04163e+03 ] ;
+            :constellation "ion" ;
+            :instruments "cool_sensor_v1",
+                "cool_sensor_v2" ;
+            :platform "cool_sat1",
+                "cool_sat2" ;
+            eo:cloud_cover [ :maximum 50 ;
+                    :minimum 0 ] ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
 
@@ -699,6 +773,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 #### ttl
 ```ttl
+@prefix : <https://w3id.org/ogc/stac/assets/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix eo: <https://w3id.org/ogc/stac/eo/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
@@ -709,29 +784,74 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/raster/example-1/20201211_223832_CS2> a geojson:Feature ;
-    dcterms:created "2020-12-12T01:48:13.725Z" ;
+<https://example.com/stac/raster/example-1/20201211_223832_CS2> dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    dcterms:format "Feature" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
-    stac:hasAsset [ stac:thumbnail [ dcterms:format "image/png" ;
+    :collection "eo-collection" ;
+    :gsd 6.6e-01 ;
+    :instruments "cool_sensor_v1" ;
+    :platform "cool_sat2" ;
+    stac:hasAsset [ :analytic [ dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+                    dcterms:title "4-Band Analytic" ;
+                    oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
+                    :bands [ :name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:common_name "red" ;
+                            eo:full_width_half_max 9e-02 ;
+                            eo:solar_illumination 1.51206e+03 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ;
+                            eo:solar_illumination 1.95966e+03 ],
+                        [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ;
+                            eo:solar_illumination 1.82324e+03 ],
+                        [ :name "band4" ;
+                            eo:center_wavelength 8e-01 ;
+                            eo:common_name "nir" ;
+                            eo:full_width_half_max 1.52e-01 ;
+                            eo:solar_illumination 1.04163e+03 ] ;
+                    stac:roles "data" ;
+                    eo:cloud_cover 1.2e+00 ] ;
+            :thumbnail [ dcterms:format "image/png" ;
                     dcterms:title "Thumbnail" ;
                     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> ;
-                    stac:roles "thumbnail" ] ] ;
+                    stac:roles "thumbnail" ] ;
+            :visual [ dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
+                    dcterms:title "3-Band Visual" ;
+                    oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> ;
+                    :bands [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ],
+                        [ :name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:common_name "red" ;
+                            eo:full_width_half_max 9e-02 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ] ;
+                    stac:roles "visual" ] ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" ;
     eo:cloud_cover 1.2e+00 ;
@@ -765,25 +885,50 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "stac_version": "stac:version",
     "stac_extensions": "stac:hasExtension",
-    "type": "@type",
+    "type": "dct:format",
     "id": "@id",
-    "extent": "dct:extent",
-    "assets": {
+    "extent": {
       "@context": {
-        "type": "dct:format",
-        "roles": {
-          "@id": "stac:roles",
-          "@container": "@set"
-        },
-        "thumbnail": "stac:thumbnail",
-        "overview": "stac:overview",
-        "data": "stac:data",
-        "metadata": "stac:metadata"
+        "spatial": {},
+        "temporal": {
+          "@context": {
+            "interval": {}
+          }
+        }
       },
-      "@id": "stac:hasAsset",
-      "@container": "@set"
+      "@id": "dct:extent"
+    },
+    "item_assets": {
+      "@context": {
+        "type": "@type"
+      }
+    },
+    "links": {
+      "@context": {
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "anchor": {},
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent",
+        "method": {},
+        "headers": {},
+        "body": {}
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "summaries": {
+      "@context": {
+        "minimum": {},
+        "maximum": {}
+      }
     },
     "title": {
       "@id": "dct:title",
@@ -793,31 +938,58 @@ Links to the schema:
       "@id": "dct:description",
       "@container": "@set"
     },
-    "links": {
-      "@context": {
-        "type": "dct:type",
-        "title": "rdfs:label"
-      },
-      "@id": "rdfs:seeAlso"
-    },
     "keywords": {
-      "@id": "dct:subject",
+      "@id": "dcat:keyword",
       "@container": "@set"
     },
-    "license": "dct:license",
+    "roles": {
+      "@id": "stac:roles",
+      "@container": "@set"
+    },
+    "bands": {
+      "@context": {
+        "name": {}
+      }
+    },
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
+    "start_datetime": {},
+    "end_datetime": {},
+    "created": "dct:created",
+    "updated": "dct:modified",
+    "data_type": {},
+    "nodata": {},
+    "statistics": {
+      "@context": {
+        "minimum": {},
+        "maximum": {},
+        "mean": {},
+        "stddev": {},
+        "count": {},
+        "valid_percent": {}
+      }
     },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
+    "unit": {},
+    "platform": {},
+    "instruments": {},
+    "constellation": {},
+    "mission": {},
+    "gsd": {},
+    "license": "dcat:license",
+    "providers": {
+      "@context": {
+        "name": {},
+        "url": {}
+      }
     },
-    "providers": "stac:hasProvider",
+    "@vocab": "https://w3id.org/ogc/stac/assets/",
+    "assets": {
+      "@id": "stac:hasAsset",
+      "@container": "@set"
+    },
+    "stac_version": "stac:version",
     "media_type": "dct:format",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -835,10 +1007,12 @@ Links to the schema:
     "properties": "@nest",
     "geometry": {
       "@context": {
+        "type": "@type",
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        }
+        },
+        "geometries": {}
       },
       "@id": "geojson:geometry"
     },
@@ -851,15 +1025,67 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "time": "dct:temporal",
-    "created": "dct:created",
-    "updated": "dct:modified",
-    "language": "rec:language",
+    "time": {
+      "@context": {
+        "date": {},
+        "timestamp": {},
+        "interval": {},
+        "resolution": {}
+      },
+      "@id": "dct:temporal"
+    },
+    "linkTemplates": {
+      "@context": {
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent",
+        "uriTemplate": {
+          "@type": "xsd:string",
+          "@id": "rec:uriTemplate"
+        },
+        "varBase": "rec:varBase",
+        "variables": {
+          "@id": "rec:hasVariable",
+          "@container": "@index",
+          "@index": "dct:identifier"
+        }
+      },
+      "@id": "rec:hasLinkTemplate"
+    },
+    "collection": {},
+    "language": {
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel",
+        "alternate": {},
+        "dir": {}
+      },
+      "@id": "rec:language"
+    },
     "languages": {
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel",
+        "alternate": {},
+        "dir": {}
+      },
       "@container": "@set",
       "@id": "rec:languages"
     },
     "resourceLanguages": {
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel",
+        "alternate": {},
+        "dir": {}
+      },
       "@container": "@set",
       "@id": "rec:resourceLanguages"
     },
@@ -875,8 +1101,14 @@ Links to the schema:
       "@context": {
         "concepts": {
           "@context": {
-            "id": "thns:id",
-            "url": "@id"
+            "id": {
+              "@id": "thns:id",
+              "@type": "xsd:string"
+            },
+            "url": {
+              "@id": "@id",
+              "@type": "@id"
+            }
           },
           "@id": "thns:concepts",
           "@container": "@set"
@@ -897,44 +1129,59 @@ Links to the schema:
     },
     "contacts": {
       "@context": {
-        "type": "dct:type",
-        "title": "rdfs:label"
+        "identifier": {},
+        "name": {},
+        "position": {},
+        "organization": {},
+        "logo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        },
+        "phones": {
+          "@context": {
+            "value": {}
+          }
+        },
+        "emails": {
+          "@context": {
+            "value": {}
+          }
+        },
+        "addresses": {
+          "@context": {
+            "deliveryPoint": {},
+            "city": {},
+            "administrativeArea": {},
+            "postalCode": {},
+            "country": {}
+          }
+        },
+        "hoursOfService": {},
+        "contactInstructions": {}
       },
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
     "rights": "dcat:rights",
-    "linkTemplates": {
-      "@context": {
-        "type": "dct:format",
-        "title": "rdfs:label",
-        "uriTemplate": {
-          "@type": "xsd:string",
-          "@id": "rec:uriTemplate"
-        },
-        "varBase": "rec:varBase",
-        "variables": {
-          "@id": "rec:hasVariable",
-          "@container": "@index",
-          "@index": "dct:identifier"
-        }
-      },
-      "@id": "rec:hasLinkTemplate"
-    },
-    "href": {
-      "@type": "@id",
-      "@id": "oa:hasTarget"
-    },
-    "rel": {
-      "@context": {
-        "@base": "http://www.iana.org/assignments/relation/"
-      },
-      "@id": "http://www.iana.org/assignments/relation",
-      "@type": "@id"
-    },
-    "hreflang": "dct:language",
-    "length": "dct:extent",
+    "eo:cloud_cover": {},
+    "eo:snow_cover": {},
+    "eo:common_name": {},
+    "eo:center_wavelength": {},
+    "eo:full_width_half_max": {},
+    "eo:solar_illumination": {},
     "eo:bands": {
       "@id": "eo:bands",
       "@context": {
@@ -949,6 +1196,10 @@ Links to the schema:
         "@base": "http://example.com/variables/",
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
+    },
+    "href": {
+      "@type": "@id",
+      "@id": "oa:hasTarget"
     },
     "stac": "https://w3id.org/ogc/stac/core/",
     "dct": "http://purl.org/dc/terms/",

@@ -129,13 +129,13 @@ Example from PROJJSON spec at [https://proj.org/en/9.4/specifications/projjson.h
             proj:north_latitude 7.471e+01 ;
             proj:south_latitude 1.492e+01 ;
             proj:west_longitude 1.6765e+02 ] ;
-    proj:coordinate_system [ proj:axis [ proj:abbreviation "Lat" ;
-                    proj:direction "north" ;
-                    proj:name "Geodetic latitude" ;
-                    proj:unit "degree" ],
-                [ proj:abbreviation "Lon" ;
+    proj:coordinate_system [ proj:axis [ proj:abbreviation "Lon" ;
                     proj:direction "east" ;
                     proj:name "Geodetic longitude" ;
+                    proj:unit "degree" ],
+                [ proj:abbreviation "Lat" ;
+                    proj:direction "north" ;
+                    proj:name "Geodetic latitude" ;
                     proj:unit "degree" ] ;
             proj:subtype "ellipsoidal" ] ;
     proj:datum [ proj:ellipsoid [ proj:inverse_flattening 2.982572e+02 ;
@@ -178,6 +178,57 @@ Links to the schema:
 {
   "@context": {
     "@vocab": "https://proj.org/ontology/",
+    "$schema": {},
+    "type": {},
+    "source_crs": {},
+    "target_crs": {},
+    "name": {},
+    "authority": {},
+    "code": {},
+    "id": {},
+    "ids": {},
+    "method": {},
+    "value": {},
+    "conversion_factor": {},
+    "unit": {},
+    "parameters": {},
+    "transformation": {},
+    "scope": {},
+    "area": {},
+    "east_longitude": {},
+    "west_longitude": {},
+    "south_latitude": {},
+    "north_latitude": {},
+    "bbox": {},
+    "remarks": {},
+    "usages": {},
+    "components": {},
+    "anchor": {},
+    "datum": {},
+    "subtype": {},
+    "abbreviation": {},
+    "direction": {},
+    "axis": {},
+    "coordinate_system": {},
+    "base_crs": {},
+    "conversion": {},
+    "semi_major_axis": {},
+    "semi_minor_axis": {},
+    "inverse_flattening": {},
+    "radius": {},
+    "ellipsoid": {},
+    "longitude": {},
+    "prime_meridian": {},
+    "frame_reference_epoch": {},
+    "deformation_model": {},
+    "members": {},
+    "accuracy": {},
+    "datum_ensemble": {},
+    "calendar": {},
+    "time_origin": {},
+    "interpolation_crs": {},
+    "geoid_model": {},
+    "steps": {},
     "proj": "https://proj.org/ontology/",
     "@version": 1.1
   }

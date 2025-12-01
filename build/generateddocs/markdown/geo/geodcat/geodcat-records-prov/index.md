@@ -492,13 +492,117 @@ Links to the schema:
     },
     "type": "@type",
     "id": "@id",
-    "properties": "@nest",
+    "properties": {
+      "@context": {
+        "language": {
+          "@context": {
+            "code": {},
+            "alternate": {},
+            "dir": {}
+          },
+          "@id": "rec:language"
+        },
+        "languages": {
+          "@context": {
+            "code": {},
+            "alternate": {},
+            "dir": {}
+          },
+          "@container": "@set",
+          "@id": "rec:languages"
+        },
+        "resourceLanguages": {
+          "@context": {
+            "code": {},
+            "alternate": {},
+            "dir": {}
+          },
+          "@container": "@set",
+          "@id": "rec:resourceLanguages"
+        },
+        "externalIds": {
+          "@context": {
+            "scheme": "rec:scheme",
+            "value": "rec:id"
+          },
+          "@container": "@set",
+          "@id": "rec:scopedIdentifier"
+        },
+        "themes": {
+          "@context": {
+            "concepts": {
+              "@context": {
+                "id": "thns:id",
+                "url": "@id"
+              },
+              "@id": "thns:concepts",
+              "@container": "@set"
+            },
+            "scheme": "thns:scheme"
+          },
+          "@container": "@set",
+          "@id": "rec:themes"
+        },
+        "formats": {
+          "@context": {
+            "name": "rec:name",
+            "mediaType": "rec:mediaType"
+          },
+          "@container": "@set",
+          "@id": "rec:format",
+          "@type": "@id"
+        },
+        "contacts": {
+          "@context": {
+            "identifier": {},
+            "position": {},
+            "organization": {},
+            "logo": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "type": "dct:type",
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              }
+            },
+            "phones": {},
+            "emails": {},
+            "addresses": {
+              "@context": {
+                "deliveryPoint": {},
+                "city": {},
+                "administrativeArea": {},
+                "postalCode": {},
+                "country": {}
+              }
+            },
+            "hoursOfService": {},
+            "contactInstructions": {},
+            "roles": {}
+          },
+          "@container": "@set",
+          "@id": "dcat:contactPoint",
+          "@type": "@id"
+        },
+        "license": "dcat:license",
+        "rights": "dcat:rights"
+      }
+    },
     "geometry": {
       "@context": {
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        }
+        },
+        "geometries": {}
       },
       "@id": "geojson:geometry"
     },
@@ -518,7 +622,8 @@ Links to the schema:
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
-        "length": "dct:extent"
+        "length": "dct:extent",
+        "anchor": {}
       },
       "@id": "rdfs:seeAlso"
     },
@@ -527,82 +632,15 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "time": "dct:temporal",
-    "created": "dct:created",
-    "updated": "dct:modified",
-    "title": {
-      "@container": "@set",
-      "@id": "dct:title"
-    },
-    "description": {
-      "@container": "@set",
-      "@id": "dct:description"
-    },
-    "keywords": {
-      "@container": "@set",
-      "@id": "dcat:keyword"
-    },
-    "language": "rec:language",
-    "languages": {
-      "@container": "@set",
-      "@id": "rec:languages"
-    },
-    "resourceLanguages": {
-      "@container": "@set",
-      "@id": "rec:resourceLanguages"
-    },
-    "externalIds": {
+    "time": {
       "@context": {
-        "scheme": "rec:scheme",
-        "value": "rec:id"
+        "date": {},
+        "timestamp": {},
+        "interval": {},
+        "resolution": {}
       },
-      "@container": "@set",
-      "@id": "rec:scopedIdentifier"
+      "@id": "dct:temporal"
     },
-    "themes": {
-      "@context": {
-        "concepts": {
-          "@context": {
-            "id": "thns:id",
-            "url": "@id"
-          },
-          "@id": "thns:concepts",
-          "@container": "@set"
-        },
-        "scheme": "thns:scheme"
-      },
-      "@container": "@set",
-      "@id": "rec:themes"
-    },
-    "formats": {
-      "@context": {
-        "name": "rec:name",
-        "mediaType": "rec:mediaType"
-      },
-      "@container": "@set",
-      "@id": "rec:format",
-      "@type": "@id"
-    },
-    "contacts": {
-      "@context": {
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@container": "@set",
-      "@id": "dcat:contactPoint",
-      "@type": "@id"
-    },
-    "license": "dcat:license",
-    "rights": "dcat:rights",
     "linkTemplates": {
       "@context": {
         "rel": {
@@ -629,6 +667,83 @@ Links to the schema:
       },
       "@id": "rec:hasLinkTemplate"
     },
+    "created": "dct:created",
+    "updated": "dct:modified",
+    "title": {
+      "@container": "@set",
+      "@id": "dct:title"
+    },
+    "description": {
+      "@container": "@set",
+      "@id": "dct:description"
+    },
+    "keywords": {
+      "@container": "@set",
+      "@id": "dcat:keyword"
+    },
+    "language": {
+      "@id": "rec:language",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
+    "languages": {
+      "@container": "@set",
+      "@id": "rec:languages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
+    "resourceLanguages": {
+      "@container": "@set",
+      "@id": "rec:resourceLanguages",
+      "@context": {
+        "code": "rec:languageCode",
+        "name": "skos:prefLabel"
+      }
+    },
+    "externalIds": {
+      "@container": "@set",
+      "@id": "rec:scopedIdentifier",
+      "@context": {
+        "scheme": "rec:scheme",
+        "value": "rec:id"
+      }
+    },
+    "themes": {
+      "@container": "@set",
+      "@id": "rec:themes",
+      "@context": {
+        "concepts": {
+          "@id": "rec:concept",
+          "@context": {
+            "id": {
+              "@type": "xsd:string",
+              "@id": "rec:conceptID"
+            },
+            "url": {
+              "@type": "@id",
+              "@id": "dcat:theme"
+            }
+          }
+        },
+        "scheme": "rec:scheme"
+      }
+    },
+    "formats": {
+      "@id": "rec:format",
+      "@context": {
+        "name": "rec:name"
+      }
+    },
+    "contacts": {
+      "@container": "@set",
+      "@id": "dcat:contactPoint",
+      "@type": "@id"
+    },
+    "license": "dct:license",
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",
@@ -640,6 +755,7 @@ Links to the schema:
     },
     "wasInfluencedBy": {
       "@context": {
+        "type": "dct:type",
         "rel": {
           "@context": {
             "@base": "http://www.iana.org/assignments/relation/"
@@ -647,7 +763,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "type": "dct:type",
+        "anchor": {},
         "hreflang": "dct:language",
         "title": "rdfs:label",
         "length": "dct:extent"
@@ -659,6 +775,7 @@ Links to the schema:
       "@context": {
         "influencer": {
           "@context": {
+            "type": "dct:type",
             "rel": {
               "@context": {
                 "@base": "http://www.iana.org/assignments/relation/"
@@ -666,7 +783,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "type": "dct:type",
+            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -676,6 +793,7 @@ Links to the schema:
         },
         "activity": {
           "@context": {
+            "type": "dct:type",
             "wasAssociatedWith": {
               "@context": {
                 "rel": {
@@ -685,7 +803,7 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "type": "dct:type",
+                "anchor": {},
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
@@ -706,6 +824,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
+            "anchor": {},
             "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
@@ -719,6 +838,7 @@ Links to the schema:
       "@type": "@id"
     },
     "provType": "@type",
+    "prov:type": {},
     "hadMember": {
       "@id": "prov:hadMember",
       "@type": "@id"
@@ -727,6 +847,7 @@ Links to the schema:
     "entityType": "@type",
     "has_provenance": {
       "@context": {
+        "type": "dct:type",
         "wasAssociatedWith": {
           "@id": "prov:wasAssociatedWith",
           "@type": "@id",
@@ -738,7 +859,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "type": "dct:type",
+            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -750,6 +871,7 @@ Links to the schema:
     },
     "wasGeneratedBy": {
       "@context": {
+        "type": "dct:type",
         "wasAssociatedWith": {
           "@context": {
             "rel": {
@@ -759,7 +881,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "type": "dct:type",
+            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -780,6 +902,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
+        "anchor": {},
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
@@ -806,6 +929,7 @@ Links to the schema:
     },
     "wasInvalidatedBy": {
       "@context": {
+        "type": "dct:type",
         "wasAssociatedWith": {
           "@context": {
             "rel": {
@@ -815,7 +939,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "type": "dct:type",
+            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -851,6 +975,7 @@ Links to the schema:
       "@context": {
         "hadActivity": {
           "@context": {
+            "type": "dct:type",
             "wasAssociatedWith": {
               "@context": {
                 "rel": {
@@ -860,7 +985,7 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "type": "dct:type",
+                "anchor": {},
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
@@ -877,6 +1002,15 @@ Links to the schema:
       "@type": "@id"
     },
     "qualifiedAttribution": {
+      "@context": {
+        "agent": {
+          "@context": {
+            "type": "dct:type"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
       "@id": "prov:qualifiedAttribution",
       "@type": "@id"
     },
