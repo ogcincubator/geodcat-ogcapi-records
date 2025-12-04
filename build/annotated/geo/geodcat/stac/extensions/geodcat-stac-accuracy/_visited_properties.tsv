@@ -1,52 +1,12 @@
 path	@id
-/stac_version	
 /stac_extensions	https://w3id.org/ogc/stac/core/hasExtension
 /type	@type
 /id	@id
-/title	
-/description	
-/keywords	
-/license	
-/providers	
-/providers/name	
-/providers/description	
-/providers/roles	
-/providers/url	
 /extent	http://purl.org/dc/terms/extent
 /extent/spatial	
 /extent/spatial/bbox	
 /extent/temporal	
 /extent/temporal/interval	
-/assets	https://w3id.org/ogc/stac/core/hasAsset
-/assets/href	
-/assets/title	http://purl.org/dc/terms/title
-/assets/description	http://purl.org/dc/terms/description
-/assets/type	http://purl.org/dc/terms/format
-/assets/roles	https://w3id.org/ogc/stac/core/roles
-/assets/datetime	
-/assets/start_datetime	
-/assets/end_datetime	
-/assets/created	
-/assets/updated	
-/assets/platform	
-/assets/instruments	
-/assets/constellation	
-/assets/mission	
-/assets/gsd	
-/assets/license	
-/assets/providers	
-/assets/providers/name	
-/assets/providers/description	
-/assets/providers/roles	
-/assets/providers/url	
-/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
-/links/href	http://www.w3.org/ns/oa#hasTarget
-/links/rel	http://www.iana.org/assignments/relation
-/links/type	http://purl.org/dc/terms/type
-/links/title	http://www.w3.org/2000/01/rdf-schema#label
-/summaries	
-/summaries/minimum	
-/summaries/maximum	
 /item_assets	
 /item_assets/href	
 /item_assets/title	http://purl.org/dc/terms/title
@@ -112,9 +72,20 @@ path	@id
 /item_assets/providers/description	
 /item_assets/providers/roles	
 /item_assets/providers/url	
+/links	http://www.w3.org/2000/01/rdf-schema#seeAlso
+/links/href	http://www.w3.org/ns/oa#hasTarget
+/links/rel	http://www.iana.org/assignments/relation
 /links/anchor	
+/links/type	http://purl.org/dc/terms/type
 /links/hreflang	http://purl.org/dc/terms/language
+/links/title	http://www.w3.org/2000/01/rdf-schema#label
 /links/length	http://purl.org/dc/terms/extent
+/summaries	
+/summaries/minimum	
+/summaries/maximum	
+/title	
+/description	
+/keywords	
 /roles	
 /bands	
 /bands/title	
@@ -168,6 +139,18 @@ path	@id
 /constellation	
 /mission	
 /gsd	
+/license	
+/providers	
+/providers/name	
+/providers/description	
+/providers/roles	
+/providers/url	
+/assets	https://w3id.org/ogc/stac/core/hasAsset
+/assets/href	
+/assets/title	http://purl.org/dc/terms/title
+/assets/description	http://purl.org/dc/terms/description
+/assets/type	http://purl.org/dc/terms/format
+/assets/roles	https://w3id.org/ogc/stac/core/roles
 /properties	@nest
 /geometry	https://purl.org/geojson/vocab#geometry
 /geometry/type	@type
@@ -399,3 +382,20 @@ path	@id
 /properties/accuracy:measurement_relative	
 /properties/accuracy:measurement_absolute	
 /summaries/bands	
+/stac_version	
+/assets/datetime	
+/assets/start_datetime	
+/assets/end_datetime	
+/assets/created	
+/assets/updated	
+/assets/platform	
+/assets/instruments	
+/assets/constellation	
+/assets/mission	
+/assets/gsd	
+/assets/license	
+/assets/providers	
+/assets/providers/name	
+/assets/providers/description	
+/assets/providers/roles	
+/assets/providers/url	
