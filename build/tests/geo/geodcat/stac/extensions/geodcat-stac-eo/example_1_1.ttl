@@ -51,29 +51,24 @@
                     dcterms:title "Thumbnail" ;
                     stac:roles "thumbnail" ] ;
             :visual [ dcterms:title "3-Band Visual" ;
-                    :bands [ :name "band1" ;
-                            eo:center_wavelength 4.7e-01 ;
-                            eo:common_name "blue" ;
-                            eo:full_width_half_max 7e-02 ],
-                        [ :name "band2" ;
+                    :bands [ :name "band2" ;
                             eo:center_wavelength 5.6e-01 ;
                             eo:common_name "green" ;
                             eo:full_width_half_max 8e-02 ],
                         [ :name "band3" ;
                             eo:center_wavelength 6.45e-01 ;
                             eo:common_name "red" ;
-                            eo:full_width_half_max 9e-02 ] ;
+                            eo:full_width_half_max 9e-02 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ] ;
                     stac:roles "visual" ] ] ;
     :summaries [ :bands [ :name "band1" ;
                     eo:center_wavelength 4.7e-01 ;
                     eo:common_name "blue" ;
                     eo:full_width_half_max 7e-02 ;
                     eo:solar_illumination 1.95966e+03 ],
-                [ :name "band3" ;
-                    eo:center_wavelength 6.45e-01 ;
-                    eo:common_name "red" ;
-                    eo:full_width_half_max 9e-02 ;
-                    eo:solar_illumination 1.51206e+03 ],
                 [ :name "band2" ;
                     eo:center_wavelength 5.6e-01 ;
                     eo:common_name "green" ;
@@ -83,7 +78,12 @@
                     eo:center_wavelength 8e-01 ;
                     eo:common_name "nir" ;
                     eo:full_width_half_max 1.52e-01 ;
-                    eo:solar_illumination 1.04163e+03 ] ;
+                    eo:solar_illumination 1.04163e+03 ],
+                [ :name "band3" ;
+                    eo:center_wavelength 6.45e-01 ;
+                    eo:common_name "red" ;
+                    eo:full_width_half_max 9e-02 ;
+                    eo:solar_illumination 1.51206e+03 ] ;
             :constellation "ion" ;
             :instruments "cool_sensor_v1",
                 "cool_sensor_v2" ;
