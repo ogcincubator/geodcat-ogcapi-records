@@ -387,17 +387,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     dcat:license "CC-BY-4.0" ;
     :item_assets [ :analytic [ dcterms:title "4-Band Analytic" ;
-                    :bands [ :name "band2" ;
-                            eo:center_wavelength 5.6e-01 ;
-                            eo:common_name "green" ;
-                            eo:full_width_half_max 8e-02 ;
-                            eo:solar_illumination 1.82324e+03 ],
-                        [ :common_name "red" ;
-                            :name "band3" ;
-                            eo:center_wavelength 6.45e-01 ;
-                            eo:full_width_half_max 9e-01 ;
-                            eo:solar_illumination 1.51206e+03 ],
-                        [ :name "band1" ;
+                    :bands [ :name "band1" ;
                             eo:center_wavelength 4.7e-01 ;
                             eo:common_name "blue" ;
                             eo:full_width_half_max 7e-01 ;
@@ -406,36 +396,36 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
                             eo:center_wavelength 8e-01 ;
                             eo:common_name "nir" ;
                             eo:full_width_half_max 1.52e-01 ;
-                            eo:solar_illumination 1.04163e+03 ] ;
+                            eo:solar_illumination 1.04163e+03 ],
+                        [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ;
+                            eo:solar_illumination 1.82324e+03 ],
+                        [ :common_name "red" ;
+                            :name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:full_width_half_max 9e-01 ;
+                            eo:solar_illumination 1.51206e+03 ] ;
                     stac:roles "data" ] ;
             :thumbnail [ a <https://w3id.org/ogc/stac/assets/image/png> ;
                     dcterms:title "Thumbnail" ;
                     stac:roles "thumbnail" ] ;
             :visual [ dcterms:title "3-Band Visual" ;
-                    :bands [ :name "band1" ;
-                            eo:center_wavelength 4.7e-01 ;
-                            eo:common_name "blue" ;
-                            eo:full_width_half_max 7e-02 ],
-                        [ :name "band3" ;
+                    :bands [ :name "band3" ;
                             eo:center_wavelength 6.45e-01 ;
                             eo:common_name "red" ;
                             eo:full_width_half_max 9e-02 ],
                         [ :name "band2" ;
                             eo:center_wavelength 5.6e-01 ;
                             eo:common_name "green" ;
-                            eo:full_width_half_max 8e-02 ] ;
+                            eo:full_width_half_max 8e-02 ],
+                        [ :name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ] ;
                     stac:roles "visual" ] ] ;
-    :summaries [ :bands [ :name "band4" ;
-                    eo:center_wavelength 8e-01 ;
-                    eo:common_name "nir" ;
-                    eo:full_width_half_max 1.52e-01 ;
-                    eo:solar_illumination 1.04163e+03 ],
-                [ :name "band3" ;
-                    eo:center_wavelength 6.45e-01 ;
-                    eo:common_name "red" ;
-                    eo:full_width_half_max 9e-02 ;
-                    eo:solar_illumination 1.51206e+03 ],
-                [ :name "band2" ;
+    :summaries [ :bands [ :name "band2" ;
                     eo:center_wavelength 5.6e-01 ;
                     eo:common_name "green" ;
                     eo:full_width_half_max 8e-02 ;
@@ -444,7 +434,17 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
                     eo:center_wavelength 4.7e-01 ;
                     eo:common_name "blue" ;
                     eo:full_width_half_max 7e-02 ;
-                    eo:solar_illumination 1.95966e+03 ] ;
+                    eo:solar_illumination 1.95966e+03 ],
+                [ :name "band3" ;
+                    eo:center_wavelength 6.45e-01 ;
+                    eo:common_name "red" ;
+                    eo:full_width_half_max 9e-02 ;
+                    eo:solar_illumination 1.51206e+03 ],
+                [ :name "band4" ;
+                    eo:center_wavelength 8e-01 ;
+                    eo:common_name "nir" ;
+                    eo:full_width_half_max 1.52e-01 ;
+                    eo:solar_illumination 1.04163e+03 ] ;
             :constellation "ion" ;
             :instruments "cool_sensor_v1",
                 "cool_sensor_v2" ;
@@ -790,15 +790,15 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -810,12 +810,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     stac:hasAsset [ :analytic [ dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
                     dcterms:title "4-Band Analytic" ;
                     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
-                    :bands [ :name "band2" ;
-                            eo:center_wavelength 5.6e-01 ;
-                            eo:common_name "green" ;
-                            eo:full_width_half_max 8e-02 ;
-                            eo:solar_illumination 1.82324e+03 ],
-                        [ :name "band4" ;
+                    :bands [ :name "band4" ;
                             eo:center_wavelength 8e-01 ;
                             eo:common_name "nir" ;
                             eo:full_width_half_max 1.52e-01 ;
@@ -825,6 +820,11 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
                             eo:common_name "blue" ;
                             eo:full_width_half_max 7e-02 ;
                             eo:solar_illumination 1.95966e+03 ],
+                        [ :name "band2" ;
+                            eo:center_wavelength 5.6e-01 ;
+                            eo:common_name "green" ;
+                            eo:full_width_half_max 8e-02 ;
+                            eo:solar_illumination 1.82324e+03 ],
                         [ :name "band3" ;
                             eo:center_wavelength 6.45e-01 ;
                             eo:common_name "red" ;

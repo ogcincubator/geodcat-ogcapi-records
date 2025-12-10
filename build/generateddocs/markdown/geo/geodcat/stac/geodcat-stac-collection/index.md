@@ -307,8 +307,8 @@ This is the collection example from the STAC specification.
 ```ttl
 @prefix : <https://w3id.org/ogc/stac/assets/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <view:> .
+@prefix ns1: <view:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix ns3: <eo:> .
 @prefix ns4: <proj:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -327,23 +327,23 @@ This is the collection example from the STAC specification.
     dcterms:title "Simple Example Collection" ;
     rdfs:seeAlso [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            ns2:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
-        [ rdfs:label "Simple Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
-        [ rdfs:label "Extended Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Item" ;
+            dcterms:type "application/geo+json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
         [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
+        [ rdfs:label "Extended Item" ;
+            dcterms:type "application/geo+json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ] ;
     :keywords "collection",
         "example",
         "simple" ;
@@ -373,11 +373,11 @@ This is the collection example from the STAC specification.
                                     :maximum 100 ;
                                     :minimum 0 ] ] ] ;
             ns4:cpde "EPSG:32659" ;
-            ns2:off_nadir [ :maximum 3.8e+00 ;
+            ns1:off_nadir [ :maximum 3.8e+00 ;
                     :minimum 3.8e+00 ] ;
-            ns2:sun_azimuth [ :maximum 1.357e+02 ;
+            ns1:sun_azimuth [ :maximum 1.357e+02 ;
                     :minimum 1.357e+02 ] ;
-            ns2:sun_elevation [ :maximum 5.49e+01 ;
+            ns1:sun_elevation [ :maximum 5.49e+01 ;
                     :minimum 5.49e+01 ] ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
