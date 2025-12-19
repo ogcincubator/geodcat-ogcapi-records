@@ -17,35 +17,6 @@
     "id": "@id",
     "properties": {
       "@context": {
-        "language": {
-          "@context": {
-            "code": {},
-            "name": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@id": "rec:language"
-        },
-        "languages": {
-          "@context": {
-            "code": {},
-            "name": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@container": "@set",
-          "@id": "rec:languages"
-        },
-        "resourceLanguages": {
-          "@context": {
-            "code": {},
-            "name": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@container": "@set",
-          "@id": "rec:resourceLanguages"
-        },
         "externalIds": {
           "@context": {
             "scheme": "rec:scheme",
@@ -80,10 +51,6 @@
         },
         "contacts": {
           "@context": {
-            "identifier": {},
-            "name": {},
-            "position": {},
-            "organization": {},
             "logo": {
               "@context": {
                 "rel": {
@@ -93,30 +60,10 @@
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "anchor": {},
                 "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
-              }
-            },
-            "phones": {
-              "@context": {
-                "value": {}
-              }
-            },
-            "emails": {
-              "@context": {
-                "value": {}
-              }
-            },
-            "addresses": {
-              "@context": {
-                "deliveryPoint": {},
-                "city": {},
-                "administrativeArea": {},
-                "postalCode": {},
-                "country": {}
               }
             },
             "links": {
@@ -128,16 +75,12 @@
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "anchor": {},
                 "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
               }
-            },
-            "hoursOfService": {},
-            "contactInstructions": {},
-            "roles": {}
+            }
           },
           "@container": "@set",
           "@id": "dcat:contactPoint",
@@ -152,8 +95,7 @@
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "geometries": {}
+        }
       },
       "@id": "geojson:geometry"
     },
@@ -182,15 +124,7 @@
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "time": {
-      "@context": {
-        "date": {},
-        "timestamp": {},
-        "interval": {},
-        "resolution": {}
-      },
-      "@id": "dct:temporal"
-    },
+    "time": "dct:temporal",
     "linkTemplates": {
       "@context": {
         "rel": {

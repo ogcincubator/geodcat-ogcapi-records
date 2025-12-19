@@ -213,17 +213,7 @@ Links to the schema:
     "stac_extensions": "stac:hasExtension",
     "type": "dct:format",
     "id": "@id",
-    "extent": {
-      "@context": {
-        "spatial": {},
-        "temporal": {
-          "@context": {
-            "interval": {}
-          }
-        }
-      },
-      "@id": "dct:extent"
-    },
+    "extent": "dct:extent",
     "item_assets": {
       "@context": {
         "type": "@type"
@@ -238,22 +228,12 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "anchor": {},
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
-        "length": "dct:extent",
-        "method": {},
-        "headers": {},
-        "body": {}
+        "length": "dct:extent"
       },
       "@id": "rdfs:seeAlso"
-    },
-    "summaries": {
-      "@context": {
-        "minimum": {},
-        "maximum": {}
-      }
     },
     "title": {
       "@id": "dct:title",
@@ -264,51 +244,29 @@ Links to the schema:
       "@container": "@set"
     },
     "keywords": {
-      "@id": "dcat:keyword",
+      "@id": "dct:subject",
       "@container": "@set"
     },
     "roles": {
       "@id": "stac:roles",
       "@container": "@set"
     },
-    "bands": {
-      "@context": {
-        "name": {}
-      }
-    },
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
     },
-    "start_datetime": {},
-    "end_datetime": {},
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
     "created": "dct:created",
     "updated": "dct:modified",
-    "data_type": {},
-    "nodata": {},
-    "statistics": {
-      "@context": {
-        "minimum": {},
-        "maximum": {},
-        "mean": {},
-        "stddev": {},
-        "count": {},
-        "valid_percent": {}
-      }
-    },
-    "unit": {},
-    "platform": {},
-    "instruments": {},
-    "constellation": {},
-    "mission": {},
-    "gsd": {},
-    "license": "dcat:license",
-    "providers": {
-      "@context": {
-        "name": {},
-        "url": {}
-      }
-    },
+    "license": "dct:license",
+    "providers": "stac:hasProvider",
     "@vocab": "https://w3id.org/ogc/stac/assets/",
     "assets": {
       "@id": "stac:hasAsset",
@@ -336,8 +294,7 @@ Links to the schema:
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "geometries": {}
+        }
       },
       "@id": "geojson:geometry"
     },
@@ -350,15 +307,7 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "time": {
-      "@context": {
-        "date": {},
-        "timestamp": {},
-        "interval": {},
-        "resolution": {}
-      },
-      "@id": "dct:temporal"
-    },
+    "time": "dct:temporal",
     "linkTemplates": {
       "@context": {
         "rel": {
@@ -384,22 +333,17 @@ Links to the schema:
       },
       "@id": "rec:hasLinkTemplate"
     },
-    "collection": {},
     "language": {
       "@context": {
         "code": "rec:languageCode",
-        "name": "skos:prefLabel",
-        "alternate": {},
-        "dir": {}
+        "name": "skos:prefLabel"
       },
       "@id": "rec:language"
     },
     "languages": {
       "@context": {
         "code": "rec:languageCode",
-        "name": "skos:prefLabel",
-        "alternate": {},
-        "dir": {}
+        "name": "skos:prefLabel"
       },
       "@container": "@set",
       "@id": "rec:languages"
@@ -407,9 +351,7 @@ Links to the schema:
     "resourceLanguages": {
       "@context": {
         "code": "rec:languageCode",
-        "name": "skos:prefLabel",
-        "alternate": {},
-        "dir": {}
+        "name": "skos:prefLabel"
       },
       "@container": "@set",
       "@id": "rec:resourceLanguages"
@@ -454,10 +396,6 @@ Links to the schema:
     },
     "contacts": {
       "@context": {
-        "identifier": {},
-        "name": {},
-        "position": {},
-        "organization": {},
         "logo": {
           "@context": {
             "rel": {
@@ -467,47 +405,18 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
           }
-        },
-        "phones": {
-          "@context": {
-            "value": {}
-          }
-        },
-        "emails": {
-          "@context": {
-            "value": {}
-          }
-        },
-        "addresses": {
-          "@context": {
-            "deliveryPoint": {},
-            "city": {},
-            "administrativeArea": {},
-            "postalCode": {},
-            "country": {}
-          }
-        },
-        "hoursOfService": {},
-        "contactInstructions": {}
+        }
       },
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
     "rights": "dcat:rights",
-    "accuracy:geometric_x_bias": {},
-    "accuracy:geometric_y_bias": {},
-    "accuracy:geometric_x_stddev": {},
-    "accuracy:geometric_y_stddev": {},
-    "accuracy:geometric_rmse": {},
-    "accuracy:measurement_relative": {},
-    "accuracy:measurement_absolute": {},
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",

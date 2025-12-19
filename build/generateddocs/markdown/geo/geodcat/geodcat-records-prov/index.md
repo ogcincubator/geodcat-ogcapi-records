@@ -494,32 +494,6 @@ Links to the schema:
     "id": "@id",
     "properties": {
       "@context": {
-        "language": {
-          "@context": {
-            "code": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@id": "rec:language"
-        },
-        "languages": {
-          "@context": {
-            "code": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@container": "@set",
-          "@id": "rec:languages"
-        },
-        "resourceLanguages": {
-          "@context": {
-            "code": {},
-            "alternate": {},
-            "dir": {}
-          },
-          "@container": "@set",
-          "@id": "rec:resourceLanguages"
-        },
         "externalIds": {
           "@context": {
             "scheme": "rec:scheme",
@@ -554,9 +528,6 @@ Links to the schema:
         },
         "contacts": {
           "@context": {
-            "identifier": {},
-            "position": {},
-            "organization": {},
             "logo": {
               "@context": {
                 "rel": {
@@ -566,27 +537,12 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "anchor": {},
                 "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
               }
-            },
-            "phones": {},
-            "emails": {},
-            "addresses": {
-              "@context": {
-                "deliveryPoint": {},
-                "city": {},
-                "administrativeArea": {},
-                "postalCode": {},
-                "country": {}
-              }
-            },
-            "hoursOfService": {},
-            "contactInstructions": {},
-            "roles": {}
+            }
           },
           "@container": "@set",
           "@id": "dcat:contactPoint",
@@ -601,8 +557,7 @@ Links to the schema:
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "geometries": {}
+        }
       },
       "@id": "geojson:geometry"
     },
@@ -622,8 +577,7 @@ Links to the schema:
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
-        "length": "dct:extent",
-        "anchor": {}
+        "length": "dct:extent"
       },
       "@id": "rdfs:seeAlso"
     },
@@ -632,15 +586,7 @@ Links to the schema:
       "@id": "dct:conformsTo",
       "@type": "@id"
     },
-    "time": {
-      "@context": {
-        "date": {},
-        "timestamp": {},
-        "interval": {},
-        "resolution": {}
-      },
-      "@id": "dct:temporal"
-    },
+    "time": "dct:temporal",
     "linkTemplates": {
       "@context": {
         "rel": {
@@ -763,7 +709,6 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "anchor": {},
         "hreflang": "dct:language",
         "title": "rdfs:label",
         "length": "dct:extent"
@@ -783,7 +728,6 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -803,7 +747,6 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "anchor": {},
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
@@ -824,7 +767,6 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
@@ -838,7 +780,6 @@ Links to the schema:
       "@type": "@id"
     },
     "provType": "@type",
-    "prov:type": {},
     "hadMember": {
       "@id": "prov:hadMember",
       "@type": "@id"
@@ -859,7 +800,6 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -881,7 +821,6 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -902,7 +841,6 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "anchor": {},
         "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
@@ -939,7 +877,6 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
-            "anchor": {},
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -985,7 +922,6 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
-                "anchor": {},
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
