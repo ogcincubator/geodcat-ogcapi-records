@@ -2,13 +2,39 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat - GeoDCAT profile",
   "bblockName": "GeoDCAT profile",
   "bblockId": "ogc.geo.geodcat.geodcat",
-  "generated": "2025-12-19T03:49:34.309235+00:00",
-  "result": true,
-  "items": [],
+  "generated": "2025-12-22T03:55:33.285578+00:00",
+  "result": false,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/geo/geodcat/geodcat/example_1_1.ttl",
+        "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat/example_1_1.ttl",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "text/turtle"
+      },
+      "result": false,
+      "sections": [
+        {
+          "name": "UNKNOWN",
+          "title": "Unknown errors",
+          "entries": [
+            {
+              "exception": "FileNotFoundError",
+              "isError": true,
+              "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 198, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 291, in _load_graph\n    graph = Graph().parse(filename, format=rdf_format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1470, in parse\n    source = create_input_source(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 476, in _create_input_source_from_location\n    file = open(filename, \"rb\")\n,FileNotFoundError: [Errno 2] No such file or directory: '/github/workspace/_sources/geodcat/example_1_1.ttl'\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "globalErrors": {},
   "counts": {
-    "total": 0,
+    "total": 1,
     "passed": 0,
-    "failed": 0
+    "failed": 1
   }
 }

@@ -1,16 +1,16 @@
 {
   "summary": {
     "total": 14,
-    "passed": 14,
-    "failed": 0,
-    "result": true
+    "passed": 13,
+    "failed": 1,
+    "result": false
   },
   "bblocks": {
     "ogc.geo.geodcat.dcat2": {
       "title": "Validation report for ogc.geo.geodcat.dcat2 - DCAT 2 Ontology",
       "bblockName": "DCAT 2 Ontology",
       "bblockId": "ogc.geo.geodcat.dcat2",
-      "generated": "2025-12-19T03:49:33.347514+00:00",
+      "generated": "2025-12-22T03:55:31.823770+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -24,7 +24,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.projjson - PROJ-JSON schema",
       "bblockName": "PROJ-JSON schema",
       "bblockId": "ogc.geo.geodcat.stac.projjson",
-      "generated": "2025-12-19T03:49:34.056250+00:00",
+      "generated": "2025-12-22T03:55:33.001078+00:00",
       "result": true,
       "items": [
         {
@@ -45,7 +45,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -94,7 +94,7 @@
       "title": "Validation report for ogc.geo.geodcat.dcat - DCAT V3",
       "bblockName": "DCAT V3",
       "bblockId": "ogc.geo.geodcat.dcat",
-      "generated": "2025-12-19T03:49:34.060336+00:00",
+      "generated": "2025-12-22T03:55:33.005175+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -108,7 +108,7 @@
       "title": "Validation report for ogc.geo.geodcat.dcat-ap - DCAT-AP 3.0 profile",
       "bblockName": "DCAT-AP 3.0 profile",
       "bblockId": "ogc.geo.geodcat.dcat-ap",
-      "generated": "2025-12-19T03:49:34.303367+00:00",
+      "generated": "2025-12-22T03:55:33.279647+00:00",
       "result": true,
       "items": [
         {
@@ -129,7 +129,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1 from examples"
+                  "message": "Using example_1_1.ttl from examples"
                 },
                 {
                   "op": "ttl-create",
@@ -155,30 +155,30 @@
                 {
                   "shaclFile": "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
                   "focusNodes": {
-                    "dcat:CatalogRecord": {
+                    "dcat:Catalog": {
                       "nodes": []
                     },
                     "dcat:Distribution": {
                       "nodes": []
                     },
-                    "dcat:Catalog": {
+                    "dcat:Dataset": {
                       "nodes": []
                     },
                     ":DateOrDateTimeDataType": {
                       "nodes": []
                     },
-                    ":DateOrDateTimeDataType/sh:or/rdf:first": {
-                      "nodes": []
-                    },
                     ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
                       "nodes": []
                     },
-                    "dcat:Dataset": {
+                    "dcat:CatalogRecord": {
+                      "nodes": []
+                    },
+                    ":DateOrDateTimeDataType/sh:or/rdf:first": {
                       "nodes": []
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:Catalog: *none*\n - Shape :DateOrDateTimeDataType: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape dcat:Dataset: *none*\n"
+                  "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:Catalog: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n"
                 },
                 {
                   "op": "shacl-report",
@@ -190,19 +190,138 @@
                 {
                   "shaclFile": "_sources/dcat-ap/rules.shacl",
                   "focusNodes": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>": {
+                      "nodes": [
+                        "<https://www.iana.org/assignments/media-types/application/vnd.shp>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>": {
+                      "nodes": [
+                        "<http://creativecommons.org/publicdomain/zero/1.0/deed.nl>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>": {
+                      "nodes": [
+                        "<http://data.europa.eu/eli/reg_impl/2023/138/oj>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>": {
+                      "nodes": [
+                        "exampleMS:1T2p3o4B-dist-SHP"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>": {
+                      "nodes": [
+                        "exampleMS:1T2p3o4B"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>": {
+                      "nodes": [
+                        "<https://orgea.exampleMS.gov/files/1T2p3o4B.shp>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>": {
+                      "nodes": [
+                        "<https://www.iana.org/assignments/media-types/application/vnd.shp>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>": {
+                      "nodes": [
+                        "<http://publications.europa.eu/resource/authority/language/NLD>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>": {
+                      "nodes": []
+                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>": {
                       "nodes": [
                         "exampleMS:1T2p3o4B/dct:publisher",
                         "exampleMS:1T2p3o4B/dct:creator"
                       ]
                     },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>": {
+                      "nodes": [
+                        "exampleMS:1T2p3o4B/dct:spatial",
+                        "<https://www.geonames.org/2750405>"
+                      ]
+                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>": {
                       "nodes": []
                     },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>": {
+                      "nodes": [
+                        "exampleMS:1T2p3o4B/dcat:contactPoint"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>": {
+                      "nodes": [
+                        "exampleMS:1T2p3o4B/dct:temporal"
+                      ]
+                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>": {
@@ -211,135 +330,10 @@
                         "<http://purl.org/adms/publishertype/LocalAuthority>"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>": {
-                      "nodes": [
-                        "<https://orgea.exampleMS.gov/files/1T2p3o4B.shp>"
-                      ]
-                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>": {
-                      "nodes": [
-                        "exampleMS:1T2p3o4B/dct:temporal"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>": {
-                      "nodes": []
-                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>": {
-                      "nodes": [
-                        "exampleMS:1T2p3o4B"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>": {
-                      "nodes": [
-                        "<https://www.iana.org/assignments/media-types/application/vnd.shp>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>": {
-                      "nodes": [
-                        "<https://www.geonames.org/2750405>",
-                        "exampleMS:1T2p3o4B/dct:spatial"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>": {
-                      "nodes": [
-                        "<http://publications.europa.eu/resource/authority/language/NLD>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>": {
-                      "nodes": [
-                        "exampleMS:1T2p3o4B-dist-SHP"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>": {
-                      "nodes": [
-                        "<https://www.iana.org/assignments/media-types/application/vnd.shp>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>": {
-                      "nodes": [
-                        "exampleMS:1T2p3o4B/dcat:contactPoint"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>": {
-                      "nodes": [
-                        "<http://data.europa.eu/eli/reg_impl/2023/138/oj>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>": {
-                      "nodes": [
-                        "<http://data.europa.eu/eli/reg/2010/1089>",
-                        "<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>": {
-                      "nodes": [
-                        "<http://creativecommons.org/publicdomain/zero/1.0/deed.nl>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>": {
@@ -347,12 +341,18 @@
                         "<http://publications.europa.eu/resource/authority/access-right/PUBLIC>"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>": {
                       "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>": {
+                      "nodes": [
+                        "<http://data.europa.eu/eli/reg/2010/1089>",
+                        "<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd>"
+                      ]
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for _sources/dcat-ap/rules.shacl:\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>: exampleMS:1T2p3o4B/dct:publisher,exampleMS:1T2p3o4B/dct:creator\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>: <http://publications.europa.eu/resource/authority/data-theme/EDUC>,<http://purl.org/adms/publishertype/LocalAuthority>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>: <https://orgea.exampleMS.gov/files/1T2p3o4B.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>: exampleMS:1T2p3o4B/dct:temporal\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>: exampleMS:1T2p3o4B\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>: <https://www.iana.org/assignments/media-types/application/vnd.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>: <https://www.geonames.org/2750405>,exampleMS:1T2p3o4B/dct:spatial\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/NLD>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>: exampleMS:1T2p3o4B-dist-SHP\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>: <https://www.iana.org/assignments/media-types/application/vnd.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>: exampleMS:1T2p3o4B/dcat:contactPoint\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>: <http://data.europa.eu/eli/reg_impl/2023/138/oj>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>: <http://data.europa.eu/eli/reg/2010/1089>,<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>: <http://creativecommons.org/publicdomain/zero/1.0/deed.nl>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: <http://publications.europa.eu/resource/authority/access-right/PUBLIC>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>: *none*\n"
+                  "message": "Focus nodes for _sources/dcat-ap/rules.shacl:\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>: <https://www.iana.org/assignments/media-types/application/vnd.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>: <http://creativecommons.org/publicdomain/zero/1.0/deed.nl>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>: <http://data.europa.eu/eli/reg_impl/2023/138/oj>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>: exampleMS:1T2p3o4B-dist-SHP\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>: exampleMS:1T2p3o4B\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>: <https://orgea.exampleMS.gov/files/1T2p3o4B.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>: <https://www.iana.org/assignments/media-types/application/vnd.shp>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/NLD>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>: exampleMS:1T2p3o4B/dct:publisher,exampleMS:1T2p3o4B/dct:creator\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>: exampleMS:1T2p3o4B/dct:spatial,<https://www.geonames.org/2750405>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>: exampleMS:1T2p3o4B/dcat:contactPoint\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>: exampleMS:1T2p3o4B/dct:temporal\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>: <http://publications.europa.eu/resource/authority/data-theme/EDUC>,<http://purl.org/adms/publishertype/LocalAuthority>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: <http://publications.europa.eu/resource/authority/access-right/PUBLIC>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>: <http://data.europa.eu/eli/reg/2010/1089>,<http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd>\n"
                 }
               ]
             }
@@ -370,21 +370,47 @@
       "title": "Validation report for ogc.geo.geodcat.geodcat - GeoDCAT profile",
       "bblockName": "GeoDCAT profile",
       "bblockId": "ogc.geo.geodcat.geodcat",
-      "generated": "2025-12-19T03:49:34.309235+00:00",
-      "result": true,
-      "items": [],
+      "generated": "2025-12-22T03:55:33.285578+00:00",
+      "result": false,
+      "items": [
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/geo/geodcat/geodcat/example_1_1.ttl",
+            "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat/example_1_1.ttl",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "text/turtle"
+          },
+          "result": false,
+          "sections": [
+            {
+              "name": "UNKNOWN",
+              "title": "Unknown errors",
+              "entries": [
+                {
+                  "exception": "FileNotFoundError",
+                  "isError": true,
+                  "message": "Traceback (most recent call last):\n,  File \"/src/ogc/bblocks/validate.py\", line 198, in _validate_resource\n    result = validator.validate(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 316, in validate\n    graph = self._load_graph(filename, output_filename, report,\n,  File \"/src/ogc/bblocks/validation/rdf.py\", line 291, in _load_graph\n    graph = Graph().parse(filename, format=rdf_format)\n,  File \"/venv/lib/python3.10/site-packages/rdflib/graph.py\", line 1470, in parse\n    source = create_input_source(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 416, in create_input_source\n    ) = _create_input_source_from_location(\n,  File \"/venv/lib/python3.10/site-packages/rdflib/parser.py\", line 476, in _create_input_source_from_location\n    file = open(filename, \"rb\")\n,FileNotFoundError: [Errno 2] No such file or directory: '/github/workspace/_sources/geodcat/example_1_1.ttl'\n"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "globalErrors": {},
       "counts": {
-        "total": 0,
+        "total": 1,
         "passed": 0,
-        "failed": 0
+        "failed": 1
       }
     },
     "ogc.geo.geodcat.dcat-records": {
       "title": "Validation report for ogc.geo.geodcat.dcat-records - DCAT/Records binding",
       "bblockName": "DCAT/Records binding",
       "bblockId": "ogc.geo.geodcat.dcat-records",
-      "generated": "2025-12-19T03:49:35.180132+00:00",
+      "generated": "2025-12-22T03:55:33.913292+00:00",
       "result": true,
       "items": [
         {
@@ -405,7 +431,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -479,7 +505,7 @@
       "title": "Validation report for ogc.geo.geodcat.geodcat-ap - GeoDCAT-AP profile",
       "bblockName": "GeoDCAT-AP profile",
       "bblockId": "ogc.geo.geodcat.geodcat-ap",
-      "generated": "2025-12-19T03:49:35.361115+00:00",
+      "generated": "2025-12-22T03:55:34.083852+00:00",
       "result": true,
       "items": [
         {
@@ -500,7 +526,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1 from examples"
+                  "message": "Using example_1_1.ttl from examples"
                 },
                 {
                   "op": "ttl-create",
@@ -526,30 +552,30 @@
                 {
                   "shaclFile": "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
                   "focusNodes": {
-                    "dcat:CatalogRecord": {
+                    "dcat:Catalog": {
                       "nodes": []
                     },
                     "dcat:Distribution": {
                       "nodes": []
                     },
-                    "dcat:Catalog": {
+                    ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
+                      "nodes": []
+                    },
+                    "dcat:Dataset": {
                       "nodes": []
                     },
                     ":DateOrDateTimeDataType": {
                       "nodes": []
                     },
-                    ":DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first": {
+                    "dcat:CatalogRecord": {
                       "nodes": []
                     },
                     ":DateOrDateTimeDataType/sh:or/rdf:first": {
                       "nodes": []
-                    },
-                    "dcat:Dataset": {
-                      "nodes": []
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:CatalogRecord: *none*\n - Shape dcat:Distribution: *none*\n - Shape dcat:Catalog: *none*\n - Shape :DateOrDateTimeDataType: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n - Shape dcat:Dataset: *none*\n"
+                  "message": "Focus nodes for https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl:\n - Shape dcat:Catalog: *none*\n - Shape dcat:Distribution: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:rest/rdf:first: *none*\n - Shape dcat:Dataset: *none*\n - Shape :DateOrDateTimeDataType: *none*\n - Shape dcat:CatalogRecord: *none*\n - Shape :DateOrDateTimeDataType/sh:or/rdf:first: *none*\n"
                 },
                 {
                   "op": "shacl-report",
@@ -561,40 +587,57 @@
                 {
                   "shaclFile": "_sources/dcat-ap/rules.shacl",
                   "focusNodes": {
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>": {
+                      "nodes": [
+                        "<http://publications.europa.eu/resource/authority/file-type/TIFF>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>": {
+                      "nodes": [
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy"
-                      ]
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>": {
+                      "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>": {
-                      "nodes": [
-                        "<http://publications.europa.eu/resource/authority/frequency/IRREG>"
-                      ]
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>": {
+                      "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>": {
-                      "nodes": [
-                        "<http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>",
-                        "<http://inspire.ec.europa.eu/theme/hh>",
-                        "<http://www.eionet.europa.eu/gemet/concept/2884>",
-                        "<http://publications.europa.eu/resource/authority/data-theme/HEAL>"
-                      ]
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>": {
+                      "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>": {
-                      "nodes": []
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>": {
+                      "nodes": [
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution"
+                      ]
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>": {
+                      "nodes": [
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>": {
@@ -603,53 +646,23 @@
                         "<https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS>"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>": {
                       "nodes": [
-                        "<https://noise.eea.europa.eu/>"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>": {
-                      "nodes": [
-                        "<http://publications.europa.eu/resource/authority/file-type/TIFF>"
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy"
                       ]
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>": {
+                      "nodes": [
+                        "<http://publications.europa.eu/resource/authority/language/ENG>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>": {
@@ -657,39 +670,78 @@
                         "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>": {
                       "nodes": [
-                        "<http://publications.europa.eu/resource/authority/language/ENG>"
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial"
                       ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>": {
+                      "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>": {
                       "nodes": [
                         "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>": {
-                      "nodes": []
-                    },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>": {
                       "nodes": [
                         "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint"
                       ]
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>": {
+                      "nodes": [
+                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>": {
+                      "nodes": [
+                        "<http://publications.europa.eu/resource/authority/frequency/IRREG>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>": {
                       "nodes": []
                     },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>": {
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>": {
+                      "nodes": [
+                        "<http://inspire.ec.europa.eu/theme/hh>",
+                        "<http://www.eionet.europa.eu/gemet/concept/2884>",
+                        "<http://publications.europa.eu/resource/authority/data-theme/HEAL>",
+                        "<http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>": {
+                      "nodes": [
+                        "<https://noise.eea.europa.eu/>"
+                      ]
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>": {
+                      "nodes": []
+                    },
+                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>": {
                       "nodes": []
                     },
                     "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>": {
@@ -697,36 +749,10 @@
                         "<http://www.opengis.net/def/crs/EPSG/0/3035>",
                         "<http://www.opengeospatial.org/standards/wms>"
                       ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>": {
-                      "nodes": [
-                        "resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license"
-                      ]
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>": {
-                      "nodes": []
-                    },
-                    "<https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>": {
-                      "nodes": []
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for _sources/dcat-ap/rules.shacl:\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>: <http://publications.europa.eu/resource/authority/frequency/IRREG>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>: <http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>,<http://inspire.ec.europa.eu/theme/hh>,<http://www.eionet.europa.eu/gemet/concept/2884>,<http://publications.europa.eu/resource/authority/data-theme/HEAL>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>: <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer>,<https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>: <https://noise.eea.europa.eu/>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>: <http://publications.europa.eu/resource/authority/file-type/TIFF>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/ENG>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>: <http://www.opengis.net/def/crs/EPSG/0/3035>,<http://www.opengeospatial.org/standards/wms>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>: *none*\n"
+                  "message": "Focus nodes for _sources/dcat-ap/rules.shacl:\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape>: <http://publications.europa.eu/resource/authority/file-type/TIFF>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape>: <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer>,<https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/ENG>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>: <http://publications.europa.eu/resource/authority/frequency/IRREG>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape>: <http://inspire.ec.europa.eu/theme/hh>,<http://www.eionet.europa.eu/gemet/concept/2884>,<http://publications.europa.eu/resource/authority/data-theme/HEAL>,<http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape>: <https://noise.eea.europa.eu/>\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape>: *none*\n - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape>: <http://www.opengis.net/def/crs/EPSG/0/3035>,<http://www.opengeospatial.org/standards/wms>\n"
                 }
               ]
             }
@@ -744,7 +770,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.geodcat-stac-collection - GeoDCAT mapping for STAC collection",
       "bblockName": "GeoDCAT mapping for STAC collection",
       "bblockId": "ogc.geo.geodcat.stac.geodcat-stac-collection",
-      "generated": "2025-12-19T03:49:36.463197+00:00",
+      "generated": "2025-12-22T03:55:35.502254+00:00",
       "result": true,
       "items": [
         {
@@ -766,7 +792,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -783,7 +809,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 87,
+                  "size": 37,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -815,7 +841,7 @@
       "title": "Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT mapping for OGC API Records",
       "bblockName": "GeoDCAT mapping for OGC API Records",
       "bblockId": "ogc.geo.geodcat.geodcat-records",
-      "generated": "2025-12-19T03:49:37.067569+00:00",
+      "generated": "2025-12-22T03:55:35.927124+00:00",
       "result": true,
       "items": [
         {
@@ -836,7 +862,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -910,7 +936,7 @@
       "title": "Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile",
       "bblockName": "GeoDCAT + PROV profile",
       "bblockId": "ogc.geo.geodcat.geodcat-records-prov",
-      "generated": "2025-12-19T03:49:37.640301+00:00",
+      "generated": "2025-12-22T03:55:36.459721+00:00",
       "result": true,
       "items": [
         {
@@ -932,7 +958,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1011,7 +1037,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json (example_2_1) from examples"
+                  "message": "Using example_2_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1090,7 +1116,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_3_1.json (example_3_1) from examples"
+                  "message": "Using example_3_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1162,7 +1188,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.geodcat-stac-item - GeoDCAT mapping to STAC item",
       "bblockName": "GeoDCAT mapping to STAC item",
       "bblockId": "ogc.geo.geodcat.stac.geodcat-stac-item",
-      "generated": "2025-12-19T03:49:39.113770+00:00",
+      "generated": "2025-12-22T03:55:37.853038+00:00",
       "result": true,
       "items": [
         {
@@ -1184,7 +1210,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1201,7 +1227,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 74,
+                  "size": 63,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1263,7 +1289,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json (example_2_1) from examples"
+                  "message": "Using example_2_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1280,7 +1306,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_2_1.ttl",
-                  "size": 106,
+                  "size": 73,
                   "isError": false,
                   "message": "Output Turtle example_2_1.ttl created"
                 }
@@ -1335,7 +1361,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension",
       "bblockName": "GeoDCAT profile of STAC Accuracy extension",
       "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy",
-      "generated": "2025-12-19T03:49:40.341982+00:00",
+      "generated": "2025-12-22T03:55:38.663032+00:00",
       "result": true,
       "items": [
         {
@@ -1357,7 +1383,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1374,7 +1400,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 61,
+                  "size": 59,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1429,7 +1455,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-eo - GeoDCAT profile of STAC Electro-Optical extension",
       "bblockName": "GeoDCAT profile of STAC Electro-Optical extension",
       "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-eo",
-      "generated": "2025-12-19T03:49:41.487329+00:00",
+      "generated": "2025-12-22T03:55:39.880000+00:00",
       "result": true,
       "items": [
         {
@@ -1451,7 +1477,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1468,7 +1494,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 115,
+                  "size": 17,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1530,7 +1556,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json (example_2_1) from examples"
+                  "message": "Using example_2_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1547,7 +1573,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_2_1.ttl",
-                  "size": 127,
+                  "size": 68,
                   "isError": false,
                   "message": "Output Turtle example_2_1.ttl created"
                 }
@@ -1602,7 +1628,7 @@
       "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm - GeoDCAT profile of STAC Electro-Optical extension",
       "bblockName": "GeoDCAT profile of STAC Electro-Optical extension",
       "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm",
-      "generated": "2025-12-19T03:49:43.259588+00:00",
+      "generated": "2025-12-22T03:55:41.067782+00:00",
       "result": true,
       "items": [
         {
@@ -1624,7 +1650,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json (example_1_1) from examples"
+                  "message": "Using example_1_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1641,7 +1667,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_1_1.ttl",
-                  "size": 115,
+                  "size": 17,
                   "isError": false,
                   "message": "Output Turtle example_1_1.ttl created"
                 }
@@ -1703,7 +1729,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json (example_2_1) from examples"
+                  "message": "Using example_2_1.json from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1720,7 +1746,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_2_1.ttl",
-                  "size": 127,
+                  "size": 68,
                   "isError": false,
                   "message": "Output Turtle example_2_1.ttl created"
                 }

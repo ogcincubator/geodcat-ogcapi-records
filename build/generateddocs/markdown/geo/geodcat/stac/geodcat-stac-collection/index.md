@@ -305,83 +305,42 @@ This is the collection example from the STAC specification.
 
 #### ttl
 ```ttl
-@prefix : <https://w3id.org/ogc/stac/assets/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <proj:> .
-@prefix ns3: <view:> .
-@prefix ns4: <eo:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://example.com/stac/example1/simple-collection> dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
-    dcterms:extent [ :spatial [ :bbox 1.343885e+00,
-                        1.369048e+00,
-                        1.729117e+02,
-                        1.729547e+02 ] ;
-            :temporal [ :interval "2020-12-11T22:38:32.125Z",
-                        "2020-12-14T18:02:31.437Z" ] ] ;
-    dcterms:format "Collection" ;
+<https://example.com/stac/example1/simple-collection> a <https://example.com/stac/example1/Collection> ;
+    dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
+    dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:subject "collection",
         "example",
         "simple" ;
-    dcterms:title "Simple Example Collection" ;
     rdfs:seeAlso [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
         [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ] ;
-    :summaries [ ns4:cloud_cover [ :maximum 1.2e+00 ;
-                    :minimum 1.2e+00 ] ;
-            :constellation "ion" ;
-            :gsd [ :maximum 6.6e-01 ;
-                    :minimum 5.12e-01 ] ;
-            :instruments "cool_sensor_v1",
-                "cool_sensor_v2" ;
-            :platform "cool_sat1",
-                "cool_sat2" ;
-            :statistics [ dcterms:format "object" ;
-                    :properties [ :urban [ dcterms:description "Percentage of pixels that detected as urban, e.g. roads and buildings." ;
-                                    :maximum 100 ;
-                                    :minimum 0 ] ;
-                            :vegetation [ dcterms:description "Percentage of pixels that are detected as vegetation, e.g. forests, grasslands, etc." ;
-                                    :maximum 100 ;
-                                    :minimum 0 ] ;
-                            :water [ dcterms:description "Percentage of pixels that are detected as water, e.g. rivers, oceans and ponds." ;
-                                    :maximum 100 ;
-                                    :minimum 0 ] ] ] ;
-            ns2:cpde "EPSG:32659" ;
-            ns3:off_nadir [ :maximum 3.8e+00 ;
-                    :minimum 3.8e+00 ] ;
-            ns3:sun_azimuth [ :maximum 1.357e+02 ;
-                    :minimum 1.357e+02 ] ;
-            ns3:sun_elevation [ :maximum 5.49e+01 ;
-                    :minimum 5.49e+01 ] ] ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
-    stac:hasProvider [ dcterms:description "Producers of awesome spatiotemporal assets" ;
-            :name "Remote Data, Inc" ;
-            :url "http://remotedata.io" ;
-            stac:roles "processor",
-                "producer" ] ;
+    stac:hasProvider [ dcterms:description "Producers of awesome spatiotemporal assets" ] ;
     stac:version "1.1.0" .
 
 
@@ -433,12 +392,12 @@ Links to the schema:
 {
   "@context": {
     "stac_extensions": "stac:hasExtension",
-    "type": "dct:format",
+    "type": "@type",
     "id": "@id",
     "extent": "dct:extent",
     "item_assets": {
       "@context": {
-        "type": "@type"
+        "title": "dct:title"
       }
     },
     "links": {
@@ -461,13 +420,8 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "title": "dct:title",
     "description": "dct:description",
     "keywords": "dct:subject",
-    "roles": {
-      "@id": "stac:roles",
-      "@container": "@set"
-    },
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
@@ -482,8 +436,15 @@ Links to the schema:
     },
     "license": "dct:license",
     "providers": "stac:hasProvider",
-    "@vocab": "https://w3id.org/ogc/stac/assets/",
     "assets": {
+      "@context": {
+        "title": "dct:title",
+        "type": "dct:format",
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        }
+      },
       "@id": "stac:hasAsset",
       "@container": "@set"
     },
