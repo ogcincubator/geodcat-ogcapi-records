@@ -119,7 +119,10 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     prov:wasGeneratedBy <http://mysystem.io/prov?object=20201211_223832_CS2> ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -262,7 +265,10 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     prov:wasGeneratedBy <surveys:DP-1-S1> ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -433,7 +439,10 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -530,13 +539,7 @@ Links to the schema:
           "@context": {
             "logo": {
               "@context": {
-                "rel": {
-                  "@context": {
-                    "@base": "http://www.iana.org/assignments/relation/"
-                  },
-                  "@id": "http://www.iana.org/assignments/relation",
-                  "@type": "@id"
-                },
+                "rel": "http://www.iana.org/assignments/relation",
                 "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
@@ -557,14 +560,15 @@ Links to the schema:
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
+        },
+        "bbox": {
+          "@container": "@list",
+          "@id": "geojson:bbox"
         }
       },
       "@id": "geojson:geometry"
     },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
+    "bbox": "geojson:bbox",
     "links": {
       "@context": {
         "rel": {
@@ -701,7 +705,6 @@ Links to the schema:
     },
     "wasInfluencedBy": {
       "@context": {
-        "type": "dct:type",
         "rel": {
           "@context": {
             "@base": "http://www.iana.org/assignments/relation/"
@@ -709,6 +712,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
+        "type": "dct:type",
         "hreflang": "dct:language",
         "title": "rdfs:label",
         "length": "dct:extent"
@@ -720,7 +724,6 @@ Links to the schema:
       "@context": {
         "influencer": {
           "@context": {
-            "type": "dct:type",
             "rel": {
               "@context": {
                 "@base": "http://www.iana.org/assignments/relation/"
@@ -728,6 +731,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
+            "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -737,7 +741,6 @@ Links to the schema:
         },
         "activity": {
           "@context": {
-            "type": "dct:type",
             "wasAssociatedWith": {
               "@context": {
                 "rel": {
@@ -747,6 +750,7 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
+                "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
@@ -779,19 +783,16 @@ Links to the schema:
       "@id": "prov:qualifiedInfluence",
       "@type": "@id"
     },
-    "provType": "@type",
     "hadMember": {
       "@id": "prov:hadMember",
       "@type": "@id"
     },
+    "provType": "@type",
     "featureType": "@type",
     "entityType": "@type",
     "has_provenance": {
       "@context": {
-        "type": "dct:type",
         "wasAssociatedWith": {
-          "@id": "prov:wasAssociatedWith",
-          "@type": "@id",
           "@context": {
             "rel": {
               "@context": {
@@ -800,10 +801,13 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
+            "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
-          }
+          },
+          "@id": "prov:wasAssociatedWith",
+          "@type": "@id"
         }
       },
       "@id": "dct:provenance",
@@ -811,7 +815,6 @@ Links to the schema:
     },
     "wasGeneratedBy": {
       "@context": {
-        "type": "dct:type",
         "wasAssociatedWith": {
           "@context": {
             "rel": {
@@ -821,6 +824,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
+            "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -867,7 +871,6 @@ Links to the schema:
     },
     "wasInvalidatedBy": {
       "@context": {
-        "type": "dct:type",
         "wasAssociatedWith": {
           "@context": {
             "rel": {
@@ -877,6 +880,7 @@ Links to the schema:
               "@id": "http://www.iana.org/assignments/relation",
               "@type": "@id"
             },
+            "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
@@ -912,7 +916,6 @@ Links to the schema:
       "@context": {
         "hadActivity": {
           "@context": {
-            "type": "dct:type",
             "wasAssociatedWith": {
               "@context": {
                 "rel": {
@@ -922,6 +925,7 @@ Links to the schema:
                   "@id": "http://www.iana.org/assignments/relation",
                   "@type": "@id"
                 },
+                "type": "dct:type",
                 "hreflang": "dct:language",
                 "title": "rdfs:label",
                 "length": "dct:extent"
@@ -938,15 +942,6 @@ Links to the schema:
       "@type": "@id"
     },
     "qualifiedAttribution": {
-      "@context": {
-        "agent": {
-          "@context": {
-            "type": "dct:type"
-          },
-          "@id": "prov:agent",
-          "@type": "@id"
-        }
-      },
       "@id": "prov:qualifiedAttribution",
       "@type": "@id"
     },

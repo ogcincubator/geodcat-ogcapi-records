@@ -199,28 +199,33 @@ This is the simple item example from the STAC specification.
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
-    dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    dcterms:date "2020-12-11T22:38:32.125000Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation "collection" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation "parent" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation "root" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
+            geojson:coordinates "[172.91173669923782, 1.3438851951615003]",
+                "[172.91173669923782, 1.3690476620161975]",
+                "[172.95469614953714, 1.3438851951615003]",
+                "[172.95469614953714, 1.3690476620161975]" ] ;
     stac:hasAsset [ ] ;
     stac:version "1.1.0" .
 
@@ -497,7 +502,6 @@ This is the complete "core" item example from the STAC specification.
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -509,26 +513,32 @@ This is the complete "core" item example from the STAC specification.
     dcterms:title "Core Item" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation "root" ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation "collection" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "HTML version of this STAC Item" ;
             dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            ns1:relation "alternate" ;
             oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            ns1:relation "parent" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
-    stac:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
+            geojson:coordinates "[172.91173669923782, 1.3438851951615003]",
+                "[172.91173669923782, 1.3690476620161975]",
+                "[172.95469614953714, 1.3438851951615003]",
+                "[172.95469614953714, 1.3690476620161975]" ] ;
+    stac:end_datetime "2020-12-11T22:38:32.327Z" ;
     stac:hasAsset [ ] ;
-    stac:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
+    stac:start_datetime "2020-12-11T22:38:32.125Z" ;
     stac:version "1.1.0" .
 
 
@@ -599,30 +609,16 @@ Links to the schema:
     "properties": "@nest",
     "geometry": {
       "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
+        "coordinates": "geojson:coordinates"
       },
       "@id": "geojson:geometry"
     },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
+    "bbox": "geojson:bbox",
     "links": {
       "@context": {
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
+        "rel": "http://www.iana.org/assignments/relation",
         "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
+        "title": "rdfs:label"
       },
       "@id": "rdfs:seeAlso"
     },
@@ -660,85 +656,76 @@ Links to the schema:
     },
     "created": "dct:created",
     "updated": "dct:modified",
-    "title": {
-      "@container": "@set",
-      "@id": "dct:title"
-    },
-    "description": {
-      "@container": "@set",
-      "@id": "dct:description"
-    },
-    "keywords": {
-      "@container": "@set",
-      "@id": "dcat:keyword"
-    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "keywords": "dcat:keyword",
     "language": {
-      "@id": "rec:language",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      }
+      },
+      "@id": "rec:language"
     },
     "languages": {
-      "@container": "@set",
-      "@id": "rec:languages",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      }
+      },
+      "@container": "@set",
+      "@id": "rec:languages"
     },
     "resourceLanguages": {
-      "@container": "@set",
-      "@id": "rec:resourceLanguages",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      }
+      },
+      "@container": "@set",
+      "@id": "rec:resourceLanguages"
     },
     "externalIds": {
-      "@container": "@set",
-      "@id": "rec:scopedIdentifier",
       "@context": {
         "scheme": "rec:scheme",
         "value": "rec:id"
-      }
+      },
+      "@container": "@set",
+      "@id": "rec:scopedIdentifier"
     },
     "themes": {
-      "@container": "@set",
-      "@id": "rec:themes",
       "@context": {
         "concepts": {
-          "@id": "thns:concepts",
           "@context": {
-            "id": {
-              "@type": "xsd:string",
-              "@id": "thns:id"
-            },
-            "url": {
-              "@type": "@id",
-              "@id": "@id"
-            }
+            "id": "thns:id",
+            "url": "@id"
           },
+          "@id": "thns:concepts",
           "@container": "@set"
         },
         "scheme": "thns:scheme"
-      }
+      },
+      "@container": "@set",
+      "@id": "rec:themes"
     },
     "formats": {
-      "@id": "rec:format",
       "@context": {
         "name": "rec:name",
         "mediaType": "rec:mediaType"
       },
       "@container": "@set",
+      "@id": "rec:format",
       "@type": "@id"
     },
     "contacts": {
-      "@container": "@set",
-      "@id": "dcat:contactPoint",
-      "@type": "@id",
       "@context": {
         "logo": {
+          "@context": {
+            "rel": "http://www.iana.org/assignments/relation",
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        },
+        "links": {
           "@context": {
             "rel": {
               "@context": {
@@ -753,7 +740,10 @@ Links to the schema:
             "length": "dct:extent"
           }
         }
-      }
+      },
+      "@container": "@set",
+      "@id": "dcat:contactPoint",
+      "@type": "@id"
     },
     "license": "dcat:license",
     "accessrights": "dct:accessRights",
@@ -766,33 +756,20 @@ Links to the schema:
       }
     },
     "stac_extensions": "stac:hasExtension",
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
-    },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
-    },
+    "datetime": "dct:date",
+    "start_datetime": "stac:start_datetime",
+    "end_datetime": "stac:end_datetime",
     "providers": "stac:hasProvider",
-    "rights": "dcat:rights",
     "assets": {
       "@context": {
         "type": "dct:format",
-        "roles": {
-          "@id": "stac:roles",
-          "@container": "@set"
-        }
+        "roles": "stac:roles"
       },
-      "@id": "stac:hasAsset",
-      "@container": "@set"
+      "@id": "stac:hasAsset"
     },
     "stac_version": "stac:version",
     "media_type": "dct:format",
+    "rights": "dcat:rights",
     "extent": "dct:extent",
     "href": {
       "@type": "@id",

@@ -20,18 +20,9 @@
       },
       "@id": "rdfs:seeAlso"
     },
-    "title": {
-      "@id": "dct:title",
-      "@container": "@set"
-    },
-    "description": {
-      "@id": "dct:description",
-      "@container": "@set"
-    },
-    "keywords": {
-      "@id": "dct:subject",
-      "@container": "@set"
-    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "keywords": "dct:subject",
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
@@ -49,13 +40,6 @@
     "license": "dct:license",
     "providers": "stac:hasProvider",
     "assets": {
-      "@context": {
-        "type": "dct:format",
-        "roles": {
-          "@id": "stac:roles",
-          "@container": "@set"
-        }
-      },
       "@id": "stac:hasAsset",
       "@container": "@set"
     },
@@ -77,17 +61,11 @@
     "properties": "@nest",
     "geometry": {
       "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
+        "coordinates": "geojson:coordinates"
       },
       "@id": "geojson:geometry"
     },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
+    "bbox": "geojson:bbox",
     "conformsTo": {
       "@container": "@set",
       "@id": "dct:conformsTo",
@@ -119,6 +97,12 @@
         }
       },
       "@id": "rec:hasLinkTemplate"
+    },
+    "eo:bands": {
+      "@id": "eo:bands",
+      "@context": {
+        "@vocab": "https://w3id.org/ogc/stac/eo/"
+      }
     },
     "language": {
       "@context": {
@@ -155,14 +139,8 @@
       "@context": {
         "concepts": {
           "@context": {
-            "id": {
-              "@id": "thns:id",
-              "@type": "xsd:string"
-            },
-            "url": {
-              "@id": "@id",
-              "@type": "@id"
-            }
+            "id": "thns:id",
+            "url": "@id"
           },
           "@id": "thns:concepts",
           "@container": "@set"
@@ -185,13 +163,7 @@
       "@context": {
         "logo": {
           "@context": {
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
+            "rel": "http://www.iana.org/assignments/relation",
             "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
@@ -203,13 +175,6 @@
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "rights": "dcat:rights",
-    "eo:bands": {
-      "@id": "eo:bands",
-      "@context": {
-        "@vocab": "https://w3id.org/ogc/stac/eo/"
-      }
-    },
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",
@@ -219,6 +184,7 @@
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
+    "rights": "dcat:rights",
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"

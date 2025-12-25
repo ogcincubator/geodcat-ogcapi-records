@@ -370,14 +370,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:extent [ ] ;
     dcterms:license "CC-BY-4.0" ;
     dcterms:title "Simple EO Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "20201211_223832_CS2" ;
+    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
 
@@ -704,7 +704,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -715,19 +714,25 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
-    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
+    geojson:bbox 1.343885e+00,
+        1.369048e+00,
+        1.729117e+02,
+        1.729547e+02 ;
     geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
+            geojson:coordinates "[172.91173669923782, 1.3438851951615003]",
+                "[172.91173669923782, 1.3690476620161975]",
+                "[172.95469614953714, 1.3438851951615003]",
+                "[172.95469614953714, 1.3690476620161975]" ] ;
     stac:hasAsset [ ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" ;
@@ -782,18 +787,9 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "title": {
-      "@id": "dct:title",
-      "@container": "@set"
-    },
-    "description": {
-      "@id": "dct:description",
-      "@container": "@set"
-    },
-    "keywords": {
-      "@id": "dct:subject",
-      "@container": "@set"
-    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "keywords": "dct:subject",
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
@@ -811,13 +807,6 @@ Links to the schema:
     "license": "dct:license",
     "providers": "stac:hasProvider",
     "assets": {
-      "@context": {
-        "type": "dct:format",
-        "roles": {
-          "@id": "stac:roles",
-          "@container": "@set"
-        }
-      },
       "@id": "stac:hasAsset",
       "@container": "@set"
     },
@@ -839,17 +828,11 @@ Links to the schema:
     "properties": "@nest",
     "geometry": {
       "@context": {
-        "coordinates": {
-          "@container": "@list",
-          "@id": "geojson:coordinates"
-        }
+        "coordinates": "geojson:coordinates"
       },
       "@id": "geojson:geometry"
     },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
+    "bbox": "geojson:bbox",
     "conformsTo": {
       "@container": "@set",
       "@id": "dct:conformsTo",
@@ -881,6 +864,12 @@ Links to the schema:
         }
       },
       "@id": "rec:hasLinkTemplate"
+    },
+    "eo:bands": {
+      "@id": "eo:bands",
+      "@context": {
+        "@vocab": "https://w3id.org/ogc/stac/eo/"
+      }
     },
     "language": {
       "@context": {
@@ -917,14 +906,8 @@ Links to the schema:
       "@context": {
         "concepts": {
           "@context": {
-            "id": {
-              "@id": "thns:id",
-              "@type": "xsd:string"
-            },
-            "url": {
-              "@id": "@id",
-              "@type": "@id"
-            }
+            "id": "thns:id",
+            "url": "@id"
           },
           "@id": "thns:concepts",
           "@container": "@set"
@@ -947,13 +930,7 @@ Links to the schema:
       "@context": {
         "logo": {
           "@context": {
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
+            "rel": "http://www.iana.org/assignments/relation",
             "type": "dct:type",
             "hreflang": "dct:language",
             "title": "rdfs:label",
@@ -965,13 +942,6 @@ Links to the schema:
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "rights": "dcat:rights",
-    "eo:bands": {
-      "@id": "eo:bands",
-      "@context": {
-        "@vocab": "https://w3id.org/ogc/stac/eo/"
-      }
-    },
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",
@@ -981,6 +951,7 @@ Links to the schema:
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
+    "rights": "dcat:rights",
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"
