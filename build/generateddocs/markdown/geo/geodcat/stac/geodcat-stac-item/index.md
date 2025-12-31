@@ -207,11 +207,11 @@ This is the simple item example from the STAC specification.
     dcterms:date "2020-12-11T22:38:32.125000Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation "parent" ;
+            ns1:relation "root" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation "root" ;
+            ns1:relation "parent" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -511,9 +511,13 @@ This is the complete "core" item example from the STAC specification.
     dcterms:description "A sample STAC Item that includes examples of all common metadata" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     dcterms:title "Core Item" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
+            dcterms:type "text/html" ;
+            ns1:relation "alternate" ;
+            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
+        [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation "root" ;
+            ns1:relation "parent" ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
@@ -521,12 +525,8 @@ This is the complete "core" item example from the STAC specification.
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns1:relation "parent" ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "HTML version of this STAC Item" ;
-            dcterms:type "text/html" ;
-            ns1:relation "alternate" ;
-            oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ] ;
+            ns1:relation "root" ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox 1.343885e+00,
         1.369048e+00,
         1.729117e+02,
