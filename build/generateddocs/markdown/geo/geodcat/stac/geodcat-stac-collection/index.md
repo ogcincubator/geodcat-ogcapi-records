@@ -318,25 +318,25 @@ This is the collection example from the STAC specification.
     dcterms:subject "collection",
         "example",
         "simple" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "Simple Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
-        [ rdfs:label "Extended Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
-        [ rdfs:label "Simple Item" ;
+        [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ] ;
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ] ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
@@ -395,11 +395,6 @@ Links to the schema:
     "type": "@type",
     "id": "@id",
     "extent": "dct:extent",
-    "item_assets": {
-      "@context": {
-        "title": "dct:title"
-      }
-    },
     "links": {
       "@context": {
         "href": {
@@ -440,7 +435,10 @@ Links to the schema:
       "@context": {
         "title": "dct:title",
         "type": "dct:format",
-        "roles": "stac:roles"
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        }
       },
       "@id": "stac:hasAsset",
       "@container": "@set"

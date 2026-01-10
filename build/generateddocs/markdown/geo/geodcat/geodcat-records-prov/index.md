@@ -119,10 +119,7 @@ a STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     prov:wasGeneratedBy <http://mysystem.io/prov?object=20201211_223832_CS2> ;
-    geojson:bbox 1.343885e+00,
-        1.369048e+00,
-        1.729117e+02,
-        1.729547e+02 ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -265,10 +262,7 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     prov:wasGeneratedBy <surveys:DP-1-S1> ;
-    geojson:bbox 1.343885e+00,
-        1.369048e+00,
-        1.729117e+02,
-        1.729547e+02 ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -439,10 +433,7 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
-    geojson:bbox 1.343885e+00,
-        1.369048e+00,
-        1.729117e+02,
-        1.729547e+02 ;
+    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
@@ -501,74 +492,19 @@ Links to the schema:
     },
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@context": {
-        "externalIds": {
-          "@context": {
-            "scheme": "rec:scheme",
-            "value": "rec:id"
-          },
-          "@container": "@set",
-          "@id": "rec:scopedIdentifier"
-        },
-        "themes": {
-          "@context": {
-            "concepts": {
-              "@context": {
-                "id": "thns:id",
-                "url": "@id"
-              },
-              "@id": "thns:concepts",
-              "@container": "@set"
-            },
-            "scheme": "thns:scheme"
-          },
-          "@container": "@set",
-          "@id": "rec:themes"
-        },
-        "formats": {
-          "@context": {
-            "name": "rec:name",
-            "mediaType": "rec:mediaType"
-          },
-          "@container": "@set",
-          "@id": "rec:format",
-          "@type": "@id"
-        },
-        "contacts": {
-          "@context": {
-            "logo": {
-              "@context": {
-                "rel": "http://www.iana.org/assignments/relation",
-                "type": "dct:type",
-                "hreflang": "dct:language",
-                "title": "rdfs:label",
-                "length": "dct:extent"
-              }
-            }
-          },
-          "@container": "@set",
-          "@id": "dcat:contactPoint",
-          "@type": "@id"
-        },
-        "license": "dcat:license",
-        "rights": "dcat:rights"
-      }
-    },
     "geometry": {
       "@context": {
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "bbox": {
-          "@container": "@list",
-          "@id": "geojson:bbox"
         }
       },
       "@id": "geojson:geometry"
     },
-    "bbox": "geojson:bbox",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "links": {
       "@context": {
         "rel": {
@@ -793,6 +729,8 @@ Links to the schema:
     "has_provenance": {
       "@context": {
         "wasAssociatedWith": {
+          "@id": "prov:wasAssociatedWith",
+          "@type": "@id",
           "@context": {
             "rel": {
               "@context": {
@@ -805,9 +743,7 @@ Links to the schema:
             "hreflang": "dct:language",
             "title": "rdfs:label",
             "length": "dct:extent"
-          },
-          "@id": "prov:wasAssociatedWith",
-          "@type": "@id"
+          }
         }
       },
       "@id": "dct:provenance",

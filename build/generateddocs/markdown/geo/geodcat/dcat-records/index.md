@@ -490,10 +490,20 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
 <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
     dcterms:temporal [ ] ;
-    rdfs:seeAlso [ rdfs:label "This document as HTML" ;
+    rdfs:seeAlso [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:format "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:format "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
+            dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
+            dcterms:modified "2015-01-23T00:00:00Z" ;
+            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
+            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
@@ -504,33 +514,23 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:modified "2015-01-23T00:00:00Z" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:format "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
             oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:format "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
-        [ rdfs:label "Web Accessible Folder (WAF)" ;
-            dcterms:created "2015-01-23T00:00:00Z" ;
+        [ rdfs:label "This document as HTML" ;
             dcterms:format "text/html" ;
-            dcterms:modified "2015-01-23T00:00:00Z" ;
-            ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
-            oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ] ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ] ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
     rec:hasLinkTemplate [ rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
             rec:hasVariable [ dcterms:description "..." ;
-                    dcterms:format "number" ;
-                    dcterms:identifier "height" ],
-                [ dcterms:description "..." ;
                     dcterms:format "string" ;
                     dcterms:identifier "crs" ],
+                [ dcterms:description "..." ;
+                    dcterms:format "number" ;
+                    dcterms:identifier "height" ],
                 [ dcterms:description "..." ;
                     dcterms:format "number" ;
                     dcterms:identifier "width" ],
@@ -674,89 +674,19 @@ Links to the schema:
     },
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@context": {
-        "externalIds": {
-          "@context": {
-            "scheme": "rec:scheme",
-            "value": "rec:id"
-          },
-          "@container": "@set",
-          "@id": "rec:scopedIdentifier"
-        },
-        "themes": {
-          "@context": {
-            "concepts": {
-              "@context": {
-                "id": "thns:id",
-                "url": "@id"
-              },
-              "@id": "thns:concepts",
-              "@container": "@set"
-            },
-            "scheme": "thns:scheme"
-          },
-          "@container": "@set",
-          "@id": "rec:themes"
-        },
-        "formats": {
-          "@context": {
-            "name": "rec:name",
-            "mediaType": "rec:mediaType"
-          },
-          "@container": "@set",
-          "@id": "rec:format",
-          "@type": "@id"
-        },
-        "contacts": {
-          "@context": {
-            "logo": {
-              "@context": {
-                "rel": "http://www.iana.org/assignments/relation",
-                "type": "dct:type",
-                "hreflang": "dct:language",
-                "title": "rdfs:label",
-                "length": "dct:extent"
-              }
-            },
-            "links": {
-              "@context": {
-                "rel": {
-                  "@context": {
-                    "@base": "http://www.iana.org/assignments/relation/"
-                  },
-                  "@id": "http://www.iana.org/assignments/relation",
-                  "@type": "@id"
-                },
-                "type": "dct:type",
-                "hreflang": "dct:language",
-                "title": "rdfs:label",
-                "length": "dct:extent"
-              }
-            }
-          },
-          "@container": "@set",
-          "@id": "dcat:contactPoint",
-          "@type": "@id"
-        },
-        "license": "dcat:license",
-        "rights": "dcat:rights"
-      }
-    },
     "geometry": {
       "@context": {
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "bbox": {
-          "@container": "@list",
-          "@id": "geojson:bbox"
         }
       },
       "@id": "geojson:geometry"
     },
-    "bbox": "geojson:bbox",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "links": {
       "@context": {
         "rel": {

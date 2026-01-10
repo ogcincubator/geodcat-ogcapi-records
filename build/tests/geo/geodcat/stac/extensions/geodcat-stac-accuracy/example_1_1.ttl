@@ -3,6 +3,7 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,15 +12,9 @@
     dcterms:date "2020-12-11T22:38:32+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/examples/item.json> ] ;
-    geojson:bbox 1.3e+00,
-        1.4e+00,
-        1.729e+02,
-        173 ;
+    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
-            geojson:coordinates "[172.9, 1.3]",
-                "[172.9, 1.4]",
-                "[173, 1.3]",
-                "[173, 1.4]" ] ;
+            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
     stac:hasAsset [ ] ;
     stac:hasExtension "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
     stac:version "1.0.0" ;

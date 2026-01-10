@@ -4,11 +4,6 @@
     "type": "@type",
     "id": "@id",
     "extent": "dct:extent",
-    "item_assets": {
-      "@context": {
-        "title": "dct:title"
-      }
-    },
     "links": {
       "@context": {
         "href": {
@@ -49,7 +44,10 @@
       "@context": {
         "title": "dct:title",
         "type": "dct:format",
-        "roles": "stac:roles"
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        }
       },
       "@id": "stac:hasAsset",
       "@container": "@set"

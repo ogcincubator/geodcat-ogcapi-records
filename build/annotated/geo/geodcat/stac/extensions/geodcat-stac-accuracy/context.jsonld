@@ -20,9 +20,18 @@
       },
       "@id": "rdfs:seeAlso"
     },
-    "title": "dct:title",
-    "description": "dct:description",
-    "keywords": "dct:subject",
+    "title": {
+      "@id": "dct:title",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "keywords": {
+      "@id": "dct:subject",
+      "@container": "@set"
+    },
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
@@ -40,6 +49,13 @@
     "license": "dct:license",
     "providers": "stac:hasProvider",
     "assets": {
+      "@context": {
+        "type": "dct:format",
+        "roles": {
+          "@id": "stac:roles",
+          "@container": "@set"
+        }
+      },
       "@id": "stac:hasAsset",
       "@container": "@set"
     },
@@ -61,11 +77,17 @@
     "properties": "@nest",
     "geometry": {
       "@context": {
-        "coordinates": "geojson:coordinates"
+        "coordinates": {
+          "@container": "@list",
+          "@id": "geojson:coordinates"
+        }
       },
       "@id": "geojson:geometry"
     },
-    "bbox": "geojson:bbox",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "conformsTo": {
       "@container": "@set",
       "@id": "dct:conformsTo",
@@ -133,8 +155,14 @@
       "@context": {
         "concepts": {
           "@context": {
-            "id": "thns:id",
-            "url": "@id"
+            "id": {
+              "@id": "thns:id",
+              "@type": "xsd:string"
+            },
+            "url": {
+              "@id": "@id",
+              "@type": "@id"
+            }
           },
           "@id": "thns:concepts",
           "@container": "@set"
@@ -154,21 +182,11 @@
       "@type": "@id"
     },
     "contacts": {
-      "@context": {
-        "logo": {
-          "@context": {
-            "rel": "http://www.iana.org/assignments/relation",
-            "type": "dct:type",
-            "hreflang": "dct:language",
-            "title": "rdfs:label",
-            "length": "dct:extent"
-          }
-        }
-      },
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
+    "rights": "dcat:rights",
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",
@@ -178,7 +196,6 @@
         "@vocab": "https://www.opengis.net/def/ogc-api/records/"
       }
     },
-    "rights": "dcat:rights",
     "href": {
       "@type": "@id",
       "@id": "oa:hasTarget"

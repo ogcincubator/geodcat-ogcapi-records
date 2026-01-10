@@ -15,89 +15,19 @@
     },
     "type": "@type",
     "id": "@id",
-    "properties": {
-      "@context": {
-        "externalIds": {
-          "@context": {
-            "scheme": "rec:scheme",
-            "value": "rec:id"
-          },
-          "@container": "@set",
-          "@id": "rec:scopedIdentifier"
-        },
-        "themes": {
-          "@context": {
-            "concepts": {
-              "@context": {
-                "id": "thns:id",
-                "url": "@id"
-              },
-              "@id": "thns:concepts",
-              "@container": "@set"
-            },
-            "scheme": "thns:scheme"
-          },
-          "@container": "@set",
-          "@id": "rec:themes"
-        },
-        "formats": {
-          "@context": {
-            "name": "rec:name",
-            "mediaType": "rec:mediaType"
-          },
-          "@container": "@set",
-          "@id": "rec:format",
-          "@type": "@id"
-        },
-        "contacts": {
-          "@context": {
-            "logo": {
-              "@context": {
-                "rel": "http://www.iana.org/assignments/relation",
-                "type": "dct:type",
-                "hreflang": "dct:language",
-                "title": "rdfs:label",
-                "length": "dct:extent"
-              }
-            },
-            "links": {
-              "@context": {
-                "rel": {
-                  "@context": {
-                    "@base": "http://www.iana.org/assignments/relation/"
-                  },
-                  "@id": "http://www.iana.org/assignments/relation",
-                  "@type": "@id"
-                },
-                "type": "dct:type",
-                "hreflang": "dct:language",
-                "title": "rdfs:label",
-                "length": "dct:extent"
-              }
-            }
-          },
-          "@container": "@set",
-          "@id": "dcat:contactPoint",
-          "@type": "@id"
-        },
-        "license": "dcat:license",
-        "rights": "dcat:rights"
-      }
-    },
     "geometry": {
       "@context": {
         "coordinates": {
           "@container": "@list",
           "@id": "geojson:coordinates"
-        },
-        "bbox": {
-          "@container": "@list",
-          "@id": "geojson:bbox"
         }
       },
       "@id": "geojson:geometry"
     },
-    "bbox": "geojson:bbox",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
     "links": {
       "@context": {
         "rel": {
