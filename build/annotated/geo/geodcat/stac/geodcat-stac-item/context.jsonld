@@ -168,20 +168,6 @@
       }
     },
     "stac_extensions": "stac:hasExtension",
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
-    },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "providers": "stac:hasProvider",
-    "rights": "dcat:rights",
     "assets": {
       "@context": {
         "type": "dct:format",
@@ -194,6 +180,15 @@
       "@container": "@set"
     },
     "stac_version": "stac:version",
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "providers": "stac:hasProvider",
     "media_type": "dct:format",
     "extent": "dct:extent",
     "href": {
@@ -217,6 +212,11 @@
     "foaf": "http://xmlns.com/foaf/0.1/",
     "thns": "https://w3id.org/ogc/stac/themes/",
     "stac": "https://w3id.org/ogc/stac/core/",
+    "rights": "dcat:rights",
+    "datetime": {
+      "@id": "dct:date",
+      "@type": "xsd:dateTime"
+    },
     "@version": 1.1
   }
 }

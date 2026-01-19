@@ -1,3 +1,4 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -7,7 +8,6 @@
 <https://example.com/stac/raster/example-1/eo-collection> a <https://example.com/stac/raster/example-1/Collection> ;
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
-    dcterms:license "CC-BY-4.0" ;
     dcterms:title "Simple EO Collection" ;
     rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
@@ -17,6 +17,7 @@
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+    dcat:license "CC-BY-4.0" ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
 

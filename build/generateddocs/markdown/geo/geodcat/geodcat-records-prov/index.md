@@ -492,6 +492,7 @@ Links to the schema:
     },
     "type": "@type",
     "id": "@id",
+    "properties": "@nest",
     "geometry": {
       "@context": {
         "coordinates": {
@@ -603,33 +604,37 @@ Links to the schema:
       "@id": "rec:themes",
       "@context": {
         "concepts": {
-          "@id": "rec:concept",
+          "@id": "thns:concepts",
           "@context": {
             "id": {
               "@type": "xsd:string",
-              "@id": "rec:conceptID"
+              "@id": "thns:id"
             },
             "url": {
               "@type": "@id",
-              "@id": "dcat:theme"
+              "@id": "@id"
             }
-          }
+          },
+          "@container": "@set"
         },
-        "scheme": "rec:scheme"
+        "scheme": "thns:scheme"
       }
     },
     "formats": {
       "@id": "rec:format",
       "@context": {
-        "name": "rec:name"
-      }
+        "name": "rec:name",
+        "mediaType": "rec:mediaType"
+      },
+      "@container": "@set",
+      "@type": "@id"
     },
     "contacts": {
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
     },
-    "license": "dct:license",
+    "license": "dcat:license",
     "accessrights": "dct:accessRights",
     "variables": {
       "@container": "@id",
@@ -1148,6 +1153,7 @@ Links to the schema:
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "thns": "https://w3id.org/ogc/stac/themes/",
+    "rights": "dcat:rights",
     "@version": 1.1
   }
 }

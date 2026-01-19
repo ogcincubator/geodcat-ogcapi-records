@@ -359,6 +359,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 #### ttl
 ```ttl
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -368,7 +369,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 <https://example.com/stac/raster/example-1/eo-collection> a <https://example.com/stac/raster/example-1/Collection> ;
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
-    dcterms:license "CC-BY-4.0" ;
     dcterms:title "Simple EO Collection" ;
     rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
@@ -378,6 +378,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
+    dcat:license "CC-BY-4.0" ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
 
@@ -715,15 +716,15 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -782,34 +783,6 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "title": {
-      "@id": "dct:title",
-      "@container": "@set"
-    },
-    "description": {
-      "@id": "dct:description",
-      "@container": "@set"
-    },
-    "keywords": {
-      "@id": "dct:subject",
-      "@container": "@set"
-    },
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
-    },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "created": "dct:created",
-    "updated": "dct:modified",
-    "license": "dct:license",
-    "providers": "stac:hasProvider",
     "assets": {
       "@context": {
         "type": "dct:format",
@@ -822,6 +795,24 @@ Links to the schema:
       "@container": "@set"
     },
     "stac_version": "stac:version",
+    "keywords": {
+      "@id": "dcat:keyword",
+      "@container": "@set"
+    },
+    "license": "dcat:license",
+    "datetime": {
+      "@id": "dct:date",
+      "@type": "xsd:dateTime"
+    },
+    "start_datetime": {
+      "@id": "stac:start_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "end_datetime": {
+      "@id": "stac:end_datetime",
+      "@type": "xsd:dateTime"
+    },
+    "providers": "stac:hasProvider",
     "media_type": "dct:format",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -882,78 +873,87 @@ Links to the schema:
       },
       "@id": "rec:hasLinkTemplate"
     },
+    "title": {
+      "@id": "dct:title",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "eo:bands": {
+      "@id": "eo:bands",
+      "@context": {
+        "@vocab": "https://w3id.org/ogc/stac/eo/"
+      }
+    },
+    "created": "dct:created",
+    "updated": "dct:modified",
     "language": {
+      "@id": "rec:language",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      },
-      "@id": "rec:language"
+      }
     },
     "languages": {
+      "@container": "@set",
+      "@id": "rec:languages",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      },
-      "@container": "@set",
-      "@id": "rec:languages"
+      }
     },
     "resourceLanguages": {
+      "@container": "@set",
+      "@id": "rec:resourceLanguages",
       "@context": {
         "code": "rec:languageCode",
         "name": "skos:prefLabel"
-      },
-      "@container": "@set",
-      "@id": "rec:resourceLanguages"
+      }
     },
     "externalIds": {
+      "@container": "@set",
+      "@id": "rec:scopedIdentifier",
       "@context": {
         "scheme": "rec:scheme",
         "value": "rec:id"
-      },
-      "@container": "@set",
-      "@id": "rec:scopedIdentifier"
+      }
     },
     "themes": {
+      "@container": "@set",
+      "@id": "rec:themes",
       "@context": {
         "concepts": {
+          "@id": "thns:concepts",
           "@context": {
             "id": {
-              "@id": "thns:id",
-              "@type": "xsd:string"
+              "@type": "xsd:string",
+              "@id": "thns:id"
             },
             "url": {
-              "@id": "@id",
-              "@type": "@id"
+              "@type": "@id",
+              "@id": "@id"
             }
           },
-          "@id": "thns:concepts",
           "@container": "@set"
         },
         "scheme": "thns:scheme"
-      },
-      "@container": "@set",
-      "@id": "rec:themes"
+      }
     },
     "formats": {
+      "@id": "rec:format",
       "@context": {
         "name": "rec:name",
         "mediaType": "rec:mediaType"
       },
       "@container": "@set",
-      "@id": "rec:format",
       "@type": "@id"
     },
     "contacts": {
       "@container": "@set",
       "@id": "dcat:contactPoint",
       "@type": "@id"
-    },
-    "rights": "dcat:rights",
-    "eo:bands": {
-      "@id": "eo:bands",
-      "@context": {
-        "@vocab": "https://w3id.org/ogc/stac/eo/"
-      }
     },
     "accessrights": "dct:accessRights",
     "variables": {
@@ -986,6 +986,7 @@ Links to the schema:
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "thns": "https://w3id.org/ogc/stac/themes/",
+    "rights": "dcat:rights",
     "@version": 1.1
   }
 }
