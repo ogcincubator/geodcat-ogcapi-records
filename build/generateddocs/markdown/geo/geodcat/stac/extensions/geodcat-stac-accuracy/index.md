@@ -222,9 +222,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "type": "dct:type",
         "hreflang": "dct:language",
-        "title": "rdfs:label",
         "length": "dct:extent"
       },
       "@id": "rdfs:seeAlso"

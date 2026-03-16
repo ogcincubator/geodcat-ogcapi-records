@@ -370,12 +370,12 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:title "Simple EO Collection" ;
-    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
-            dcterms:type "application/geo+json" ;
+    rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/geo+json> ;
+            dcterms:title "20201211_223832_CS2" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
+        [ a <https://example.com/stac/raster/example-1/application/json> ;
+            dcterms:title "Simple Example Collection" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     dcat:license "CC-BY-4.0" ;
@@ -714,17 +714,17 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
+    rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/json> ;
+            dcterms:title "Simple Example Collection" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
+        [ a <https://example.com/stac/raster/example-1/application/json> ;
+            dcterms:title "Simple Example Collection" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
+        [ a <https://example.com/stac/raster/example-1/application/json> ;
+            dcterms:title "Simple Example Collection" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -776,9 +776,7 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
-        "type": "dct:type",
         "hreflang": "dct:language",
-        "title": "rdfs:label",
         "length": "dct:extent"
       },
       "@id": "rdfs:seeAlso"

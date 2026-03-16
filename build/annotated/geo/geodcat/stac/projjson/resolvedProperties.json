@@ -1,0 +1,1103 @@
+[
+  {
+    "path": "/$schema",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/$schema"
+  },
+  {
+    "path": "/type",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/type"
+  },
+  {
+    "path": "/source_crs",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/source_crs"
+  },
+  {
+    "path": "/target_crs",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/target_crs"
+  },
+  {
+    "path": "/transformation",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/transformation"
+  },
+  {
+    "path": "/transformation/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/type",
+    "schema_type": "string",
+    "enum": [
+      "AbridgedTransformation"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/type",
+    "schema_type": "string",
+    "enum": [
+      "OperationMethod"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/id/authority",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/id/code",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/method/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/type",
+    "schema_type": "string",
+    "enum": [
+      "ParameterValue"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/value",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit/type",
+    "required": true,
+    "schema_type": "string",
+    "enum": [
+      "LinearUnit",
+      "AngularUnit",
+      "ScaleUnit",
+      "TimeUnit",
+      "ParametricUnit",
+      "Unit"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit/conversion_factor",
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/unit/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/parameters/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/transformation/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/scope",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/scope"
+  },
+  {
+    "path": "/area",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/area"
+  },
+  {
+    "path": "/bbox",
+    "vocab": "https://proj.org/ontology/",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/bbox"
+  },
+  {
+    "path": "/bbox/east_longitude",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/bbox/west_longitude",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/bbox/south_latitude",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/bbox/north_latitude",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/remarks",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/remarks"
+  },
+  {
+    "path": "/id",
+    "vocab": "https://proj.org/ontology/",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/id"
+  },
+  {
+    "path": "/ids",
+    "vocab": "https://proj.org/ontology/",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/ids"
+  },
+  {
+    "path": "/usages",
+    "vocab": "https://proj.org/ontology/",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/usages"
+  },
+  {
+    "path": "/usages/scope",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/usages/area",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/usages/bbox",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/name",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/name"
+  },
+  {
+    "path": "/components",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/components"
+  },
+  {
+    "path": "/base_crs",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/base_crs"
+  },
+  {
+    "path": "/base_crs/type",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/type",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/anchor",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/$schema",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/scope",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/area",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/bbox",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/usages",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/remarks",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/type",
+    "schema_type": "string",
+    "enum": [
+      "CoordinateSystem"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/name",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/subtype",
+    "required": true,
+    "schema_type": "string",
+    "enum": [
+      "Cartesian",
+      "spherical",
+      "ellipsoidal",
+      "vertical",
+      "ordinal",
+      "parametric",
+      "TemporalDateTime",
+      "TemporalCount",
+      "TemporalMeasure"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/type",
+    "schema_type": "string",
+    "enum": [
+      "Axis"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/abbreviation",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/direction",
+    "required": true,
+    "schema_type": "string",
+    "enum": [
+      "north",
+      "northNorthEast",
+      "northEast",
+      "eastNorthEast",
+      "east",
+      "eastSouthEast",
+      "southEast",
+      "southSouthEast",
+      "south",
+      "southSouthWest",
+      "southWest",
+      "westSouthWest",
+      "west",
+      "westNorthWest",
+      "northWest",
+      "northNorthWest",
+      "up",
+      "down",
+      "geocentricX",
+      "geocentricY",
+      "geocentricZ",
+      "columnPositive",
+      "columnNegative",
+      "rowPositive",
+      "rowNegative",
+      "displayRight",
+      "displayLeft",
+      "displayUp",
+      "displayDown",
+      "forward",
+      "aft",
+      "port",
+      "starboard",
+      "clockwise",
+      "counterClockwise",
+      "towards",
+      "awayFrom",
+      "future",
+      "past",
+      "unspecified"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/unit",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/axis/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/coordinate_system/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/$schema",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/scope",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/area",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/bbox",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/usages",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/remarks",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/conversion"
+  },
+  {
+    "path": "/conversion/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/type",
+    "schema_type": "string",
+    "enum": [
+      "Conversion"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/method",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/parameters",
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/conversion/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/coordinate_system",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/coordinate_system"
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/type",
+    "schema_type": "string",
+    "enum": [
+      "Ellipsoid"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/semi_major_axis",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/semi_major_axis/value",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/semi_major_axis/unit",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/semi_minor_axis",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/inverse_flattening",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/ellipsoid/radius",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/type",
+    "schema_type": "string",
+    "enum": [
+      "PrimeMeridian"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/longitude",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/prime_meridian/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/frame_reference_epoch",
+    "required": true,
+    "schema_type": "number",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/deformation_model",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/$schema",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/type",
+    "schema_type": "string",
+    "enum": [
+      "DatumEnsemble"
+    ],
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/members",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/members/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/members/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/members/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/ellipsoid",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/accuracy",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum_ensemble/ids",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/base_crs",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/conversion",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/calendar",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/datum/time_origin",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/geoid_model",
+    "schema_type": "object",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/geoid_model/name",
+    "required": true,
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/geoid_model/interpolation_crs",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/base_crs/geoid_model/id",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ]
+  },
+  {
+    "path": "/interpolation_crs",
+    "vocab": "https://proj.org/ontology/",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/interpolation_crs"
+  },
+  {
+    "path": "/method",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/method"
+  },
+  {
+    "path": "/parameters",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/parameters"
+  },
+  {
+    "path": "/accuracy",
+    "vocab": "https://proj.org/ontology/",
+    "schema_type": "string",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/accuracy"
+  },
+  {
+    "path": "/steps",
+    "vocab": "https://proj.org/ontology/",
+    "required": true,
+    "schema_type": "array",
+    "sources": [
+      "https://proj.org/en/latest/schemas/v0.2/projjson.schema.json"
+    ],
+    "effectiveId": "https://proj.org/ontology/steps"
+  }
+]
