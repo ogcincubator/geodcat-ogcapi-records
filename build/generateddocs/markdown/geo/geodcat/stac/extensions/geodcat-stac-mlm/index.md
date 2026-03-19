@@ -370,12 +370,12 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:title "Simple EO Collection" ;
-    rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/json> ;
-            dcterms:title "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/geo+json> ;
-            dcterms:title "20201211_223832_CS2" ;
+        [ rdfs:label "20201211_223832_CS2" ;
+            dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
     dcat:license "CC-BY-4.0" ;
@@ -714,16 +714,16 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:created "2020-12-12T01:48:13.725Z" ;
     dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
-    rdfs:seeAlso [ a <https://example.com/stac/raster/example-1/application/json> ;
-            dcterms:title "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/json> ;
-            dcterms:title "Simple Example Collection" ;
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ a <https://example.com/stac/raster/example-1/application/json> ;
-            dcterms:title "Simple Example Collection" ;
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
@@ -776,11 +776,32 @@ Links to the schema:
           "@id": "http://www.iana.org/assignments/relation",
           "@type": "@id"
         },
+        "type": "dct:type",
         "hreflang": "dct:language",
+        "title": "rdfs:label",
         "length": "dct:extent"
       },
       "@id": "rdfs:seeAlso"
     },
+    "title": {
+      "@id": "dct:title",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "dct:description",
+      "@container": "@set"
+    },
+    "keywords": {
+      "@id": "dcat:keyword",
+      "@container": "@set"
+    },
+    "datetime": {
+      "@id": "dct:date",
+      "@type": "xsd:dateTime"
+    },
+    "created": "dct:created",
+    "updated": "dct:modified",
+    "license": "dcat:license",
     "assets": {
       "@context": {
         "type": "dct:format",
@@ -793,24 +814,6 @@ Links to the schema:
       "@container": "@set"
     },
     "stac_version": "stac:version",
-    "keywords": {
-      "@id": "dcat:keyword",
-      "@container": "@set"
-    },
-    "license": "dcat:license",
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
-    },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "providers": "stac:hasProvider",
     "media_type": "dct:format",
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
@@ -871,22 +874,12 @@ Links to the schema:
       },
       "@id": "rec:hasLinkTemplate"
     },
-    "title": {
-      "@id": "dct:title",
-      "@container": "@set"
-    },
-    "description": {
-      "@id": "dct:description",
-      "@container": "@set"
-    },
     "eo:bands": {
       "@id": "eo:bands",
       "@context": {
         "@vocab": "https://w3id.org/ogc/stac/eo/"
       }
     },
-    "created": "dct:created",
-    "updated": "dct:modified",
     "language": {
       "@id": "rec:language",
       "@context": {

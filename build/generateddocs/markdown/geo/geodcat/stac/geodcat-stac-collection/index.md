@@ -314,14 +314,8 @@ This is the collection example from the STAC specification.
 <https://example.com/stac/example1/simple-collection> a <https://example.com/stac/example1/Collection> ;
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
     dcterms:extent [ ] ;
-    dcterms:license "CC-BY-4.0" ;
-    dcterms:subject "collection",
-        "example",
-        "simple" ;
-    rdfs:seeAlso [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
-        [ rdfs:label "Extended Item" ;
+    dcterms:title "Simple Example Collection" ;
+    rdfs:seeAlso [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
@@ -329,6 +323,9 @@ This is the collection example from the STAC specification.
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
         [ rdfs:label "Simple Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
@@ -340,7 +337,6 @@ This is the collection example from the STAC specification.
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json",
         "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
         "https://stac-extensions.github.io/view/v1.0.0/schema.json" ;
-    stac:hasProvider [ dcterms:description "Producers of awesome spatiotemporal assets" ] ;
     stac:version "1.1.0" .
 
 
@@ -415,10 +411,11 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
+    "title": "dct:title",
+    "description": "dct:description",
     "assets": {
       "@context": {
         "type": "dct:format",
-        "title": "dct:title",
         "roles": {
           "@id": "stac:roles",
           "@container": "@set"
@@ -428,23 +425,7 @@ Links to the schema:
       "@container": "@set"
     },
     "stac_version": "stac:version",
-    "keywords": "dct:subject",
-    "license": "dct:license",
-    "datetime": {
-      "@id": "dct:date",
-      "@type": "xsd:dateTime"
-    },
-    "start_datetime": {
-      "@id": "stac:start_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "end_datetime": {
-      "@id": "stac:end_datetime",
-      "@type": "xsd:dateTime"
-    },
-    "providers": "stac:hasProvider",
     "media_type": "dct:format",
-    "description": "dct:description",
     "stac": "https://w3id.org/ogc/stac/core/",
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
