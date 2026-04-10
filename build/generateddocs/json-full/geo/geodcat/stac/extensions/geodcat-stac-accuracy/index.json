@@ -11,11 +11,11 @@
   "register": "ogc-incubator",
   "dependsOn": [
     "ogc.geo.geodcat.stac.geodcat-stac-item",
-    "ogc.contrib.stac.extensions.accuracy",
-    "ogc.geo.geodcat.stac.geodcat-stac-collection"
+    "ogc.geo.geodcat.stac.geodcat-stac-collection",
+    "ogc.contrib.stac.extensions.accuracy"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2026-04-04",
+  "dateOfLastChange": "2026-04-07",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -40,6 +40,9 @@
     "STAC Accuracy extension"
   ],
   "shaclShapes": {
+    "ogc.geo.features.feature": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+    ],
     "ogc.api.records.v1.schemas.linkTemplate": [
       "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
     ]
