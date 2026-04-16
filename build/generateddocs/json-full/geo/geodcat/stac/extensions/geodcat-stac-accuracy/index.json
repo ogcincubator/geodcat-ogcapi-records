@@ -10,12 +10,12 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.geo.geodcat.stac.geodcat-stac-item",
+    "ogc.contrib.stac.extensions.accuracy",
     "ogc.geo.geodcat.stac.geodcat-stac-collection",
-    "ogc.contrib.stac.extensions.accuracy"
+    "ogc.geo.geodcat.stac.geodcat-stac-item"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2026-04-10",
+  "dateOfLastChange": "2023-09-18",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -69,17 +69,17 @@
           "ref": "https://raw.githubusercontent.com/stac-extensions/accuracy/main/examples/item.json",
           "base-uri": "https://example.com/stac/accuracy/example-1/",
           "code": "{\n  \"stac_version\": \"1.0.0\",\n  \"stac_extensions\": [\n    \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\"\n  ],\n  \"type\": \"Feature\",\n  \"id\": \"item\",\n  \"bbox\": [\n    172.9,\n    1.3,\n    173,\n    1.4\n  ],\n  \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          172.9,\n          1.3\n        ],\n        [\n          173,\n          1.3\n        ],\n        [\n          173,\n          1.4\n        ],\n        [\n          172.9,\n          1.4\n        ],\n        [\n          172.9,\n          1.3\n        ]\n      ]\n    ]\n  },\n  \"properties\": {\n    \"datetime\": \"2020-12-11T22:38:32Z\",\n    \"accuracy:geometric_x_bias\": 0,\n    \"accuracy:geometric_y_bias\": 0,\n    \"accuracy:geometric_x_stddev\": 0.5,\n    \"accuracy:geometric_y_stddev\": 0.5,\n    \"accuracy:geometric_rmse\": 1,\n    \"accuracy:measurement_relative\": 0.01,\n    \"accuracy:measurement_absolute\": 0.02\n  },\n  \"links\": [\n    {\n      \"href\": \"https://example.com/examples/item.json\",\n      \"rel\": \"self\"\n    }\n  ],\n  \"assets\": {\n    \"data\": {\n      \"href\": \"https://example.com/examples/file.xyz\"\n    }\n  }\n}",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.json"
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.json"
         },
         {
           "language": "jsonld",
           "code": "{\n  \"@context\": \"https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld\",\n  \"stac_version\": \"1.0.0\",\n  \"stac_extensions\": [\n    \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\"\n  ],\n  \"type\": \"Feature\",\n  \"id\": \"item\",\n  \"bbox\": [\n    172.9,\n    1.3,\n    173,\n    1.4\n  ],\n  \"geometry\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          172.9,\n          1.3\n        ],\n        [\n          173,\n          1.3\n        ],\n        [\n          173,\n          1.4\n        ],\n        [\n          172.9,\n          1.4\n        ],\n        [\n          172.9,\n          1.3\n        ]\n      ]\n    ]\n  },\n  \"properties\": {\n    \"datetime\": \"2020-12-11T22:38:32Z\",\n    \"accuracy:geometric_x_bias\": 0,\n    \"accuracy:geometric_y_bias\": 0,\n    \"accuracy:geometric_x_stddev\": 0.5,\n    \"accuracy:geometric_y_stddev\": 0.5,\n    \"accuracy:geometric_rmse\": 1,\n    \"accuracy:measurement_relative\": 0.01,\n    \"accuracy:measurement_absolute\": 0.02\n  },\n  \"links\": [\n    {\n      \"href\": \"https://example.com/examples/item.json\",\n      \"rel\": \"self\"\n    }\n  ],\n  \"assets\": {\n    \"data\": {\n      \"href\": \"https://example.com/examples/file.xyz\"\n    }\n  }\n}",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.jsonld"
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.jsonld"
         },
         {
           "language": "ttl",
           "code": "@prefix accuracy: <https://w3id.org/ogc/stac/extension/accuracy/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix stac: <https://w3id.org/ogc/stac/core/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/accuracy/example-1/item> a geojson:Feature ;\n    dcterms:date \"2020-12-11T22:38:32+00:00\"^^xsd:dateTime ;\n    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/self> ;\n            oa:hasTarget <https://example.com/examples/item.json> ] ;\n    geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;\n    geojson:geometry [ a geojson:Polygon ;\n            geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;\n    stac:hasAsset [ ] ;\n    stac:hasExtension \"https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json\" ;\n    stac:version \"1.0.0\" ;\n    accuracy:geometric_rmse 1 ;\n    accuracy:geometric_x_bias 0 ;\n    accuracy:geometric_x_stddev 5e-01 ;\n    accuracy:geometric_y_bias 0 ;\n    accuracy:geometric_y_stddev 5e-01 ;\n    accuracy:measurement_absolute 2e-02 ;\n    accuracy:measurement_relative 1e-02 .\n\n",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.ttl"
+          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-accuracy/build/tests/geo/geodcat/stac/extensions/geodcat-stac-accuracy/example_1_1.ttl"
         }
       ]
     }
