@@ -3,12 +3,12 @@
   "abstract": "[Building Blocks](https://ogcincubator.github.io/bblocks-docs/) for OGC API Records, components and extensions\n",
   "description": "A set of Building Blocks to allow reuse, testing and documentation of elements and extensions of OGC API Records. Declares and validates conformance with the OGC API Features (and inherits OGC API Common) baseline.\n\nThese elements are re-used by the [STAC](](https://ogcincubator.github.io/bblocks-stac/) and [GeoDCAT implementation](../geodcat-ogc-api-records), binding Records schemas to DCAT and GeoDCAT ontologies.\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/sparql",
-  "modified": "2026-04-16T04:03:22.406504",
+  "modified": "2026-04-19T04:03:05.454435",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"dea8319f02d5634521314c41e265e2a52e7b436b",
-      "shortCommitId": "\"dea831",
-      "date": "2026-04-14T07:10:58+00:00\""
+      "commitId": "\"82fc8650df6a65be1e17f7c6440191f0b7c6ccff",
+      "shortCommitId": "\"82fc86",
+      "date": "2026-04-17T09:37:57+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/bblocks-ogcapi-records",
@@ -430,8 +430,8 @@
       "abstract": "This building block corresponds to the schema for an OGC API Records contact",
       "shaclShapes": {},
       "dependsOn": [
-        "ogc.ogc-utils.json-link",
-        "ogc.api.records.v1.schemas.roles"
+        "ogc.api.records.v1.schemas.roles",
+        "ogc.ogc-utils.json-link"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/contact/schema.yaml",
@@ -622,16 +622,16 @@
       "version": "0.1",
       "dateOfLastChange": "2024-01-23",
       "dependsOn": [
-        "ogc.geo.features.feature",
-        "ogc.api.records.v1.schemas.contact",
-        "ogc.geo.common.data_types.geojson",
         "ogc.api.records.v1.schemas.language",
-        "ogc.api.records.records-ontology",
+        "ogc.api.records.v1.schemas.time",
+        "ogc.geo.features.feature",
         "ogc.api.records.v1.schemas.theme",
-        "ogc.api.records.v1.schemas.link",
-        "ogc.api.records.v1.schemas.linkTemplate",
+        "ogc.api.records.v1.schemas.contact",
         "ogc.api.records.v1.schemas.license",
-        "ogc.api.records.v1.schemas.time"
+        "ogc.geo.common.data_types.geojson",
+        "ogc.api.records.v1.schemas.link",
+        "ogc.api.records.records-ontology",
+        "ogc.api.records.v1.schemas.linkTemplate"
       ],
       "sources": [
         {
@@ -705,12 +705,12 @@
         ]
       },
       "dependsOn": [
-        "ogc.api.records.v1.schemas.contact",
         "ogc.api.records.v1.schemas.language",
         "ogc.api.features.v1.schemas.collection",
         "ogc.api.records.v1.schemas.theme",
-        "ogc.api.records.v1.schemas.linkTemplate",
-        "ogc.api.records.v1.schemas.license"
+        "ogc.api.records.v1.schemas.contact",
+        "ogc.api.records.v1.schemas.license",
+        "ogc.api.records.v1.schemas.linkTemplate"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/catalog/schema.yaml",
@@ -758,17 +758,17 @@
       ],
       "abstract": "This building block corresponds to the schema for an OGC API Records recordsGeoJSON",
       "shaclShapes": {
-        "ogc.api.records.v1.schemas.linkTemplate": [
-          "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
-        ],
         "ogc.geo.features.feature": [
           "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+        ],
+        "ogc.api.records.v1.schemas.linkTemplate": [
+          "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
         ]
       },
       "dependsOn": [
-        "ogc.api.features.v1.schemas.collections",
+        "ogc.api.records.v1.schemas.recordGeoJSON",
         "ogc.api.records.v1.schemas.linkTemplate",
-        "ogc.api.records.v1.schemas.recordGeoJSON"
+        "ogc.api.features.v1.schemas.collections"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/recordsGeoJSON/schema.yaml",
@@ -822,8 +822,8 @@
       },
       "dependsOn": [
         "ogc.api.records.v1.schemas.catalog",
-        "ogc.api.features.v1.schemas.collections",
-        "ogc.api.records.v1.schemas.linkTemplate"
+        "ogc.api.records.v1.schemas.linkTemplate",
+        "ogc.api.features.v1.schemas.collections"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/v1/schemas/catalogs/schema.yaml",
