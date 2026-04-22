@@ -3,12 +3,12 @@
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/sparql",
-  "modified": "2026-04-16T04:30:19.022132",
+  "modified": "2026-04-19T04:30:21.938535",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"dea8319f02d5634521314c41e265e2a52e7b436b",
-      "shortCommitId": "\"dea831",
-      "date": "2026-04-14T07:10:58+00:00\""
+      "commitId": "\"82fc8650df6a65be1e17f7c6440191f0b7c6ccff",
+      "shortCommitId": "\"82fc86",
+      "date": "2026-04-17T09:37:57+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -179,8 +179,8 @@
       ],
       "shaclShapes": {
         "ogc.geo.geodcat.dcat-ap": [
-          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-          "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+          "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
         ]
       },
       "scope": "dev",
@@ -363,8 +363,8 @@
       ],
       "shaclShapes": {
         "ogc.geo.geodcat.dcat-ap": [
-          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-          "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+          "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+          "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
         ]
       },
       "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-ap/",
@@ -397,8 +397,8 @@
       "register": "ogc-incubator",
       "dependsOn": [
         "ogc.geo.geodcat.geodcat",
-        "ogc.contrib.stac.collection-v1-0-0",
-        "ogc.contrib.stac.collection"
+        "ogc.contrib.stac.collection",
+        "ogc.contrib.stac.collection-v1-0-0"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
@@ -632,8 +632,8 @@
         ]
       },
       "dependsOn": [
-        "ogc.ogc-utils.prov",
-        "ogc.geo.geodcat.geodcat-records"
+        "ogc.geo.geodcat.geodcat-records",
+        "ogc.ogc-utils.prov"
       ],
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/schema.yaml",
@@ -671,9 +671,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "ogc.geo.geodcat.geodcat-records",
         "ogc.geo.geodcat.geodcat",
         "ogc.contrib.stac.item",
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item-v1-0-0"
       ],
       "version": "0.1",
