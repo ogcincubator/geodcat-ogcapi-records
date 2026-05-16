@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.geodcat-stac-item - GeoDCAT mapping to STAC item",
   "bblockName": "GeoDCAT mapping to STAC item",
   "bblockId": "ogc.geo.geodcat.stac.geodcat-stac-item",
-  "generated": "2026-05-13T04:44:32.574736+00:00",
+  "generated": "2026-05-16T04:37:27.690470+00:00",
   "result": true,
   "items": [
     {
@@ -76,7 +76,7 @@
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "geojson:FeatureShape": {
@@ -84,15 +84,15 @@
                     "<https://example.com/stac/example1/20201211_223832_CS2>"
                   ]
                 },
-                "geojson:GeometryShape/sh:or/rdf:first": {
+                "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:GeometryShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -186,7 +186,7 @@
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "geojson:FeatureShape": {
@@ -194,15 +194,15 @@
                     "<https://example.com/stac/example1/20201211_223832_CS2>"
                   ]
                 },
-                "geojson:GeometryShape/sh:or/rdf:first": {
+                "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:LinkShape": {
+                "geojson:GeometryShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape: *none*\n"
             },
             {
               "op": "shacl-report",
