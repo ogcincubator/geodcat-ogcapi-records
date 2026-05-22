@@ -195,12 +195,12 @@
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/sparql",
-  "modified": "2026-05-19T04:48:14.971963",
+  "modified": "2026-05-22T04:49:34.245394",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"66debb9d61915f1de1ae5a10fb89b6f9e66c1f5e",
-      "shortCommitId": "\"66debb",
-      "date": "2026-05-18T09:31:37+00:00\""
+      "commitId": "\"25abca22c897dd633f68c669e182ee84446aa519",
+      "shortCommitId": "\"25abca",
+      "date": "2026-05-21T23:39:18+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -469,8 +469,8 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.geodcat.dcat-ap",
           "prof:hasRole": "role:validation",
@@ -599,8 +599,8 @@
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "bblocks://ogc.api.records.v1.schemas.recordGeoJSON",
         "bblocks://ogc.geo.geodcat.dcat",
+        "bblocks://ogc.api.records.v1.schemas.recordGeoJSON",
         "bblocks://ogc.api.records.records-ontology"
       ],
       "sources": [
@@ -707,8 +707,8 @@
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.geodcat",
-        "bblocks://ogc.geo.geodcat.dcat-ap"
+        "bblocks://ogc.geo.geodcat.dcat-ap",
+        "bblocks://ogc.geo.geodcat.geodcat"
       ],
       "sources": [
         {
@@ -732,8 +732,8 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.geodcat.dcat-ap",
           "prof:hasRole": "role:validation",
@@ -885,8 +885,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.geodcat",
-        "bblocks://ogc.geo.geodcat.dcat-records"
+        "bblocks://ogc.geo.geodcat.dcat-records",
+        "bblocks://ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
@@ -1104,8 +1104,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.geodcat-records",
-        "bblocks://ogc.ogc-utils.prov"
+        "bblocks://ogc.ogc-utils.prov",
+        "bblocks://ogc.geo.geodcat.geodcat-records"
       ],
       "schema": [
         {
@@ -1172,9 +1172,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.geodcat",
-        "bblocks://ogc.contrib.stac.item-v1-0-0",
         "bblocks://ogc.contrib.stac.item",
+        "bblocks://ogc.contrib.stac.item-v1-0-0",
+        "bblocks://ogc.geo.geodcat.geodcat",
         "bblocks://ogc.geo.geodcat.geodcat-records"
       ],
       "version": "0.1",
