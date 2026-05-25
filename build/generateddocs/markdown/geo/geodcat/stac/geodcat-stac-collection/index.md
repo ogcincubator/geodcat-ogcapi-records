@@ -315,18 +315,18 @@ This is the collection example from the STAC specification.
     dcterms:description "A simple collection demonstrating core catalog fields with links to a couple of items" ;
     dcterms:extent [ ] ;
     dcterms:title "Simple Example Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Item" ;
-            dcterms:type "application/geo+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
+    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Item" ;
+            dcterms:type "application/geo+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
         [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
