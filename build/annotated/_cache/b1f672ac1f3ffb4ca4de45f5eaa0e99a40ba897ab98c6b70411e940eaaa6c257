@@ -3,12 +3,12 @@
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/sparql",
-  "modified": "2026-06-07T05:01:56.128385",
+  "modified": "2026-06-10T04:58:50.512604",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"fd9bbc58229e910c3683793143bca6dd47616267",
-      "shortCommitId": "\"fd9bbc",
-      "date": "2026-06-05T12:11:56+00:00\""
+      "commitId": "\"3d439a60dc207abd30b00f9035928160fab87110",
+      "shortCommitId": "\"3d439a",
+      "date": "2026-06-07T12:34:37+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
@@ -268,8 +268,8 @@
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "ogc.api.records.v1.schemas.recordGeoJSON",
-        "ogc.api.records.records-ontology",
-        "ogc.geo.geodcat.dcat"
+        "ogc.geo.geodcat.dcat",
+        "ogc.api.records.records-ontology"
       ],
       "sources": [
         {
@@ -288,11 +288,11 @@
         "Records"
       ],
       "shaclShapes": {
-        "ogc.geo.features.feature": [
-          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-        ],
         "ogc.api.records.v1.schemas.linkTemplate": [
           "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
         ]
       },
       "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/dcat-records/context.jsonld",
@@ -333,8 +333,8 @@
       "dateOfLastChange": "2023-09-18",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-ap"
+        "ogc.geo.geodcat.dcat-ap",
+        "ogc.geo.geodcat.geodcat"
       ],
       "sources": [
         {
@@ -389,8 +389,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.collection-v1-0-0",
         "ogc.contrib.stac.collection",
+        "ogc.contrib.stac.collection-v1-0-0",
         "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
@@ -458,8 +458,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat",
-        "ogc.geo.geodcat.dcat-records"
+        "ogc.geo.geodcat.dcat-records",
+        "ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
@@ -485,11 +485,11 @@
         "Records"
       ],
       "shaclShapes": {
-        "ogc.geo.features.feature": [
-          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-        ],
         "ogc.api.records.v1.schemas.linkTemplate": [
           "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
         ]
       },
       "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld",
@@ -615,11 +615,11 @@
         "STAC"
       ],
       "shaclShapes": {
-        "ogc.geo.features.feature": [
-          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-        ],
         "ogc.api.records.v1.schemas.linkTemplate": [
           "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
+        ],
+        "ogc.geo.features.feature": [
+          "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
         ]
       },
       "dependsOn": [
@@ -661,9 +661,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item-v1-0-0",
         "ogc.geo.geodcat.geodcat",
+        "ogc.geo.geodcat.geodcat-records",
         "ogc.contrib.stac.item"
       ],
       "version": "0.1",
@@ -738,8 +738,8 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.geo.geodcat.stac.geodcat-stac-item",
         "ogc.geo.geodcat.stac.geodcat-stac-collection",
+        "ogc.geo.geodcat.stac.geodcat-stac-item",
         "ogc.contrib.stac.extensions.accuracy"
       ],
       "version": "0.1",
@@ -811,9 +811,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-collection",
-        "ogc.geo.geodcat.stac.geodcat-stac-item"
+        "ogc.geo.geodcat.stac.geodcat-stac-item",
+        "ogc.contrib.stac.extensions.eo"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",
@@ -884,9 +884,9 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "ogc.contrib.stac.extensions.eo",
         "ogc.geo.geodcat.stac.geodcat-stac-collection",
-        "ogc.geo.geodcat.stac.geodcat-stac-item"
+        "ogc.geo.geodcat.stac.geodcat-stac-item",
+        "ogc.contrib.stac.extensions.eo"
       ],
       "version": "0.1",
       "dateOfLastChange": "2023-09-18",

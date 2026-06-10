@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.geodcat-records - GeoDCAT mapping for OGC API Records",
   "bblockName": "GeoDCAT mapping for OGC API Records",
   "bblockId": "ogc.geo.geodcat.geodcat-records",
-  "generated": "2026-06-10T04:59:06.468725+00:00",
+  "generated": "2026-06-10T19:51:01.039135+00:00",
   "result": true,
   "items": [
     {
@@ -94,11 +94,6 @@
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>"
-                  ]
-                },
                 "geojson:LinkShape": {
                   "nodes": []
                 },
@@ -107,10 +102,15 @@
                 },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
                   "nodes": []
+                },
+                "geojson:FeatureShape": {
+                  "nodes": [
+                    "<urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:FeatureShape: <urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone>\n"
             }
           ]
         }

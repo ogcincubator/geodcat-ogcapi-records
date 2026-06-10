@@ -195,7 +195,7 @@
   "abstract": "[OGC Building Blocks](https://ogcincubator.github.io/bblocks-docs/) linking GeoDCAT to OGC API Records and other schemas. Uses examples to support a development methodology for DCAT: separation of DCAT and other existing ontology from requirements identified from a range of alternative spatiotemporal metadata schemas.\n",
   "description": "This is intended to explore and support regression testing during the development of GeoDCAT by testing that the concepts used in OGC API Records (and extensions such as STAC) can be mapped to either DCAT or added to GeoDCAT as required.\n\nFor more information see the [GeoDCAT model development methdology](https://github.com/opengeospatial/GeoDCAT-SWG/blob/main/METHODOLOGY.md)\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/sparql",
-  "modified": "2026-06-10T04:58:50.512604",
+  "modified": "2026-06-10T19:50:50.396598",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"3d439a60dc207abd30b00f9035928160fab87110",
@@ -252,7 +252,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "2.0",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [],
       "scope": "dev",
@@ -311,7 +311,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": null,
       "sources": [
@@ -390,7 +390,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "3.0",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "dependsOn": [
         "bblocks://ogc.geo.geodcat.dcat2"
       ],
@@ -451,7 +451,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.2",
-      "dateOfLastChange": "2025-04-23",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "bblocks://ogc.geo.geodcat.dcat"
@@ -469,8 +469,8 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.geodcat.dcat-ap",
           "prof:hasRole": "role:validation",
@@ -527,7 +527,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "bblocks://ogc.geo.geodcat.dcat"
@@ -596,12 +596,12 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "bblocks://ogc.api.records.v1.schemas.recordGeoJSON",
-        "bblocks://ogc.geo.geodcat.dcat",
-        "bblocks://ogc.api.records.records-ontology"
+        "bblocks://ogc.api.records.records-ontology",
+        "bblocks://ogc.geo.geodcat.dcat"
       ],
       "sources": [
         {
@@ -704,7 +704,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [
         "bblocks://ogc.geo.geodcat.dcat-ap",
@@ -732,8 +732,8 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl",
-            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl"
+            "https://raw.githubusercontent.com/SEMICeu/dcat-ap_shacl/master/shacl/dcat-ap.shapes.ttl",
+            "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/dcat-ap/rules.shacl"
           ],
           "rdfs:seeAlso": "bblocks://ogc.geo.geodcat.dcat-ap",
           "prof:hasRole": "role:validation",
@@ -791,7 +791,7 @@
         "bblocks://ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -889,7 +889,7 @@
         "bblocks://ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/bblock-template",
       "sources": [
         {
@@ -1064,7 +1064,7 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -1104,8 +1104,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.geodcat-records",
-        "bblocks://ogc.ogc-utils.prov"
+        "bblocks://ogc.ogc-utils.prov",
+        "bblocks://ogc.geo.geodcat.geodcat-records"
       ],
       "schema": [
         {
@@ -1173,12 +1173,12 @@
       "register": "ogc-incubator",
       "dependsOn": [
         "bblocks://ogc.contrib.stac.item-v1-0-0",
-        "bblocks://ogc.geo.geodcat.geodcat",
         "bblocks://ogc.geo.geodcat.geodcat-records",
-        "bblocks://ogc.contrib.stac.item"
+        "bblocks://ogc.contrib.stac.item",
+        "bblocks://ogc.geo.geodcat.geodcat"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -1296,7 +1296,7 @@
         "bblocks://ogc.contrib.stac.extensions.accuracy"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -1411,7 +1411,7 @@
         "bblocks://ogc.contrib.stac.extensions.eo"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
+      "dateOfLastChange": "2026-06-10",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -1510,121 +1510,6 @@
       "skos:topConceptOf": {
         "@id": "https://ogcincubator.github.io/geodcat-ogcapi-records/"
       }
-    },
-    {
-      "itemIdentifier": "ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm",
-      "name": "GeoDCAT profile of STAC Electro-Optical extension",
-      "highlighted": true,
-      "abstract": "This profile binds the schema for the STAC Electro-Optical extension to a profile of GeoDCAT.  It inherits a common mapping of STAC and OGC API Records Item and Collection objects to the DCAT model. Additional terminology reequired for the semantics of the extension can be mapped to additional ontologies as required. (Note this is a work in progress, the building blocks provide a test harness for these mappings, allowing systematic development of a GeoDCAT core ontology to meet the requirements of these existing metadata schemas.",
-      "status": "under-development",
-      "dateTimeAddition": "2023-09-18T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-incubator",
-      "dependsOn": [
-        "bblocks://ogc.geo.geodcat.stac.geodcat-stac-collection",
-        "bblocks://ogc.geo.geodcat.stac.geodcat-stac-item",
-        "bblocks://ogc.contrib.stac.extensions.eo"
-      ],
-      "version": "0.1",
-      "dateOfLastChange": "2023-09-18",
-      "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
-      "sources": [
-        {
-          "title": "GeoDCAT Specification",
-          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
-        },
-        {
-          "title": "GeoDCAT Resources",
-          "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
-        },
-        {
-          "title": "GeoDCAT Specification Repository",
-          "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
-        }
-      ],
-      "scope": "dev",
-      "tags": [
-        "DCAT",
-        "profile",
-        "Records",
-        "STAC",
-        "STAC Electro-Optical extension"
-      ],
-      "shaclShapes": [
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.api.records.v1.schemas.linkTemplate",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        }
-      ],
-      "ldContext": {
-        "prof:hasArtifact": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-mlm/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "schema": [
-        {
-          "prof:hasArtifact": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-mlm/schema.yaml",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/yaml",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        },
-        {
-          "prof:hasArtifact": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-mlm/schema.json",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/json",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        }
-      ],
-      "sourceSchema": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-mlm/schema.yaml",
-      "sourceLdContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-mlm/context.jsonld",
-      "resolvedSchemaProperties": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-mlm/resolvedProperties.json",
-      "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/stac/extensions/geodcat-stac-mlm/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/stac/extensions/geodcat-stac-mlm/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/markdown/geo/geodcat/stac/extensions/geodcat-stac-mlm/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/generateddocs/json-full/geo/geodcat/stac/extensions/geodcat-stac-mlm/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm"
-        }
-      },
-      "@id": "bblocks://ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm",
-      "@type": [
-        "bblocks:Schema",
-        "skos:Concept",
-        "dcat:Dataset",
-        "bblocks:BBlock"
-      ],
-      "skos:prefLabel": "GeoDCAT profile of STAC Electro-Optical extension",
-      "openAPIDocument": null,
-      "ontology": null,
-      "rdfData": [],
-      "isProfileOf": null,
-      "skos:topConceptOf": {
-        "@id": "https://ogcincubator.github.io/geodcat-ogcapi-records/"
-      }
     }
   ],
   "skos:hasTopConcept": [
@@ -1666,9 +1551,6 @@
     },
     {
       "@id": "bblocks://ogc.geo.geodcat.stac.extensions.geodcat-stac-eo"
-    },
-    {
-      "@id": "bblocks://ogc.geo.geodcat.stac.extensions.geodcat-stac-mlm"
     }
   ]
 }

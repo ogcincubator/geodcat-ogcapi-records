@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension",
   "bblockName": "GeoDCAT profile of STAC Accuracy extension",
   "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy",
-  "generated": "2026-06-10T04:59:11.489955+00:00",
+  "generated": "2026-06-10T19:51:04.921110+00:00",
   "result": true,
   "items": [
     {
@@ -41,7 +41,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_1_1.ttl",
-              "size": 59,
+              "size": 61,
               "isError": false,
               "message": "Output Turtle example_1_1.ttl created"
             }
@@ -76,23 +76,23 @@
                 "geojson:GeometryShape": {
                   "nodes": []
                 },
+                "geojson:LinkShape": {
+                  "nodes": []
+                },
+                "geojson:GeometryShape/sh:or/rdf:first": {
+                  "nodes": []
+                },
                 "geojson:FeatureShape": {
                   "nodes": [
                     "<https://example.com/stac/accuracy/example-1/item>"
                   ]
                 },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
                 "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
             },
             {
               "op": "shacl-report",
