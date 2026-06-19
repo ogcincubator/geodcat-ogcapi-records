@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile
-Generated 2026-06-13T05:00:16.763048+00:00
+Generated 2026-06-19T05:13:21.683895+00:00
 === Files ===
 Using https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_1_1.json from examples
 JSON-LD context is present - uplifting
@@ -12,13 +12,6 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
- - Shape rec:testAllVarsInTemplate: *none*
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
@@ -29,6 +22,13 @@ Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/fea
  - Shape geojson:GeometryShape: *none*
  - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
+ - Shape rec:testAllVarsInTemplate: *none*
 
 === End SHACL ===
 
