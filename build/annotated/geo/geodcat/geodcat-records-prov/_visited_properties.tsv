@@ -118,13 +118,14 @@ path	@id	schema
 /wasInfluencedBy	http://www.w3.org/ns/prov#wasInfluencedBy	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/provType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/wasInfluencedBy/_anyOf/0/_oneOf/1/prov:type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/wasInfluencedBy/_anyOf/0/_oneOf/1/prov:type	http://www.w3.org/ns/prov#type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/activityType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/wasInfluencedBy/_anyOf/0/_oneOf/1/startedAtTime	http://www.w3.org/ns/prov#startedAtTime	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/endedAtTime	http://www.w3.org/ns/prov#endedAtTime	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith	http://www.w3.org/ns/prov#wasAssociatedWith	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/agentType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/provType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
-/wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/prov:type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
+/wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/prov:type	http://www.w3.org/ns/prov#type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/name	http://www.w3.org/2000/01/rdf-schema#label	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/wasAssociatedWith/_oneOf/1/actedOnBehalfOf	http://www.w3.org/ns/prov#actedOnBehalfOf	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-agent/schema.yaml
@@ -154,7 +155,6 @@ path	@id	schema
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedCommunication/_oneOf/1/hadActivity	http://www.w3.org/ns/prov#hadActivity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedCommunication/_oneOf/1/activity	http://www.w3.org/ns/prov#activity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedCommunication/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedCommunication/_oneOf/2/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedStart	http://www.w3.org/ns/prov#qualifiedStart	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedStart/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /wasInfluencedBy/_anyOf/0/_oneOf/1/qualifiedStart/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
@@ -180,7 +180,7 @@ path	@id	schema
 /_anyOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /_anyOf/1/hadMember	http://www.w3.org/ns/prov#hadMember	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /provType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
-/prov:type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/prov:type	http://www.w3.org/ns/prov#type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /featureType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /entityType	@type	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /has_provenance	http://purl.org/dc/terms/provenance	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
@@ -193,18 +193,29 @@ path	@id	schema
 /wasInvalidatedBy	http://www.w3.org/ns/prov#wasInvalidatedBy	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /wasQuotedFrom	http://www.w3.org/ns/prov#wasQuotedFrom	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /wasRevisionOf	http://www.w3.org/ns/prov#wasRevisionOf	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/generatedAtTime	http://www.w3.org/ns/prov#generatedAtTime	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/invalidatedAtTime	http://www.w3.org/ns/prov#invalidatedAtTime	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/value	http://www.w3.org/ns/prov#value	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/qualifiedPrimarySource	http://www.w3.org/ns/prov#qualifiedPrimarySource	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/atTime	http://www.w3.org/ns/prov#atTime	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/hadGeneration	http://www.w3.org/ns/prov#hadGeneration	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/hadGeneration/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/hadActivity	http://www.w3.org/ns/prov#hadActivity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/hadUsage	http://www.w3.org/ns/prov#hadUsage	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/entity	http://www.w3.org/ns/prov#entity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedPrimarySource/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedQuotation	http://www.w3.org/ns/prov#qualifiedQuotation	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/qualifiedQuotation/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+/qualifiedRevision	http://www.w3.org/ns/prov#qualifiedRevision	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
+/qualifiedRevision/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /atLocation	http://www.w3.org/ns/prov#atLocation	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /qualifiedGeneration	http://www.w3.org/ns/prov#qualifiedGeneration	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /qualifiedGeneration/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /qualifiedInvalidation	http://www.w3.org/ns/prov#qualifiedInvalidation	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /qualifiedInvalidation/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /qualifiedDerivation	http://www.w3.org/ns/prov#qualifiedDerivation	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
-/qualifiedDerivation/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /qualifiedDerivation/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/qualifiedDerivation/_oneOf/1/hadGeneration	http://www.w3.org/ns/prov#hadGeneration	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/qualifiedDerivation/_oneOf/1/hadActivity	http://www.w3.org/ns/prov#hadActivity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/qualifiedDerivation/_oneOf/1/hadUsage	http://www.w3.org/ns/prov#hadUsage	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/qualifiedDerivation/_oneOf/1/entity	http://www.w3.org/ns/prov#entity	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /qualifiedAttribution	http://www.w3.org/ns/prov#qualifiedAttribution	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-entity/schema.yaml
 /qualifiedAttribution/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /qualifiedAttribution/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
