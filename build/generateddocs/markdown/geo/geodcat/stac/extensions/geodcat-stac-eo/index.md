@@ -370,14 +370,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:title "Simple EO Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "20201211_223832_CS2" ;
+    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     dcat:license "CC-BY-4.0" ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
@@ -733,21 +733,21 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     stac:hasAsset [ ns1:analytic [ dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
                     dcterms:title "4-Band Analytic" ;
                     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
-                    ns1:bands [ ns1:name "band1" ;
-                            eo:center_wavelength 4.7e-01 ;
-                            eo:common_name "blue" ;
-                            eo:full_width_half_max 7e-02 ;
-                            eo:solar_illumination 1.95966e+03 ],
+                    ns1:bands [ ns1:name "band4" ;
+                            eo:center_wavelength 8e-01 ;
+                            eo:common_name "nir" ;
+                            eo:full_width_half_max 1.52e-01 ;
+                            eo:solar_illumination 1.04163e+03 ],
                         [ ns1:name "band2" ;
                             eo:center_wavelength 5.6e-01 ;
                             eo:common_name "green" ;
                             eo:full_width_half_max 8e-02 ;
                             eo:solar_illumination 1.82324e+03 ],
-                        [ ns1:name "band4" ;
-                            eo:center_wavelength 8e-01 ;
-                            eo:common_name "nir" ;
-                            eo:full_width_half_max 1.52e-01 ;
-                            eo:solar_illumination 1.04163e+03 ],
+                        [ ns1:name "band1" ;
+                            eo:center_wavelength 4.7e-01 ;
+                            eo:common_name "blue" ;
+                            eo:full_width_half_max 7e-02 ;
+                            eo:solar_illumination 1.95966e+03 ],
                         [ ns1:name "band3" ;
                             eo:center_wavelength 6.45e-01 ;
                             eo:common_name "red" ;
@@ -762,14 +762,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             ns1:visual [ dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
                     dcterms:title "3-Band Visual" ;
                     oa:hasTarget <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> ;
-                    ns1:bands [ ns1:name "band3" ;
-                            eo:center_wavelength 6.45e-01 ;
-                            eo:common_name "red" ;
-                            eo:full_width_half_max 9e-02 ],
-                        [ ns1:name "band1" ;
+                    ns1:bands [ ns1:name "band1" ;
                             eo:center_wavelength 4.7e-01 ;
                             eo:common_name "blue" ;
                             eo:full_width_half_max 7e-02 ],
+                        [ ns1:name "band3" ;
+                            eo:center_wavelength 6.45e-01 ;
+                            eo:common_name "red" ;
+                            eo:full_width_half_max 9e-02 ],
                         [ ns1:name "band2" ;
                             eo:center_wavelength 5.6e-01 ;
                             eo:common_name "green" ;
