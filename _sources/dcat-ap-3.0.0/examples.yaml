@@ -16,3 +16,14 @@
   snippets:
     - language: ttl
       ref: ./examples/dataset-example.ttl
+
+- title: a 3.0.1 example fails for 3.0.0
+  content: |-
+    This is an example conforming to DCAT-AP 3.0.1, therefore failing on 3.0.0
+
+    It shows a Dataset with multilingual properties as well as a Distribution with multiple rights statements, which is not allowed in the 3.0.0 profile.
+
+
+  snippets:
+    - language: ttl
+      ref: ./examples/dataset-example-fail.ttl
