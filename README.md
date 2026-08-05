@@ -1,12 +1,20 @@
 # OGC Building Blocks for GeoDCAT implemented using the OGC API Records baseline
 
-DCAT is a widely used vocabulary for describing data sets and services.  Naturally much data is geographical or spatio-temporal in nature, and datasets are listed in catalogs. GeoDCAT standardises spatio-temporal metadata aspects beyond DCAT basics, and the OGC Records API standardises JSON data structures and access methods fir catalogs.
+DCAT is a widely used vocabulary for describing data sets and services.  Naturally much data is geographical or spatio-temporal in nature, and datasets are listed in catalogs. GeoDCAT standardises spatio-temporal metadata aspects beyond DCAT basics, and the OGC Records API standardises JSON data structures and access methods for catalogs.
 
 This repository will define reusable JSON schemas linked to GeoDCAT using JSON-LD contexts.  The schemas will extend OGC-API-Records and provide reusable Building Blocks for more specialised profiles required by communities of practice.
 
 The generated documentation of each Building Block can be accessed [here](https://ogcincubator.github.io/geodcat-ogcapi-records/).
 
 The GeoDCAT specification itself is defined in the main [GeoDCAT SWG Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
+
+## Contributing
+
+This is a collaborative workspace - the mechanism for contributing is described [here](https://ogcincubator.github.io/bblocks-docs/build/contribution). 
+
+_Note: Further development of this approach will occur as the register of profiles becomes subject to upgraded standards governance processes._ 
+
+## How the repository works
 
 [Building Blocks](https://ogcincubator.github.io/bblocks-docs/) support validation of examples against both the JSON schema and the RDF (JSON-LD) and can be used to develop and test examples of target ontologies.
 
