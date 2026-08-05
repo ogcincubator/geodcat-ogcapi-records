@@ -1,22 +1,22 @@
 
-# DCAT-AP 3.0 profile (Model)
+# DCAT-AP 3.0.2 profile (Model)
 
-`ogc.geo.geodcat.dcat-ap` *v0.2*
+`ogc.geo.geodcat.dcat-ap-3.0.2-draft` *v0.1*
 
-DCAT-AP 3.0 (european profile of DCAT)
+DCAT-AP 3.0.2 (european profile of DCAT)
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
 ## Description
 
-## DCAT-AP 3.0
+## DCAT-AP 3.0.2
 
-This building block provides a framework to test compatibility of GeoDCAT with DCAT-AP 3.0, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
+This building block provides a framework to test compatibility of GeoDCAT with DCAT-AP 3.0.0, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
 
 ## Examples
 
-### DCAT-AP 3.0 example
-This is an example conforming to DCAT-AP 3.0
+### DCAT-AP 3.0.2 example
+This is an example conforming to DCAT-AP 3.0.2
 
 It shows a Dataset with multilingual properties as well as a Distribution. 
 The specific DCAT-AP related property is dcatap:applicableLegislation and there are a number of required properties defined via shacl.
@@ -124,13 +124,13 @@ exampleMS:1T2p3o4B-dist-SHP a dcat:Distribution ;
 
 ## Sources
 
-* [DCAT-AP 3.0 Specification](https://semiceu.github.io/DCAT-AP/releases/3.0.0/)
-* [DCAT-AP 3.0 JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
+* [DCAT-AP 3.0.2 Specification](https://semiceu.github.io/DCAT-AP/drafts/3.0.2/)
+* [DCAT-AP 3.0.2 JSON-LD context](https://github.com/SEMICeu/DCAT-AP/blob/gh-pages/drafts/3.0.2/context/dcat-ap.jsonld)
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
 * URL: [https://github.com/ogcincubator/geodcat-ogcapi-records](https://github.com/ogcincubator/geodcat-ogcapi-records)
-* Path: `_sources/dcat-ap`
+* Path: `_sources/dcat-ap-3.0.2-draft`
 

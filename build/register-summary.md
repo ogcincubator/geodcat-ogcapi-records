@@ -28,11 +28,23 @@ Provides a PROJ schema as used by varioud STAC profiles
 
 W3C DCAT version 3, extends V2, packaged as a building block to support inheritance of SHACL rules for validation and relationships to other standards.
 
-### `ogc.geo.geodcat.dcat-ap` — DCAT-AP 3.0 profile
+### `ogc.geo.geodcat.dcat-ap-3.0.0` — DCAT-AP 3.0.0 profile
 
 **Type:** model
 
-DCAT-AP 3.0 (european profile of DCAT)
+DCAT-AP 3.0.0 (european profile of DCAT)
+
+### `ogc.geo.geodcat.dcat-ap-3.0.1` — DCAT-AP 3.0.1 profile
+
+**Type:** model
+
+DCAT-AP 3.0.1 (european profile of DCAT)
+
+### `ogc.geo.geodcat.dcat-ap-3.0.2-draft` — DCAT-AP 3.0.2 profile
+
+**Type:** model
+
+DCAT-AP 3.0.2 (european profile of DCAT)
 
 ### `ogc.geo.geodcat.geodcat` — GeoDCAT profile
 
