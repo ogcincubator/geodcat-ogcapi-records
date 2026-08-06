@@ -1,11 +1,11 @@
 {
-  "name": "GeoDCAT-AP profile",
-  "abstract": "Provides a CI/CT/CD environment for the testing compatibility of GeoDCAT-AP with a regions neutral GeoDCAT definition.",
+  "name": "GeoDCAT-AP 3.1.0 profile",
+  "abstract": "Provides a CI/CT/CD environment for the testing compatibility of Semic GeoDCAT-AP 3.1.0 with a regions neutral GeoDCAT definition.",
   "status": "under-development",
   "dateTimeAddition": "2023-09-18T00:00:00Z",
   "itemClass": "model",
   "register": "ogc-incubator",
-  "version": "0.1",
+  "version": "0.2",
   "dateOfLastChange": "2023-09-18",
   "link": "https://github.com/opengeospatial/bblock-template",
   "dependsOn": [
@@ -14,20 +14,22 @@
   ],
   "sources": [
     {
-      "title": "GeoDCAT Specification",
-      "link": "http://www.opengis.net/def/metamodel/profiles/geodcat"
+      "title": "GeoDCAT-AP 3.1.0",
+      "link": "https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0/"
     },
     {
-      "title": "GeoDCAT Specification Repository",
-      "link": "https://github.com/opengeospatial/GeoDCAT-SWG"
+      "title": "GeoDCAT-AP Specification Repository",
+      "link": "https://github.com/SEMICeu/GeoDCAT-AP/"
     },
     {
-      "title": "DCAT-AP JSON-LD context",
-      "link": "https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld"
+      "title": "GeoDCAT-AP JSON-LD context",
+      "link": "https://github.com/SEMICeu/GeoDCAT-AP/blob/gh-pages/releases/3.1.0/context/geodcat-ap.jsonld"
     }
   ],
+  "shaclShapes": [ "https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/heads/gh-pages/releases/3.1.0/shacl/geodcat-ap-SHACL.ttl" ],
   "scope": "dev",
   "tags": [
+    "GeoDCAT-AP",
     "DCAT",
     "profile"
   ]
