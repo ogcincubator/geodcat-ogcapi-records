@@ -16,3 +16,12 @@
   snippets:
     - language: ttl
       ref: ./examples/dataset-example.ttl
+
+- title: DCAT-AP 3.0.1 example
+  content: |-
+    This is an example conforming to DCAT-AP 3.0.1, so it is expected to fail validation against the DCAT-AP 3.0.0 SHACL shapes.
+    The example shows multiple rights statements, which is not allowed in DCAT-AP 3.0.0.
+
+  snippets:
+    - language: ttl
+      ref: ./examples/dataset-fail.ttl
