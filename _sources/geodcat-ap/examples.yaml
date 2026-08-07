@@ -2,6 +2,10 @@
   content: |-
     This example from GeoDCAT-AP
 
+    N.B. We know the validation currently fails because the referenced GeoDCAT-AP Shacl file redefines some properties
+    from the upstream DCAT-AP Shacl file, so it cannot be used in the building blocks the way we would like.
+    
+
   snippets:
     - language: ttl
       ref: examples/geodcat-ap-regression.ttl
