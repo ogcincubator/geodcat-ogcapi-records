@@ -1,22 +1,25 @@
 
-# GeoDCAT-AP profile (Model)
+# GeoDCAT-AP 3.1.0 profile (Model)
 
-`ogc.geo.geodcat.geodcat-ap` *v0.1*
+`ogc.geo.geodcat.geodcat-ap` *v0.2*
 
-Provides a CI/CT/CD environment for the testing compatibility of GeoDCAT-AP with a regions neutral GeoDCAT definition.
+Provides a CI/CT/CD environment for the testing compatibility of Semic GeoDCAT-AP 3.1.0 with a regions neutral GeoDCAT definition.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
 ## Description
 
-## GeoDCAT-AP 
+## GeoDCAT-AP 3.1.0
 
-This building block provides a framework to test compatibility og GeoDCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
+This building block provides a framework to test compatibility of Semic's GeoDCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
 
 ## Examples
 
 ### GeoDCAT-AP example
 This example from GeoDCAT-AP
+
+N.B. We know the validation currently fails because the referenced GeoDCAT-AP Shacl file redefines some properties
+from the upstream DCAT-AP Shacl file, so it cannot be used in the building blocks the way we would like.
 #### ttl
 ```ttl
 @prefix adms: <http://www.w3.org/ns/adms#> .
@@ -135,9 +138,9 @@ resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00 a dcat:Dataset ;
 
 ## Sources
 
-* [GeoDCAT Specification](http://www.opengis.net/def/metamodel/profiles/geodcat)
-* [GeoDCAT Specification Repository](https://github.com/opengeospatial/GeoDCAT-SWG)
-* [DCAT-AP JSON-LD context](https://semiceu.github.io/DCAT-AP/releases/3.0.0/context/dcat-ap.jsonld)
+* [GeoDCAT-AP 3.1.0](https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0/)
+* [GeoDCAT-AP Specification Repository](https://github.com/SEMICeu/GeoDCAT-AP/)
+* [GeoDCAT-AP JSON-LD context](https://github.com/SEMICeu/GeoDCAT-AP/blob/gh-pages/releases/3.1.0/context/geodcat-ap.jsonld)
 
 # For developers
 

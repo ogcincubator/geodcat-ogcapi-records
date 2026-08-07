@@ -58,11 +58,11 @@ Provides a CI/CT/CD environment for the GeoDCAT definition.
 
 DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT vocabulary. This is the baseline for semantic equivalence of OGC API records and the DCAT model. GeoDCAT and other profiles reuse this to distinguish between extensions and existing properties.
 
-### `ogc.geo.geodcat.geodcat-ap` — GeoDCAT-AP profile
+### `ogc.geo.geodcat.geodcat-ap` — GeoDCAT-AP 3.1.0 profile
 
 **Type:** model
 
-Provides a CI/CT/CD environment for the testing compatibility of GeoDCAT-AP with a regions neutral GeoDCAT definition.
+Provides a CI/CT/CD environment for the testing compatibility of Semic GeoDCAT-AP 3.1.0 with a regions neutral GeoDCAT definition.
 
 ### `ogc.geo.geodcat.stac.geodcat-stac-collection` — GeoDCAT mapping for STAC collection
 
