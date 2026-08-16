@@ -10,8 +10,8 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
-    "ogc.contrib.stac.extensions.accuracy",
     "ogc.geo.geodcat.stac.geodcat-stac-collection",
+    "ogc.contrib.stac.extensions.accuracy",
     "ogc.geo.geodcat.stac.geodcat-stac-item"
   ],
   "version": "0.1",
@@ -40,6 +40,9 @@
     "STAC Accuracy extension"
   ],
   "shaclShapes": {
+    "ogc.contrib.stac.core-ontology": [
+      "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl"
+    ],
     "ogc.geo.features.feature": [
       "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ],

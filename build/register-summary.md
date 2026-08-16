@@ -64,12 +64,6 @@ DCAT profile of OGC API Records binds the OGC API Records schema to the DCAT voc
 
 Provides a CI/CT/CD environment for the testing compatibility of Semic GeoDCAT-AP 3.1.0 with a regions neutral GeoDCAT definition.
 
-### `ogc.geo.geodcat.stac.geodcat-stac-collection` — GeoDCAT mapping for STAC collection
-
-**Type:** schema
-
-This building block defines mappings from the STAC collections schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.
-
 ### `ogc.geo.geodcat.geodcat-records` — GeoDCAT mapping for OGC API Records
 
 **Type:** schema
@@ -81,6 +75,12 @@ GeoDCAT profile of OGC API Records binds the OGC API Records schema to the GeoDC
 **Type:** schema
 
 GeoDCAT Profile of OGC API Records using the PROV-O model of provenance
+
+### `ogc.geo.geodcat.stac.geodcat-stac-collection` — GeoDCAT mapping for STAC collection
+
+**Type:** schema
+
+This building block defines mappings from the STAC collections schema to the core GeoDCAT profile of DCAT. It inherits from a general mapping of OGC API Records schema to GeoDCAT, which in turn reuses mappings to DCAT.  This is a work in progress to establish the scope of GeoDCAT to semantically describe existing spatial metadata schemas.
 
 ### `ogc.geo.geodcat.stac.geodcat-stac-item` — GeoDCAT mapping to STAC item
 
