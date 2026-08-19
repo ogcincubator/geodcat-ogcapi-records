@@ -1,0 +1,86 @@
+Validation report for ogc.geo.geodcat.dcat-records - DCAT/Records binding
+Generated 2026-08-19T03:45:01.403027+00:00
+=== Files ===
+Using examples/records-example.json from examples
+=== End Files ===
+
+=== Unknown errors ===
+
+** Validation error **
+Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 910, in resolve_from_url
+    document = self.store[url]
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_utils.py", line 28, in __getitem__
+    return self.store[self.normalize(uri)]
+,KeyError: 'https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/feature/schema.yaml'
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 913, in resolve_from_url
+    document = self.resolve_remote(url)
+,  File "/src/ogc/bblocks/validation/json_.py", line 66, in resolve_remote
+    result = load_yaml(content=requests.get(uri).content)
+,  File "/src/ogc/bblocks/util.py", line 391, in load_yaml
+    return na_load_yaml(filename, content, url, safe=True)
+,  File "/venv/lib/python3.10/site-packages/ogc/na/util.py", line 198, in load_yaml
+    return yaml.load(content, Loader=SafeYamlLoader if safe else YamlLoader)
+,  File "/venv/lib/python3.10/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+,  File "/venv/lib/python3.10/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+,  File "yaml/_yaml.pyx", line 674, in yaml._yaml.CParser.get_single_node
+,  File "yaml/_yaml.pyx", line 689, in yaml._yaml.CParser._compose_document
+,  File "yaml/_yaml.pyx", line 861, in yaml._yaml.CParser._parse_next_event
+,yaml.scanner.ScannerError: mapping values are not allowed in this context
+  in "<byte string>", line 17, column 25
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validation/json_.py", line 200, in validate
+    validate_json(json_doc, schema_validator)
+,  File "/src/ogc/bblocks/validation/json_.py", line 44, in validate_json
+    error = jsonschema.exceptions.best_match(validator.iter_errors(instance))
+,  File "/venv/lib/python3.10/site-packages/jsonschema/exceptions.py", line 384, in best_match
+    best = next(errors, None)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 298, in ref
+    yield from validator.descend(instance, resolved)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 362, in allOf
+    yield from validator.descend(instance, subschema, schema_path=index)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 305, in descend
+    for error in self.evolve(schema=schema).iter_errors(instance):
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 288, in iter_errors
+    for error in errors:
+,  File "/venv/lib/python3.10/site-packages/jsonschema/_validators.py", line 294, in ref
+    scope, resolved = validator.resolver.resolve(ref)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 899, in resolve
+    return url, self._remote_cache(url)
+,  File "/venv/lib/python3.10/site-packages/jsonschema/validators.py", line 915, in resolve_from_url
+    raise exceptions.RefResolutionError(exc)
+,jsonschema.exceptions.RefResolutionError: mapping values are not allowed in this context
+  in "<byte string>", line 17, column 25
+,
+During handling of the above exception, another exception occurred:
+
+,Traceback (most recent call last):
+,  File "/src/ogc/bblocks/validate.py", line 301, in _validate_resource
+    result = validator.validate(filename, output_filename, report,
+,  File "/src/ogc/bblocks/validation/json_.py", line 221, in validate
+    'errorMessage': e.message,
+,AttributeError: 'RefResolutionError' object has no attribute 'message'
+
+=== End Unknown errors ===
+
