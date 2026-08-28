@@ -64,9 +64,9 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2026-08-25T03:45:09.013383+00:00</small>
+            <small class="datetime">Generated at 2026-08-28T06:07:18.545319+00:00</small>
                 <p class="summary fw-semibold text-danger">
-                    Number of passing building blocks: 14 / 15 (93.33%)
+                    Number of passing building blocks: 13 / 15 (86.67%)
                 </p>
             <div class="text-end small" id="expand-collapse">
                 <a href="#" class="expand-all">Expand all</a>
@@ -201,9 +201,9 @@
                             <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.dcat-ap-3.0.0">
                                 <div class="accordion-body">
                                         <p class="summary fw-semibold text-success">
-                                            Test passed: 1 / 1
+                                            Test passed: 2 / 2
                                         </p>
-                                        <div class="card mb-2 validation-item " id="item-ogc.geo.geodcat.dcat-ap-3.0.0-1">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.geo.geodcat.dcat-ap-3.0.0-1">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
@@ -213,14 +213,105 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="geo/geodcat/dcat-ap-3/0/0/example_1_1.ttl" target="_blank">example_1_1.ttl</a>
-                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a href="../../_sources/dcat-ap-3.0.0/tests/dataset-fail.ttl" target="_blank">dataset-fail.ttl</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
                                                     <a class="anchor" href="#item-ogc.geo.geodcat.dcat-ap-3.0.0-1">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-2">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using dataset-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.0/shacl/dcat-ap-SHACL.ttl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+  	Severity: shacl:Violation
+  	Source Shape: &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape/3844f5a8620973800a0f9d6121572dbe0082c955&gt;
+  	Focus Node: exampleMS:1T2p3o4B-dist-SHP
+  	Result Path: dc1:rights
+  	Message: More than 1 values on exampleMS:1T2p3o4B-dist-SHP-&gt;dc1:rights
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.0/shacl/dcat-ap-SHACL.ttl:
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:publisher,exampleMS:1T2p3o4B/dct:creator
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape&gt;: &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;,&lt;http://purl.org/adms/publishertype/LocalAuthority&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape&gt;: &lt;https://www.geonames.org/2750405&gt;,exampleMS:1T2p3o4B/dct:spatial
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape&gt;: &lt;https://orgea.exampleMS.gov/files/1T2p3o4B.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/SENSITIVE&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape&gt;: &lt;http://data.europa.eu/eli/reg/2010/1089&gt;,&lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape&gt;: *none*
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item " id="item-ogc.geo.geodcat.dcat-ap-3.0.0-2">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
+                                                            aria-expanded="false" aria-controls="uid-3"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="geo/geodcat/dcat-ap-3/0/0/example_1_1.ttl" target="_blank">example_1_1.ttl</a>
+                                                    <span class="badge bg-secondary example">Example</span>
+                                                    <a class="anchor" href="#item-ogc.geo.geodcat.dcat-ap-3.0.0-2">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -237,47 +328,47 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.0/shacl/dcat-ap-SHACL.ttl:
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:creator,exampleMS:1T2p3o4B/dct:publisher
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape&gt;: &lt;https://orgea.exampleMS.gov/files/1T2p3o4B.shp&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape&gt;: &lt;http://purl.org/adms/publishertype/LocalAuthority&gt;,&lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape&gt;: exampleMS:1T2p3o4B/dct:spatial,&lt;https://www.geonames.org/2750405&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape&gt;: &lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;,&lt;http://data.europa.eu/eli/reg/2010/1089&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:durationShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:hexBinaryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:publisher,exampleMS:1T2p3o4B/dct:creator
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#odrl:PolicyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:nonNegativeIntegerShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptShape&gt;: &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;,&lt;http://purl.org/adms/publishertype/LocalAuthority&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LocationShape&gt;: &lt;https://www.geonames.org/2750405&gt;,exampleMS:1T2p3o4B/dct:spatial
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:ProvenanceStatementShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#skos:ConceptSchemeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogRecordShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RoleShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:ResourceShape&gt;: &lt;https://orgea.exampleMS.gov/files/1T2p3o4B.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:decimalShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#rdfs:LiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:StandardShape&gt;: &lt;http://data.europa.eu/eli/reg/2010/1089&gt;,&lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#spdx:ChecksumShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#xsd:dateTimeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeOrExtentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:ResourceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:mediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:ActivityShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DataServiceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#locn:GeometryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#prov:AttributionShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#adms:IdentifierShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:RelationshipShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#foaf:DocumentShape&gt;: *none*
 </div>
                                                     </div>
@@ -313,8 +404,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
-                                                            aria-expanded="false" aria-controls="uid-3"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-4"
+                                                            aria-expanded="false" aria-controls="uid-4"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -326,7 +417,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-4">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -343,41 +434,41 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.1/shacl/dcat-ap-SHACL.ttl:
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#prov:ActivityShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#adms:IdentifierShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:FrequencyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:MediaTypeOrExtentShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:RelationshipShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:ProvenanceStatementShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#spdx:ChecksumShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:CatalogRecordShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#odrl:PolicyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LocationShape&gt;: exampleMS:1T2p3o4B/dct:spatial,&lt;https://www.geonames.org/2750405&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#TimeInstantShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#prov:AttributionShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape/eb3ac4e4fdde2e2588a9502c5956060a18c5c99f&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#skos:ConceptSchemeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#ChecksumAlgorithmShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#foaf:DocumentShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DatasetSeriesShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:creator,exampleMS:1T2p3o4B/dct:publisher
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/SENSITIVE&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:ProvenanceStatementShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:ResourceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#skos:ConceptShape&gt;: &lt;http://purl.org/adms/publishertype/LocalAuthority&gt;,&lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#locn:GeometryShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:RoleShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:StandardShape&gt;: &lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;,&lt;http://data.europa.eu/eli/reg/2010/1089&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape/dc08f4dca4377fade57f89454e3fa06a8389d314&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#TimeInstantShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#prov:ActivityShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LocationShape&gt;: &lt;https://www.geonames.org/2750405&gt;,exampleMS:1T2p3o4B/dct:spatial
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#skos:ConceptSchemeShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#odrl:PolicyShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:RelationshipShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:StandardShape&gt;: &lt;http://data.europa.eu/eli/reg/2010/1089&gt;,&lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#spdx:ChecksumShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#adms:IdentifierShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:FrequencyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#ChecksumAlgorithmShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/SENSITIVE&gt;,&lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#skos:ConceptShape&gt;: &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;,&lt;http://purl.org/adms/publishertype/LocalAuthority&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#foaf:DocumentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape/dc08f4dca4377fade57f89454e3fa06a8389d314&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#locn:GeometryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:creator,exampleMS:1T2p3o4B/dct:publisher
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DataServiceShape/eb3ac4e4fdde2e2588a9502c5956060a18c5c99f&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:CatalogRecordShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:MediaTypeOrExtentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/releases/3.0.1#dcat:DatasetSeriesShape&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -412,8 +503,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-4"
-                                                            aria-expanded="false" aria-controls="uid-4"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
+                                                            aria-expanded="false" aria-controls="uid-5"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -425,7 +516,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-4">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -442,47 +533,47 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/gh-pages/drafts/3.0.2/shacl/dcat-ap-SHACL.ttl:
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#rdfs:LiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#TemporalLiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#skos:ConceptShape&gt;: &lt;http://purl.org/adms/publishertype/LocalAuthority&gt;,&lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:RelationshipShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#ChecksumAlgorithmShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:hexBinaryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:CatalogRecordShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:ResourceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:dateTimeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#TimeInstantShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#locn:GeometryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#spdx:ChecksumShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#rdfs:ResourceShape&gt;: &lt;https://orgea.exampleMS.gov/files/1T2p3o4B.shp&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:LocationShape&gt;: exampleMS:1T2p3o4B/dct:spatial,&lt;https://www.geonames.org/2750405&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:creator,exampleMS:1T2p3o4B/dct:publisher
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:nonNegativeIntegerShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DataServiceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:StandardShape&gt;: &lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;,&lt;http://data.europa.eu/eli/reg/2010/1089&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#prov:ActivityShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#TimeInstantShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:ProvenanceStatementShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:MediaTypeOrExtentShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#prov:AttributionShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:RoleShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:decimalShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:dateTimeShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#skos:ConceptSchemeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:durationShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#foaf:DocumentShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#adms:IdentifierShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#odrl:PolicyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:FrequencyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DatasetSeriesShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:StandardShape&gt;: &lt;http://data.europa.eu/eli/reg/2010/1089&gt;,&lt;http://inspire.ec.europa.eu/schemas/hy/4.0/HydroBase.xsd&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:PeriodOfTimeShape&gt;: exampleMS:1T2p3o4B/dct:temporal
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#spdx:ChecksumShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:LicenseDocumentShape&gt;: &lt;http://creativecommons.org/publicdomain/zero/1.0/deed.nl&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#rdfs:LiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:decimalShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:hexBinaryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#skos:ConceptShape&gt;: &lt;http://publications.europa.eu/resource/authority/data-theme/EDUC&gt;,&lt;http://purl.org/adms/publishertype/LocalAuthority&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:RightsStatementShape&gt;: &lt;http://publications.europa.eu/resource/authority/access-right/PUBLIC&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:FrequencyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:nonNegativeIntegerShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#rdfs:ResourceShape&gt;: &lt;https://orgea.exampleMS.gov/files/1T2p3o4B.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#eli:LegalResourceShape&gt;: &lt;http://data.europa.eu/eli/reg_impl/2023/138/oj&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DatasetShape&gt;: exampleMS:1T2p3o4B
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/NLD&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:MediaTypeShape&gt;: &lt;https://www.iana.org/assignments/media-types/application/vnd.shp&gt;
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:RelationshipShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:LocationShape&gt;: &lt;https://www.geonames.org/2750405&gt;,exampleMS:1T2p3o4B/dct:spatial
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#prov:ActivityShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#foaf:DocumentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#vcard:KindShape&gt;: exampleMS:1T2p3o4B/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DatasetSeriesShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DataServiceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#ChecksumAlgorithmShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#odrl:PolicyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dct:MediaTypeOrExtentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:RoleShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:CatalogRecordShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#prov:AttributionShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#xsd:durationShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:ResourceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#adms:IdentifierShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#dcat:DistributionShape&gt;: exampleMS:1T2p3o4B-dist-SHP
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#TemporalLiteralShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/DCAT-AP/drafts/3.0.2#foaf:AgentShape&gt;: exampleMS:1T2p3o4B/dct:publisher,exampleMS:1T2p3o4B/dct:creator
 </div>
                                                     </div>
                                                 </div>
@@ -517,8 +608,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
-                                                            aria-expanded="false" aria-controls="uid-5"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
+                                                            aria-expanded="false" aria-controls="uid-6"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -530,7 +621,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -569,8 +660,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
-                                                            aria-expanded="false" aria-controls="uid-6"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
+                                                            aria-expanded="false" aria-controls="uid-7"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -582,7 +673,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -601,19 +692,6 @@
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
   Conforms: True
@@ -621,6 +699,19 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;/rec:hasLinkTemplate
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -668,8 +759,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
-                                                            aria-expanded="false" aria-controls="uid-7"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -681,7 +772,7 @@
                                                             <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
                                                     <div class="validation-text-inner">
                                                             <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
@@ -706,13 +797,6 @@
   	Message: Value does not have class prov:Entity
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
-  	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape/d32690f7dac709c60b23d3d622151efa09718db5&gt;
-  	Focus Node: [ dct:description Literal(&quot;See the referenced specification&quot;, lang=en) ; dct:type &lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt; ; rdf:type prov:Entity ]
-  	Value Node: &lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt;
-  	Result Path: dct:type
-  	Message: Value does not have class skos:Concept
-  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
-  	Severity: shacl:Violation
   	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape/a016cb765e696433fe29faa313ae6ae2f3f76702&gt;
   	Focus Node: [ adms:representationTechnique &lt;http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid&gt; ; dcat:accessService [ dcat:endpointDescription &lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt; ; dcat:endpointURL &lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer&gt; ; dct:conformsTo &lt;http://www.opengeospatial.org/standards/wms&gt; ; dct:title Literal(&quot;Dataservice for Noise contours&quot;) ; rdf:type dcat:DataService ] ; dcat:accessURL &lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt; ; dct:accessRights &lt;http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e&gt; ; dct:description Literal(&quot;NoiseContours_air_lnight&quot;, lang=en) ; dct:format &lt;http://publications.europa.eu/resource/authority/file-type/TIFF&gt; ; dct:license [ rdf:type dct:LicenseDocument ; rdfs:label Literal(&quot;The full noise contour maps data set is in principle only available for EEA internal use. A public version of the data set may in the future be available, excluding those data sets for which there is any limitation or restriction in their use (beyond acknowledgement).&quot;, lang=en) ] ; rdf:type dcat:Distribution ]
   	Value Node: &lt;http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/grid&gt;
@@ -727,13 +811,6 @@
   	Message: Value does not have class dct:RightsStatement
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
-  	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape/79c0c2e1bcab213fd06ca4c1782849db4a11225f&gt;
-  	Focus Node: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
-  	Value Node: &lt;http://publications.europa.eu/resource/authority/corporate-body/EEA&gt;
-  	Result Path: &lt;http://data.europa.eu/930/custodian&gt;
-  	Message: Value does not have class foaf:Agent
-  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
-  	Severity: shacl:Violation
   	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape/73ac04d23d41d598457f7d519aa7fbeb74f18317&gt;
   	Focus Node: [ rdf:type vcard:Kind, vcard:Organization ; vcard:fn Literal(&quot;European Environment Agency&quot;, lang=en) ; vcard:hasAddress [ rdf:type vcard:Address ; vcard:country-name Literal(&quot;Denmark&quot;) ; vcard:locality Literal(&quot;Copenhagen&quot;) ; vcard:postal-code Literal(&quot;1050&quot;) ; vcard:region Literal(&quot;K&quot;) ; vcard:street-address Literal(&quot;Kongens Nytorv 6&quot;) ] ; vcard:hasEmail &lt;mailto:info@eea.europa.eu&gt; ; vcard:hasURL &lt;http://www.eea.europa.eu&gt; ]
   	Value Node: &lt;http://www.eea.europa.eu&gt;
@@ -746,60 +823,74 @@
   	Value Node: &lt;mailto:info@eea.europa.eu&gt;
   	Result Path: vcard:hasEmail
   	Message: Value does not have class vcard:Email
+  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+  	Severity: shacl:Violation
+  	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape/79c0c2e1bcab213fd06ca4c1782849db4a11225f&gt;
+  	Focus Node: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
+  	Value Node: &lt;http://publications.europa.eu/resource/authority/corporate-body/EEA&gt;
+  	Result Path: &lt;http://data.europa.eu/930/custodian&gt;
+  	Message: Value does not have class foaf:Agent
+  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+  	Severity: shacl:Violation
+  	Source Shape: &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape/d32690f7dac709c60b23d3d622151efa09718db5&gt;
+  	Focus Node: [ dct:description Literal(&quot;See the referenced specification&quot;, lang=en) ; dct:type &lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt; ; rdf:type prov:Entity ]
+  	Value Node: &lt;http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated&gt;
+  	Result Path: dct:type
+  	Message: Value does not have class skos:Concept
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/heads/gh-pages/releases/3.1.0/shacl/geodcat-ap-SHACL.ttl:
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:ResourceShape&gt;: &lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;,&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TimeInstantShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:DimensionShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetSeriesShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#spdx:ChecksumShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:GeometryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:MetricShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:DocumentShape&gt;: &lt;https://noise.eea.europa.eu/&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/ENG&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:AgentShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RelationshipShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#eli:LegalResourceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:decimalShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:RightsStatementShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation/prov:hadPlan
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:generated
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RoleShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#org:OrganizationShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LocationShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:ProvenanceStatementShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AttributionShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#odrl:PolicyShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:AddressShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptSchemeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptShape&gt;: &lt;http://publications.europa.eu/resource/authority/data-theme/HEAL&gt;,&lt;http://inspire.ec.europa.eu/theme/hh&gt;,&lt;http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset&gt;,&lt;http://www.eionet.europa.eu/gemet/concept/2884&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:ActivityShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:EmailShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AssociationShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TemporalLiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DataServiceShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#adms:IdentifierShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:QualityMeasurementShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:AddressShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint/vcard:hasAddress
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetSeriesShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:FrequencyShape&gt;: &lt;http://publications.europa.eu/resource/authority/frequency/IRREG&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#org:OrganizationShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation/prov:hadPlan
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:decimalShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:PeriodOfTimeShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:LiteralShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:StandardShape&gt;: &lt;http://www.opengis.net/def/crs/EPSG/0/3035&gt;,&lt;http://www.opengeospatial.org/standards/wms&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:ResourceShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:nonNegativeIntegerShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LicenseDocumentShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeOrExtentShape&gt;: &lt;http://publications.europa.eu/resource/authority/file-type/TIFF&gt;
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:DatatypeShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:hexBinaryShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#spdx:ChecksumShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TemporalLiteralShape&gt;: *none*
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#ChecksumAlgorithmShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:durationShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:FrequencyShape&gt;: &lt;http://publications.europa.eu/resource/authority/frequency/IRREG&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:ProvenanceStatementShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AttributionShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeOrExtentShape&gt;: &lt;http://publications.europa.eu/resource/authority/file-type/TIFF&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#odrl:PolicyShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:AddressShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:StandardShape&gt;: &lt;http://www.opengeospatial.org/standards/wms&gt;,&lt;http://www.opengis.net/def/crs/EPSG/0/3035&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TimeInstantShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AssociationShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DataServiceShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService
  - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogRecordShape&gt;: *none*
- - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:AddressShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint/vcard:hasAddress
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:ResourceShape&gt;: &lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&amp;service=WMS&gt;,&lt;https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:nonNegativeIntegerShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptSchemeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:DocumentShape&gt;: &lt;https://noise.eea.europa.eu/&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LinguisticSystemShape&gt;: &lt;http://publications.europa.eu/resource/authority/language/ENG&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LocationShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:DatatypeShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:EmailShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:ResourceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:DimensionShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:AgentShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#eli:LegalResourceShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:ActivityShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptShape&gt;: &lt;http://inspire.ec.europa.eu/theme/hh&gt;,&lt;http://www.eionet.europa.eu/gemet/concept/2884&gt;,&lt;http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset&gt;,&lt;http://publications.europa.eu/resource/authority/data-theme/HEAL&gt;
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:generated
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:hexBinaryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:RightsStatementShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#adms:IdentifierShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RoleShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:durationShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:GeometryShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LicenseDocumentShape&gt;: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogShape&gt;: *none*
+ - Shape &lt;https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:MetricShape&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -834,8 +925,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
-                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
+                                                            aria-expanded="false" aria-controls="uid-9"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -847,7 +938,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -866,19 +957,6 @@
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
-</div>
-                                                                    
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
   Conforms: True
@@ -886,6 +964,19 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;/rec:hasLinkTemplate
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: &lt;urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone&gt;
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -920,8 +1011,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
-                                                            aria-expanded="false" aria-controls="uid-9"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
+                                                            aria-expanded="false" aria-controls="uid-10"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -933,7 +1024,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -952,19 +1043,6 @@
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
   Conforms: True
@@ -972,6 +1050,19 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -981,8 +1072,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
-                                                            aria-expanded="false" aria-controls="uid-10"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-11"
+                                                            aria-expanded="false" aria-controls="uid-11"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -994,7 +1085,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-11">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1013,19 +1104,6 @@
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
   Conforms: True
@@ -1033,6 +1111,19 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -1042,8 +1133,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-11"
-                                                            aria-expanded="false" aria-controls="uid-11"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-12"
+                                                            aria-expanded="false" aria-controls="uid-12"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1055,7 +1146,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-11">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-12">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1074,19 +1165,6 @@
                                                                     <div class="font-monospace subsection-title mt-2">SHACL</div>
                                                                 
                                                                     
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
   Conforms: True
@@ -1094,6 +1172,19 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
 </div>
                                                     </div>
                                                 </div>
@@ -1128,8 +1219,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-12"
-                                                            aria-expanded="false" aria-controls="uid-12"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-13"
+                                                            aria-expanded="false" aria-controls="uid-13"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1141,7 +1232,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-12">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-13">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1166,10 +1257,19 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
  - Shape stac:LinkShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1204,8 +1304,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-13"
-                                                            aria-expanded="false" aria-controls="uid-13"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-14"
+                                                            aria-expanded="false" aria-controls="uid-14"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1217,7 +1317,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-13">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-14">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1242,11 +1342,32 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:LinkShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
@@ -1257,18 +1378,6 @@
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
 </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
- - Shape stac:LinkShape: *none*
-</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1277,8 +1386,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-14"
-                                                            aria-expanded="false" aria-controls="uid-14"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-15"
+                                                            aria-expanded="false" aria-controls="uid-15"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1290,7 +1399,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-14">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-15">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1315,11 +1424,32 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/example1/20201211_223832_CS2&gt;
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:LinkShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
@@ -1329,18 +1459,6 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
- - Shape stac:LinkShape: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1375,8 +1493,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-15"
-                                                            aria-expanded="false" aria-controls="uid-15"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-16"
+                                                            aria-expanded="false" aria-controls="uid-16"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1388,7 +1506,7 @@
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-15">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-16">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -1413,10 +1531,19 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
  - Shape stac:LinkShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1426,10 +1553,10 @@
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
@@ -1440,6 +1567,21 @@
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
 </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
+ - Shape accuracy:MeasurementAbsoluteShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:GeometricXStddevShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:GeometricRmseShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:GeometricXBiasShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:GeometricYBiasShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:MeasurementRelativeShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+ - Shape accuracy:GeometricYStddevShape: &lt;https://example.com/stac/accuracy/example-1/item&gt;
+</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1449,7 +1591,7 @@
                         </div>
                         <div class="accordion-item bblock-report" data-bblock-id="ogc.geo.geodcat.stac.extensions.geodcat-stac-eo" id="bblock-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
                             <h2 class="accordion-header bblock-title anchor-container">
-                                <button class="accordion-button collapsed" type="button"
+                                <button class="accordion-button " type="button"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#bblock-collapse-ogc\.geo\.geodcat\.stac\.extensions\.geodcat-stac-eo">
                                     <div class="flex-fill">
@@ -1458,23 +1600,36 @@
                                         <a class="anchor" href="#bblock-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">¶</a>
                                     </div>
 
-                                    <span class="badge text-bg-success me-2">
-                                            Passed
-                                            (100% passed)
+                                    <span class="badge text-bg-danger me-2">
+                                            Tests Failed
+                                            (0% passed)
                                     </span>
                                 </button>
                             </h2>
-                            <div class="accordion-collapse collapse " id="bblock-collapse-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
+                            <div class="accordion-collapse collapse show" id="bblock-collapse-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo">
                                 <div class="accordion-body">
-                                        <p class="summary fw-semibold text-success">
-                                            Test passed: 2 / 2
+                                        <p class="summary fw-semibold text-danger">
+                                            Test passed: 0 / 2
                                         </p>
+                                        <div class="card mb-2 global-validation-item validation-item">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    Building block global validation errors
+                                                    <div class="float-end">
+                                                        <span class="badge text-bg-danger me-2">Failed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text text-danger">
+                                                        <div class="font-monospace entry-message section-shacl">Error processing skos.ttl: [Errno 2] No such file or directory: &#x27;/github/skos.ttl&#x27;</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card mb-2 validation-item " id="item-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo-1">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-16"
-                                                            aria-expanded="false" aria-controls="uid-16"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-17"
+                                                            aria-expanded="false" aria-controls="uid-17"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1483,11 +1638,12 @@
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <a class="anchor" href="#item-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo-1">¶</a>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-16">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-17">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
@@ -1502,42 +1658,6 @@
                                                                 
                                                                     
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
- - Shape stac:LinkShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
- - Shape rec:testAllVarsInTemplate: *none*
-</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1546,8 +1666,8 @@
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-17"
-                                                            aria-expanded="false" aria-controls="uid-17"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-18"
+                                                            aria-expanded="false" aria-controls="uid-18"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -1556,11 +1676,12 @@
                                                     <span class="badge bg-secondary example">Example</span>
                                                     <a class="anchor" href="#item-ogc.geo.geodcat.stac.extensions.geodcat-stac-eo-2">¶</a>
                                                     <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                            <span class="badge text-bg-danger me-2">Failed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-17">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-18">
                                                     <div class="validation-text-inner">
+                                                            <div class="font-monospace entry-message text-danger">Note: Test failed because there are global validation errors.</div>
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
                                                                     
@@ -1575,42 +1696,6 @@
                                                                 
                                                                     
                                                                     <div class="font-monospace entry-message section-json_schema ">Validation passed</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:AssetShape: *none*
- - Shape stac:ItemShape: *none*
- - Shape stac:CollectionShape: *none*
- - Shape stac:LinkShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: &lt;https://example.com/stac/raster/example-1/20201211_223832_CS2&gt;
- - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
- - Shape rec:testAllVarsInTemplate: *none*
-</div>
                                                     </div>
                                                 </div>
                                             </div>

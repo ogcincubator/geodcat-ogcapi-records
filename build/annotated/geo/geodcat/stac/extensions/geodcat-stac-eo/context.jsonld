@@ -51,9 +51,11 @@
     "assets": {
       "@context": {
         "@vocab": "https://w3id.org/ogc/stac/assets/",
+        "href": "@id",
         "type": "dct:format",
         "roles": {
-          "@id": "stac:roles",
+          "@id": "stac:hasAssetroles",
+          "@type": "xsd:string",
           "@container": "@set"
         }
       },
@@ -121,11 +123,51 @@
       },
       "@id": "rec:hasLinkTemplate"
     },
-    "eo:bands": {
-      "@id": "eo:bands",
+    "eo:cloud_cover": {
+      "@id": "eo:cloud_cover",
+      "@type": "xsd:double"
+    },
+    "eo:snow_cover": {
+      "@id": "eo:snow_cover",
+      "@type": "xsd:double"
+    },
+    "eo:common_name": {
+      "@id": "eo:common_name",
+      "@type": "@vocab",
       "@context": {
-        "@vocab": "https://w3id.org/ogc/stac/eo/"
+        "pan": "eo:pan",
+        "coastal": "eo:coastal",
+        "blue": "eo:blue",
+        "green": "eo:green",
+        "green05": "eo:green05",
+        "yellow": "eo:yellow",
+        "red": "eo:red",
+        "rededge": "eo:rededge",
+        "rededge071": "eo:rededge071",
+        "rededge075": "eo:rededge075",
+        "rededge078": "eo:rededge078",
+        "nir": "eo:nir",
+        "nir08": "eo:nir08",
+        "nir09": "eo:nir09",
+        "cirrus": "eo:cirrus",
+        "swir16": "eo:swir16",
+        "swir22": "eo:swir22",
+        "lwir": "eo:lwir",
+        "lwir11": "eo:lwir11",
+        "lwir12": "eo:lwir12"
       }
+    },
+    "eo:center_wavelength": {
+      "@id": "eo:center_wavelength",
+      "@type": "xsd:double"
+    },
+    "eo:full_width_half_max": {
+      "@id": "eo:full_width_half_max",
+      "@type": "xsd:double"
+    },
+    "eo:solar_illumination": {
+      "@id": "eo:solar_illumination",
+      "@type": "xsd:double"
     },
     "language": {
       "@id": "rec:language",

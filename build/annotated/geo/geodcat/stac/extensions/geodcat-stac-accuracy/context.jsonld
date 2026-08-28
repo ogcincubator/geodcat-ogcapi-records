@@ -51,9 +51,11 @@
     "assets": {
       "@context": {
         "@vocab": "https://w3id.org/ogc/stac/assets/",
+        "href": "@id",
         "type": "dct:format",
         "roles": {
-          "@id": "stac:roles",
+          "@id": "stac:hasAssetroles",
+          "@type": "xsd:string",
           "@container": "@set"
         }
       },
@@ -120,6 +122,34 @@
         }
       },
       "@id": "rec:hasLinkTemplate"
+    },
+    "accuracy:geometric_x_bias": {
+      "@id": "accuracy:geometric_x_bias",
+      "@type": "xsd:double"
+    },
+    "accuracy:geometric_y_bias": {
+      "@id": "accuracy:geometric_y_bias",
+      "@type": "xsd:double"
+    },
+    "accuracy:geometric_x_stddev": {
+      "@id": "accuracy:geometric_x_stddev",
+      "@type": "xsd:double"
+    },
+    "accuracy:geometric_y_stddev": {
+      "@id": "accuracy:geometric_y_stddev",
+      "@type": "xsd:double"
+    },
+    "accuracy:geometric_rmse": {
+      "@id": "accuracy:geometric_rmse",
+      "@type": "xsd:double"
+    },
+    "accuracy:measurement_relative": {
+      "@id": "accuracy:measurement_relative",
+      "@type": "xsd:double"
+    },
+    "accuracy:measurement_absolute": {
+      "@id": "accuracy:measurement_absolute",
+      "@type": "xsd:double"
     },
     "language": {
       "@id": "rec:language",
@@ -204,6 +234,7 @@
     "dct": "http://purl.org/dc/terms/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",
+    "accuracy": "https://w3id.org/ogc/stac/accuracy/",
     "geojson": "https://purl.org/geojson/vocab#",
     "dcat": "http://www.w3.org/ns/dcat#",
     "rec": "https://www.opengis.net/def/ogc-api/records/",
@@ -219,7 +250,6 @@
     "thns": "https://w3id.org/ogc/stac/themes/",
     "dqm": "https://standards.isotc211.org/19157/-3/1/dqc/content/qualityMeasure/",
     "dqv": "http://dqv.org/tdb#",
-    "accuracy": "https://w3id.org/ogc/stac/extension/accuracy/",
     "rights": "dcat:rights",
     "@version": 1.1
   }

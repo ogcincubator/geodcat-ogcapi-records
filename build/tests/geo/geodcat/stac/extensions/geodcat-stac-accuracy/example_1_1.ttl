@@ -1,4 +1,4 @@
-@prefix accuracy: <https://w3id.org/ogc/stac/extension/accuracy/> .
+@prefix accuracy: <https://w3id.org/ogc/stac/accuracy/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
@@ -16,14 +16,14 @@
     geojson:bbox ( 1.729e+02 1.3e+00 173 1.4e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729e+02 1.3e+00 ) ( 173 1.3e+00 ) ( 173 1.4e+00 ) ( 1.729e+02 1.4e+00 ) ( 1.729e+02 1.3e+00 ) ) ) ] ;
-    stac:hasAsset [ ns2:data [ oa:hasTarget <https://example.com/examples/file.xyz> ] ] ;
-    stac:hasExtension "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
-    stac:version "1.0.0" ;
-    accuracy:geometric_rmse 1 ;
-    accuracy:geometric_x_bias 0 ;
+    accuracy:geometric_rmse 1e+00 ;
+    accuracy:geometric_x_bias 0e+00 ;
     accuracy:geometric_x_stddev 5e-01 ;
-    accuracy:geometric_y_bias 0 ;
+    accuracy:geometric_y_bias 0e+00 ;
     accuracy:geometric_y_stddev 5e-01 ;
     accuracy:measurement_absolute 2e-02 ;
-    accuracy:measurement_relative 1e-02 .
+    accuracy:measurement_relative 1e-02 ;
+    stac:hasAsset [ ns2:data <https://example.com/examples/file.xyz> ] ;
+    stac:hasExtension "https://stac-extensions.github.io/accuracy/v1.0.0-beta.1/schema.json" ;
+    stac:version "1.0.0" .
 

@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.geodcat-stac-collection - GeoDCAT mapping for STAC collection",
   "bblockName": "GeoDCAT mapping for STAC collection",
   "bblockId": "ogc.geo.geodcat.stac.geodcat-stac-collection",
-  "generated": "2026-08-25T03:45:04.092651+00:00",
+  "generated": "2026-08-28T06:07:14.313506+00:00",
   "result": true,
   "items": [
     {
@@ -73,21 +73,38 @@
             {
               "shaclFile": "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "stac:AssetShape": {
-                  "nodes": []
-                },
-                "stac:ItemShape": {
+                "stac:LinkShape": {
                   "nodes": []
                 },
                 "stac:CollectionShape": {
                   "nodes": []
                 },
-                "stac:LinkShape": {
+                "stac:ItemShape": {
+                  "nodes": []
+                },
+                "stac:AssetShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:\n - Shape stac:AssetShape: *none*\n - Shape stac:ItemShape: *none*\n - Shape stac:CollectionShape: *none*\n - Shape stac:LinkShape: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:\n - Shape stac:LinkShape: *none*\n - Shape stac:CollectionShape: *none*\n - Shape stac:ItemShape: *none*\n - Shape stac:AssetShape: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl",
+              "focusNodes": {
+                "assets:RolesShape": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:\n - Shape assets:RolesShape: *none*\n"
             }
           ]
         }

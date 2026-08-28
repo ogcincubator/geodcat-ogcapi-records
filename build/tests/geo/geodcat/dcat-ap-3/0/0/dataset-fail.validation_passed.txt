@@ -1,14 +1,26 @@
 Validation report for ogc.geo.geodcat.dcat-ap-3.0.0 - DCAT-AP 3.0.0 profile
-Generated 2026-08-28T06:07:09.748722+00:00
+Generated 2026-08-28T06:07:09.697597+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
 === Files ===
-Using ./examples/dataset-example.ttl from examples
-Output Turtle example_1_1.ttl created
+Using dataset-fail.ttl from test resources
 === End Files ===
 
 === SHACL ===
+
+** Validation error **
 Validation result for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.0/shacl/dcat-ap-SHACL.ttl:
   Validation Report
-  Conforms: True
+  Conforms: False
+  Results (1):
+  Constraint Violation in MaxCountConstraintComponent (http://www.w3.org/ns/shacl#MaxCountConstraintComponent):
+  	Severity: shacl:Violation
+  	Source Shape: <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DistributionShape/3844f5a8620973800a0f9d6121572dbe0082c955>
+  	Focus Node: exampleMS:1T2p3o4B-dist-SHP
+  	Result Path: dc1:rights
+  	Message: More than 1 values on exampleMS:1T2p3o4B-dist-SHP->dc1:rights
   
 Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/master/releases/3.0.0/shacl/dcat-ap-SHACL.ttl:
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dcat:DatasetSeriesShape>: *none*
@@ -29,7 +41,7 @@ Focus nodes for https://raw.githubusercontent.com/SEMICeu/DCAT-AP/refs/heads/mas
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#ChecksumAlgorithmShape>: *none*
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TimeInstantShape>: *none*
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:FrequencyShape>: *none*
- - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: <http://publications.europa.eu/resource/authority/access-right/PUBLIC>
+ - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:RightsStatementShape>: <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>,<http://publications.europa.eu/resource/authority/access-right/SENSITIVE>,<http://publications.europa.eu/resource/authority/access-right/PUBLIC>
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#TemporalLiteralShape>: *none*
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:MediaTypeShape>: <https://www.iana.org/assignments/media-types/application/vnd.shp>
  - Shape <https://semiceu.github.io/DCAT-AP/releases/3.0.0/shacl/dcat-ap-SHACL.ttl#dct:PeriodOfTimeShape>: exampleMS:1T2p3o4B/dct:temporal
