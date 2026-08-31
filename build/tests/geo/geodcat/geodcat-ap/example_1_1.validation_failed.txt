@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.geodcat-ap - GeoDCAT-AP 3.1.0 profile
-Generated 2026-08-28T06:07:11.541749+00:00
+Generated 2026-08-31T03:38:32.776213+00:00
 === Files ===
 Using examples/geodcat-ap-regression.ttl from examples
 Output Turtle example_1_1.ttl created
@@ -14,11 +14,11 @@ Validation result for https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/
   Results (7):
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
-  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape/fc258d438279f03ee4f64dacc19890d4d0b90a3d>
-  	Focus Node: [ prov:wasDerivedFrom <http://data.europa.eu/eli/reg/2010/1089> ; rdf:type prov:Plan ]
-  	Value Node: <http://data.europa.eu/eli/reg/2010/1089>
-  	Result Path: prov:wasDerivedFrom
-  	Message: Value does not have class prov:Entity
+  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape/79c0c2e1bcab213fd06ca4c1782849db4a11225f>
+  	Focus Node: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
+  	Value Node: <http://publications.europa.eu/resource/authority/corporate-body/EEA>
+  	Result Path: <http://data.europa.eu/930/custodian>
+  	Message: Value does not have class foaf:Agent
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
   	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape/a016cb765e696433fe29faa313ae6ae2f3f76702>
@@ -35,6 +35,13 @@ Validation result for https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/
   	Message: Value does not have class dct:RightsStatement
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
+  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape/d32690f7dac709c60b23d3d622151efa09718db5>
+  	Focus Node: [ dct:description Literal("See the referenced specification", lang=en) ; dct:type <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated> ; rdf:type prov:Entity ]
+  	Value Node: <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated>
+  	Result Path: dct:type
+  	Message: Value does not have class skos:Concept
+  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+  	Severity: shacl:Violation
   	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape/73ac04d23d41d598457f7d519aa7fbeb74f18317>
   	Focus Node: [ rdf:type vcard:Kind, vcard:Organization ; vcard:fn Literal("European Environment Agency", lang=en) ; vcard:hasAddress [ rdf:type vcard:Address ; vcard:country-name Literal("Denmark") ; vcard:locality Literal("Copenhagen") ; vcard:postal-code Literal("1050") ; vcard:region Literal("K") ; vcard:street-address Literal("Kongens Nytorv 6") ] ; vcard:hasEmail <mailto:info@eea.europa.eu> ; vcard:hasURL <http://www.eea.europa.eu> ]
   	Value Node: <http://www.eea.europa.eu>
@@ -49,71 +56,64 @@ Validation result for https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/
   	Message: Value does not have class vcard:Email
   Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
   	Severity: shacl:Violation
-  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape/79c0c2e1bcab213fd06ca4c1782849db4a11225f>
-  	Focus Node: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
-  	Value Node: <http://publications.europa.eu/resource/authority/corporate-body/EEA>
-  	Result Path: <http://data.europa.eu/930/custodian>
-  	Message: Value does not have class foaf:Agent
-  Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
-  	Severity: shacl:Violation
-  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape/d32690f7dac709c60b23d3d622151efa09718db5>
-  	Focus Node: [ dct:description Literal("See the referenced specification", lang=en) ; dct:type <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated> ; rdf:type prov:Entity ]
-  	Value Node: <http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated>
-  	Result Path: dct:type
-  	Message: Value does not have class skos:Concept
+  	Source Shape: <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape/fc258d438279f03ee4f64dacc19890d4d0b90a3d>
+  	Focus Node: [ prov:wasDerivedFrom <http://data.europa.eu/eli/reg/2010/1089> ; rdf:type prov:Plan ]
+  	Value Node: <http://data.europa.eu/eli/reg/2010/1089>
+  	Result Path: prov:wasDerivedFrom
+  	Message: Value does not have class prov:Entity
   
 Focus nodes for https://raw.githubusercontent.com/SEMICeu/GeoDCAT-AP/refs/heads/gh-pages/releases/3.1.0/shacl/geodcat-ap-SHACL.ttl:
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:ResourceShape>: <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer>,<https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:EmailShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LocationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptSchemeShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:ActivityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DataServiceShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TimeInstantShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:DatatypeShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:AddressShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:PeriodOfTimeShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:DocumentShape>: <https://noise.eea.europa.eu/>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:DimensionShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#org:OrganizationShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RelationshipShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:StandardShape>: <http://www.opengis.net/def/crs/EPSG/0/3035>,<http://www.opengeospatial.org/standards/wms>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#ChecksumAlgorithmShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogRecordShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetSeriesShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AttributionShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:LiteralShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#odrl:PolicyShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#eli:LegalResourceShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:nonNegativeIntegerShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#spdx:ChecksumShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeOrExtentShape>: <http://publications.europa.eu/resource/authority/file-type/TIFF>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:AgentShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AssociationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:FrequencyShape>: <http://publications.europa.eu/resource/authority/frequency/IRREG>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TemporalLiteralShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:generated
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:decimalShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:MetricShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:durationShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:QualityMeasurementShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:AddressShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint/vcard:hasAddress
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetSeriesShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:FrequencyShape>: <http://publications.europa.eu/resource/authority/frequency/IRREG>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#org:OrganizationShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation/prov:hadPlan
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DistributionShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:decimalShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:PeriodOfTimeShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:temporal
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:LiteralShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#spdx:ChecksumShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TemporalLiteralShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#ChecksumAlgorithmShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:ProvenanceStatementShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AttributionShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeOrExtentShape>: <http://publications.europa.eu/resource/authority/file-type/TIFF>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#odrl:PolicyShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:AddressShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:KindShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:contactPoint
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:StandardShape>: <http://www.opengeospatial.org/standards/wms>,<http://www.opengis.net/def/crs/EPSG/0/3035>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#TimeInstantShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:AssociationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DataServiceShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dcat:accessService
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogRecordShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:ResourceShape>: <https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer?request=GetCapabilities&service=WMS>,<https://noise.discomap.eea.europa.eu/arcgis/services/noiseStoryMap/NoiseContours_air_lnight/ImageServer/WMSServer>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:nonNegativeIntegerShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptSchemeShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:DatasetShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:DocumentShape>: <https://noise.eea.europa.eu/>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/ENG>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LocationShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:spatial
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#rdfs:DatatypeShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#vcard:EmailShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:ResourceShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:DimensionShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#foaf:AgentShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#eli:LegalResourceShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:ActivityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptShape>: <http://inspire.ec.europa.eu/theme/hh>,<http://www.eionet.europa.eu/gemet/concept/2884>,<http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>,<http://publications.europa.eu/resource/authority/data-theme/HEAL>
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:EntityShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:generated
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:hexBinaryShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:RightsStatementShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#adms:IdentifierShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RoleShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#xsd:durationShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LinguisticSystemShape>: <http://publications.europa.eu/resource/authority/language/ENG>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:ProvenanceStatementShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dct:provenance
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:RightsStatementShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#locn:GeometryShape>: *none*
  - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:LicenseDocumentShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/dcat:distribution/dct:license
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:CatalogShape>: *none*
- - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dqv:MetricShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#prov:PlanShape>: resource:eea_r_3035_10_m_noise-contours-end2017_i_2016_v01_r00/prov:wasUsedBy/prov:qualifiedAssociation/prov:hadPlan
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dcat:RoleShape>: *none*
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#skos:ConceptShape>: <http://publications.europa.eu/resource/authority/data-theme/HEAL>,<http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset>,<http://www.eionet.europa.eu/gemet/concept/2884>,<http://inspire.ec.europa.eu/theme/hh>
+ - Shape <https://semiceu.github.io/GeoDCAT-AP/releases/3.1.0#dct:MediaTypeShape>: *none*
 
 
 ** Validation error **
