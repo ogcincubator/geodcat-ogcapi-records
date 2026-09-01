@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension",
   "bblockName": "GeoDCAT profile of STAC Accuracy extension",
   "bblockId": "ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy",
-  "generated": "2026-08-31T03:38:38.401858+00:00",
+  "generated": "2026-09-01T03:39:15.319309+00:00",
   "result": true,
   "items": [
     {
@@ -73,17 +73,17 @@
             {
               "shaclFile": "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl",
               "focusNodes": {
-                "accuracy:MeasurementRelativeShape": {
-                  "nodes": [
-                    "<https://example.com/stac/accuracy/example-1/item>"
-                  ]
-                },
-                "accuracy:MeasurementAbsoluteShape": {
+                "accuracy:GeometricXBiasShape": {
                   "nodes": [
                     "<https://example.com/stac/accuracy/example-1/item>"
                   ]
                 },
                 "accuracy:GeometricRmseShape": {
+                  "nodes": [
+                    "<https://example.com/stac/accuracy/example-1/item>"
+                  ]
+                },
+                "accuracy:MeasurementRelativeShape": {
                   "nodes": [
                     "<https://example.com/stac/accuracy/example-1/item>"
                   ]
@@ -103,14 +103,14 @@
                     "<https://example.com/stac/accuracy/example-1/item>"
                   ]
                 },
-                "accuracy:GeometricXBiasShape": {
+                "accuracy:MeasurementAbsoluteShape": {
                   "nodes": [
                     "<https://example.com/stac/accuracy/example-1/item>"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:\n - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricRmseShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricYBiasShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:\n - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricRmseShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:GeometricYBiasShape: <https://example.com/stac/accuracy/example-1/item>\n - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>\n"
             },
             {
               "op": "shacl-report",
@@ -122,21 +122,21 @@
             {
               "shaclFile": "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl",
               "focusNodes": {
-                "stac:AssetShape": {
-                  "nodes": []
-                },
-                "stac:LinkShape": {
+                "stac:CollectionShape": {
                   "nodes": []
                 },
                 "stac:ItemShape": {
                   "nodes": []
                 },
-                "stac:CollectionShape": {
+                "stac:AssetShape": {
+                  "nodes": []
+                },
+                "stac:LinkShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:\n - Shape stac:AssetShape: *none*\n - Shape stac:LinkShape: *none*\n - Shape stac:ItemShape: *none*\n - Shape stac:CollectionShape: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:\n - Shape stac:CollectionShape: *none*\n - Shape stac:ItemShape: *none*\n - Shape stac:AssetShape: *none*\n - Shape stac:LinkShape: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -165,16 +165,16 @@
             {
               "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
               "focusNodes": {
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
+                "geojson:GeometryShape": {
                   "nodes": []
                 },
                 "geojson:LinkShape": {
                   "nodes": []
                 },
-                "geojson:GeometryShape": {
+                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
+                  "nodes": []
+                },
+                "geojson:GeometryShape/sh:or/rdf:first": {
                   "nodes": []
                 },
                 "geojson:FeatureShape": {
@@ -184,7 +184,7 @@
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>\n"
+              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>\n"
             },
             {
               "op": "shacl-report",
