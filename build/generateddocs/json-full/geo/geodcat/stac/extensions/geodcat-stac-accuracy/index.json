@@ -10,12 +10,12 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "dependsOn": [
+    "ogc.geo.geodcat.stac.geodcat-stac-item",
     "ogc.contrib.stac.extensions.accuracy",
-    "ogc.geo.geodcat.stac.geodcat-stac-collection",
-    "ogc.geo.geodcat.stac.geodcat-stac-item"
+    "ogc.geo.geodcat.stac.geodcat-stac-collection"
   ],
   "version": "0.1",
-  "dateOfLastChange": "2023-09-18",
+  "dateOfLastChange": "2026-09-03",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -40,9 +40,6 @@
     "STAC Accuracy extension"
   ],
   "shaclShapes": {
-    "ogc.contrib.stac.extensions.accuracy-ontology": [
-      "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl"
-    ],
     "ogc.contrib.stac.core-ontology": [
       "https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl"
     ],
@@ -54,6 +51,9 @@
     ],
     "ogc.api.records.v1.schemas.linkTemplate": [
       "https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl"
+    ],
+    "ogc.contrib.stac.extensions.accuracy-ontology": [
+      "https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl"
     ]
   },
   "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/stac/extensions/geodcat-stac-accuracy/context.jsonld",

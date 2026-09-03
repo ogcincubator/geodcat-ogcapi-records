@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension
-Generated 2026-09-01T03:39:15.319207+00:00
+Generated 2026-09-03T05:31:31.759895+00:00
 === Files ===
 Using https://raw.githubusercontent.com/stac-extensions/accuracy/main/examples/item.json from examples
 JSON-LD context is present - uplifting
@@ -12,19 +12,14 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
- - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricRmseShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricYBiasShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>
-
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.w3.org/ns/dcat3.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
+ - https://www.w3.org/ns/prov-o
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://www.w3.org/ns/dcat2.ttl
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
   Validation Report
   Conforms: True
@@ -47,11 +42,11 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape: *none*
  - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
@@ -59,6 +54,19 @@ Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sou
   
 Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
  - Shape rec:testAllVarsInTemplate: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
+ - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricRmseShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricYBiasShape: <https://example.com/stac/accuracy/example-1/item>
 
 === End SHACL ===
 
