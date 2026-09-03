@@ -1,3 +1,5 @@
 ## GeoDCAT-AP 3.1.0
 
 This building block provides a framework to test compatibility of Semic's GeoDCAT-AP with GeoDCAT, and to make this relationship transparent to any implementation of GeoDCAT-AP using OGC standards.
+
+**Known failing test:** the regression example currently fails SHACL validation, but not due to a modelling error in this block. It inherits the SHACL shapes of `ogc.geo.geodcat.dcat-ap-3.0.1`, whose upstream `dcat-ap-SHACL.ttl` (release 3.0.1) has a malformed `dcat:DataServiceShape` with two dangling `sh:property` references (skolemized IRIs never defined in the file). The example includes a `dcat:DataService` (via `dcat:accessService`), which triggers evaluation of that broken shape and aborts validation before a report can be produced. Tracked upstream as [SEMICeu/DCAT-AP#448](https://github.com/SEMICeu/DCAT-AP/issues/448), targeted for the 3.0.2 release (June 2026). No local fix has been applied so the test result faithfully reflects upstream status; revisit once #448 is resolved.
