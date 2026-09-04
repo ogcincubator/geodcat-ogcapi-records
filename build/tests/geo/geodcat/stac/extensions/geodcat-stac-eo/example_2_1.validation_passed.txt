@@ -1,0 +1,73 @@
+Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-eo - GeoDCAT profile of STAC Electro-Optical extension
+Generated 2026-09-04T03:36:57.476493+00:00
+=== Files ===
+Using https://raw.githubusercontent.com/stac-extensions/eo/main/examples/item.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Error processing closure source ../eo-ontology/skos.ttl: [Errno 2] No such file or directory: '/eo-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/github/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
+ - https://www.w3.org/ns/dcat2.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
+ - https://www.w3.org/ns/prov-o
+ - https://www.w3.org/ns/dcat3.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo-ontology/ontology.ttl
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:ItemShape: *none*
+ - Shape stac:AssetShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:LinkShape: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: <https://example.com/stac/raster/example-1/20201211_223832_CS2>
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
+ - Shape rec:testAllVarsInTemplate: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
+ - Shape eo:SolarIlluminationShape: <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands
+ - Shape eo:CenterWavelengthShape: <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands
+ - Shape eo:FullWidthHalfMaxShape: <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands
+ - Shape eo:SnowCoverShape: <https://example.com/stac/raster/example-1/20201211_223832_CS2>
+ - Shape eo:CloudCoverShape: <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>,<https://example.com/stac/raster/example-1/20201211_223832_CS2>
+ - Shape eo:CommonNameShape: <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif>/ns2:bands,<https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif>/ns2:bands
+
+=== End SHACL ===
+
