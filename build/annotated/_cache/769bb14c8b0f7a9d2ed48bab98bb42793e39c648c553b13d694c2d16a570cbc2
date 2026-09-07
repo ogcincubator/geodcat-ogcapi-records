@@ -3,12 +3,12 @@
   "abstract": "Defines a reusable baseline \"cross-domain semantic model\" by defining a series of profiles and dependencies on available standards and where appropriate a set of constraints for application of such standards in the spatio-temporal domain.\n",
   "description": "\nThese models are defined as [\"building blocks\"](https://ogcincubator.github.io/bblocks-docs/) to allow for transparent reuse of a range of semantic models published by OGC and other international standards organisations (SDO) that may be used to define semantic models for application domains in a consistent and interoperable way.\n\nApplication domains will typically define profiles of these core models to meet specific needs. Infrastructures supporting application domains may define more general profiles to support commonality of implementation necessary to exploit infrastructure services. \n\nThe Cross-domain model underpins proposed domain models for Agriculture, Oceans and AG4DG.\nBy defining these models using this common cross-domain model the interoperability between such domains is enhanced, and made transparent to applications.\n\nNote that metadata models may be defined to exploit these semantics -\nthe cross-domain model is agnostic of the various metadata schemas or models that may be used, recognising that most \"systems of systems\" will have \nmultiple metadata formats in play due to evolution, backwards compatibility requirements and specific metadata needs of different communities and systems.\n\n![](https://lucid.app/publicSegments/view/eebe9d1b-d2ae-4bb9-a929-1d4414abcd47/image.png)\n\nDefining constraints using SHACL for these building blocks allows for inheritance of validation rules. \nThis will dramatically reduce the complexity of defining and testing domain models in a consistent fashion.\n\nMany such restrictions will relate to the way these models are combined -\nfor example the way GeoDCAT, PROV, RDF-Datacube and SOSA may be combined to standardise the way observational data is described using available standards.\n",
   "sparqlEndpoint": "https://defs-dev.opengis.net/fuseki/query",
-  "modified": "2026-08-12T21:56:29.878738",
+  "modified": "2026-09-04T07:11:01.054505",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"4697186fbe1334be458371f1a9d2090204d9a1c5",
-      "shortCommitId": "\"469718",
-      "date": "2026-08-12T21:49:32+00:00\""
+      "commitId": "\"865a527f37dc271186cb8dd7d0386365bf1486d3",
+      "shortCommitId": "\"865a52",
+      "date": "2026-09-03T16:12:25+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/cross-domain-model",
@@ -33,12 +33,15 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "dependsOn": [],
-      "x-shaclRules": [
-        "https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-PROV-O/refs/heads/main/shapes/sh-prov-o.ttl"
-      ],
+      "shaclShapes": {
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
+        ]
+      },
+      "shaclClosures": [],
       "sources": [
         {
           "title": "PROV-O Specification",
@@ -49,20 +52,19 @@
       "tags": [
         "PROV"
       ],
-      "shaclShapes": {},
       "ontology": "https://www.w3.org/ns/prov-o",
       "remoteCacheDir": "https://ogcincubator.github.io/cross-domain-model/build/annotated/model/cross-domain/prov/remote_cache/",
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/prov/",
       "validationPassed": true,
       "testOutputs": "https://github.com/ogcincubator/cross-domain-model/blob/master/build/tests/model/cross-domain/prov/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/prov/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/prov/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/prov/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -80,7 +82,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -105,13 +107,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/geosparql/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/geosparql/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/geosparql/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/geosparql/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -128,7 +130,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [],
       "shaclRules": [],
@@ -149,13 +151,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/datacube/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/datacube/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/datacube/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/datacube/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -173,7 +175,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/opengeospatial/bblock-template",
       "dependsOn": [],
       "sources": [
@@ -200,13 +202,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/sosa/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/sosa/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/sosa/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/sosa/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -223,7 +225,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -248,13 +250,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/codemeta/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/codemeta/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/codemeta/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/codemeta/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -271,7 +273,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -298,13 +300,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/dcterms/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/dcterms/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/dcterms/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/dcterms/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -321,7 +323,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -346,13 +348,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/iana-relations/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/iana-relations/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/iana-relations/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/iana-relations/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -369,7 +371,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -396,13 +398,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/pav/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/pav/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/pav/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/pav/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -419,7 +421,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -446,13 +448,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/pcdm/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/pcdm/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/pcdm/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/pcdm/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -469,7 +471,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -494,13 +496,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/prof/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/prof/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/prof/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/prof/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -517,7 +519,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "dependsOn": [],
       "sources": [
         {
@@ -543,13 +545,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/qudt/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/qudt/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/qudt/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/qudt/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -566,7 +568,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "1.0.0",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "link": "https://github.com/ogcincubator/cross-domain-model",
       "sources": [
         {
@@ -590,13 +592,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/schema-org/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/schema-org/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/schema-org/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/schema-org/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -613,7 +615,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "dependsOn": [
         "bblocks://ogc.model.cross-domain.sosa"
       ],
@@ -635,70 +637,17 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/sosa-profiles/sosa-sta/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/sosa-profiles/sosa-sta/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/sosa-profiles/sosa-sta/index.md"
         },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/sosa-profiles/sosa-sta/index.json"
+        },
         "bblocks-viewer": {
           "mediatype": "text/html",
           "url": "https://ogcincubator.github.io/cross-domain-model/bblock/ogc.model.cross-domain.sosa-profiles.sosa-sta"
-        }
-      }
-    },
-    {
-      "itemIdentifier": "ogc.model.cross-domain.sosa-spec-examples",
-      "name": "SOSA Examples",
-      "highlighted": false,
-      "abstract": "This Building Block identifies examples from the SOSA specification and supports validation of these examples",
-      "status": "under-development",
-      "dateTimeAddition": "2023-04-13T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-building-block-register",
-      "version": "1.0",
-      "dateOfLastChange": "2026-08-12",
-      "sources": [
-        {
-          "title": "Semantic Sensor Network Ontology",
-          "link": "https://www.w3.org/TR/vocab-ssn/"
-        }
-      ],
-      "dependsOn": [
-        "bblocks://ogc.model.cross-domain.sosa"
-      ],
-      "maturity": "development",
-      "scope": "development",
-      "tags": [
-        "sosa",
-        "ssn",
-        "observations",
-        "o&m",
-        "OMS"
-      ],
-      "group": "SOSA",
-      "shaclShapes": {
-        "ogc.model.cross-domain.sosa": [
-          "https://ogcincubator.github.io/cross-domain-model/_sources/sosa/rules.shacl"
-        ]
-      },
-      "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/sosa-spec-examples/",
-      "validationPassed": false,
-      "testOutputs": "https://github.com/ogcincubator/cross-domain-model/blob/master/build/tests/model/cross-domain/sosa-spec-examples/",
-      "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/sosa-spec-examples/index.json"
-        },
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/sosa-spec-examples/index.md"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/cross-domain-model/bblock/ogc.model.cross-domain.sosa-spec-examples"
         }
       }
     },
@@ -711,7 +660,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "dependsOn": [
         "bblocks://ogc.model.cross-domain.qudt"
       ],
@@ -737,13 +686,13 @@
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/qudt-basic/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/qudt-basic/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/qudt-basic/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/qudt-basic/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -761,17 +710,17 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-12",
+      "dateOfLastChange": "2026-09-04",
       "dependsOn": [
-        "bblocks://ogc.model.cross-domain.sosa-profiles.sosa-sta",
-        "bblocks://ogc.model.cross-domain.qudt-basic",
-        "bblocks://ogc.geo.geodcat.geodcat",
         "bblocks://ogc.model.cross-domain.geosparql",
+        "bblocks://ogc.geo.geodcat.geodcat",
         "bblocks://ogc.model.cross-domain.prov",
-        "bblocks://ogc.skos.concept",
+        "bblocks://ogc.skos.conceptScheme",
+        "bblocks://ogc.model.cross-domain.qudt-basic",
         "bblocks://ogc.model.cross-domain.datacube",
         "bblocks://ogc.model.cross-domain.sosa",
-        "bblocks://ogc.skos.conceptScheme"
+        "bblocks://ogc.model.cross-domain.sosa-profiles.sosa-sta",
+        "bblocks://ogc.skos.concept"
       ],
       "sources": [],
       "scope": "dev",
@@ -780,29 +729,32 @@
         "Semantic Model"
       ],
       "shaclShapes": {
-        "ogc.model.cross-domain.sosa": [
-          "https://ogcincubator.github.io/cross-domain-model/_sources/sosa/rules.shacl"
+        "ogc.model.cross-domain.prov": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl"
         ],
-        "ogc.model.cross-domain.qudt": [
-          "http://qudt.org/2.1/schema/shacl/qudt"
+        "ogc.skos.common": [
+          "https://ogcincubator.github.io/bblocks-skos/_sources/common/rules.shacl"
         ],
         "ogc.skos.concept": [
           "https://ogcincubator.github.io/bblocks-skos/_sources/concept/rules.shacl"
         ],
-        "ogc.skos.common": [
-          "https://ogcincubator.github.io/bblocks-skos/_sources/common/rules.shacl"
+        "ogc.model.cross-domain.qudt": [
+          "http://qudt.org/2.1/schema/shacl/qudt"
+        ],
+        "ogc.model.cross-domain.sosa": [
+          "https://ogcincubator.github.io/cross-domain-model/_sources/sosa/rules.shacl"
         ]
       },
       "sourceFiles": "https://ogcincubator.github.io/cross-domain-model/_sources/all/",
       "validationPassed": true,
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/all/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/markdown/model/cross-domain/all/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://ogcincubator.github.io/cross-domain-model/build/generateddocs/json-full/model/cross-domain/all/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
