@@ -509,12 +509,14 @@ This was then modified according to suggested guidance in [records issue #21](ht
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
         [ rdfs:label "OGC Web Feature Service (WFS)" ;
             dcterms:format "application/xml" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://geo.woudc.org/ows> ],
+        [ rdfs:label "Total Ozone Preview Image" ;
+            dcterms:format "image/png" ;
+            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
+            oa:hasTarget <https://woudc.org/data/preview.png> ],
         [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "text/html" ;
@@ -525,10 +527,8 @@ This was then modified according to suggested guidance in [records issue #21](ht
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
             oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
-        [ rdfs:label "Total Ozone Preview Image" ;
-            dcterms:format "image/png" ;
-            ns1:relation <http://www.iana.org/assignments/relation/preview> ;
-            oa:hasTarget <https://woudc.org/data/preview.png> ] ;
+        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:format "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -542,17 +542,17 @@ This was then modified according to suggested guidance in [records issue #21](ht
     dcat:license "other" ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( -180 -90 ) ( -180 90 ) ( 180 90 ) ( 180 -90 ) ( -180 -90 ) ) ) ] ;
-    rec:format [ rec:name "GeoJSON" ],
-        [ rec:name "CSV" ] ;
+    rec:format [ rec:name "CSV" ],
+        [ rec:name "GeoJSON" ] ;
     rec:hasLinkTemplate [ rdfs:label "World Ozone and Ultraviolet Radiation Data Centre (WOUDC) stations" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
             rec:hasVariable [ dcterms:description "..." ;
-                    dcterms:format "array" ;
-                    dcterms:identifier "bbox" ],
-                [ dcterms:description "..." ;
                     dcterms:format "string" ;
                     dcterms:identifier "crs" ],
+                [ dcterms:description "..." ;
+                    dcterms:format "array" ;
+                    dcterms:identifier "bbox" ],
                 [ dcterms:description "..." ;
                     dcterms:format "number" ;
                     dcterms:identifier "height" ],
@@ -568,14 +568,14 @@ This was then modified according to suggested guidance in [records issue #21](ht
             rec:languageCode "en-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
-    rec:themes [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
-                <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
-            thns:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ thns:concepts [ thns:id "atmosphericComposition"^^xsd:string ],
+    rec:themes [ thns:concepts [ thns:id "rocketSounding"^^xsd:string ],
+                [ thns:id "atmosphericComposition"^^xsd:string ],
                 [ thns:id "observationPlatform"^^xsd:string ],
-                [ thns:id "rocketSounding"^^xsd:string ],
                 [ thns:id "pollution"^^xsd:string ] ;
-            thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
+            thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
+        [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
+                <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
+            thns:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ] .
 
 <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> thns:id "brewer"^^xsd:string .
 
