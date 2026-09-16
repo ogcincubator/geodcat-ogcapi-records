@@ -1,5 +1,5 @@
 Validation report for ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy - GeoDCAT profile of STAC Accuracy extension
-Generated 2026-09-13T03:37:34.533691+00:00
+Generated 2026-09-16T03:37:54.275681+00:00
 === Files ===
 Using https://raw.githubusercontent.com/stac-extensions/accuracy/main/examples/item.json from examples
 JSON-LD context is present - uplifting
@@ -14,194 +14,12 @@ Validation passed
 === SHACL ===
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/accuracy-ontology/ontology.ttl
- - https://www.w3.org/ns/dcat2.ttl
  - https://www.w3.org/ns/prov-o
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
+ - https://www.w3.org/ns/dcat3.ttl
+ - https://www.w3.org/ns/dcat2.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
- - https://www.w3.org/ns/dcat3.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
- - Shape stac:ItemShape: *none*
- - Shape stac:AssetShape: *none*
- - Shape stac:LinkShape: *none*
- - Shape stac:CollectionShape: *none*
-
-Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Communication-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b8: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b80: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b224: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Association-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b212: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b146: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b98: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b122: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Person-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b170: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Influence-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b234: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Delegation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b240: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b56: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b194: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b152: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Derivation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b246: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b116: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b62: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b38: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b134: *none*
- - Shape <https://www.ogc.org/rules/prov/#SoftwareAgent-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b258: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b206: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b2: *none*
- - Shape <https://www.ogc.org/rules/prov/#EntityInfluence-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b14: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#ActivityInfluence-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Attribution-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b50: *none*
- - Shape <https://www.ogc.org/rules/prov/#Agent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Revision-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b225: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b44: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b92: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b128: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b140: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b68: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b188: *none*
- - Shape <https://www.ogc.org/rules/prov/#AgentInfluence-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b20: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Organization-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b158: *none*
- - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b176: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b110: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b200: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b86: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b32: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b74: *none*
- - Shape <https://www.ogc.org/rules/prov/#Quotation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b26: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b226: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b252: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b164: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#PrimarySource-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>/sh:or/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b104: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b218: *none*
- - Shape _:n9ed3eb7872d94681955378520dfc0a03b182: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>/sh:or/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>/sh:or/rdf:rest/rdf:first: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>/sh:or/rdf:first: *none*
-
-Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
- - Shape assets:RolesShape: *none*
-
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
@@ -212,6 +30,84 @@ Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/fea
  - Shape geojson:FeatureShape: <https://example.com/stac/accuracy/example-1/item>
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:AssetShape: *none*
+ - Shape stac:CollectionShape: *none*
+ - Shape stac:LinkShape: *none*
+ - Shape stac:ItemShape: *none*
+
+Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
+
+Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
+ - Shape assets:RolesShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
@@ -225,13 +121,13 @@ Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/exten
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/accuracy-ontology/shapes.shacl:
- - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>
  - Shape accuracy:GeometricYBiasShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>
- - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricXStddevShape: <https://example.com/stac/accuracy/example-1/item>
  - Shape accuracy:GeometricRmseShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:MeasurementRelativeShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricYStddevShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:MeasurementAbsoluteShape: <https://example.com/stac/accuracy/example-1/item>
+ - Shape accuracy:GeometricXBiasShape: <https://example.com/stac/accuracy/example-1/item>
 
 === End SHACL ===
 
