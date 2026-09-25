@@ -209,15 +209,15 @@ This is the simple item example from the STAC specification.
     dcterms:date "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/collection> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
@@ -505,8 +505,8 @@ This is the complete "core" item example from the STAC specification.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <https://w3id.org/ogc/stac/assets/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <https://w3id.org/ogc/stac/assets/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -518,32 +518,32 @@ This is the complete "core" item example from the STAC specification.
     dcterms:description "A sample STAC Item that includes examples of all common metadata" ;
     dcterms:modified "2020-12-12T01:48:13.725Z" ;
     dcterms:title "Core Item" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/collection> ;
-            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
-        [ rdfs:label "HTML version of this STAC Item" ;
+    rdfs:seeAlso [ rdfs:label "HTML version of this STAC Item" ;
             dcterms:type "text/html" ;
-            ns2:relation <http://www.iana.org/assignments/relation/alternate> ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
             oa:hasTarget <http://remotedata.io/catalog/20201211_223832_CS2/index.html> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns1:relation <http://www.iana.org/assignments/relation/collection> ;
+            oa:hasTarget <https://example.com/stac/example1/collection.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Polygon ;
             geojson:coordinates ( ( ( 1.729117e+02 1.343885e+00 ) ( 1.729547e+02 1.343885e+00 ) ( 1.729547e+02 1.369048e+00 ) ( 1.729117e+02 1.369048e+00 ) ( 1.729117e+02 1.343885e+00 ) ) ) ] ;
     stac:end_datetime "2020-12-11T22:38:32.327000+00:00"^^xsd:dateTime ;
-    stac:hasAsset [ ns1:analytic <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
-            ns1:ephemeris <http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH> ;
-            ns1:json-metadata <http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json> ;
-            ns1:thumbnail <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> ;
-            ns1:udm <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif> ;
-            ns1:visual <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> ] ;
+    stac:hasAsset [ ns2:analytic <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> ;
+            ns2:ephemeris <http://cool-sat.com/catalog/20201211_223832_CS2/20201211_223832_CS2.EPH> ;
+            ns2:json-metadata <http://remotedata.io/catalog/20201211_223832_CS2/extended-metadata.json> ;
+            ns2:thumbnail <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.jpg> ;
+            ns2:udm <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic_udm.tif> ;
+            ns2:visual <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> ] ;
     stac:start_datetime "2020-12-11T22:38:32.125000+00:00"^^xsd:dateTime ;
     stac:version "1.1.0" .
 
