@@ -463,6 +463,11 @@ description: Schema for OGCAPI records profile for GeoDCAT + PROV
 allOf:
 - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml
 - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#/$defs/Entity
+x-bblocks-metadata:
+  itemIdentifier: ogc.geo.geodcat.geodcat-records-prov
+  register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-19'
 
 ```
 

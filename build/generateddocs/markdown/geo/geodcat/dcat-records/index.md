@@ -498,28 +498,24 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
     dcterms:modified "2021-02-08T00:00:00Z" ;
     dcterms:temporal [ ] ;
     dcterms:title "Total Ozone - daily observations" ;
-    rdfs:seeAlso [ rdfs:label "Web Accessible Folder (WAF)" ;
+    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
+            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
+        [ rdfs:label "Web Accessible Folder (WAF)" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "text/html" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Archive-NewFormat/TotalOzone_1.0_1> ],
-        [ rdfs:label "This document as HTML" ;
-            dcterms:format "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
-            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
-        [ ns1:relation <http://www.iana.org/assignments/relation/license> ;
-            oa:hasTarget <https://woudc.org/about/data-policy.php> ],
-        [ rdfs:label "OGC Web Feature Service (WFS)" ;
-            dcterms:format "application/xml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://geo.woudc.org/ows> ],
         [ rdfs:label "Static dataset archive file" ;
             dcterms:created "2015-01-23T00:00:00Z" ;
             dcterms:format "application/zip" ;
             dcterms:modified "2015-01-23T00:00:00Z" ;
             ns1:relation <http://www.iana.org/assignments/relation/enclosure> ;
             oa:hasTarget <https://woudc.org/archive/Summaries/dataset-snapshots/totalozone.zip> ],
+        [ rdfs:label "This document as HTML" ;
+            dcterms:format "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/alternate> ;
+            oa:hasTarget <https://woudc.org/data/dataset_info.php?id=totalozone> ],
         [ rdfs:label "Total Ozone Preview Image" ;
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/preview> ;
@@ -527,7 +523,11 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
         [ rdfs:label "Data Search / Download User Interface" ;
             dcterms:format "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/search> ;
-            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ] ;
+            oa:hasTarget <https://woudc.org/data/explore.php?dataset=totalozone> ],
+        [ rdfs:label "OGC Web Feature Service (WFS)" ;
+            dcterms:format "application/xml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://geo.woudc.org/ows> ] ;
     dcat:contactPoint [ rdfs:seeAlso [ dcterms:format "text/html" ;
                     ns1:relation <http://www.iana.org/assignments/relation/about> ;
                     oa:hasTarget <https://woudc.org> ] ] ;
@@ -547,34 +547,34 @@ This snippet was retrieved from [https://raw.githubusercontent.com/opengeospatia
             dcterms:format "image/png" ;
             ns1:relation <http://www.iana.org/assignments/relation/describes> ;
             rec:hasVariable [ dcterms:description "..." ;
-                    dcterms:format "number" ;
-                    dcterms:identifier "height" ],
-                [ dcterms:description "..." ;
                     dcterms:format "string" ;
                     dcterms:identifier "crs" ],
                 [ dcterms:description "..." ;
                     dcterms:format "number" ;
                     dcterms:identifier "width" ],
                 [ dcterms:description "..." ;
+                    dcterms:format "number" ;
+                    dcterms:identifier "height" ],
+                [ dcterms:description "..." ;
                     dcterms:format "array" ;
                     dcterms:identifier "bbox" ] ;
             rec:uriTemplate "https://geo.woudc.org/ows?service=WMS&version=1.3.0&request=GetMap&crs={crs}&bbox={bbox}&layers=stations&width={width}&height={height}&format=image/png"^^xsd:string ] ;
     rec:language [ skos:prefLabel "English (Canada)" ;
             rec:languageCode "en-CA" ] ;
-    rec:languages [ skos:prefLabel "French (Canada)" ;
-            rec:languageCode "fr-CA" ],
-        [ skos:prefLabel "English (Canada)" ;
-            rec:languageCode "en-CA" ] ;
+    rec:languages [ skos:prefLabel "English (Canada)" ;
+            rec:languageCode "en-CA" ],
+        [ skos:prefLabel "French (Canada)" ;
+            rec:languageCode "fr-CA" ] ;
     rec:scopedIdentifier [ rec:id "urn:x-wmo:md:int.wmo.wis::https://geo.woudc.org/def/data/ozone/total-column-ozone/totalozone" ;
             rec:scheme "WMO:WIS" ] ;
-    rec:themes [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
-                <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
-            thns:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ],
-        [ thns:concepts [ thns:id "rocketSounding"^^xsd:string ],
-                [ thns:id "atmosphericComposition"^^xsd:string ],
+    rec:themes [ thns:concepts [ thns:id "atmosphericComposition"^^xsd:string ],
+                [ thns:id "rocketSounding"^^xsd:string ],
                 [ thns:id "pollution"^^xsd:string ],
                 [ thns:id "observationPlatform"^^xsd:string ] ;
-            thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ] .
+            thns:scheme "https://wis.wmo.int/2012/codelists/WMOCodeLists.xml#WMO_CategoryCode" ],
+        [ thns:concepts <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer>,
+                <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_dobson> ;
+            thns:scheme "https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode" ] .
 
 <https://geo.woudc.org/codelists.xml#WOUDC_InstrumentCode_brewer> thns:id "brewer"^^xsd:string .
 
@@ -686,6 +686,11 @@ x-jsonld-prefixes:
   vcard: http://www.w3.org/2006/vcard/ns#
   prov: http://www.w3.org/ns/prov#
   foaf: http://xmlns.com/foaf/0.1/
+x-bblocks-metadata:
+  itemIdentifier: ogc.geo.geodcat.dcat-records
+  register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-19'
 
 ```
 
