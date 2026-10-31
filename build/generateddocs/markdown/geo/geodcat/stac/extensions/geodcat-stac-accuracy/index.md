@@ -200,7 +200,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.geo.geodcat.stac.extensions.geodcat-stac-accuracy
   register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-25'
+  dateOfLastChange: '2026-10-28'
 
 ```
 
