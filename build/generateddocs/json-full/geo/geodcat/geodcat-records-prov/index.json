@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "ogc-incubator",
   "version": "0.1",
-  "dateOfLastChange": "2026-11-19",
+  "dateOfLastChange": "2026-11-22",
   "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
   "sources": [
     {
@@ -52,7 +52,7 @@
   "ldContext": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/context.jsonld",
   "resolvedSchemaProperties": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records-prov/resolvedProperties.json",
   "sourceFiles": "https://ogcincubator.github.io/geodcat-ogcapi-records/_sources/geodcat-records-prov/",
-  "validationPassed": true,
+  "validationPassed": false,
   "testOutputs": "https://github.com/ogcincubator/geodcat-ogcapi-records/blob/master/build/tests/geo/geodcat/geodcat-records-prov/",
   "description": "## GeoDCAT with PROV\n\nAdds PROV model to GeoDCAT - treating a dcat:Dataset as a prov:Entity.\n\nThis profile extends a building block that uses the official JSON-LD context for DCAT bound to the OGC API Records.\n\n",
   "examples": [
@@ -103,8 +103,8 @@
         {
           "language": "ttl",
           "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-records-prov/example_2_1.ttl",
-          "sizeBytes": 1482,
-          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;\n    rdfs:seeAlso [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/collection> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;\n    prov:wasGeneratedBy <surveys:DP-1-S1> ;\n    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .\n\n<regulations:Act3> a <https://example.com/stac/example1/Legislation> ;\n    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;\n            oa:hasTarget <https://some.gov/linktoact/> ] ;\n    prov:wasAttributedTo <agents:someGovernment> .\n\n<surveys:DP-1-S1> a prov:Activity,\n        <https://example.com/stac/example1/InitialSurvey> ;\n    prov:endedAtTime \"2023-10-05T05:03:15+01:00\"^^xsd:dateTime ;\n    prov:used <regulations:Act3> ;\n    prov:wasAssociatedWith <staff:jd234> .\n\n"
+          "sizeBytes": 1497,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;\n    rdfs:seeAlso [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/collection> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;\n    prov:wasGeneratedBy <surveys:DP-1-S1> ;\n    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .\n\n<regulations:Act3> rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;\n            oa:hasTarget <https://some.gov/linktoact/> ] ;\n    prov:type <https://example.com/stac/example1/Legislation> ;\n    prov:wasAttributedTo <agents:someGovernment> .\n\n<surveys:DP-1-S1> a prov:Activity ;\n    prov:endedAtTime \"2023-10-05T05:03:15+01:00\"^^xsd:dateTime ;\n    prov:type <https://example.com/stac/example1/InitialSurvey> ;\n    prov:used <regulations:Act3> ;\n    prov:wasAssociatedWith <staff:jd234> .\n\n"
         }
       ]
     },
@@ -129,13 +129,13 @@
         {
           "language": "ttl",
           "url": "https://ogcincubator.github.io/geodcat-ogcapi-records/build/tests/geo/geodcat/geodcat-records-prov/example_3_1.ttl",
-          "sizeBytes": 1671,
-          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;\n    dcterms:provenance <https://example.com/stac/example1/DP-2223>,\n        <surveys:DP-1-S1> ;\n    rdfs:seeAlso [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/collection> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;\n    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .\n\n<https://example.com/stac/example1/DP-2223> a <ftc:SomeKindOfSurvey>,\n        prov:Entity ;\n    prov:wasGeneratedBy <surveys:DP-1-S1> .\n\n<regulations:Act3> a <https://example.com/stac/example1/Legislation> ;\n    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;\n            oa:hasTarget <https://some.gov/linktoact/> ] ;\n    prov:wasAttributedTo <agents:someGovernment> .\n\n<surveys:DP-1-S1> a prov:Activity,\n        <https://example.com/stac/example1/InitialSurvey> ;\n    prov:endedAtTime \"2023-10-05T05:03:15+01:00\"^^xsd:dateTime ;\n    prov:used <regulations:Act3> ;\n    prov:wasAssociatedWith <staff:jd234> .\n\n"
+          "sizeBytes": 887,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;\n    rdfs:seeAlso [ rdfs:label \"Simple Example Collection\" ;\n            dcterms:type \"application/json\" ;\n            ns1:relation <http://www.iana.org/assignments/relation/collection> ;\n            oa:hasTarget <https://example.com/stac/example1/collection.json> ] ;\n    geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .\n\n"
         }
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Schema for OGCAPI records profile for GeoDCAT + PROV\nallOf:\n- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml\n- $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#/$defs/Entity\nx-bblocks-metadata:\n  itemIdentifier: ogc.geo.geodcat.geodcat-records-prov\n  register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-19'\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Schema for OGCAPI records profile for GeoDCAT + PROV\nallOf:\n- $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml\n- $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#/$defs/Entity\nx-bblocks-metadata:\n  itemIdentifier: ogc.geo.geodcat.geodcat-records-prov\n  register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-11-22'\n",
   "gitRepository": "https://github.com/ogcincubator/geodcat-ogcapi-records",
   "gitPath": "_sources/geodcat-records-prov"
 }

@@ -266,14 +266,14 @@ A STAC item is a prov:Entity with the "wasGeneratedBy" property defined by PROV-
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
 
-<regulations:Act3> a <https://example.com/stac/example1/Legislation> ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;
+<regulations:Act3> rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://some.gov/linktoact/> ] ;
+    prov:type <https://example.com/stac/example1/Legislation> ;
     prov:wasAttributedTo <agents:someGovernment> .
 
-<surveys:DP-1-S1> a prov:Activity,
-        <https://example.com/stac/example1/InitialSurvey> ;
+<surveys:DP-1-S1> a prov:Activity ;
     prov:endedAtTime "2023-10-05T05:03:15+01:00"^^xsd:dateTime ;
+    prov:type <https://example.com/stac/example1/InitialSurvey> ;
     prov:used <regulations:Act3> ;
     prov:wasAssociatedWith <staff:jd234> .
 
@@ -421,14 +421,11 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix ns1: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://example.com/stac/example1/20201211_223832_CS2> a geojson:Feature ;
-    dcterms:provenance <https://example.com/stac/example1/DP-2223>,
-        <surveys:DP-1-S1> ;
     rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/collection> ;
@@ -436,21 +433,6 @@ A STAC item is a prov:Entity with the "has_provenance" property whose range is a
     geojson:bbox ( 1.729117e+02 1.343885e+00 1.729547e+02 1.369048e+00 ) ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.729117e+02 1.343885e+00 ) ] .
-
-<https://example.com/stac/example1/DP-2223> a <ftc:SomeKindOfSurvey>,
-        prov:Entity ;
-    prov:wasGeneratedBy <surveys:DP-1-S1> .
-
-<regulations:Act3> a <https://example.com/stac/example1/Legislation> ;
-    rdfs:seeAlso [ ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://some.gov/linktoact/> ] ;
-    prov:wasAttributedTo <agents:someGovernment> .
-
-<surveys:DP-1-S1> a prov:Activity,
-        <https://example.com/stac/example1/InitialSurvey> ;
-    prov:endedAtTime "2023-10-05T05:03:15+01:00"^^xsd:dateTime ;
-    prov:used <regulations:Act3> ;
-    prov:wasAssociatedWith <staff:jd234> .
 
 
 ```
@@ -467,7 +449,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.geo.geodcat.geodcat-records-prov
   register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-19'
+  dateOfLastChange: '2026-11-22'
 
 ```
 
@@ -650,10 +632,82 @@ Links to the schema:
       }
     },
     "wasInfluencedBy": {
+      "@context": {
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
       "@id": "prov:wasInfluencedBy",
       "@type": "@id"
     },
     "qualifiedInfluence": {
+      "@context": {
+        "influencer": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:influencer",
+          "@type": "@id"
+        },
+        "activity": {
+          "@context": {
+            "wasAssociatedWith": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "type": "dct:type",
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              },
+              "@id": "prov:wasAssociatedWith",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:activity",
+          "@type": "@id"
+        },
+        "agent": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
       "@id": "prov:qualifiedInfluence",
       "@type": "@id"
     },
@@ -662,17 +716,29 @@ Links to the schema:
       "@type": "@id"
     },
     "provType": "@type",
-    "featureType": "@type",
-    "entityType": "@type",
-    "has_provenance": {
-      "@id": "dct:provenance",
+    "entityType": {
+      "@id": "prov:type",
       "@type": "@id"
     },
+    "name": "rdfs:label",
     "wasGeneratedBy": {
       "@id": "prov:wasGeneratedBy",
       "@type": "@id"
     },
     "wasAttributedTo": {
+      "@context": {
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
       "@id": "prov:wasAttributedTo",
       "@type": "@id"
     },
@@ -704,6 +770,10 @@ Links to the schema:
       "@id": "prov:wasRevisionOf",
       "@type": "@id"
     },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
     "generatedAtTime": {
       "@id": "prov:generatedAtTime",
       "@type": "xsd:dateTime"
@@ -725,10 +795,6 @@ Links to the schema:
       "@id": "prov:qualifiedRevision",
       "@type": "@id"
     },
-    "atLocation": {
-      "@id": "prov:atLocation",
-      "@type": "@id"
-    },
     "qualifiedGeneration": {
       "@id": "prov:qualifiedGeneration",
       "@type": "@id"
@@ -745,8 +811,10 @@ Links to the schema:
       "@id": "prov:qualifiedAttribution",
       "@type": "@id"
     },
-    "activityType": "@type",
-    "agentType": "@type",
+    "href": {
+      "@type": "@id",
+      "@id": "oa:hasTarget"
+    },
     "Activity": "prov:Activity",
     "ActivityInfluence": "prov:ActivityInfluence",
     "Agent": "prov:Agent",
@@ -801,10 +869,6 @@ Links to the schema:
       "@id": "prov:atTime",
       "@type": "xsd:dateTime"
     },
-    "endedAtTime": {
-      "@id": "prov:endedAtTime",
-      "@type": "xsd:dateTime"
-    },
     "startedAtTime": {
       "@id": "prov:startedAtTime",
       "@type": "xsd:dateTime"
@@ -828,10 +892,6 @@ Links to the schema:
     },
     "entity": {
       "@id": "prov:entity",
-      "@type": "@id"
-    },
-    "generated": {
-      "@id": "prov:generated",
       "@type": "@id"
     },
     "hadActivity": {
@@ -866,52 +926,8 @@ Links to the schema:
       "@id": "prov:influencer",
       "@type": "@id"
     },
-    "invalidated": {
-      "@id": "prov:invalidated",
-      "@type": "@id"
-    },
-    "qualifiedAssociation": {
-      "@id": "prov:qualifiedAssociation",
-      "@type": "@id"
-    },
-    "qualifiedCommunication": {
-      "@id": "prov:qualifiedCommunication",
-      "@type": "@id"
-    },
     "qualifiedDelegation": {
       "@id": "prov:qualifiedDelegation",
-      "@type": "@id"
-    },
-    "qualifiedEnd": {
-      "@id": "prov:qualifiedEnd",
-      "@type": "@id"
-    },
-    "qualifiedStart": {
-      "@id": "prov:qualifiedStart",
-      "@type": "@id"
-    },
-    "qualifiedUsage": {
-      "@id": "prov:qualifiedUsage",
-      "@type": "@id"
-    },
-    "used": {
-      "@id": "prov:used",
-      "@type": "@id"
-    },
-    "wasAssociatedWith": {
-      "@id": "prov:wasAssociatedWith",
-      "@type": "@id"
-    },
-    "wasEndedBy": {
-      "@id": "prov:wasEndedBy",
-      "@type": "@id"
-    },
-    "wasInformedBy": {
-      "@id": "prov:wasInformedBy",
-      "@type": "@id"
-    },
-    "wasStartedBy": {
-      "@id": "prov:wasStartedBy",
       "@type": "@id"
     },
     "has_anchor": {
@@ -970,10 +986,69 @@ Links to the schema:
       "@id": "prov:mentionOf",
       "@type": "@id"
     },
-    "name": "rdfs:label",
-    "href": {
-      "@type": "@id",
-      "@id": "oa:hasTarget"
+    "activityType": {
+      "@id": "prov:type",
+      "@type": "@id"
+    },
+    "agentType": {
+      "@id": "prov:type",
+      "@type": "@id"
+    },
+    "influenceType": {
+      "@id": "prov:type",
+      "@type": "@id"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id"
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedEnd": {
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedStart": {
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasEndedBy": {
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
     },
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -991,6 +1066,10 @@ Links to the schema:
     "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "thns": "https://w3id.org/ogc/stac/themes/",
+    "schema": "https://schema.org/",
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "wf4ever": "http://purl.org/wf4ever/wf4ever#",
     "rights": "dcat:rights",
     "@version": 1.1
   }

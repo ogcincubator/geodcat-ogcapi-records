@@ -1,0 +1,249 @@
+Validation report for ogc.geo.geodcat.geodcat-records-prov - GeoDCAT + PROV profile
+Generated 2026-11-25T03:33:18.515280+00:00
+=== Files ===
+Using https://ogcincubator.github.io/bblocks-stac/build/tests/contrib/stac/item-prov/example_3_1.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_3_1.jsonld created
+Output Turtle example_3_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'provType' is a required property
+
+Failed validating 'required' in schema['allOf'][1]:
+    {'$anchor': 'Entity',
+     'type': 'object',
+     'properties': {'id': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref',
+                           'x-jsonld-id': '@id'},
+                    'provType': {'const': 'Entity', 'x-jsonld-id': '@type'},
+                    'entityType': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreObjectref',
+                                   'x-jsonld-id': 'http://www.w3.org/ns/prov#type',
+                                   'x-jsonld-type': '@id'},
+                    'name': {'type': 'string',
+                             'x-jsonld-id': 'http://www.w3.org/2000/01/rdf-schema#label'},
+                    'hadMember': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                  'x-jsonld-id': 'http://www.w3.org/ns/prov#hadMember',
+                                  'x-jsonld-type': '@id'},
+                    'wasGeneratedBy': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds',
+                                       'x-jsonld-id': 'http://www.w3.org/ns/prov#wasGeneratedBy',
+                                       'x-jsonld-type': '@id'},
+                    'wasAttributedTo': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreAgentsOrRefIds',
+                                        'x-jsonld-id': 'http://www.w3.org/ns/prov#wasAttributedTo',
+                                        'x-jsonld-type': '@id'},
+                    'wasDerivedFrom': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                       'x-jsonld-id': 'http://www.w3.org/ns/prov#wasDerivedFrom',
+                                       'x-jsonld-type': '@id'},
+                    'alternateOf': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                    'x-jsonld-id': 'http://www.w3.org/ns/prov#alternateOf',
+                                    'x-jsonld-type': '@id'},
+                    'hadPrimarySource': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                         'x-jsonld-id': 'http://www.w3.org/ns/prov#hadPrimarySource',
+                                         'x-jsonld-type': '@id'},
+                    'specializationOf': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                         'x-jsonld-id': 'http://www.w3.org/ns/prov#specializationOf',
+                                         'x-jsonld-type': '@id'},
+                    'wasInvalidatedBy': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreActivitiesOrRefIds',
+                                         'x-jsonld-id': 'http://www.w3.org/ns/prov#wasInvalidatedBy',
+                                         'x-jsonld-type': '@id'},
+                    'wasQuotedFrom': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                      'x-jsonld-id': 'http://www.w3.org/ns/prov#wasQuotedFrom',
+                                      'x-jsonld-type': '@id'},
+                    'wasRevisionOf': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#oneOrMoreEntitiesOrRefIds',
+                                      'x-jsonld-id': 'http://www.w3.org/ns/prov#wasRevisionOf',
+                                      'x-jsonld-type': '@id'},
+                    'atLocation': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref',
+                                   'x-jsonld-id': 'http://www.w3.org/ns/prov#atLocation',
+                                   'x-jsonld-type': '@id'},
+                    'links': {'type': 'array',
+                              'items': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#externalLink'},
+                              'x-jsonld-id': 'http://www.w3.org/2000/01/rdf-schema#seeAlso'},
+                    'generatedAtTime': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#dateTime',
+                                        'x-jsonld-id': 'http://www.w3.org/ns/prov#generatedAtTime',
+                                        'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},
+                    'invalidatedAtTime': {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#dateTime',
+                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#invalidatedAtTime',
+                                          'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'},
+                    'value': {'x-jsonld-id': 'http://www.w3.org/ns/prov#value'},
+                    'qualifiedPrimarySource': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                         {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#PrimarySource'},
+                                                         {'type': 'array',
+                                                          'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                              {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#PrimarySource'}]}}],
+                                               'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedPrimarySource',
+                                               'x-jsonld-type': '@id'},
+                    'qualifiedQuotation': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                     {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Quotation'},
+                                                     {'type': 'array',
+                                                      'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                          {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Quotation'}]}}],
+                                           'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedQuotation',
+                                           'x-jsonld-type': '@id'},
+                    'qualifiedRevision': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                    {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Revision'},
+                                                    {'type': 'array',
+                                                     'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                         {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Revision'}]}}],
+                                          'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedRevision',
+                                          'x-jsonld-type': '@id'},
+                    'qualifiedGeneration': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                      {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Generation'},
+                                                      {'type': 'array',
+                                                       'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                           {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Generation'}]}}],
+                                            'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedGeneration',
+                                            'x-jsonld-type': '@id'},
+                    'qualifiedInvalidation': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                        {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Invalidation'},
+                                                        {'type': 'array',
+                                                         'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                             {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Invalidation'}]}}],
+                                              'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedInvalidation',
+                                              'x-jsonld-type': '@id'},
+                    'qualifiedDerivation': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                      {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Derivation'},
+                                                      {'type': 'array',
+                                                       'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                           {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Derivation'}]}}],
+                                            'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedDerivation',
+                                            'x-jsonld-type': '@id'},
+                    'qualifiedAttribution': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                       {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Attribution'},
+                                                       {'type': 'array',
+                                                        'items': {'oneOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#objectref'},
+                                                                            {'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml#Attribution'}]}}],
+                                             'x-jsonld-id': 'http://www.w3.org/ns/prov#qualifiedAttribution',
+                                             'x-jsonld-type': '@id'}},
+     'required': ['id', 'provType'],
+     'allOf': [{'$ref': 'https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml#influenced'},
+               {'if': {'properties': {'entityType': {'anyOf': [{'const': 'Collection'},
+                                                               {'type': 'array',
+                                                                'contains': {'const': 'Collection'}}]}},
+                       'required': ['entityType']},
+                'then': {'required': ['hadMember'],
+                         'properties': {'hadMember': {'type': 'array',
+                                                      'x-jsonld-id': 'http://www.w3.org/ns/prov#hadMember',
+                                                      'x-jsonld-type': '@id'}}}},
+               {'if': {'properties': {'entityType': {'anyOf': [{'const': 'EmptyCollection'},
+                                                               {'type': 'array',
+                                                                'contains': {'const': 'EmptyCollection'}}]}},
+                       'required': ['entityType']},
+                'then': {'required': ['hadMember'],
+                         'properties': {'hadMember': {'type': 'array',
+                                                      'maxItems': 0,
+                                                      'x-jsonld-id': 'http://www.w3.org/ns/prov#hadMember',
+                                                      'x-jsonld-type': '@id'}}}}]}
+
+On instance:
+    {'stac_version': '1.1.0',
+     'stac_extensions': ['https://stac-extensions.github.io/prov/v1.0.0/schema.json'],
+     'type': 'Feature',
+     'id': '20201211_223832_CS2',
+     'bbox': [172.91173669923782,
+              1.3438851951615003,
+              172.95469614953714,
+              1.3690476620161975],
+     'has_provenance': [{'id': 'DP-2223',
+                         'provType': 'Entity',
+                         'featureType': 'ftc:SomeKindOfSurvey',
+                         'wasGeneratedBy': 'surveys:DP-1-S1'},
+                        {'provType': 'Activity',
+                         'id': 'surveys:DP-1-S1',
+                         'activityType': 'InitialSurvey',
+                         'endedAtTime': '2023-10-05T05:03:15+01:00',
+                         'wasAssociatedWith': 'staff:jd234',
+                         'used': {'id': 'regulations:Act3',
+                                  'entityType': 'Legislation',
+                                  'wasAttributedTo': 'agents:someGovernment',
+                                  'links': [{'href': 'https://some.gov/linktoact/',
+                                             'rel': 'related'}]}}],
+     'geometry': {'type': 'Point',
+                  'coordinates': [172.91173669923782, 1.3438851951615003]},
+     'properties': {'datetime': '2020-12-11T22:38:32.125000Z'},
+     'collection': 'simple-collection',
+     'links': [{'rel': 'collection',
+                'href': './collection.json',
+                'type': 'application/json',
+                'title': 'Simple Example Collection'}],
+     'assets': {}}
+=== End JSON Schema ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.w3.org/ns/dcat3.ttl
+ - https://www.w3.org/ns/dcat2.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://www.w3.org/ns/prov-o
+Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl: no results
+Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
+ - Shape rec:testAllVarsInTemplate: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl: no results
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:FeatureShape: <https://example.com/stac/example1/20201211_223832_CS2>
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+
+Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl: no results
+Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+
+=== End SHACL ===
+
