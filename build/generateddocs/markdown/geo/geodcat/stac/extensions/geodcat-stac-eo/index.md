@@ -370,14 +370,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
     dcterms:description "A simple Collection demonstrating EO extension fields in a Collection." ;
     dcterms:extent [ ] ;
     dcterms:title "Simple EO Collection" ;
-    rdfs:seeAlso [ rdfs:label "Simple Example Collection" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ],
-        [ rdfs:label "20201211_223832_CS2" ;
+    rdfs:seeAlso [ rdfs:label "20201211_223832_CS2" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ] ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/item.json> ],
+        [ rdfs:label "Simple Example Collection" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/stac/raster/example-1/collection.json> ] ;
     dcat:license "CC-BY-4.0" ;
     stac:hasExtension "https://stac-extensions.github.io/eo/v2.0.0/schema.json" ;
     stac:version "1.1.0" .
@@ -744,18 +744,18 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2.tif> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
     dcterms:title "3-Band Visual" ;
-    ns1:bands [ ns1:name "band1" ;
-            eo:center_wavelength 4.7e-01 ;
-            eo:common_name eo:blue ;
-            eo:full_width_half_max 7e-02 ],
-        [ ns1:name "band3" ;
+    ns1:bands [ ns1:name "band3" ;
             eo:center_wavelength 6.45e-01 ;
             eo:common_name eo:red ;
             eo:full_width_half_max 9e-02 ],
         [ ns1:name "band2" ;
             eo:center_wavelength 5.6e-01 ;
             eo:common_name eo:green ;
-            eo:full_width_half_max 8e-02 ] ;
+            eo:full_width_half_max 8e-02 ],
+        [ ns1:name "band1" ;
+            eo:center_wavelength 4.7e-01 ;
+            eo:common_name eo:blue ;
+            eo:full_width_half_max 7e-02 ] ;
     stac:hasAssetroles "visual"^^xsd:string .
 
 <https://storage.googleapis.com/open-cogs/stac-examples/20201211_223832_CS2_analytic.tif> dcterms:format "image/tiff; application=geotiff; profile=cloud-optimized" ;
@@ -801,7 +801,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.geo.geodcat.stac.extensions.geodcat-stac-eo
   register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-22'
+  dateOfLastChange: '2026-11-25'
 
 ```
 

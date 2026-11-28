@@ -319,10 +319,10 @@ This is the collection example from the STAC specification.
         "example",
         "simple" ;
     dcterms:title "Simple Example Collection" ;
-    rdfs:seeAlso [ rdfs:label "Extended Item" ;
+    rdfs:seeAlso [ rdfs:label "Core Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
+            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
         [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://raw.githubusercontent.com/radiantearth/stac-spec/v1.1.0/examples/collection.json> ],
@@ -330,10 +330,10 @@ This is the collection example from the STAC specification.
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
             oa:hasTarget <https://example.com/stac/example1/simple-item.json> ],
-        [ rdfs:label "Core Item" ;
+        [ rdfs:label "Extended Item" ;
             dcterms:type "application/geo+json" ;
             ns1:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://example.com/stac/example1/core-item.json> ],
+            oa:hasTarget <https://example.com/stac/example1/extended-item.json> ],
         [ rdfs:label "Simple Example Collection" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
@@ -382,7 +382,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.geo.geodcat.stac.geodcat-stac-collection
   register: https://ogcincubator.github.io/geodcat-ogcapi-records/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-11-22'
+  dateOfLastChange: '2026-11-25'
 
 ```
 
